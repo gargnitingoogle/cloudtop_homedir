@@ -9,5 +9,4 @@
 !*.bash_history
 !.gitignore
 !.gitconfig
-
-# etc...
+!*.git/config
