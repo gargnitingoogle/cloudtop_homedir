@@ -16670,3 +16670,675 @@ exit
 vi ~/.bash_history +/^yes
 #1689247075
 exit
+#1689247223
+cd ~
+#1689247224
+ls
+#1689247226
+git st
+#1689247231
+git difftool 
+#1689247276
+git add . && git ci -m 'more changes' && git pushthis 
+#1689247306
+git add . && git ci -m 'more changes' && git pushthis --no-verify
+#1689247317
+git add . && git ci -m 'more changes' --no-verify && git pushthis --no-verify
+#1689247325
+git xl
+#1689247332
+git l25
+#1689247373
+git branch testbranch
+#1689247385
+vi ~/.gitconfig
+#1689247434
+git l
+#1689247437
+git st
+#1689247452
+git co testbranch 
+#1689247456
+git add .
+#1689247464
+git ci -m 'more changes'
+#1689247466
+git l
+#1689247471
+git pushthis 
+#1689248105
+exit
+#1689248110
+cd ~
+#1689248112
+git st
+#1689248126
+git add . && git amend && git pushthis 
+#1689248166
+git config --add secrets.allowed ...
+#1689248169
+git add . && git amend && git pushthis 
+#1689248215
+git ff
+#1689248227
+vi ~/.gitvonfig
+#1689248237
+gitconfig
+#1689248252
+git st
+#1689248258
+git ld
+#1689248260
+git ls
+#1689248266
+git rebase 
+#1689248271
+git l5
+#1689248278
+git difftool 
+#1689248288
+git difftool HEAD~`..HEAD
+#1689248295
+git difftool HEAD~1..HEAD
+#1689248311
+git pushthis 
+#1689248379
+aliases
+#1689248524
+aliase
+#1689248527
+aliases
+#1689248537
+vm
+#1689248541
+type vm
+#1689248555
+. ~/.bash_aliases
+#1689248557
+vm
+#1689248581
+aliases
+#1689249228
+vi ~/.bash_aliases
+#1689249243
+.; ~/.bash_aliases
+#1689249248
+. ~/.bash_aliases
+#1689249250
+aliases
+#1689240372
+cd $HOME
+#1689240373
+ls
+#1689240382
+git init
+#1689240410
+git remote add origin git@github.com:gargnitingoogle/cloudtop_homedir.git
+#1689240422
+git reset --hard origin/master
+#1689240439
+git reset --hard origin/main
+#1689240447
+git pull origin
+#1689240490
+git ls
+#1689240498
+git reset --hard origin/main
+#1689240500
+git ls
+#1689240503
+git l5
+#1689240511
+vi ~/.gitignore
+#1689240565
+git st
+#1689240572
+git add *
+#1689240623
+git add .bash_aliases .bash_history .bashrc .gitignore .vimrc 
+#1689240643
+git st
+#1689240667
+git ci -m 'first entry of config files'
+#1689240699
+git config --add secrets.allowed
+#1689240726
+git config --add secrets.allowed ...
+#1689240729
+git ci -m 'first entry of config files'
+#1689240740
+git ls
+#1689240745
+git push main
+#1689240752
+git push origin main
+#1689240771
+git st
+#1689240788
+git l5
+#1689240850
+geany ~/.bash_aliases &
+#1689243149
+work
+#1689243152
+gzip
+#1689243155
+src
+#1689243163
+. ~/.bahs_a
+#1689243166
+. ~/.bash_aliases
+#1689243222
+src
+#1689243226
+git dif
+#1689243228
+git diff
+#1689243232
+git ls
+#1689243236
+git l5
+#1689243245
+git diff HEAD~1..HEAD
+#1689247182
+git difftool 
+#1689247189
+git difftool HEAD~1..HEAD
+#1689235085
+ls
+#1689235098
+man gzip
+#1689235114
+gzip -c test_2.1GB.txt > test_2.1GB.txt.gz
+#1689235150
+gzip -c test_2.1MB.txt > test_2.1MB.txt.gz
+#1689235177
+gsutil help cp
+#1689235190
+ls
+#1689235204
+rm *.gz
+#1689235234
+gsutil cp -Z test_2.1GB.txt gs://gargnitin-fuse-test/gzip-work/test_2.1GB.txt.gz
+#1689235247
+gsutil cp -Z test_2.1GB.txt gs://gargnitin-fuse-test-bucket1/gzip-work/test_2.1GB.txt.gz
+#1689235315
+gsutil cp -Z test_2.1MB.txt gs://gargnitin-fuse-test-bucket1/gzip-work/test_2.1MB.txt.gz
+#1689235319
+ls
+#1689235384
+gcloud storage objects describe gs://gargnitin-fuse-test-bucket1/gzip-work/test_2.1MB.txt.gz
+#1689235422
+gsutil cp gs://gargnitin-fuse-test-bucket1/gzip-work/test_2.1MB.txt.gz .
+#1689235428
+ls -lah
+#1689235444
+cat test_2.1MB.txt.gz | less
+#1689235474
+rm test_2.1MB.txt.gz
+#1689235490
+
+#1689235495
+ls -la
+#1689235510
+gcloud help storage cp
+#1689235520
+rm test_2.1MB.txt.gz
+#1689235552
+gcloud storage cp gs://gargnitin-fuse-test-bucket1/gzip-work/test_2.1MB.txt.gz . --additional-headers=accept-encoding=gzip && ls -la test_2.1MB.txt.gz
+#1689235608
+gcloud storage cp gs://gargnitin-fuse-test-bucket1/gzip-work/test_2.1MB.txt.gz . --additional-headers=accept-encoding=gzip --debug-http && ls -la test_2.1MB.txt.gz
+#1689235616
+gcloud storage cp gs://gargnitin-fuse-test-bucket1/gzip-work/test_2.1MB.txt.gz . --additional-headers=accept-encoding=gzip --log-http && ls -la test_2.1MB.txt.gz
+#1689235728
+ls
+#1689235734
+ls -la
+#1689235740
+rm test_2.1MB.txt.gz
+#1689235757
+gzip -c test_2.1MB.txt > test_2.1MB.txt.gz && ls -la
+#1689235805
+gcloud storage objects describe gs://gargnitin-fuse-test-bucket1/gzip-work/test_2.1GB.txt.gz
+#1689235834
+gsutil ls -la gs://gargnitin-fuse-test-bucket1/gzip-work
+#1689235855
+ls
+#1689235858
+ls -la
+#1689235898
+gsutil cp -z test_2.1MB.txt.gz gs://gargnitin-fuse-test-bucket1/gzip-work/test_2.1MB.txt.gz.gz
+#1689235913
+gsutil cp -Z test_2.1MB.txt.gz gs://gargnitin-fuse-test-bucket1/gzip-work/test_2.1MB.txt.gz.gz
+#1689235946
+gcloud storage objects describe test_2.1MB.txt.gz gs://gargnitin-fuse-test-bucket1/gzip-work/test_2.1MB.txt.gz.gz
+#1689235955
+gcloud storage objects describe  gs://gargnitin-fuse-test-bucket1/gzip-work/test_2.1MB.txt.gz.gz
+#1689235992
+gcloud storage objects update  gs://gargnitin-fuse-test-bucket1/gzip-work/test_2.1MB.txt.gz.gz --metadata=contentType=application/gzip
+#1689236010
+gcloud help objects update
+#1689236018
+gcloud help storage objects update
+#1689236053
+gcloud storage objects update  gs://gargnitin-fuse-test-bucket1/gzip-work/test_2.1MB.txt.gz.gz --content-type=application/gzip
+#1689236060
+gcloud storage objects describe  gs://gargnitin-fuse-test-bucket1/gzip-work/test_2.1MB.txt.gz.gz
+#1689247079
+gzip
+#1689247105
+vi ~/.bash_aliases
+#1689247162
+. ~/.bash_aliases
+#1689247164
+encoding 
+#1689247167
+cd ~
+#1689247169
+encoding 
+#1689247173
+golang
+#1689252162
+exit
+#1689227988
+docker imafel s
+#1689227991
+docker image ls
+#1689228384
+cd ~/work/cloud/storage/client/gcsfuse/
+#1689228384
+ls
+#1689228412
+cd src/gcsfuse/
+#1689228412
+ls
+#1689247219
+git ls
+#1689252164
+exit
+#1689231234
+gcloud compute --project "gcs-fuse-test" ssh --zone "us-central1-c" "gargnitin-ubuntu2004-golang12005" -- -o ProxyCommand='corp-ssh-helper %h %p'
+#1689252170
+exit
+#1689231491
+gcloud compute --project "gcs-fuse-test" ssh --zone "us-central1-c" "gargnitin-ubuntu2004-golang12005" -- -o ProxyCommand='corp-ssh-helper %h %p'
+#1689252171
+exit
+#1689228427
+gcloud compute --project "gcs-fuse-test" ssh --zone "us-central1-c" "gargnitin-ubuntu2004-golang12005" -- -o ProxyCommand='corp-ssh-helper %h %p'
+#1689252172
+exit
+#1689252196
+go reboot
+#1689252206
+git st
+#1689252215
+gti diffto
+#1689252218
+gti difftool
+#1689252224
+git difftool
+#1689252250
+git add . && git amend && git pushthis 
+#1689252275
+git add . && git ci -m 'more changes' && git pushthis 
+#1689252283
+git ff
+#1689252292
+git help comit
+#1689252295
+git help commit
+#1689252319
+git help commit | grep -B 2 -A 2 -i forward
+#1689252323
+git help commit | grep -B 2 -A 2 -i fast
+#1689252331
+git help commit | grep-i fast
+#1689252334
+git help commit | grep -i fast
+#1689252341
+git help
+#1689252369
+git help pull
+#1689252380
+git help pull | grep -i fast
+#1689252385
+git help pull | grep -i forward
+#1689252410
+vi ~/.gitconfig
+#1689252424
+git ff
+#1689252430
+git st
+#1689252443
+git ci -m 'more changes'
+#1689252449
+git xl
+#1689252462
+git ff
+#1689252475
+git add . && git amend
+#1689252482
+git ff
+#1689252493
+git mergetool
+#1689252522
+git rebase -i
+#1689252533
+git rebase --continue
+#1689252539
+git st
+#1689252544
+git l
+#1689252548
+git pushthis 
+#1689252560
+git st
+#1689252563
+ls .
+#1689252566
+ls -a .
+#1689252576
+vi ~/.blazerc
+#1689252586
+git add .blazerc
+#1689252594
+git add .blazerc -f
+#1689252620
+vi README.md 
+#1689252643
+work
+#1689252650
+cd -
+#1689252654
+ls Desktop/
+#1689252661
+ls Downloads/
+#1689252681
+xdg-open hotel-bookings.pdf
+#1689252698
+read hotel-bookings.pdf
+#1689252703
+ls
+#1689252719
+cd test_buckets/
+#1689252720
+ls
+#1689252725
+ls -la
+#1689252732
+ls gargnitin-fuse-test-bucket1-mount/
+#1689252736
+lsfusemnts 
+#1689252744
+htop -F gcsfuse
+#1689252767
+cd ..
+#1689252779
+du -chs test_buckets/
+#1689252785
+rm -rfv test_buckets/
+#1689252788
+ls
+#1689252799
+du -csh previous-homedir
+#1689252813
+sudo du -csh previous-homedir
+#1689252840
+ls previous-homedir/
+#1689252846
+ls -la previous-homedir/
+#1689252861
+bcompare previous-homedir/.vimrc ~/.vimrc
+#1689253016
+bcompare previous-homedir/ ~
+#1689253308
+rm -rfv previous-homedir/
+#1689253319
+sl
+#1689253320
+ls
+#1689253324
+fdisk
+#1689253326
+df
+#1689253330
+df -hs
+#1689253333
+df -h
+#1689253370
+cd /
+#1689253379
+sudo du -csh *
+#1689253390
+sudo du -csh * -s
+#1689253401
+sudo du -csh * -sort
+#1689253409
+sudo du -csh *
+#1689253421
+cd ~
+#1689253430
+sudo du -csh *
+#1689253455
+sudo du -csh * --all
+#1689253458
+man du
+#1689253594
+cd work/
+#1689253596
+sudo du -csh * --all
+#1689253599
+sudo du -csh * 
+#1689253605
+cd cloud/
+#1689253606
+sudo du -csh * 
+#1689253614
+cd transfer/
+#1689253617
+sudo du -csh * 
+#1689253622
+cd appliance/
+#1689253623
+sudo du -csh * 
+#1689253634
+cd zimbrage_os/
+#1689253635
+sudo du -csh * 
+#1689253639
+cd zim
+#1689253640
+cd zimbrage/
+#1689253641
+cd zim
+#1689253644
+sudo du -csh * 
+#1689253658
+rm *
+#1689253660
+sudo du -csh * 
+#1689253663
+cd ..
+#1689253664
+sudo du -csh * 
+#1689253668
+cd .
+#1689253671
+cd ..
+#1689253671
+ls
+#1689253791
+sudo du -csh * 
+#1689253804
+cd sit
+#1689253806
+cd site-edge/
+#1689253808
+sudo du -csh * 
+#1689253811
+cd tasks/
+#1689253812
+sudo du -csh * 
+#1689253817
+cd firmware-update-sandboxing/
+#1689253819
+sudo du -csh * 
+#1689253849
+cd backups_from_superboy/
+#1689253850
+ls
+#1689253854
+sudo du -csh * 
+#1689253862
+cd ../
+#1689253868
+rm -rfv backups_from_superboy/
+#1689253879
+ls
+#1689253890
+bcompare 20221011-sandboxing_code_changes.patch
+#1689253903
+cd ../..
+#1689253907
+sudo du -csh * 
+#1689253911
+cd ..
+#1689253913
+sudo du -csh * 
+#1689253919
+cd oncall_work/
+#1689253921
+sudo du -csh * 
+#1689253928
+cd primary/202303/triages/session_US-5393-b278_issues/
+#1689253929
+ls
+#1689253931
+sudo du -csh * 
+#1689253935
+cd fs40_not_connecting_to_interconnect/
+#1689253937
+sudo du -csh * 
+#1689253951
+rm -rfv diags-US-5393-b278-20230302-2355
+#1689253955
+cd ../../..
+#1689253962
+sudo du -csh * 
+#1689253967
+cd ...
+#1689253969
+cd ..
+#1689253970
+sudo du -csh * 
+#1689253973
+cd ..
+#1689253977
+sudo du -csh * 
+#1689253988
+cd storage/client/gcsfuse/
+#1689254089
+cd tasks/oncall/20230626/b_289043756/
+#1689254090
+ls
+#1689254107
+rm sample_10g_obj sample_1g_obj 
+#1689254113
+cd ../../../..
+#1689254118
+sudo du -csh * 
+#1689254125
+cd -
+#1689254127
+sudo du -csh * 
+#1689254134
+cd backups/
+#1689254136
+sudo du -csh * 
+#1689254141
+rm sample_1*
+#1689254143
+sudo du -csh * 
+#1689254145
+cd ../..
+#1689254146
+ls
+#1689254149
+sudo du -csh * 
+#1689254152
+cd ../..
+#1689254153
+sudo du -csh * 
+#1689254158
+cd gzip/
+#1689254159
+ls
+#1689254165
+cd expt/temp/
+#1689254166
+ls
+#1689254168
+cd ..
+#1689254169
+ls
+#1689254175
+sudo du -csh * 
+#1689254200
+vi ~/.bash_history +/^yes
+#1689254212
+ls
+#1689254314
+echo 'yes This is a test file | head -C 21000000 > test_2.1GB.txt' > create_test_2.1GB.sh
+#1689254319
+cat create_test_2.1GB.sh
+#1689254334
+rm test_2.1GB.bin test_2.1GB.txt
+#1689254336
+ls
+#1689254388
+echo 'yes This is a test file | head -C 2100000 > test_2.1MB.txt' > create_test_2.1MB.sh
+#1689254396
+vi create_test_2.1GB.sh
+#1689254419
+chmod +X create_test_2.1*
+#1689254423
+ls -la
+#1689254433
+rm test_2.1MB.txt test_2.1MB-modified.txt
+#1689254437
+ls
+#1689254445
+ls -la
+#1689254458
+chmod +x create_test_2.1*
+#1689254459
+ls -la
+#1689254466
+./create_test_2.1MB.sh 
+#1689254479
+nautilus .
+#1689254523
+./create_test_2.1MB.sh 
+#1689254526
+ls -lah
+#1689254543
+rm test test_2.1MB.gztest_2.1MB.txt
+#1689254549
+rm test test_2.1MB.gz test_2.1MB.txt
+#1689254552
+ls
+#1689254562
+sudo du -csh * 
+#1689254566
+cd ../../..
+#1689254568
+sudo du -csh * 
+#1689254576
+cd ../../../../
+#1689254578
+cd ..
+#1689254580
+sudo du -csh * 
+#1689254601
+exit

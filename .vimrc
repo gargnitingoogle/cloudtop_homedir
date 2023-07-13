@@ -15,9 +15,31 @@ set nocompatible
 se nu
 se relativenumber
 set nocompatible
+set hlsearch
 
 " Use the 'google' package by default (see http://go/vim/packages).
 source /usr/share/vim/google/google.vim
+" Glug g4
+Glug g4
+Glug codefmt
+Glug codefmt-google
+augroup autoformat_settings
+  autocmd FileType borg,gcl,patchpanel AutoFormatBuffer gclfmt
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,javascript,typescript AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType jslayout AutoFormatBuffer jslfmt
+  autocmd FileType markdown AutoFormatBuffer mdformat
+  autocmd FileType ncl AutoFormatBuffer nclfmt
+  autocmd FileType python AutoFormatBuffer pyformat
+  autocmd FileType soy AutoFormatBuffer soyfmt
+  autocmd FileType textpb AutoFormatBuffer text-proto-format
+  autocmd FileType proto AutoFormatBuffer protofmt
+  autocmd FileType sql AutoFormatBuffer format_sql
+  " autocmd FileType html,css,json AutoFormatBuffer js-beautify
+augroup END
 
 Glug whitespace !highlight
 
@@ -103,5 +125,4 @@ syntax on
 "Short cut to save the file on Ctrl+s
 :imap <C-s> <Esc>:w<CR>a
 :nmap <C-s> :w<CR>
-set hlsearch
 
