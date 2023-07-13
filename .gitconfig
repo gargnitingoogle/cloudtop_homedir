@@ -7,7 +7,8 @@ delbranch=branch --delete
 difftool=difftool -y
 ff=commit --ff
 ls=branch -l
-l=log --oneline --decorate=full -1
+l=log --oneline --decorate=full -10
+l1=log --oneline --decorate=full -1
 l5=log --oneline --decorate=full -5
 l10=log --oneline --decorate=full -10
 l15=log --oneline --decorate=full -15
@@ -16,6 +17,7 @@ l25=log --oneline --decorate=full -25
 pushthis=!git push -u origin $(git branch --show-current)
 st=status
 up=checkout
+
 
 [user]
 	email = gargnitin@google.com
