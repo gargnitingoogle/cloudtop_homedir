@@ -15980,3 +15980,693 @@ fusermount -u ./test_buckets/gargnitin-bucket-mounted/
 htop -F  gcsfuse
 #1689227782
 htop
+#1689244194
+localwork 
+#1689244210
+testbucket
+#1689244216
+echo $testbucket
+#1689244233
+git diff
+#1689244243
+bcompare
+#1689244331
+which bcompare
+#1689244407
+which bc
+#1689244442
+git config --global diff.tool bc
+#1689244451
+git config --global difftool.bc.trustExitCode true
+#1689244463
+git config --global merge.tool bc
+#1689244469
+git config --global mergetool.bc.trustExitCode true
+#1689244476
+git diff
+#1689244486
+git difftool 
+#1689244607
+git help difftool 
+#1689244624
+vi ~/.gitconfig
+#1689244688
+vi ~/.gitignore 
+#1689244706
+git ls
+#1689244708
+git st
+#1689244731
+vi ~/.gitignore 
+#1689244771
+git st
+#1689244792
+cd ~
+#1689244794
+git st
+#1689244800
+git diff .gitignore
+#1689244804
+git difftool .gitignore
+#1689244834
+git st
+#1689244846
+git add *
+#1689244865
+git config advice.addIgnoredFile false
+#1689244866
+git add *
+#1689244876
+git config advice.addIgnoredFile true
+#1689244878
+git add *
+#1689244882
+git st
+#1689244895
+git add .bash_aliases .gitignore .gitconfig
+#1689244898
+git st
+#1689244922
+git ci -m 'Updates' && git push origin $(git curbranch)
+#1689245102
+git st
+#1689245107
+git xl
+#1689245117
+vi ~/.bash_aliases
+#1689245131
+vi ~/.gitconfig 
+#1689245161
+git xl
+#1689245166
+vi ~/.gitconfig 
+#1689245185
+git xl
+#1689245192
+vi ~/.gitconfig 
+#1689245203
+git xl
+#1689245206
+git st
+#1689245215
+git difftool 
+#1689245259
+vi ~/.gitconfig
+#1689245281
+git config --global difftool.prompt false
+#1689245284
+vi ~/.gitconfig
+#1689245296
+git difftool 
+#1689245324
+git ci -m 'more changes'
+#1689245332
+git add .gitconfig
+#1689245336
+git ci -m 'more changes'
+#1689245338
+git xl
+#1689245359
+vi ~/.gitconfig
+#1689245426
+git xl
+#1689245433
+vi ~/.gitconfig
+#1689245447
+git xl
+#1689245452
+git st
+#1689245465
+vi ~/.gitconfig
+#1689245496
+git st
+#1689245502
+git add .gitconfig
+#1689245504
+git amend
+#1689245512
+git ls
+#1689245515
+git xl
+#1689245538
+vi ~/.bash_aliases
+#1689245574
+. ~/.bash_aliases
+#1689245576
+gitconfig 
+#1689245586
+git st
+#1689245590
+git add .
+#1689245592
+git st
+#1689245603
+git ci -m 'more changes'
+#1689245607
+git ls
+#1689245613
+git xl
+#1689245624
+git rebase -i
+#1689245637
+git rebase -i origin/main
+#1689245668
+git las5
+#1689245672
+git xl
+#1689245676
+gitconfig 
+#1689245690
+git pushthis 
+#1689245702
+gitconfig 
+#1689245767
+git pushthis 
+#1689245773
+gitconfig 
+#1689245783
+git pushthis 
+#1689245801
+git xl
+#1689245805
+git l25
+#1689245914
+ls -a
+#1689245931
+bcompare ~/.gitconfig .git/gitconfig
+#1689245953
+touch .git/gitconfig
+#1689245955
+bcompare ~/.gitconfig .git/gitconfig
+#1689246001
+git xl
+#1689246012
+bcompare ~/.gitconfig .git/gitconfig
+#1689246039
+git xl
+#1689246046
+bcompare ~/.gitconfig .git/gitconfig
+#1689246073
+mv .git/gitconfig .git/config
+#1689246078
+bcompare ~/.gitconfig .git/config
+#1689246083
+git xl
+#1689246106
+vi ~/.gitignore 
+#1689246137
+echo ~/.gitignore.git/config >> ~/.gitignore 
+#1689246145
+vi ~/.gitignore 
+#1689246167
+git st
+#1689246172
+git difftool 
+#1689246192
+git add .
+#1689246194
+ls
+#1689246197
+git st
+#1689246223
+git amend && git pushthis 
+#1689246244
+git xl
+#1689246248
+git st
+#1689246258
+git l25
+#1689246263
+git pull origin
+#1689246287
+ls -la
+#1689246293
+cat ~/.git/config
+#1689246356
+git l5
+#1689246394
+git config --list
+#1689246418
+git config --local --list
+#1689246437
+git pull origin
+#1689246546
+ls -la .git
+#1689246557
+ls -la .git/config
+#1689246563
+cat .git/config
+#1689246598
+src
+#1689246636
+vi .git/config
+#1689246643
+cd -
+#1689246649
+vi .git/config
+#1689246746
+git st
+#1689246749
+git l5
+#1689246757
+cat ~/.gitignore 
+#1689246762
+git pushthis 
+#1689246774
+git pull
+#1689246779
+git ls
+#1689246792
+git pull origin main
+#1689246816
+git mergetool
+#1689246835
+vi ~/.gitconfig +:16
+#1689246856
+git mergetool
+#1689246909
+git st
+#1689246921
+git rebase --continue
+#1689246929
+git pushthis 
+#1689246934
+git l25
+#1689247014
+ls
+#1689247024
+git st ~/.bash_history 
+#1689247038
+vi ~/.gitignore 
+#1689247051
+git st
+#1689247053
+exit
+#1689244064
+l
+#1689244068
+install
+#1689244075
+buildimaedgeForVm
+#1689244081
+downloadOnboardBinary
+#1689244091
+src
+#1689244095
+lsfusemnts 
+#1689244098
+dlv
+#1689244102
+work
+#1689244108
+install gdb
+#1689244130
+gzip
+#1689244131
+work
+#1689244169
+src
+#1689244174
+cd ../../tasks
+#1689244191
+bash
+#1689247055
+exit
+#1689228017
+docker run gcsfuse/go1.20.4-alpine gargnitin-test-fuse-bucket1
+#1689228153
+mkdir /tmp/gargnitin-test-fuse-bucket1-mount
+#1689228166
+docker run gcsfuse/go1.20.4-alpine gargnitin-test-fuse-bucket1 /tmp/gargnitin-test-fuse-bucket1-mount
+#1689228204
+docker run gcsfuse/go1.20.4-alpine gargnitin-test-fuse-bucket1 
+#1689228555
+docker run gcsfuse/go1.20.4-alpine -ti /bin/bash
+#1689228572
+docker run -ti gcsfuse/go1.20.4-alpine
+#1689228769
+type load
+#1689228770
+type loadf
+#1689228773
+type loadfuse1test 
+#1689236086
+gcsfusetestenv() {    bucket=gargnitin-fuse-test-bucket1 && mountdir=~/test_buckets && mountpath=$mountdir/$bucket-mount && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && cd ~/src/gcsfuse; }
+#1689236115
+gcsfusetestenv && go run . --debug_fuse --debug_fuse_errors --debug_gcs --debug_http --log-file=$logpath  $bucket $mountpath && tail -fv -n 20 $logpath
+#1689236991
+cat file:///etc/password
+#1689236995
+cat /etc/password
+#1689244047
+ls
+#1689244058
+bash
+#1689247057
+exit
+#1689228031
+cd ~/work/cloud/storage/client/gcsfuse/
+#1689228031
+ls
+#1689228037
+cd src/gcsfuse/
+#1689228038
+s
+#1689228039
+ls
+#1689228043
+type loadfuse1test 
+#1689228049
+loadfuse1test
+#1689228465
+cat Dockerfile 
+#1689228523
+docker ls
+#1689228527
+docker container ls
+#1689228618
+vi Dockerfile 
+#1689228625
+git ls
+#1689228634
+git up gargnitin_test_change
+#1689228639
+hit st
+#1689228643
+git st
+#1689228646
+git diff
+#1689228653
+git up master
+#1689228656
+git st
+#1689228677
+git l5
+#1689228689
+git pull origin master
+#1689228693
+git l5
+#1689228698
+git l10
+#1689228705
+git st
+#1689228712
+git ls
+#1689228718
+git up gargnitin_test_change
+#1689228719
+ls
+#1689228728
+vi Dockerfile 
+#1689228804
+git images ls
+#1689228807
+git image ls
+#1689228814
+docker image ls
+#1689228852
+docker built -t gcsfuse/go1.20.4-alpine/mount-gargnitin-fuse-test-bucket1 .
+#1689228859
+docker build -t gcsfuse/go1.20.4-alpine/mount-gargnitin-fuse-test-bucket1 .
+#1689228961
+docker images ls
+#1689228966
+docker image ls
+#1689228976
+docker run gcsfuse/go1.20.4-alpine/mount-gargnitin-fuse-test-bucket1
+#1689229144
+vi Dockerfile 
+#1689229179
+./gcsfuse --help 
+#1689229201
+git st
+#1689229210
+git co Dockerfile
+#1689229213
+git st
+#1689229225
+git pull
+#1689229281
+git config --global pull.rebase true
+#1689229285
+git pull
+#1689229290
+git st
+#1689229296
+git ci
+#1689229305
+git add internal/storage/bucket_handle.go
+#1689229328
+git ci -m 'Enable ReadCompressed by default for all objects'
+#1689229332
+git l5
+#1689229336
+git pull
+#1689229340
+git l5
+#1689229355
+git diff 3399736d..07c9399f
+#1689229386
+go clean
+#1689229390
+go build 
+#1689229399
+vi Dockerfile 
+#1689229427
+gcloud -q auth application-default login
+#1689229463
+gcloud set project gcs-fuse-test
+#1689229474
+gcloud projects set gcs-fuse-test
+#1689229480
+gcloud project set gcs-fuse-test
+#1689229499
+gclout projects help
+#1689229502
+gcloud projects help
+#1689229517
+gcloud project help
+#1689229530
+gcloud help
+#1689229603
+gcloud config set project gcs-fuse-test
+#1689229634
+docker build . -t gcsfuse/go1.20.4-alpine
+#1689229761
+docker run gcsfuse/go1.20.4-alpine --name mygcsfuse
+#1689229767
+docker ps
+#1689229774
+docker run -d gcsfuse/go1.20.4-alpine --name mygcsfuse
+#1689229777
+docker ps
+#1689229803
+docker run -d --name mygcsfuse gcsfuse/go1.20.4-alpine
+#1689229807
+docker ps -a
+#1689229876
+docker run -d --name mygcsfuse gcsfuse/go1.20.4-alpine
+#1689229915
+docker exec -it mygcsfuse /bin/bash
+#1689229932
+docker run --name mygcsfuse gcsfuse/go1.20.4-alpine
+#1689229952
+docker rm mygcsfuse
+#1689229957
+docker ps -a
+#1689229967
+docker rm -a
+#1689229973
+docker kill -a
+#1689229979
+docker kill --all
+#1689229983
+docker kill
+#1689229993
+docker kill help
+#1689229998
+docker help kill 
+#1689230013
+docker kill clever_keller focused_vaughan
+#1689230020
+dorm clever_keller focused_vaughan
+#1689230024
+docker rm clever_keller focused_vaughan
+#1689230046
+docker run -d helloworld
+#1689230061
+docker login
+#1689230080
+docker run -d helloworld
+#1689230099
+vi /usr/local/google/home/gargnitin/.docker/config.json
+#1689230113
+docker run -d helloworld
+#1689230127
+docker login
+#1689230138
+whoami
+#1689230143
+docker run -d helloworld
+#1689230261
+docker run  helloworld
+#1689230270
+USER=gargnitindocker run  helloworld
+#1689230274
+USER=gargnitin docker run  helloworld
+#1689230283
+docker help
+#1689230296
+docker help | grep -i user
+#1689230337
+docker version
+#1689230349
+docker run ubuntu
+#1689230370
+docker ps -a
+#1689230379
+docker run -d ubuntu
+#1689230382
+docker ps -a
+#1689230443
+docker run -dit ubuntu
+#1689230445
+docker ps -a
+#1689230466
+docker attach dreamy_shaw
+#1689230491
+docker images
+#1689230513
+docker run -dit gcsfuse/go1.20.4-alpine
+#1689230517
+docker ps -a
+#1689230532
+docker run -it gcsfuse/go1.20.4-alpine
+#1689230575
+echo $USER
+#1689230594
+docker run -it gcsfuse/go1.20.4-alpine/mount-gargnitin-fuse-test-bucket1
+#1689234938
+vi ~/.bash_history +/yes
+#1689234988
+cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/
+#1689234989
+ls
+#1689234993
+cd 202307-08-gzip-support
+#1689234995
+ls
+#1689235034
+yes This is a text file. | head -c 2100000 > test_2.1MB.txt
+#1689235044
+yes This is a text file. | head -c 2100000000 > test_2.1GB.txt
+#1689239131
+echo alias work='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks' >> ~/.bash_aliases
+#1689239139
+tail ~/.bash_aliases 
+#1689239185
+echo alias work="'"cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks"'" >> ~/.bash_aliases
+#1689239186
+tail ~/.bash_aliases 
+#1689239199
+. ~/.bahs_al
+#1689239203
+
+#1689239224
+. ~/.bahs_aliases
+#1689239230
+. ~/.bash_aliases
+#1689239242
+echo alias work="'"cd ~/DriveFileStream/My\\ Drive/docs/work/cloud/storage/gcsfuse/tasks"'" >> ~/.bash_aliases
+#1689239247
+. ~/.bash_aliases
+#1689239256
+vi ~/.bash_aliases +:$
+#1689239270
+. ~/.bash_aliases
+#1689239273
+work
+#1689239275
+cd -
+#1689239278
+work
+#1689239281
+ls
+#1689239330
+echo gzip="'"work && cd 202307-08-gzip-support"'" >> ~/.bash_aliases && . ~/.bash_aliases 
+#1689239372
+echo gzip="'"cd ~/DriveFileStream/My\\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-08-gzip-support"'" >> ~/.bash_aliases && . ~/.bash_aliases 
+#1689239377
+vi ~/.bash_aliases +:$
+#1689239401
+. ~/.bash_aliases
+#1689239404
+gzip
+#1689239407
+ls
+#1689239441
+gsutil ls gs://gargnitin-fuse-test-bucket1
+#1689239481
+echo testbucket=gargnitin-fuse-test-bucket1 >> ~/.bash_aliases & . ~/.bash_aliases 
+#1689239500
+echo testbucket=gargnitin-fuse-test-bucket1 >> ~/.bash_aliases && . ~/.bash_aliases 
+#1689239513
+tail -n 1 ~/.bash_aliases
+#1689239520
+tail -n 5 ~/.bash_aliases
+#1689239604
+cp ~/.bash_aliases ~/.bash_aliases.bak
+#1689239618
+head -n -2 ~/.bash_aliases
+#1689239656
+tail -n 5 ~/.bash_aliases
+#1689239669
+sed '$d' ~/.bash_aliases
+#1689239675
+tail -n 5 ~/.bash_aliases
+#1689239680
+sed -i '$d' ~/.bash_aliases
+#1689239681
+tail -n 5 ~/.bash_aliases
+#1689239687
+lsfu
+#1689239688
+lsfusemnts 
+#1689239700
+unmount /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount
+#1689239704
+umount /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount
+#1689239707
+lsfusemnts 
+#1689239734
+type loadfuse1test 
+#1689239749
+geany ~/.bash_aliases &
+#1689244567
+word
+#1689244569
+work
+#1689244572
+ls
+#1689244663
+git help difftool
+#1689246572
+src
+#1689246606
+. ~/.bash_aliases
+#1689246609
+src
+#1689246616
+cat .git/config
+#1689247060
+exit
+#1689228071
+tail -f /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-logfile.log
+#1689228079
+vi /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-logfile.log
+#1689247068
+exit
+#1689235022
+vi ~/.bash_history +/^yes
+#1689247075
+exit

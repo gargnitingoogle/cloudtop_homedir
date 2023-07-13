@@ -6,6 +6,7 @@ function genericAliases() {
 	alias ......='cd ../../../../..'
 	alias .......='cd ../../../../../..'
 	alias ........='cd ../../../../../../..'
+        alias aliases='vi ~/.bash_aliases'
 	alias cls='clear'
 	alias tailf='tail -f'
 	alias htop='htop -u $USER -t'
@@ -74,7 +75,7 @@ function gcsfuseSrcAliases() {
 	alias localwork='cd ~/work/cloud/storage/client/gcsfuse/tasks'
 	alias work='cd /usr/local/google/home/gargnitin/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks'
 	alias golang='cd /usr/local/google/home/gargnitin/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-golang1.20.5'
-	alias gzip='cd /usr/local/google/home/gargnitin/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-08-gzip-support'
+	alias encoding='cd /usr/local/google/home/gargnitin/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-08-gzip-support'
 }
 
 function gcsfuseTestAliases() {
