@@ -16670,3 +16670,41 @@ exit
 vi ~/.bash_history +/^yes
 #1689247075
 exit
+#1689247223
+cd ~
+#1689247224
+ls
+#1689247226
+git st
+#1689247231
+git difftool 
+#1689247276
+git add . && git ci -m 'more changes' && git pushthis 
+#1689247306
+git add . && git ci -m 'more changes' && git pushthis --no-verify
+#1689247317
+git add . && git ci -m 'more changes' --no-verify && git pushthis --no-verify
+#1689247325
+git xl
+#1689247332
+git l25
+#1689247373
+git branch testbranch
+#1689247385
+vi ~/.gitconfig
+#1689247434
+git l
+#1689247437
+git st
+#1689247452
+git co testbranch 
+#1689247456
+git add .
+#1689247464
+git ci -m 'more changes'
+#1689247466
+git l
+#1689247471
+git pushthis 
+#1689248105
+exit
