@@ -8,5 +8,6 @@
 !*.bash_aliases
 !*.bash_history
 !.gitignore
+!.gitconfig
 
 # etc...
