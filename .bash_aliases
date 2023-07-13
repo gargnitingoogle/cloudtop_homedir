@@ -11,6 +11,7 @@ function genericAliases() {
 	alias htop='htop -u $USER -t'
 	alias l='ls -lah'
 	alias install='sudo apt-get -y install'
+        alias gitconfig='vi ~/.gitconfig'
 }
 
 genericAliases

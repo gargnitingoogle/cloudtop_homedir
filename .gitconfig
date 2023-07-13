@@ -1,18 +1,22 @@
 [alias]
+amend=commit --amend
 ci=commit
 co=checkout
 curbranch=branch --show-current
 delbranch=branch --delete
 difftool=difftool -y
+ff=commit --ff
 ls=branch -l
 l=log --oneline --decorate=full -1
 l5=log --oneline --decorate=full -5
 l10=log --oneline --decorate=full -10
 l15=log --oneline --decorate=full -15
 l20=log --oneline --decorate=full -20
+l25=log --oneline --decorate=full -25
 pushthis=push -u origin $(git branch --show-current)
 st=status
 up=checkout
+xl=log origin/main~1.. --oneline --decorate=full 
 
 [user]
 	email = gargnitin@google.com
@@ -33,3 +37,5 @@ up=checkout
 	tool = bc
 [mergetool "bc"]
 	trustExitCode = true
+[difftool]
+	prompt = false
