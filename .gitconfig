@@ -7,6 +7,7 @@ curbranch=branch --show-current
 delbranch=branch -D
 delremote=branch -D --remote
 difftool=difftool -y
+droplast=reset --soft HEAD~1
 ff=pull --ff
 fixup=commit --fixup
 ls=branch -l
