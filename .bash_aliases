@@ -76,9 +76,9 @@ function gcsfuseSrcAliases() {
 	alias lsfusemnts='cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2'
 	alias dlv='~/go/bin/dlv'
 	alias localwork='cd ~/work/cloud/storage/client/gcsfuse/tasks'
-	alias work='cd /usr/local/google/home/gargnitin/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks'
-	alias golang='cd /usr/local/google/home/gargnitin/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-golang1.20.5'
-	alias encoding='cd /usr/local/google/home/gargnitin/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-08-gzip-support'
+	alias work='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks'
+	alias golang='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-golang1.20.5'
+	alias encoding='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-08-gzip-support'
 }
 
 function gcsfuseTestAliases() {
