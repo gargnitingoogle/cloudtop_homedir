@@ -17342,3 +17342,1393 @@ cd ..
 sudo du -csh * 
 #1689254601
 exit
+#1689566856
+gcert
+#1689566888
+localwork 
+#1689566889
+l
+#1689566890
+cd ..
+#1689566890
+ls
+#1689566894
+cd src/
+#1689566894
+ls
+#1689566900
+git clone https://github.com/Azure/azure-storage-fuse
+#1689566905
+l
+#1689566907
+scd azure-storage-fuse/
+#1689566908
+ls
+#1689566938
+grep -rn 'disable-compression'
+#1689567012
+vi config.go +:520
+#1689567030
+vi azure-storage-fuse/component/azstorage/config.go +:520
+#1689567096
+grep -rn 'onfig.disableCompression'
+#1689567107
+grep -rn 'disableCompression'
+#1689567140
+vi azure-storage-fuse/component/azstorage/azstorage.go +:636
+#1689567178
+vi azure-storage-fuse/component/azstorage/config.go +:477
+#1689567227
+grep -rn 'disableCompression' *
+#1689567235
+grep -rn 'disableCompression' azure-storage-fuse/*
+#1689568177
+exit
+#1689305334
+hgd gcsfuse-plx-alerts
+#1689305338
+hg st
+#1689305341
+hg xl
+#1689305510
+blaze build blobstore2/client/gcsfuse/plx/performance_alerts:alerts_gen && blaze build blobstore2/client/gcsfuse/plx/performance_alerts:alerts_gen_test && blaze run blaze build blobstore2/client/gcsfuse/plx/performance_alerts:alerts_gen_test --test_filter=*bandwidth_rand_write_50mb*
+#1689306462
+blaze build blobstore2/client/gcsfuse/plx/performance_alerts:alerts_gen && blaze build blobstore2/client/gcsfuse/plx/performance_alerts:alerts_gen_test && blaze run  blobstore2/client/gcsfuse/plx/performance_alerts:alerts_gen_test --test_filter=*bandwidth_rand_write_50mb*
+#1689568186
+exit
+#1689256086
+git .
+#1689256088
+git st
+#1689256106
+git add .vimrc
+#1689256114
+git difftool --cached
+#1689256146
+git ci -m 'more changes' && git pushthis 
+#1689256154
+git xl
+#1689256161
+git l10
+#1689256185
+git pull origin
+#1689256190
+git st
+#1689256221
+git add .bash_history && git ci -m 'add more bash history' && git pushthis 
+#1689256225
+git st
+#1689256231
+git pull origin
+#1689256236
+git l10
+#1689256245
+git ls
+#1689256255
+git fetch origin --all
+#1689256258
+git fetch origin 
+#1689256265
+git fetch --all
+#1689256268
+git prunt
+#1689256270
+git prune
+#1689256279
+git l25
+#1689256317
+cat .git/config
+#1689256343
+git branch --list
+#1689256346
+git branch --list --remote
+#1689256403
+git l25
+#1689256426
+git co origin/main
+#1689256431
+git l25
+#1689256443
+git ls
+#1689256449
+git co main
+#1689256452
+git l25
+#1689256463
+git pull
+#1689256467
+git l25
+#1689256478
+git co testbranch 
+#1689256481
+git l25
+#1689256484
+git l
+#1689256494
+git rebase origin/main
+#1689256499
+git l25
+#1689256516
+git pushthis 
+#1689256529
+git rebase origin/main
+#1689256533
+git rebase origin/testbranch 
+#1689256549
+git graph
+#1689256557
+gitview
+#1689256559
+git view
+#1689256563
+git help
+#1689256849
+cat .git/config
+#1689256875
+git rebase origin/main
+#1689256881
+git l25
+#1689256889
+git pushthis 
+#1689256912
+git pull
+#1689256925
+git l25
+#1689256965
+git rebase main
+#1689256989
+git pull --reapply-cherry-picks
+#1689257073
+git l25
+#1689257095
+git diff HEAD origin/testbranch
+#1689257102
+git difftool HEAD origin/testbranch
+#1689257144
+git rename origin/testbranch && git l25
+#1689257153
+git co origin/testbranch && git l25
+#1689257306
+git rebase origin/main && git l25
+#1689257319
+git difftool origin/main origin/testbranch 
+#1689257380
+git diff origin/main origin/testbranch 
+#1689257414
+git difftool origin/main origin/testbranch 
+#1689257462
+git diff origin/main origin/testbranch &> branchdiff.patch
+#1689257471
+bcompare branchdiff.patch 
+#1689257494
+git l2
+#1689257495
+git l25
+#1689257519
+git import branchdiff.patch
+#1689257580
+git apply branchdiff.patch
+#1689257694
+git st
+#1689257701
+git l25
+#1689257713
+git ls
+#1689257815
+git st
+#1689257974
+vi branchdiff.patch +:30
+#1689258347
+git co testbranch 
+#1689258380
+git branch newtestbranch  957a84b
+#1689258384
+git l10
+#1689258396
+git co newtestbranch
+#1689258398
+git l10
+#1689258415
+git diff origin/testbranch HEAD
+#1689258435
+git diff origin/testbranch
+#1689258440
+git difftool origin/testbranch
+#1689258445
+git difftool origin/main
+#1689258473
+git pushthis 
+#1689258483
+git l10
+#1689258498
+git difftool testbranch 
+#1689258530
+git branch --delete testbranch
+#1689258561
+git branch --D testbranch
+#1689258568
+git branch -D testbranch
+#1689258581
+vi ~/.gitcobfi
+#1689258587
+vi ~/.gitconfig
+#1689258605
+git ls
+#1689258613
+git ls --remote
+#1689258627
+git difftool origin/testbranch origin/newtestbranch
+#1689258637
+git l
+#1689258655
+git delbranch --remote testbranch
+#1689258661
+git delbranch --remote origin/testbranch
+#1689258670
+git ls --remote
+#1689258799
+git st
+#1689258809
+git difftool
+#1689258848
+vi gitcon
+#1689258854
+vi .gitconfig
+#1689258874
+git diff
+#1689258880
+git ls
+#1689258888
+git add .
+#1689258890
+git st
+#1689258919
+git ci -m 'added delete aliases to gitconfig' && git pushthis 
+#1689258931
+git l
+#1689259023
+git ls
+#1689259027
+git co main
+#1689259029
+git ls
+#1689259036
+git delbranch newtestbranch
+#1689259051
+git delremote origin/newtestbranch
+#1689259059
+git alias
+#1689259062
+git aliases
+#1689259069
+vi ~/.gitconfig
+#1689259117
+git st
+#1689259120
+git ls
+#1689259122
+git l
+#1689259150
+git st
+#1689259166
+git add . && git commit -m 'more changes' && git pushthis 
+#1689259185
+git l
+#1689259195
+git rebase origin/main
+#1689259202
+git fetch main
+#1689259208
+git fetch origin main
+#1689259214
+git l
+#1689259221
+git rebase origin/main
+#1689259229
+git l
+#1689259239
+git st
+#1689259257
+git delremote origin/newtestbranch
+#1689259261
+git l
+#1689259269
+git ls
+#1689259278
+git ls --remtoe
+#1689259281
+git ls --remote
+#1689259286
+git st
+#1689259333
+git l
+#1689259402
+vi .git/hooks/pre-receive
+#1689259430
+git branch testb
+#1689259435
+git pushthis 
+#1689259441
+git co testb
+#1689259444
+git pushthis 
+#1689259469
+git ls --remote
+#1689259478
+git difftool origin/main origin/testb
+#1689259486
+git delremote origin/testb
+#1689259493
+git ls --remote
+#1689259532
+git ls
+#1689259537
+git co main
+#1689259540
+git ls
+#1689259545
+git delbranch testb
+#1689259548
+git ls
+#1689259551
+git st
+#1689259564
+git hooks
+#1689259567
+git hook
+#1689259574
+git hook list
+#1689259584
+git hook list pre-receive
+#1689259614
+chmod +x .git/hooks/pre-receive
+#1689259619
+git hook list pre-receive
+#1689259630
+vi .git/config
+#1689259649
+git ls
+#1689259653
+git ls --remote
+#1689259659
+git branch b
+#1689259661
+git up b
+#1689259683
+git ls
+#1689259687
+git pushthis 
+#1689259696
+git co main
+#1689259703
+git delbranch b
+#1689259708
+git delbranch --remote b
+#1689259723
+git delremote origin/b
+#1689259730
+git ls
+#1689259734
+git ls --remote
+#1689260022
+git help branch | grep -i rename
+#1689297197
+git st
+#1689297201
+git pull origin
+#1689297207
+git ls
+#1689297212
+git ls --remote
+#1689297221
+git delremote origin/b
+#1689297226
+git delremote origin/testb 
+#1689297229
+git ls --remote
+#1689297232
+git ls 
+#1689568188
+exit
+#1689570471
+gcloud compute --project "gcs-fuse-test" ssh --zone "us-central1-c" "gargnitin-ubuntu2204-golang12005" -- -o ProxyCommand='corp-ssh-helper %h %p'
+#1689590582
+sudo docker run -it golang:1.20.6  cat /etc/os-release  && ldd --version
+#1689657692
+ls -la .
+#1689657694
+ls -la ~
+#1689657704
+ls -la ~/..
+#1689657667
+man chown
+#1689657977
+man useradd
+#1689661735
+getpwnam
+#1689664240
+exi
+#1689664241
+exit
+#1689589080
+ls
+#1689589087
+docker ps -a
+#1689589093
+docker help
+#1689589141
+docker run help
+#1689589148
+docker help run
+#1689589184
+docker run golang-1.20.5
+#1689589216
+docker run -dit golang-1.20.5 --name golang-1.20.5-container
+#1689589227
+docker login
+#1689589232
+docker run -dit golang-1.20.5 --name golang-1.20.5-container
+#1689589270
+docker run -dit golang:1.20.5 --name golang-1.20.5-container
+#1689589378
+docker run -dit --name golang-1.20.5-container golang:1.20.5
+#1689589384
+docker image ls
+#1689589394
+docker ps -a
+#1689589430
+docker exec golang-1.20.5-container -it /bin/bash
+#1689589472
+docker exec golang-1.20.5-container  /bin/bash
+#1689589485
+docker exec -it golang-1.20.5-container  /bin/bash
+#1689656411
+man apt-get
+#1689656424
+man apt-get | grep -A 2 -B 2allow
+#1689656427
+man apt-get | grep -A 2 -B 2 allow
+#1689663333
+localwork 
+#1689663335
+gcsfuse
+#1689663343
+srr
+#1689663344
+src
+#1689663346
+ls
+#1689663355
+git l5
+#1689663514
+git difftool 
+#1689663749
+git st
+#1689663755
+git add .
+#1689663766
+git ci -m 'temp change'
+#1689663771
+git l5
+#1689663776
+git pull origin
+#1689663780
+git l5
+#1689663794
+git ls
+#1689663828
+git l5
+#1689663837
+git tag v1.0.test
+#1689663858
+git tag v1.0.test -f
+#1689663861
+git l5
+#1689663886
+cd tools/package_gcsfuse_docker
+#1689663886
+docker build . -t gcsfuse-release:1.0.test --build-arg GCSFUSE_VERSION=1.0.test
+#1689663887
+docker run -it -v $HOME/gcsfuse/release:/release gcsfuse-release:1.0.test cp -r /packages /release/v1.0.test
+#1689663911
+git l5
+#1689663965
+docker system prune
+#1689663986
+docker image ls
+#1689664009
+docker system prune -a
+#1689664044
+docker images -a
+#1689664084
+...
+#1689664093
+cd tools/package_gcsfuse_docker
+#1689664093
+docker build . -t gcsfuse-release:1.0.test --build-arg GCSFUSE_VERSION=1.0.test
+#1689664458
+docker run -it -v $HOME/gcsfuse/release:/release gcsfuse-release:1.0.test cp -r /packages /release/v1.0.test
+#1689664470
+docker login
+#1689664477
+gh login
+#1689664482
+gh authlogin
+#1689664485
+gh auth login
+#1689664498
+ls
+#1689664507
+go get -d github.com/googlecloudplatform/gcsfuse/
+#1689664512
+ls
+#1689664541
+git st
+#1689664550
+git ls
+#1689664560
+git l5
+#1689664585
+...
+#1689664607
+cd tools/package_gcsfuse_docker
+#1689664614
+docker build . -t gcsfuse-release:1.0.test --build-arg GCSFUSE_VERSION=1.0.test
+#1689664657
+docker images -a
+#1689664671
+docker system prune
+#1689664676
+docker images -a
+#1689664699
+...
+#1689664712
+cd tools/package_gcsfuse_docker
+#1689664712
+docker build . -t gcsfuse-release:1.0.test2 --build-arg GCSFUSE_VERSION=1.0.test2
+#1689665225
+docker run -it -v $HOME/gcsfuse/release:/release gcsfuse-release:1.0.test2 cp -r /packages /release/v1.0.test2
+#1689665230
+docker run hello-world
+#1689665242
+docker run -it hello-world
+#1689665249
+docker run -it hello-world /bin/bash
+#1689665257
+docker run -it hello-world bash
+#1689665272
+docker run -it ubuntu:alpine bash
+#1689665288
+docker run -it alpine bash
+#1689665301
+docker run -it alpine /bin/bash
+#1689665306
+docker run -it alpine
+#1689665351
+ls
+#1689665384
+...
+#1689665394
+docker images -a
+#1689665403
+docker system prune
+#1689665411
+docker system prune -a
+#1689665424
+docker images -a
+#1689665448
+cd tools/package_gcsfuse_docker
+#1689665448
+docker build . -t gcsfuse-release:1.0.test2 --build-arg GCSFUSE_VERSION=1.0.test2
+#1689665481
+docker run -it -v $HOME/gcsfuse/release:/release gcsfuse-release:1.0.test2 cp -r /packages /release/v1.0.test2
+#1689665484
+exit
+#1689653495
+docker run -it golang:1.20.4 /bin/bash
+#1689653586
+docker run -u gargnitin -it golang:1.20.4 /bin/bash 
+#1689653602
+vi /etc/passwd +/gargnitin
+#1689653629
+whoami
+#1689653640
+docker run -u 1 -it golang:1.20.4 /bin/bash 
+#1689653729
+docker run -it golang:1.20.4 /bin/bash 
+#1689653763
+docker run -it ubuntu:20.04 /bin/bash 
+#1689653857
+docker run -it golang:1.20.4 /bin/bash 
+#1689674414
+exit
+#1689589560
+ldd --version
+#1689589566
+lsb_release -a
+#1689589576
+lsb_release -c
+#1689589578
+lsb_release -s
+#1689591056
+gitconfig
+#1689591733
+src
+#1689591737
+ls
+#1689591739
+git l
+#1689591747
+git pull --all
+#1689591754
+git pull origin
+#1689591758
+git l
+#1689591761
+git ls
+#1689591770
+git up master
+#1689591808
+git branch gargnitin-wip-golang-1.20.5
+#1689591814
+git up gargnitin-wip-golang-1.20.5
+#1689591816
+git l
+#1689591833
+vi tools/package_gcsfuse_docker/
+#1689591849
+git l
+#1689591853
+git st
+#1689591861
+git add . && git ci
+#1689591887
+git l
+#1689591889
+git l25
+#1689591896
+vi ~/.gitconfig
+#1689591919
+git cp 00b756c5
+#1689591928
+git l5
+#1689591943
+git pushthis 
+#1689592014
+git l5
+#1689592042
+git diftool origin/master origin/gargnitin-wip-golang-1.20.5
+#1689592047
+git difftool origin/master origin/gargnitin-wip-golang-1.20.5
+#1689592111
+git l5
+#1689592550
+git l10
+#1689592555
+git pull origin
+#1689592558
+git l10
+#1689592569
+git tag v1.0.test
+#1689592571
+git l10
+#1689592587
+docker build . -t gcsfuse-release:1.0.test --build-arg GCSFUSE_VERSION=1.0.test
+#1689592721
+git l10
+#1689592740
+docker run -it -v $HOME/gcsfuse/release:/release gcsfuse-release:1.0.test cp -r /packages /release/v1.0.test
+#1689592787
+ls
+#1689592800
+cd tools/package_gcsfuse_docker
+#1689592810
+docker build . -t gcsfuse-release:1.0.test --build-arg GCSFUSE_VERSION=1.0.test
+#1689593357
+docker build . -t gcsfuse-release:1.0 --build-arg GCSFUSE_VERSION=1.0
+#1689593384
+git co v1.0.0
+#1689593393
+docker build . -t gcsfuse-release:1.0.0 --build-arg GCSFUSE_VERSION=1.0.0
+#1689593420
+docker run -it -v $HOME/gcsfuse/release:/release gcsfuse-release:1.0.0 cp -r /packages /release/v1.0.0
+#1689593431
+ls $HOME/gcsfuse/release
+#1689593434
+ls $HOME/gcsfuse/release/v1.0.0/
+#1689593444
+git l5
+#1689593449
+git ls
+#1689593454
+git co gargnitin-wip-golang-1.20.5
+#1689593457
+git ls
+#1689593458
+git l
+#1689593469
+docker build . -t gcsfuse-release:1.0.test --build-arg GCSFUSE_VERSION=1.0.test
+#1689593855
+git l5
+#1689594052
+docker build . -t gcsfuse-release:1.0.test --build-arg GCSFUSE_VERSION=1.0.test
+#1689594068
+git st
+#1689594072
+git difftool 
+#1689594083
+docker build . -t gcsfuse-release:1.0.test --build-arg GCSFUSE_VERSION=1.0.test
+#1689594105
+git rm gcsfuse-release:1.0.test
+#1689594109
+docker build . -t gcsfuse-release:1.0.test --build-arg GCSFUSE_VERSION=1.0.test
+#1689594155
+vi Dockerfile +:54
+#1689594182
+git st
+#1689594250
+git l5
+#1689594261
+git difftool 3399736d..46280e63
+#1689594271
+git log 3399736d..46280e63
+#1689594280
+git log 3399736d..46280e63 --file-only
+#1689594285
+git help log
+#1689594303
+git help log | grep -B 2 -A 2 file
+#1689594330
+git diff 3399736d..46280e63
+#1689594364
+git curbranch 
+#1689594384
+docker build . -t gcsfuse-release:1.0.test --build-arg GCSFUSE_VERSION=1.0.test
+#1689594483
+docker run -it -v $HOME/gcsfuse/release:/release gcsfuse-release:1.0.test cp -r /packages /release/v1.0.test
+#1689594491
+ls $HOME/gcsfuse/release
+#1689594496
+ls $HOME/gcsfuse/release/v1.0.test/
+#1689594506
+sudo chown $USER $HOME/gcsfuse/release/v1.0.test
+#1689594512
+sudo chown $USER $HOME/gcsfuse/release/v1.0.test/*
+#1689594529
+sudo chown $USER $HOME/gcsfuse/release/v1.0.test
+#1689594529
+sudo chown $USER $HOME/gcsfuse/release/v1.0.test/*
+#1689594540
+g4d -f signrpm
+#1689594546
+cd ./cloud/cluster/guest/cloud_rapture/rpmsign/
+#1689594548
+./sign.sh $HOME/gcsfuse/release/v1.0.test/gcsfuse-1.0.test-1.x86_64.rpm
+#1689594582
+Successfully signed 1 package files.
+#1689594794
+ls $HOME/gcsfuse/release/v1.0.test/
+#1689594799
+ls la-h $HOME/gcsfuse/release/v1.0.test/
+#1689594805
+ls -lah $HOME/gcsfuse/release/v1.0.test/
+#1689594817
+gcloud auth login
+#1689594983
+gsutil -m cp $HOME/gcsfuse/release/v1.0.test/* gs://gargnitin-gcsfuse-release-bucket/v1.0.test/
+#1689654034
+localwork 
+#1689654035
+ls
+#1689654041
+mkdir golang1.20.5
+#1689654045
+cd golang1.20.5/
+#1689654046
+ls
+#1689654055
+mkdir solutions
+#1689654057
+cd solutions/
+#1689654057
+ls
+#1689654069
+mkdir nocgo
+#1689654070
+cd nocgo/
+#1689654071
+ls
+#1689654074
+mkdir proj1
+#1689654080
+cd proj1/
+#1689654084
+vi Dockerfile
+#1689655534
+ls
+#1689655548
+docker build -t mygolang1.20.4 .
+#1689655572
+docker run -it mygolang1.20.4 /bin/bash
+#1689655603
+cat Dockerfile 
+#1689655623
+ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/work/study/go/myproj1
+#1689655631
+cat Dockerfile 
+#1689655642
+docker run -it mygolang1.20.4 /bin/bash
+#1689655682
+vi Dockerfile && docker build -t mygolang1.20.4 . && docker run -it mygolang1.20.4 /bin/bash
+#1689656338
+docker build -t mygolang1.20.4 .
+#1689656368
+vi Dockerfile && docker build -t mygolang1.20.4 . && docker run -it mygolang1.20.4 /bin/bash
+#1689656518
+vi Dockerfile && docker build -t mygolang1.20.4 . && docker run -it mygolang1.20.4 /bin/bash Dockerfile && docker build -t mygolang1.20.4 . && docker run -it -v  mygolang1.20.4 /bin/bash
+#1689656605
+docker run -v ~/work/cloud/storage/client/gcsfuse/tasks/golang1.20.5/solutions/nocgo/proj1:/src/myproj:ro -v /bin:/bin:ro -it mygolang1.20.4 /bin/bash Dockerfile && docker build -t mygolang1.20.4 . && docker run -it -v  mygolang1.20.4 /bin/bash
+#1689656624
+docker run -v ~/work/cloud/storage/client/gcsfuse/tasks/golang1.20.5/solutions/nocgo/proj1:/src/myproj:ro  -it mygolang1.20.4 /bin/bash Dockerfile && docker build -t mygolang1.20.4 . && docker run -it -v  mygolang1.20.4 /bin/bash
+#1689656635
+cat Dock
+#1689656637
+cat Dockerfile 
+#1689656677
+docker run -v ~/work/cloud/storage/client/gcsfuse/tasks/golang1.20.5/solutions/nocgo/proj1:/src/myproj:ro  -it mygolang1.20.4 /bin/bash
+#1689656695
+ls
+#1689656733
+docker run -v /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/work/study/go/myproj1:/src/myproj:ro  -it mygolang1.20.4 /bin/bash
+#1689656816
+docker build -t mygolang1.20.4 . &&  docker run -v /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/work/study/go/myproj1:/src/myproj:ro  -it mygolang1.20.4 /bin/bash
+#1689656981
+vi Dockerfile && docker build -t mygolang1.20.4 . &&  docker run -v /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/work/study/go/myproj1:/src/myproj:ro  -it mygolang1.20.4 /bin/bash
+#1689659146
+vi Dockerfile && docker build -t mygolang1.20.4 . &&  docker run -v /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/work/study/go/myproj1:/src/myproj:ro  -dit mygolang1.20.4 /bin/bash
+#1689659156
+docker ps -a
+#1689659192
+vi Dockerfile && docker build -t mygolang1.20.4 . &&  docker run -v /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/work/study/go/myproj1:/src/myproj:ro  -it mygolang1.20.4 /bin/bash
+#1689664224
+docker images -a
+#1689664289
+go help get
+#1689664331
+go version
+#1689664425
+cd ~
+#1689664426
+ls
+#1689664435
+go get -d github.com/googlecloudplatform/gcsfuse/
+#1689664755
+ls
+#1689664767
+git clone github.com/googlecloudplatform/gcsfuse/
+#1689664772
+git clone github.com/googlecloudplatform/gcsfuse
+#1689664775
+git clone github.com/googlecloudplatform/gcsfuse.git
+#1689664790
+git clone https://github.com/googlecloudplatform/gcsfuse
+#1689664794
+ls
+#1689664799
+cd gcsfuse/
+#1689664800
+ls
+#1689664806
+cd release/
+#1689664807
+ls
+#1689664812
+cd ../..
+#1689664812
+ls
+#1689664816
+cd /temp
+#1689664828
+cd /tmp
+#1689664834
+git clone https://github.com/googlecloudplatform/gcsfuse
+#1689665001
+rm -rfv gcsfuse/
+#1689665007
+cd -
+#1689665011
+locals
+#1689665016
+work
+#1689665018
+localwork 
+#1689665018
+ls
+#1689665024
+cd golang1.20.5/
+#1689665025
+ls
+#1689665027
+cd solutions/
+#1689665029
+cd nocgo/
+#1689665030
+ls
+#1689665032
+cd proj1/
+#1689665033
+ls
+#1689665050
+vi Dockerfile && docker build -t mygolang1.20.4 . &&  docker run -v /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/work/study/go/myproj1:/src/myproj:ro  -it mygolang1.20.4 /bin/bash
+#1689674419
+exit
+#1689665502
+gcsfuse
+#1689665517
+src
+#1689665525
+git l5
+#1689665530
+cd tools/package_gcsfuse_docker
+#1689665530
+docker build . -t gcsfuse-release:1.0.test2 --build-arg GCSFUSE_VERSION=1.0.test2
+#1689666169
+docker run -it -v $HOME/gcsfuse/release:/release gcsfuse-release:1.0.test2 cp -r /packages /release/v1.0.test2
+#1689674425
+exit
+#1689572168
+gcloud compute --project "gcs-fuse-test" ssh --zone "us-central1-c" "gargnitin-ubuntu2004-golang12005" -- -o ProxyCommand='corp-ssh-helper %h %p'
+#1689674436
+exit
+#1689572177
+gcloud compute --project "gcs-fuse-test" ssh --zone "us-central1-c" "gargnitin-ubuntu2004-golang12005" -- -o ProxyCommand='corp-ssh-helper %h %p'
+#1689674439
+exit
+#1689572180
+gcloud compute --project "gcs-fuse-test" ssh --zone "us-central1-c" "gargnitin-ubuntu2004-golang12005" -- -o ProxyCommand='corp-ssh-helper %h %p'
+#1689674443
+exit
+#1689572188
+gcloud compute --project "gcs-fuse-test" ssh --zone "us-central1-c" "gargnitin-ubuntu2204-golang12005" -- -o ProxyCommand='corp-ssh-helper %h %p'
+#1689674450
+exit
+#1689590605
+gcloud compute --project "gcs-fuse-test" ssh --zone "us-central1-c" "gargnitin-ubuntu2204-golang12005" -- -o ProxyCommand='corp-ssh-helper %h %p'
+#1689674452
+exit
+#1689741232
+git l
+#1689654683
+cd /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/work/study/go/myproj1/
+#1689654690
+go mod init myproj
+#1689654696
+go mod tiny
+#1689654702
+go run .
+#1689655028
+CGO_ENABLED=1 go run .
+#1689655035
+CGO_ENABLED=0 go run .
+#1689655053
+export CGO_ENABLED=0 go run .
+#1689655057
+
+#1689655067
+export CGO_ENABLED=0 go run .
+#1689655071
+CGO_ENABLED=0 go run .
+#1689658285
+CGO_ENABLED=1 go run .
+#1689824602
+exit
+#1689759113
+cd ~ && o apt update -y && sudo apt install binutils tree -y && wget https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
+#1689759131
+cd ~ && sudo apt update -y && sudo apt install binutils tree -y && wget https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb && ar -x mysql-apt-config_0.8.13-1_all.deb
+#1689759152
+ls
+#1689759158
+ls -latr
+#1689759180
+rm debian-binary data.tar.xz control.tar.xz
+#1689759182
+ls -latr
+#1689759204
+man ar
+#1689824630
+docker run -it golang:1.20.5 bash
+#1689824649
+localwork 
+#1689824654
+cd golang1.20.5/solutions/
+#1689824666
+mkdir glibc_static_linkage
+#1689824669
+cd glibc_static_linkage/
+#1689824677
+touch Dockerfile
+#1689824691
+realpath .
+#1689824726
+mkdir proj
+#1689824729
+cd proj
+#1689824735
+vi main.go
+#1689824799
+go mod init proj
+#1689824803
+go mod tiny
+#1689824809
+cd ..
+#1689824856
+docker build . -t glibc_static_linkage && docker run -it glibc_static_linkage bash
+#1689824915
+docker build . -t glibc_static_linkage && docker run -v proj:/src/proj -it glibc_static_linkage bash
+#1689824946
+ls proj
+#1689824961
+docker build . -t glibc_static_linkage && docker run -v proj=/src/proj -it glibc_static_linkage ls /src/proj
+#1689824970
+docker build . -t glibc_static_linkage && docker run -v proj:/src/proj -it glibc_static_linkage ls /src/projD
+#1689824978
+docker build . -t glibc_static_linkage && docker run --mount proj:/src/proj -it glibc_static_linkage ls /src/projD
+#1689824985
+docker build . -t glibc_static_linkage && docker run -m proj:/src/proj -it glibc_static_linkage ls /src/projD
+#1689825052
+docker build . -t glibc_static_linkage && docker run -v $PWD/proj:/src/proj -it glibc_static_linkage ls /src/projD
+#1689825056
+docker build . -t glibc_static_linkage && docker run -v $PWD/proj:/src/proj -it glibc_static_linkage ls /src/proj
+#1689825109
+ocker build . -t glibc_static_linkage && docker run -v $PWD/proj:/src/proj -it glibc_static_linkage bash
+#1689825114
+docker build . -t glibc_static_linkage && docker run -v $PWD/proj:/src/proj -it glibc_static_linkage bash
+#1689825201
+ls proj
+#1689825219
+docker build . -t glibc_static_linkage && docker run -v $PWD/proj:/src/proj -it glibc_static_linkage ls
+#1689825265
+docker build . -t glibc_static_linkage && docker run -v $PWD/proj:/src/proj -it glibc_static_linkage bash
+#1689825538
+cd proj/
+#1689825539
+ls
+#1689825543
+rm proj
+#1689825546
+ls
+#1689825552
+go build
+#1689825556
+ldd ./proj
+#1689825559
+./proj 
+#1689825566
+CGO_ENABLED=0  ./proj 
+#1689825577
+go env | grep CGO_ENABLED
+#1689825587
+export CGO_ENABLED=0
+#1689825588
+go env | grep CGO_ENABLED
+#1689825593
+CGO_ENABLED=0  ./proj 
+#1689825611
+CGO_ENABLED=0 go build
+#1689825618
+ldd ./proj
+#1689825622
+CGO_ENABLED=0  ./proj 
+#1689825628
+ ./proj 
+#1689825635
+ldd ./proj 
+#1689825659
+ls -la
+#1689825664
+ls -lah
+#1689825670
+vi proj 
+#1689825730
+cd ..
+#1689825773
+docker build -v /src/proj . -t glibc_static_linkage && docker run -v $PWD/proj:/src/proj -it glibc_static_linkage bash
+#1689825811
+docker build -v ["/src/proj"] . -t glibc_static_linkage && docker run -v $PWD/proj:/src/proj -it glibc_static_linkage bash
+#1689825852
+docker build  . -t glibc_static_linkage && docker run -v $PWD/proj:/src/proj -it glibc_static_linkage bash
+#1689831439
+exit
+#1689826098
+ls proj
+#1689826101
+rm proj
+#1689826107
+rm proj/proj 
+#1689826151
+cd proj/
+#1689826155
+ldd ./proj
+#1689826158
+./proj 
+#1689826167
+CGO_ENABLED=0 ./proj 
+#1689826174
+go env
+#1689826184
+export CGO_ENABLED=0
+#1689826190
+go env | grep CGO_E
+#1689826197
+./proj 
+#1689826202
+CGO_ENABLED=0 ./proj 
+#1689826211
+CGO_ENABLED=0 ldd ./proj 
+#1689826219
+ldd --version
+#1689826431
+cd ..
+#1689831443
+exit
+#1689748185
+hgd gcsfuse-plx-alerts
+#1689748219
+grep -rn 'plx_deploy' blobstore2/client/gcsfuse/*
+#1689748422
+blaze build blobstore2/client/gcsfuse/plx/performance_alerts:all
+#1689748760
+blaze run blobstore2/client/gcsfuse/plx/performance_alerts:main
+#1689748946
+find blobstore2/client/gcsfuse -regex 'main\.py'
+#1689748953
+find blobstore2/client/gcsfuse -regex '.*main\.py.*'
+#1689748998
+ls blaze-bin
+#1689749114
+ls blaze-bin/blobstore2/client/gcsfuse/plx/performance_alerts/
+#1689749373
+ls blaze-bin/blobstore2/client/gcsfuse/plx/performance_alerts/main.runfiles
+#1689749401
+ls blaze-bin/blobstore2/client/gcsfuse/plx/performance_alerts/main.runfiles/google3/blobstore2/client/gcsfuse/plx/performance_alerts/main
+#1689749428
+ls -l blaze-bin/blobstore2/client/gcsfuse/plx/performance_alerts/main.runfiles/google3/blobstore2/client/gcsfuse/plx/performance_alerts/main
+#1689749486
+ls /google/obj/workspace/
+#1689749516
+ls /google/obj/workspace/bc722bb02e8cb4e4729984d759b7fd36cf3e4c33e2fa54c6fbca33a74513a454/b
+#1689749517
+ls /google/obj/workspace/bc722bb02e8cb4e4729984d759b7fd36cf3e4c33e2fa54c6fbca33a74513a454/
+#1689749534
+ls /google/obj/workspace/bc722bb02e8cb4e4729984d759b7fd36cf3e4c33e2fa54c6fbca33a74513a454/bc2c39a3-d565-4ef3-8874-80240479d79b/blaze-out/k8-fastbuild/bin/blob
+#1689749534
+  store2/client/gcsfuse/plx/performance_alerts/alerts_gen.runfiles/google3/blob
+#1689749534
+  store2/client/gcsfuse/plx/performance_alerts/main
+#1689749573
+ls /google/obj/workspace/bc722bb02e8cb4e4729984d759b7fd36cf3e4c33e2fa54c6fbca33a74513a454/bc2c39a3-d565-4ef3-8874-80240479d79b/blaze-out/k8-fastbuild/bin/blobstore2/client/gcsfuse/plx/performance_alerts/alerts_gen.runfiles/google3/blobstore2/client/gcsfuse/plx/performance_alerts/main
+#1689749587
+ls /google/obj/workspace/bc722bb02e8cb4e4729984d759b7fd36cf3e4c33e2fa54c6fbca33a74513a454/bc2c39a3-d565-4ef3-8874-80240479d79b/blaze-out/k8-fastbuild/bin/
+#1689749603
+ls /google/obj/workspace/bc722bb02e8cb4e4729984d759b7fd36cf3e4c33e2fa54c6fbca33a74513a454/bc2c39a3-d565-4ef3-8874-80240479d79b/blaze-out/k8-fastbuild/bin/blobstore2/
+#1689749718
+find .  /google/obj/workspace -regex '.*blaze-out/k8-fastbuild/bin/blobstore2/client/gcsfuse/plx/performance_alerts/alerts_gen.runfiles/google3/blobstore2/client/gcsfuse/plx/performance_alerts/main'
+#1689749764
+find /google/obj/workspace -regex '.*blaze-out/k8-fastbuild/bin/blobstore2/client/gcsfuse/plx/performance_alerts/alerts_gen.runfiles/google3/blobstore2/client/gcsfuse/plx/performance_alerts/main'
+#1689749791
+find /google/obj/workspace -iname 'blaze-out/k8-fastbuild/bin/blobstore2/client/gcsfuse/plx/performance_alerts/alerts_gen.runfiles/google3/blobstore2/client/gcsfuse/plx/performance_alerts/main'
+#1689749807
+find /google/obj/workspace -iwholename 'blaze-out/k8-fastbuild/bin/blobstore2/client/gcsfuse/plx/performance_alerts/alerts_gen.runfiles/google3/blobstore2/client/gcsfuse/plx/performance_alerts/main'
+#1689749846
+find . -iwholename 'gcsfuse_test.p'
+#1689749894
+find . -type f -iwholename 'gcsfuse_test.py'
+#1689749907
+find . -type f -iwholename '*gcsfuse_test.py*'
+#1689749978
+find configs/monitoring/ -type f -iwholename 'gcsfuse_test.py'
+#1689749983
+find configs/monitoring/ -type f -iwholename '*gcsfuse_test.py*'
+#1689750114
+find configs/monitoring/cloud_pulse_monarch/storage/internal/  -type f -iwholename '*gcsfuse_test.py*'
+#1689750127
+find configs/monitoring/cloud_pulse_monarch/storage/  -type f -iwholename '*gcsfuse_test.py*'
+#1689750184
+find /google/obj/workspace/ -path '*blaze-out/k8-fastbuild/bin/blobstore2/client/gcsfuse/plx/performance_alerts/alerts_gen.runfiles/google3/blobstore2/client/gcsfuse/plx/performance_alerts/main'
+#1689750233
+blaze build blaze build blobstore2/client/gcsfuse/plx/performance_alerts:main
+#1689750269
+blaze build blobstore2/client/gcsfuse/plx/performance_alerts:main
+#1689750288
+blaze run blobstore2/client/gcsfuse/plx/performance_alerts:main
+#1689750543
+cd blobstore2/client/gcsfuse/plx/performance_alerts/
+#1689750590
+ls ../../../../../blaze-bin/
+#1689750597
+ls ../../../../../blaze-bin/blobstore2/client/gcsfuse/plx/performance_alerts/
+#1689750608
+../../../../../blaze-bin/blobstore2/client/gcsfuse/plx/performance_alerts/main
+#1689750636
+ls -la ../../../../../blaze-bin/blobstore2/client/gcsfuse/plx/performance_alerts/main
+#1689750712
+cd -
+#1689750733
+blaze build blobstore2/client/gcsfuse/plx/performance_alerts:all
+#1689750749
+blaze run blobstore2/client/gcsfuse/plx/performance_alerts:main
+#1689750814
+ls /google/obj/workspace/c59349aa33a29a84b7717160df7a7550c8c12c46487ee807c1ff1ed3baa2eb7a/c19923da-e20c-4f66-9f93-cf201a6396a6/blaze-out/k8-fastbuild/bin/blobstore2/client/gcsfuse/plx/performance_alerts/main.runfiles/google3
+#1689750858
+ls /google/obj/workspace/c59349aa33a29a84b7717160df7a7550c8c12c46487ee807c1ff1ed3baa2eb7a/c19923da-e20c-4f66-9f93-cf201a6396a6/blaze-out/k8-fastbuild/bin/blobstore2/client/gcsfuse/plx/performance_alerts/main.runfiles/google3/blobstore2/client/gcsfuse/plx/performance_alerts/main
+#1689750883
+ls -la /google/obj/workspace/c59349aa33a29a84b7717160df7a7550c8c12c46487ee807c1ff1ed3baa2eb7a/c19923da-e20c-4f66-9f93-cf201a6396a6/blaze-out/k8-fastbuild/bin/blobstore2/client/gcsfuse/plx/performance_alerts/main.runfiles/google3/blobstore2/client/gcsfuse/plx/performance_alerts/main
+#1689750894
+cd -
+#1689750925
+/google/obj/workspace/c59349aa33a29a84b7717160df7a7550c8c12c46487ee807c1ff1ed3baa2eb7a/c19923da-e20c-4f66-9f93-cf201a6396a6/blaze-out/k8-fastbuild/bin/blobstore2/client/gcsfuse/plx/performance_alerts/main.runfiles/google3/blobstore2/client/gcsfuse/plx/performance_alerts/main
+#1689750938
+......
+#1689750944
+hg st
+#1689752401
+blaze build configs/monitoring/cloud_pulse_monarch/storage/internal:gcsfuse
+#1689758077
+hgd gcsfuse-plx-alerts
+#1689758080
+hg sync
+#1689758088
+hg xl
+#1689758369
+blaze run blobstore2/client/gcsfuse/plx/performance_alerts/static:plx_deploy_rule
+#1689758437
+blaze run blobstore2/client/gcsfuse/plx/performance_alerts/novern:plx_deploy_rule
+#1689761955
+hg fix --format build
+#1689762014
+hg sync && hg amend && hg upload chain
+#1689762134
+hg fix --format build && hg amend && hg upload chain
+#1689772152
+docker run -it ubuntu:20.04 bash
+#1689772167
+docker run -it ubuntu:22.04 bash
+#1689772191
+docker run -it debuan:11 bash
+#1689772199
+docker run -it debian:11 bash
+#1689772222
+docker run -it debian:12 bash
+#1689772257
+docker run -it golang:1.20.5 bash
+#1689772270
+docker run -it golang:1.20.4 bash
+#1689831448
+exit
+#1689745736
+localwork 
+#1689745737
+ls
+#1689745739
+cd golang1.20.5/
+#1689745740
+ls
+#1689745746
+cd solutions/
+#1689745757
+mkdir customglibc
+#1689745758
+cd 
+#1689745760
+cd -
+#1689745762
+cd customglibc/
+#1689745762
+ls
+#1689745770
+vi Dockerfile
+#1689746920
+ls
+#1689746980
+docker build . -t customglibc:go1.20.5 && docker run -it customglibc:go1.20.5 /bin/bash
+#1689766662
+cd ..
+#1689767084
+ls
+#1689767088
+cd postinst_glibc_upgrade/
+#1689767091
+vi Dockerfile
+#1689767538
+ls -la
+#1689767595
+go build . -t postinst_glibc_upgrade && go run -it postinst_glibc_upgrade bash
+#1689767605
+docker build . -t postinst_glibc_upgrade && docker run -it postinst_glibc_upgrade bash
+#1689767732
+man chmod
+#1689767770
+docker build . -t postinst_glibc_upgrade && docker run -it postinst_glibc_upgrade bash
+#1689767846
+man chown
+#1689767932
+docker build . -t postinst_glibc_upgrade && docker run -it postinst_glibc_upgrade bash
+#1689773123
+ls
+#1689773127
+wget https://launchpad.net/debian/+archive/primary/+sourcefiles/glibc/2.36-8/glibc_2.36-8.debian.tar.xz
+#1689773135
+ls
+#1689773185
+tar -xvf glibc_2.36-8.debian.tar.xz 
+#1689773187
+ls
+#1689773192
+cd debian/
+#1689773193
+ls
+#1689773216
+find . | grep '.deb'
+#1689773221
+find . | grep '.deb$'
+#1689773224
+find . | grep '\.deb$'
+#1689773229
+find . | egrep '\.deb$'
+#1689773238
+find . | egrep '\.deb'
+#1689773244
+find . | egrep '.*\.deb.*'
+#1689773250
+find . | egrep '.*deb.*'
+#1689773259
+find . | egrep '.*\.deb.*'
+#1689773374
+cd ..
+#1689773375
+ls
+#1689773382
+rm -rf debian/ glibc_2.36-8.debian.tar.xz 
+#1689773383
+ls
+#1689773388
+docker build . -t postinst_glibc_upgrade && docker run -it postinst_glibc_upgrade bash
+#1689831678
+exit
+#1689750463
+gcloud compute --project "gcs-fuse-test" ssh --zone "us-central1-c" "gargnitin-ubuntu2004-golang12005" -- -o ProxyCommand='corp-ssh-helper %h %p'
+#1689850017
+exit
+#1689750461
+gcloud compute --project "gcs-fuse-test" ssh --zone "us-central1-c" "gargnitin-ubuntu2004-golang12005" -- -o ProxyCommand='corp-ssh-helper %h %p'
+#1689850018
+exit
+#1689676842
+gcloud compute --project "gcs-fuse-test" ssh --zone "us-central1-c" "gargnitin-ubuntu2004-golang12005" -- -o ProxyCommand='corp-ssh-helper %h %p'
+#1689850021
+exit
+#1689678153
+gcloud compute --project "gcs-fuse-test" ssh --zone "us-central1-c" "gargnitin-ubuntu2204-golang12005" -- -o ProxyCommand='corp-ssh-helper %h %p'
+#1689850027
+exit

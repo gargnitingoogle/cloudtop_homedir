@@ -2,11 +2,13 @@
 amend=commit --amend
 ci=commit
 co=checkout
+cp=cherry-pick
 curbranch=branch --show-current
 delbranch=branch -D
 delremote=branch -D --remote
 difftool=difftool -y
 ff=pull --ff
+fixup=commit --fixup
 ls=branch -l
 l=log --oneline --decorate=full -10
 l1=log --oneline --decorate=full -1
@@ -16,6 +18,7 @@ l15=log --oneline --decorate=full -15
 l20=log --oneline --decorate=full -20
 l25=log --oneline --decorate=full -25
 pushthis=!git push -u origin $(git branch --show-current)
+reword=commit --fixup reword
 st=status
 up=checkout
 
@@ -41,3 +44,5 @@ up=checkout
 	trustExitCode = true
 [difftool]
 	prompt = false
+[rebase]
+	autosquash = true
