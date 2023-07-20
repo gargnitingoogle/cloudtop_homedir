@@ -1,3 +1,4 @@
+
 a=$(($a + 1))
 a=0
 a=0 ; while [[ $a -lt 100 ]]; do echo $a ; sleep .2 ; a=$(($a + 1)) ; done ;
@@ -11,7 +12,9 @@ a=0; while [[ $a -lt 10 ]]; do echo Running ... #$a ; sleep .5; a=`expr $a + 1` 
 alias
 aliases
 alias ls='ls --color=auto'
+# all images on disk. Ensure that they are backed up somewhere
 Any idea about what is wrong with gnubby? And could that be related?
+# Authenticate the gcloud installation:
 Authorization: AUTHENTICATION_STRING"
 bash
 . ~/.bash_aliases
@@ -19,16 +22,23 @@ bash
 bash ~/.bash_profile 
 bazel query --output=build //third_party/nsjail:nsjail
 bcompare
+bcompare 
 bcompare &
+bcompare . ~
 bcompare 20221011-sandboxing_code_changes.patch
 bcompare appliance_flash_logs expected_flash_logs
 bcompare appliance_flash_logs expected_flash_logs &
+bcompare .bash_history ~/.bash_history 
 bcompare branchdiff.patch 
 bcompare ~/.gitconfig .git/config
 bcompare ~/.gitconfig .git/gitconfig
 bcompare log_with* &
 bcompare previous-homedir/ ~
 bcompare previous-homedir/.vimrc ~/.vimrc
+bcompare ~/temphome/ ~
+bcompare . temphome/cloudtop_homedir/ &
+bcompare temphome/cloudtop_homedir/ ~
+bcompare temphome/cloudtop_homedir/.git ~/.git &
 bcompare working failing &
 bcompare working/ failing/
 bg %3
@@ -490,6 +500,7 @@ buildzimbruonboardbinary && uploadzimbruonboardbinary
 }') call blade:ccfe-autopush-us-central1-transferappliance cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.CreateAppliance 'parent: "projects/zimbruplayground/locations/us-central1" appliance_id: "gargnitin-ss2-20221114" appliance: { display_name: "gargnitinss220221114" model: 6 online_import_feature:{destination:{output_bucket:"gargnitin-ss2-20221114-bucket" output_path:"path"}} kubernetes_feature:{cluster_name:"gargnitinss220221114cluster"}}'
 }') call blade:ccfe-autopush-us-central1-transferappliance cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.GetAppliance 'name: "projects/zimbruplayground/locations/us-central1/appliances/gargnitin20220919"' --globaldb --noremotedb
 }') call blade:ccfe-staging-us-central1-transferappliance cloud.transfer.appliance.ccfe.api.v1alpha1.TransferAppliance.CreateAppliance 'parent: "projects/zimbruplayground/locations/us-central1" appliance_id: "gargnitin_testappliance1" appliance: { display_name: "testappliance1" model: 6 online_import_feature:{destination:{output_bucket:"bucket1" output_path:"path"}} kubernetes_feature:{cluster_name:"testcluster1"}}' --globaldb --noremotedb
+# candidate see https://yaqs.corp.google.com/eng/q/5559586039922688#a2 
 ca onecli_log_with_strace_20220818 
 cat $file | grep -P '^[a-z0-9]+\(' | cut -d "(" -f 1 | sort | &>onecli_all_unique_syscalls uniq 
 cat $file | grep -P '^[a-z0-9]+\(' | cut -d "(" -f 1 | sort | uniq 
@@ -530,6 +541,10 @@ cat ~/.bash_aliases
 cat ~/bash_aliases
 cat ~/.bash_aliases | grep ss3
 cat ~/.bash_alo
+cat .bash_history  | less
+cat .bash_history  | lesss
+cat .bash_history | sort | uniq > .bash_history 
+cat .bash_history | sort | uniq | less
 cat blaze-bin/experimental/users/gargnitin/python/friendinfo/info.pb.go 
 cat blaze-bin/experimental/users/gargnitin/python/friendinfo/info.pb.go  | more
 cat BUIL
@@ -620,6 +635,7 @@ catvi onecli_log_with_strace | cut -d '(' f1 | sort| uniq
 catvi onecli_log_with_strace | cut -d='(' f1 | sort| uniq
 catvi onecli_log_with_strace | cut -d=( f1 | sort| uniq
 cat webcam.py 
+ccd ~/Downloads/
 cd
 cd 
 cd -
@@ -646,6 +662,8 @@ cd 20221006-debug_failing_fw_updates/
 cd 202303/
 cd 20230626/
 cd 202307-08-gzip-support
+cd 202307-golang1.20.5
+cd 202307-golang1.20.5/solutions/nocgo/proj1
 cd apac/
 cd appliance/
 cd appliance_flash_logs/
@@ -668,6 +686,7 @@ cd cloud/
 cd ./cloud/cluster/guest/cloud_rapture/rpmsign/
 cd cloud_pulse_monarch
 cd cloud-support/
+cd cloudtop_homedir/
 cd cloud/transfer/
 cd cloud/transfer/appliance/offline/
 cd cloud/transfer/appliance/site-edge/tasks/firmware-update-sandboxing/
@@ -683,6 +702,7 @@ cd customglibc/
 cd debian/
 cd debugdemo/
 cd dir-with-a-few-files/
+cd ~/Downloads/
 cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/
 cd DriveFS/
 cd endtoend/
@@ -876,6 +896,8 @@ cd team03
 cd team03/
 cd /temp
 cd temp/
+cd ~/temphome/
+cd temphome/
 cd test/
 cd ../../test_buckets/
 cd test_buckets/
@@ -949,6 +971,7 @@ CGO_ENABLED=0 go run .
 CGO_ENABLED=0 ldd ./proj 
 CGO_ENABLED=0  ./proj 
 CGO_ENABLED=0 ./proj 
+CGO_ENABLED=1 go build
 CGO_ENABLED=1 go run .
 checkReleaseVersionPresent(){   output=$(gcloud artifacts versions list --package=gcsfuse --repository=$1 --location=$2 2>/dev/null| grep $3);    if [ -z "$output" ]; then     echo $1 in $2 location does not have release version $3;   fi; }
 chmod g+w ~/.bash_aliases
@@ -1003,6 +1026,7 @@ cls; blaze build experimental/users/gargnitin/study/go/testproj2/... && blaze-bi
 cls; blaze run configs/monitoring/cloud_pulse_monarch/storage/internal:prod -- --mode=dry_run_no_auth
 cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D INSTALL_C_EXAMPLES=ON     -D INSTALL_PYTHON_EXAMPLES=ON     -D OPENCV_GENERATE_PKGCONFIG=ON     -D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib/modules     -D BUILD_EXAMPLES=ON ..
 code .
+# Configure docker to use docker-credential-gcloud for GCR registries:
 Content-Length: 0
 Copying gs://site-appliance-firmware-updates-staging/latest/firmware_updates.tar.gz [Content-Type=application/x-gzip]...
 cp appliance_flash_logs/OneCli.log onecli_failing_log.txt
@@ -1026,6 +1050,9 @@ cp -pri  previous-homedir/.ssh/ssh_config .ssh
 cp -rf "/usr/local/google/home/gargnitin/work/cloud/transfer/appliance/202209-hackathon/res/input0.mp4" .
 cp -rf "/usr/local/google/home/gargnitin/work/cloud/transfer/appliance/202209-hackathon/res/input1.mp4" .
 cp -rf "/usr/local/google/home/gargnitin/work/cloud/transfer/appliance/202209-hackathon/res/Shiv_Nitin (2022-09-01 15_15 GMT+5_30).mp4" .
+cp temp .bash_history 
+cp temp ~/.bash_history
+cp '/usr/local/google/home/gargnitin/DriveFileStream/My Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-golang1.20.5/solutions/nocgo/proj1'/* .
 cp /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/gzip-work/client-compressed-text-file-encoding-notset.gz .
 cp /usr/local/google/home/gargnitin/work/cloud/transfer/appliance/202209-hackathon/testopencv_project/main.py .
 ./create_test_2.1MB.sh 
@@ -1133,6 +1160,7 @@ docker kill -a
 docker kill --all
 docker kill clever_keller focused_vaughan
 docker kill help
+# docker lib (rm -rf /var/lib/docker) as well. Doing this will delete
 docker login
 docker ls
 docker ps
@@ -1190,6 +1218,8 @@ docker run -ti gcsfuse/go1.20.4-alpine
 docker run -u 1 -it golang:1.20.4 /bin/bash 
 docker run ubuntu
 docker run -u gargnitin -it golang:1.20.4 /bin/bash 
+docker run -v $PWD:/src -w /src -it debian:11 sh -c "dpkg -i *.deb && which proj1 && ldd \$(which proj1); proj1"
+docker run -v $PWD:/src -w /src -u 431:433 -it ubuntu:20.04 sh -c "./proj1"
 docker run -v /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/work/study/go/myproj1:/src/myproj:ro  -it mygolang1.20.4 /bin/bash
 docker run -v ~/work/cloud/storage/client/gcsfuse/tasks/golang1.20.5/solutions/nocgo/proj1:/src/myproj:ro  -it mygolang1.20.4 /bin/bash
 docker run -v ~/work/cloud/storage/client/gcsfuse/tasks/golang1.20.5/solutions/nocgo/proj1:/src/myproj:ro  -it mygolang1.20.4 /bin/bash Dockerfile && docker build -t mygolang1.20.4 . && docker run -it -v  mygolang1.20.4 /bin/bash
@@ -1485,12 +1515,14 @@ gcloud auth application-default login --no-launch-browser
 gcloud auth application-default login --no-launch-browser && gcloud auth login --no-launch-browser && USER=$(gcloud auth list --filter=status:ACTIVE --format="value(account)" | cut -d '@' -f 1)
 gcloud auth application-default login --no-launch-browser && gcloud auth login --no-launch-browser && USER=$(gcloud auth list --filter=status:ACTIVE --format="value(account)" | cut -d '@' -f 1) && echo “USER=”$USER
 gcloud auth application-default login --no-launch-browser && gcloud auth login --no-launch-browser && USER=$(gcloud auth list --filter=status:ACTIVE --format="value(account)" | cut -d '@' -f 1) && gsutil cp gs://temp-appliance-firmware-updates/latest/firmware_updates.tar.gz .
+gcloud auth configure-docker
 gcloud auth list
 gcloud auth login
 gcloud auth-login
 gcloud auth login --no-launch
 gcloud auth  login --no-launch-browser
 gcloud auth login --remote-bootstrap="https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=32555940559.apps.googleusercontent.com&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fappengine.admin+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fsqlservice.login+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcompute+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faccounts.reauth&state=Mb3c1sPLq8tTmyB6OxtnuRPKCXFflv&access_type=offline&code_challenge=aUjFuZZ3hQf5lpcA9UM396-fd-rswcYWb1ThqZRmHZ8&code_challenge_method=S256&token_usage=remote"
+gcloud auth login # (requires Python 2.7)
 gcloud components install gsutil
 gcloud components update
 gcloud compute instances create gargnitin-example-instance-1 gargnitin-example-instance-2 gargnitin-example-instance-3 --zone=us-central1-a
@@ -1583,8 +1615,10 @@ gcsfuse --log-file=log1.txt --log-format=txt --debug_gcs --debug_fuse gargnitin-
 gcsfusetestenv() {    bucket=gargnitin-fuse-test-bucket1 && mountdir=~/test_buckets && mountpath=$mountdir/$bucket-mount && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && cd ~/src/gcsfuse; }
 gcsfusetestenv && go run . --debug_fuse --debug_fuse_errors --debug_gcs --debug_http --log-file=$logpath  $bucket $mountpath && tail -fv -n 20 $logpath
 geany &
+geany .bash_aliases 
 geany ~/.bash_aliases &
 geany main.c  &
+gem install fpm
 getpwnam
 gh auth login
 gh authlogin
@@ -1600,8 +1634,10 @@ git .
 git add *
 git add .
 git add a
+git add .bash_aliases 
 git add .bash_aliases .bash_history .bashrc .gitignore .vimrc 
 git add .bash_aliases .gitignore .gitconfig
+git add .bash_history 
 git add .bash_history && git ci -m 'add more bash history' && git pushthis 
 git add .blazerc
 git add .blazerc -f
@@ -1650,27 +1686,35 @@ git ci -m 'Enable ReadCompressed by default for all objects'
 git ci -m 'first entry of config files'
 git ci -m 'more changes'
 git ci -m 'more changes' && git pushthis 
+git ci -m 'removed hardcoded home dir path in aliases'
+git ci -m 'sorted and cleaned bash_history' 
 git ci -m 'temp change'
 git ci -m 'Updates' && git push origin $(git curbranch)
 git clone github.com/googlecloudplatform/gcsfuse
 git clone github.com/googlecloudplatform/gcsfuse/
 git clone github.com/googlecloudplatform/gcsfuse.git
 git clone https://github.com/Azure/azure-storage-fuse
+git clone https://github.com/gargnitingoogle/cloudtop_homedir.git
 git clone https://github.com/googlecloudplatform/gcsfuse
+git clone https://github.com/googlecloudplatform/gcsfuse.git
 git clone https://github.com/google/nsjail
 git clone https://github.com/jacobsa/fuse
 git clone https://github.com/jacobsa/gcloud
 git clone https://github.com/opencv/opencv_contrib.git
 git clone https://github.com/opencv/opencv.git
+git co .bash_history
 git co Dockerfile
 git co gargnitin-wip-golang-1.20.5
+git co gargnitin-wip-golang-1.20.5 
 git co main
+git co main -f
 git co master
 git co newtestbranch
 gitconfig
 gitconfig 
 git config --add secrets.allowed
 git config --add secrets.allowed ...
+git config --add secrets.allowed ... --global
 git config advice.addIgnoredFile false
 git config advice.addIgnoredFile true
 git config --global diff.tool bc
@@ -1722,9 +1766,11 @@ git diff origin/testbranch
 git diff origin/testbranch HEAD
 git difftool
 git difftool 
+git difftool . ~
 git difftool 3399736d..46280e63
 git difftool --cached
 git difftool .gitignore
+git difftool HEAD
 git difftool HEAD~1..HEAD
 git difftool HEAD~`..HEAD
 git difftool HEAD origin/testbranch
@@ -1736,6 +1782,7 @@ git difftool origin/testbranch
 git difftool origin/testbranch origin/newtestbranch
 git difftool testbranch 
 git diftool origin/master origin/gargnitin-wip-golang-1.20.5
+git fetch
 git fetch --all
 git fetch main
 git fetch origin 
@@ -1842,6 +1889,7 @@ git pull --ff
 git pull --ff -f
 git pull --ff --force
 git pull origin
+git pull origin -a
 git pull origin --all
 git pull origin main
 git pull origin master
@@ -1867,6 +1915,7 @@ git rebase origin/main
 git rebase origin/main && git l25
 git rebase origin/testbranch 
 git remote add origin git@github.com:gargnitingoogle/cloudtop_homedir.git
+git remote add origin https://github.com/gargnitingoogle/cloudtop_homedir.git
 git rename origin/testbranch && git l25
 git reset a
 git reset --hard
@@ -1881,6 +1930,7 @@ git rev-list -n 1 v1.0.0
 git rm --cached go.mod
 git rm gcsfuse-release:1.0.test
 git s
+git sl
 git  st
 git st
 git status
@@ -1920,6 +1970,7 @@ go build .
 go build ./ -o ro -foreground --debug_fuse --debug_fs --debug_gcs --debug_http --log-file=/tmp/gargnitin-bucket-mounting-log.txt gargnitin-bucket ../../test_buckets/gargnitin-bucket-mounted/
 go build . -t postinst_glibc_upgrade && go run -it postinst_glibc_upgrade bash
 go clean
+go clean && CGO_ENABLED=0 go build && ldd ./proj1; rm -rfv *.deb && mkdir -pv bin && mv -v ./proj1 bin && fpm -s dir -t deb -n proj1 -C . -v 0.0.1 --vendor "" --description "A test project for fpm." && rm -rfv bin
 GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/...  -p 1 --integrationTest  --testbucket=gargnitin-fuse-test-bucket1
 GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/...  -p 1 --integrationTest  --testbucket=gargnitin-fuse-test-bucket1 -timeout 60m
 go env
@@ -1934,8 +1985,10 @@ go install .
 go install github.com/go-delve/delve/cmd/dlv@latest
 golang
 golangci-lint --version
+go mod init
 go mod init myproj
 go mod init proj
+go mod init proj1
 go mod tiny
 /google/bin/releases/oneplatform/nolan/launch_checker backdoor --bug_id=177349174 --backdoors=DATA_RESIDENCY_CHECKER
 google-chrome-stable 
@@ -2038,6 +2091,7 @@ grep -rn 'SequentialReadSizeMb' *
 grep -r 'NSJailBin' *
 grep -rn 'SmallTest'
 grep -rn 'StatObject' *
+# Group already exists on new gLinux
 gs://site-appliance-firmware-updates-staging/latest/firmware_updates.tar.gz
 gsutil cat gs://gargnitin-fuse-test-bucket1/gzip-work/gsutil-compressed-text-file-allow-transform.gz
 gsutil cat gs://gargnitin-fuse-test-bucket1/gzip-work/gsutil-compressed-text-file-no-transform.gz
@@ -2175,6 +2229,9 @@ gsutil -z cp  main.go gs://gargnitin-fuse-test-bucket1/
 gsutls ls gs://appliance-os
 gti diffto
 gti difftool
+gt l
+gtl 
+gtl  
 guitar -h
 guitar presubmit
 guitar presubmit -h
@@ -2627,8 +2684,12 @@ id -a
 id -a | grep video
 ifconfgi
 ifconfig
+# If the previous command fails, you may need to clear your
+# if you don't want this to happen.
+# If you receive an error about 'docker-ce' has no installation 
 # In alpine linux (as it does not come with curl by default)
 install
+# Install gcloud:
 install gdb
 ./install.sh 
 ip a
@@ -2661,6 +2722,7 @@ lddd ./blaze-bin/third_party/nsjail/nsjail
 ldd main
 ldd ./proj
 ldd ./proj 
+ldd ./proj1
 ldd --version
 lks
 ll
@@ -2669,7 +2731,9 @@ l -lah ./blaze-bin/cloud/transfer/appliance/offline/external/capture/ta
 ln -sfv ../fs40_not_connecting_to_interconnect/diags-US-5393-b278-20230302-2355 .
 loadfuse1test
 loadfuse1test 
+local
 locals
+localwork
 localwork 
 ;ls
 l;s
@@ -2831,6 +2895,7 @@ ls -la $( which nsjail)
 ls -la  ~/.bash_aliases 
 ls -la ~/.bash_aliases
 ls -la ~/.bash_aliases 
+ls -la .bash_history 
 ls -la /bin
 ls -la /bin/bash
 ls -la blaze-bin
@@ -3129,6 +3194,7 @@ mkdir proj
 mkdir proj1
 mkdir -p study/go/proj1
 mkdir -p ta_metadata
+mkdir -pv 202307-golang1.20.5/solutions/nocgo/proj1
 mkdir -pv ../c
 mkdir -pv experimental/users/gargnitin/go/storageclient/test
 mkdir -pv input0_frames
@@ -3136,6 +3202,9 @@ mkdir -pv logs/firmware
 mkdir -pv mnt/ta_local
 mkdir -pv ../res
 mkdir -pv ../../test_buckets
+mkdir -pv ~/work/cloud/storage/client/gcsfuse/src
+mkdir -pv ~/work/cloud/storage/client/gcsfuse/tasks
+mkdir -pv ~/work/cloud/storage/client/gcsfuse/test_buckets
 mkdir -p ~/work/cloud/transfer/appliance/site-edge/tasks/firmware-update-sandboxing/
 mkdir -p ~/work/study/strace
 mkdir python
@@ -3151,6 +3220,7 @@ mkdir support_golang1.20.5
 mkdir tasks
 mkdir team03
 mkdir temp
+mkdir temphome
 mkdir test
 mkdir testcppproj1
 mkdir ~/test-folderr
@@ -3402,6 +3472,7 @@ realpath webcam.py
 rebaser
 redis-cli
   "registry-mirrors": ["https://mirror.gcr.io"]
+# Remove old docker-* packages (if installed)
 Request accepted and pushed to 674/675 cells (1 unreachable: tf; 1 failed: gk).                     
 Requesting grants for 1 groups:
 reset
@@ -3434,6 +3505,7 @@ rm -rf ~/.config/chrome-remote-desktop && systemctl restart sortinghat_client.se
 rm -rf debian/ glibc_2.36-8.debian.tar.xz 
 rm -rf expt/
 rm -rf gargnitin-fuse-test-bucket1
+rm -rf ~/.git
 rm -rf log1.txt && gcsfuse --log-file=log1.txt --log-format=txt --debug_gcs --debug_fuse gargnitin-citadel-test-bucket gargnitin-citadel-test-bucket-mount
 rm -rf log1.txt && gcsfuse --log-file=log1.txt --log-format=txt --debug_gcs --debug_fuse --implicit-dirs gargnitin-citadel-test-bucket gargnitin-citadel-test-bucket-mount
 rm -rf onecli_all_unique_syscalls
@@ -3509,6 +3581,12 @@ scp ta_operator@34.98.144.154:/var/tmp/fwupdate_logs/20221101_035346/flash_logs 
 scp ta_operator@34.98.144.154:/var/tmp/fwupdate_logs/20221101_035346/flash_logs/* appliance_flash_logs
 scp ~/work/cloud/transfer/appliance/site-edge/tasks/firmware-update-sandboxing/onecli_strace_20220818/onecli_log_with_strace_20220818  ta_operator@100.107.99.227:/mnt/ta_local/gargnitin/fw/update/onecli-log-with-strace
 sed '$d' ~/.bash_aliases
+sed '/^#[0-9]+$/d' .bash_history | less
+sed '/^\#[0-9]+$/d' .bash_history | less
+sed '/#[0-9]+/d' .bash_history | less
+sed '/#\[0-9\]+/d' .bash_history | less
+sed '/^#[0-9]/d' .bash_history | less
+sed '/^#[0-9]/d' .bash_history | sort | uniq | less
 sed  '/^100.107.99.219/d' /usr/local/google/home/gargnitin/.ssh/known_hosts
 sed '/^100.127.95.14/d' -i ~/.ssh/known_hosts
 sed '244934,244935!d' $file | grep -P ' *[a-zA-Z0-9]+\(' | grep -Po '^[^\(]+\(' | rev | cut -d ' ' -f 1 | cut -d '(' -f 2 | rev | sort | uniq
@@ -3518,8 +3596,11 @@ sed '63265,63267!d' $file |
 sed '63265,63267!d' $file | grep -Po '^[^\(]+\(' | rev | cut -d ' ' -f 1 | cut -d '(' -f 2 | rev | sort | uniq
 sed  'd/^100.107.99.219' /usr/local/google/home/gargnitin/.ssh/known_hosts
 sed  'd/^100.107.99.219/' /usr/local/google/home/gargnitin/.ssh/known_hosts
+sed '/^#/d' .bash_history | less
 sed -e '/CHROME_REMOTE_DESKTOP/ s/^#*/#/' -i .profile .zprofile
 sed -i '$d' ~/.bash_aliases
+sed -i '/^#[0-9]/d' .bash_history
+sed -i '/^#[0-9]/d' ~/.bash_history
 sed -i  '/^100.107.99.219/d' /usr/local/google/home/gargnitin/.ssh/known_hosts
 sed -i '/^100.107.99.219/d' /usr/local/google/home/gargnitin/.ssh/known_hosts
 sed  's/^100.107.99.219/$1/' /usr/local/google/home/gargnitin/.ssh/known_hosts
@@ -3537,6 +3618,10 @@ service chrome-remote-desktop start
 sl
 sl -al 
 SmallTests
+sort -u .bash_history | less
+sort -u .bash_history | less > temp
+sort -u ~/.bash_history | less > temp
+sort -u .bash_history | tee .bash_history
 source ~/.bash_aliases 
 source ~/.bash_profile 
 source ~./bashrc
@@ -3694,6 +3779,7 @@ sudo apt-get install gh
 sudo apt-get install google-cloud-sdk
 sudo apt-get install htop
 sudo apt-get install jq
+sudo apt-get installl geany
 sudo apt-get install mc
 sudo apt-get install meld
 sudo apt-get install midnight-commander
@@ -3710,6 +3796,8 @@ sudo apt-get install vsc
 sudo apt-get install -y     autoconf     bison     flex     gcc     g++     git     libprotobuf-dev     libnl-route-3-dev     libtool     make     pkg-config     protobuf-compiler  
 sudo apt-get install -y htop
  sudo apt-get install -y linux-image-generic-lts-trusty linux-headers-generic-lts-trusty
+sudo apt-get install -y rpm docker
+sudo apt-get install -y rpm rapture docker
 sudo apt-get update
 sudo apt-get update && sudo apt-get --only-upgrade install google-cloud-sdk-app-engine-python-extras google-cloud-sdk-skaffold google-cloud-sdk-spanner-emulator google-cloud-sdk-kpt google-cloud-sdk-anthos-auth google-cloud-sdk google-cloud-sdk-firestore-emulator google-cloud-sdk-cbt google-cloud-sdk-package-go-module google-cloud-sdk-cloud-run-proxy google-cloud-sdk-terraform-tools google-cloud-sdk-log-streaming google-cloud-sdk-app-engine-go google-cloud-sdk-app-engine-python google-cloud-sdk-pubsub-emulator google-cloud-sdk-local-extract google-cloud-sdk-bigtable-emulator google-cloud-sdk-datastore-emulator google-cloud-sdk-cloud-build-local google-cloud-sdk-datalab google-cloud-sdk-app-engine-grpc google-cloud-sdk-config-connector google-cloud-sdk-app-engine-java google-cloud-sdk-gke-gcloud-auth-plugin kubectl google-cloud-sdk-kubectl-oidc google-cloud-sdk-nomos google-cloud-sdk-minikube google-cloud-sdk-harbourbridge
 sudo apt-get update && sudo apt-get --only-upgrade install google-cloud-sdk-log-streaming google-cloud-sdk-minikube google-cloud-sdk-app-engine-python google-cloud-sdk-skaffold google-cloud-sdk-harbourbridge google-cloud-sdk-spanner-emulator google-cloud-sdk-app-engine-grpc google-cloud-sdk-cloud-build-local google-cloud-sdk-app-engine-java google-cloud-sdk google-cloud-sdk-app-engine-python-extras google-cloud-sdk-firestore-emulator google-cloud-sdk-datastore-emulator google-cloud-sdk-package-go-module google-cloud-sdk-gke-gcloud-auth-plugin google-cloud-sdk-nomos google-cloud-sdk-kubectl-oidc google-cloud-sdk-app-engine-go google-cloud-sdk-cbt google-cloud-sdk-terraform-tools google-cloud-sdk-anthos-auth google-cloud-sdk-pubsub-emulator google-cloud-sdk-config-connector google-cloud-sdk-bigtable-emulator google-cloud-sdk-datalab google-cloud-sdk-local-extract google-cloud-sdk-cloud-run-proxy google-cloud-sdk-kpt kubectl
@@ -3762,7 +3850,9 @@ sudo cp ./nsjail /usr/bin
 sudo docker ps -a
 sudo docker run hello-world
 sudo docker run -it golang:1.20.6  cat /etc/os-release  && ldd --version
+sudo docker run -v $PWD:/src -w /src -u 431:433 -it ubuntu:20.04 sh -c "./proj1"
 sudo dpkg -i bcompare-4.4.3.26655_amd64.deb 
+sudo dpkg -i bcompare-4.4.6.27483_amd64.deb 
 sudo du -csh *
 sudo du -csh * 
 sudo du -csh /
@@ -3779,8 +3869,10 @@ sudo du -csh ~/work
 sudo find / -name 'gcsfuse_1.0.0_amd64.deb'
 sudo find ~ -name 'gcsfuse_1.0.0_amd64.deb'
 sudo fusermount -u test_buckets/gargnitin-bucket-mounted
+sudo gem install fpm
 sudo glinux-add-repo docker-ce-"$(lsb_release -cs)"
 sudo glinux-add-repo drive-fs-all stable
+sudo glinux-add-repo -e docker-credential-gcr && sudo apt update && sudo apt install -y docker-credential-gcr && docker-credential-gcr configure-docker --overwrite
 sudo glinux-config set backups_exclude_dot_git yes
 sudo glinux-config -U unset chromoting_desktop_environment
 sudo glinux-fixme
@@ -3901,6 +3993,8 @@ tail -f /tmp/gargnitin-bucket-mounting-log.txt
 tail -f /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-logfile.log
 tail -f /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-logfile.log 
 tail -n 1 ~/.bash_aliases
+tail -n 20 .bash_history
+tail -n 20 .bash_history i
 tail -n 20 log_with_seq_read_size_1024MB.txt
 tail -n 3 ~/.bashrc
 tail -n 5 ~/.bash_aliases
@@ -4042,6 +4136,7 @@ vi ~/.bash_aliases +/HALEY
 vi ~/.bash_aliases +/httpserver
 vi ~/.bash_aliases +/loadfuse1test
 vi ~/.bash_aliases && source ~/.bash_aliases 
+vi .bash_history 
 vi ~/..bash_history
 vi ~/.bash_history 
 vi ~/.bash_history +:$
@@ -4215,6 +4310,7 @@ vi stract_log
 vi structs.go 
 vi ./subproc.cc +:264
 vi ta_status.txt 
+vi temp
 vi test
 vi test_2.1GB.txt
 vi test_2.1GB.txt +:$
