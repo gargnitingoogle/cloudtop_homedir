@@ -19,6 +19,7 @@ l15=log --oneline --decorate=full -15
 l20=log --oneline --decorate=full -20
 l25=log --oneline --decorate=full -25
 pushthis=!git push -u origin $(git branch --show-current)
+rearrange=rebase -i HEAD~10
 reword=commit --fixup reword
 st=status
 up=checkout

@@ -1,5 +1,9 @@
 # Ignore everything
 *
+*BACKUP*
+*BASE*
+*LOCAL*
+*REMOTE*
 
 # But not these files...
 !*.vimrc
