@@ -7,7 +7,7 @@ curbranch=branch --show-current
 delbranch=branch -D
 delremote=branch -D --remote
 difftool=difftool -y
-droplast=reset --soft HEAD~1
+dt=difftool
 ff=pull --ff
 fixup=commit --fixup
 ls=branch -l
@@ -18,11 +18,14 @@ l10=log --oneline --decorate=full -10
 l15=log --oneline --decorate=full -15
 l20=log --oneline --decorate=full -20
 l25=log --oneline --decorate=full -25
+loselast=reset --hard HEAD~1
 pushthis=!git push -u origin $(git branch --show-current)
+put=pushthis	
 rearrange=rebase -i HEAD~10
 reword=commit --fixup reword
 st=status
 up=checkout
+unpacklast=reset --soft HEAD~1
 
 
 [user]
