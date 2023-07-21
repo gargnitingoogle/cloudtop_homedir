@@ -11,6 +11,7 @@ difftool=difftool -y
 dt=difftool
 ff=pull --ff
 fixup=commit --fixup
+graph = log --all --graph --decorate --oneline
 ls=branch -l
 l=log --oneline --decorate=full
 l1=log --oneline --decorate=full -1
@@ -32,7 +33,7 @@ reword=commit --fixup reword
 st=status
 up=checkout
 unpacklast=reset --soft HEAD~1
-
+upload=put
 
 [user]
 	email = gargnitin@google.com
