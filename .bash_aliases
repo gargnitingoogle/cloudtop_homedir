@@ -15,6 +15,7 @@ function genericAliases() {
 	alias gitconfig='vi ~/.gitconfig'
 	alias vm='gcloud compute --project "gcs-fuse-test" ssh --zone "us-central1-c" "gargnitin-ubuntu2004-golang12005" -- -o ProxyCommand='"'"'corp-ssh-helper %h %p'"'"''
 	alias gt='git'
+	alias gtl='git l'
 	alias gi='git'
 }
 

@@ -14,4 +14,4 @@
 !.gitignore
 !.gitconfig
 !*.git/config
-!.git/hooks/pre-receive
+!.githooks
