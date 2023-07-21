@@ -1,4 +1,5 @@
 [alias]
+aliases=config --get-regexp ^alias
 amend=commit --amend
 ci=commit
 co=checkout
