@@ -17,6 +17,7 @@ function genericAliases() {
 	alias gt='git'
 	alias gtl='git l'
 	alias gi='git'
+        alias lint='golangci-lint run'
 }
 
 genericAliases
@@ -124,7 +125,7 @@ function gcsfuseSrcAliases() {
 }
 
 function gcsfuseTestAliases() {
-	testbucket=gargnitin-fuse-test-bucket1
+	testbucket=gargnitin-fuse-test-bucket2
 	alias loadfusetest='bucket=$testbucket && mountdir=~/work/cloud/storage/client/gcsfuse/test_buckets && mountpath=$mountdir/$bucket-mount && (fusermount -u $mountpath || true) && mkdir -pv $mountpath && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && go run . --debug_fuse --debug_fuse_errors --debug_gcs --debug_http --log-file=$logpath --debug_mutex $bucket $mountpath'
 	alias unloadfusetest='bucket=gargnitin-fuse-test-bucket1 && mountdir=~/work/cloud/storage/client/gcsfuse/test_buckets && mountpath=$mountdir/$bucket-mount && (fusermount -u $mountpath || true)'
 }
