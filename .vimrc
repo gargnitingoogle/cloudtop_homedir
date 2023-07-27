@@ -16,6 +16,13 @@ se nu
 se relativenumber
 set nocompatible
 set hlsearch
+syntax on
+
+" Shortcut to discard everything and close all files on Ctrl+q 
+:map <C-q> <Esc>:qa<cr>
+"Short cut to save the file on Ctrl+s
+:imap <C-s> <Esc>:w<CR>a
+:nmap <C-s> :w<CR>
 
 " Use the 'google' package by default (see http://go/vim/packages).
 source /usr/share/vim/google/google.vim
@@ -118,11 +125,8 @@ Glug ultisnips-google
 " - enter insert mode with paste (https://github.com/tpope/vim-unimpaired)
 " - auto-detect pasting (https://github.com/ConradIrwin/vim-bracketed-paste)
 filetype plugin indent on
-syntax on
 
-" Shortcut to discard everything and close all files on Ctrl+q 
-:map <C-q> <Esc>:qa<cr>
-"Short cut to save the file on Ctrl+s
-:imap <C-s> <Esc>:w<CR>a
-:nmap <C-s> :w<CR>
+" enable the relatedfiles plugin,
+Glug relatedfiles
+Glug relatedfiles plugin[mappings]=',f'
 
