@@ -140,3 +140,5 @@ else
   echo "Failed to source ${bigstore_bashrc}"
 fi
 
+# for gcsfuse
+export CGO_ENABLED=0

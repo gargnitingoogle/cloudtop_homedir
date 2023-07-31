@@ -126,8 +126,10 @@ function gcsfuseSrcAliases() {
 
 function gcsfuseTestAliases() {
 	testbucket=gargnitin-fuse-test-bucket2
-	alias loadfusetest='bucket=$testbucket && mountdir=~/work/cloud/storage/client/gcsfuse/test_buckets && mountpath=$mountdir/$bucket-mount && (fusermount -u $mountpath || true) && mkdir -pv $mountpath && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && go run . --debug_fuse --debug_fuse_errors --debug_gcs --debug_http --log-file=$logpath --debug_mutex $bucket $mountpath'
-	alias unloadfusetest='bucket=gargnitin-fuse-test-bucket1 && mountdir=~/work/cloud/storage/client/gcsfuse/test_buckets && mountpath=$mountdir/$bucket-mount && (fusermount -u $mountpath || true)'
+        testbucketmountdir=~/work/cloud/storage/client/gcsfuse/test_buckets
+        testbucketmountpath=$testbucketmountdir/$testbucket-mount
+	alias loadfusetest='bucket=$testbucket && mountdir=$testbucketmountdir && mountpath=$testbucketmountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --debug_fuse --debug_fuse_errors --debug_gcs --debug_http --log-file=$logpath --debug_mutex $bucket $mountpath'
+	alias unloadfusetest='bucket=$testbucket && (fusermount -u $testbucketmountpath || true)'
 }
 
 gcsfuseSrcAliases
