@@ -4,6 +4,8 @@
 *BASE*
 *LOCAL*
 *REMOTE*
+*.vscode
+*.orig
 
 # But not these files...
 !*.vimrc
