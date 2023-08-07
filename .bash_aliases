@@ -1,22 +1,21 @@
 function genericAliases() {
-	alias ..='cd ..'
-	alias ...='cd ../..'
-	alias ....='cd ../../..'
-	alias .....='cd ../../../..'
-	alias ......='cd ../../../../..'
-	alias .......='cd ../../../../../..'
 	alias ........='cd ../../../../../../..'
+	alias .......='cd ../../../../../..'
+	alias ......='cd ../../../../..'
+	alias .....='cd ../../../..'
+	alias ....='cd ../../..'
+	alias ...='cd ../..'
+	alias ..='cd ..'
 	alias aliases='vi ~/.bash_aliases'
 	alias cls='clear'
-	alias tailf='tail -f'
-	alias htop='htop -u $USER -t'
-	alias l='ls -lah'
-	alias install='sudo apt-get -y install'
+	alias gi='git'
 	alias gitconfig='vi ~/.gitconfig'
-	alias vm='gcloud compute --project "gcs-fuse-test" ssh --zone "us-central1-c" "gargnitin-ubuntu2004-golang12005" -- -o ProxyCommand='"'"'corp-ssh-helper %h %p'"'"''
 	alias gt='git'
 	alias gtl='git l'
-	alias gi='git'
+	alias htop='htop -u $USER -t'
+	alias install='sudo apt-get -y install'
+	alias l='ls -lah'
+	alias tailf='tail -f'
         alias lint='golangci-lint run'
 }
 
@@ -125,10 +124,10 @@ function gcsfuseSrcAliases() {
 }
 
 function gcsfuseTestAliases() {
-	testbucket=gargnitin-fuse-test-bucket2
+	testbucket=gargnitin-fuse-test-bucket1
         testbucketmountdir=~/work/cloud/storage/client/gcsfuse/test_buckets
         testbucketmountpath=$testbucketmountdir/$testbucket-mount
-	alias loadfusetest='bucket=$testbucket && mountdir=$testbucketmountdir && mountpath=$testbucketmountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --debug_fuse --debug_fuse_errors --debug_gcs --debug_http --log-file=$logpath --debug_mutex $bucket $mountpath'
+	alias loadfusetest='bucket=$testbucket && mountdir=$testbucketmountdir && mountpath=$testbucketmountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --debug_http --log-file=$logpath --debug_mutex $bucket $mountpath'
 	alias unloadfusetest='bucket=$testbucket && (fusermount -u $testbucketmountpath || true)'
 }
 
