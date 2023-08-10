@@ -64,3 +64,5 @@ upload=put
 	prompt = false
 [rebase]
 	autosquash = true
+[mergetool]
+	keepBackup = false
