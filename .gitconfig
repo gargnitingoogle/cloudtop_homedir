@@ -1,6 +1,7 @@
 [alias]
 aliases=config --get-regexp ^alias
 amend ="!f() { if [ $# -lt 1 ] ; then git commit --amend --no-edit ; else git commit --fixup=amend:$1 ; fi; }; f"
+cb=branch --show-current
 ci=commit
 co=checkout
 cp=cherry-pick
@@ -12,12 +13,9 @@ dt=difftool
 ff=pull --ff
 fixup=commit --fixup
 graph = log --all --graph --decorate --oneline
-last=log -1 --decorate=full
-l=log --oneline --decorate=full -10
-l1=log --oneline --decorate=full -1
-l5=log --oneline --decorate=full -5
 l10=log --oneline --decorate=full -10
 l15=log --oneline --decorate=full -15
+l1=log --oneline --decorate=full -1
 l20=log --oneline --decorate=full -20
 l25=log --oneline --decorate=full -25
 l30=log --oneline --decorate=full -30
@@ -25,17 +23,22 @@ l35=log --oneline --decorate=full -35
 l40=log --oneline --decorate=full -40
 l45=log --oneline --decorate=full -45
 l50=log --oneline --decorate=full -50
+l5=log --oneline --decorate=full -5
+l=log --oneline --decorate=full -10
+last=log -1 --decorate=full
 loselast=reset --hard HEAD~1
 ls=branch -l
 lsremote=branch -l --remote
+new=switch -c
+prev=switch -
 pushthis=!git push -u origin $(git branch --show-current)
 put=pushthis	
 rearrange=rebase -i HEAD~10
 renamebranch=branch -m
 reword="!f() { if [ $# -lt 1 ] ; then git commit --amend --only ; else git commit --fixup=reword:$1 ; fi; }; f"
 st=status
-up=checkout
 unpacklast=reset --soft HEAD~1
+up=checkout
 upload=put
 
 [user]

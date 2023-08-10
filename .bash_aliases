@@ -127,8 +127,10 @@ function gcsfuseTestAliases() {
 	testbucket=gargnitin-fuse-test-bucket1
         testbucketmountdir=~/work/cloud/storage/client/gcsfuse/test_buckets
         testbucketmountpath=$testbucketmountdir/$testbucket-mount
-	alias loadfusetest='bucket=$testbucket && mountdir=$testbucketmountdir && mountpath=$testbucketmountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --debug_http --log-file=$logpath --debug_mutex $bucket $mountpath'
+	alias loadfusetest='bucket=$testbucket && mountdir=$testbucketmountdir && mountpath=$testbucketmountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --debug_http --debug_fs --log-file=$logpath --debug_mutex $bucket $mountpath'
 	alias unloadfusetest='bucket=$testbucket && (fusermount -u $testbucketmountpath || true)'
+        alias gcsdescribe='gcloud storage objects describe'
+	alias gcscp='gcloud storage cp'
 }
 
 gcsfuseSrcAliases
