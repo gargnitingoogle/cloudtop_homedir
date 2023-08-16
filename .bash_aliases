@@ -18,6 +18,7 @@ function genericAliases() {
 	alias l='ls -lah'
 	alias tailf='tail -f'
         alias lint='golangci-lint run'
+        alias dlv='dlv --check-go-version=false'
 }
 
 genericAliases
