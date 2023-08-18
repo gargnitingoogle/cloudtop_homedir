@@ -58,6 +58,7 @@ upload=put
 [diff]
 	tool = bc
 [difftool "bc"]
+	cmd=/usr/bin/bcompare -expandall -solo \"$LOCAL\" \"$REMOTE\"
 	trustExitCode = true
 [merge]
 	tool = bc

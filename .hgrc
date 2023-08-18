@@ -1,0 +1,18 @@
+[extensions]
+extdiff =
+
+[extdiff]
+meld = 
+cmd.bcdiff = bcompare 
+#mdiff = /usr/lib/fig/multidiff vim $root $parent $child
+opts.bcdiff = -expandall -leftreadonly
+
+[diff-tools]
+
+[merge-tool]
+
+[alias]
+bc = bcdiff
+# Aliases for common mdiff usage.
+#mdiffp4 = mdiff --rev p4base
+#mdiffup = mdiff --rev .^

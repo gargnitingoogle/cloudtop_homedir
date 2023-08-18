@@ -19,6 +19,7 @@ function genericAliases() {
 	alias tailf='tail -f'
         alias lint='golangci-lint run'
         alias dlv='dlv --check-go-version=false'
+        alias goctl='/google/bin/releases/golinks/goctl/goctl.par'
 }
 
 genericAliases
