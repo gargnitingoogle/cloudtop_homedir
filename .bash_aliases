@@ -8,6 +8,7 @@ function genericAliases() {
 	alias ..='cd ..'
 	alias aliases='vi ~/.bash_aliases'
 	alias cls='clear'
+        alias dlv='~/go/bin/dlv --check-go-version=false'
 	alias gi='git'
 	alias gitconfig='vi ~/.gitconfig'
 	alias gt='git'
@@ -18,7 +19,6 @@ function genericAliases() {
 	alias l='ls -lah'
 	alias tailf='tail -f'
         alias lint='golangci-lint run'
-        alias dlv='dlv --check-go-version=false'
         alias goctl='/google/bin/releases/golinks/goctl/goctl.par'
 }
 
@@ -119,7 +119,6 @@ function transferApplianceAliases() {
 function gcsfuseSrcAliases() {
 	alias src='cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse'
 	alias lsfusemnts='cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2'
-	alias dlv='~/go/bin/dlv'
 	alias localwork='cd ~/work/cloud/storage/client/gcsfuse/tasks'
 	alias work='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks'
 	alias golang='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-golang1.20.5'
