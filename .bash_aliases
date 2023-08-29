@@ -7,19 +7,22 @@ function genericAliases() {
 	alias ...='cd ../..'
 	alias ..='cd ..'
 	alias aliases='vi ~/.bash_aliases'
+        alias bashrc='vi ~/.bashrc'
 	alias cls='clear'
         alias dlv='~/go/bin/dlv --check-go-version=false'
 	alias gi='git'
 	alias gitconfig='vi ~/.gitconfig'
+        alias goctl='/google/bin/releases/golinks/goctl/goctl.par'
 	alias gt='git'
 	alias gti='git'
 	alias gtl='git l'
 	alias htop='htop -u $USER -t'
 	alias install='sudo apt-get -y install'
 	alias l='ls -lah'
-	alias tailf='tail -f'
         alias lint='golangci-lint run'
-        alias goctl='/google/bin/releases/golinks/goctl/goctl.par'
+        alias pstree='pstree -ps'
+	alias tailf='tail -f'
+        alias vimrc='vi ~/.vimrc'
 }
 
 genericAliases
@@ -126,13 +129,27 @@ function gcsfuseSrcAliases() {
 }
 
 function gcsfuseTestAliases() {
-	testbucket=gargnitin-fuse-test-bucket1
-        testbucketmountdir=~/work/cloud/storage/client/gcsfuse/test_buckets
-        testbucketmountpath=$testbucketmountdir/$testbucket-mount
-	alias loadfusetest='bucket=$testbucket && mountdir=$testbucketmountdir && mountpath=$testbucketmountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --debug_http --debug_fs --log-file=$logpath --debug_mutex $bucket $mountpath'
-	alias unloadfusetest='bucket=$testbucket && (fusermount -u $testbucketmountpath || true)'
-        alias gcsdescribe='gcloud storage objects describe'
-	alias gcscp='gcloud storage cp'
+	testbucketmountdir=~/work/cloud/storage/client/gcsfuse/test_buckets
+
+        testbucket1=gargnitin-fuse-test-bucket1
+        testbucket1mountpath=$testbucketmountdir/$testbucket1-mount
+	alias loadfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath $bucket $mountpath'
+	alias unloadfusetestbucket1='fusermount -u $testbucket1mountpath || true'
+
+	testbucket2=gargnitin-fuse-test-bucket2
+        testbucket2mountpath=$testbucketmountdir/$testbucket2-mount
+	alias loadfusetestbucket2='bucket=$testbucket2 && mountdir=$testbucketmountdir && mountpath=$testbucket2mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath $bucket $mountpath'
+	alias unloadfusetestbucket2='fusermount -u $testbucket2mountpath || true'
+
+	testbucket3=gargnitin-memory-testing-bucket-20230809
+        testbucket3mountpath=$testbucketmountdir/$testbucket3-mount
+	alias loadfusetestbucket3='bucket=$testbucket3 && mountdir=$testbucketmountdir && mountpath=$testbucket3mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath $bucket $mountpath'
+	alias unloadfusetestbucket3='fusermount -u $testbucket2mountpath || true'
+
+	#--debug_fuse_errors --debug_http --debug_fs --debug_mutex $bucket
+
+	alias gcsdescribe='gcloud storage objects describe'
+	#alias gcscp='gcloud storage cp'
 }
 
 gcsfuseSrcAliases

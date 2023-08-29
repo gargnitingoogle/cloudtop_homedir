@@ -12,17 +12,24 @@
 
 " Enable modern Vim features not compatible with Vi spec.
 set nocompatible
+" show line numbers
 se nu
+" show relative line numbers
 se relativenumber
-set nocompatible
+" highlight search results
 set hlsearch
 syntax on
+" do not wrap search back to head of file
+set nowrapscan
 
 " Shortcut to discard everything and close all files on Ctrl+q 
 :map <C-q> <Esc>:qa<cr>
 "Short cut to save the file on Ctrl+s
 :imap <C-s> <Esc>:w<CR>a
 :nmap <C-s> :w<CR>
+set listchars=tab:▷▷⋮
+set invlist
+noremap <Leader><Tab><Tab> :set invlist<CR>
 
 " Use the 'google' package by default (see http://go/vim/packages).
 source /usr/share/vim/google/google.vim
