@@ -27,9 +27,9 @@ set nowrapscan
 "Short cut to save the file on Ctrl+s
 :imap <C-s> <Esc>:w<CR>a
 :nmap <C-s> :w<CR>
-set listchars=tab:▷▷⋮
-set invlist
-noremap <Leader><Tab><Tab> :set invlist<CR>
+"set listchars=tab:▷▷⋮
+"set invlist
+"noremap <Leader><Tab><Tab> :set invlist<CR>
 
 " Use the 'google' package by default (see http://go/vim/packages).
 source /usr/share/vim/google/google.vim

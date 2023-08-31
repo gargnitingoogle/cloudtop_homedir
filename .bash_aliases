@@ -23,6 +23,7 @@ function genericAliases() {
         alias pstree='pstree -ps'
 	alias tailf='tail -f'
         alias vimrc='vi ~/.vimrc'
+        alias history='vi ~/.bash_history +:$'
 }
 
 genericAliases
@@ -121,7 +122,8 @@ function transferApplianceAliases() {
 
 function gcsfuseSrcAliases() {
 	alias src='cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse'
-	alias lsfusemnts='cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2'
+#	alias lsfusemnts='cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2'
+        alias lsfusemnts='df -h --output=source,fstype,target | grep '"'"'gcsfuse\|Mounted'"'"''
 	alias localwork='cd ~/work/cloud/storage/client/gcsfuse/tasks'
 	alias work='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks'
 	alias golang='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-golang1.20.5'
@@ -135,6 +137,7 @@ function gcsfuseTestAliases() {
         testbucket1mountpath=$testbucketmountdir/$testbucket1-mount
 	alias loadfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath $bucket $mountpath'
 	alias unloadfusetestbucket1='fusermount -u $testbucket1mountpath || true'
+	alias loaddebugfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse && CGO_ENABLED=0 go build -gcflags="all=-N -l" -o gcsfuse && ./gcsfuse --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath $bucket $mountpath && echo '"'"'gcsfuse pid='"'"'$!'
 
 	testbucket2=gargnitin-fuse-test-bucket2
         testbucket2mountpath=$testbucketmountdir/$testbucket2-mount
