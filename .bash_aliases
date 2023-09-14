@@ -135,18 +135,18 @@ function gcsfuseTestAliases() {
 
         testbucket1=gargnitin-fuse-test-bucket1
         testbucket1mountpath=$testbucketmountdir/$testbucket1-mount
-	alias loadfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath $bucket $mountpath'
+	alias loadfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath --log-format=text $bucket $mountpath'
 	alias unloadfusetestbucket1='fusermount -u $testbucket1mountpath || true'
-	alias loaddebugfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse && CGO_ENABLED=0 go build -gcflags="all=-N -l" -o gcsfuse && ./gcsfuse --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath $bucket $mountpath && echo '"'"'gcsfuse pid='"'"'$!'
+	alias loaddebugfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse && CGO_ENABLED=0 go build -gcflags="all=-N -l" -o gcsfuse && ./gcsfuse --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath --log-format=text $bucket $mountpath && echo '"'"'gcsfuse pid='"'"'$!'
 
 	testbucket2=gargnitin-fuse-test-bucket2
         testbucket2mountpath=$testbucketmountdir/$testbucket2-mount
-	alias loadfusetestbucket2='bucket=$testbucket2 && mountdir=$testbucketmountdir && mountpath=$testbucket2mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath $bucket $mountpath'
+	alias loadfusetestbucket2='bucket=$testbucket2 && mountdir=$testbucketmountdir && mountpath=$testbucket2mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath --log-format=text $bucket $mountpath'
 	alias unloadfusetestbucket2='fusermount -u $testbucket2mountpath || true'
 
 	testbucket3=gargnitin-memory-testing-bucket-20230809
         testbucket3mountpath=$testbucketmountdir/$testbucket3-mount
-	alias loadfusetestbucket3='bucket=$testbucket3 && mountdir=$testbucketmountdir && mountpath=$testbucket3mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath $bucket $mountpath'
+	alias loadfusetestbucket3='bucket=$testbucket3 && mountdir=$testbucketmountdir && mountpath=$testbucket3mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath --log-format=text $bucket $mountpath'
 	alias unloadfusetestbucket3='fusermount -u $testbucket2mountpath || true'
 
 	#--debug_fuse_errors --debug_http --debug_fs --debug_mutex $bucket
