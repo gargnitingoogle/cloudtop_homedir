@@ -151,6 +151,11 @@ function gcsfuseTestAliases() {
 
 	#--debug_fuse_errors --debug_http --debug_fs --debug_mutex $bucket
 
+        integrationTestsBucket=gargnitin-gcsfuse-integration-tests-playground
+        integrationTestsBucketMountpath=$testbucketmountdir/${integrationTestsBucket}-mount
+        alias loadIntegrationTestsBucket='bucket=$integrationTestsBucket && mountdir=$testbucketmountdir && mountpath=$integrationTestsBucketMountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_gcs --log-file=$logpath --log-format=text $bucket $mountpath'
+        alias unloadIntegrationTestsBucket='fusermount -u $integrationTestsBucketMountpath || true'
+
 	alias gcsdescribe='gcloud storage objects describe'
 	#alias gcscp='gcloud storage cp'
 }
