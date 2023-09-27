@@ -54,7 +54,7 @@ function gcsfusetestvmconnect() {
   zone=$2
   vmname=$1
 
-  vmconnect "$vmname" "$zone" "$projectname"
+  vmconnect "$vmname" "$zone" "$projectname" "${@:3}"
 }
 
 function installGoVersion ()
@@ -123,7 +123,7 @@ function transferApplianceAliases() {
 function gcsfuseSrcAliases() {
 	alias src='cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse'
 #	alias lsfusemnts='cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2'
-        alias lsfusemnts='df -h --output=source,fstype,target | grep '"'"'gcsfuse\|Mounted'"'"''
+        alias lsfusemnts='echo From df command: ; df -h --output=source,fstype,target | grep '"'"'gcsfuse\|Mounted'"'"' ; echo . ; echo From /etc/mtab:  ;  cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2 '
 	alias localwork='cd ~/work/cloud/storage/client/gcsfuse/tasks'
 	alias work='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks'
 	alias golang='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-golang1.20.5'
