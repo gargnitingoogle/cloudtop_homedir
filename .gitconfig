@@ -24,7 +24,7 @@ l40=log --oneline --decorate=full -40
 l45=log --oneline --decorate=full -45
 l50=log --oneline --decorate=full -50
 l5=log --oneline --decorate=full -5
-l=log --oneline --decorate=full -10
+l=log --oneline --decorate=full -5
 last=log -1 --decorate=full
 loselast=reset --hard HEAD~1
 ls=branch -l
