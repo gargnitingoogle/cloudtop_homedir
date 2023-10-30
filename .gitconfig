@@ -4,13 +4,18 @@ amend ="!f() { if [ $# -lt 1 ] ; then git commit --amend --no-edit ; else git co
 cb=branch --show-current
 ci=commit
 co=checkout
+committed= !git show --pretty=\"\" --stat
 cp=cherry-pick
+cpa=cherry-pick --abort
+cpc=cherry-pick --continue
 curbranch=branch --show-current
 delbranch=branch -D
 delremote=branch -D --remote
 difftool=difftool -y
+dirty= !git diff --pretty=\"\" --stat
 dt=difftool
-ff=pull --ff
+fa=fetch --all
+ff="!f() { git fetch --all ; git pull --ff ; }; f"
 fixup=commit --fixup
 graph = log --all --graph --decorate --oneline
 l10=log --oneline --decorate=full -10
@@ -34,15 +39,22 @@ new=switch -c
 prev=switch -
 pushthis=!git push -u origin $(git branch --show-current)
 put=pushthis	
+ra=rebase --abort
+rc=rebase --continue
 rearrange=rebase -i HEAD~10
 renamebranch=branch -m
 reword="!f() { if [ $# -lt 1 ] ; then git commit --amend --only ; else git commit --fixup=reword:$1 ; fi; }; f"
-st=status
+ri=rebase --interactive
+st=status -uno
+st-all=status -unormal
+staged= !git diff --pretty=\"\" --stat --cached
 strip=reset --hard
+uncommitted= !git diff --pretty=\"\" --stat
 unpacklast=reset --soft HEAD~1
 unstage=restore --staged
 up=checkout
 upload=put
+
 
 [user]
 	email = gargnitin@google.com

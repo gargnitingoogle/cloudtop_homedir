@@ -10,12 +10,7 @@ function genericAliases() {
         alias bashrc='vi ~/.bashrc'
 	alias cls='clear'
         alias dlv='~/go/bin/dlv --check-go-version=false'
-	alias gi='git'
-	alias gitconfig='vi ~/.gitconfig'
         alias goctl='/google/bin/releases/golinks/goctl/goctl.par'
-	alias gt='git'
-	alias gti='git'
-	alias gtl='git l'
 	alias htop='htop -u $USER -t'
 	alias install='sudo apt-get -y install'
 	alias l='ls -lah'
@@ -27,6 +22,17 @@ function genericAliases() {
 }
 
 genericAliases
+
+function gitAliases() {
+	alias gi='git'
+	alias gitconfig='vi ~/.gitconfig'
+        alias gitl='git l'
+	alias gt='git'
+	alias gti='git'
+	alias gtl='git l'
+}
+
+gitAliases
 
 function vmconnect() {
   if [ $# -lt 3 ]
