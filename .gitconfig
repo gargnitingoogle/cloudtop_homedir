@@ -39,6 +39,7 @@ new=switch -c
 prev=switch -
 pushthis=!git push -u origin $(git branch --show-current)
 put=pushthis	
+r=rebase
 ra=rebase --abort
 rc=rebase --continue
 rearrange=rebase -i HEAD~10
