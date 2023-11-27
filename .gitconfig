@@ -51,6 +51,7 @@ st-all=status -unormal
 staged= !git diff --pretty=\"\" --stat --cached
 strip=reset --hard
 uncommitted= !git diff --pretty=\"\" --stat
+undo=restore --source=HEAD
 unpacklast=reset --soft HEAD~1
 unstage=restore --staged
 up=checkout
