@@ -6,6 +6,7 @@
 *REMOTE*
 *.vscode
 *.orig
+*__debug*
 
 # But not these files...
 !*.vimrc

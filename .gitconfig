@@ -5,7 +5,7 @@ cb=branch --show-current
 ci=commit
 co=checkout
 committed= !git show --pretty=\"\" --stat
-cp=cherry-pick
+cp=cherry-pick --allow-empty
 cpa=cherry-pick --abort
 cpc=cherry-pick --continue
 curbranch=branch --show-current
@@ -34,11 +34,11 @@ last=log -1 --decorate=full
 loselast=reset --hard HEAD~1
 ls=branch -l
 lsremote=branch -l --remote
-remotebranches="!f() { git branch -l --remote | grep $USER; }; f" 
+remotebranches="!f() { git branch -l --remote | grep $USER; }; f"
 new=switch -c
 prev=switch -
 pushthis=!git push -u origin $(git branch --show-current)
-put=pushthis	
+put=pushthis
 r=rebase
 ra=rebase --abort
 rc=rebase --continue
@@ -62,10 +62,10 @@ upload=put
 	email = gargnitin@google.com
 	name = Nitin Garg
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
 [pull]
 	rebase = true
