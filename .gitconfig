@@ -8,6 +8,7 @@ committed= !git show --pretty=\"\" --stat
 cp=cherry-pick --allow-empty
 cpa=cherry-pick --abort
 cpc=cherry-pick --continue
+cps=cherry-pick --skip
 curbranch=branch --show-current
 delbranch=branch -D
 delremote=branch -D --remote

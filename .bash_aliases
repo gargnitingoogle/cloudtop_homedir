@@ -128,8 +128,8 @@ function transferApplianceAliases() {
 
 function gcsfuseSrcAliases() {
 	alias src='cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse'
-#	alias lsfusemnts='cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2'
-        alias lsfusemnts='echo From df command: ; df -h --output=source,fstype,target | grep '"'"'gcsfuse\|Mounted'"'"' ; echo . ; echo From /etc/mtab:  ;  cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2 '
+	alias lsfusemnts='cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2'
+#        alias lsfusemnts='echo From df command: ; df -h --output=source,fstype,target | grep '"'"'gcsfuse\|Mounted'"'"' ; echo . ; echo From /etc/mtab:  ;  cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2 '
 	alias localwork='cd ~/work/cloud/storage/client/gcsfuse/tasks'
 	alias work='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks'
 	alias golang='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-golang1.20.5'
@@ -142,29 +142,29 @@ function gcsfuseTestAliases() {
         testbucket1=gargnitin-fuse-test-bucket1
         testbucket1mountpath=$testbucketmountdir/$testbucket1-mount
 	alias loadfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --config-file="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/config-debug-gargnitin-fuse-test-bucket1.yaml" --implicit-dirs --log-format=text $bucket $mountpath'
-	alias unloadfusetestbucket1='fusermount -u $testbucket1mountpath || true'
+	alias unloadfusetestbucket1='fusermount -uz $testbucket1mountpath || true'
 	alias loaddebugfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse && CGO_ENABLED=0 go build -gcflags="all=-N -l" -o gcsfuse && ./gcsfuse --config-file="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/config-debug-gargnitin-fuse-test-bucket1.yaml" --implicit-dirs --log-format=text $bucket $mountpath && echo '"'"'gcsfuse pid='"'"'$!'
 
 	testbucket2=gargnitin-fuse-test-bucket2
         testbucket2mountpath=$testbucketmountdir/$testbucket2-mount
 	alias loadfusetestbucket2='bucket=$testbucket2 && mountdir=$testbucketmountdir && mountpath=$testbucket2mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath --log-format=text $bucket $mountpath'
-	alias unloadfusetestbucket2='fusermount -u $testbucket2mountpath || true'
+	alias unloadfusetestbucket2='fusermount -uz $testbucket2mountpath || true'
 
 	testbucket3=gargnitin-memory-testing-bucket-20230809
         testbucket3mountpath=$testbucketmountdir/$testbucket3-mount
 	alias loadfusetestbucket3='bucket=$testbucket3 && mountdir=$testbucketmountdir && mountpath=$testbucket3mountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath --log-format=text $bucket $mountpath'
-	alias unloadfusetestbucket3='fusermount -u $testbucket2mountpath || true'
+	alias unloadfusetestbucket3='fusermount -uz $testbucket2mountpath || true'
 
 	#--debug_fuse_errors --debug_http --debug_fs --debug_mutex $bucket
 
         integrationTestsBucket=gargnitin-gcsfuse-integration-tests-playground
         integrationTestsBucketMountpath=$testbucketmountdir/${integrationTestsBucket}-mount
         alias loadIntegrationTestsBucket='bucket=$integrationTestsBucket && mountdir=$testbucketmountdir && mountpath=$integrationTestsBucketMountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_gcs --log-file=$logpath --log-format=text $bucket $mountpath'
-        alias unloadIntegrationTestsBucket='fusermount -u $integrationTestsBucketMountpath || true'
+        alias unloadIntegrationTestsBucket='fusermount -uz $integrationTestsBucketMountpath || true'
 
         dynamicmountpath=$testbucketmountdir/dynamic-mount
 	alias loadfusedynamic='mountdir=$testbucketmountdir && mountpath=$dynamicmountpath && mkdir -pv $mountpath && (fusermount -u $mountpath || true) && logpath=$mountdir/dynamic-mount-log.log && rm -rfv $logpath && cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse  && CGO_ENABLED=0 go run . --config-file="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/config-debug-gargnitin-fuse-dynamic-mount.yaml" --implicit-dirs --log-format=text $mountpath'
-	alias unloadfusedynamic='fusermount -u $dynamicmountpath || true'
+	alias unloadfusedynamic='fusermount -uz $dynamicmountpath || true'
 
 	alias gcsdescribe='gcloud storage objects describe'
 	#alias gcscp='gcloud storage cp'
