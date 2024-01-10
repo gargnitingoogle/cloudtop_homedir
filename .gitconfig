@@ -3,6 +3,7 @@ aliases=config --get-regexp ^alias
 amend ="!f() { if [ $# -lt 1 ] ; then git commit --amend --no-edit ; else git commit --fixup=amend:$1 ; fi; }; f"
 cb=branch --show-current
 ci=commit
+cl = "!f() { git push origin HEAD:refs/for/${1:-main}; }; f"
 co=checkout
 committed= !git show --pretty=\"\" --stat
 cp=cherry-pick --allow-empty
@@ -85,3 +86,10 @@ upload=put
 	autosquash = true
 [mergetool]
 	keepBackup = false
+[http]
+	cookiefile = /usr/local/google/home/gargnitin/.gitcookies
+[url "sso://codelab/"]
+	insteadOf = https://codelab.googlesource.com/
+	insteadOf = https://codelab-review.googlesource.com/
+	insteadOf = http://codelab.googlesource.com/
+	insteadOf = http://codelab-review.googlesource.com/
