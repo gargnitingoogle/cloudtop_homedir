@@ -7,18 +7,18 @@ function genericAliases() {
 	alias ...='cd ../..'
 	alias ..='cd ..'
 	alias aliases='vi ~/.bash_aliases'
-        alias bashrc='vi ~/.bashrc'
+	alias bashrc='vi ~/.bashrc'
 	alias cls='clear'
-        alias dlv='~/go/bin/dlv --check-go-version=false'
-        alias goctl='/google/bin/releases/golinks/goctl/goctl.par'
+	alias dlv='~/go/bin/dlv --check-go-version=false'
+	alias goctl='/google/bin/releases/golinks/goctl/goctl.par'
 	alias htop='htop -u $USER -t'
 	alias install='sudo apt-get -y install'
 	alias l='ls -lah'
-        alias lint='golangci-lint run'
-        alias pstree='pstree -ps'
+	alias lint='golangci-lint run'
+	alias pstree='pstree -ps'
 	alias tailf='tail -f'
-        alias vimrc='vi ~/.vimrc'
-        alias history='vi ~/.bash_history +:$'
+	alias vimrc='vi ~/.vimrc'
+	alias history='vi ~/.bash_history +:$'
 }
 
 genericAliases
@@ -26,13 +26,19 @@ genericAliases
 function gitAliases() {
 	alias gi='git'
 	alias gitconfig='vi ~/.gitconfig'
-        alias gitl='git l'
+	alias gitl='git l'
 	alias gt='git'
 	alias gti='git'
 	alias gtl='git l'
 }
 
 gitAliases
+
+function cloudtopAliases() {
+  alias restartCRD='sudo systemctl restart chrome-remote-desktop@${USER}'
+}
+
+cloudtopAliases
 
 function vmconnect() {
   if [ $# -lt 3 ]
@@ -127,6 +133,7 @@ function transferApplianceAliases() {
 # transferApplianceAliases
 
 function gcsfuseSrcAliases() {
+	export gcsfuse_src_dir=~/work/cloud/storage/client/gcsfuse/src/gcsfuse
 	alias src='cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse'
 	alias lsfusemnts='cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2'
 #        alias lsfusemnts='echo From df command: ; df -h --output=source,fstype,target | grep '"'"'gcsfuse\|Mounted'"'"' ; echo . ; echo From /etc/mtab:  ;  cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2 '
