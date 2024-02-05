@@ -122,7 +122,7 @@ export P4CONFIG=.p4config
 #export P4MERGE=/home/build/public/eng/perforce/mergep4.tcl 
 export P4EDITOR=$EDITOR
 #Beyond Compare
-export PATH=$HOME/go/bin:$HOME/bin:$PATH
+export PATH=$HOME/go/bin:$HOME/bin:$PATH:$HOME/scripts/
 unset G4MULTIDIFF # One diff at a time
 export P4DIFF=$HOME/bin/bcompare
 export P4MERGE=$HOME/bin/p4bcmerge.sh
