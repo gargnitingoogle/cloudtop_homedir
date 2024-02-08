@@ -21,6 +21,8 @@ set hlsearch
 syntax on
 " do not wrap search back to head of file
 set nowrapscan
+" auto reload file
+set autoread
 
 " Shortcut to discard everything and close all files on Ctrl+q 
 :map <C-q> <Esc>:qa<cr>
@@ -92,7 +94,7 @@ augroup END
 " Load YCM (http://go/ycm) for semantic auto-completion and quick syntax
 " error checking. Pulls in a google3-enabled version of YCM itself and
 " a google3-specific default configuration.
-"Glug youcompleteme-google
+Glug youcompleteme-google
 
 " Load the automated blaze dependency integration for Go.
 " Note: for Go, blazedeps uses the Go team's glaze tool, which is fully
