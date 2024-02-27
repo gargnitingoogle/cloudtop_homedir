@@ -134,13 +134,15 @@ function transferApplianceAliases() {
 
 function gcsfuseSrcAliases() {
 	export gcsfuse_src_dir=~/work/cloud/storage/client/gcsfuse/src/gcsfuse
-	alias src='cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse'
+	export gcsfuse_src2_dir=~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
+	alias src='cd ${gcsfuse_src_dir}'
+	alias src2='cd ${gcsfuse_src2_dir}'
 	alias lsfusemnts='cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2'
 #        alias lsfusemnts='echo From df command: ; df -h --output=source,fstype,target | grep '"'"'gcsfuse\|Mounted'"'"' ; echo . ; echo From /etc/mtab:  ;  cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2 '
 	alias localwork='cd ~/work/cloud/storage/client/gcsfuse/tasks'
 	alias work='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks'
-	alias golang='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-golang1.20.5'
-	alias encoding='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-08-gzip-support'
+	#alias golang='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-golang1.20.5'
+	#alias encoding='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-08-gzip-support'
 }
 
 function unmountGcsfuse() {
