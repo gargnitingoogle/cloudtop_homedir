@@ -12,23 +12,30 @@
 
 " Enable modern Vim features not compatible with Vi spec.
 set nocompatible
+set history=5000
+
 " show line numbers
 se nu
 " show relative line numbers
 se relativenumber
+"
 " highlight search results
 set hlsearch
+" Enable syntax highlighting
 syntax on
+
 " do not wrap search back to head of file
 set nowrapscan
+
 " auto reload file
 set autoread
 
 " Shortcut to discard everything and close all files on Ctrl+q 
-:map <C-q> <Esc>:qa<cr>
+:map <C-q> <Esc>:qa<CR>
+:imap <C-q> <Esc>:qa<CR>
 "Short cut to save the file on Ctrl+s
-:imap <C-s> <Esc>:w<CR>a
-:nmap <C-s> :w<CR>
+:imap <C-s> <Esc>:w<CR>i
+:nmap <C-s> <ESC>:w<CR>
 "set listchars=tab:▷▷⋮
 "set invlist
 "noremap <Leader><Tab><Tab> :set invlist<CR>
@@ -47,7 +54,7 @@ augroup autoformat_settings
   autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType java AutoFormatBuffer google-java-format
   autocmd FileType jslayout AutoFormatBuffer jslfmt
-  autocmd FileType markdown AutoFormatBuffer mdformat
+"  autocmd FileType markdown AutoFormatBuffer mdformat
   autocmd FileType ncl AutoFormatBuffer nclfmt
   autocmd FileType python AutoFormatBuffer pyformat
   autocmd FileType soy AutoFormatBuffer soyfmt
