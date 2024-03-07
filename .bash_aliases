@@ -19,6 +19,8 @@ function genericAliases() {
 	alias tailf='tail -f'
 	alias vimrc='vi ~/.vimrc'
 	alias history='vi ~/.bash_history +:$'
+        alias runubuntucontainer='docker run --rm -it --entrypoint /bin/bash ubuntu'
+        alias rungocontainer='docker run -it --rm --entrypoint /bin/bash golang'
 }
 
 genericAliases
