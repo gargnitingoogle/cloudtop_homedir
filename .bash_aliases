@@ -198,7 +198,7 @@ function gcsfuseTestAliases() {
 	testbucket1=gargnitin-fuse-test-bucket1
 	testbucket1mountpath=$testbucketmountdir/$testbucket1-mount
 	testbucket1configfile=${gcsfuse_src_dir}/config-trace-gargnitin-fuse-test-bucket1.yaml
-	alias loadfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (unmountGcsfuse $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ${gcsfuse_src_dir}  && CGO_ENABLED=0 go run . --foreground --config-file=${testbucket1configfile} --log-format=text --stat-cache-capacity=100000000 $bucket $mountpath'
+	alias loadfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (unmountGcsfuse $mountpath || true) && logpath=$mountdir/${bucket}-logfile.log && rm -rfv $logpath && cd ${gcsfuse_src_dir}  && CGO_ENABLED=0 go run . --config-file=${testbucket1configfile} $bucket $mountpath'
 	# --implicit-dirs
 	alias unloadfusetestbucket1='unmountGcsfuse $testbucket1mountpath'
 	alias loaddebugfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (unmountGcsfuse $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ${gcsfuse_src_dir} && CGO_ENABLED=0 go build -gcflags="all=-N -l" -o gcsfuse && ./gcsfuse --config-file=${testbucket1configfile} --implicit-dirs --log-format=text $bucket $mountpath && echo '"'"'gcsfuse pid='"'"'$!'
