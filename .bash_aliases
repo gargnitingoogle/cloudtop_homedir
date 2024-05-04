@@ -154,10 +154,10 @@ function unmountGcsfuse() {
 		return 1
 	fi
 	mntpath=$1
-	if [ ! -d "$mntpath" ] ; then
-		echo "unmountGcsfuse: passed argument \'"${mntpath}"\' is not a directory"
-		return 1
-	fi
+#	if [ ! -d "$mntpath" ] ; then
+#		echo "unmountGcsfuse: passed argument \'"${mntpath}"\' is not a directory"
+#		return 1
+#	fi
 	echo "Unmounting gcsfuse mount "${mntpath}" ..."
 	fusermount -uz $mntpath
 	echo "... Unmounted "${mntpath}
