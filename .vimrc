@@ -35,19 +35,22 @@ set autoread
 " show tabs
 set list
 set listchars=tab:>-
+noremap <Leader><Tab><Tab> :set invlist<CR>
 
 " enable mouse in all modes
 set mouse=a
+  
+" autocmd FileType c,cpp,go 
+nnoremap <C-k><C-c> <Esc>i<Home>//<Esc>
+noremap <C-d> dd
+noremap <C-z> u
+noremap <C-y> <C-r>
 
 " Shortcut to discard everything and close all files on Ctrl+q 
-:map <C-q> <Esc>:qa<CR>
-:imap <C-q> <Esc>:qa<CR>
+:noremap <C-q> <Esc>:qa<CR>
 "Short cut to save the file on Ctrl+s
-:imap <C-s> <Esc>:w<CR>i
-:nmap <C-s> <ESC>:w<CR>
-"set listchars=tab:▷▷⋮
-"set invlist
-"noremap <Leader><Tab><Tab> :set invlist<CR>
+:inoremap <C-s> <Esc>:w<CR>i
+:nnoremap <C-s> <ESC>:w<CR>
 
 " Use the 'google' package by default (see http://go/vim/packages).
 source /usr/share/vim/google/google.vim
@@ -63,14 +66,14 @@ augroup autoformat_settings
   autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType java AutoFormatBuffer google-java-format
   autocmd FileType jslayout AutoFormatBuffer jslfmt
-"  autocmd FileType markdown AutoFormatBuffer mdformat
+  autocmd FileType markdown AutoFormatBuffer mdformat
   autocmd FileType ncl AutoFormatBuffer nclfmt
   autocmd FileType python AutoFormatBuffer pyformat
   autocmd FileType soy AutoFormatBuffer soyfmt
   autocmd FileType textpb AutoFormatBuffer text-proto-format
   autocmd FileType proto AutoFormatBuffer protofmt
   autocmd FileType sql AutoFormatBuffer format_sql
-  " autocmd FileType html,css,json AutoFormatBuffer js-beautify
+  autocmd FileType html,css,json AutoFormatBuffer js-beautify
 augroup END
 
 Glug whitespace !highlight
@@ -155,3 +158,10 @@ filetype plugin indent on
 Glug relatedfiles
 Glug relatedfiles plugin[mappings]=',f'
 
+Glug libgit
+Glug refactorer
+Glug refactorer plugin[mappings]='F2'
+Glug add_usings
+Glug colorscheme-primary
+set guitablabel=%t
+Glug outline-window
