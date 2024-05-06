@@ -24,6 +24,8 @@ set hlsearch
 " Enable syntax highlighting
 syntax on
 
+colorscheme habamax
+
 " do not wrap search back to head of file
 set nowrapscan
 
