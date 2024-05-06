@@ -32,6 +32,13 @@ set nowrapscan
 " auto reload file
 set autoread
 
+" show tabs
+set list
+set listchars=tab:>-
+
+" enable mouse in all modes
+set mouse=a
+
 " Shortcut to discard everything and close all files on Ctrl+q 
 :map <C-q> <Esc>:qa<CR>
 :imap <C-q> <Esc>:qa<CR>
