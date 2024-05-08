@@ -17,50 +17,60 @@ set history=5000
 "set scrolloff=3
 "set laststatus=2
 
+" Set custom file-type mappings
+" Make sure all types of requirements.txt files get syntax highlighting.
+autocmd BufNewFile,BufRead requirements*.txt set ft=python
+" Make sure .aliases, .bash_aliases and similar files get syntax highlighting.
+autocmd BufNewFile,BufRead .*aliases,*.tmux.conf set ft=sh
+" 
+autocmd BufNewFile,BufRead *.vimrc set ft=vimrc
+
 " show line numbers
 se nu
 " show relative line numbers
 se relativenumber
-"
 " highlight search results
 set hlsearch
 " Enable syntax highlighting
 syntax on
 
+" set color-scheme
 colorscheme habamax
 
 " do not wrap search back to head of file
 set nowrapscan
-
 " auto reload file
 set autoread
-
-" show tabs
+" show tabs and whitespaces
 set list
 set listchars=tab:>-
 noremap <Leader><Tab><Tab> :set invlist<CR>
-
 " enable mouse in all modes
 set mouse=a
-
 "set formatoptions=croqlj
 "set ruler
 "set number
 " set background=dark
 "highlight default link TrailingWhitespace Error 
 " set paste
-
 " change currentdir to directory of current file.
 set autochdir
-
 " highlight current line
 set cursorline
-
-" autocmd FileType c,cpp,go 
-nnoremap <C-k><C-c> <Esc>i<Home>//<Esc>
-noremap <C-d> dd
-noremap <C-z> u
-noremap <C-y> <C-r>
+" Wrap lines after x chars.
+set tw=80
+" Add shortcuts to comment out lines
+autocmd FileType go,c,cpp nnoremap <C-c><C-c> <Esc>^i//<Esc>
+autocmd FileType sh nnoremap <C-c><C-c> <Esc>^i# <Esc>
+autocmd FileType vimrc nnoremap <C-c><C-c> <Esc>^i" <Esc>
+" Add shortcuts to uncomment lines
+autocmd FileType go,c,cpp,vimrc nnoremap <C-c><C-u> <Esc>^xx
+" Delete line on Ctrl-d
+:noremap <C-d> dd
+" Undo on Ctrl-z
+:noremap <C-z> u
+" Redo on Ctrl-y
+:noremap <C-y> <C-r>
 
 " Shortcut to discard everything and close all files on Ctrl+q 
 :noremap <C-q> <Esc>:qa<CR>
