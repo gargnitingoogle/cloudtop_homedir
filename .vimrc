@@ -1,4 +1,4 @@
-" Welcome to Vim (http://go/vim).
+" Welcome to Vim (http://GO/VIM).
 "
 " If you see this file, your homedir was just created on this workstation.
 " That means either you are new to Google (in that case, welcome!) or you
@@ -13,6 +13,9 @@
 " Enable modern Vim features not compatible with Vi spec.
 set nocompatible
 set history=5000
+"set wildmenu
+"set scrolloff=3
+"set laststatus=2
 
 " show line numbers
 se nu
@@ -39,7 +42,20 @@ noremap <Leader><Tab><Tab> :set invlist<CR>
 
 " enable mouse in all modes
 set mouse=a
-  
+
+"set formatoptions=croqlj
+"set ruler
+"set number
+" set background=dark
+"highlight default link TrailingWhitespace Error 
+" set paste
+
+" change currentdir to directory of current file.
+set autochdir
+
+" highlight current line
+set cursorline
+
 " autocmd FileType c,cpp,go 
 nnoremap <C-k><C-c> <Esc>i<Home>//<Esc>
 noremap <C-d> dd
@@ -51,6 +67,16 @@ noremap <C-y> <C-r>
 "Short cut to save the file on Ctrl+s
 :inoremap <C-s> <Esc>:w<CR>i
 :nnoremap <C-s> <ESC>:w<CR>
+
+" Open a new unnamed tab on Ctrl+N
+:nnoremap <C-n> <Esc>:tabnew<CR>
+" Open a new tab on Ctrl+o
+:nnoremap <C-o> <Esc>:tabe  
+" Close the current tab on Ctrl+w
+:nnoremap <C-w> <Esc>:q!<CR>  
+
+" insert a newline on pressing br
+:nnoremap br <Esc>i<CR><Esc>
 
 " Use the 'google' package by default (see http://go/vim/packages).
 source /usr/share/vim/google/google.vim
