@@ -22,8 +22,13 @@ set history=5000
 autocmd BufNewFile,BufRead requirements*.txt set ft=python
 " Make sure .aliases, .bash_aliases and similar files get syntax highlighting.
 autocmd BufNewFile,BufRead .*aliases,*.tmux.conf set ft=sh
-" 
-autocmd BufNewFile,BufRead *.vimrc set ft=vimrc
+
+" save folds across vim restarts and buffer reopens
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
 
 " show line numbers
 se nu
@@ -62,15 +67,16 @@ set tw=80
 " Add shortcuts to comment out lines
 autocmd FileType go,c,cpp nnoremap <C-c><C-c> <Esc>^i//<Esc>
 autocmd FileType sh nnoremap <C-c><C-c> <Esc>^i# <Esc>
-autocmd FileType vimrc nnoremap <C-c><C-c> <Esc>^i" <Esc>
 " Add shortcuts to uncomment lines
-autocmd FileType go,c,cpp,vimrc nnoremap <C-c><C-u> <Esc>^xx
+autocmd FileType go,c,cpp,sh nnoremap <C-c><C-u> <Esc>^xx
 " Delete line on Ctrl-d
 :noremap <C-d> dd
 " Undo on Ctrl-z
 :noremap <C-z> u
 " Redo on Ctrl-y
 :noremap <C-y> <C-r>
+" Find in file\
+:nnoremap <C-f> <Esc>:/
 
 " Shortcut to discard everything and close all files on Ctrl+q 
 :noremap <C-q> <Esc>:qa<CR>
@@ -80,10 +86,36 @@ autocmd FileType go,c,cpp,vimrc nnoremap <C-c><C-u> <Esc>^xx
 
 " Open a new unnamed tab on Ctrl+N
 :nnoremap <C-n> <Esc>:tabnew<CR>
+" " Close the current tab on Ctrl+w - risky on ssh shell, might close the whole
+" window.
+" :nnoremap <C-w> <Esc>:q!<CR>  
 " Open a new tab on Ctrl+o
-:nnoremap <C-o> <Esc>:tabe  
-" Close the current tab on Ctrl+w
-:nnoremap <C-w> <Esc>:q!<CR>  
+nnoremap <C-o> <Esc>:tabe  
+
+" code navigation
+" Go to definition
+:nnoremap <> gd 
+" Shortcut for navigate back
+:noremap <M-Left> <C-o>
+" Shortcut for navigate forward
+:noremap <M-Right> <C-i>
+" Go to Next/previous functions
+" Go to next function
+au FileType go nnoremap <buffer> <C-Down> <Esc>:/^\<func\><CR><Esc>:noh<CR>
+" Go to prev function
+au FileType go nnoremap <buffer> <C-Up> <Esc>:?^\<func\><CR><Esc>:noh<CR>
+" Go to next function
+au FileType python nnoremap <buffer> <C-Down> <Esc>:/^\<def\><CR><Esc>:noh<CR>
+" Go to prev function
+au FileType python nnoremap <buffer> <C-Up> <Esc>:?^\<def\><CR><Esc>:noh<CR>
+" Go to next function
+au FileType sh nnoremap <buffer> <C-Down> <Esc>:/^\<function\><CR><Esc>:noh<CR>
+" Go to prev function
+au FileType sh nnoremap <buffer> <C-Up> <Esc>:?^\<function\><CR><Esc>:noh<CR>
+" Go to next function
+au FileType c,cpp,java nnoremap <buffer> <C-Down> <Esc>:/^[a-zA-Z]<CR><Esc>:noh<CR>
+" Go to prev function
+au FileType c,cpp,java nnoremap <buffer> <C-Up> <Esc>:?^[a-zA-Z]<CR><Esc>:noh<CR>
 
 " insert a newline on pressing br
 :nnoremap br <Esc>i<CR><Esc>
