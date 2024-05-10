@@ -6,8 +6,6 @@ function genericAliases() {
 	alias ....='cd ../../..'
 	alias ...='cd ../..'
 	alias ..='cd ..'
-	alias aliases='vi ~/.bash_aliases'
-	alias bashrc='vi ~/.bashrc'
 	alias cls='clear'
         # alias dlv='~/go/bin/dlv --check-go-version=false --init <(config source-list-line-count 20)'
         alias dlv='~/go/bin/dlv --check-go-version=false'
@@ -18,13 +16,22 @@ function genericAliases() {
 	alias lint='golangci-lint run'
 	alias pstree='pstree -ps'
 	alias tailf='tail -f'
-	alias vimrc='vi ~/.vimrc'
-	alias history='vi ~/.bash_history +:$'
         alias runubuntucontainer='docker run --rm -it --entrypoint /bin/bash ubuntu'
         alias rungocontainer='docker run -it --rm --entrypoint /bin/bash golang'
+        alias study='mkdir -p $HOME/work/study && cd $HOME/work/study'
 }
 
 genericAliases
+
+function openConfigFile() {
+	alias aliases='vi ~/.bash_aliases && source ~/.bash_aliases'
+	alias bashrc='vi ~/.bashrc'
+	alias history='vi ~/.bash_history +:$'
+	alias vimrc='vi ~/.vimrc'
+        alias tmuxconf='vi ~/.tmux.conf && tmux source ~/.tmux.conf'
+}
+
+openConfigFile
 
 function gitAliases() {
 	alias gi='git'

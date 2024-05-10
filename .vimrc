@@ -19,15 +19,15 @@ set history=5000
 
 " Set custom file-type mappings
 " Make sure all types of requirements.txt files get syntax highlighting.
-autocmd BufNewFile,BufRead requirements*.txt set ft=python
+au BufNewFile,BufRead requirements*.txt set ft=python
 " Make sure .aliases, .bash_aliases and similar files get syntax highlighting.
-autocmd BufNewFile,BufRead .*aliases,*.tmux.conf set ft=sh
+au BufNewFile,BufRead .*aliases,*.tmux.conf set ft=sh
 
 " save folds across vim restarts and buffer reopens
 augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
+  au!
+  au BufWinLeave * mkview
+  au BufWinEnter * silent! loadview
 augroup END
 
 " show line numbers
@@ -44,12 +44,12 @@ colorscheme habamax
 
 " do not wrap search back to head of file
 set nowrapscan
-" auto reload file
-set autoread
+" " auto reload file
+" set autoread
 " show tabs and whitespaces
 set list
 set listchars=tab:>-
-noremap <Leader><Tab><Tab> :set invlist<CR>
+" noremap <Leader><Tab><Tab> :set invlist<CR>
 " enable mouse in all modes
 set mouse=a
 "set formatoptions=croqlj
@@ -65,10 +65,11 @@ set cursorline
 " Wrap lines after x chars.
 set tw=80
 " Add shortcuts to comment out lines
-autocmd FileType go,c,cpp nnoremap <C-c><C-c> <Esc>^i//<Esc>
-autocmd FileType sh nnoremap <C-c><C-c> <Esc>^i# <Esc>
+au FileType go,c,cpp nnoremap <buffer> <C-c><C-c> <Esc>^i//<Esc><Down>
+au FileType sh,make nnoremap <buffer> <C-c><C-c> <Esc>^i# <Esc><Down>
+"au FileType vimrc nnoremap <buffer> <C-c><C-c> <Esc>^i" <Esc><Down>
 " Add shortcuts to uncomment lines
-autocmd FileType go,c,cpp,sh nnoremap <C-c><C-u> <Esc>^xx
+au FileType go,c,cpp,sh,make,vimrc nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
 " Delete line on Ctrl-d
 :noremap <C-d> dd
 " Undo on Ctrl-z
@@ -82,7 +83,11 @@ autocmd FileType go,c,cpp,sh nnoremap <C-c><C-u> <Esc>^xx
 :noremap <C-q> <Esc>:qa<CR>
 "Short cut to save the file on Ctrl+s
 :inoremap <C-s> <Esc>:w<CR>i
-:nnoremap <C-s> <ESC>:w<CR>
+:nnoremap <C-s> <Esc>:w<CR>
+
+" Fold/unfold using Ctrl-- and Ctrl-+ respectively.
+":nnoremap <buffer> <C-/> <Esc>zo
+":nnoremap <buffer> <C-_> <Esc>zc
 
 " Open a new unnamed tab on Ctrl+N
 :nnoremap <C-n> <Esc>:tabnew<CR>
@@ -119,6 +124,8 @@ au FileType c,cpp,java nnoremap <buffer> <C-Up> <Esc>:?^[a-zA-Z]<CR><Esc>:noh<CR
 
 " insert a newline on pressing br
 :nnoremap br <Esc>i<CR><Esc>
+" stop highlighting search results
+:nnoremap ,<space> :nohlsearch<cr>
 
 " Use the 'google' package by default (see http://go/vim/packages).
 source /usr/share/vim/google/google.vim
@@ -127,21 +134,21 @@ Glug g4
 Glug codefmt
 Glug codefmt-google
 augroup autoformat_settings
-  autocmd FileType borg,gcl,patchpanel AutoFormatBuffer gclfmt
-  autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType c,cpp,javascript,typescript AutoFormatBuffer clang-format
-  autocmd FileType dart AutoFormatBuffer dartfmt
-  autocmd FileType go AutoFormatBuffer gofmt
-  autocmd FileType java AutoFormatBuffer google-java-format
-  autocmd FileType jslayout AutoFormatBuffer jslfmt
-  autocmd FileType markdown AutoFormatBuffer mdformat
-  autocmd FileType ncl AutoFormatBuffer nclfmt
-  autocmd FileType python AutoFormatBuffer pyformat
-  autocmd FileType soy AutoFormatBuffer soyfmt
-  autocmd FileType textpb AutoFormatBuffer text-proto-format
-  autocmd FileType proto AutoFormatBuffer protofmt
-  autocmd FileType sql AutoFormatBuffer format_sql
-  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+  au FileType borg,gcl,patchpanel AutoFormatBuffer gclfmt
+  au FileType bzl AutoFormatBuffer buildifier
+  au FileType c,cpp,javascript,typescript AutoFormatBuffer clang-format
+  au FileType dart AutoFormatBuffer dartfmt
+  au FileType go AutoFormatBuffer gofmt
+  au FileType java AutoFormatBuffer google-java-format
+  au FileType jslayout AutoFormatBuffer jslfmt
+  au FileType markdown AutoFormatBuffer mdformat
+  au FileType ncl AutoFormatBuffer nclfmt
+  au FileType python AutoFormatBuffer pyformat
+  au FileType soy AutoFormatBuffer soyfmt
+  au FileType textpb AutoFormatBuffer text-proto-format
+  au FileType proto AutoFormatBuffer protofmt
+  au FileType sql AutoFormatBuffer format_sql
+  au FileType html,css,json AutoFormatBuffer js-beautify
 augroup END
 
 Glug whitespace !highlight
@@ -172,8 +179,8 @@ Glug codefmt-google
 " Note formatting changed lines only isn't supported yet
 " (see https://github.com/google/vim-codefmt/issues/9).
 augroup autoformat_settings
-"  autocmd FileType bzl AutoFormatBuffer buildifier
-"  autocmd FileType go AutoFormatBuffer gofmt
+"  au FileType bzl AutoFormatBuffer buildifier
+"  au FileType go AutoFormatBuffer gofmt
 "  See go/vim/plugins/codefmt-google, :help codefmt-google and :help codefmt
 "  for details about other available formatters.
 augroup END
