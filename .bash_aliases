@@ -153,6 +153,7 @@ function gcsfuseSrcAliases() {
 	alias work='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks'
 	#alias golang='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-golang1.20.5'
 	#alias encoding='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-08-gzip-support'
+        alias lsbuckets='gsutil ls gs:// | grep gargnitin | rev | cut -f2 -d/ | rev'
 }
 
 function unmountGcsfuse() {
