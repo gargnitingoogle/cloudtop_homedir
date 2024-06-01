@@ -154,6 +154,7 @@ function gcsfuseSrcAliases() {
 	#alias golang='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-golang1.20.5'
 	#alias encoding='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-08-gzip-support'
         alias lsbuckets='gsutil ls gs:// | grep gargnitin | rev | cut -f2 -d/ | rev'
+        alias lsvm='gcloud compute instances list | grep ${USER}'
 }
 
 function unmountGcsfuse() {
