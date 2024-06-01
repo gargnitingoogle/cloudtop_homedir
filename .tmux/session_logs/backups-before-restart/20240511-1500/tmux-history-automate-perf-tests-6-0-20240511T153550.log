@@ -1,0 +1,11 @@
+gargnitin@gargnitin:~$ gcsfusetestvmconnect gargnitin-ubuntu-2204-2-us-central1 us-central1-c                                                           
+If you do not reboot now, your system will reboot automatically                
+at Fri May 17 02:52:10 UTC 2024. For more info, see go/glinux-reboot-policy.   
+To reboot your computer 10 hours from now, on the command line run:            
+echo systemctl reboot | at now + 10 hours                                      
+Also you may have a pending maintenance. See go/cloudtop-faq#cloudtop-maintenan
+ce-scheduler                                                                   
+To run maintenance in 10 hours run:                                            
+ctop self maintenance schedule in 10h
+                                                                               
+gargnitin@gargnitin:~$ gcsfusetestvmconnect gargnitin-ubuntu-2204-2-us-central1 us-central1-c

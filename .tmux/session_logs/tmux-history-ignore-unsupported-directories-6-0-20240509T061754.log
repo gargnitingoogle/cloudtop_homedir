@@ -1,0 +1,400 @@
+diff --git a/.vimrc b/.vimrc
+index fb8dc30..bab0b5e 100644
+--- a/.vimrc
++++ b/.vimrc
+@@ -22,8 +22,13 @@ set history=5000
+ autocmd BufNewFile,BufRead requirements*.txt set ft=python
+ " Make sure .aliases, .bash_aliases and similar files get syntax highlighting.
+ autocmd BufNewFile,BufRead .*aliases,*.tmux.conf set ft=sh
+-" 
+-autocmd BufNewFile,BufRead *.vimrc set ft=vimrc
++
++" save folds across vim restarts and buffer reopens
++augroup remember_folds
++  autocmd!
++  autocmd BufWinLeave * mkview
++  autocmd BufWinEnter * silent! loadview
++augroup END
+ 
+ " show line numbers
+ se nu
+@@ -62,15 +67,16 @@ set tw=80
+ " Add shortcuts to comment out lines
+ autocmd FileType go,c,cpp nnoremap <C-c><C-c> <Esc>^i//<Esc>
+ autocmd FileType sh nnoremap <C-c><C-c> <Esc>^i# <Esc>
+-autocmd FileType vimrc nnoremap <C-c><C-c> <Esc>^i" <Esc>
+ " Add shortcuts to uncomment lines
+-autocmd FileType go,c,cpp,vimrc nnoremap <C-c><C-u> <Esc>^xx
++autocmd FileType go,c,cpp,sh nnoremap <C-c><C-u> <Esc>^xx
+ " Delete line on Ctrl-d
+ :noremap <C-d> dd
+ " Undo on Ctrl-z
+ :noremap <C-z> u
+ " Redo on Ctrl-y
+ :noremap <C-y> <C-r>
++" Find in file\
++:nnoremap <C-f> <Esc>:/
+ 
+ " Shortcut to discard everything and close all files on Ctrl+q 
+ :noremap <C-q> <Esc>:qa<CR>
+@@ -80,14 +86,28 @@ autocmd FileType go,c,cpp,vimrc nnoremap <C-c><C-u> <Esc>^xx
+ 
+ " Open a new unnamed tab on Ctrl+N
+ :nnoremap <C-n> <Esc>:tabnew<CR>
++" " Close the current tab on Ctrl+w - risky on ssh shell, might close the whole
++" window.
++" :nnoremap <C-w> <Esc>:q!<CR>  
++" Shortcut for navigate back
++:noremap <M-Left> <C-o>
++" Shortcut for navigate forward
++:noremap <M-Right> <C-i>
+ " Open a new tab on Ctrl+o
+-:nnoremap <C-o> <Esc>:tabe  
+-" Close the current tab on Ctrl+w
+-:nnoremap <C-w> <Esc>:q!<CR>  
++nnoremap <C-o> <Esc>:tabe  
++" Go to next function
++au FileType go nnoremap <C-Down> <Esc>:/^\<func\><CR><Esc>:noh<CR>
++" Go to prev function
++au FileType go nnoremap <C-Up> <Esc>:?^\<func\><CR><Esc>:noh<CR>
+ 
+ " insert a newline on pressing br
+ :nnoremap br <Esc>i<CR><Esc>
+ 
++" code navigation
++" Go to definition
++:nnoremap <> gd 
++" Go back to previous file
++:nnoremap <Alt><Left> <Ctrl>^
+ " Use the 'google' package by default (see http://go/vim/packages).
+ source /usr/share/vim/google/google.vim
+ " Glug g4
+
+Press ENTER or type command to continue
+diff --git a/.vimrc b/.vimrc
+index fb8dc30..bab0b5e 100644
+--- a/.vimrc
++++ b/.vimrc
+@@ -22,8 +22,13 @@ set history=5000
+ autocmd BufNewFile,BufRead requirements*.txt set ft=python
+ " Make sure .aliases, .bash_aliases and similar files get syntax highlighting.
+ autocmd BufNewFile,BufRead .*aliases,*.tmux.conf set ft=sh
+-" 
+-autocmd BufNewFile,BufRead *.vimrc set ft=vimrc
++
++" save folds across vim restarts and buffer reopens
++augroup remember_folds
++  autocmd!
++  autocmd BufWinLeave * mkview
++  autocmd BufWinEnter * silent! loadview
++augroup END
+ 
+ " show line numbers
+ se nu
+@@ -62,15 +67,16 @@ set tw=80
+ " Add shortcuts to comment out lines
+ autocmd FileType go,c,cpp nnoremap <C-c><C-c> <Esc>^i//<Esc>
+ autocmd FileType sh nnoremap <C-c><C-c> <Esc>^i# <Esc>
+-autocmd FileType vimrc nnoremap <C-c><C-c> <Esc>^i" <Esc>
+ " Add shortcuts to uncomment lines
+-autocmd FileType go,c,cpp,vimrc nnoremap <C-c><C-u> <Esc>^xx
++autocmd FileType go,c,cpp,sh nnoremap <C-c><C-u> <Esc>^xx
+ " Delete line on Ctrl-d
+ :noremap <C-d> dd
+ " Undo on Ctrl-z
+ :noremap <C-z> u
+ " Redo on Ctrl-y
+ :noremap <C-y> <C-r>
++" Find in file\
++:nnoremap <C-f> <Esc>:/
+ 
+ " Shortcut to discard everything and close all files on Ctrl+q 
+ :noremap <C-q> <Esc>:qa<CR>
+@@ -80,14 +86,28 @@ autocmd FileType go,c,cpp,vimrc nnoremap <C-c><C-u> <Esc>^xx
+ 
+ " Open a new unnamed tab on Ctrl+N
+ :nnoremap <C-n> <Esc>:tabnew<CR>
++" " Close the current tab on Ctrl+w - risky on ssh shell, might close the whole
++" window.
++" :nnoremap <C-w> <Esc>:q!<CR>  
++" Shortcut for navigate back
++:noremap <M-Left> <C-o>
++" Shortcut for navigate forward
++:noremap <M-Right> <C-i>
+ " Open a new tab on Ctrl+o
+-:nnoremap <C-o> <Esc>:tabe  
+-" Close the current tab on Ctrl+w
+-:nnoremap <C-w> <Esc>:q!<CR>  
++nnoremap <C-o> <Esc>:tabe  
++" Go to next function
++au FileType go nnoremap <C-Down> <Esc>:/^\<func\><CR><Esc>:noh<CR>
++" Go to prev function
++au FileType go nnoremap <C-Up> <Esc>:?^\<func\><CR><Esc>:noh<CR>
+ 
+ " insert a newline on pressing br
+ :nnoremap br <Esc>i<CR><Esc>
+ 
++" code navigation
++" Go to definition
++:nnoremap <> gd 
++" Go back to previous file
++:nnoremap <Alt><Left> <Ctrl>^
+ " Use the 'google' package by default (see http://go/vim/packages).
+ source /usr/share/vim/google/google.vim
+ " Glug g4
+
+Press ENTER or type command to continue
+diff --git a/.vimrc b/.vimrc
+ 3mplicit_dirs_test.go  w/c/s/c/g/s/g/main.go  c/s/c/g/t/2/s/test.go  c/s/c/g/t/2/s/test.py  .bash_aliases  .vimrc                     X
+ 66 " auto reload file                                                                                                                  
+ 65 set autoread                                                                                                                        
+ 64 " show tabs and whitespaces                                                                                                         
+ 63 set list                                                                                                                            
+ 62 set listchars=tab:>-                                                                                                                
+ 61 noremap <Leader><Tab><Tab> :set invlist<CR>                                                                                         
+ 60 " enable mouse in all modes                                                                                                         
+ 59 set mouse=a                                                                                                                         
+ 58 "set formatoptions=croqlj                                                                                                           
+ 57 "set ruler                                                                                                                          
+ 56 "set number                                                                                                                         
+ 55 " set background=dark                                                                                                               
+ 54 "highlight default link TrailingWhitespace Error                                                                                    
+ 53 " set paste                                                                                                                         
+ 52 " change currentdir to directory of current file.                                                                                   
+ 51 set autochdir                                                                                                                       
+ 50 " highlight current line                                                                                                            
+ 49 set cursorline                                                                                                                      
+ 48 " Wrap lines after x chars.                                                                                                         
+ 47 set tw=80                                                                                                                           
+ 46 " Add shortcuts to comment out lines                                                                                                
+ 45 autocmd FileType go,c,cpp nnoremap <C-c><C-c> <Esc>^i//<Esc>                                                                        
+ 44 autocmd FileType sh nnoremap <C-c><C-c> <Esc>^i# <Esc>                                                                              
+ 43 " Add shortcuts to uncomment lines                                                                                                  
+ 42 autocmd FileType go,c,cpp,sh nnoremap <C-c><C-u> <Esc>^xx                                                                            41 " Delete line on Ctrl-d                                                                                                             
+ 40 :noremap <C-d> dd                                                                                                                   
+ 39 " Undo on Ctrl-z                                                                                                                    
+ 38 :noremap <C-z> u                                                                                                                    
+ 37 " Redo on Ctrl-y                                                                                                                    
+ 36 :noremap <C-y> <C-r>                                                                                                                
+ 35 " Find in file\                                                                                                                     
+ 34 :nnoremap <C-f> <Esc>:/                                                                                                             
+ 33                                                                                                                     index fb8dc30..bab0b5e 100644
+--- a/.vimrc
++++ b/.vimrc
+@@ -22,8 +22,13 @@ set history=5000
+ autocmd BufNewFile,BufRead requirements*.txt set ft=python
+ " Make sure .aliases, .bash_aliases and similar files get syntax highlighting.
+ autocmd BufNewFile,BufRead .*aliases,*.tmux.conf set ft=sh
+-" 
+-autocmd BufNewFile,BufRead *.vimrc set ft=vimrc
++
++" save folds across vim restarts and buffer reopens
++augroup remember_folds
++  autocmd!
++  autocmd BufWinLeave * mkview
++  autocmd BufWinEnter * silent! loadview
++augroup END
+ 
+ " show line numbers
+ se nu
+@@ -62,15 +67,16 @@ set tw=80
+ " Add shortcuts to comment out lines
+ autocmd FileType go,c,cpp nnoremap <C-c><C-c> <Esc>^i//<Esc>
+ autocmd FileType sh nnoremap <C-c><C-c> <Esc>^i# <Esc>
+-autocmd FileType vimrc nnoremap <C-c><C-c> <Esc>^i" <Esc>
+ " Add shortcuts to uncomment lines
+-autocmd FileType go,c,cpp,vimrc nnoremap <C-c><C-u> <Esc>^xx
++autocmd FileType go,c,cpp,sh nnoremap <C-c><C-u> <Esc>^xx
+ " Delete line on Ctrl-d
+ :noremap <C-d> dd
+ " Undo on Ctrl-z
+ :noremap <C-z> u
+ " Redo on Ctrl-y
+ :noremap <C-y> <C-r>
++" Find in file\
++:nnoremap <C-f> <Esc>:/
+ 
+ " Shortcut to discard everything and close all files on Ctrl+q 
+ :noremap <C-q> <Esc>:qa<CR>
+@@ -80,14 +86,28 @@ autocmd FileType go,c,cpp,vimrc nnoremap <C-c><C-u> <Esc>^xx
+ 
+ " Open a new unnamed tab on Ctrl+N
+ :nnoremap <C-n> <Esc>:tabnew<CR>
++" " Close the current tab on Ctrl+w - risky on ssh shell, might close the whole
++" window.
++" :nnoremap <C-w> <Esc>:q!<CR>  
++" Shortcut for navigate back
++:noremap <M-Left> <C-o>
++" Shortcut for navigate forward
++:noremap <M-Right> <C-i>
+ " Open a new tab on Ctrl+o
+-:nnoremap <C-o> <Esc>:tabe  
+-" Close the current tab on Ctrl+w
+-:nnoremap <C-w> <Esc>:q!<CR>  
++nnoremap <C-o> <Esc>:tabe  
++" Go to next function
++au FileType go nnoremap <C-Down> <Esc>:/^\<func\><CR><Esc>:noh<CR>
++" Go to prev function
++au FileType go nnoremap <C-Up> <Esc>:?^\<func\><CR><Esc>:noh<CR>
+ 
+ " insert a newline on pressing br
+ :nnoremap br <Esc>i<CR><Esc>
+ 
++" code navigation
++" Go to definition
++:nnoremap <> gd 
++" Go back to previous file
++:nnoremap <Alt><Left> <Ctrl>^
+ " Use the 'google' package by default (see http://go/vim/packages).
+ source /usr/share/vim/google/google.vim
+ " Glug g4
+
+Press ENTER or type command to continue
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:$
+
+diff --git a/.vimrc b/.vimrc
+index fb8dc30..be4864e 100644
+--- a/.vimrc
++++ b/.vimrc
+@@ -22,8 +22,13 @@ set history=5000
+ autocmd BufNewFile,BufRead requirements*.txt set ft=python
+ " Make sure .aliases, .bash_aliases and similar files get syntax highlighting.
+ autocmd BufNewFile,BufRead .*aliases,*.tmux.conf set ft=sh
+-" 
+-autocmd BufNewFile,BufRead *.vimrc set ft=vimrc
++
++" save folds across vim restarts and buffer reopens
++augroup remember_folds
++  autocmd!
++  autocmd BufWinLeave * mkview
++  autocmd BufWinEnter * silent! loadview
++augroup END
+ 
+ " show line numbers
+ se nu
+@@ -62,15 +67,16 @@ set tw=80
+ " Add shortcuts to comment out lines
+ autocmd FileType go,c,cpp nnoremap <C-c><C-c> <Esc>^i//<Esc>
+ autocmd FileType sh nnoremap <C-c><C-c> <Esc>^i# <Esc>
+-autocmd FileType vimrc nnoremap <C-c><C-c> <Esc>^i" <Esc>
+ " Add shortcuts to uncomment lines
+-autocmd FileType go,c,cpp,vimrc nnoremap <C-c><C-u> <Esc>^xx
++autocmd FileType go,c,cpp,sh nnoremap <C-c><C-u> <Esc>^xx
+ " Delete line on Ctrl-d
+ :noremap <C-d> dd
+ implicit_dirs_test.go  ~/w/c/s/c/g/t/2/s/test.go  ~/.vimrc                                                                                  X
+ 19                                                                                                                                           
+ 18 +-- 60 lines: Create objects in implicit directories with---------------------------------------------------------------------------------
+ 17                                                                                                                                           
+ 16 // Create objects in implicit directories with                                                                                            
+ 15 // unsupported names such as ., .., /, \0 and                                                                                             
+ 14 // test that stat and ReadDirPicky on the different directories.                                                                          
+ 13 func (t *ImplicitDirsTest) UnsupportedDirNames_WalkDirPath() {                                                                            
+ 12 >-------// var fi os.FileInfo                                                                                                             
+ 11 >-------// var entries []os.FileInfo                                                                                                      
+ 10 >-------// var err error                                                                                                                  
+  9                                                                                                                                           
+  8 >-------fmt.Printf("Running test..\n")                                                                                                    
+  7 >-------// Set up contents.                                                                                                               
+  6 >-------AssertEq(                                                                                                                         
+  5 >------->-------nil,                                                                                                                      
+  4 >------->-------t.createObjects(                                                                                                          
+  3 >------->------->-------map[string]string{                                                                                                
+  2 >------->------->------->-------"foo/a/b": "", // supported                                                                               
+  1 >------->------->------->-------// "foo//bar":   "", // unsupported                                                                       
+665 >------->------->------->-------"foo/./bar":  "", // unsupported                                                                          
+  1 >------->------->------->-------"foo/../bar": "", // unsupported                                                                          
+  2 >------->------->------->-------//"foo/\000/bar": "", // unsupported                                                                      
+  3 >------->------->------->-------// "/bar":   "", // unsupported                                                                           
+  4 >------->------->------->-------"./bar":  "", // unsupported                                                                              
+  5 >------->------->------->-------"../bar": "", // unsupported                                                                              
+  6 >------->------->------->-------// "\000/bar": "", // unsupported                                                                         
+  7 >------->------->------->-------// "\000": "", // unsupported                                                                             
+  8 >------->------->------->-------"a/b": "", // supported                                                                                   
+  9 >------->------->-------}))                                                                                                               
+ 10                                                                                                                                           
+ 11 >-------dirFoo := path.Join(mntDir, "foo")                                                                                                
+ 12 >-------dirA := path.Join(mntDir, "a")                                                                                                    
+ 13 >-------numIters := 0                                                                                                                     
+ 14 >-------AssertEq(nil, filepath.WalkDir(mntDir, func(path string, d fs.DirEntry, err error) error {                                        
+ 15 >------->-------fmt.Printf("WalkFn called with path=%v,dirEntry=%#v,err=%#v\n", path, d, err)                                             
+ 16 >------->-------numIters++                                                                                                           " Undo on Ctrl-z
+ :noremap <C-z> u
+ " Redo on Ctrl-y
+ :noremap <C-y> <C-r>
++" Find in file\
++:nnoremap <C-f> <Esc>:/
+ 
+ " Shortcut to discard everything and close all files on Ctrl+q 
+ :noremap <C-q> <Esc>:qa<CR>
+@@ -80,14 +86,42 @@ autocmd FileType go,c,cpp,vimrc nnoremap <C-c><C-u> <Esc>^xx
+ 
+ " Open a new unnamed tab on Ctrl+N
+ :nnoremap <C-n> <Esc>:tabnew<CR>
++" " Close the current tab on Ctrl+w - risky on ssh shell, might close the whole
++" window.
++" :nnoremap <C-w> <Esc>:q!<CR>  
++" Shortcut for navigate back
++:noremap <M-Left> <C-o>
++" Shortcut for navigate forward
++:noremap <M-Right> <C-i>
+ " Open a new tab on Ctrl+o
+-:nnoremap <C-o> <Esc>:tabe  
+-" Close the current tab on Ctrl+w
+-:nnoremap <C-w> <Esc>:q!<CR>  
++nnoremap <C-o> <Esc>:tabe  
++
++" Go to Next/previous functions
++" Go to next function
++au FileType go nnoremap <C-Down> <Esc>:/^\<func\><CR><Esc>:noh<CR>
++" Go to prev function
++au FileType go nnoremap <C-Up> <Esc>:?^\<func\><CR><Esc>:noh<CR>
++" Go to next function
++au FileType python nnoremap <C-Down> <Esc>:/^\<def\><CR><Esc>:noh<CR>
++" Go to prev function
++au FileType python nnoremap <C-Up> <Esc>:?^\<def\><CR><Esc>:noh<CR>
++" Go to next function
++au FileType sh nnoremap <C-Down> <Esc>:/^\<function\><CR><Esc>:noh<CR>
++" Go to prev function
++au FileType sh nnoremap <C-Up> <Esc>:?^\<function\><CR><Esc>:noh<CR>
++" Go to next function
++au FileType c,cpp,java nnoremap <C-Down> <Esc>:/^[a-zA-Z]<CR><Esc>:noh<CR>
++" Go to prev function
++au FileType c,cpp,java nnoremap <C-Up> <Esc>:?^[a-zA-Z]<CR><Esc>:noh<CR>
+ 
+ " insert a newline on pressing br
+ :nnoremap br <Esc>i<CR><Esc>
+ 
++" code navigation
++" Go to definition
++:nnoremap <> gd 
++" Go back to previous file
++:nnoremap <Alt><Left> <Ctrl>^
+ " Use the 'google' package by default (see http://go/vim/packages).
+ source /usr/share/vim/google/google.vim
+ " Glug g4
+
+Press ENTER or type command to continue
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:$
+Error detected while processing /usr/local/google/home/gargnitin/.vimrc:
+line  105:
+E488: Trailing characters: Esc>:/^\<\(func: <Esc>:/^\<\(func
+Press ENTER or type command to continue
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:$
+Error detected while processing /usr/local/google/home/gargnitin/.vimrc:
+line  105:
+E488: Trailing characters: Esc>:/^\<func: <Esc>:/^\<func
+Press ENTER or type command to continue
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ 

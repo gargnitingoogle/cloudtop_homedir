@@ -1,0 +1,125 @@
+$bash test-run.sh                                                                                                                                                
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/../a/1
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/../a/1': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/../2
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/../2': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/./a/3
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/./a/3': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/./4
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/./4': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2//a/5
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2//a/5': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2//6
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2//6': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/../b/7
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/../b/7': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/../8
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/../8': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/./b/9
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/./b/9': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/./10
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/./10': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a//b/11
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a//b/11': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a//12
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a//12': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/13
+/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/13
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/14
+/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/14
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/../a/
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/../a/': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/../
+dynamic-mount                            gargnitin-fuse-test-bucket2-mount                           gargnitin-test-empty-dirname-asia-se1.log
+dynamic-mount-log.log                    gargnitin-fuse-test-bucket-test                             gargnitin-test-empty-dirname-asia-se1-mount
+gargnitin-bucket.log                     gargnitin-gcsfuse-integration-tests-playground.log          gargnitin-test-empty-dirname-asia-se1-mount2
+gargnitin-bucket-mounted                 gargnitin-gcsfuse-integration-tests-playground-logfile.log  gargnitin-test-empty-dirname-asia-se1-mount3
+gargnitin-empty-bucket-log.log           gargnitin-gcsfuse-integration-tests-playground-mount        gargnitin-test-empty-dirname-asia-se1-mount4
+gargnitin-empty-bucket-mount             gargnitin-gzip-test-bucket-mount                            princer-read-cache-load-test-west-log.log
+gargnitin-fuse-test-bucket1-f1           gargnitin-memory-testing-bucket-20230809.log                princer-read-cache-load-test-west-mount
+gargnitin-fuse-test-bucket1-log.log      gargnitin-memory-testing-bucket-20230809-logfile.log        stat-cache-size-expt-mount
+gargnitin-fuse-test-bucket1-mount        gargnitin-memory-testing-bucket-20230809-mount              stat-cache-size-expt-mount-log.log
+gargnitin-fuse-test-bucket2-logfile.log  gargnitin-test-empty-dirname-asia-se1-2.log
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/./a/
+13  a
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/./
+ls: reading directory '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/./': Input/output error
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2//a/
+13  a
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2//
+ls: reading directory '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2//': Input/output error
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/../b/
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/../b/': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/../
+ls: reading directory '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/../': Input/output error
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/./b/
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/./b/': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/./
+13  a
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a//b/
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a//b/': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a//
+13  a
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/
+13  a
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/
+ls: reading directory '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/': Input/output error
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2
+ls: reading directory '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2': Input/output error
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/../14
+/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/../14
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/./5
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a/./5': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a//5
+ls: cannot access '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/a//5': No such file or directory
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2//14
+/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2//14
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/./14
+/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/./14
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/..
+dynamic-mount                            gargnitin-fuse-test-bucket2-mount                           gargnitin-test-empty-dirname-asia-se1.log
+dynamic-mount-log.log                    gargnitin-fuse-test-bucket-test                             gargnitin-test-empty-dirname-asia-se1-mount
+gargnitin-bucket.log                     gargnitin-gcsfuse-integration-tests-playground.log          gargnitin-test-empty-dirname-asia-se1-mount2
+gargnitin-bucket-mounted                 gargnitin-gcsfuse-integration-tests-playground-logfile.log  gargnitin-test-empty-dirname-asia-se1-mount3
+gargnitin-empty-bucket-log.log           gargnitin-gcsfuse-integration-tests-playground-mount        gargnitin-test-empty-dirname-asia-se1-mount4
+gargnitin-empty-bucket-mount             gargnitin-gzip-test-bucket-mount                            princer-read-cache-load-test-west-log.log
+gargnitin-fuse-test-bucket1-f1           gargnitin-memory-testing-bucket-20230809.log                princer-read-cache-load-test-west-mount
+gargnitin-fuse-test-bucket1-log.log      gargnitin-memory-testing-bucket-20230809-logfile.log        stat-cache-size-expt-mount
+gargnitin-fuse-test-bucket1-mount        gargnitin-memory-testing-bucket-20230809-mount              stat-cache-size-expt-mount-log.log
+gargnitin-fuse-test-bucket2-logfile.log  gargnitin-test-empty-dirname-asia-se1-2.log
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/./..
+dynamic-mount                            gargnitin-fuse-test-bucket2-mount                           gargnitin-test-empty-dirname-asia-se1.log
+dynamic-mount-log.log                    gargnitin-fuse-test-bucket-test                             gargnitin-test-empty-dirname-asia-se1-mount
+gargnitin-bucket.log                     gargnitin-gcsfuse-integration-tests-playground.log          gargnitin-test-empty-dirname-asia-se1-mount2
+gargnitin-bucket-mounted                 gargnitin-gcsfuse-integration-tests-playground-logfile.log  gargnitin-test-empty-dirname-asia-se1-mount3
+gargnitin-empty-bucket-log.log           gargnitin-gcsfuse-integration-tests-playground-mount        gargnitin-test-empty-dirname-asia-se1-mount4
+gargnitin-empty-bucket-mount             gargnitin-gzip-test-bucket-mount                            princer-read-cache-load-test-west-log.log
+gargnitin-fuse-test-bucket1-f1           gargnitin-memory-testing-bucket-20230809.log                princer-read-cache-load-test-west-mount
+gargnitin-fuse-test-bucket1-log.log      gargnitin-memory-testing-bucket-20230809-logfile.log        stat-cache-size-expt-mount
+gargnitin-fuse-test-bucket1-mount        gargnitin-memory-testing-bucket-20230809-mount              stat-cache-size-expt-mount-log.log
+gargnitin-fuse-test-bucket2-logfile.log  gargnitin-test-empty-dirname-asia-se1-2.log
++ ls /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2/../.
+dynamic-mount                            gargnitin-fuse-test-bucket2-mount                           gargnitin-test-empty-dirname-asia-se1.log
+dynamic-mount-log.log                    gargnitin-fuse-test-bucket-test                             gargnitin-test-empty-dirname-asia-se1-mount
+gargnitin-bucket.log                     gargnitin-gcsfuse-integration-tests-playground.log          gargnitin-test-empty-dirname-asia-se1-mount2
+gargnitin-bucket-mounted                 gargnitin-gcsfuse-integration-tests-playground-logfile.log  gargnitin-test-empty-dirname-asia-se1-mount3
+gargnitin-empty-bucket-log.log           gargnitin-gcsfuse-integration-tests-playground-mount        gargnitin-test-empty-dirname-asia-se1-mount4
+gargnitin-empty-bucket-mount             gargnitin-gzip-test-bucket-mount                            princer-read-cache-load-test-west-log.log
+gargnitin-fuse-test-bucket1-f1           gargnitin-memory-testing-bucket-20230809.log                princer-read-cache-load-test-west-mount
+gargnitin-fuse-test-bucket1-log.log      gargnitin-memory-testing-bucket-20230809-logfile.log        stat-cache-size-expt-mount
+gargnitin-fuse-test-bucket1-mount        gargnitin-memory-testing-bucket-20230809-mount              stat-cache-size-expt-mount-log.log
+gargnitin-fuse-test-bucket2-logfile.log  gargnitin-test-empty-dirname-asia-se1-2.log
++ ls -R /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2
+/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2:
+ls: reading directory '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2': Input/output error
+$                                                                               
+If you do not reboot now, your system will reboot automatically                
+at Fri May 17 02:52:10 UTC 2024. For more info, see go/glinux-reboot-policy.   
+To reboot your computer 10 hours from now, on the command line run:            
+echo systemctl reboot | at now + 10 hours                                      
+Also you may have a pending maintenance. See go/cloudtop-faq#cloudtop-maintenan
+ce-scheduler                                                                   
+To run maintenance in 10 hours run:                                            
+ctop self maintenance schedule in 10h
+                                                                               
+$

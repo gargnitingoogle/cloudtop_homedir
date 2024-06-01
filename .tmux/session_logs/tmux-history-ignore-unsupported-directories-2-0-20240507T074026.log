@@ -1,0 +1,561 @@
+gargnitin@gargnitin:~$ src
+Command src not found
+gargnitin@gargnitin:~$ bahs
+Command bahs not found
+gargnitin@gargnitin:~$ bash                                                                                                                                                                                                                                                                          
+src
+gargnitin@gargnitin:~$ src
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:177
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/fs/implicit_dirs_test.go +:177
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/implicit_dir/  
+delete_test.go                 fileInImplicitDir1             fileInImplicitDir2             fileInUnsupportedImplicitDir1  fileInUnsupportedImplicitDir2  fileInUnsupportedImplicitDir3  implicit_dir_test.go           list_test.go                   local_file_test.go
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/implicit_dir/list_test.go
+
+[No write since last change]
+grep: q:tools/integration_tests/*: No such file or directory
+
+shell returned 2
+"tools/integration_tests/util/setup//implicit_and_explicit_dir_setup//testdata//create_objects_in_unsupported_directories.sh" 24L, 1266Bsts/util/setup//implicit_and_explicit_dir_setup//testdata//create_objects_in_unsupported_directories.sh" 
+Press ENTER or type command to continue
+[No write since last change]
+grep: q:tools/integration_tests/: No such file or directory
+
+shell returned 2
+
+Press ENTER or type command to continue
+[No write since last change]
+tools/integration_tests/implicit_dir/delete_test.go:105:        implicit_and_explicit_dir_setup.CreateImplicitDirectoryInExplicitDirectoryStructure(DirForImplicitDirTests, t)
+tools/integration_tests/implicit_dir/delete_test.go:123:        implicit_and_explicit_dir_setup.CreateImplicitDirectoryInExplicitDirectoryStructure(DirForImplicitDirTests, t)
+tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go:124:func CreateImplicitDirectoryInExplicitDirectoryStructure(testDir string, t *testing.T) {
+
+Press ENTER or type command to continue
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/implicit_dir/list_test.go
+
+[1]+  Stopped                 vi tools/integration_tests/implicit_dir/list_test.go
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/implicit_dir/list_test.go
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/implicit_dir/list_test.go
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/implicit_dir/list_test.go
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc ~/.gitconfig ~/.bash_aliases :tab all
+5 files to edit
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc ~/.gitconfig ~/.bash_aliases         
+3 files to edit
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ man bi                                   
+No manual entry for bi
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ man vi
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ gvim ~/.vimrc                                                                       
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vim ~/.vimrc                                                                       
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vim ~/.vimrc +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vim ~/.vimrc +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vim ~/.vimrc +:$
+
+rm: cannot remove '/usr/local/google/home/gargnitin/.vim/cache//usr/local/google/home/gargnitin/.vimrcusr/usr/local/google/home/gargnitin/.vimrclocal/usr/local/google/home/gargnitin/.vimrcgoogle/usr/local/google/home/gargnitin/.vimrchome/usr/local/google/home/gargnitin/.vimrcgargnitin/usr/local/google/home/gargnitin/.vimrc.vimrc.swp': No such file or directory
+
+shell returned 1
+
+Press ENTER or type command to continue
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vim ~/.vimrc +:$
+
+
+Press ENTER or type command to continue
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vim ~/.vimrc +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vim ~/.vimrc +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ rm ~/.vim/cache/%usr%local%google%home%gargnitin%.vimrc.swp
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vim ~/.vimrc +:$                                           
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vim ~/.vimrc +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vim ~/.vimrc +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/
+auth/         canned/       contentcache/ gcsx/         logger/       mount/        perms/        storage/      
+cache/        config/       fs/           locker/       monitor/      perf/         ratelimit/    util/         
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/
+data/     file/     lru/      metadata/ util/     
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff
+diff --git a/internal/cache/metadata/stat_cache.go b/internal/cache/metadata/stat_cache.go
+index cbc4b3092..ed50184ef 100644
+--- a/internal/cache/metadata/stat_cache.go
++++ b/internal/cache/metadata/stat_cache.go
+@@ -25,7 +25,7 @@ import (
+ 
+ // A cache mapping from name to most recent known record for the object of that
+ // name. External synchronization must be provided.
+-type StatCache interface {
++type StatCache1 interface {
+        // Insert an entry for the given object record.
+        //
+        // In order to help cope with caching of arbitrarily out of date (i.e.
+@@ -54,14 +54,14 @@ type StatCache interface {
+ // Create a new bucket-view to the passed shared-cache object.
+ // For dynamic-mount (mount for multiple buckets), pass bn as bucket-name.
+ // For static-mout (mount for single bucket), pass bn as "".
+-func NewStatCacheBucketView(sc *lru.Cache, bn string) StatCache {
++func NewStatCache1BucketView(sc *lru.Cache, bn string) StatCache1 {
+        return &statCacheBucketView{
+                sharedCache: sc,
+                bucketName:  bn,
+        }
+ }
+ 
+-// statCacheBucketView is a special type of StatCache which
++// statCacheBucketView is a special type of StatCache1 which
+ // shares its underlying cache map object with other
+ // statCacheBucketView objects (for dynamically mounts) through
+ // a specific bucket-name. It does so by prepending its
+diff --git a/internal/cache/metadata/stat_cache_test.go b/internal/cache/metadata/stat_cache_test.go
+index 3224bb67d..3a033159f 100644
+--- a/internal/cache/metadata/stat_cache_test.go
++++ b/internal/cache/metadata/stat_cache_test.go
+@@ -25,14 +25,14 @@ import (
+        . "github.com/jacobsa/ogletest"
+ )
+ 
+-func TestStatCache(t *testing.T) { RunTests(t) }
++func TestStatCache1(t *testing.T) { RunTests(t) }
+ 
+ ////////////////////////////////////////////////////////////////////////
+ // Test-helper cache wrappers
+ ////////////////////////////////////////////////////////////////////////
+ 
+ type testHelperCache struct {
+-       wrapped metadata.StatCache
++       wrapped metadata.StatCache1
+ }
+ 
+ func (c *testHelperCache) Insert(
+@@ -94,42 +94,42 @@ const capacity = 3
+ var someTime = time.Date(2015, 4, 5, 2, 15, 0, 0, time.Local)
+ var expiration = someTime.Add(time.Second)
+ 
+-type StatCacheTest struct {
++type StatCache1Test struct {
+        cache testHelperCache
+ }
+ 
+-type MultiBucketStatCacheTest struct {
++type MultiBucketStatCache1Test struct {
+        multiBucketCache testMultiBucketCacheHelper
+ }
+ 35 // Copyright 2023 Google Inc. All Rights Reserved.                                                                                                                                                                                                                                                             
+ 34 //                                                                                                                                                                                                                                                                                                             
+ 33 // Licensed under the Apache License, Version 2.0 (the "License");                                                                                                                                                                                                                                             
+ 32 // you may not use this file except in compliance with the License.                                                                                                                                                                                                                                            
+ 31 // You may obtain a copy of the License at                                                                                                                                                                                                                                                                     
+ 30 //                                                                                                                                                                                                                                                                                                             
+ 29 //     http://www.apache.org/licenses/LICENSE-2.0                                                                                                                                                                                                                                                              
+ 28 //                                                                                                                                                                                                                                                                                                             
+ 27 // Unless required by applicable law or agreed to in writing, software                                                                                                                                                                                                                                         
+ 26 // distributed under the License is distributed on an "AS IS" BASIS,                                                                                                                                                                                                                                           
+ 25 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.                                                                                                                                                                                                                                    
+ 24 // See the License for the specific language governing permissions and                                                                                                                                                                                                                                         
+ 23 // limitations under the License.                                                                                                                                                                                                                                                                              
+ 22                                                                                                                                                                                                                                                                                                                
+ 21 package metadata                                                                                                                                                                                                                                                                                               
+ 20                                                                                                                                                                                                                                                                                                                
+ 19 import (                                                                                                                                                                                                                                                                                                       
+ 18 >-------"math"                                                                                                                                                                                                                                                                                                 
+ 17 >-------"time"                                                                                                                                                                                                                                                                                                 
+ 16                                                                                                                                                                                                                                                                                                                
+ 15 >-------"github.com/googlecloudplatform/gcsfuse/v2/internal/cache/lru"                                                                                                                                                                                                                                         
+ 14 >-------"github.com/googlecloudplatform/gcsfuse/v2/internal/storage/gcs"                                                                                                                                                                                                                                       
+ 13 >-------"github.com/googlecloudplatform/gcsfuse/v2/internal/util"                                                                                                                                                                                                                                              
+ 12 )                                                                                                                                                                                                                                                                                                              
+ 11                                                                                                                                                                                                                                                                                                                
+ 10 // A cache mapping from name to most recent known record for the object of that                                                                                                                                                                                                                                
+  9 // name. External synchronization must be provided.                                                                                                                                                                                                                                                            
+  8 type StatCache interface {                                                                                                                                                                                                                                                                                     
+  7 >-------// Insert an entry for the given object record.                                                                                                                                                                                                                                                        
+  6 >-------//                                                                                                                                                                                                                                                                                                     
+  5 >-------// In order to help cope with caching of arbitrarily out of date (i.e.                                                                                                                                                                                                                                 
+  4 >-------// inconsistent) object listings, entry will not replace any positive entry                                                                                                                                                                                                                            
+  3 >-------// with a newer generation number, or with an equivalent generation number                                                                                                                                                                                                                             
+  2 >-------// but newer metadata generation number. We have no choice, however, but to                                                                                                                                                                                                                            
+  1 >-------// replace negative entries.                                                                                                                                                                                                                                                                           
+36  >-------//                                                                                                                                                                                                                                                                                                     
+  1 >-------// The entry will expire after the supplied time.                                                                                                                                                                                                                                                      
+  2 >-------Insert(m *gcs.MinObject, expiration time.Time)                                                                                                                                                                                                                                                         
+  3                                                                                                                                                                                                                                                                                                                
+  4 >-------// Set up a negative entry for the given name, indicating that the name                                                                                                                                                                                                                                
+  5 >-------// doesn't exist. Overwrite any existing entry for the name, positive or                                                                                                                                                                                                                               
+  6 >-------// negative.                                                                                                                                                                                                                                                                                           
+  7 >-------AddNegativeEntry(name string, expiration time.Time)                                                                                                                                                                                                                                                    
+  8                                                                                                                                                                                                                                                                                                                
+  9 >-------// Erase the entry for the given object name, if any.                                                                                                                                                                                                                                                  
+ 10 >-------Erase(name string)                                                                                                                                                                                                                                                                                     
+ 11                                                                                                                                                                                                                                                                                                                
+ 12 >-------// Return the current entry for the given name, or nil if there is a negative                                                                                                                                                                                                                          
+ 13 >-------// entry. Return hit == false when there is neither a positive nor a negative                                                                                                                                                                                                                        
+ func init() {
+-       RegisterTestSuite(&StatCacheTest{})
+-       RegisterTestSuite(&MultiBucketStatCacheTest{})
++       RegisterTestSuite(&StatCache1Test{})
++       RegisterTestSuite(&MultiBucketStatCache1Test{})
+ }
+ 
+-func (t *StatCacheTest) SetUp(ti *TestInfo) {
+ w/c/s/c/g/s/g/i/c/m/stat_cache.go  .vimrc                                                                                           X       X         Xgargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff --name-only
+internal/cache/metadata/stat_cache.go
+internal/cache/metadata/stat_cache_test.go
+tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go build
+# github.com/googlecloudplatform/gcsfuse/v2/internal/storage/caching
+internal/storage/caching/fast_stat_bucket.go:36:17: undefined: metadata.StatCache
+internal/storage/caching/fast_stat_bucket.go:58:17: undefined: metadata.StatCache
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+diff --git a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh 
+b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+index 8722612f6..6bfd274c6 100755
+--- a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
++++ b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+@@ -21,4 +21,4 @@ echo "This is from directory . file fileInUnsupportedImplicitDir2" > fileInUnsup
+ gcloud storage cp fileInUnsupportedImplicitDir2 gs://$1/./
+ echo "This is from directory \"\" file fileInUnsupportedImplicitDir3" > fileInUnsupportedImplicitDir3
+ # bucket/testdir//fileInImplicitDir3
+-gcloud storage cp fileInUnsupportedImplicitDir3 gs://$1//fileInUnsupportedImplicitDir3 
++gcloud storage   cp fileInUnsupportedImplicitDir3 gs://$1//fileInUnsupportedImplicitDir3 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git undo tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh                                                                                                           
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git st
+On branch gargnitin/fix-empty-directory-list-issue
+Your branch is up to date with 'origin/gargnitin/fix-empty-directory-list-issue'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   internal/cache/metadata/stat_cache.go
+        modified:   internal/cache/metadata/stat_cache_test.go
+
+no changes added to commit (use "git add" and/or "git commit -a")
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20                                       
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git st                                       
+On branch gargnitin/fix-empty-directory-list-issue
+Your branch is up to date with 'origin/gargnitin/fix-empty-directory-list-issue'.
+
+nothing to commit (use -u to show untracked files)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git l
+80306c200 (HEAD -> refs/heads/gargnitin/fix-empty-directory-list-issue, refs/remotes/origin/gargnitin/fix-empty-directory-list-issue) fix lint error
+cca204a91 remove unwanted add executables
+810bb3d74 Add integration tests for unsupported directory names
+67741f93d Add unit tests for unsupported directory names
+8ecc12e5e Skip unsupported directory/file names in list
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git st
+On branch gargnitin/fix-empty-directory-list-issue
+Your branch is up to date with 'origin/gargnitin/fix-empty-directory-list-issue'.
+
+nothing to commit (use -u to show untracked files)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20                    
+                  
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git st                                       
+On branch gargnitin/fix-empty-directory-list-issue
+Your branch is up to date with 'origin/gargnitin/fix-empty-directory-list-issue'.
+
+nothing to commit (use -u to show untracked files)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi main.go                                   
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi main.go                                   
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git st
+On branch gargnitin/fix-empty-directory-list-issue
+Your branch is up to date with 'origin/gargnitin/fix-empty-directory-list-issue'.
+
+nothing to commit (use -u to show untracked files)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi internal/cache/metadata/stat_cache.go +:20
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/                  
+explicit_dir/                   local_file/                     read_cache/                     run_e2e_tests.sh
+gzip/                           log_rotation/                   read_large_files/               run_tests_mounted_directory.sh
+implicit_dir/                   managed_folders/                readonly/                       util/
+interrupt/                      mounting/                       readonly_creds/                 write_large_files/
+list_large_dir/                 operations/                     rename_dir_limit/               
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/   
+explicit_dir/                   local_file/                     read_cache/                     run_e2e_tests.sh
+gzip/                           log_rotation/                   read_large_files/               run_tests_mounted_directory.sh
+implicit_dir/                   managed_folders/                readonly/                       util/
+interrupt/                      mounting/                       readonly_creds/                 write_large_files/
+list_large_dir/                 operations/                     rename_dir_limit/               
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/implicit_dir/
+delete_test.go                 fileInUnsupportedImplicitDir1  implicit_dir_test.go           
+fileInImplicitDir1             fileInUnsupportedImplicitDir2  list_test.go                   
+fileInImplicitDir2             fileInUnsupportedImplicitDir3  local_file_test.go             
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/implicit_dir/list_test.go 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/implicit_dir/list_test.go 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ rm ~/.vim/cache/%usr%local%google%home%gargnitin%work%cloud%storage%client%gcsfuse%src%gcsfuse%tools%integration_tests%implicit_dir%list_test.go.swp
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/implicit_dir/list_test.go             
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/implicit_dir/list_test.go 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/implicit_dir/list_test.go 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$     
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/implicit_dir/list_test.go             
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/implicit_dir/list_test.go 
+
+Press ENTER or type command to continue
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/implicit_dir/list_test.go 
+
+Press ENTER or type command to continue
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+
+Press ENTER or type command to continue
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+
+Press ENTER or type command to continue
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc                                          
+
+Press ENTER or type command to continue
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+Error detected while processing /usr/local/google/home/gargnitin/.vimrc:
+line   47:
+E518: Unknown option: 4
+Press ENTER or type command to continue
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vim diff
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff                                             
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ cd ~
+gargnitin@gargnitin:~$ git diff
+diff --git a/.vimrc b/.vimrc
+index 86e4a26..5f57721 100644
+--- a/.vimrc
++++ b/.vimrc
+@@ -1,4 +1,4 @@
+diff --git a/.vimrc b/.vimrc
+diff --git a/.vimrc b/.vimrc
+index 86e4a26..5f57721 100644
+--- a/.vimrc
++++ b/.vimrc
+@@ -1,4 +1,4 @@
+-" Welcome to Vim (http://go/vim).
++" Welcome to Vim (http://GO/VIM).
+ "
+ " If you see this file, your homedir was just created on this workstation.
+ " That means either you are new to Google (in that case, welcome!) or you
+@@ -13,6 +13,9 @@
+ " Enable modern Vim features not compatible with Vi spec.
+ set nocompatible
+ set history=5000
++"set wildmenu
++"set scrolloff=3
++"set laststatus=2
+ 
+ " show line numbers
+ se nu
+@@ -39,7 +42,20 @@ noremap <Leader><Tab><Tab> :set invlist<CR>
+ 
+ " enable mouse in all modes
+ set mouse=a
+-  
++
++"set formatoptions=croqlj
++"set ruler
++set number
++" set background=dark
++highlight default link TrailingWhitespace Error 
++set paste
++
++" change currentdir to directory of current file.
++set autochdir
++
++" highlight current line
++set cursorline
++
+ " autocmd FileType c,cpp,go 
+ nnoremap <C-k><C-c> <Esc>i<Home>//<Esc>
+ noremap <C-d> dd
+@@ -52,6 +68,27 @@ noremap <C-y> <C-r>
+ :inoremap <C-s> <Esc>:w<CR>i
+ :nnoremap <C-s> <ESC>:w<CR>
+ 
++" Open a new unnamed tab on Ctrl+N
++:nnoremap <C-n> <Esc>:tabnew<CR>
++" Open a new tab on Ctrl+o
++:nnoremap <C-o> <Esc>:tabe  
++" Close the current tab on Ctrl+w
++:nnoremap <C-w> <Esc>:q!<CR>  
++
++" insert a newline on pressing br
++:nnoremap br <Esc>i<CR><Esc>
++
++function! HighlightTooLongLines()
++  highlight def link RightMargin Error
++  if &textwidth != 0
++    exec 'match RightMargin /\%>' . &textwidth . 'v.\+/'
++  endif
++endfunction
++
++augroup filetypedetect
++  au WinEnter,BufNewFile,BufRead * call HighlightTooLongLines()
+gargnitin@gargnitin:~$ git dt  
+^C
+gargnitin@gargnitin:~$ git diff
+diff --git a/.vimrc b/.vimrc
+index 86e4a26..5f57721 100644
+--- a/.vimrc
++++ b/.vimrc
+@@ -1,4 +1,4 @@
+-" Welcome to Vim (http://go/vim).
++" Welcome to Vim (http://GO/VIM).
+ "
+ " If you see this file, your homedir was just created on this workstation.
+ " That means either you are new to Google (in that case, welcome!) or you
+@@ -13,6 +13,9 @@
+ " Enable modern Vim features not compatible with Vi spec.
+ set nocompatible
+ set history=5000
++"set wildmenu
++"set scrolloff=3
++"set laststatus=2
+ 
+ " show line numbers
+ se nu
+@@ -39,7 +42,20 @@ noremap <Leader><Tab><Tab> :set invlist<CR>
+ 
+ " enable mouse in all modes
+ set mouse=a
+-  
++
++"set formatoptions=croqlj
++"set ruler
++set number
++" set background=dark
++highlight default link TrailingWhitespace Error 
++set paste
++
++" change currentdir to directory of current file.
++set autochdir
++
++" highlight current line
++set cursorline
++
+ " autocmd FileType c,cpp,go 
+ nnoremap <C-k><C-c> <Esc>i<Home>//<Esc>
+ noremap <C-d> dd
+@@ -52,6 +68,27 @@ noremap <C-y> <C-r>
+ :inoremap <C-s> <Esc>:w<CR>i
+ :nnoremap <C-s> <ESC>:w<CR>
+ 
++" Open a new unnamed tab on Ctrl+N
++:nnoremap <C-n> <Esc>:tabnew<CR>
++" Open a new tab on Ctrl+o
++:nnoremap <C-o> <Esc>:tabe  
++" Close the current tab on Ctrl+w
++:nnoremap <C-w> <Esc>:q!<CR>  
++
++" insert a newline on pressing br
++:nnoremap br <Esc>i<CR><Esc>
++
++function! HighlightTooLongLines()
++  highlight def link RightMargin Error
++  if &textwidth != 0
++    exec 'match RightMargin /\%>' . &textwidth . 'v.\+/'
++  endif
++endfunction
++
++augroup filetypedetect
++  au WinEnter,BufNewFile,BufRead * call HighlightTooLongLines()
+gargnitin@gargnitin:~$ vi ~/.vimrc                                                                                                  
+gargnitin@gargnitin:~$ vi ~/.vimrc
+gargnitin@gargnitin:~$ src
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/                                                                                                                                                                                                                
+explicit_dir/                   interrupt/                      log_rotation/                   operations/                     readonly/                       run_e2e_tests.sh                write_large_files/              
+gzip/                           list_large_dir/                 managed_folders/                read_cache/                     readonly_creds/                 run_tests_mounted_directory.sh  
+implicit_dir/                   local_file/                     mounting/                       read_large_files/               rename_dir_limit/               util/                           
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/   
+explicit_dir/                   interrupt/                      log_rotation/                   operations/                     readonly/                       run_e2e_tests.sh                write_large_files/              
+gzip/                           list_large_dir/                 managed_folders/                read_cache/                     readonly_creds/                 run_tests_mounted_directory.sh  
+implicit_dir/                   local_file/                     mounting/                       read_large_files/               rename_dir_limit/               util/                           
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/util/setup/
+implicit_and_explicit_dir_setup/ setup.go                         yaml-config.go                   
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/
+implicit_and_explicit_dir_setup.go  testdata/                           
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ ls
+2                                               config-trace-gargnitin-fuse-dynamic-mount.yaml  internal            README.md
+a                                               config-trace-gargnitin-fuse-test-bucket1.yaml   LICENSE             sample_1000M_random.dat
+abc                                             DEBIAN                                          main.go             sample_1GB.dat
+benchmarks                                      Dockerfile                                      main_test.go        test_100MB.txt
+build_gcsfuse                                   docs                                            mkdir               testdata
+config-debug-gargnitin-fuse-dynamic-mount.yaml  flags.go                                        mount.go            test_gcsfuse.iml
+config-debug-gargnitin-fuse-test-bucket1.yaml   flags_test.go                                   new-file.txt        testinput
+config-disable-type-cache.yaml                  gcsfuse                                         new_test_file.txt   testinput_uploaded
+config-inf-cache-max-entries.yaml               gcsfuse.iml                                     packages            tools
+config-inf-cache-max-size-mb.yaml               go.mod                                          perfmetrics         vendor
+config-info-gargnitin-fuse-dynamic-mount.yaml   go.sum                                          projectFilesBackup  version.go
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ ls
+2                                               config-trace-gargnitin-fuse-dynamic-mount.yaml  internal            README.md
+a                                               config-trace-gargnitin-fuse-test-bucket1.yaml   LICENSE             sample_1000M_random.dat
+abc                                             DEBIAN                                          main.go             sample_1GB.dat
+benchmarks                                      Dockerfile                                      main_test.go        test_100MB.txt
+build_gcsfuse                                   docs                                            mkdir               testdata
+config-debug-gargnitin-fuse-dynamic-mount.yaml  flags.go                                        mount.go            test_gcsfuse.iml
+config-debug-gargnitin-fuse-test-bucket1.yaml   flags_test.go                                   new-file.txt        testinput
+config-disable-type-cache.yaml                  gcsfuse                                         new_test_file.txt   testinput_uploaded
+config-inf-cache-max-entries.yaml               gcsfuse.iml                                     packages            tools
+config-inf-cache-max-size-mb.yaml               go.mod                                          perfmetrics         vendor
+config-info-gargnitin-fuse-dynamic-mount.yaml   go.sum                                          projectFilesBackup  version.go
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ ls
+2                                               config-trace-gargnitin-fuse-dynamic-mount.yaml  internal            README.md
+a                                               config-trace-gargnitin-fuse-test-bucket1.yaml   LICENSE             sample_1000M_random.dat
+abc                                             DEBIAN                                          main.go             sample_1GB.dat
+benchmarks                                      Dockerfile                                      main_test.go        test_100MB.txt
+build_gcsfuse                                   docs                                            mkdir               testdata
+  9 run '~/.tmux/plugins/tpm/tpm'                                                                                                                       
+  8                                                                                                                                                     
+  7 #set -g @plugin 'tmux-plugins/tmux-copycat'                                                                                                         
+  6                                                                                                                                                     
+  5 #set -g @tmux-logging 'on'                                                                                                                          
+  4 set -g @plugin 'tmux-plugins/tmux-logging'                                                                                                          
+  3 set -g @logging-path "$HOME/work/tmux_logs"                                                                                                         
+  2 set -g @screen-capture-path "$HOME/work/tmux_logs"                                                                                                  
+  1 set -g @save-complete-history-path "$HOME/work/tmux_logs"                                                                                           
+88                                                                                                                                                      
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+~                                                                                                                                                       
+".tmux.conf" 88L, 2657B written                                                                                                                         

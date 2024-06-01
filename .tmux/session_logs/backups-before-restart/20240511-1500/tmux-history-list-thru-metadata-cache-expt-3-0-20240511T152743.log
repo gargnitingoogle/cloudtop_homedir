@@ -1,0 +1,564 @@
+gargnitin@gargnitin:~$ bash
+gargnitin@gargnitin:~$ declare -x OLDPWD="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/20240905-list-thru-metadata-cache-expt/set-up-bucket"
+declare -x bucket="gargnitin-empty-bucket"
+declare -x gcsdirpath="gargnitin-empty-bucket/list-through-metadata-cache-expt"
+declare -x logfile="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket.log"
+declare -x mountpath="/^Cr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount"
+gargnitin@gargnitin:~$ localwork 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ l
+total 68K
+drwxr-xr-x 17 gargnitin primarygroup 4.0K May  9 06:42 .
+drwxr-x---  9 gargnitin primarygroup 4.0K Mar 11 10:03 ..
+drwxr-xr-x  3 gargnitin primarygroup 4.0K Aug 21  2023 202307-08-gzip-support
+drwxr-xr-x  3 gargnitin primarygroup 4.0K Feb  7 09:59 202307-vertex_ai_job_slow
+drwxr-xr-x  3 gargnitin primarygroup 4.0K Dec 15 09:48 20231215-low-fsync-frequency
+drwxr-x---  3 gargnitin primarygroup 4.0K Jan 25 09:13 20240125-overlay-fs-expt
+drwxr-xr-x  3 gargnitin primarygroup 4.0K Feb  2 13:39 20240202-stat-cache-entry-size-experiment
+drwxr-x---  4 gargnitin primarygroup 4.0K Feb 13 00:38 20240212-type-cache-size-effect
+drwxr-x---  2 gargnitin primarygroup 4.0K Mar 15 14:22 20240306-gke-handson
+drwxr-x---  2 gargnitin primarygroup 4.0K Mar 19 11:37 20240318-vertex-ai-experiments
+drwxr-x---  4 gargnitin primarygroup 4.0K Mar  7 04:13 202403-docker-failure-with-go-1.22
+drwxr-x---  5 gargnitin primarygroup 4.0K May  9 06:19 20240429-fix-empty-dirname-issue
+drwxr-x---  3 gargnitin primarygroup 4.0K May 10 04:56 20240905-list-thru-metadata-cache-expt
+drwxr-x---  7 gargnitin primarygroup 4.0K May  8 18:14 2024q2-automate-perf-tests
+drwxr-xr-x  2 gargnitin primarygroup 4.0K Dec  8 06:37 implit-dirs-io-error
+drwxr-xr-x  6 gargnitin primarygroup 4.0K Feb  7 09:54 oncall
+drwxr-x---  4 gargnitin primarygroup 4.0K Mar  7 13:17 playground
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd 20240905-list-thru-metadata-cache-expt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240905-list-thru-metadata-cache-expt$ mkdir master-branch
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240905-list-thru-metadata-cache-expt$ cd master-branch                            
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240905-list-thru-metadata-cache-expt/master-branch$ ls
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240905-list-thru-metadata-cache-expt/master-branch$ ln -sfv ../creationSituation.sh .
+'./creationSituation.sh' -> '../creationSituation.sh'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240905-list-thru-metadata-cache-expt/master-branch$ ls
+creationSituation.sh
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240905-list-thru-metadata-cache-expt/master-branch$ ../..
+bash: ../..: Is a directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240905-list-thru-metadata-cache-expt/master-branch$ ...
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd 20240509-list-thru-metadata-cache-expt/master-branch/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ ./creationSituation.sh 2
++ echo Number of args: 1
+Number of args: 1
++ debug=0
++ run=1
++ '[' 1 -gt 0 ']'
++ '[' 2 = 2 ']'
++ echo 'run=2 not supported'
+run=2 not supported
++ exit 1
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ vi /creationSituation.sh       
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ ls
+creationSituation.sh  delve_commands.sh
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ vi creationSituation.sh 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ ./creationSituation.sh 2       
++ echo Number of args: 1
+Number of args: 1
++ debug=0
++ run=1
++ '[' 1 -gt 0 ']'
++ '[' 2 = 2 ']'
++ run=2
++ '[' 1 -gt 1 ']'
++ '[' 0 -ne 0 ']'
++ echo 'Running ...'
+Running ...
++ '[' 2 -gt 1 ']'
++ echo 'master branch (2) ...'
+master branch (2) ...
++ bucket=gargnitin-empty-bucket
++ filename=hello.txt
++ gcspath=gs://gargnitin-empty-bucket//hello.txt
++ '[' 2 -gt 1 ']'
++ mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log
++ gcsfuse_src_dir=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro'
++ mkdir -pv /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+mkdir: created directory '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2'
++ echo ''
++ fusermount -uz /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+fusermount: entry for /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2 not found in /etc/mtab
++ true
++ '[' 0 = 0 ']'
++ go run /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse --config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro gargnitin-empty-bucket /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+go: cannot find main module, but found .git/config in /usr/local/google/home/gargnitin
+        to create a module there, run:
+        cd ../../../../../../../.. && go mod init
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ ls
+creationSituation.sh  delve_commands.sh
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ cp ../fix-branch/go.work .
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ cp ../fix-branch/go.work.sum .
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ cp ../fix-branch/go.mod .     
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ ./creationSituation.sh 2       
++ echo Number of args: 1
+Number of args: 1
++ debug=0
++ run=1
++ '[' 1 -gt 0 ']'
++ '[' 2 = 2 ']'
++ run=2
++ '[' 1 -gt 1 ']'
++ '[' 0 -ne 0 ']'
++ echo 'Running ...'
+Running ...
++ '[' 2 -gt 1 ']'
++ echo 'master branch (2) ...'
+master branch (2) ...
++ bucket=gargnitin-empty-bucket
++ filename=hello.txt
++ gcspath=gs://gargnitin-empty-bucket//hello.txt
++ '[' 2 -gt 1 ']'
++ mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log
++ gcsfuse_src_dir=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro'
++ mkdir -pv /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ echo ''
++ fusermount -uz /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+fusermount: entry for /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2 not found in /etc/mtab
++ true
++ '[' 0 = 0 ']'
++ go run /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse --config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro gargnitin-empty-bucket /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+directory ../../../src2/googlecloudplatform/gcsfuse is contained in a module that is not one of the workspace modules listed in go.work. You can add the module to the workspace using:
+        go work use ../../../src2/googlecloudplatform/gcsfuse
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ go work use ../../../src2/googlecloudplatform/gcsfuse
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ vi go.work
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ ./creationSituation.sh 2       
++ echo Number of args: 1
+Number of args: 1
++ debug=0
++ run=1
++ '[' 1 -gt 0 ']'
++ '[' 2 = 2 ']'
++ run=2
++ '[' 1 -gt 1 ']'
++ '[' 0 -ne 0 ']'
++ echo 'Running ...'
+Running ...
++ '[' 2 -gt 1 ']'
++ echo 'master branch (2) ...'
+master branch (2) ...
++ bucket=gargnitin-empty-bucket
++ filename=hello.txt
++ gcspath=gs://gargnitin-empty-bucket//hello.txt
++ '[' 2 -gt 1 ']'
++ mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log
++ gcsfuse_src_dir=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro'
++ mkdir -pv /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ echo ''
++ fusermount -uz /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+fusermount: entry for /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2 not found in /etc/mtab
++ true
++ '[' 0 = 0 ']'
++ go run /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse --config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro gargnitin-empty-bucket /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+{"timestamp":{"seconds":1715318297,"nanos":661337125},"severity":"INFO","message":"Value of [config-file] resolved from [config.yml] to [/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch/config.yml]\n"}
+parsing config file failed: error reading config file: open /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch/config.yml: no such file or directory
+exit status 1
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ ls
+creationSituation.sh  delve_commands.sh  go.mod  go.work  go.work.sum
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ ln -sfv ../config.yml .
+'./config.yml' -> '../config.yml'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ ./creationSituation.sh 2
++ echo Number of args: 1
+Number of args: 1
++ debug=0
++ run=1
++ '[' 1 -gt 0 ']'
++ '[' 2 = 2 ']'
++ run=2
++ '[' 1 -gt 1 ']'
++ '[' 0 -ne 0 ']'
++ echo 'Running ...'
+Running ...
++ '[' 2 -gt 1 ']'
++ echo 'master branch (2) ...'
+master branch (2) ...
++ bucket=gargnitin-empty-bucket
++ filename=hello.txt
++ gcspath=gs://gargnitin-empty-bucket//hello.txt
++ '[' 2 -gt 1 ']'
++ mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log
++ gcsfuse_src_dir=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro'
++ mkdir -pv /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ echo ''
++ fusermount -uz /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+fusermount: entry for /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2 not found in /etc/mtab
++ true
++ '[' 0 = 0 ']'
++ go run /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse --config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro gargnitin-empty-bucket /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+{"timestamp":{"seconds":1715318314,"nanos":815285356},"severity":"INFO","message":"Value of [config-file] resolved from [config.yml] to [/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch/config.yml]\n"}
+time="10/05/2024 05:18:34.815685" severity=INFO message="Start gcsfuse/unknown (Go version go1.23-20240419-RC02 cl/626470163 +7f76c00fc5 X:fieldtrack,boringcrypto) for app \"\" using mount point: /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2\n"
+time="10/05/2024 05:18:35.177102" severity=INFO message="File system has been successfully mounted."
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ export bucket=gargnitin-empty-bucket
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ export mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ export logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ export | grep 'bucket\|mountpath\|logfile'
+declare -x bucket="gargnitin-empty-bucket"
+declare -x logfile="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log"
+declare -x mountpath="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2"
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ export | grep 'bucket\|mountpath\|logfile'
+declare -x bucket="gargnitin-empty-bucket"
+declare -x logfile="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log"
+declare -x mountpath="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2"
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ fusermount -uz ; ./creationSituation.sh 2
+fusermount: missing mountpoint argument
++ echo Number of args: 1
+Number of args: 1
++ debug=0
++ run=1
++ '[' 1 -gt 0 ']'
++ '[' 2 = 2 ']'
++ run=2
++ '[' 1 -gt 1 ']'
++ '[' 0 -ne 0 ']'
++ echo 'Running ...'
+Running ...
++ '[' 2 -gt 1 ']'
++ echo 'master branch (2) ...'
+master branch (2) ...
++ bucket=gargnitin-empty-bucket
++ filename=hello.txt
++ gcspath=gs://gargnitin-empty-bucket//hello.txt
++ '[' 2 -gt 1 ']'
++ mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log
++ gcsfuse_src_dir=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro'
++ mkdir -pv /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ echo ''
++ fusermount -uz /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ '[' 0 = 0 ']'
++ go run /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse --config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro gargnitin-empty-bucket /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+{"timestamp":{"seconds":1715321786,"nanos":364162392},"severity":"INFO","message":"Value of [config-file] resolved from [config.yml] to [/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch/config.yml]\n"}
+time="10/05/2024 06:16:26.365600" severity=INFO message="Start gcsfuse/unknown (Go version go1.23-20240419-RC02 cl/626470163 +7f76c00fc5 X:fieldtrack,boringcrypto) for app \"\" using mount point: /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2\n"
+time="10/05/2024 06:16:26.682104" severity=INFO message="File system has been successfully mounted."
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ fusermount -uz ; ./creationSituation.sh 2
+fusermount: missing mountpoint argument
++ echo Number of args: 1
+Number of args: 1
++ debug=0
++ run=1
++ '[' 1 -gt 0 ']'
++ '[' 2 = 2 ']'
++ run=2
++ '[' 1 -gt 1 ']'
++ '[' 0 -ne 0 ']'
++ echo 'Running ...'
+Running ...
++ '[' 2 -gt 1 ']'
++ echo 'master branch (2) ...'
+master branch (2) ...
++ bucket=gargnitin-empty-bucket
++ filename=hello.txt
++ gcspath=gs://gargnitin-empty-bucket//hello.txt
++ '[' 2 -gt 1 ']'
++ mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log
++ gcsfuse_src_dir=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro'
++ mkdir -pv /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ echo ''
++ fusermount -uz /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ '[' 0 = 0 ']'
++ go run /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse --config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro gargnitin-empty-bucket /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+{"timestamp":{"seconds":1715324906,"nanos":161465239},"severity":"INFO","message":"Value of [config-file] resolved from [config.yml] to [/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch/config.yml]\n"}
+time="10/05/2024 07:08:26.161801" severity=INFO message="Start gcsfuse/unknown (Go version go1.23-20240419-RC02 cl/626470163 +7f76c00fc5 X:fieldtrack,boringcrypto) for app \"\" using mount point: /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2\n"
+time="10/05/2024 07:08:26.524074" severity=INFO message="File system has been successfully mounted."
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ fusermount -uz ; ./creationSituation.sh 2
+fusermount: missing mountpoint argument
++ echo Number of args: 1
+Number of args: 1
++ debug=0
++ run=1
++ '[' 1 -gt 0 ']'
++ '[' 2 = 2 ']'
++ run=2
++ '[' 1 -gt 1 ']'
++ '[' 0 -ne 0 ']'
++ echo 'Running ...'
+Running ...
++ '[' 2 -gt 1 ']'
++ echo 'master branch (2) ...'
+master branch (2) ...
++ bucket=gargnitin-empty-bucket
++ filename=hello.txt
++ gcspath=gs://gargnitin-empty-bucket//hello.txt
++ '[' 2 -gt 1 ']'
++ mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log
++ gcsfuse_src_dir=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro'
++ mkdir -pv /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ echo ''
++ fusermount -uz /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ '[' 0 = 0 ']'
++ go run /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse --config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro gargnitin-empty-bucket /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+# github.com/googlecloudplatform/gcsfuse/v2/internal/fs/inode
+../../../src2/googlecloudplatform/gcsfuse/internal/fs/inode/dir.go:651:6: `listing' declared and not used
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ fusermount -uz ; ./creationSituation.sh 2
+fusermount: missing mountpoint argument
++ echo Number of args: 1
+Number of args: 1
++ debug=0
++ run=1
++ '[' 1 -gt 0 ']'
++ '[' 2 = 2 ']'
++ run=2
++ '[' 1 -gt 1 ']'
++ '[' 0 -ne 0 ']'
++ echo 'Running ...'
+Running ...
++ '[' 2 -gt 1 ']'
++ echo 'master branch (2) ...'
+master branch (2) ...
++ bucket=gargnitin-empty-bucket
++ filename=hello.txt
++ gcspath=gs://gargnitin-empty-bucket//hello.txt
++ '[' 2 -gt 1 ']'
++ mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log
++ gcsfuse_src_dir=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro'
++ mkdir -pv /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ echo ''
++ fusermount -uz /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+fusermount: entry for /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2 not found in /etc/mtab
++ true
++ '[' 0 = 0 ']'
++ go run /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse --config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro gargnitin-empty-bucket /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+{"timestamp":{"seconds":1715325119,"nanos":249959079},"severity":"INFO","message":"Value of [config-file] resolved from [config.yml] to [/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch/config.yml]\n"}
+time="10/05/2024 07:11:59.251959" severity=INFO message="Start gcsfuse/unknown (Go version go1.23-20240419-RC02 cl/626470163 +7f76c00fc5 X:fieldtrack,boringcrypto) for app \"\" using mount point: /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2\n"
+time="10/05/2024 07:11:59.564644" severity=INFO message="File system has been successfully mounted."
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ fusermount -uz ; ./creationSituation.sh 2
+fusermount: missing mountpoint argument
++ echo Number of args: 1
+Number of args: 1
++ debug=0
++ run=1
++ '[' 1 -gt 0 ']'
++ '[' 2 = 2 ']'
++ run=2
++ '[' 1 -gt 1 ']'
++ '[' 0 -ne 0 ']'
++ echo 'Running ...'
+Running ...
++ '[' 2 -gt 1 ']'
++ echo 'master branch (2) ...'
+master branch (2) ...
++ bucket=gargnitin-empty-bucket
++ filename=hello.txt
++ gcspath=gs://gargnitin-empty-bucket//hello.txt
++ '[' 2 -gt 1 ']'
++ mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log
++ gcsfuse_src_dir=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro'
++ mkdir -pv /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ echo ''
++ fusermount -uz /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
++ '[' 0 = 0 ']'
++ go run /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse --config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-2.log --log-format=text --implicit-dirs --only-dir list-through-metadata-cache-expt -o ro gargnitin-empty-bucket /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2
+{"timestamp":{"seconds":1715325735,"nanos":374572778},"severity":"INFO","message":"Value of [config-file] resolved from [config.yml] to [/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch/config.yml]\n"}
+time="10/05/2024 07:22:15.376692" severity=INFO message="Start gcsfuse/unknown (Go version go1.23-20240419-RC02 cl/626470163 +7f76c00fc5 X:fieldtrack,boringcrypto) for app \"\" using mount point: /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount2\n"
+time="10/05/2024 07:22:15.689323" severity=INFO message="File system has been successfully mounted."
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ fusermount -uz                 
+fusermount: missing mountpoint argument
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ fusermount -uz $mountpath 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ lsfusemnts                
+gargnitin-memory-testing-bucket-20230809 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ fusermount -uz ; ./creationSituation.sh 2^C
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ ./creationSituation.sh 2
++ echo Number of args: 1
+Number of args: 1
++ debug=0
++ run=1
++ '[' 1 -gt 0 ']'
++ '[' 2 = 2 ']'
++ run=2
++ '[' 1 -gt 1 ']'
++ '[' 0 -ne 0 ']'
++ echo 'Running ...'
+Running ...
++ '[' 2 -gt 1 ']'
++ echo 'master branch (2) ...'
+master branch (2) ...
++ bucket=gargnitin-memory-testing-bucket-20230809
++ onlydir=1000_objects
++ '[' 2 -gt 1 ']'
++ mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
++ logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log
++ gcsfuse_src_dir=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
++ echo bucket=gargnitin-memory-testing-bucket-20230809
+bucket=gargnitin-memory-testing-bucket-20230809
++ echo onlydir=1000_objects
+onlydir=1000_objects
++ echo mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
++ echo logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log
+logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log --log-format=text --implicit-dirs -o ro'
++ '[' '!' -z 1000_objects ']'
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log --log-format=text --implicit-dirs -o ro --only-dir 1000_objects'
++ mkdir -pv /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+mkdir: created directory '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2'
++ echo ''
++ fusermount -uz /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+fusermount: entry for /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2 not found in /etc/mtab
++ true
++ '[' 0 = 0 ']'
++ go run /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse --config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log --log-format=text --implicit-dirs -o ro --only-dir 1000_objects gargnitin-memory-testing-bucket-20230809 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+{"timestamp":{"seconds":1715326864,"nanos":520110584},"severity":"INFO","message":"Value of [config-file] resolved from [config.yml] to [/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch/config.yml]\n"}
+time="10/05/2024 07:41:04.520495" severity=INFO message="Start gcsfuse/unknown (Go version go1.23-20240419-RC02 cl/626470163 +7f76c00fc5 X:fieldtrack,boringcrypto) for app \"\" using mount point: /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2\n"
+time="10/05/2024 07:41:04.817546" severity=INFO message="File system has been successfully mounted."
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ bucket=gargnitin-memory-testing-bucket-20230809
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ onlydir=1000_objects
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ export | grep 'mountpath\|logfile\|bucket\|onlydir'
+declare -x bucket="gargnitin-memory-testing-bucket-20230809"
+declare -x logfile="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log"
+declare -x mountpath="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2"
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ export | grep 'mountpath\|logfile\|bucket\|onlydir'
+declare -x bucket="gargnitin-memory-testing-bucket-20230809"
+declare -x logfile="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log"
+declare -x mountpath="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2"
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ echo $onlydir
+1000_objects
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ export | grep 'mountpath\|logfile\|bucket\|onlydir'
+declare -x bucket="gargnitin-memory-testing-bucket-20230809"
+declare -x logfile="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log"
+declare -x mountpath="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2"
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ onlydir=1000_objects
+^C
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ fusermount -uz $mountpath ; ./creationSituation.sh 2
++ echo Number of args: 1
+Number of args: 1
++ debug=0
++ run=1
++ '[' 1 -gt 0 ']'
++ '[' 2 = 2 ']'
++ run=2
++ '[' 1 -gt 1 ']'
++ '[' 0 -ne 0 ']'
++ echo 'Running ...'
+Running ...
++ '[' 2 -gt 1 ']'
++ echo 'master branch (2) ...'
+master branch (2) ...
++ bucket=gargnitin-memory-testing-bucket-20230809
++ onlydir=1000_objects
++ '[' 2 -gt 1 ']'
++ mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
++ logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log
++ gcsfuse_src_dir=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
++ echo bucket=gargnitin-memory-testing-bucket-20230809
+bucket=gargnitin-memory-testing-bucket-20230809
++ echo onlydir=1000_objects
+onlydir=1000_objects
++ echo mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
++ echo logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log
+logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log --log-format=text --implicit-dirs -o ro'
++ '[' '!' -z 1000_objects ']'
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log --log-format=text --implicit-dirs -o ro --only-dir 1000_objects'
++ mkdir -pv /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
++ echo ''
++ fusermount -uz /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+fusermount: entry for /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2 not found in /etc/mtab
++ true
++ '[' 0 = 0 ']'
++ go run /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse --config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log --log-format=text --implicit-dirs -o ro --only-dir 1000_objects gargnitin-memory-testing-bucket-20230809 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+{"timestamp":{"seconds":1715326997,"nanos":786926143},"severity":"INFO","message":"Value of [config-file] resolved from [config.yml] to [/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch/config.yml]\n"}
+time="10/05/2024 07:43:17.787346" severity=INFO message="Start gcsfuse/unknown (Go version go1.23-20240419-RC02 cl/626470163 +7f76c00fc5 X:fieldtrack,boringcrypto) for app \"\" using mount point: /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2\n"
+time="10/05/2024 07:43:18.228440" severity=INFO message="File system has been successfully mounted."
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ fusermount -uz $mountpath ; ./creationSituation.sh 2
++ echo Number of args: 1
+Number of args: 1
++ debug=0
++ run=1
++ '[' 1 -gt 0 ']'
++ '[' 2 = 2 ']'
++ run=2
++ '[' 1 -gt 1 ']'
++ '[' 0 -ne 0 ']'
++ echo 'Running ...'
+Running ...
++ '[' 2 -gt 1 ']'
++ echo 'master branch (2) ...'
+master branch (2) ...
++ bucket=gargnitin-memory-testing-bucket-20230809
++ onlydir=10000_objects
++ '[' 2 -gt 1 ']'
++ mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
++ logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log
++ gcsfuse_src_dir=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
++ echo bucket=gargnitin-memory-testing-bucket-20230809
+bucket=gargnitin-memory-testing-bucket-20230809
++ echo onlydir=10000_objects
+onlydir=10000_objects
++ echo mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
++ echo logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log
+logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log --log-format=text --implicit-dirs -o ro'
++ '[' '!' -z 10000_objects ']'
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log --log-format=text --implicit-dirs -o ro --only-dir 10000_objects'
++ mkdir -pv /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
++ echo ''
++ fusermount -uz /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+fusermount: entry for /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2 not found in /etc/mtab
++ true
++ '[' 0 = 0 ']'
++ go run /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse --config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log --log-format=text --implicit-dirs -o ro --only-dir 10000_objects gargnitin-memory-testing-bucket-20230809 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+{"timestamp":{"seconds":1715331385,"nanos":711052729},"severity":"INFO","message":"Value of [config-file] resolved from [config.yml] to [/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch/config.yml]\n"}
+time="10/05/2024 08:56:25.711426" severity=INFO message="Start gcsfuse/unknown (Go version go1.23-20240419-RC02 cl/626470163 +7f76c00fc5 X:fieldtrack,boringcrypto) for app \"\" using mount point: /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2\n"
+time="10/05/2024 08:56:26.090092" severity=INFO message="File system has been successfully mounted."
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ fusermount -uz $mountpath ; ./creationSituation.sh 2
++ echo Number of args: 1
+Number of args: 1
++ debug=0
++ run=1
++ '[' 1 -gt 0 ']'
++ '[' 2 = 2 ']'
++ run=2
++ '[' 1 -gt 1 ']'
++ '[' 0 -ne 0 ']'
++ echo 'Running ...'
+Running ...
++ '[' 2 -gt 1 ']'
++ echo 'master branch (2) ...'
+master branch (2) ...
++ bucket=gargnitin-memory-testing-bucket-20230809
++ onlydir=10000_objects
++ '[' 2 -gt 1 ']'
++ mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
++ logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log
++ gcsfuse_src_dir=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
++ echo bucket=gargnitin-memory-testing-bucket-20230809
+bucket=gargnitin-memory-testing-bucket-20230809
++ echo onlydir=10000_objects
+onlydir=10000_objects
++ echo mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
++ echo logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log
+logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log --log-format=text --implicit-dirs -o ro'
++ '[' '!' -z 10000_objects ']'
++ gcsfuse_args='--config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log --log-format=text --implicit-dirs -o ro --only-dir 10000_objects'
++ mkdir -pv /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
++ echo ''
++ fusermount -uz /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+fusermount: entry for /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2 not found in /etc/mtab
++ true
++ '[' 0 = 0 ']'
++ go run /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse --config-file=config.yml --log-file=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-2.log --log-format=text --implicit-dirs -o ro --only-dir 10000_objects gargnitin-memory-testing-bucket-20230809 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+{"timestamp":{"seconds":1715331453,"nanos":332889507},"severity":"INFO","message":"Value of [config-file] resolved from [config.yml] to [/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch/config.yml]\n"}
+time="10/05/2024 08:57:33.333274" severity=INFO message="Start gcsfuse/unknown (Go version go1.23-20240419-RC02 cl/626470163 +7f76c00fc5 X:fieldtrack,boringcrypto) for app \"\" using mount point: /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2\n"
+time="10/05/2024 08:57:33.631177" severity=INFO message="File system has been successfully mounted."
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240509-list-thru-metadata-cache-expt/master-branch$ 

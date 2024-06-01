@@ -1,0 +1,31 @@
+gargnitin@gargnitin:~$ bash
+src2gargnitin@gargnitin:~$ src2
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ git fa
+remote: Enumerating objects: 34, done.
+remote: Counting objects: 100% (34/34), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 34 (delta 27), reused 34 (delta 27), pack-reused 0
+Unpacking objects: 100% (34/34), 5.00 KiB | 426.00 KiB/s, done.
+From https://github.com/googlecloudplatform/gcsfuse
+ * [new branch]          gargnitin/list-thru-metadata-cache-expt/v1 -> origin/gargnitin/list-thru-metadata-cache-expt/v1
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ git switch gargnitin/list-thru-metadata-cache-expt/v1 
+branch 'gargnitin/list-thru-metadata-cache-expt/v1' set up to track 'origin/gargnitin/list-thru-metadata-cache-expt/v1'.
+Switched to a new branch 'gargnitin/list-thru-metadata-cache-expt/v1'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ git l
+70aa4af03 (HEAD -> refs/heads/gargnitin/list-thru-metadata-cache-expt/v1, refs/remotes/origin/gargnitin/list-thru-metadata-cache-expt/v1) crashing: recreating listings from type-cache
+29f2efe23 Add more minCore structures and utils
+6c6cd7d79 Add minCore structures and utils
+ed3ac2b9e Prep2: Add debug log in bucket_handle.ListObjects
+d1720c26e Prep1: type-cache map and disable gbg collect
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ git switch 29f2efe23
+fatal: a branch is expected, got commit '29f2efe23'
+hint: If you want to detach HEAD at the commit, try again with the --detach option.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ git switch --detach 29f2efe23
+HEAD is now at 29f2efe23 Add more minCore structures and utils
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ git l
+29f2efe23 (HEAD) Add more minCore structures and utils
+6c6cd7d79 Add minCore structures and utils
+ed3ac2b9e Prep2: Add debug log in bucket_handle.ListObjects
+d1720c26e Prep1: type-cache map and disable gbg collect
+4620898ea (refs/remotes/origin/master, refs/remotes/origin/HEAD, refs/heads/master)  Initializing new storage control client (#1865)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ 

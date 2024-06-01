@@ -1,0 +1,113 @@
+gargnitin@gargnitin:~$ bash
+gargnitin@gargnitin:~$ src2
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ git l
+9313e1c7a (HEAD -> refs/heads/master) Fix only dir mounting e2e test (#1880)
+c7baf1ac3 Upgrading depenencies as per dependabot suggestions (#1881)
+397729fcd Using Stretcher testify package in storage handle tests  (#1867)
+4499126ab [PR-2][Phase1 Implementation] Ignore GCSFuse interrupts  (#1860)
+485cd8d23 fix flaky modification time check in integration tests (#1875)
+ ~/w/c/s/c/g/s/g/g/i/f/i/dir.go  bucket_handle.go  ~/.vimrc                                                                                            X                                          X                                                                                                               X
+ 28 func (b *bucketHandle) ListObjects(ctx context.Context, req *gcs.ListObjectsRequest) (listing *gcs.Listing, err error) {                                                                                                                                                                                       
+ 27 >-------// Converting *ListObjectsRequest to type *storage.Query as expected by the Go Storage Client.                                                                                                                                                                                                         
+ 26 >-------query := &storage.Query{                                                                                                                                                                                                                                                                               
+ 25 >------->-------Delimiter:                req.Delimiter,                                                                                                                                                                                                                                                       
+ 24 >------->-------Prefix:                   req.Prefix,                                                                                                                                                                                                                                                          
+ 23 >------->-------Projection:               getProjectionValue(req.ProjectionVal),                                                                                                                                                                                                                               
+ 22 >------->-------IncludeTrailingDelimiter: req.IncludeTrailingDelimiter,                                                                                                                                                                                                                                        
+ 21 >------->-------IncludeFoldersAsPrefixes: req.IncludeFoldersAsPrefixes,                                                                                                                                                                                                                                        
+ 20 >------->-------//MaxResults: , (Field not present in storage.Query of Go Storage Library but present in ListObjectsQuery in Jacobsa code.)                                                                                                                                                                    
+ 19 >-------}                                                                                                                                                                                                                                                                                                      
+ 18                                                                                                                                                                                                                                                                                                                
+ 17 >-------//logger.Debugf("Calling GCS ListObjectsRequest with request=%#v", *req)                                                                                                                                                                                                                               
+ 16                                                                                                                                                                                                                                                                                                                
+ 15 >-------itr := b.bucket.Objects(ctx, query) // Returning iterator to the list of objects.                                                                                                                                                                                                                      
+ 14 >-------pi := itr.PageInfo()                                                                                                                                                                                                                                                                                   
+ 13 >-------pi.MaxSize = req.MaxResults                                                                                                                                                                                                                                                                            
+ 12 >-------pi.Token = req.ContinuationToken                                                                                                                                                                                                                                                                       
+ 11 >-------var list gcs.Listing                                                                                                                                                                                                                                                                                   
+ 10                                                                                                                                                                                                                                                                                                                
+  9 >-------// Iterating through all the objects in the bucket and one by one adding them to the list.                                                                                                                                                                                                             
+  8 >-------iter := 0                                                                                                                                                                                                                                                                                              
+  7 >-------for ; ; iter++ {                                                                                                                                                                                                                                                                                       
+  6 >------->-------var attrs *storage.ObjectAttrs                                                                                                                                                                                                                                                                 
+  5                                                                                                                                                                                                                                                                                                                
+  4 >------->-------attrs, err = itr.Next()                                                                                                                                                                                                                                                                        
+  3 >------->-------if err == iterator.Done {                                                                                                                                                                                                                                                                      
+  2 >------->------->-------err = nil                                                                                                                                                                                                                                                                              
+  1 >------->------->-------break                                                                                                                                                                                                                                                                                  
+276 >------->-------}                                                                                                                                                                                                                                                                                              
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ git st
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit (use -u to show untracked files)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ git fa
+remote: Enumerating objects: 505, done.
+remote: Counting objects: 100% (505/505), done.
+remote: Compressing objects: 100% (231/231), done.
+remote: Total 505 (delta 291), reused 439 (delta 246), pack-reused 0
+Receiving objects: 100% (505/505), 58.44 MiB | 13.68 MiB/s, done.
+Resolving deltas: 100% (291/291), completed with 47 local objects.
+From https://github.com/googlecloudplatform/gcsfuse
+   923987bb5..4620898ea  master                                                              -> origin/master
+ * [new branch]          adding_bucket_type                                                  -> origin/adding_bucket_type
+ * [new branch]          cache_readdir                                                       -> origin/cache_readdir
+ * [new branch]          cli-cfg-parity2                                                     -> origin/cli-cfg-parity2
+ * [new branch]          dependabot/go_modules/github.com/googleapis/gax-go/v2-2.12.4        -> origin/dependabot/go_modules/github.com/googleapis/gax-go/v2-2.12.4
+ * [new branch]          dependabot/go_modules/golang.org/x/text-0.15.0                      -> origin/dependabot/go_modules/golang.org/x/text-0.15.0
+ * [new branch]          dependabot/pip/perfmetrics/scripts/load_tests/python/werkzeug-3.0.3 -> origin/dependabot/pip/perfmetrics/scripts/load_tests/python/werkzeug-3.0.3
+ * [new branch]          dependencies-upgrade                                                -> origin/dependencies-upgrade
+ + 9024dc635...dc55c22ee gargnitin/fix-empty-directory-list-issue                            -> origin/gargnitin/fix-empty-directory-list-issue  (forced update)
+ * [new branch]          implement_method_to_return_bucket_type                              -> origin/implement_method_to_return_bucket_type
+   862e895d2..1d7abca88  managed_folder_test_script                                          -> origin/managed_folder_test_script
+ * [new branch]          perf_test_managed_folders                                           -> origin/perf_test_managed_folders
+ * [new branch]          poc_async_job_parallel_download                                     -> origin/poc_async_job_parallel_download
+   0a009e051..45ca0718c  printing_logs_on_test_logs                                          -> origin/printing_logs_on_test_logs
+ * [new branch]          reduce-img-size                                                     -> origin/reduce-img-size
+ * [new branch]          send_fail_logs_on_kokoro                                            -> origin/send_fail_logs_on_kokoro
+ * [new branch]          setting_bucket_type                                                 -> origin/setting_bucket_type
+   cdc825d93..2ce923282  storage_control_client                                              -> origin/storage_control_client
+ * [new branch]          temp_python_read                                                    -> origin/temp_python_read
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ git switch master && git ff
+Already on 'master'
+Your branch is behind 'origin/master' by 4 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+Updating 9313e1c7a..4620898ea
+Fast-forward
+ Dockerfile                                                                        |  2 +-
+ go.mod                                                                            |  3 ++-
+ go.sum                                                                            |  2 ++
+ internal/storage/storage_handle.go                                                | 57 +++++++++++++++++++++++++++++++++++++++++++--------------
+ internal/storage/storage_handle_test.go                                           | 19 +++++++++++++++++++
+ internal/storage/storageutil/client.go                                            |  4 ++++
+ internal/storage/storageutil/control_client.go                                    | 64 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ internal/storage/storageutil/control_client_test.go                               | 57 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ internal/storage/storageutil/test_util.go                                         |  1 +
+ main.go                                                                           |  1 +
+ perfmetrics/scripts/ml_tests/pytorch/run_model.sh                                 |  2 +-
+ perfmetrics/scripts/ml_tests/tf/resnet/setup_scripts/setup_container.sh           |  4 ++--
+ perfmetrics/scripts/presubmit_test/pr_perf_test/build.sh                          |  4 ++--
+ perfmetrics/scripts/read_cache/setup.sh                                           |  2 +-
+ tools/cd_scripts/e2e_test.sh                                                      |  2 +-
+ tools/containerize_gcsfuse_docker/Dockerfile                                      |  2 +-
+ tools/integration_tests/run_e2e_tests.sh                                          |  4 ++--
+ tools/integration_tests/util/mounting/dynamic_mounting/dynamic_mounting.go        |  1 +
+ tools/integration_tests/util/mounting/only_dir_mounting/only_dir_mounting.go      |  1 +
+ tools/integration_tests/util/mounting/persistent_mounting/perisistent_mounting.go |  1 +
+ tools/integration_tests/util/mounting/static_mounting/static_mounting.go          |  1 +
+ tools/integration_tests/util/setup/setup.go                                       |  4 ++--
+ tools/package_gcsfuse_docker/Dockerfile                                           |  2 +-
+ 23 files changed, 211 insertions(+), 29 deletions(-)
+ create mode 100644 internal/storage/storageutil/control_client.go
+ create mode 100644 internal/storage/storageutil/control_client_test.go
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ git l
+4620898ea (HEAD -> refs/heads/master, refs/remotes/origin/master, refs/remotes/origin/HEAD)  Initializing new storage control client (#1865)
+744605e7a Printing flags in test logs (#1885)
+61c952309 Fix send failure logs on kokoro artifacts (#1886)
+923987bb5 Upgrading go version to 1.22.2 (#1882)
+9313e1c7a Fix only dir mounting e2e test (#1880)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ vi internal/fs/inode/dir.go +:585
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ vi internal/fs/inode/dir.go +:585
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ vi internal/fs/inode/dir.go +:585
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ 

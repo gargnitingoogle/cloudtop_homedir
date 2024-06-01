@@ -1,0 +1,78 @@
+gargnitin@gargnitin:~$ bash
+sgargnitin@gargnitin:~$ src2
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ git l
+9313e1c7a (HEAD -> refs/heads/master, refs/remotes/origin/master, refs/remotes/origin/HEAD) Fix only dir mounting e2e test (#1880)
+c7baf1ac3 Upgrading depenencies as per dependabot suggestions (#1881)
+397729fcd Using Stretcher testify package in storage handle tests  (#1867)
+4499126ab [PR-2][Phase1 Implementation] Ignore GCSFuse interrupts  (#1860)
+485cd8d23 fix flaky modification time check in integration tests (#1875)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ vi ~/.tmux.conf 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse$ localwork 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ ls
+202307-08-gzip-support        20240202-stat-cache-entry-size-experiment  202403-docker-failure-with-go-1.22  oncall
+202307-vertex_ai_job_slow     20240212-type-cache-size-effect            20240429-fix-empty-dirname-issue    playground
+20231215-low-fsync-frequency  20240306-gke-handson                       2024q2-automate-ai-ml-perf
+20240125-overlay-fs-expt      20240318-vertex-ai-experiments             implit-dirs-io-error
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd 20240429-fix-empty-dirname-issue
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ ls
+ config.yml   creationSituation.sh  'delve commands.txt'   fix-branch   hello.txt   master-branch
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ vi config.yml 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ vi ~/.tmux.conf
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ vi ~/.tmux.conf
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ echo $bucket
+
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ export bucket=gargnitin-test-empty-dirname-asia-se1
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ gsutil ls -l gs://$bucket/*//*
+         6  2024-05-02T09:41:42Z  gs://gargnitin-test-empty-dirname-asia-se1/a//12
+
+gs://gargnitin-test-empty-dirname-asia-se1/a//b/:
+         6  2024-05-02T09:41:41Z  gs://gargnitin-test-empty-dirname-asia-se1/a//b/11
+TOTAL: 2 objects, 12 bytes (12 B)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ gsutil ls -l gs://$bucket/*/*                 
+         6  2024-05-02T09:41:30Z  gs://gargnitin-test-empty-dirname-asia-se1/../2
+
+gs://gargnitin-test-empty-dirname-asia-se1/../a/:
+         6  2024-05-02T09:41:29Z  gs://gargnitin-test-empty-dirname-asia-se1/../a/1
+         6  2024-05-02T09:41:33Z  gs://gargnitin-test-empty-dirname-asia-se1/./4
+
+gs://gargnitin-test-empty-dirname-asia-se1/./a/:
+         6  2024-05-02T09:41:31Z  gs://gargnitin-test-empty-dirname-asia-se1/./a/3
+         6  2024-05-02T09:41:35Z  gs://gargnitin-test-empty-dirname-asia-se1//6
+
+gs://gargnitin-test-empty-dirname-asia-se1//a/:
+         6  2024-05-02T09:41:34Z  gs://gargnitin-test-empty-dirname-asia-se1//a/5
+         6  2024-05-02T09:41:43Z  gs://gargnitin-test-empty-dirname-asia-se1/a/13
+
+gs://gargnitin-test-empty-dirname-asia-se1/a/../:
+         6  2024-05-02T09:41:37Z  gs://gargnitin-test-empty-dirname-asia-se1/a/../8
+                                 gs://gargnitin-test-empty-dirname-asia-se1/a/../b/
+
+gs://gargnitin-test-empty-dirname-asia-se1/a/./:
+         6  2024-05-02T09:41:40Z  gs://gargnitin-test-empty-dirname-asia-se1/a/./10
+                                 gs://gargnitin-test-empty-dirname-asia-se1/a/./b/
+
+gs://gargnitin-test-empty-dirname-asia-se1/a//:
+         6  2024-05-02T09:41:42Z  gs://gargnitin-test-empty-dirname-asia-se1/a//12
+                                 gs://gargnitin-test-empty-dirname-asia-se1/a//b/
+TOTAL: 10 objects, 60 bytes (60 B)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ vi ~/.tmux.conf
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ unmountGcsfuse $mountpath
+unmountGcsfuse: expected 1 input: <gcsfuse-mount-path-to-be-unmounted>
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ export logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-2.log
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ declare -x bucket="gargnitin-test-empty-dirname-asia-se1"
+declare -x mountpath="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2"
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ unmountGcsfuse $mountpath                                                                                               
+Unmounting gcsfuse mount /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount2 ...
+... Unmounted /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ ;                                                                               
+If you do not reboot now, your system will reboot automatically                
+at Fri May 17 02:52:10 UTC 2024. For more info, see go/glinux-reboot-policy.   
+To reboot your computer 10 hours from now, on the command line run:            
+echo systemctl reboot | at now + 10 hours                                      
+Also you may have a pending maintenance. See go/cloudtop-faq#cloudtop-maintenan
+ce-scheduler                                                                   
+To run maintenance in 10 hours run:                                            
+ctop self maintenance schedule in 10h
+                                                                               
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240429-fix-empty-dirname-issue$ ;

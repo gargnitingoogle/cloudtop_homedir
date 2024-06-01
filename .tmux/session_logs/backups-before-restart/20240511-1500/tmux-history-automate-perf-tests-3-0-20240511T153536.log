@@ -1,0 +1,1655 @@
+gargnitin@gargnitin:~$ man tmpfs                              63G     0   63G   0% /dev/shm
+tmpfs                              13G  1.2M   13G   1% /run
+tmpfs                             5.0M     0  5.0M   0% /run/lock
+tmpfs                              63G     0   63G   0% /sys/fs/cgroup
+/dev/loop0                         64M   64M     0 100% /snap/core20/2015
+/dev/loop1                        344M  344M     0 100% /snap/google-cloud-cli/189
+/dev/loop2                         92M   92M     0 100% /snap/lxd/24061
+/dev/loop3                         41M   41M     0 100% /snap/snapd/20290
+/dev/sda15                        105M  6.1M   99M   6% /boot/efi
+/dev/md0                          1.5T   28K  1.4T   1% /mnt/disks/local_ssd
+tmpfs                              13G     0   13G   0% /run/user/1364453796
+gcsfuse-read-cache-fio-load-test  1.0P     0  1.0P   0% /home/gargnitin_google_com/working_dir/gcs
+No manual entry for 63G
+No manual entry for 63G in section 0
+man: /dev/shm: Is a directory
+No manual entry for /dev/shm in section 0%
+Command tmpfs not found
+Command tmpfs not found
+Command tmpfs not found
+-bash: /dev/loop0: Permission denied
+-bash: /dev/loop1: Permission denied
+-bash: /dev/loop2: Permission denied
+-bash: /dev/loop3: Permission denied
+-bash: /dev/sda15: No such file or directory
+-bash: /dev/md0: No such file or directory
+Command tmpfs not found
+Command gcsfuse-read-cache-fio-load-test not found
+gargnitin@gargnitin:~$ man mdadm
+No manual entry for mdadm
+gargnitin@gargnitin:~$ mdadm /?                                                                                                                        
+Command mdadm not found
+gargnitin@gargnitin:~$ mdadm help
+Command mdadm not found
+gargnitin@gargnitin:~$ man mdadm                                                                                                                      
+No manual entry for mdadm
+gargnitin@gargnitin:~$ instal mdadm
+Command instal not found
+gargnitin@gargnitin:~$ install mdadm
+install: missing destination file operand after 'mdadm'
+Try 'install --help' for more information.
+gargnitin@gargnitin:~$ sudo apt-get install mdadm                                                                                                       
+[sudo] password for gargnitin: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  mdadm
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 469 kB of archives.
+After this operation, 1,268 kB of additional disk space will be used.
+Get:1 https://rapture-prod.corp.google.com glinux-rodete-base-20240402.02.06/main amd64 mdadm amd64 4.2+20240118-1 [469 kB]
+Fetched 469 kB in 1s (823 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package mdadm.
+(Reading database ... 459782 files and directories currently installed.)
+Preparing to unpack .../mdadm_4.2+20240118-1_amd64.deb ...
+Unpacking mdadm (4.2+20240118-1) ...
+Setting up mdadm (4.2+20240118-1) ...
+Generating mdadm.conf... done.
+update-initramfs: deferring update (trigger activated)
+Generating grub configuration file ...
+File descriptor 3 (pipe:[13711149]) leaked on vgs invocation. Parent PID 2675288: /usr/sbin/grub-probe
+File descriptor 3 (pipe:[13711149]) leaked on vgs invocation. Parent PID 2675288: /usr/sbin/grub-probe
+Found linux image: /boot/vmlinuz-6.6.15-2rodete2-amd64
+Found initrd image: /boot/initrd.img-6.6.15-2rodete2-amd64
+Found linux image: /boot/vmlinuz-6.6.13-1rodete3-amd64
+Found initrd image: /boot/initrd.img-6.6.13-1rodete3-amd64
+File descriptor 3 (pipe:[13711149]) leaked on vgs invocation. Parent PID 2675556: /usr/sbin/grub-probe
+File descriptor 3 (pipe:[13711149]) leaked on vgs invocation. Parent PID 2675556: /usr/sbin/grub-probe
+Warning: os-prober will not be executed to detect other bootable partitions.
+Systems on them will not be added to the GRUB boot configuration.
+Check GRUB_DISABLE_OS_PROBER documentation entry.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Created symlink /etc/systemd/system/mdmonitor.service.wants/mdcheck_continue.timer → /lib/systemd/system/mdcheck_continue.timer.
+Created symlink /etc/systemd/system/mdmonitor.service.wants/mdcheck_start.timer → /lib/systemd/system/mdcheck_start.timer.
+Created symlink /etc/systemd/system/mdmonitor.service.wants/mdmonitor-oneshot.timer → /lib/systemd/system/mdmonitor-oneshot.timer.
+Processing triggers for man-db (2.12.0-3+gl0) ...
+Processing triggers for initramfs-tools (0.142) ...
+update-initramfs: Generating /boot/initrd.img-6.6.15-2rodete2-amd64
+cryptsetup: ERROR: Couldn't resolve device UUID=7b43167a-9f9d-4dc5-a0ea-c95005584e8a
+W: initramfs-tools configuration sets RESUME=UUID=7b43167a-9f9d-4dc5-a0ea-c95005584e8a
+W: but no matching swap device is available.
+I: The initramfs will attempt to resume from /dev/dm-2
+I: (/dev/mapper/glinux_20240322-swap)
+I: Set the RESUME variable to override this.
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+update-initramfs: Generating /boot/initrd.img-6.6.13-1rodete3-amd64
+cryptsetup: ERROR: Couldn't resolve device UUID=7b43167a-9f9d-4dc5-a0ea-c95005584e8a
+W: initramfs-tools configuration sets RESUME=UUID=7b43167a-9f9d-4dc5-a0ea-c95005584e8a
+W: but no matching swap device is available.
+I: The initramfs will attempt to resume from /dev/dm-2
+I: (/dev/mapper/glinux_20240322-swap)
+I: Set the RESUME variable to override this.
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+gargnitin@gargnitin:~$ bash
+srcgargnitin@gargnitin:~$ src
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git fa
+remote: Enumerating objects: 937, done.
+remote: Counting objects: 100% (937/937), done.
+remote: Compressing objects: 100% (306/306), done.
+remote: Total 937 (delta 645), reused 850 (delta 608), pack-reused 0
+Receiving objects: 100% (937/937), 345.92 KiB | 16.47 MiB/s, done.
+Resolving deltas: 100% (645/645), completed with 80 local objects.
+From https://github.com/googlecloudplatform/gcsfuse
+   0a563b9c1..e75fbe836  master                                               -> origin/master
+   24fe16cec..c6f34a086  change_authentication_flow_for_tpc                   -> origin/change_authentication_flow_for_tpc
+ * [new branch]          dependabot/go_modules/cloud.google.com/go/compute/metadata-0.3.0 -> origin/dependabot/go_modules/cloud.google.com/go/compute/metadata-0.3.0
+ * [new branch]          dependabot/go_modules/google.golang.org/api-0.175.0  -> origin/dependabot/go_modules/google.golang.org/api-0.175.0
+ * [new branch]          dependabot/go_modules/google.golang.org/grpc-1.63.2  -> origin/dependabot/go_modules/google.golang.org/grpc-1.63.2
+ * [new branch]          dependabot/pip/perfmetrics/scripts/bigquery/idna-3.7 -> origin/dependabot/pip/perfmetrics/scripts/bigquery/idna-3.7
+ * [new branch]          dependabot/pip/perfmetrics/scripts/idna-3.7          -> origin/dependabot/pip/perfmetrics/scripts/idna-3.7
+ * [new branch]          dependabot/pip/perfmetrics/scripts/load_tests/python/idna-3.7 -> origin/dependabot/pip/perfmetrics/scripts/load_tests/python/idna-3.7
+ + d55784f76...917d38dfa enable_grpc_integration_test                         -> origin/enable_grpc_integration_test  (forced update)
+ * [new branch]          fix_flaky_e2e_tests                                  -> origin/fix_flaky_e2e_tests
+ + da67d7e83...c8a2ec939 intro_disable_auth_flag                              -> origin/intro_disable_auth_flag  (forced update)
+ * [new branch]          introducing_new_hns_flag                             -> origin/introducing_new_hns_flag
+ * [new branch]          log_for_retry                                        -> origin/log_for_retry
+ * [new branch]          make-explicit-implicit-dir-test-independent          -> origin/make-explicit-implicit-dir-test-independent
+ * [new branch]          making_read_large_files_independent                  -> origin/making_read_large_files_independent
+ * [new branch]          making_rename_dir_limit_test_parallel                -> origin/making_rename_dir_limit_test_parallel
+ * [new branch]          metadata-testing-tpc                                 -> origin/metadata-testing-tpc
+ * [new branch]          move-e2e-script                                      -> origin/move-e2e-script
+ * [new branch]          read_prefetch_support_poc                            -> origin/read_prefetch_support_poc
+ * [new branch]          shift_from_gsutil_to_gcloud_in_e2e_tests             -> origin/shift_from_gsutil_to_gcloud_in_e2e_tests
+ * [new branch]          storage_control_client                               -> origin/storage_control_client
+ + bf052724e...057bdd51c test_tpc                                             -> origin/test_tpc  (forced update)
+ * [new tag]             v2.0.1                                               -> v2.0.1
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git st
+On branch master
+Your branch is behind 'origin/master' by 11 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit (use -u to show untracked files)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git l
+0a563b9c1 (HEAD -> refs/heads/master) wording fixes (#1826)
+b720db60f Fixing custom-endpoint issue in grpc (#1825)
+3672107bd Managed folder delete create tests with admin permission (#1810)
+af11bc13e Fix exit code issue in script (#1828)
+eb28f404a Adding experimental config to benchmark grpc performance (#1824)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git switch master
+Already on 'master'
+Your branch is behind 'origin/master' by 11 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git ff
+Updating 0a563b9c1..e75fbe836
+Fast-forward
+ internal/auth/auth.go                                                                           |  43 +++++++++++++++--
+ internal/auth/auth_test.go                                                                      |  76 +++++++++++++++++++++++++++++
+ internal/auth/testdata/empty_creds.json                                                         |   0
+ internal/auth/testdata/google_creds.json                                                        |  13 +++++
+ internal/auth/testdata/tpc_creds.json                                                           |  13 +++++
+ internal/config/config_util.go                                                                  |   5 +-
+ internal/config/mount_config.go                                                                 |   6 +--
+ internal/fs/inode/dir.go                                                                        |  18 +++----
+ internal/storage/storageutil/custom_retry.go                                                    |   3 ++
+ mount.go                                                                                        |  34 ++++++-------
+ perfmetrics/scripts/continuous_test/gcp_ubuntu/e2e_tests/build.sh                               |   2 +-
+ .../scripts/continuous_test/gcp_ubuntu/periodic_experiments/experiments_configuration.json      |  20 ++++----
+ perfmetrics/scripts/presubmit_test/pr_perf_test/build.sh                                        |   2 +-
+ tools/integration_tests/explicit_dir/explicit_dir_test.go                                       |   2 +
+ tools/integration_tests/explicit_dir/list_test.go                                               |  36 +++++++-------
+ tools/integration_tests/implicit_dir/delete_test.go                                             | 124 ++++++++++++++++++++++--------------------------
+ tools/integration_tests/implicit_dir/implicit_dir_test.go                                       |   1 +
+ tools/integration_tests/implicit_dir/list_test.go                                               |  48 +++++++++----------
+ tools/integration_tests/managed_folders/admin_permissions_test.go                               |  29 +++++++----
+ tools/integration_tests/read_large_files/concurrent_read_files_test.go                          |   5 +-
+ tools/integration_tests/read_large_files/random_read_large_file_test.go                         |   6 +--
+ tools/integration_tests/read_large_files/read_large_files_test.go                               |   1 +
+ tools/integration_tests/read_large_files/seq_read_large_file_test.go                            |   6 +--
+ tools/integration_tests/rename_dir_limit/move_dir_test.go                                       |  53 +++++++++------------
+ tools/integration_tests/rename_dir_limit/rename_dir_limit_test.go                               |   1 +
+ tools/integration_tests/rename_dir_limit/rename_dir_test.go                                     |  98 ++++++++++++++++----------------------
+ {perfmetrics/scripts => tools/integration_tests}/run_e2e_tests.sh                               |   8 ++--
+ tools/integration_tests/util/operations/dir_operations.go                                       |   4 +-
+ .../util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go               |  52 ++++++++++----------
+ tools/prefetch_cache_gcsfuse/main.go                                                            |   3 +-
+ 30 files changed, 409 insertions(+), 303 deletions(-)
+ create mode 100644 internal/auth/auth_test.go
+ create mode 100644 internal/auth/testdata/empty_creds.json
+ create mode 100644 internal/auth/testdata/google_creds.json
+ create mode 100644 internal/auth/testdata/tpc_creds.json
+ rename {perfmetrics/scripts => tools/integration_tests}/run_e2e_tests.sh (100%)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git l
+e75fbe836 (HEAD -> refs/heads/master, refs/remotes/origin/master, refs/remotes/origin/HEAD) Making implicit-explicit dir test package parallel (#1851)
+b6dde99a9 Move e2e script in integration test dir (#1853)
+21b2eb1a7 Adding info log for operation retry (#1854)
+ede0d0f61 Making rename dir limit test package parallell (#1850)
+d5eedac3b Making read large files test package parallell (#1849)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi  perfmetrics/scripts/read_cache/setup.sh
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff  perfmetrics/scripts/read_cache/setup.sh                                  
+diff --git a/perfmetrics/scripts/read_cache/setup.sh b/perfmetrics/scripts/read_cache/setup.sh
+index 2e096cb60..4224afd37 100755
+--- a/perfmetrics/scripts/read_cache/setup.sh
++++ b/perfmetrics/scripts/read_cache/setup.sh
+@@ -79,11 +79,11 @@ export WORKING_DIR=$WD
+ echo "export WORKING_DIR=$WD" >> ~/.bashrc
+ 
+ # Install gcsfuse.
+-CGO_ENABLED=0 go install github.com/googlecloudplatform/gcsfuse@read_cache_release
++CGO_ENABLED=0 go install github.com/googlecloudplatform/gcsfuse@master
+ 
+ # Clone gcsfuse to get fio load test script.
+ if [ ! -d "./gcsfuse" ]; then
+-  git clone -b  read_cache_release https://github.com/GoogleCloudPlatform/gcsfuse.git
++  git clone -b  master https://github.com/GoogleCloudPlatform/gcsfuse.git
+ fi
+ 
+ # Mount gcsfuse.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git st
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   perfmetrics/scripts/read_cache/setup.sh
+
+no changes added to commit (use "git add" and/or "git commit -a")
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff
+diff --git a/perfmetrics/scripts/read_cache/setup.sh b/perfmetrics/scripts/read_cache/setup.sh
+index 2e096cb60..4224afd37 100755
+--- a/perfmetrics/scripts/read_cache/setup.sh
++++ b/perfmetrics/scripts/read_cache/setup.sh
+@@ -79,11 +79,11 @@ export WORKING_DIR=$WD
+ echo "export WORKING_DIR=$WD" >> ~/.bashrc
+ 
+ # Install gcsfuse.
+-CGO_ENABLED=0 go install github.com/googlecloudplatform/gcsfuse@read_cache_release
++CGO_ENABLED=0 go install github.com/googlecloudplatform/gcsfuse@master
+ 
+ # Clone gcsfuse to get fio load test script.
+ if [ ! -d "./gcsfuse" ]; then
+-  git clone -b  read_cache_release https://github.com/GoogleCloudPlatform/gcsfuse.git
++  git clone -b  master https://github.com/GoogleCloudPlatform/gcsfuse.git
+ fi
+ 
+ # Mount gcsfuse.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ htop
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ cat ~/.tmux
+cat: /usr/local/google/home/gargnitin/.tmux: Is a directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ cat ~/.tmux.conf 
+unbind C-b
+set-option -g prefix C-k
+bind-key C-k send-prefix
+
+# enable mouse scrolling
+#set -g mouse on
+
+set-option -g history-limit 50000
+
+# Splitting terminals using | and -
+unbind '"'
+unbind %
+bind | split-window -h
+bind - split-window -v
+
+# Double tap C-k to toggle last window
+bind C-k select-window -l
+
+# set Ctrl-r to refresh tmux-config
+unbind r
+bind r source-file ~/.tmux.conf
+
+# Add Tmux Plugin Manager
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'aaronpowell/tmux-weather'
+
+#set -g @plugin 'dracula/tmux'
+#set -g @dracula-show-powerline true
+#set -g @dracula-show-flags true
+#set -g @dracula-show-left-icon session
+
+# Automatically restore tmx windows when tmux starts.
+set -g @continuum-restore 'on'
+
+# Don't auto-launch tmx at machine boot.  Give me a chance to gcert first.
+set -g @continuum-boot 'off'
+
+# Can't use this.  It's spammy and deprecated.
+# set -g @resurrect-save-shell-history 'on'
+
+# Preserves what was readable in each pane.
+set -g @resurrect-capture-pane-contents 'on'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.bashrc +:$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.bash_aliases
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.bashrc +:$                                                                                                                                                                                                                            
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.bash_aliases +/q
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.bashrc +:$                                                                                                                                                                                                                        
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.tmux.conf   
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ tmux source ~/.tmux.conf
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc                                                                                                                                                                                                                                 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ date -d @1713852348 
+Tue Apr 23 06:05:48 AM UTC 2024
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ blockdev -getra device
+blockdev: cannot open device: No such file or directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ man blockdev
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ blockdev -getra /dev/ 
+/dev/mapper/crypt_dev_sda3        /dev/mapper/glinux_20240322-root  /dev/mapper/glinux_20240322-swap  /dev/sda                          /dev/sda1                         /dev/sda2                         /dev/sda3                         
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ blockdev -getra /dev/
+/dev/mapper/crypt_dev_sda3        /dev/mapper/glinux_20240322-root  /dev/mapper/glinux_20240322-swap  /dev/sda                          /dev/sda1                         /dev/sda2                         /dev/sda3                         
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ blockdev -getra /dev/
+/dev/mapper/crypt_dev_sda3        /dev/mapper/glinux_20240322-root  /dev/mapper/glinux_20240322-swap  /dev/sda                          /dev/sda1                         /dev/sda2                         /dev/sda3                         
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ blockdev -getra /dev/sda
+/dev/sda   /dev/sda1  /dev/sda2  /dev/sda3  
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ blockdev -getra /dev/sda
+/dev/sda   /dev/sda1  /dev/sda2  /dev/sda3  
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ df -h                   
+Filesystem                        Size  Used Avail Use% Mounted on
+udev                               95G     0   95G   0% /dev
+tmpfs                              19G  5.8M   19G   1% /run
+efivarfs                           56K   24K   27K  48% /sys/firmware/efi/efivars
+/dev/mapper/glinux_20240322-root  2.0T  240G  1.7T  13% /
+tmpfs                              95G   44M   95G   1% /dev/shm
+tmpfs                             5.0M     0  5.0M   0% /run/lock
+/dev/sda2                         3.7G  261M  3.3G   8% /boot
+/dev/sda1                         3.8G  197M  3.6G   6% /boot/efi
+tmpfs                              19G  232K   19G   1% /run/user/1012083
+srcfsd                            1.0T     0  1.0T   0% /google/src
+loasdtmpfs                        1.0M     0  1.0M   0% /var/google/session/loasd/tmpfs
+gargnitin-fuse-test-bucket1       1.0P     0  1.0P   0% /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount
+objfsd                            2.0T  4.0K  1.7T   1% /google/obj
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ blockdev -getra /dev/mapper/glinux_20240322-root                                                                                                                                                                                            
+blockdev: cannot open /dev/mapper/glinux_20240322-root: Permission denied
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ sudo blockdev -getra /dev/mapper/glinux_20240322-root                                                                                                                                                                                         
+[sudo] password for gargnitin: 
+blockdev: Unknown command: -getra
+Try 'blockdev --help' for more information.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ man blockdev                                                                                                                                                                                                                             
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ sudo blockdev --getra /dev/mapper/glinux_20240322-root                                                                                                                                                                                        
+256
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ man blockdev                                          
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ cat ~/.tmux.conf 
+unbind C-b
+set-option -g prefix C-k
+bind-key C-k send-prefix
+
+# enable mouse scrolling
+#set -g mouse on
+
+set-option -g history-limit 50000
+
+# Splitting terminals using | and -
+unbind '"'
+unbind %
+bind | split-window -h
+bind - split-window -v
+
+# Double tap C-k to toggle last window
+bind C-k select-window -l
+
+# set Ctrl-r to refresh tmux-config
+unbind r
+bind r source-file ~/.tmux.conf
+
+# Add vim-like copy-mode
+setw -g mode-keys vi
+
+# Add Tmux Plugin Manager
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'aaronpowell/tmux-weather'
+
+#set -g @plugin 'dracula/tmux'
+#set -g @dracula-show-powerline true
+#set -g @dracula-show-flags true
+#set -g @dracula-show-left-icon session
+
+# Automatically restore tmx windows when tmux starts.
+set -g @continuum-restore 'on'
+
+# Don't auto-launch tmx at machine boot.  Give me a chance to gcert first.
+set -g @continuum-boot 'off'
+
+# Can't use this.  It's spammy and deprecated.
+# set -g @resurrect-save-shell-history 'on'
+
+# Preserves what was readable in each pane.
+set -g @resurrect-capture-pane-contents 'on'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+
+set -g @plugin 'tmux-plugins/tmux-copycat'
+
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ gcert
+[gnubby] could not create SSO session: [gnubby] cannot connect to ssh-agent: cannot connect to SSH_AUTH_SOCK /tmp/ssh-XXXXEnhmnC/agent.2252603 (try restarting your local ssh-agent following http://go/gnubby/debugging#restart-ssh-agent ): dial unix /tmp/ssh-XXXXEnhmnC/agent.2252603: connect: no such file or directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ htop
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ gcert
+[gnubby] could not create SSO session: [gnubby] cannot connect to ssh-agent: cannot connect to SSH_AUTH_SOCK /tmp/ssh-XXXXEnhmnC/agent.2252603 (try restarting your local ssh-agent following http://go/gnubby/debugging#restart-ssh-agent ): dial unix /tmp/ssh-XXXXEnhmnC/agent.2252603: connect: no such file or directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ l
+total 2.1G
+drwxr-x--- 19 gargnitin primarygroup  4.0K May  6 14:05 .
+drwxr-x--- 11 gargnitin primarygroup  4.0K Feb  6 10:22 ..
+drwxr-xr-x  2 gargnitin primarygroup  4.0K Jan 30 07:50 2
+-rw-r--r--  1 gargnitin primarygroup     2 Jan 30 13:11 a
+drwxr-xr-x  2 gargnitin primarygroup  4.0K Jan 17 10:03 abc
+drwxr-x---  8 gargnitin primarygroup  4.0K Aug 22  2023 benchmarks
+-rwxr-xr-x  1 gargnitin primarygroup  2.5M Jul 18  2023 build_gcsfuse
+-rw-r--r--  1 gargnitin primarygroup   218 Mar 21 05:49 config-debug-gargnitin-fuse-dynamic-mount.yaml
+-rw-r--r--  1 gargnitin primarygroup   265 Jan  9 10:50 config-debug-gargnitin-fuse-test-bucket1.yaml
+-rw-r-----  1 gargnitin primarygroup    63 Feb  8 15:19 config-disable-type-cache.yaml
+-rw-r-----  1 gargnitin primarygroup    72 Feb 13 00:27 config-inf-cache-max-entries.yaml
+-rw-r-----  1 gargnitin primarygroup    70 Feb 13 00:27 config-inf-cache-max-size-mb.yaml
+-rw-r-----  1 gargnitin primarygroup   217 Mar 21 05:44 config-info-gargnitin-fuse-dynamic-mount.yaml
+-rw-r--r--  1 gargnitin primarygroup   218 Jan  4 10:07 config-trace-gargnitin-fuse-dynamic-mount.yaml
+-rw-r--r--  1 gargnitin primarygroup   331 Mar 18 05:30 config-trace-gargnitin-fuse-test-bucket1.yaml
+drwxr-xr-x  2 gargnitin primarygroup  4.0K Aug 16  2023 DEBIAN
+-rw-r--r--  1 gargnitin primarygroup  1.4K May  6 10:15 Dockerfile
+drwxr-x---  2 gargnitin primarygroup  4.0K Apr 29 11:32 docs
+-rw-r--r--  1 gargnitin primarygroup   20K May  6 10:15 flags.go
+-rw-r--r--  1 gargnitin primarygroup   10K May  6 10:15 flags_test.go
+-rwxr-xr-x  1 gargnitin primarygroup   48M May  4 19:03 gcsfuse
+-rw-r--r--  1 gargnitin primarygroup   110 Jan  4 09:45 gcsfuse.iml
+drwxr-x---  8 gargnitin primarygroup  4.0K May  6 19:00 .git
+drwxr-x---  4 gargnitin primarygroup  4.0K Apr 29 11:32 .github
+-rw-r--r--  1 gargnitin primarygroup   492 Nov 24 08:35 .gitignore
+-rw-r--r--  1 gargnitin primarygroup  3.7K May  6 10:15 go.mod
+-rw-r--r--  1 gargnitin primarygroup  188K May  6 10:15 go.sum
+drwxr-xr-x  3 gargnitin primarygroup  4.0K Oct  9  2023 .idea
+drwxr-x--- 18 gargnitin primarygroup  4.0K Jan 18 08:19 internal
+-rw-r-----  1 gargnitin primarygroup   12K Apr 14  2023 LICENSE
+-rw-r--r--  1 gargnitin primarygroup   15K May  6 10:15 main.go
+-rw-r--r--  1 gargnitin primarygroup  8.4K May  6 10:15 main_test.go
+drwxr-x---  2 gargnitin primarygroup  4.0K Apr 10 03:31 mkdir
+-rw-r-----  1 gargnitin primarygroup  5.6K Apr 29 11:32 mount.go
+-rw-r--r--  1 gargnitin primarygroup  2.1M Jan  4 09:45 new-file.txt
+-rw-r--r--  1 gargnitin primarygroup  2.1M Jan  4 09:45 new_test_file.txt
+drwxr-x---  2 gargnitin primarygroup  4.0K Mar 11 10:33 packages
+drwxr-x---  3 gargnitin primarygroup  4.0K Apr 14  2023 perfmetrics
+drwxr-xr-x  3 gargnitin primarygroup  4.0K Sep 29  2023 projectFilesBackup
+-rw-r-----  1 gargnitin primarygroup  3.4K Apr 29 11:32 README.md
+-rw-r-----  1 gargnitin primarygroup 1000M Apr  9 12:12 sample_1000M_random.dat
+-rw-r-----  1 gargnitin primarygroup  978M Apr 22 04:33 sample_1GB.dat
+-rw-r--r--  1 gargnitin primarygroup   96M Jan  4 09:45 test_100MB.txt
+drwxr-x---  2 gargnitin primarygroup  4.0K Apr 14  2023 testdata
+-rw-r--r--  1 gargnitin primarygroup   350 Jan  4 09:45 test_gcsfuse.iml
+-rw-r--r--  1 gargnitin primarygroup  993K Jan  4 09:45 testinput
+-rw-r--r--  1 gargnitin primarygroup  993K Jan  4 09:45 testinput_uploaded
+drwxr-x--- 13 gargnitin primarygroup  4.0K Aug 16  2023 tools
+drwxr-x--- 10 gargnitin primarygroup  4.0K May  6 14:05 vendor
+-rw-r-----  1 gargnitin primarygroup   956 Apr 14  2023 version.go
+drwxr-xr-x  2 gargnitin primarygroup  4.0K Apr  2 15:27 .vscode
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ localwork 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ ls
+202307-08-gzip-support        20240202-stat-cache-entry-size-experiment  202403-docker-failure-with-go-1.22  oncall
+202307-vertex_ai_job_slow     20240212-type-cache-size-effect            20240429-fix-empty-dirname-issue    playground
+20231215-low-fsync-frequency  20240306-gke-handson                       2024q2-automate-ai-ml-perf
+20240125-overlay-fs-expt      20240318-vertex-ai-experiments             implit-dirs-io-error
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd 2024q2-automate-ai-ml-perf
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf$ ls
+20240422-experiment-fio-single-file-parallel-read  20240422-test-create-vm
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf$ l
+total 16K
+drwxr-x---  4 gargnitin primarygroup 4.0K Apr 22 11:30 .
+drwxr-xr-x 16 gargnitin primarygroup 4.0K Apr 29 06:02 ..
+drwxr-x---  2 gargnitin primarygroup 4.0K Apr 22 04:58 20240422-experiment-fio-single-file-parallel-read
+drwxr-x---  2 gargnitin primarygroup 4.0K Apr 22 11:33 20240422-test-create-vm
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf$ ls
+20240422-experiment-fio-single-file-parallel-read  20240422-test-create-vm
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf$ ls
+20240422-experiment-fio-single-file-parallel-read  20240422-test-create-vm  20240425-dlio-test-runs
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf$ ..
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ ls
+202307-08-gzip-support        20240202-stat-cache-entry-size-experiment  202403-docker-failure-with-go-1.22  oncall
+202307-vertex_ai_job_slow     20240212-type-cache-size-effect            20240429-fix-empty-dirname-issue    playground
+20231215-low-fsync-frequency  20240306-gke-handson                       2024q2-automate-perf-tests
+20240125-overlay-fs-expt      20240318-vertex-ai-experiments             implit-dirs-io-error
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd 2024q2-automate-perf-tests
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests$ ls
+20240422-experiment-fio-single-file-parallel-read  20240422-test-create-vm  20240425-dlio-test-runs
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests$ ls
+20240422-experiment-fio-single-file-parallel-read  20240422-test-create-vm  20240425-dlio-test-runs
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests$ cd 20240425-dlio-test-runs
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs$ ls
+20240425_1600-20240426_1200-IST
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs$ cd 20240425_1600-20240426_1200-IST
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ ls
+cpu  disk  memory  network  processes
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ ls
+cpu  disk  memory  network  processes
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ ls
+cpu  disk  memory  network  processes
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ mkdirvvm_metrics_exported                                                                                                                                    
+Command mkdirvvm_metrics_exported not found
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ mkdir vm_metrics_exported                                                                                                                                    
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ mv cpu memory/ disk/ network/ processes/ vm_metrics_exported/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ ls
+vm_metrics_exported
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ mkdir 
+runs
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ cd runs/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs$ mkdir -pv 001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads                                                                                          
+mkdir: created directory '001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs$ cd 001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1 'cat ~dlio_benchmark/hydra_log/unet3d/2024-04-25-11-45-58/summary.json' > summary.json
+ERROR: (gcloud.compute.ssh) Could not fetch resource:
+ - Invalid value for field 'zone': 'us-central1'. Unknown zone.
+
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-c 'cat ~dlio_benchmark/hydra_log/unet3d/2024-04-25-11-45-58/summary.json' > summary.json                                                                                             
+ERROR: (gcloud.compute.ssh) Could not fetch resource:
+ - The resource 'projects/gcs-fuse-test/zones/us-central1-c/instances/gcs-fuse-cloud-demo-n2-standard-96-2' was not found
+
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a 'cat ~dlio_benchmark/hydra_log/unet3d/2024-04-25-11-45-58/summary.json' > summary.json                                                                                             
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ ls -la summary.json 
+-rw-r----- 1 gargnitin primarygroup 101 May  7 10:52 summary.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ cat summary.json 
+cat: '~dlio_benchmark/hydra_log/unet3d/2024-04-25-11-45-58/summary.json': No such file or directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ ls
+summary.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ ls -la
+total 12
+drwxr-x--- 2 gargnitin primarygroup 4096 May  7 10:50 .
+drwxr-x--- 3 gargnitin primarygroup 4096 May  7 10:48 ..
+-rw-r----- 1 gargnitin primarygroup  101 May  7 10:52 summary.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ cat summary.json 
+cat: '~dlio_benchmark/hydra_log/unet3d/2024-04-25-11-45-58/summary.json': No such file or directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ ls -la
+total 12
+drwxr-x--- 2 gargnitin primarygroup 4096 May  7 10:50 .
+drwxr-x--- 3 gargnitin primarygroup 4096 May  7 10:48 ..
+-rw-r----- 1 gargnitin primarygroup  101 May  7 10:52 summary.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ vi summary.json 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a 'cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-11-45-58/summary.json' > summary.json && ls -lh summary.json                                                                     
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.1K May  7 10:54 summary.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ vi summary.json                                                                                    
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ for fn in summary.json per_epoch_stats.json ; do echo fn=$fn;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a 'cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-11-45-58/${fn}' > summary.json && ls -lh ${fn} && head -n 1 ${fn} ; done 
+fn=summary.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+fn=per_epoch_stats.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ ls -lh
+total 4.0K
+-rw-r----- 1 gargnitin primarygroup 102 May  7 10:58 summary.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ cat summary.json 
+cat: /home/gargnitin_google_com/dlio_benchmark/hydra_log/unet3d/2024-04-25-11-45-58/: Is a directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ for fn in summary.json per_epoch_stats.json ; do echo fn=$fn;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-11-45-58/${fn}" > summary.json && ls -lh ${fn} && head -n 1 ${fn} ; done                                                                                                                                                 
+fn=summary.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.1K May  7 10:59 summary.json
+{
+fn=per_epoch_stats.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+ls: cannot access 'per_epoch_stats.json': No such file or directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ for fn in summary.json per_epoch_stats.json ; do echo fn=$fn;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-11-45-58/${fn}" > ${fn} && ls -lh ${fn} && head -n 1 ${fn} ; done 
+fn=summary.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.1K May  7 11:01 summary.json
+{
+fn=per_epoch_stats.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:01 per_epoch_stats.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ ls
+per_epoch_stats.json  summary.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ cat *
+{
+    "1": {
+        "start": "2024-04-25T11:46:05.096826",
+        "block1": {
+            "start": "2024-04-25T11:46:05.096944",
+            "end": "2024-04-25T11:46:21.518846",
+            "duration": "16.42"
+        },
+        "end": "2024-04-25T11:46:21.729262",
+        "duration": "16.63"
+    },
+    "2": {
+        "start": "2024-04-25T11:46:21.730596",
+        "block1": {
+            "start": "2024-04-25T11:46:21.730667",
+            "end": "2024-04-25T11:46:28.872852",
+            "duration": "7.14"
+        },
+        "end": "2024-04-25T11:46:29.074381",
+        "duration": "7.34"
+    },
+    "3": {
+        "start": "2024-04-25T11:46:29.075790",
+        "block1": {
+            "start": "2024-04-25T11:46:29.075855",
+            "end": "2024-04-25T11:46:36.053960",
+            "duration": "6.98"
+        },
+        "end": "2024-04-25T11:46:36.261407",
+        "duration": "7.19"
+    },
+    "4": {
+        "start": "2024-04-25T11:46:36.262709",
+        "block1": {
+            "start": "2024-04-25T11:46:36.262772",
+            "end": "2024-04-25T11:46:43.286190",
+            "duration": "7.02"
+        },
+        "end": "2024-04-25T11:46:43.485432",
+        "duration": "7.22"
+    },
+    "5": {
+        "start": "2024-04-25T11:46:43.486678",
+        "block1": {
+            "start": "2024-04-25T11:46:43.486740",
+            "end": "2024-04-25T11:46:50.648185",
+            "duration": "7.16"
+        },
+        "end": "2024-04-25T11:46:50.851213",
+        "duration": "7.36"
+    }
+}{
+    "start": "2024-04-25T11:46:00.013156",
+    "num_accelerators": 8,
+    "hostname": "gcs-fuse-cloud-demo-n2-standard-96-2",
+    "metric": {
+        "train_au_percentage": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+        ],
+        "train_au_mean_percentage": 0.0,
+        "train_au_meet_expectation": "fail",
+        "train_au_stdev_percentage": 0.0,
+        "train_throughput_samples_per_second": [
+            499.19092241892986,
+            1150.0154356976827,
+            1176.8474826366823,
+            1169.2123796194924,
+            1148.0149271529863
+        ],
+        "train_throughput_mean_samples_per_second": 1028.6562295051547,
+        "train_throughput_stdev_samples_per_second": 264.96216555555026,
+        "train_io_mean_MB_per_second": 98.1003026490359,
+        "train_io_stdev_MB_per_second": 25.268761210970904
+    },
+    "num_files_train": 5000,
+    "num_files_eval": 0,
+    "num_samples_per_file": 1,
+    "epochs": 5,
+    "end": "2024-04-25T11:46:50.883999"
+}gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ for fn in summary.json per_epoch_stats.json ; do echo fn=$fn;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-11-45-58/${fn}" >${fn} && ls -lh ${fn} && head -n 1 ${fn} ; done 
+fn=summary.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.1K May  7 11:02 summary.json
+{
+fn=per_epoch_stats.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:02 per_epoch_stats.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ ..                                                                                                 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs$ ls
+001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs$ mkdir 002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads 003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads 004_20240425-2236IST_Small_500KB-1100GB_
+Load_4_threads 005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads 006_20240426-0213IST_Small_3MB-150GB_Load_4_threads 007_20240426-0813IST_Small_3MB-150GB_Load_12_threads                                                                                                                                 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs$ ls
+001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads   005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads
+002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads    006_20240426-0213IST_Small_3MB-150GB_Load_4_threads
+003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads   007_20240426-0813IST_Small_3MB-150GB_Load_12_threads
+004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs$ mkdir 008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads 009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads                                      
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs$ ls
+001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads   006_20240426-0213IST_Small_3MB-150GB_Load_4_threads
+002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads    007_20240426-0813IST_Small_3MB-150GB_Load_12_threads
+003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads   008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads
+004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads  009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads
+005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs$ cd 001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ ls
+per_epoch_stats.json  summary.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ vi pastebin.txt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ ls
+pastebin.txt  per_epoch_stats.json  summary.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ cd ..
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs$ cd 003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads$ cd ../002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads$ ls ../*
+../001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads:
+
+../003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads:
+
+../004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads:
+
+../005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads:
+
+../006_20240426-0213IST_Small_3MB-150GB_Load_4_threads:
+
+../007_20240426-0813IST_Small_3MB-150GB_Load_12_threads:
+
+../008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads:
+
+../009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads:
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads$ vi pastebin.txt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads$ for fn in summary.json per_epoch_stats.json ; do echo fn=$fn;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-11-55-50/${fn}" > ${fn} && ls -lh ${fn} && head -n 1 ${fn} ; done  
+fn=summary.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.2K May  7 11:11 summary.json
+{
+fn=per_epoch_stats.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:11 per_epoch_stats.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads$ cd ../003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads$ vi pastebin.txt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads$ for fn in summary.json per_epoch_stats.json ; do echo fn=$fn;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-12-51-56/${fn}" > ${fn} && ls -lh ${fn} && head -n 1 ${fn} ; done 
+fn=summary.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.2K May  7 11:12 summary.json
+{
+fn=per_epoch_stats.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:12 per_epoch_stats.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads$ ls
+pastebin.txt  per_epoch_stats.json  summary.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads$ ls ../*
+../001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads:
+
+../005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads:
+
+../006_20240426-0213IST_Small_3MB-150GB_Load_4_threads:
+
+../007_20240426-0813IST_Small_3MB-150GB_Load_12_threads:
+
+../008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads:
+
+../009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads:
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads$ cd ../004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads$ vi pastebin.txt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads$ for fn in summary.json per_epoch_stats.json ; do echo fn=$fn;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-17-06-22/${fn}" > ${fn} && ls -lh ${fn} && head -n 1 ${fn} ; donefn=summary.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.2K May  7 11:13 summary.json
+{
+fn=per_epoch_stats.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:13 per_epoch_stats.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads$ ls
+pastebin.txt  per_epoch_stats.json  summary.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads$ cd ../005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads$ vi pastebin.txt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads$ vi pastebin.txt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads$ for fn in summary.json per_epoch_stats.json ; do echo fn=$fn;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-19-37-22/${fn}" > ${fn} && ls -lh ${fn} && head -n 1 ${fn} ; donefn=summary.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.2K May  7 11:15 summary.json
+{
+fn=per_epoch_stats.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:15 per_epoch_stats.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads$ ls
+pastebin.txt  per_epoch_stats.json  summary.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads$ cd ../005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads$ ls ../*
+../001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../006_20240426-0213IST_Small_3MB-150GB_Load_4_threads:
+
+../007_20240426-0813IST_Small_3MB-150GB_Load_12_threads:
+
+../008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads:
+
+../009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads:
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads$ cd ../006_20240426-0213IST_Small_3MB-150GB_Load_4_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/006_20240426-0213IST_Small_3MB-150GB_Load_4_threads$ ls
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/006_20240426-0213IST_Small_3MB-150GB_Load_4_threads$ vi pastebin.txt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/006_20240426-0213IST_Small_3MB-150GB_Load_4_threads$ for fn in summary.json per_epoch_stats.json ; do echo fn=$fn;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-20-44-09/${fn}" > ${fn} && ls -lh ${fn} && head -n 1 ${fn} ; done   
+fn=summary.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.2K May  7 11:16 summary.json
+{
+fn=per_epoch_stats.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:16 per_epoch_stats.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/006_20240426-0213IST_Small_3MB-150GB_Load_4_threads$ mkdir -pv thread_outputs && n=4 && for (( i=0 ; i < n ; i++ )) ; do echo fn=${i}_output.json;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-20-44-09/${fn}" > thread_outputs/${fn} && ls -lh thread_outputs/${fn} && head -n 1 thread_outputs/${fn} ; done                                                                              
+mkdir: created directory 'thread_outputs'
+fn=0_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:23 thread_outputs/per_epoch_stats.json
+{
+fn=1_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:23 thread_outputs/per_epoch_stats.json
+{
+fn=2_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:23 thread_outputs/per_epoch_stats.json
+{
+fn=3_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:23 thread_outputs/per_epoch_stats.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/006_20240426-0213IST_Small_3MB-150GB_Load_4_threads$ ls
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/006_20240426-0213IST_Small_3MB-150GB_Load_4_threads$ ls -lh thread_outputs/
+total 4.0K
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:23 per_epoch_stats.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/006_20240426-0213IST_Small_3MB-150GB_Load_4_threads$ ls -lh thread_outputs 
+total 4.0K
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:23 per_epoch_stats.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/006_20240426-0213IST_Small_3MB-150GB_Load_4_threads$ rm thread_outputs/*                                                                                 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/006_20240426-0213IST_Small_3MB-150GB_Load_4_threads$ mkdir -pv thread_outputs && n=4 && for (( i=0 ; i < n ; i++ )) ; do fn=${i}_output.json ; echo fn=${fn} ;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-20-44-09/${fn}" > thread_outputs/${fn} && ls -lh thread_outputs/${fn} && head -n 1 thread_outputs/${fn} ; done                                                                  
+fn=0_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:28 thread_outputs/0_output.json
+{
+fn=1_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:28 thread_outputs/1_output.json
+{
+fn=2_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:28 thread_outputs/2_output.json
+{
+fn=3_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:28 thread_outputs/3_output.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/006_20240426-0213IST_Small_3MB-150GB_Load_4_threads$ ls thread_outputs/
+0_output.json  1_output.json  2_output.json  3_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/006_20240426-0213IST_Small_3MB-150GB_Load_4_threads$ ls -lh thread_outputs/
+total 64K
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:28 0_output.json
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:28 1_output.json
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:28 2_output.json
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:28 3_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/00
+6_20240426-0213IST_Small_3MB-150GB_Load_4_threads$ for f in thread_outputs/* ; do echo $f ; head -n 2 $f ; done ;                                      
+thread_outputs/0_output.json
+{
+    "1": {
+thread_outputs/1_output.json
+{
+    "1": {
+thread_outputs/2_output.json
+{
+    "1": {
+thread_outputs/3_output.json
+{
+    "1": {
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/006_20240426-0213IST_Small_3MB-150GB_Load_4_threads$ for f in thread_outputs/* ; do echo $f ; head -n 5 $f ; done ;                                       
+thread_outputs/0_output.json
+{
+    "1": {
+        "load": {
+            "block1": [
+                33.9972403049469,
+thread_outputs/1_output.json
+{
+    "1": {
+        "load": {
+            "block1": [
+                34.79642653465271,
+thread_outputs/2_output.json
+{
+    "1": {
+        "load": {
+            "block1": [
+                33.872310400009155,
+thread_outputs/3_output.json
+{
+    "1": {
+        "load": {
+            "block1": [
+                33.14277219772339,
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/006_20240426-0213IST_Small_3MB-150GB_Load_4_threads$ ls ../* 
+../001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../006_20240426-0213IST_Small_3MB-150GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+../007_20240426-0813IST_Small_3MB-150GB_Load_12_threads:
+
+../008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads:
+
+../009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads:
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/006_20240426-0213IST_Small_3MB-150GB_Load_4_threads$ cd ../007_20240426-0813IST_Small_3MB-150GB_Load_12_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads$ ls
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads$ vi pastebin.txt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads$ vi pastebin.txt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads$ mkdir -pv thread_outputs && n=12 && for (( i=0 ; i < n ; i++ )) ; do fn=${i}_output.json ; echo fn=${fn} ;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-26-02-43-34/${fn}" > thread_outputs/${fn} && ls -lh thread_outputs/${fn} && head -n 1 thread_outputs/${fn} ; done                                                                
+mkdir: created directory 'thread_outputs'
+fn=0_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:30 thread_outputs/0_output.json
+{
+fn=1_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:31 thread_outputs/1_output.json
+{
+fn=2_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:31 thread_outputs/2_output.json
+{
+fn=3_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:31 thread_outputs/3_output.json
+{
+fn=4_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:31 thread_outputs/4_output.json
+{
+fn=5_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:31 thread_outputs/5_output.json
+{
+fn=6_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:31 thread_outputs/6_output.json
+{
+fn=7_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:31 thread_outputs/7_output.json
+{
+fn=8_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+fn=9_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+fn=10_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+fn=11_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads$ ls thread_outputs/
+0_output.json   11_output.json  2_output.json  4_output.json  6_output.json  8_output.json
+10_output.json  1_output.json   3_output.json  5_output.json  7_output.json  9_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads$ ls -lh thread_outputs/
+total 144K
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:30 0_output.json
+-rw-r----- 1 gargnitin primarygroup 127 May  7 11:32 10_output.json
+-rw-r----- 1 gargnitin primarygroup 127 May  7 11:32 11_output.json
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:31 1_output.json
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:31 2_output.json
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:31 3_output.json
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:31 4_output.json
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:31 5_output.json
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:31 6_output.json
+-rw-r----- 1 gargnitin primarygroup 14K May  7 11:31 7_output.json
+-rw-r----- 1 gargnitin primarygroup 126 May  7 11:32 8_output.json
+-rw-r----- 1 gargnitin primarygroup 126 May  7 11:32 9_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads$ cd thread_outputs/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads/thread_outputs$ ls -lah
+total 152K
+drwxr-x--- 2 gargnitin primarygroup 4.0K May  7 11:32 .
+drwxr-x--- 3 gargnitin primarygroup 4.0K May  7 11:30 ..
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:30 0_output.json
+-rw-r----- 1 gargnitin primarygroup  127 May  7 11:32 10_output.json
+-rw-r----- 1 gargnitin primarygroup  127 May  7 11:32 11_output.json
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:31 1_output.json
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:31 2_output.json
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:31 3_output.json
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:31 4_output.json
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:31 5_output.json
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:31 6_output.json
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:31 7_output.json
+-rw-r----- 1 gargnitin primarygroup  126 May  7 11:32 8_output.json
+-rw-r----- 1 gargnitin primarygroup  126 May  7 11:32 9_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads/thread_outputs$ rm 8_output.json  9_output.json 10_output.json 11_output.json 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads/thread_outputs$ ls
+0_output.json  1_output.json  2_output.json  3_output.json  4_output.json  5_output.json  6_output.json  7_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads/thread_outputs$ ls -lah
+total 136K
+drwxr-x--- 2 gargnitin primarygroup 4.0K May  7 11:33 .
+drwxr-x--- 3 gargnitin primarygroup 4.0K May  7 11:30 ..
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:30 0_output.json
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:31 1_output.json
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:31 2_output.json
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:31 3_output.json
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:31 4_output.json
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:31 5_output.json
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:31 6_output.json
+-rw-r----- 1 gargnitin primarygroup  14K May  7 11:31 7_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads/thread_outputs$ ..
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads$ l
+total 20K
+drwxr-x---  3 gargnitin primarygroup 4.0K May  7 11:30 .
+drwxr-x--- 11 gargnitin primarygroup 4.0K May  7 11:06 ..
+-rw-r-----  1 gargnitin primarygroup 4.5K May  7 11:30 pastebin.txt
+drwxr-x---  2 gargnitin primarygroup 4.0K May  7 11:33 thread_outputs
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads$ for fn in summary.json per_epoch_stats.json ; do echo fn=$fn;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-26-02-43-34/${fn}" > ${fn} && ls -lh ${fn} && head -n 1 ${fn} ; done  
+fn=summary.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.2K May  7 11:34 summary.json
+{
+fn=per_epoch_stats.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:35 per_epoch_stats.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads$ ls ../*
+../001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+../006_20240426-0213IST_Small_3MB-150GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+../007_20240426-0813IST_Small_3MB-150GB_Load_12_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+../008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads:
+
+../009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads:
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads$ ls ../*/*
+../001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads/pastebin.txt
+../001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads/per_epoch_stats.json
+../001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads/summary.json
+../002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads/pastebin.txt
+../002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads/per_epoch_stats.json
+../002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads/summary.json
+../003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads/pastebin.txt
+../003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads/per_epoch_stats.json
+../003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads/summary.json
+../004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads/pastebin.txt
+../004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads/per_epoch_stats.json
+../004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads/summary.json
+../005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads/pastebin.txt
+../005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads/per_epoch_stats.json
+../005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads/summary.json
+../006_20240426-0213IST_Small_3MB-150GB_Load_4_threads/pastebin.txt
+../006_20240426-0213IST_Small_3MB-150GB_Load_4_threads/per_epoch_stats.json
+../006_20240426-0213IST_Small_3MB-150GB_Load_4_threads/summary.json
+../007_20240426-0813IST_Small_3MB-150GB_Load_12_threads/pastebin.txt
+../007_20240426-0813IST_Small_3MB-150GB_Load_12_threads/per_epoch_stats.json
+../007_20240426-0813IST_Small_3MB-150GB_Load_12_threads/summary.json
+
+../006_20240426-0213IST_Small_3MB-150GB_Load_4_threads/thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json
+
+../007_20240426-0813IST_Small_3MB-150GB_Load_12_threads/thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json  4_output.json  5_output.json  6_output.json  7_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/007_20240426-0813IST_Small_3MB-150GB_Load_12_threads$ cd ../008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads$ vi pastebin.txt 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads$ for fn in summary.json per_epoch_stats.json ; do echo fn=$fn;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-26-04-06-19/${fn}" > ${fn} && ls -lh ${fn} && head -n 1 ${fn} ; done 
+fn=summary.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.2K May  7 11:36 summary.json
+{
+fn=per_epoch_stats.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:36 per_epoch_stats.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads$ mkdir -pv thread_outputs && n=4 && for (( i=0 ; i < n ; i++ )) ; do fn=${i}_output.json ; echo fn=${fn} ;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-26-04-06-19/${fn}" > thread_outputs/${fn} && ls -lh thread_outputs/${fn} && head -n 1 thread_outputs/${fn} ; done                                                                
+mkdir: created directory 'thread_outputs'
+fn=0_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:37 thread_outputs/0_output.json
+{
+fn=1_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:37 thread_outputs/1_output.json
+{
+fn=2_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:38 thread_outputs/2_output.json
+{
+fn=3_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:38 thread_outputs/3_output.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads$ ls */* 
+thread_outputs/0_output.json  thread_outputs/1_output.json  thread_outputs/2_output.json  thread_outputs/3_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads$ ls ./*/*
+./thread_outputs/0_output.json  ./thread_outputs/1_output.json  ./thread_outputs/2_output.json  ./thread_outputs/3_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads$ ls      
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads$ ls -R .
+.:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads$ ls -Rh .
+.:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads$ ls -Rhl .
+.:
+total 20K
+-rw-r----- 1 gargnitin primarygroup 4.6K May  7 11:35 pastebin.txt
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:36 per_epoch_stats.json
+-rw-r----- 1 gargnitin primarygroup 1.2K May  7 11:36 summary.json
+drwxr-x--- 2 gargnitin primarygroup 4.0K May  7 11:38 thread_outputs
+
+./thread_outputs:
+total 48K
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:37 0_output.json
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:37 1_output.json
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:38 2_output.json
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:38 3_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads$ cd ../009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads$ vi pastebin.txt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads$ mkdir -pv thread_outputs && n=12 && for (( i=0 ; i < n ; i++ )) ; do fn=${i}_output.json ; echo fn=${fn} ;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-26-04-30-35/${fn}" > thread_outputs/${fn} && ls -lh thread_outputs/${fn} && head -n 1 thread_outputs/${fn} ; done                                                              
+mkdir: created directory 'thread_outputs'
+fn=0_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:40 thread_outputs/0_output.json
+{
+fn=1_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:40 thread_outputs/1_output.json
+{
+fn=2_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:40 thread_outputs/2_output.json
+{
+fn=3_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:40 thread_outputs/3_output.json
+{
+fn=4_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:41 thread_outputs/4_output.json
+{
+fn=5_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:41 thread_outputs/5_output.json
+{
+fn=6_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:41 thread_outputs/6_output.json
+{
+fn=7_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 12K May  7 11:41 thread_outputs/7_output.json
+{
+fn=8_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+fn=9_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+fn=10_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+fn=11_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads$ ls -R .
+.:
+pastebin.txt  thread_outputs
+
+./thread_outputs:
+0_output.json   11_output.json  2_output.json  4_output.json  6_output.json  8_output.json
+10_output.json  1_output.json   3_output.json  5_output.json  7_output.json  9_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads$ for fn in summary.json per_epoch_stats.json ; do echo fn=$fn;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-26-04-30-35/${fn}" > ${fn} && ls -lh ${fn} && head -n 1 ${fn} ; donefn=summary.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.2K May  7 11:46 summary.json
+{
+fn=per_epoch_stats.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 1.6K May  7 11:47 per_epoch_stats.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads$ ... 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ ks
+Command ks not found
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ ls
+runs  vm_metrics_exported
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ mkdir runs output_files
+mkdir: cannot create directory ‘runs’: File exists
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ ls
+output_files  runs  vm_metrics_exported
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ ls -lah output_files/
+total 8.0K
+drwxr-x--- 2 gargnitin primarygroup 4.0K May  7 11:47 .
+drwxr-xr-x 5 gargnitin primarygroup 4.0K May  7 11:47 ..
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ rm -rfvi output_files/                                                                                                                                       
+rm: remove directory 'output_files/'? y
+removed directory 'output_files/'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ mv runs output_files                                                                                                                                         
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ l
+total 16K
+drwxr-xr-x  4 gargnitin primarygroup 4.0K May  7 11:48 .
+drwxr-xr-x  3 gargnitin primarygroup 4.0K May  7 10:43 ..
+drwxr-x--- 11 gargnitin primarygroup 4.0K May  7 11:06 output_files
+drwxr-x---  7 gargnitin primarygroup 4.0K May  7 10:48 vm_metrics_exported
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ ls
+output_files  vm_metrics_exported
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ ls    
+output_files  vm_metrics_exported
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ cd output_files/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files$ ls
+001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads   006_20240426-0213IST_Small_3MB-150GB_Load_4_threads
+002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads    007_20240426-0813IST_Small_3MB-150GB_Load_12_threads
+003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads   008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads
+004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads  009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads
+005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files$ cd 001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ ..
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files$ ls -R .
+.:
+001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads   006_20240426-0213IST_Small_3MB-150GB_Load_4_threads
+002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads    007_20240426-0813IST_Small_3MB-150GB_Load_12_threads
+003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads   008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads
+004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads  009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads
+005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads
+
+./001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+./002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+./003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+./004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+./005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads:
+pastebin.txt  per_epoch_stats.json  summary.json
+
+./006_20240426-0213IST_Small_3MB-150GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./006_20240426-0213IST_Small_3MB-150GB_Load_4_threads/thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json
+
+./007_20240426-0813IST_Small_3MB-150GB_Load_12_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./007_20240426-0813IST_Small_3MB-150GB_Load_12_threads/thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json  4_output.json  5_output.json  6_output.json  7_output.json
+
+./008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads/thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json
+
+./009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads/thread_outputs:
+0_output.json   11_output.json  2_output.json  4_output.json  6_output.json  8_output.json
+10_output.json  1_output.json   3_output.json  5_output.json  7_output.json  9_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files$ cd 001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ mkdir -pv thread_outputs && n=4 && for (( i=0 ; i < n ; i++ )) ; do fn=${i}_output.json ; echo fn=${fn} ;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-11-45-58/${fn}" > thread_outputs/${fn} && ls -lh thread_outputs/${fn} && head -n 1 thread_outputs/${fn} ; done                                                        
+mkdir: created directory 'thread_outputs'
+fn=0_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 2.4K May  7 12:51 thread_outputs/0_output.json
+{
+fn=1_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 2.4K May  7 12:51 thread_outputs/1_output.json
+{
+fn=2_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 2.4K May  7 12:51 thread_outputs/2_output.json
+{
+fn=3_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 2.4K May  7 12:51 thread_outputs/3_output.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ ls -R .
+.:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads$ cd ../002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads$ ls -R .
+.:
+pastebin.txt  per_epoch_stats.json  summary.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads$ mkdir -pv thread_outputs && n=4 && for (( i=0 ; i < n ; i++ )) ; do fn=${i}_output.json ; echo fn=${fn} ;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-11-55-50/${fn}" > thread_outputs/${fn} && ls -lh thread_outputs/${fn} && head -n 1 thread_outputs/${fn} ; done                                                         
+mkdir: created directory 'thread_outputs'
+fn=0_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 32K May  7 12:53 thread_outputs/0_output.json
+{
+fn=1_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 32K May  7 12:53 thread_outputs/1_output.json
+{
+fn=2_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 32K May  7 12:53 thread_outputs/2_output.json
+{
+fn=3_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 32K May  7 12:53 thread_outputs/3_output.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads$ cd ../003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads$ mkdir -pv thread_outputs && n=10 && for (( i=0 ; i < n ; i++ )) ; do fn=${i}_output.json ; echo fn=${fn} ;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-12-51-56/${fn}" > thread_outputs/${fn} && ls -lh thread_outputs/${fn} && head -n 1 thread_outputs/${fn} ; done
+mkdir: created directory 'thread_outputs'
+fn=0_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 32K May  7 12:56 thread_outputs/0_output.json
+{
+fn=1_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 32K May  7 12:57 thread_outputs/1_output.json
+{
+fn=2_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 32K May  7 12:57 thread_outputs/2_output.json
+{
+fn=3_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 32K May  7 12:57 thread_outputs/3_output.json
+{
+fn=4_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 32K May  7 12:57 thread_outputs/4_output.json
+{
+fn=5_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 32K May  7 12:57 thread_outputs/5_output.json
+{
+fn=6_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 32K May  7 12:57 thread_outputs/6_output.json
+{
+fn=7_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 32K May  7 12:57 thread_outputs/7_output.json
+{
+fn=8_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+fn=9_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads$ cd ../004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads$ mkdir -pv thread_outputs && n=4 && for (( i=0 ; i < n ; i++ )) ; do fn=${i}_output.json ; echo fn=${fn} ;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-17-06-22/${fn}" > thread_outputs/${fn} && ls -lh thread_outputs/${fn} && head -n 1 thread_outputs/${fn} ; done                                                       
+mkdir: created directory 'thread_outputs'
+fn=0_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 132K May  7 12:59 thread_outputs/0_output.json
+{
+fn=1_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 132K May  7 12:59 thread_outputs/1_output.json
+{
+fn=2_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 132K May  7 13:00 thread_outputs/2_output.json
+{
+fn=3_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 132K May  7 13:00 thread_outputs/3_output.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads$ cd ../005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads$ ls -R .
+.:
+pastebin.txt  per_epoch_stats.json  summary.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads$ mkdir -pv thread_outputs && n=8 && for (( i=0 ; i < n ; i++ )) ; do fn=${i}_output.json ; echo fn=${fn} ;  gcsfusetestvmconnect gcs-fuse-cloud-demo-n2-standard-96-2 us-central1-a "cat ~/dlio_benchmark/hydra_log/unet3d/2024-04-25-19-37-22/${fn}" > thread_outputs/${fn} && ls -lh thread_outputs/${fn} && head -n 1 thread_outputs/${fn} ; done                                                       
+mkdir: created directory 'thread_outputs'
+fn=0_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 132K May  7 13:01 thread_outputs/0_output.json
+{
+fn=1_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 132K May  7 13:01 thread_outputs/1_output.json
+{
+fn=2_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 132K May  7 13:02 thread_outputs/2_output.json
+{
+fn=3_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 132K May  7 13:02 thread_outputs/3_output.json
+{
+fn=4_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 132K May  7 13:02 thread_outputs/4_output.json
+{
+fn=5_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 132K May  7 13:02 thread_outputs/5_output.json
+{
+fn=6_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 132K May  7 13:02 thread_outputs/6_output.json
+{
+fn=7_output.json
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Connection to 34.171.8.224 closed.
+-rw-r----- 1 gargnitin primarygroup 132K May  7 13:03 thread_outputs/7_output.json
+{
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads$ ..
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files$ ls -R .
+.:
+001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads   006_20240426-0213IST_Small_3MB-150GB_Load_4_threads
+002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads    007_20240426-0813IST_Small_3MB-150GB_Load_12_threads
+003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads   008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads
+004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads  009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads
+005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads
+
+./001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads/thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json
+
+./002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads/thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json
+
+./003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads/thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json  4_output.json  5_output.json  6_output.json  7_output.json  8_output.json  9_output.json
+
+./004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads/thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json
+
+./005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./005_20240426-0108IST_Small_500KB-1100GB_Load_8_threads/thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json  4_output.json  5_output.json  6_output.json  7_output.json
+
+./006_20240426-0213IST_Small_3MB-150GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./006_20240426-0213IST_Small_3MB-150GB_Load_4_threads/thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json
+
+./007_20240426-0813IST_Small_3MB-150GB_Load_12_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./007_20240426-0813IST_Small_3MB-150GB_Load_12_threads/thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json  4_output.json  5_output.json  6_output.json  7_output.json
+
+./008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads/thread_outputs:
+0_output.json  1_output.json  2_output.json  3_output.json
+
+./009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads:
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+
+./009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads/thread_outputs:
+0_output.json   11_output.json  2_output.json  4_output.json  6_output.json  8_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files$                                                                                
+If you do not reboot now, your system will reboot automatically                
+at Fri May 17 02:52:10 UTC 2024. For more info, see go/glinux-reboot-policy.   
+To reboot your computer 10 hours from now, on the command line run:            
+echo systemctl reboot | at now + 10 hours                                      
+Also you may have a pending maintenance. See go/cloudtop-faq#cloudtop-maintenan
+ce-scheduler                                                                   
+To run maintenance in 10 hours run:                                            
+ctop self maintenance schedule in 10h
+                                                                               
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files$ 

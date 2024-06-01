@@ -1,0 +1,575 @@
+gargnitin@gargnitin:~$ bash
+ssrgargnitin@gargnitin:~$ src
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ dlv debug --check-go-version=false  /usr/lib/google-golang/bin/go -- test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs                                                                       
+directory /usr/lib/google-golang/bin/go outside main module or its selected dependencies
+exit status 1
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ dlv debug --check-go-version=false  /usr/lib/google-golang/bin/go -- test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+directory /usr/lib/google-golang/bin/go outside main module or its selected dependencies
+exit status 1
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ which go
+/usr/lib/google-golang/bin/go
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ dlv --check-go-version=false  test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs                                                                                                             
+Error: unknown shorthand flag: 't' in -timeout
+Usage:
+  dlv test [package] [flags]
+
+Flags:
+  -h, --help            help for test
+      --output string   Output path for the binary.
+
+Global Flags:
+      --accept-multiclient               Allows a headless server to accept multiple client connections via JSON-RPC or DAP.
+      --allow-non-terminal-interactive   Allows interactive sessions of Delve that don't have a terminal as stdin, stdout and stderr
+      --api-version int                  Selects JSON-RPC API version when headless. New clients should use v2. Can be reset via RPCServer.SetApiVersion. See Documentation/api/json-rpc/README.md. (default 1)
+      --backend string                   Backend selection (see 'dlv help backend'). (default "default")
+      --build-flags string               Build flags, to be passed to the compiler. For example: --build-flags="-tags=integration -mod=vendor -cover -v"
+      --check-go-version                 Exits if the version of Go in use is not compatible (too old or too new) with the version of Delve. (default true)
+      --disable-aslr                     Disables address space randomization
+      --headless                         Run debug server only, in headless mode. Server will accept both JSON-RPC or DAP client connections.
+      --init string                      Init file, executed by the terminal client.
+  -l, --listen string                    Debugging server listen address. Prefix with 'unix:' to use a unix domain socket. (default "127.0.0.1:0")
+      --log                              Enable debugging server logging.
+      --log-dest string                  Writes logs to the specified file or file descriptor (see 'dlv help log').
+      --log-output string                Comma separated list of components that should produce debug output (see 'dlv help log')
+      --only-same-user                   Only connections from the same user that started this instance of Delve are allowed to connect. (default true)
+  -r, --redirect stringArray             Specifies redirect rules for target process (see 'dlv help redirect')
+      --wd string                        Working directory for running the program.
+
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ dlv --check-go-version=false  test -timeout 30s -test.run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs                                                                                                         
+Error: unknown shorthand flag: 't' in -timeout
+Usage:
+  dlv test [package] [flags]
+
+Flags:
+  -h, --help            help for test
+      --output string   Output path for the binary.
+
+Global Flags:
+      --accept-multiclient               Allows a headless server to accept multiple client connections via JSON-RPC or DAP.
+      --allow-non-terminal-interactive   Allows interactive sessions of Delve that don't have a terminal as stdin, stdout and stderr
+      --api-version int                  Selects JSON-RPC API version when headless. New clients should use v2. Can be reset via RPCServer.SetApiVersion. See Documentation/api/json-rpc/README.md. (default 1)
+      --backend string                   Backend selection (see 'dlv help backend'). (default "default")
+      --build-flags string               Build flags, to be passed to the compiler. For example: --build-flags="-tags=integration -mod=vendor -cover -v"
+      --check-go-version                 Exits if the version of Go in use is not compatible (too old or too new) with the version of Delve. (default true)
+      --disable-aslr                     Disables address space randomization
+      --headless                         Run debug server only, in headless mode. Server will accept both JSON-RPC or DAP client connections.
+      --init string                      Init file, executed by the terminal client.
+  -l, --listen string                    Debugging server listen address. Prefix with 'unix:' to use a unix domain socket. (default "127.0.0.1:0")
+      --log                              Enable debugging server logging.
+      --log-dest string                  Writes logs to the specified file or file descriptor (see 'dlv help log').
+      --log-output string                Comma separated list of components that should produce debug output (see 'dlv help log')
+      --only-same-user                   Only connections from the same user that started this instance of Delve are allowed to connect. (default true)
+  -r, --redirect stringArray             Specifies redirect rules for target process (see 'dlv help redirect')
+      --wd string                        Working directory for running the program.
+
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ dlv --check-go-version=false test -test.run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs                                                                                                                      
+malformed import path "^TestFS$": invalid char '^'
+exit status 1
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ dlv --check-go-version=false test -test.run TestFS github.com/googlecloudplatform/gcsfuse/v2/internal/fs                                                                                                                        
+package TestFS is not in std (/usr/lib/google-golang/src/TestFS)
+exit status 1
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ dlv --check-go-version=false test -test.run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs                                                                                                                       
+malformed import path "^TestFS$": invalid char '^'
+exit status 1
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ dlv --check-go-version=false test -test.run TestFS                                                                                                                                                                              
+package TestFS is not in std (/usr/lib/google-golang/src/TestFS)
+exit status 1
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ dlv --check-go-version=false test -- -test.v -test.run TestFS                                                                                                                                                                    
+WARNING: undefined behavior - Go version go0.0 is too old for this version of Delve (minimum supported version 1.19)
+Type 'help' for list of commands.
+(dlv) r
+Process restarted with PID 1682134
+(dlv) bt
+0  0x00000000004841e0 in _rt0_amd64_linux
+   at /usr/lib/google-golang/src/runtime/rt0_linux_amd64.s:8
+1  0x0000000000000000 in ???
+   at :0
+   error: NULL address
+(truncated)
+(dlv) c
+testing: warning: no tests to run
+PASS
+Process 1682134 has exited with status 0
+(dlv) q 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ dlv --check-go-version=false test -- -test.v -test.run TestFS github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+WARNING: undefined behavior - Go version go0.0 is too old for this version of Delve (minimum supported version 1.19)
+Type 'help' for list of commands.
+(dlv) r
+Process restarted with PID 1683233
+(dlv) v
+Command failed: command not available
+(dlv) c
+testing: warning: no tests to run
+PASS
+Process 1683233 has exited with status 0
+(dlv) cq
+Command failed: command not available
+(dlv) cqqq
+Command failed: command not available
+(dlv) q
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ dlv --check-go-version=false test -- -test.v -test.run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs                                                                                                            
+WARNING: undefined behavior - Go version go0.0 is too old for this version of Delve (minimum supported version 1.19)
+Type 'help' for list of commands.
+(dlv) r
+Process restarted with PID 1684393
+(dlv) c
+testing: warning: no tests to run
+PASS
+Process 1684393 has exited with status 0
+(dlv) bt
+Process 1684393 has exited with status 0
+(dlv) c
+Process 1684393 has exited with status 0
+(dlv) q
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ dlv --check-go-version=false test -- -test.run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs                                                                                                                   
+WARNING: undefined behavior - Go version go0.0 is too old for this version of Delve (minimum supported version 1.19)
+Type 'help' for list of commands.
+(dlv) r
+Process restarted with PID 1685397
+(dlv) c
+testing: warning: no tests to run
+PASS
+Process 1685397 has exited with status 0
+(dlv) bt
+Process 1685397 has exited with status 0
+(dlv) q
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ dlv --check-go-version=false test -- -test.run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+WARNING: undefined behavior - Go version go0.0 is too old for this version of Delve (minimum supported version 1.19)
+Type 'help' for list of commands.
+(dlv) c
+testing: warning: no tests to run
+PASS
+Process 1686788 has exited with status 0
+(dlv) q
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ dlv --check-go-version=false test -- -test.run ^TestFS$                                                      
+WARNING: undefined behavior - Go version go0.0 is too old for this version of Delve (minimum supported version 1.19)
+Type 'help' for list of commands.
+(dlv) r
+Process restarted with PID 1688219
+(dlv) c
+testing: warning: no tests to run
+PASS
+Process 1688219 has exited with status 0
+(dlv) q
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ export bucket=gargnitin-gcsfuse-integration-tests-playground
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ realpath ../../test_buckets/                                
+/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ export mountpath=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/${bucket}-mount
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ mkdir -pv $mountpath 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ export logfile=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/${bucket}.log                                                                                                                    
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ fusermount -uz $mountpath ; go run . --implicit-dirs --log-format=text --log-file=$logfile  $bucket $mountpath                                                                                                                   
+fusermount: entry for /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount not found in /etc/mtab
+time="05/05/2024 02:53:40.509004" severity=INFO message="Start gcsfuse/unknown (Go version go1.23-20240317-RC00 cl/616607620 +0a6f05e30f X:fieldtrack,boringcrypto) for app \"\" using mount point: /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount\n"
+time="05/05/2024 02:53:40.826406" severity=INFO message="File system has been successfully mounted."
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ ls $mountpath
+gzip  tmpFileRename
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ export | grep 'bucket\|mountpath\|logfile'
+declare -x bucket="gargnitin-gcsfuse-integration-tests-playground"
+declare -x logfile="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground.log"
+declare -x mountpath="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount"
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ remount='fusermount -uz $mountpath ; go run . --implicit-dirs --log-format=text --log-file=$logfile  $bucket $mountpath'                                                                                                         
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket
+=== RUN   TestDeleteNonEmptyImplicitDir
+--- PASS: TestDeleteNonEmptyImplicitDir (15.75s)
+=== RUN   TestDeleteNonEmptyImplicitSubDir
+--- PASS: TestDeleteNonEmptyImplicitSubDir (9.71s)
+=== RUN   TestDeleteImplicitDirWithExplicitSubDir
+--- PASS: TestDeleteImplicitDirWithExplicitSubDir (18.85s)
+=== RUN   TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir
+--- PASS: TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir (16.20s)
+=== RUN   TestDeleteImplicitDirInExplicitDir
+--- PASS: TestDeleteImplicitDirInExplicitDir (16.33s)
+=== RUN   TestDeleteExplicitDirContainingImplicitSubDir
+--- PASS: TestDeleteExplicitDirContainingImplicitSubDir (19.01s)
+=== RUN   TestListImplicitObjectsFromBucket
+    list_test.go:71: Incorrect number of objects in the bucket.
+    list_test.go:85: Listed incorrect object
+--- FAIL: TestListImplicitObjectsFromBucket (19.43s)
+=== RUN   TestNewFileUnderImplicitDirectoryShouldNotGetSyncedToGCSTillClose
+--- PASS: TestNewFileUnderImplicitDirectoryShouldNotGetSyncedToGCSTillClose (4.46s)
+=== RUN   TestReadDirForImplicitDirWithLocalFile
+--- PASS: TestReadDirForImplicitDirWithLocalFile (9.31s)
+=== RUN   TestRecursiveListingWithLocalFiles
+--- PASS: TestRecursiveListingWithLocalFiles (17.68s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  146.760s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket -run TestListImplicitObjectsFromBucket
+=== RUN   TestListImplicitObjectsFromBucket
+    list_test.go:71: Incorrect number of objects in the bucket.
+    list_test.go:85: Listed incorrect object
+--- FAIL: TestListImplicitObjectsFromBucket (35.16s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  35.178s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket -run TestListImplicitObjectsFromBucket
+=== RUN   TestListImplicitObjectsFromBucket
+    list_test.go:71: Incorrect number of objects in the bucket. Expected: 6, Actual: 4
+    list_test.go:85: Listed incorrect object. Expected: implicitDirectory, Actual: fileInUnsupportedImplicitDir3
+--- FAIL: TestListImplicitObjectsFromBucket (23.98s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  24.001s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket -run TestListImplicitObjectsFromBucket
+=== RUN   TestListImplicitObjectsFromBucket
+    list_test.go:71: Incorrect number of objects in the bucket. Expected: 6, Actual: 4
+    list_test.go:85: Listed incorrect object. Expected: implicitDirectory, Actual: fileInUnsupportedImplicitDir3
+--- FAIL: TestListImplicitObjectsFromBucket (36.48s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  36.502s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket -run TestListImplicitObjectsFromBucket
+=== RUN   TestListImplicitObjectsFromBucket
+    list_test.go:71: Incorrect number of objects in the bucket. Expected: 6, Actual: 4
+    list_test.go:85: Listed incorrect object #2. Expected: implicitDirectory, Actual: fileInUnsupportedImplicitDir3
+--- FAIL: TestListImplicitObjectsFromBucket (29.48s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  29.506s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket -run TestListImplicitObjectsFromBucket                                                                                                     
+=== RUN   TestListImplicitObjectsFromBucket
+    list_test.go:71: Incorrect number of objects in the bucket. Expected: 6, Actual: 2
+--- FAIL: TestListImplicitObjectsFromBucket (8.27s)
+panic: runtime error: index out of range [2] with length 2 [recovered]
+        panic: runtime error: index out of range [2] with length 2
+
+goroutine 20 [running]:
+testing.tRunner.func1.2({0xca0d20, 0xc000220d68})
+        /usr/lib/google-golang/src/testing/testing.go:1631 +0x24a
+testing.tRunner.func1()
+        /usr/lib/google-golang/src/testing/testing.go:1634 +0x377
+panic({0xca0d20?, 0xc000220d68?})
+        /usr/lib/google-golang/src/runtime/panic.go:759 +0x132
+github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir_test.TestListImplicitObjectsFromBucket.func1({0xc0004e40a0, 0x9b}, {0xe2f598, 0xc0004c0960}, {0x0?, 0x0?})
+        /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/tools/integration_tests/implicit_dir/list_test.go:84 +0x9e9
+path/filepath.walkDir({0xc0004e40a0, 0x9b}, {0xe2f598, 0xc0004c0960}, 0xc000245f40)
+        /usr/lib/google-golang/src/path/filepath/path.go:459 +0x50
+path/filepath.WalkDir({0xc0004e40a0, 0x9b}, 0xc000184f40)
+        /usr/lib/google-golang/src/path/filepath/path.go:549 +0x7b
+github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir_test.TestListImplicitObjectsFromBucket(0xc0004ce9c0)
+        /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/tools/integration_tests/implicit_dir/list_test.go:51 +0xb3
+testing.tRunner(0xc0004ce9c0, 0xd5b000)
+        /usr/lib/google-golang/src/testing/testing.go:1689 +0xfb
+created by testing.(*T).Run in goroutine 1
+        /usr/lib/google-golang/src/testing/testing.go:1742 +0x390
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  8.292s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket # -run TestListImplicitObjectsFromBucket                                                                                                   
+=== RUN   TestDeleteNonEmptyImplicitDir
+--- PASS: TestDeleteNonEmptyImplicitDir (7.31s)
+=== RUN   TestDeleteNonEmptyImplicitSubDir
+--- PASS: TestDeleteNonEmptyImplicitSubDir (7.74s)
+=== RUN   TestDeleteImplicitDirWithExplicitSubDir
+    dir_operations.go:104: Error in creating directory: mkdir /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount/dirForImplicitDirTests/implicitDirectory/explicitDirInImplicitDir: no such file or directory
+    dir_operations.go:113: Create file at "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount/dirForImplicitDirTests/implicitDirectory/explicitDirInImplicitDir": open /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount/dirForImplicitDirTests/implicitDirectory/explicitDirInImplicitDir/fileInExplicitDirInImplicitDir1: no such file or directory
+2024/05/06 06:14:21 error in closing: invalid argument
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  22.068s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ alias remount='fusermount -uz $mountpath ; go run . --implicit-dirs --log-format=text --log-file=$logfile  $bucket $mountpath'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ remount 
+fusermount: entry for /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount not found in /etc/mtab
+time="06/05/2024 06:15:41.361487" severity=INFO message="Start gcsfuse/unknown (Go version go1.23-20240317-RC00 cl/616607620 +0a6f05e30f X:fieldtrack,boringcrypto) for app \"\" using mount point: /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount\n"
+time="06/05/2024 06:15:41.645721" severity=INFO message="File system has been successfully mounted."
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket # -run TestListImplicitObjectsFromBucket 
+=== RUN   TestDeleteNonEmptyImplicitDir
+--- PASS: TestDeleteNonEmptyImplicitDir (20.29s)
+=== RUN   TestDeleteNonEmptyImplicitSubDir
+--- PASS: TestDeleteNonEmptyImplicitSubDir (10.35s)
+=== RUN   TestDeleteImplicitDirWithExplicitSubDir
+--- PASS: TestDeleteImplicitDirWithExplicitSubDir (19.01s)
+=== RUN   TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir
+--- PASS: TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir (16.54s)
+=== RUN   TestDeleteImplicitDirInExplicitDir
+--- PASS: TestDeleteImplicitDirInExplicitDir (12.73s)
+=== RUN   TestDeleteExplicitDirContainingImplicitSubDir
+--- PASS: TestDeleteExplicitDirContainingImplicitSubDir (15.32s)
+=== RUN   TestListImplicitObjectsFromBucket
+    list_test.go:71: Incorrect number of objects in the bucket. Expected: 6, Actual: 4
+    list_test.go:85: Listed incorrect object #2. Expected: implicitDirectory, Actual: fileInUnsupportedImplicitDir3
+--- FAIL: TestListImplicitObjectsFromBucket (25.93s)
+=== RUN   TestNewFileUnderImplicitDirectoryShouldNotGetSyncedToGCSTillClose
+--- PASS: TestNewFileUnderImplicitDirectoryShouldNotGetSyncedToGCSTillClose (5.69s)
+=== RUN   TestReadDirForImplicitDirWithLocalFile
+--- PASS: TestReadDirForImplicitDirWithLocalFile (9.99s)
+=== RUN   TestRecursiveListingWithLocalFiles
+--- PASS: TestRecursiveListingWithLocalFiles (13.73s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  149.600s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket -run TestListImplicitObjectsFromBucket                                                                                                   
+=== RUN   TestListImplicitObjectsFromBucket
+    list_test.go:71: Incorrect number of objects in the bucket. Expected: 6, Actual: 4
+    list_test.go:85: Listed incorrect object #2. Expected: implicitDirectory, Actual: fileInUnsupportedImplicitDir3
+--- FAIL: TestListImplicitObjectsFromBucket (32.53s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  32.546s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket -run TestListImplicitObjectsFromBucket 
+=== RUN   TestListImplicitObjectsFromBucket
+    list_test.go:71: Incorrect number of objects in the bucket. Expected: 6, Actual: 4
+    list_test.go:85: Listed incorrect object #2. Expected: implicitDirectory, Actual: fileInUnsupportedImplicitDir3
+    list_test.go:90: Listed incorrect object #2. Expected: implicitDirectory, Actual: fileInUnsupportedImplicitDir3
+--- FAIL: TestListImplicitObjectsFromBucket (38.15s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  38.172s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket -run TestListImplicitObjectsFromBucket 
+=== RUN   TestListImplicitObjectsFromBucket
+    list_test.go:71: Incorrect number of objects in the bucket. Expected: 6, Actual: 4
+    list_test.go:85: Listed incorrect object #2. Expected: fileInUnsupportedImplicitDir3, Actual: fileInUnsupportedImplicitDir3
+    list_test.go:90: Listed incorrect object #3. Expected: implicitDirectory, Actual: implicitDirectory
+--- FAIL: TestListImplicitObjectsFromBucket (41.50s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  41.524s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket -run TestListImplicitObjectsFromBucket 
+=== RUN   TestListImplicitObjectsFromBucket
+^Csignal: interrupt
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  10.544s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket -run TestListImplicitObjectsFromBucket 
+=== RUN   TestListImplicitObjectsFromBucket
+--- PASS: TestListImplicitObjectsFromBucket (23.62s)
+PASS
+ok      github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  23.639s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket # -run TestListImplicitObjectsFromBucket                                                                                                   
+=== RUN   TestDeleteNonEmptyImplicitDir
+--- PASS: TestDeleteNonEmptyImplicitDir (26.37s)
+=== RUN   TestDeleteNonEmptyImplicitSubDir
+--- PASS: TestDeleteNonEmptyImplicitSubDir (12.39s)
+=== RUN   TestDeleteImplicitDirWithExplicitSubDir
+--- PASS: TestDeleteImplicitDirWithExplicitSubDir (18.38s)
+=== RUN   TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir
+--- PASS: TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir (16.71s)
+=== RUN   TestDeleteImplicitDirInExplicitDir
+--- PASS: TestDeleteImplicitDirInExplicitDir (19.07s)
+=== RUN   TestDeleteExplicitDirContainingImplicitSubDir
+--- PASS: TestDeleteExplicitDirContainingImplicitSubDir (19.77s)
+=== RUN   TestListImplicitObjectsFromBucket
+--- PASS: TestListImplicitObjectsFromBucket (21.69s)
+=== RUN   TestNewFileUnderImplicitDirectoryShouldNotGetSyncedToGCSTillClose
+--- PASS: TestNewFileUnderImplicitDirectoryShouldNotGetSyncedToGCSTillClose (8.23s)
+=== RUN   TestReadDirForImplicitDirWithLocalFile
+--- PASS: TestReadDirForImplicitDirWithLocalFile (6.53s)
+=== RUN   TestRecursiveListingWithLocalFiles
+--- PASS: TestRecursiveListingWithLocalFiles (9.33s)
+PASS
+ok      github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  158.486s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket -run TestListImplicitObjectsFromBucket                                                                                                   
+=== RUN   TestListImplicitObjectsFromBucket
+--- PASS: TestListImplicitObjectsFromBucket (19.61s)
+PASS
+ok      github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  19.629s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket -run TestListImplicitObjectsFromBucket 
+=== RUN   TestListImplicitObjectsFromBucket
+    list_test.go:71: Incorrect number of objects in the bucket. Expected: 4, Actual: 3
+    list_test.go:85: Listed incorrect object #2. Expected: fileInUnsupportedImplicitDir3, Actual: implicitDirectory
+--- FAIL: TestListImplicitObjectsFromBucket (14.66s)
+panic: runtime error: index out of range [3] with length 3 [recovered]
+        panic: runtime error: index out of range [3] with length 3
+
+goroutine 21 [running]:
+testing.tRunner.func1.2({0xca0d20, 0xc000038198})
+        /usr/lib/google-golang/src/testing/testing.go:1631 +0x24a
+testing.tRunner.func1()
+        /usr/lib/google-golang/src/testing/testing.go:1634 +0x377
+panic({0xca0d20?, 0xc000038198?})
+        /usr/lib/google-golang/src/runtime/panic.go:759 +0x132
+github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir_test.TestListImplicitObjectsFromBucket.func1({0xc0001481e0, 0x9b}, {0xe2f5f8, 0xc00004e0a0}, {0x0?, 0x0?})
+        /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/tools/integration_tests/implicit_dir/list_test.go:89 +0xac9
+path/filepath.walkDir({0xc0001481e0, 0x9b}, {0xe2f5f8, 0xc00004e0a0}, 0xc000175f40)
+        /usr/lib/google-golang/src/path/filepath/path.go:459 +0x50
+path/filepath.WalkDir({0xc0001481e0, 0x9b}, 0xc00011af40)
+        /usr/lib/google-golang/src/path/filepath/path.go:549 +0x7b
+github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir_test.TestListImplicitObjectsFromBucket(0xc0003e8b60)
+        /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/tools/integration_tests/implicit_dir/list_test.go:51 +0xb3
+testing.tRunner(0xc0003e8b60, 0xd5b040)
+        /usr/lib/google-golang/src/testing/testing.go:1689 +0xfb
+created by testing.(*T).Run in goroutine 1
+        /usr/lib/google-golang/src/testing/testing.go:1742 +0x390
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  14.686s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket -run TestListImplicitObjectsFromBucket 
+=== RUN   TestListImplicitObjectsFromBucket
+--- PASS: TestListImplicitObjectsFromBucket (31.54s)
+PASS
+ok      github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  31.563s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket -run TestListImplicitObjectsFromBucket 
+=== RUN   TestListImplicitObjectsFromBucket
+--- PASS: TestListImplicitObjectsFromBucket (43.98s)
+PASS
+ok      github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  43.996s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket -run TestListImplicitObjectsFromBucket 
+=== RUN   TestListImplicitObjectsFromBucket
+--- PASS: TestListImplicitObjectsFromBucket (42.61s)
+PASS
+ok      github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  42.631s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket # -run TestListImplicitObjectsFromBucket                                                                                                   
+=== RUN   TestDeleteNonEmptyImplicitDir
+--- PASS: TestDeleteNonEmptyImplicitDir (24.54s)
+=== RUN   TestDeleteNonEmptyImplicitSubDir
+--- PASS: TestDeleteNonEmptyImplicitSubDir (12.31s)
+=== RUN   TestDeleteImplicitDirWithExplicitSubDir
+--- PASS: TestDeleteImplicitDirWithExplicitSubDir (22.63s)
+=== RUN   TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir
+--- PASS: TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir (16.49s)
+=== RUN   TestDeleteImplicitDirInExplicitDir
+    dir_operations.go:104: Error in creating directory: mkdir /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount/dirForImplicitDirTests/explicitDirectory: file exists
+--- FAIL: TestDeleteImplicitDirInExplicitDir (31.12s)
+=== RUN   TestDeleteExplicitDirContainingImplicitSubDir
+    dir_operations.go:104: Error in creating directory: mkdir /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount/dirForImplicitDirTests/explicitDirectory: file exists
+    implicit_and_explicit_dir_setup.go:77: Directory is not deleted.
+--- FAIL: TestDeleteExplicitDirContainingImplicitSubDir (19.19s)
+=== RUN   TestListImplicitObjectsFromBucket
+    dir_operations.go:104: Error in creating directory: mkdir /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount/dirForImplicitDirTests/explicitDirectory: file exists
+--- FAIL: TestListImplicitObjectsFromBucket (19.31s)
+=== RUN   TestNewFileUnderImplicitDirectoryShouldNotGetSyncedToGCSTillClose
+--- PASS: TestNewFileUnderImplicitDirectoryShouldNotGetSyncedToGCSTillClose (5.51s)
+=== RUN   TestReadDirForImplicitDirWithLocalFile
+--- PASS: TestReadDirForImplicitDirWithLocalFile (8.34s)
+=== RUN   TestRecursiveListingWithLocalFiles
+--- PASS: TestRecursiveListingWithLocalFiles (11.66s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  171.129s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket # -run TestListImplicitObjectsFromBucket 
+=== RUN   TestDeleteNonEmptyImplicitDir
+--- PASS: TestDeleteNonEmptyImplicitDir (25.71s)
+=== RUN   TestDeleteNonEmptyImplicitSubDir
+--- PASS: TestDeleteNonEmptyImplicitSubDir (10.33s)
+=== RUN   TestDeleteImplicitDirWithExplicitSubDir
+--- PASS: TestDeleteImplicitDirWithExplicitSubDir (18.83s)
+=== RUN   TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir
+--- PASS: TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir (18.28s)
+=== RUN   TestDeleteImplicitDirInExplicitDir
+    dir_operations.go:104: Error in creating directory: mkdir /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount/dirForImplicitDirTests/explicitDirectory: file exists
+--- FAIL: TestDeleteImplicitDirInExplicitDir (15.73s)
+=== RUN   TestDeleteExplicitDirContainingImplicitSubDir
+    implicit_and_explicit_dir_setup.go:77: Directory is not deleted.
+--- FAIL: TestDeleteExplicitDirContainingImplicitSubDir (3.42s)
+=== RUN   TestListImplicitObjectsFromBucket
+    dir_operations.go:104: Error in creating directory: mkdir /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount/dirForImplicitDirTests/explicitDirectory: file exists
+--- FAIL: TestListImplicitObjectsFromBucket (13.69s)
+=== RUN   TestNewFileUnderImplicitDirectoryShouldNotGetSyncedToGCSTillClose
+--- PASS: TestNewFileUnderImplicitDirectoryShouldNotGetSyncedToGCSTillClose (12.44s)
+=== RUN   TestReadDirForImplicitDirWithLocalFile
+--- PASS: TestReadDirForImplicitDirWithLocalFile (5.45s)
+=== RUN   TestRecursiveListingWithLocalFiles
+--- PASS: TestRecursiveListingWithLocalFiles (8.33s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  132.232s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ TestDeleteImplicitDirInExplicitDir^C
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket # -run TestListImplicitObjectsFromBucket 
+=== RUN   TestDeleteNonEmptyImplicitDir
+--- PASS: TestDeleteNonEmptyImplicitDir (15.30s)
+=== RUN   TestDeleteNonEmptyImplicitSubDir
+--- PASS: TestDeleteNonEmptyImplicitSubDir (12.28s)
+=== RUN   TestDeleteImplicitDirWithExplicitSubDir
+--- PASS: TestDeleteImplicitDirWithExplicitSubDir (19.42s)
+=== RUN   TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir
+--- PASS: TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir (17.96s)
+=== RUN   TestDeleteImplicitDirInExplicitDir
+--- PASS: TestDeleteImplicitDirInExplicitDir (15.50s)
+=== RUN   TestDeleteExplicitDirContainingImplicitSubDir
+--- PASS: TestDeleteExplicitDirContainingImplicitSubDir (7.28s)
+=== RUN   TestListImplicitObjectsFromBucket
+--- PASS: TestListImplicitObjectsFromBucket (18.84s)
+=== RUN   TestNewFileUnderImplicitDirectoryShouldNotGetSyncedToGCSTillClose
+--- PASS: TestNewFileUnderImplicitDirectoryShouldNotGetSyncedToGCSTillClose (5.67s)
+=== RUN   TestReadDirForImplicitDirWithLocalFile
+--- PASS: TestReadDirForImplicitDirWithLocalFile (10.27s)
+=== RUN   TestRecursiveListingWithLocalFiles
+--- PASS: TestRecursiveListingWithLocalFiles (9.95s)
+PASS
+ok      github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  132.490s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket # -run TestListImplicitObjectsFromBucket 
+=== RUN   TestDeleteNonEmptyImplicitDir
+--- PASS: TestDeleteNonEmptyImplicitDir (26.65s)
+=== RUN   TestDeleteNonEmptyImplicitSubDir
+--- PASS: TestDeleteNonEmptyImplicitSubDir (11.37s)
+=== RUN   TestDeleteImplicitDirWithExplicitSubDir
+--- PASS: TestDeleteImplicitDirWithExplicitSubDir (15.52s)
+=== RUN   TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir
+--- PASS: TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir (18.23s)
+=== RUN   TestDeleteImplicitDirInExplicitDir
+--- PASS: TestDeleteImplicitDirInExplicitDir (13.55s)
+=== RUN   TestDeleteExplicitDirContainingImplicitSubDir
+--- PASS: TestDeleteExplicitDirContainingImplicitSubDir (17.19s)
+=== RUN   TestListImplicitObjectsFromBucket
+--- PASS: TestListImplicitObjectsFromBucket (20.63s)
+=== RUN   TestNewFileUnderImplicitDirectoryShouldNotGetSyncedToGCSTillClose
+--- PASS: TestNewFileUnderImplicitDirectoryShouldNotGetSyncedToGCSTillClose (7.89s)
+=== RUN   TestReadDirForImplicitDirWithLocalFile
+--- PASS: TestReadDirForImplicitDirWithLocalFile (5.36s)
+=== RUN   TestRecursiveListingWithLocalFiles
+^Csignal: interrupt
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  138.593s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket # -run TestListImplicitObjectsFromBucket 
+# github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup
+tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go:49:7: UnsupportedImplicitDirectory3 redeclared in this block
+        tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go:47:7: other declaration of UnsupportedImplicitDirectory3
+tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go:50:7: FileInUnsupportedImplicitDirectory3 redeclared in this block
+        tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go:48:7: other declaration of FileInUnsupportedImplicitDirectory3
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir [build failed]
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket # -run TestListImplicitObjectsFromBucket 
+=== RUN   TestDeleteNonEmptyImplicitDir
+--- PASS: TestDeleteNonEmptyImplicitDir (21.16s)
+=== RUN   TestDeleteNonEmptyImplicitSubDir
+--- PASS: TestDeleteNonEmptyImplicitSubDir (7.87s)
+=== RUN   TestDeleteImplicitDirWithExplicitSubDir
+--- PASS: TestDeleteImplicitDirWithExplicitSubDir (17.35s)
+=== RUN   TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir
+--- PASS: TestDeleteImplicitDirWithImplicitSubDirContainingExplicitDir (15.92s)
+=== RUN   TestDeleteImplicitDirInExplicitDir
+--- PASS: TestDeleteImplicitDirInExplicitDir (11.47s)
+=== RUN   TestDeleteExplicitDirContainingImplicitSubDir
+2024/05/06 09:03:30 Error in removing directory: unlinkat /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount/dirForImplicitDirTests/explicitDirectory: input/output error
+--- PASS: TestDeleteExplicitDirContainingImplicitSubDir (25.96s)
+=== RUN   TestListImplicitObjectsFromBucket
+2024/05/06 09:04:15 Error: 
+--- FAIL: TestListImplicitObjectsFromBucket (23.38s)
+panic: exit status 1 [recovered]
+        panic: exit status 1
+
+goroutine 50 [running]:
+testing.tRunner.func1.2({0xccd880, 0xc000114160})
+        /usr/lib/google-golang/src/testing/testing.go:1631 +0x24a
+testing.tRunner.func1()
+        /usr/lib/google-golang/src/testing/testing.go:1634 +0x377
+panic({0xccd880?, 0xc000114160?})
+        /usr/lib/google-golang/src/runtime/panic.go:759 +0x132
+github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/util/setup.RunScriptForTestData({0xc000508ea0?, 0xf88e2e?, 0x2d?})
+        /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/tools/integration_tests/util/setup/setup.go:67 +0xec
+github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup.CreateUnsupportedImplicitDirectoryStructure({0xd15b0b?, 0x16?})
+        /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go:106 +0x94
+github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir_test.TestListImplicitObjectsFromBucket(0xc0001c41a0)
+        /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/tools/integration_tests/implicit_dir/list_test.go:51 +0x70
+testing.tRunner(0xc0001c41a0, 0xd5af40)
+        /usr/lib/google-golang/src/testing/testing.go:1689 +0xfb
+created by testing.(*T).Run in goroutine 1
+        /usr/lib/google-golang/src/testing/testing.go:1742 +0x390
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  123.134s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket  -run TestListImplicitObjectsFromBucket                                                                                                   
+=== RUN   TestListImplicitObjectsFromBucket
+--- PASS: TestListImplicitObjectsFromBucket (26.26s)
+PASS
+ok      github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  26.284s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket  -run TestListImplicitObjectsFromBucket
+=== RUN   TestListImplicitObjectsFromBucket
+--- PASS: TestListImplicitObjectsFromBucket (31.82s)
+PASS
+ok      github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  31.836s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git l
+24a19a851 (HEAD -> refs/heads/gargnitin/test-empty-directory) Add integration tests for unsupported directories
+f08970232 Add tests for unsupported directory names
+923987bb5 (refs/remotes/origin/master, refs/remotes/origin/HEAD) Upgrading go version to 1.22.2 (#1882)
+9313e1c7a Fix only dir mounting e2e test (#1880)
+c7baf1ac3 Upgrading depenencies as per dependabot suggestions (#1881)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ GODEBUG=asyncpreemptoff=1 go test ./tools/integration_tests/implicit_dir/... -p 1 --integrationTest -v --mountedDirectory=$mountpath --testbucket=$bucket  -run TestListImplicitObjectsFromBucket
+=== RUN   TestListImplicitObjectsFromBucket
+--- PASS: TestListImplicitObjectsFromBucket (28.47s)
+PASS
+ok      github.com/googlecloudplatform/gcsfuse/v2/tools/integration_tests/implicit_dir  28.490s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$                                                                                                                                                                                                  

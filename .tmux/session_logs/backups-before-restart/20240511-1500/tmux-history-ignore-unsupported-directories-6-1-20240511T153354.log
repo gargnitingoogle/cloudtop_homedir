@@ -1,0 +1,3899 @@
+gargnitin@gargnitin:~$ bash
+src
+gargnitin@gargnitin:~$ src
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ /usr/lib/google-golang/bin/go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+[----------] Running tests from ImplicitDirsTest
+{"timestamp":{"seconds":1715168173,"nanos":759897559},"severity":"INFO","message":"Set up root directory for bucket some_bucket"}
+[ RUN      ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+WalkFn called with path=/tmp/fs_test1860741459,dirEntry=fs.dirInfo{fileInfo:(*os.fileStat)(0xc0002e20d0)},err=<nil>
+WalkFn called with path=/tmp/fs_test1860741459/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test1860741459", name:"foo", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test1860741459/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test1860741459/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test1860741459/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test1860741459/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test1860741459/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test1860741459/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test1860741459/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test1860741459/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test1860741459/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test1860741459/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test1860741459/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test1860741459/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test1860741459/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test1860741459/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test1860741459/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test1860741459/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test1860741459/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test1860741459/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+{"timestamp":{"seconds":1715168173,"nanos":775991905},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715168173,"nanos":778335516},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715168173,"nanos":779506956},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+implicit_dirs_test.go:658:
+Expected: is nil
+Actual:   walk went too deep
+
+[  FAILED  ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+[----------] Finished with tests from ImplicitDirsTest
+--- FAIL: TestFS (0.02s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.064s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ /usr/lib/google-golang/bin/go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+[----------] Running tests from ImplicitDirsTest
+{"timestamp":{"seconds":1715168198,"nanos":261327562},"severity":"INFO","message":"Set up root directory for bucket some_bucket"}
+[ RUN      ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+WalkFn called with path=/tmp/fs_test356226812,dirEntry=fs.dirInfo{fileInfo:(*os.fileStat)(0xc000b0e270)},err=<nil>
+WalkFn called with path=/tmp/fs_test356226812/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test356226812", name:"foo", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test356226812/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test356226812/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test356226812/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test356226812/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test356226812/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test356226812/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test356226812/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test356226812/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test356226812/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test356226812/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test356226812/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test356226812/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test356226812/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test356226812/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test356226812/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test356226812/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test356226812/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test356226812/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+{"timestamp":{"seconds":1715168198,"nanos":276895978},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715168198,"nanos":278988089},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715168198,"nanos":279838829},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+implicit_dirs_test.go:658:
+Expected: is nil
+Actual:   walk went too deep
+
+[  FAILED  ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+[----------] Finished with tests from ImplicitDirsTest
+--- FAIL: TestFS (0.02s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.063s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ /usr/lib/google-golang/bin/go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+[----------] Running tests from ImplicitDirsTest
+{"timestamp":{"seconds":1715168261,"nanos":371205889},"severity":"INFO","message":"Set up root directory for bucket some_bucket"}
+[ RUN      ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+WalkFn called with path=/tmp/fs_test2195202869,dirEntry=fs.dirInfo{fileInfo:(*os.fileStat)(0xc000b94000)},err=<nil>
+WalkFn called with path=/tmp/fs_test2195202869/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2195202869", name:"foo", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2195202869/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2195202869/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2195202869/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2195202869/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2195202869/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2195202869/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2195202869/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2195202869/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2195202869/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2195202869/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2195202869/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2195202869/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2195202869/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2195202869/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2195202869/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2195202869/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2195202869/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2195202869/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+{"timestamp":{"seconds":1715168261,"nanos":386031804},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715168261,"nanos":388438765},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715168261,"nanos":389614015},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+implicit_dirs_test.go:658:
+Expected: is nil
+Actual:   walk went too deep
+
+[  FAILED  ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+[----------] Finished with tests from ImplicitDirsTest
+--- FAIL: TestFS (0.02s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.063s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ /usr/lib/google-golang/bin/go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs^C
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ which go
+/usr/lib/google-golang/bin/go
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs                                                                                                                                                    
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.051s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   (cached)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   (cached)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.054s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.061s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+[----------] Running tests from ImplicitDirsTest
+{"timestamp":{"seconds":1715168493,"nanos":94942480},"severity":"INFO","message":"Set up root directory for bucket some_bucket"}
+[ RUN      ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+WalkFn called with path=/tmp/fs_test2563153542,dirEntry=fs.dirInfo{fileInfo:(*os.fileStat)(0xc0006af790)},err=<nil>
+WalkFn called with path=/tmp/fs_test2563153542/a,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2563153542", name:"a", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2563153542/a/b,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2563153542/a", name:"b", typ:0x0, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2563153542/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2563153542", name:"foo", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2563153542/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2563153542/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2563153542/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2563153542/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2563153542/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2563153542/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2563153542/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2563153542/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2563153542/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2563153542/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2563153542/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2563153542/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2563153542/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2563153542/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+{"timestamp":{"seconds":1715168493,"nanos":108969562},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715168493,"nanos":112460053},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715168493,"nanos":114405663},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715168493,"nanos":115197643},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+implicit_dirs_test.go:658:
+Expected: is nil
+Actual:   walk went too deep
+
+[  FAILED  ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+[----------] Finished with tests from ImplicitDirsTest
+--- FAIL: TestFS (0.02s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.066s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.060s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ which go                                                                            
+/usr/lib/google-golang/bin/go
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.060s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.061s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   (cached)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.065s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.050s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+[----------] Running tests from ImplicitDirsTest
+{"timestamp":{"seconds":1715168996,"nanos":325792837},"severity":"INFO","message":"Set up root directory for bucket some_bucket"}
+[ RUN      ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+Running test..
+WalkFn called with path=/tmp/fs_test441516505,dirEntry=fs.dirInfo{fileInfo:(*os.fileStat)(0xc00046d2b0)},err=<nil>
+WalkFn called with path=/tmp/fs_test441516505/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test441516505", name:"foo", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test441516505/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test441516505/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test441516505/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test441516505/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test441516505/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test441516505/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test441516505/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test441516505/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test441516505/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test441516505/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test441516505/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test441516505/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test441516505/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test441516505/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test441516505/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test441516505/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test441516505/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test441516505/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+{"timestamp":{"seconds":1715168996,"nanos":340493607},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715168996,"nanos":342591847},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715168996,"nanos":343699037},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+implicit_dirs_test.go:659:
+Expected: is nil
+Actual:   walk went too deep
+
+[  FAILED  ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+[----------] Finished with tests from ImplicitDirsTest
+--- FAIL: TestFS (0.02s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.062s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+[----------] Running tests from ImplicitDirsTest
+{"timestamp":{"seconds":1715169221,"nanos":256153416},"severity":"INFO","message":"Set up root directory for bucket some_bucket"}
+[ RUN      ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+Running test..
+WalkFn called with path=/tmp/fs_test4173478209,dirEntry=fs.dirInfo{fileInfo:(*os.fileStat)(0xc0006241a0)},err=<nil>
+WalkFn called with path=/tmp/fs_test4173478209/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test4173478209", name:"foo", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test4173478209/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test4173478209/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test4173478209/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test4173478209/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test4173478209/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test4173478209/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test4173478209/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test4173478209/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test4173478209/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test4173478209/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test4173478209/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test4173478209/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test4173478209/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test4173478209/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test4173478209/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test4173478209/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test4173478209/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test4173478209/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+{"timestamp":{"seconds":1715169221,"nanos":269947965},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715169221,"nanos":271790065},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715169221,"nanos":272797225},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+implicit_dirs_test.go:659:
+Expected: is nil
+Actual:   walk went too deep
+
+[  FAILED  ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+[----------] Finished with tests from ImplicitDirsTest
+--- FAIL: TestFS (0.02s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.061s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   (cached)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   (cached)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.056s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.059s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   (cached)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   (cached)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   (cached)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.060s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff -G HEAD .
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git st            
+On branch gargnitin/fix-empty-directory-list-issue
+Your branch is ahead of 'origin/gargnitin/fix-empty-directory-list-issue' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   internal/fs/implicit_dirs_test.go
+        modified:   internal/fs/inode/file_test.go
+
+no changes added to commit (use "git add" and/or "git commit -a")
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff HEAD .                                                                    
+diff --git a/internal/fs/implicit_dirs_test.go b/internal/fs/implicit_dirs_test.go
+index 91680bd23..6b42d595b 100644
+--- a/internal/fs/implicit_dirs_test.go
++++ b/internal/fs/implicit_dirs_test.go
+@@ -19,16 +19,13 @@
+ package fs_test
+ 
+ import (
+-       "os"
++       "fmt"
++       "io/fs"
+        "path"
+-       "syscall"
+-       "time"
++       "path/filepath"
+ 
+-       "github.com/googlecloudplatform/gcsfuse/v2/internal/storage/gcs"
+-       "github.com/jacobsa/fuse/fusetesting"
+-       . "github.com/jacobsa/oglematchers"
++       // . "github.com/jacobsa/oglematchers"
+        . "github.com/jacobsa/ogletest"
+-       "github.com/jacobsa/timeutil"
+ )
+ 
+ ////////////////////////////////////////////////////////////////////////
+@@ -52,581 +49,670 @@ func (t *ImplicitDirsTest) SetUpTestSuite() {
+ // Tests
+ ////////////////////////////////////////////////////////////////////////
+ 
+-func (t *ImplicitDirsTest) NothingPresent() {
+-       // ReadDir
+-       entries, err := fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-
+-       ExpectThat(entries, ElementsAre())
+-}
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff HEAD -G .
+diff --git a/internal/fs/implicit_dirs_test.go b/internal/fs/implicit_dirs_test.go
+index 91680bd23..6b42d595b 100644
+--- a/internal/fs/implicit_dirs_test.go
++++ b/internal/fs/implicit_dirs_test.go
+@@ -19,16 +19,13 @@
+ package fs_test
+ 
+ import (
+-       "os"
++       "fmt"
++       "io/fs"
+        "path"
+-       "syscall"
+-       "time"
++       "path/filepath"
+ 
+-       "github.com/googlecloudplatform/gcsfuse/v2/internal/storage/gcs"
+-       "github.com/jacobsa/fuse/fusetesting"
+-       . "github.com/jacobsa/oglematchers"
++       // . "github.com/jacobsa/oglematchers"
+        . "github.com/jacobsa/ogletest"
+-       "github.com/jacobsa/timeutil"
+ )
+ 
+ ////////////////////////////////////////////////////////////////////////
+@@ -52,581 +49,670 @@ func (t *ImplicitDirsTest) SetUpTestSuite() {
+ // Tests
+ ////////////////////////////////////////////////////////////////////////
+ 
+-func (t *ImplicitDirsTest) NothingPresent() {
+-       // ReadDir
+-       entries, err := fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-
+-       ExpectThat(entries, ElementsAre())
+-}
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff HEAD -G .
+diff --git a/internal/fs/implicit_dirs_test.go b/internal/fs/implicit_dirs_test.go
+index 91680bd23..6b42d595b 100644
+--- a/internal/fs/implicit_dirs_test.go
++++ b/internal/fs/implicit_dirs_test.go
+@@ -19,16 +19,13 @@
+ package fs_test
+ 
+ import (
+-       "os"
++       "fmt"
++       "io/fs"
+        "path"
+-       "syscall"
+-       "time"
++       "path/filepath"
+ 
+-       "github.com/googlecloudplatform/gcsfuse/v2/internal/storage/gcs"
+-       "github.com/jacobsa/fuse/fusetesting"
+-       . "github.com/jacobsa/oglematchers"
++       // . "github.com/jacobsa/oglematchers"
+        . "github.com/jacobsa/ogletest"
+-       "github.com/jacobsa/timeutil"
+ )
+ 
+ ////////////////////////////////////////////////////////////////////////
+@@ -52,581 +49,670 @@ func (t *ImplicitDirsTest) SetUpTestSuite() {
+ // Tests
+ ////////////////////////////////////////////////////////////////////////
+ 
+-func (t *ImplicitDirsTest) NothingPresent() {
+-       // ReadDir
+-       entries, err := fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-
+-       ExpectThat(entries, ElementsAre())
+-}
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff -G HEAD .                                                                  
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff -G^CEAD .
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git help diff | grep -A 5 -B 5 '\-G'
+           came into being: use the feature iteratively to feed the interesting block in the preimage back into -S, and keep going until you get the
+           very first version of the block.
+
+           Binary files are searched as well.
+
+       -G<regex>
+           Look for differences whose patch text contains added/removed lines that match <regex>.
+
+           To illustrate the difference between -S<regex> --pickaxe-regex and -G<regex>, consider a commit with the following diff in the same file:
+
+               +    return frotz(nitfol, two->ptr, 1, 0);
+               ...
+               -    hit = frotz(nitfol, mf2.ptr, 1, 0);
+
+           While git log -G"frotz\(nitfol" will show this commit, git log -S"frotz\(nitfol" --pickaxe-regex will not (because the number of
+           occurrences of that string did not change).
+
+           Unless --text is supplied patches of binary files without a textconv filter will be ignored.
+
+           See the pickaxe entry in gitdiffcore(7) for more information.
+--
+           it doesn’t search for a specific string but for a specific object id.
+
+           The object can be a blob or a submodule commit. It implies the -t option in git-log to also find trees.
+
+       --pickaxe-all
+           When -S or -G finds a change, show all the changes in that changeset, not just the files that contain the change in <string>.
+
+       --pickaxe-regex
+           Treat the <string> given to -S as an extended POSIX regular expression to match.
+
+       -O<orderfile>
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff -G "^+" HEAD .                                                             
+fatal: invalid regex: Invalid preceding regular expression
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff -G"^\+" HEAD .                                                             
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff -G"^+" HEAD .                                                             
+fatal: invalid regex: Invalid preceding regular expression
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff -G"^ *\+" HEAD .                                                           
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff HEAD .                                                                    
+diff --git a/internal/fs/implicit_dirs_test.go b/internal/fs/implicit_dirs_test.go
+index 91680bd23..6b42d595b 100644
+--- a/internal/fs/implicit_dirs_test.go
++++ b/internal/fs/implicit_dirs_test.go
+@@ -19,16 +19,13 @@
+ package fs_test
+ 
+ import (
+-       "os"
++       "fmt"
++       "io/fs"
+        "path"
+-       "syscall"
+-       "time"
++       "path/filepath"
+ 
+-       "github.com/googlecloudplatform/gcsfuse/v2/internal/storage/gcs"
+-       "github.com/jacobsa/fuse/fusetesting"
+-       . "github.com/jacobsa/oglematchers"
++       // . "github.com/jacobsa/oglematchers"
+        . "github.com/jacobsa/ogletest"
+-       "github.com/jacobsa/timeutil"
+ )
+ 
+ ////////////////////////////////////////////////////////////////////////
+@@ -52,581 +49,670 @@ func (t *ImplicitDirsTest) SetUpTestSuite() {
+ // Tests
+ ////////////////////////////////////////////////////////////////////////
+ 
+-func (t *ImplicitDirsTest) NothingPresent() {
+-       // ReadDir
+-       entries, err := fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-
+-       ExpectThat(entries, ElementsAre())
+-}
+-
+-func (t *ImplicitDirsTest) FileObjectPresent() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               // File
+-                               "foo": "taco",
+-                       }))
+-
+-       // Statting the name should return an entry for the file.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectEq(4, fi.Size())
+-       ExpectFalse(fi.IsDir())
+-
+-       // ReadDir should show the file.
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-       AssertEq(1, len(entries))
+-
+-       fi = entries[0]
+-       ExpectEq("foo", fi.Name())
+-       ExpectEq(4, fi.Size())
+-       ExpectFalse(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) DirectoryObjectPresent() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               // Directory
+-                               "foo/": "",
+-                       }))
+-
+-       // Statting the name should return an entry for the directory.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // ReadDir should show the directory.
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-       AssertEq(1, len(entries))
+-
+-       fi = entries[0]
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) ImplicitDirectory_DefinedByFile() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/bar": "",
+-                       }))
+-
+-       // Statting the name should return an entry for the directory.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // ReadDir should show the directory.
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-       AssertEq(1, len(entries))
+-
+-       fi = entries[0]
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) ImplicitDirectory_DefinedByDirectory() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/bar/": "",
+-                       }))
+-
+-       // Statting the name should return an entry for the directory.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // ReadDir should show the directory.
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-       AssertEq(1, len(entries))
+-
+-       fi = entries[0]
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) ConflictingNames_PlaceholderPresent() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               // File
+-                               "foo": "taco",
+-
+-                               // Directory
+-                               "foo/": "",
+-                       }))
+-
+-       // A listing of the parent should contain a directory named "foo" and a
+-       // file named "foo\n".
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-       AssertEq(2, len(entries))
+-
+-       fi = entries[0]
+-       ExpectEq("foo", fi.Name())
+-       ExpectEq(0, fi.Size())
+-       ExpectEq(dirPerms|os.ModeDir, fi.Mode())
+-       ExpectTrue(fi.IsDir())
+-       ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
+-
+-       fi = entries[1]
+-       ExpectEq("foo\n", fi.Name())
+-       ExpectEq(len("taco"), fi.Size())
+-       ExpectEq(filePerms, fi.Mode())
+-       ExpectFalse(fi.IsDir())
+-       ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
+-
+-       // Statting "foo" should yield the directory.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // Statting "foo\n" should yield the file.
+-       fi, err = os.Stat(path.Join(mntDir, "foo\n"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo\n", fi.Name())
+-       ExpectEq(len("taco"), fi.Size())
+-       ExpectFalse(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) ConflictingNames_PlaceholderNotPresent() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               // File
+-                               "foo": "taco",
+-
+-                               // Implicit directory
+-                               "foo/bar": "",
+-                       }))
+-
+-       // A listing of the parent should contain a directory named "foo" and a
+-       // file named "foo\n".
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-       AssertEq(2, len(entries))
+-
+-       fi = entries[0]
+-       ExpectEq("foo", fi.Name())
+-       ExpectEq(0, fi.Size())
+-       ExpectEq(dirPerms|os.ModeDir, fi.Mode())
+-       ExpectTrue(fi.IsDir())
+-
+-       fi = entries[1]
+-       ExpectEq("foo\n", fi.Name())
+-       ExpectEq(len("taco"), fi.Size())
+-       ExpectEq(len("taco"), fi.Size())
+-       ExpectEq(filePerms, fi.Mode())
+-       ExpectFalse(fi.IsDir())
+-       ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
+-
+-       // Statting "foo" should yield the directory.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // Statting "foo\n" should yield the file.
+-       fi, err = os.Stat(path.Join(mntDir, "foo\n"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo\n", fi.Name())
+-       ExpectEq(len("taco"), fi.Size())
+-       ExpectFalse(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) ConflictingNames_OneIsSymlink() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               // Symlink
+-                               "foo": "",
+-
+-                               // Directory
+-                               "foo/": "",
+-                       }))
+-
+-       // Cause "foo" to look like a symlink.
+-       err = setSymlinkTarget(ctx, bucket, "foo", "")
+-       AssertEq(nil, err)
+-
+-       // A listing of the parent should contain a directory named "foo" and a
+-       // symlink named "foo\n".
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-       AssertEq(2, len(entries))
+-
+-       fi = entries[0]
+-       ExpectEq("foo", fi.Name())
+-       ExpectEq(0, fi.Size())
+-       ExpectEq(dirPerms|os.ModeDir, fi.Mode())
+-       ExpectTrue(fi.IsDir())
+-       ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
+-
+-       fi = entries[1]
+-       ExpectEq("foo\n", fi.Name())
+-       ExpectEq(0, fi.Size())
+-       ExpectEq(filePerms|os.ModeSymlink, fi.Mode())
+-       ExpectFalse(fi.IsDir())
+-       ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
+-
+-       // Statting "foo" should yield the directory.
+-       fi, err = os.Lstat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // Statting "foo\n" should yield the symlink.
+-       fi, err = os.Lstat(path.Join(mntDir, "foo\n"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo\n", fi.Name())
+-       ExpectEq(filePerms|os.ModeSymlink, fi.Mode())
+-}
+-
+-func (t *ImplicitDirsTest) StatUnknownName_NoOtherContents() {
+-       var err error
+-
+-       // Stat an unknown name.
+-       _, err = os.Stat(path.Join(mntDir, "unknown"))
+-       ExpectTrue(os.IsNotExist(err), "err: %v", err)
+-}
+-
+-func (t *ImplicitDirsTest) StatUnknownName_UnrelatedContents() {
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "bar": "",
+-                               "baz": "",
+-                       }))
+-
+-       // Stat an unknown name.
+-       _, err = os.Stat(path.Join(mntDir, "foo"))
+-       ExpectTrue(os.IsNotExist(err), "err: %v", err)
+-}
+-
+-func (t *ImplicitDirsTest) StatUnknownName_PrefixOfActualNames() {
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foop":  "",
+-                               "fooq/": "",
+-                       }))
+-
+-       // Stat an unknown name.
+-       _, err = os.Stat(path.Join(mntDir, "foo"))
+-       ExpectTrue(os.IsNotExist(err), "err: %v", err)
+-}
+-
+-func (t *ImplicitDirsTest) ImplicitBecomesExplicit() {
+-       var fi os.FileInfo
+-       var err error
+-
+-       // Set up an implicit directory.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/bar": "",
+-                       }))
+-
+-       // Stat it.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // Set up an explicit placeholder.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/": "",
+-                       }))
+-
+-       // Stat the directory again.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) ExplicitBecomesImplicit() {
+-       var fi os.FileInfo
+-       var err error
+-
+-       // Set up an explicit directory.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/":    "",
+-                               "foo/bar": "",
+-                       }))
+-
+-       // Stat it.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // Remove the explicit placeholder.
+-       AssertEq(
+-               nil,
+-               bucket.DeleteObject(
+-                       ctx,
+-                       &gcs.DeleteObjectRequest{Name: "foo/"}))
+-
+-       // Stat the directory again.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) Rmdir_NotEmpty_OnlyImplicit() {
+-       var err error
+-
+-       // Set up an implicit directory.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/bar": "",
+-                       }))
+-
+-       // Attempt to remove it.
+-       err = os.Remove(path.Join(mntDir, "foo"))
+-
+-       AssertNe(nil, err)
+-       ExpectThat(err, Error(HasSubstr("not empty")))
+-
+-       // It should still be there.
+-       fi, err := os.Lstat(path.Join(mntDir, "foo"))
+-
+-       AssertEq(nil, err)
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) Rmdir_NotEmpty_ImplicitAndExplicit() {
+-       var err error
+-
+-       // Set up an implicit directory that also has a backing object.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/":    "",
+-                               "foo/bar": "",
+-                       }))
+-
+-       // Attempt to remove it.
+-       err = os.Remove(path.Join(mntDir, "foo"))
+-
+-       AssertNe(nil, err)
+-       ExpectThat(err, Error(HasSubstr("not empty")))
+-
+-       // It should still be there.
+-       fi, err := os.Lstat(path.Join(mntDir, "foo"))
+-
+-       AssertEq(nil, err)
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) Rmdir_Empty() {
+-       var err error
+-       var entries []os.FileInfo
+-
+-       // Create two levels of directories. We can't make an empty implicit dir, so
+-       // there must be a backing object for each.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/":     "",
+-                               "foo/bar/": "",
+-                       }))
+-
+-       // Remove the leaf.
+-       err = os.Remove(path.Join(mntDir, "foo/bar"))
+-       AssertEq(nil, err)
+-
+-       // There should be nothing left in the parent.
+-       entries, err = fusetesting.ReadDirPicky(path.Join(mntDir, "foo"))
+-
+-       AssertEq(nil, err)
+-       ExpectThat(entries, ElementsAre())
+-
+-       // Remove the parent.
+-       err = os.Remove(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       // Now the root directory should be empty, too.
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-
+-       AssertEq(nil, err)
+-       ExpectThat(entries, ElementsAre())
+-}
+-
+-func (t *ImplicitDirsTest) AtimeCtimeAndMtime() {
+-       var err error
+-       mountTime := mtimeClock.Now()
+-
+-       // Create an implicit directory.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               // File
+-                               "foo/bar": "",
+-                       }))
+-
+-       // Stat it.
+-       fi, err := os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       // We require only that the times be "reasonable".
+-       atime, ctime, mtime := fusetesting.GetTimes(fi)
+-       const delta = 5 * time.Hour
+-
+-       ExpectThat(atime, timeutil.TimeNear(mountTime, delta))
+-       ExpectThat(ctime, timeutil.TimeNear(mountTime, delta))
+-       ExpectThat(mtime, timeutil.TimeNear(mountTime, delta))
+-}
++// func (t *ImplicitDirsTest) NothingPresent() {
++//     // ReadDir
++//     entries, err := fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++
++//     ExpectThat(entries, ElementsAre())
++// }
++
++// func (t *ImplicitDirsTest) FileObjectPresent() {
++//     var fi os.FileInfo
++//     var entries []os.FileInfo
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             // File
++//                             "foo": "taco",
++//                     }))
++
++//     // Statting the name should return an entry for the file.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectEq(4, fi.Size())
++//     ExpectFalse(fi.IsDir())
++
++//     // ReadDir should show the file.
++//     entries, err = fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++//     AssertEq(1, len(entries))
++
++//     fi = entries[0]
++//     ExpectEq("foo", fi.Name())
++//     ExpectEq(4, fi.Size())
++//     ExpectFalse(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) DirectoryObjectPresent() {
++//     var fi os.FileInfo
++//     var entries []os.FileInfo
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             // Directory
++//                             "foo/": "",
++//                     }))
++
++//     // Statting the name should return an entry for the directory.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // ReadDir should show the directory.
++//     entries, err = fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++//     AssertEq(1, len(entries))
++
++//     fi = entries[0]
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) ImplicitDirectory_DefinedByFile() {
++//     var fi os.FileInfo
++//     var entries []os.FileInfo
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/bar": "",
++//                     }))
++
++//     // Statting the name should return an entry for the directory.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // ReadDir should show the directory.
++//     entries, err = fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++//     AssertEq(1, len(entries))
++
++//     fi = entries[0]
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) ImplicitDirectory_DefinedByDirectory() {
++//     var fi os.FileInfo
++//     var entries []os.FileInfo
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/bar/": "",
++//                     }))
++
++//     // Statting the name should return an entry for the directory.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // ReadDir should show the directory.
++//     entries, err = fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++//     AssertEq(1, len(entries))
++
++//     fi = entries[0]
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) ConflictingNames_PlaceholderPresent() {
++//     var fi os.FileInfo
++//     var entries []os.FileInfo
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             // File
++//                             "foo": "taco",
++
++//                             // Directory
++//                             "foo/": "",
++//                     }))
++
++//     // A listing of the parent should contain a directory named "foo" and a
++//     // file named "foo\n".
++//     entries, err = fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++//     AssertEq(2, len(entries))
++
++//     fi = entries[0]
++//     ExpectEq("foo", fi.Name())
++//     ExpectEq(0, fi.Size())
++//     ExpectEq(dirPerms|os.ModeDir, fi.Mode())
++//     ExpectTrue(fi.IsDir())
++//     ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
++
++//     fi = entries[1]
++//     ExpectEq("foo\n", fi.Name())
++//     ExpectEq(len("taco"), fi.Size())
++//     ExpectEq(filePerms, fi.Mode())
++//     ExpectFalse(fi.IsDir())
++//     ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
++
++//     // Statting "foo" should yield the directory.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // Statting "foo\n" should yield the file.
++//     fi, err = os.Stat(path.Join(mntDir, "foo\n"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo\n", fi.Name())
++//     ExpectEq(len("taco"), fi.Size())
++//     ExpectFalse(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) ConflictingNames_PlaceholderNotPresent() {
++//     var fi os.FileInfo
++//     var entries []os.FileInfo
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             // File
++//                             "foo": "taco",
++
++//                             // Implicit directory
++//                             "foo/bar": "",
++//                     }))
++
++//     // A listing of the parent should contain a directory named "foo" and a
++//     // file named "foo\n".
++//     entries, err = fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++//     AssertEq(2, len(entries))
++
++//     fi = entries[0]
++//     ExpectEq("foo", fi.Name())
++//     ExpectEq(0, fi.Size())
++//     ExpectEq(dirPerms|os.ModeDir, fi.Mode())
++//     ExpectTrue(fi.IsDir())
++
++//     fi = entries[1]
++//     ExpectEq("foo\n", fi.Name())
++//     ExpectEq(len("taco"), fi.Size())
++//     ExpectEq(len("taco"), fi.Size())
++//     ExpectEq(filePerms, fi.Mode())
++//     ExpectFalse(fi.IsDir())
++//     ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
++
++//     // Statting "foo" should yield the directory.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // Statting "foo\n" should yield the file.
++//     fi, err = os.Stat(path.Join(mntDir, "foo\n"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo\n", fi.Name())
++//     ExpectEq(len("taco"), fi.Size())
++//     ExpectFalse(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) ConflictingNames_OneIsSymlink() {
++//     var fi os.FileInfo
++//     var entries []os.FileInfo
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             // Symlink
++//                             "foo": "",
++
++//                             // Directory
++//                             "foo/": "",
++//                     }))
++
++//     // Cause "foo" to look like a symlink.
++//     err = setSymlinkTarget(ctx, bucket, "foo", "")
++//     AssertEq(nil, err)
++
++//     // A listing of the parent should contain a directory named "foo" and a
++//     // symlink named "foo\n".
++//     entries, err = fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++//     AssertEq(2, len(entries))
++
++//     fi = entries[0]
++//     ExpectEq("foo", fi.Name())
++//     ExpectEq(0, fi.Size())
++//     ExpectEq(dirPerms|os.ModeDir, fi.Mode())
++//     ExpectTrue(fi.IsDir())
++//     ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
++
++//     fi = entries[1]
++//     ExpectEq("foo\n", fi.Name())
++//     ExpectEq(0, fi.Size())
++//     ExpectEq(filePerms|os.ModeSymlink, fi.Mode())
++//     ExpectFalse(fi.IsDir())
++//     ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
++
++//     // Statting "foo" should yield the directory.
++//     fi, err = os.Lstat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // Statting "foo\n" should yield the symlink.
++//     fi, err = os.Lstat(path.Join(mntDir, "foo\n"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo\n", fi.Name())
++//     ExpectEq(filePerms|os.ModeSymlink, fi.Mode())
++// }
++
++// func (t *ImplicitDirsTest) StatUnknownName_NoOtherContents() {
++//     var err error
++
++//     // Stat an unknown name.
++//     _, err = os.Stat(path.Join(mntDir, "unknown"))
++//     ExpectTrue(os.IsNotExist(err), "err: %v", err)
++// }
++
++// func (t *ImplicitDirsTest) StatUnknownName_UnrelatedContents() {
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "bar": "",
++//                             "baz": "",
++//                     }))
++
++//     // Stat an unknown name.
++//     _, err = os.Stat(path.Join(mntDir, "foo"))
++//     ExpectTrue(os.IsNotExist(err), "err: %v", err)
++// }
++
++// func (t *ImplicitDirsTest) StatUnknownName_PrefixOfActualNames() {
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foop":  "",
++//                             "fooq/": "",
++//                     }))
++
++//     // Stat an unknown name.
++//     _, err = os.Stat(path.Join(mntDir, "foo"))
++//     ExpectTrue(os.IsNotExist(err), "err: %v", err)
++// }
++
++// func (t *ImplicitDirsTest) ImplicitBecomesExplicit() {
++//     var fi os.FileInfo
++//     var err error
++
++//     // Set up an implicit directory.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/bar": "",
++//                     }))
++
++//     // Stat it.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // Set up an explicit placeholder.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/": "",
++//                     }))
++
++//     // Stat the directory again.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) ExplicitBecomesImplicit() {
++//     var fi os.FileInfo
++//     var err error
++
++//     // Set up an explicit directory.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/":    "",
++//                             "foo/bar": "",
++//                     }))
++
++//     // Stat it.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // Remove the explicit placeholder.
++//     AssertEq(
++//             nil,
++//             bucket.DeleteObject(
++//                     ctx,
++//                     &gcs.DeleteObjectRequest{Name: "foo/"}))
++
++//     // Stat the directory again.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) Rmdir_NotEmpty_OnlyImplicit() {
++//     var err error
++
++//     // Set up an implicit directory.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/bar": "",
++//                     }))
++
++//     // Attempt to remove it.
++//     err = os.Remove(path.Join(mntDir, "foo"))
++
++//     AssertNe(nil, err)
++//     ExpectThat(err, Error(HasSubstr("not empty")))
++
++//     // It should still be there.
++//     fi, err := os.Lstat(path.Join(mntDir, "foo"))
++
++//     AssertEq(nil, err)
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) Rmdir_NotEmpty_ImplicitAndExplicit() {
++//     var err error
++
++//     // Set up an implicit directory that also has a backing object.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/":    "",
++//                             "foo/bar": "",
++//                     }))
++
++//     // Attempt to remove it.
++//     err = os.Remove(path.Join(mntDir, "foo"))
++
++//     AssertNe(nil, err)
++//     ExpectThat(err, Error(HasSubstr("not empty")))
++
++//     // It should still be there.
++//     fi, err := os.Lstat(path.Join(mntDir, "foo"))
++
++//     AssertEq(nil, err)
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) Rmdir_Empty() {
++//     var err error
++//     var entries []os.FileInfo
++
++//     // Create two levels of directories. We can't make an empty implicit dir, so
++//     // there must be a backing object for each.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/":     "",
++//                             "foo/bar/": "",
++//                     }))
++
++//     // Remove the leaf.
++//     err = os.Remove(path.Join(mntDir, "foo/bar"))
++//     AssertEq(nil, err)
++
++//     // There should be nothing left in the parent.
++//     entries, err = fusetesting.ReadDirPicky(path.Join(mntDir, "foo"))
++
++//     AssertEq(nil, err)
++//     ExpectThat(entries, ElementsAre())
++
++//     // Remove the parent.
++//     err = os.Remove(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     // Now the root directory should be empty, too.
++//     entries, err = fusetesting.ReadDirPicky(mntDir)
++
++//     AssertEq(nil, err)
++//     ExpectThat(entries, ElementsAre())
++// }
++
++// func (t *ImplicitDirsTest) AtimeCtimeAndMtime() {
++//     var err error
++//     mountTime := mtimeClock.Now()
++
++//     // Create an implicit directory.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             // File
++//                             "foo/bar": "",
++//                     }))
++
++//     // Stat it.
++//     fi, err := os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     // We require only that the times be "reasonable".
++//     atime, ctime, mtime := fusetesting.GetTimes(fi)
++//     const delta = 5 * time.Hour
++
++//     ExpectThat(atime, timeutil.TimeNear(mountTime, delta))
++//     ExpectThat(ctime, timeutil.TimeNear(mountTime, delta))
++//     ExpectThat(mtime, timeutil.TimeNear(mountTime, delta))
++// }
++
++// // Create objects in implicit directories with
++// // unsupported names such as ., .., /, \0 and
++// // test that stat and ReadDirPicky on the different directories.
++// func (t *ImplicitDirsTest) UnsupportedDirNames() {
++//     var fi os.FileInfo
++//     var entries []os.FileInfo
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo//bar":     "", // unsupported
++//                             "foo/./bar":    "", // unsupported
++//                             "foo/../bar":   "", // unsupported
++//                             "foo/\000/bar": "", // unsupported
++//                             "/bar":         "", // unsupported
++//                             "./bar":        "", // unsupported
++//                             "../bar":       "", // unsupported
++//                             "\000/bar":     "", // unsupported
++//                             "a/b":          "", // supported
++//                     }))
++
++//     // Statting the mount directory should return a directory entry.
++//     fi, err = os.Stat(mntDir)
++//     AssertEq(nil, err)
++//     ExpectTrue(fi.IsDir())
++
++//     // Statting the mount-directory/foo should return a directory entry named "foo".
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // Statting the mount-directory/a should return a directory entry named "a".
++//     fi, err = os.Stat(path.Join(mntDir, "a"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("a", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // ReadDirPicky on mountdir/foo should fail as the unsupported sub-directories in that can not be read.
++//     _, err = fusetesting.ReadDirPicky(path.Join(mntDir, "foo"))
++//     AssertNe(nil, err)
++
++//     // ReadDirPicky on mountdir should fail as the unsupported sub-directories in that can not be read.
++//     _, err = fusetesting.ReadDirPicky(mntDir)
++//     AssertNe(nil, err)
++
++//     // ReadDir on mntdir/a should show the directory and should contain a single file object named "b".
++//     entries, err = fusetesting.ReadDirPicky(path.Join(mntDir, "a"))
++//     AssertEq(nil, err)
++//     AssertEq(1, len(entries))
++
++//     fi = entries[0]
++//     ExpectEq("b", fi.Name())
++//     ExpectFalse(fi.IsDir())
++// }
+ 
+ // Create objects in implicit directories with
+ // unsupported names such as ., .., /, \0 and
+ // test that stat and ReadDirPicky on the different directories.
+-func (t *ImplicitDirsTest) UnsupportedDirNames() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
++func (t *ImplicitDirsTest) UnsupportedDirNames_WalkDirPath() {
++       // var fi os.FileInfo
++       // var entries []os.FileInfo
++       // var err error
+ 
++       fmt.Printf("Running test..\n")
+        // Set up contents.
+        AssertEq(
+                nil,
+                t.createObjects(
+                        map[string]string{
+-                               "foo//bar":     "", // unsupported
+-                               "foo/./bar":    "", // unsupported
+-                               "foo/../bar":   "", // unsupported
+-                               "foo/\000/bar": "", // unsupported
+-                               "/bar":         "", // unsupported
+-                               "./bar":        "", // unsupported
+-                               "../bar":       "", // unsupported
+-                               "\000/bar":     "", // unsupported
+-                               "a/b":          "", // supported
++                               "foo//bar":  "", // unsupported
++                               "foo/./bar": "", // unsupported
++                               //"foo/../bar": "", // unsupported
++                               //"foo/\000/bar": "", // unsupported
++                               // "/bar":         "", // unsupported
++                               //"./bar":  "", // unsupported
++                               //"../bar": "", // unsupported
++                               // "\000/bar":     "", // unsupported
++                               "a/b": "", // supported
+                        }))
+ 
+-       // Statting the mount directory should return a directory entry.
+-       fi, err = os.Stat(mntDir)
+-       AssertEq(nil, err)
+-       ExpectTrue(fi.IsDir())
+-
+-       // Statting the mount-directory/foo should return a directory entry named "foo".
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // Statting the mount-directory/a should return a directory entry named "a".
+-       fi, err = os.Stat(path.Join(mntDir, "a"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("a", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // ReadDirPicky on mountdir/foo should fail as the unsupported sub-directories in that can not be read.
+-       _, err = fusetesting.ReadDirPicky(path.Join(mntDir, "foo"))
+-       AssertNe(nil, err)
+-
+-       // ReadDirPicky on mountdir should fail as the unsupported sub-directories in that can not be read.
+-       _, err = fusetesting.ReadDirPicky(mntDir)
+-       AssertNe(nil, err)
+-
+-       // ReadDir on mntdir/a should show the directory and should contain a single file object named "b".
+-       entries, err = fusetesting.ReadDirPicky(path.Join(mntDir, "a"))
+-       AssertEq(nil, err)
+-       AssertEq(1, len(entries))
+-
+-       fi = entries[0]
+-       ExpectEq("b", fi.Name())
+-       ExpectFalse(fi.IsDir())
++       dirFoo := path.Join(mntDir, "foo")
++       dirA := path.Join(mntDir, "a")
++       numIters := 0
++       AssertEq(nil, filepath.WalkDir(mntDir, func(path string, d fs.DirEntry, err error) error {
++               fmt.Printf("WalkFn called with path=%v,dirEntry=%#v,err=%#v\n", path, d, err)
++               numIters++
++
++               if numIters > 10 {
++                       return fmt.Errorf("walk went too deep")
++               }
++
++               // if err != nil {
++               //      return filepath.SkipDir
++               // }
++
++               switch path {
++               case mntDir:
++                       break
++               case dirFoo:
++                       break
++               case dirA:
++                       break
++               }
++
++               return nil
++       }))
++
++       // // Statting the mount directory should return a directory entry.
++       // fi, err = os.Stat(mntDir)
++       // AssertEq(nil, err)
++       // ExpectTrue(fi.IsDir())
++
++       // // Statting the mount-directory/foo should return a directory entry named "foo".
++       // fi, err = os.Stat(path.Join(mntDir, "foo"))
++       // AssertEq(nil, err)
++
++       // ExpectEq("foo", fi.Name())
++       // ExpectTrue(fi.IsDir())
++
++       // // Statting the mount-directory/a should return a directory entry named "a".
++       // fi, err = os.Stat(path.Join(mntDir, "a"))
++       // AssertEq(nil, err)
++
++       // ExpectEq("a", fi.Name())
++       // ExpectTrue(fi.IsDir())
++
++       // // ReadDirPicky on mountdir/foo should fail as the unsupported sub-directories in that can not be read.
++       // _, err = fusetesting.ReadDirPicky(path.Join(mntDir, "foo"))
++       // AssertNe(nil, err)
++
++       // // ReadDirPicky on mountdir should fail as the unsupported sub-directories in that can not be read.
++       // _, err = fusetesting.ReadDirPicky(mntDir)
++       // AssertNe(nil, err)
++
++       // // ReadDir on mntdir/a should show the directory and should contain a single file object named "b".
++       // entries, err = fusetesting.ReadDirPicky(path.Join(mntDir, "a"))
++       // AssertEq(nil, err)
++       // AssertEq(1, len(entries))
++
++       // fi = entries[0]
++       // ExpectEq("b", fi.Name())
++       // ExpectFalse(fi.IsDir())
+ }
+diff --git a/internal/fs/inode/file_test.go b/internal/fs/inode/file_test.go
+index 63b751adc..a2112412f 100644
+--- a/internal/fs/inode/file_test.go
++++ b/internal/fs/inode/file_test.go
+@@ -63,7 +63,9 @@ type FileTest struct {
+ var _ SetUpInterface = &FileTest{}
+ var _ TearDownInterface = &FileTest{}
+ 
+-func init() { RegisterTestSuite(&FileTest{}) }
++func init() {
++       // RegisterTestSuite(&FileTest{})
++}
+ 
+ func (t *FileTest) SetUp(ti *TestInfo) {
+        // Enabling invariant check for all tests.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff -G"\^ *\+" HEAD .                                                          
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff -G"^\+" HEAD .                                                             
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff -G"^\+.*$" HEAD .                                                          
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff -G"\+" HEAD .                                                             
+diff --git a/internal/fs/implicit_dirs_test.go b/internal/fs/implicit_dirs_test.go
+index 91680bd23..6b42d595b 100644
+--- a/internal/fs/implicit_dirs_test.go
++++ b/internal/fs/implicit_dirs_test.go
+@@ -19,16 +19,13 @@
+ package fs_test
+ 
+ import (
+-       "os"
++       "fmt"
++       "io/fs"
+        "path"
+-       "syscall"
+-       "time"
++       "path/filepath"
+ 
+-       "github.com/googlecloudplatform/gcsfuse/v2/internal/storage/gcs"
+-       "github.com/jacobsa/fuse/fusetesting"
+-       . "github.com/jacobsa/oglematchers"
++       // . "github.com/jacobsa/oglematchers"
+        . "github.com/jacobsa/ogletest"
+-       "github.com/jacobsa/timeutil"
+ )
+ 
+ ////////////////////////////////////////////////////////////////////////
+@@ -52,581 +49,670 @@ func (t *ImplicitDirsTest) SetUpTestSuite() {
+ // Tests
+ ////////////////////////////////////////////////////////////////////////
+ 
+-func (t *ImplicitDirsTest) NothingPresent() {
+-       // ReadDir
+-       entries, err := fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-
+-       ExpectThat(entries, ElementsAre())
+-}
+-
+-func (t *ImplicitDirsTest) FileObjectPresent() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               // File
+-                               "foo": "taco",
+-                       }))
+-
+-       // Statting the name should return an entry for the file.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectEq(4, fi.Size())
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff -G"\-" HEAD .                                                              
+diff --git a/internal/fs/implicit_dirs_test.go b/internal/fs/implicit_dirs_test.go
+index 91680bd23..6b42d595b 100644
+--- a/internal/fs/implicit_dirs_test.go
++++ b/internal/fs/implicit_dirs_test.go
+@@ -19,16 +19,13 @@
+ package fs_test
+ 
+ import (
+-       "os"
++       "fmt"
++       "io/fs"
+        "path"
+-       "syscall"
+-       "time"
++       "path/filepath"
+ 
+-       "github.com/googlecloudplatform/gcsfuse/v2/internal/storage/gcs"
+-       "github.com/jacobsa/fuse/fusetesting"
+-       . "github.com/jacobsa/oglematchers"
++       // . "github.com/jacobsa/oglematchers"
+        . "github.com/jacobsa/ogletest"
+-       "github.com/jacobsa/timeutil"
+ )
+ 
+ ////////////////////////////////////////////////////////////////////////
+@@ -52,581 +49,670 @@ func (t *ImplicitDirsTest) SetUpTestSuite() {
+ // Tests
+ ////////////////////////////////////////////////////////////////////////
+ 
+-func (t *ImplicitDirsTest) NothingPresent() {
+-       // ReadDir
+-       entries, err := fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-
+-       ExpectThat(entries, ElementsAre())
+-}
+-
+-func (t *ImplicitDirsTest) FileObjectPresent() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               // File
+-                               "foo": "taco",
+-                       }))
+-
+-       // Statting the name should return an entry for the file.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectEq(4, fi.Size())
+-       ExpectFalse(fi.IsDir())
+-
+-       // ReadDir should show the file.
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-       AssertEq(1, len(entries))
+-
+-       fi = entries[0]
+-       ExpectEq("foo", fi.Name())
+-       ExpectEq(4, fi.Size())
+-       ExpectFalse(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) DirectoryObjectPresent() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               // Directory
+-                               "foo/": "",
+-                       }))
+-
+-       // Statting the name should return an entry for the directory.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // ReadDir should show the directory.
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-       AssertEq(1, len(entries))
+-
+-       fi = entries[0]
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) ImplicitDirectory_DefinedByFile() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/bar": "",
+-                       }))
+-
+-       // Statting the name should return an entry for the directory.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // ReadDir should show the directory.
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-       AssertEq(1, len(entries))
+-
+-       fi = entries[0]
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) ImplicitDirectory_DefinedByDirectory() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/bar/": "",
+-                       }))
+-
+-       // Statting the name should return an entry for the directory.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // ReadDir should show the directory.
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-       AssertEq(1, len(entries))
+-
+-       fi = entries[0]
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) ConflictingNames_PlaceholderPresent() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               // File
+-                               "foo": "taco",
+-
+-                               // Directory
+-                               "foo/": "",
+-                       }))
+-
+-       // A listing of the parent should contain a directory named "foo" and a
+-       // file named "foo\n".
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-       AssertEq(2, len(entries))
+-
+-       fi = entries[0]
+-       ExpectEq("foo", fi.Name())
+-       ExpectEq(0, fi.Size())
+-       ExpectEq(dirPerms|os.ModeDir, fi.Mode())
+-       ExpectTrue(fi.IsDir())
+-       ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
+-
+-       fi = entries[1]
+-       ExpectEq("foo\n", fi.Name())
+-       ExpectEq(len("taco"), fi.Size())
+-       ExpectEq(filePerms, fi.Mode())
+-       ExpectFalse(fi.IsDir())
+-       ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
+-
+-       // Statting "foo" should yield the directory.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // Statting "foo\n" should yield the file.
+-       fi, err = os.Stat(path.Join(mntDir, "foo\n"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo\n", fi.Name())
+-       ExpectEq(len("taco"), fi.Size())
+-       ExpectFalse(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) ConflictingNames_PlaceholderNotPresent() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               // File
+-                               "foo": "taco",
+-
+-                               // Implicit directory
+-                               "foo/bar": "",
+-                       }))
+-
+-       // A listing of the parent should contain a directory named "foo" and a
+-       // file named "foo\n".
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-       AssertEq(2, len(entries))
+-
+-       fi = entries[0]
+-       ExpectEq("foo", fi.Name())
+-       ExpectEq(0, fi.Size())
+-       ExpectEq(dirPerms|os.ModeDir, fi.Mode())
+-       ExpectTrue(fi.IsDir())
+-
+-       fi = entries[1]
+-       ExpectEq("foo\n", fi.Name())
+-       ExpectEq(len("taco"), fi.Size())
+-       ExpectEq(len("taco"), fi.Size())
+-       ExpectEq(filePerms, fi.Mode())
+-       ExpectFalse(fi.IsDir())
+-       ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
+-
+-       // Statting "foo" should yield the directory.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // Statting "foo\n" should yield the file.
+-       fi, err = os.Stat(path.Join(mntDir, "foo\n"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo\n", fi.Name())
+-       ExpectEq(len("taco"), fi.Size())
+-       ExpectFalse(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) ConflictingNames_OneIsSymlink() {
+-       var fi os.FileInfo
+-       var entries []os.FileInfo
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               // Symlink
+-                               "foo": "",
+-
+-                               // Directory
+-                               "foo/": "",
+-                       }))
+-
+-       // Cause "foo" to look like a symlink.
+-       err = setSymlinkTarget(ctx, bucket, "foo", "")
+-       AssertEq(nil, err)
+-
+-       // A listing of the parent should contain a directory named "foo" and a
+-       // symlink named "foo\n".
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-       AssertEq(2, len(entries))
+-
+-       fi = entries[0]
+-       ExpectEq("foo", fi.Name())
+-       ExpectEq(0, fi.Size())
+-       ExpectEq(dirPerms|os.ModeDir, fi.Mode())
+-       ExpectTrue(fi.IsDir())
+-       ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
+-
+-       fi = entries[1]
+-       ExpectEq("foo\n", fi.Name())
+-       ExpectEq(0, fi.Size())
+-       ExpectEq(filePerms|os.ModeSymlink, fi.Mode())
+-       ExpectFalse(fi.IsDir())
+-       ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
+-
+-       // Statting "foo" should yield the directory.
+-       fi, err = os.Lstat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // Statting "foo\n" should yield the symlink.
+-       fi, err = os.Lstat(path.Join(mntDir, "foo\n"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo\n", fi.Name())
+-       ExpectEq(filePerms|os.ModeSymlink, fi.Mode())
+-}
+-
+-func (t *ImplicitDirsTest) StatUnknownName_NoOtherContents() {
+-       var err error
+-
+-       // Stat an unknown name.
+-       _, err = os.Stat(path.Join(mntDir, "unknown"))
+-       ExpectTrue(os.IsNotExist(err), "err: %v", err)
+-}
+-
+-func (t *ImplicitDirsTest) StatUnknownName_UnrelatedContents() {
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "bar": "",
+-                               "baz": "",
+-                       }))
+-
+-       // Stat an unknown name.
+-       _, err = os.Stat(path.Join(mntDir, "foo"))
+-       ExpectTrue(os.IsNotExist(err), "err: %v", err)
+-}
+-
+-func (t *ImplicitDirsTest) StatUnknownName_PrefixOfActualNames() {
+-       var err error
+-
+-       // Set up contents.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foop":  "",
+-                               "fooq/": "",
+-                       }))
+-
+-       // Stat an unknown name.
+-       _, err = os.Stat(path.Join(mntDir, "foo"))
+-       ExpectTrue(os.IsNotExist(err), "err: %v", err)
+-}
+-
+-func (t *ImplicitDirsTest) ImplicitBecomesExplicit() {
+-       var fi os.FileInfo
+-       var err error
+-
+-       // Set up an implicit directory.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/bar": "",
+-                       }))
+-
+-       // Stat it.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // Set up an explicit placeholder.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/": "",
+-                       }))
+-
+-       // Stat the directory again.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) ExplicitBecomesImplicit() {
+-       var fi os.FileInfo
+-       var err error
+-
+-       // Set up an explicit directory.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/":    "",
+-                               "foo/bar": "",
+-                       }))
+-
+-       // Stat it.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-
+-       // Remove the explicit placeholder.
+-       AssertEq(
+-               nil,
+-               bucket.DeleteObject(
+-                       ctx,
+-                       &gcs.DeleteObjectRequest{Name: "foo/"}))
+-
+-       // Stat the directory again.
+-       fi, err = os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) Rmdir_NotEmpty_OnlyImplicit() {
+-       var err error
+-
+-       // Set up an implicit directory.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/bar": "",
+-                       }))
+-
+-       // Attempt to remove it.
+-       err = os.Remove(path.Join(mntDir, "foo"))
+-
+-       AssertNe(nil, err)
+-       ExpectThat(err, Error(HasSubstr("not empty")))
+-
+-       // It should still be there.
+-       fi, err := os.Lstat(path.Join(mntDir, "foo"))
+-
+-       AssertEq(nil, err)
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) Rmdir_NotEmpty_ImplicitAndExplicit() {
+-       var err error
+-
+-       // Set up an implicit directory that also has a backing object.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/":    "",
+-                               "foo/bar": "",
+-                       }))
+-
+-       // Attempt to remove it.
+-       err = os.Remove(path.Join(mntDir, "foo"))
+-
+-       AssertNe(nil, err)
+-       ExpectThat(err, Error(HasSubstr("not empty")))
+-
+-       // It should still be there.
+-       fi, err := os.Lstat(path.Join(mntDir, "foo"))
+-
+-       AssertEq(nil, err)
+-       ExpectEq("foo", fi.Name())
+-       ExpectTrue(fi.IsDir())
+-}
+-
+-func (t *ImplicitDirsTest) Rmdir_Empty() {
+-       var err error
+-       var entries []os.FileInfo
+-
+-       // Create two levels of directories. We can't make an empty implicit dir, so
+-       // there must be a backing object for each.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               "foo/":     "",
+-                               "foo/bar/": "",
+-                       }))
+-
+-       // Remove the leaf.
+-       err = os.Remove(path.Join(mntDir, "foo/bar"))
+-       AssertEq(nil, err)
+-
+-       // There should be nothing left in the parent.
+-       entries, err = fusetesting.ReadDirPicky(path.Join(mntDir, "foo"))
+-
+-       AssertEq(nil, err)
+-       ExpectThat(entries, ElementsAre())
+-
+-       // Remove the parent.
+-       err = os.Remove(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       // Now the root directory should be empty, too.
+-       entries, err = fusetesting.ReadDirPicky(mntDir)
+-
+-       AssertEq(nil, err)
+-       ExpectThat(entries, ElementsAre())
+-}
+-
+-func (t *ImplicitDirsTest) AtimeCtimeAndMtime() {
+-       var err error
+-       mountTime := mtimeClock.Now()
+-
+-       // Create an implicit directory.
+-       AssertEq(
+-               nil,
+-               t.createObjects(
+-                       map[string]string{
+-                               // File
+-                               "foo/bar": "",
+-                       }))
+-
+-       // Stat it.
+-       fi, err := os.Stat(path.Join(mntDir, "foo"))
+-       AssertEq(nil, err)
+-
+-       // We require only that the times be "reasonable".
+-       atime, ctime, mtime := fusetesting.GetTimes(fi)
+-       const delta = 5 * time.Hour
+-
+-       ExpectThat(atime, timeutil.TimeNear(mountTime, delta))
+-       ExpectThat(ctime, timeutil.TimeNear(mountTime, delta))
+-       ExpectThat(mtime, timeutil.TimeNear(mountTime, delta))
+-}
++// func (t *ImplicitDirsTest) NothingPresent() {
++//     // ReadDir
++//     entries, err := fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++
++//     ExpectThat(entries, ElementsAre())
++// }
++
++// func (t *ImplicitDirsTest) FileObjectPresent() {
++//     var fi os.FileInfo
++//     var entries []os.FileInfo
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             // File
++//                             "foo": "taco",
++//                     }))
++
++//     // Statting the name should return an entry for the file.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectEq(4, fi.Size())
++//     ExpectFalse(fi.IsDir())
++
++//     // ReadDir should show the file.
++//     entries, err = fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++//     AssertEq(1, len(entries))
++
++//     fi = entries[0]
++//     ExpectEq("foo", fi.Name())
++//     ExpectEq(4, fi.Size())
++//     ExpectFalse(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) DirectoryObjectPresent() {
++//     var fi os.FileInfo
++//     var entries []os.FileInfo
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             // Directory
++//                             "foo/": "",
++//                     }))
++
++//     // Statting the name should return an entry for the directory.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // ReadDir should show the directory.
++//     entries, err = fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++//     AssertEq(1, len(entries))
++
++//     fi = entries[0]
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) ImplicitDirectory_DefinedByFile() {
++//     var fi os.FileInfo
++//     var entries []os.FileInfo
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/bar": "",
++//                     }))
++
++//     // Statting the name should return an entry for the directory.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // ReadDir should show the directory.
++//     entries, err = fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++//     AssertEq(1, len(entries))
++
++//     fi = entries[0]
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) ImplicitDirectory_DefinedByDirectory() {
++//     var fi os.FileInfo
++//     var entries []os.FileInfo
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/bar/": "",
++//                     }))
++
++//     // Statting the name should return an entry for the directory.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // ReadDir should show the directory.
++//     entries, err = fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++//     AssertEq(1, len(entries))
++
++//     fi = entries[0]
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) ConflictingNames_PlaceholderPresent() {
++//     var fi os.FileInfo
++//     var entries []os.FileInfo
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             // File
++//                             "foo": "taco",
++
++//                             // Directory
++//                             "foo/": "",
++//                     }))
++
++//     // A listing of the parent should contain a directory named "foo" and a
++//     // file named "foo\n".
++//     entries, err = fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++//     AssertEq(2, len(entries))
++
++//     fi = entries[0]
++//     ExpectEq("foo", fi.Name())
++//     ExpectEq(0, fi.Size())
++//     ExpectEq(dirPerms|os.ModeDir, fi.Mode())
++//     ExpectTrue(fi.IsDir())
++//     ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
++
++//     fi = entries[1]
++//     ExpectEq("foo\n", fi.Name())
++//     ExpectEq(len("taco"), fi.Size())
++//     ExpectEq(filePerms, fi.Mode())
++//     ExpectFalse(fi.IsDir())
++//     ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
++
++//     // Statting "foo" should yield the directory.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // Statting "foo\n" should yield the file.
++//     fi, err = os.Stat(path.Join(mntDir, "foo\n"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo\n", fi.Name())
++//     ExpectEq(len("taco"), fi.Size())
++//     ExpectFalse(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) ConflictingNames_PlaceholderNotPresent() {
++//     var fi os.FileInfo
++//     var entries []os.FileInfo
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             // File
++//                             "foo": "taco",
++
++//                             // Implicit directory
++//                             "foo/bar": "",
++//                     }))
++
++//     // A listing of the parent should contain a directory named "foo" and a
++//     // file named "foo\n".
++//     entries, err = fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++//     AssertEq(2, len(entries))
++
++//     fi = entries[0]
++//     ExpectEq("foo", fi.Name())
++//     ExpectEq(0, fi.Size())
++//     ExpectEq(dirPerms|os.ModeDir, fi.Mode())
++//     ExpectTrue(fi.IsDir())
++
++//     fi = entries[1]
++//     ExpectEq("foo\n", fi.Name())
++//     ExpectEq(len("taco"), fi.Size())
++//     ExpectEq(len("taco"), fi.Size())
++//     ExpectEq(filePerms, fi.Mode())
++//     ExpectFalse(fi.IsDir())
++//     ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
++
++//     // Statting "foo" should yield the directory.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // Statting "foo\n" should yield the file.
++//     fi, err = os.Stat(path.Join(mntDir, "foo\n"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo\n", fi.Name())
++//     ExpectEq(len("taco"), fi.Size())
++//     ExpectFalse(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) ConflictingNames_OneIsSymlink() {
++//     var fi os.FileInfo
++//     var entries []os.FileInfo
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             // Symlink
++//                             "foo": "",
++
++//                             // Directory
++//                             "foo/": "",
++//                     }))
++
++//     // Cause "foo" to look like a symlink.
++//     err = setSymlinkTarget(ctx, bucket, "foo", "")
++//     AssertEq(nil, err)
++
++//     // A listing of the parent should contain a directory named "foo" and a
++//     // symlink named "foo\n".
++//     entries, err = fusetesting.ReadDirPicky(mntDir)
++//     AssertEq(nil, err)
++//     AssertEq(2, len(entries))
++
++//     fi = entries[0]
++//     ExpectEq("foo", fi.Name())
++//     ExpectEq(0, fi.Size())
++//     ExpectEq(dirPerms|os.ModeDir, fi.Mode())
++//     ExpectTrue(fi.IsDir())
++//     ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
++
++//     fi = entries[1]
++//     ExpectEq("foo\n", fi.Name())
++//     ExpectEq(0, fi.Size())
++//     ExpectEq(filePerms|os.ModeSymlink, fi.Mode())
++//     ExpectFalse(fi.IsDir())
++//     ExpectEq(1, fi.Sys().(*syscall.Stat_t).Nlink)
++
++//     // Statting "foo" should yield the directory.
++//     fi, err = os.Lstat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // Statting "foo\n" should yield the symlink.
++//     fi, err = os.Lstat(path.Join(mntDir, "foo\n"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo\n", fi.Name())
++//     ExpectEq(filePerms|os.ModeSymlink, fi.Mode())
++// }
++
++// func (t *ImplicitDirsTest) StatUnknownName_NoOtherContents() {
++//     var err error
++
++//     // Stat an unknown name.
++//     _, err = os.Stat(path.Join(mntDir, "unknown"))
++//     ExpectTrue(os.IsNotExist(err), "err: %v", err)
++// }
++
++// func (t *ImplicitDirsTest) StatUnknownName_UnrelatedContents() {
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "bar": "",
++//                             "baz": "",
++//                     }))
++
++//     // Stat an unknown name.
++//     _, err = os.Stat(path.Join(mntDir, "foo"))
++//     ExpectTrue(os.IsNotExist(err), "err: %v", err)
++// }
++
++// func (t *ImplicitDirsTest) StatUnknownName_PrefixOfActualNames() {
++//     var err error
++
++//     // Set up contents.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foop":  "",
++//                             "fooq/": "",
++//                     }))
++
++//     // Stat an unknown name.
++//     _, err = os.Stat(path.Join(mntDir, "foo"))
++//     ExpectTrue(os.IsNotExist(err), "err: %v", err)
++// }
++
++// func (t *ImplicitDirsTest) ImplicitBecomesExplicit() {
++//     var fi os.FileInfo
++//     var err error
++
++//     // Set up an implicit directory.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/bar": "",
++//                     }))
++
++//     // Stat it.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // Set up an explicit placeholder.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/": "",
++//                     }))
++
++//     // Stat the directory again.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) ExplicitBecomesImplicit() {
++//     var fi os.FileInfo
++//     var err error
++
++//     // Set up an explicit directory.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/":    "",
++//                             "foo/bar": "",
++//                     }))
++
++//     // Stat it.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++
++//     // Remove the explicit placeholder.
++//     AssertEq(
++//             nil,
++//             bucket.DeleteObject(
++//                     ctx,
++//                     &gcs.DeleteObjectRequest{Name: "foo/"}))
++
++//     // Stat the directory again.
++//     fi, err = os.Stat(path.Join(mntDir, "foo"))
++//     AssertEq(nil, err)
++
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) Rmdir_NotEmpty_OnlyImplicit() {
++//     var err error
++
++//     // Set up an implicit directory.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/bar": "",
++//                     }))
++
++//     // Attempt to remove it.
++//     err = os.Remove(path.Join(mntDir, "foo"))
++
++//     AssertNe(nil, err)
++//     ExpectThat(err, Error(HasSubstr("not empty")))
++
++//     // It should still be there.
++//     fi, err := os.Lstat(path.Join(mntDir, "foo"))
++
++//     AssertEq(nil, err)
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) Rmdir_NotEmpty_ImplicitAndExplicit() {
++//     var err error
++
++//     // Set up an implicit directory that also has a backing object.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/":    "",
++//                             "foo/bar": "",
++//                     }))
++
++//     // Attempt to remove it.
++//     err = os.Remove(path.Join(mntDir, "foo"))
++
++//     AssertNe(nil, err)
++//     ExpectThat(err, Error(HasSubstr("not empty")))
++
++//     // It should still be there.
++//     fi, err := os.Lstat(path.Join(mntDir, "foo"))
++
++//     AssertEq(nil, err)
++//     ExpectEq("foo", fi.Name())
++//     ExpectTrue(fi.IsDir())
++// }
++
++// func (t *ImplicitDirsTest) Rmdir_Empty() {
++//     var err error
++//     var entries []os.FileInfo
++
++//     // Create two levels of directories. We can't make an empty implicit dir, so
++//     // there must be a backing object for each.
++//     AssertEq(
++//             nil,
++//             t.createObjects(
++//                     map[string]string{
++//                             "foo/":     "",
++//                             "foo/bar/": "",
++//                     }))
++
++//     // Remove the leaf.
++//     err = os.Remove(path.Join(mntDir, "foo/bar"))
++//     AssertEq(nil, err)
++
++//     // There should be nothing left in the parent.
++//     entries, err = fusetesting.ReadDirPicky(path.Join(mntDir, "foo"))
++
++//     AssertEq(nil, err)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff -G"^-" HEAD .                                                              
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff -G"^\-" HEAD .                                                             
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff HEAD .                                                                    
+diff --git a/internal/fs/implicit_dirs_test.go b/internal/fs/implicit_dirs_test.go
+index 91680bd23..6b42d595b 100644
+--- a/internal/fs/implicit_dirs_test.go
++++ b/internal/fs/implicit_dirs_test.go
+@@ -19,16 +19,13 @@
+ package fs_test
+ 
+ import (
+-       "os"
++       "fmt"
++       "io/fs"
+        "path"
+-       "syscall"
+-       "time"
++       "path/filepath"
+ 
+-       "github.com/googlecloudplatform/gcsfuse/v2/internal/storage/gcs"
+-       "github.com/jacobsa/fuse/fusetesting"
+-       . "github.com/jacobsa/oglematchers"
++       // . "github.com/jacobsa/oglematchers"
+        . "github.com/jacobsa/ogletest"
+-       "github.com/jacobsa/timeutil"
+ )
+ 
+ ////////////////////////////////////////////////////////////////////////
+@@ -52,581 +49,670 @@ func (t *ImplicitDirsTest) SetUpTestSuite() {
+ // Tests
+ ////////////////////////////////////////////////////////////////////////
+ 
+-func (t *ImplicitDirsTest) NothingPresent() {
+-       // ReadDir
+-       entries, err := fusetesting.ReadDirPicky(mntDir)
+-       AssertEq(nil, err)
+-
+-       ExpectThat(entries, ElementsAre())
+-}
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   (cached)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs# github.com/googlecloudplatform/gcsfuse/v2/internal/fs_test [github.com/googlecloudplatform/gcsfuse/v2/internal/fs.test]
+internal/fs/implicit_dirs_test.go:58:3: non-name t.serverCfg.MountConfig on left side of :=
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/internal/fs [build failed]
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fsok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.061s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fsok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.049s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fsok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   (cached)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 1m -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs 
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.053s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 1m -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   (cached)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 1m -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+[----------] Running tests from ImplicitDirsTest
+{"timestamp":{"seconds":1715186896,"nanos":944475108},"severity":"INFO","message":"Set up root directory for bucket some_bucket"}
+[ RUN      ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+Running test..
+WalkFn called with path=/tmp/fs_test2011630119,dirEntry=fs.dirInfo{fileInfo:(*os.fileStat)(0xc00019bd40)},err=<nil>
+WalkFn called with path=/tmp/fs_test2011630119,dirEntry=fs.dirInfo{fileInfo:(*os.fileStat)(0xc00019bd40)},err=&fs.PathError{Op:"readdirent", Path:"/tmp/fs_test2011630119", Err:0x5}
+WalkFn called with path=/tmp/fs_test2011630119,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2011630119", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2011630119,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2011630119", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=&fs.PathError{Op:"readdirent", Path:"/tmp/fs_test2011630119", Err:0x5}
+WalkFn called with path=/tmp/fs_test2011630119,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2011630119", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2011630119,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2011630119", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=&fs.PathError{Op:"readdirent", Path:"/tmp/fs_test2011630119", Err:0x5}
+WalkFn called with path=/tmp/fs_test2011630119,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2011630119", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2011630119,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2011630119", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=&fs.PathError{Op:"readdirent", Path:"/tmp/fs_test2011630119", Err:0x5}
+WalkFn called with path=/tmp/fs_test2011630119,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2011630119", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test2011630119,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2011630119", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=&fs.PathError{Op:"readdirent", Path:"/tmp/fs_test2011630119", Err:0x5}
+WalkFn called with path=/tmp/fs_test2011630119,dirEntry=&os.unixDirent{parent:"/tmp/fs_test2011630119", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+implicit_dirs_test.go:677:
+Expected: is nil
+Actual:   walk went too deep
+
+[  FAILED  ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+[----------] Finished with tests from ImplicitDirsTest
+--- FAIL: TestFS (0.01s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.055s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 1m -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+[----------] Running tests from ImplicitDirsTest
+{"timestamp":{"seconds":1715186937,"nanos":170521577},"severity":"INFO","message":"Set up root directory for bucket some_bucket"}
+[ RUN      ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+Running test..
+WalkFn called with path=/tmp/fs_test3785021644,dirEntry=fs.dirInfo{fileInfo:(*os.fileStat)(0xc000a92000)},err=<nil>
+WalkFn called with path=/tmp/fs_test3785021644/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test3785021644", name:"foo", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test3785021644/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test3785021644/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test3785021644/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test3785021644/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test3785021644/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test3785021644/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test3785021644/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test3785021644/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test3785021644/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test3785021644/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test3785021644/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test3785021644/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test3785021644/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test3785021644/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test3785021644/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test3785021644/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test3785021644/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test3785021644/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+{"timestamp":{"seconds":1715186937,"nanos":188785984},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715186937,"nanos":191401972},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715186937,"nanos":192380215},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+implicit_dirs_test.go:677:
+Expected: is nil
+Actual:   walk went too deep
+
+[  FAILED  ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+[----------] Finished with tests from ImplicitDirsTest
+--- FAIL: TestFS (0.03s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.069s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 1m -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+[----------] Running tests from ImplicitDirsTest
+{"timestamp":{"seconds":1715187865,"nanos":496840117},"severity":"INFO","message":"Set up root directory for bucket some_bucket"}
+[ RUN      ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+Running test..
+WalkFn called with path=/tmp/fs_test147828246,dirEntry=fs.dirInfo{fileInfo:(*os.fileStat)(0xc00011a0d0)},err=<nil>
+WalkFn called with path=/tmp/fs_test147828246/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test147828246", name:"foo", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test147828246/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test147828246/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test147828246/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test147828246/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test147828246/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test147828246/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test147828246/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test147828246/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test147828246/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test147828246/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test147828246/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test147828246/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test147828246/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test147828246/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test147828246/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test147828246/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+WalkFn called with path=/tmp/fs_test147828246/foo,dirEntry=&os.unixDirent{parent:"/tmp/fs_test147828246/foo", name:"", typ:0x80000000, info:fs.FileInfo(nil)},err=<nil>
+{"timestamp":{"seconds":1715187865,"nanos":511438417},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715187865,"nanos":514631352},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+{"timestamp":{"seconds":1715187865,"nanos":515604533},"severity":"ERROR","message":"fuse_errors: *fuseops.RmDirOp error: directory not empty"}
+implicit_dirs_test.go:677:
+Expected: is nil
+Actual:   walk went too deep
+
+[  FAILED  ] ImplicitDirsTest.UnsupportedDirNames_WalkDirPath
+[----------] Finished with tests from ImplicitDirsTest
+--- FAIL: TestFS (0.03s)
+FAIL
+FAIL    github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.069s
+FAIL
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 1m -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.062s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ cd /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts        
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ ls
+go.mod  go.sum  parse_dlio_outputs  test.go  test.py  utils
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ which dlv
+/usr/local/google/home/gargnitin/go/bin/dlv
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ source ~/.bash_aliases
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ which dlv
+/usr/local/google/home/gargnitin/go/bin/dlv
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi ~/.bash_aliases +/dlv
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ genericAliases 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ type dlv
+dlv is aliased to `~/go/bin/dlv --check-go-version=false --init <(config source-list-line-count 20)'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ dlv . 
+Command config not found
+Error: unknown command "." for "dlv"
+Run 'dlv --help' for usage.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ dlv debug .
+Command config not found
+^C
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ type dlv
+dlv is aliased to `~/go/bin/dlv --check-go-version=false --init <(config source-list-line-count 20)'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi ~/.bash_aliases +/dlv                    
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ source ~/.bash_aliases                      
+bash: /usr/local/google/home/gargnitin/.bash_aliases: line 171: syntax error near unexpected token `<'
+bash: /usr/local/google/home/gargnitin/.bash_aliases: line 171: `#              echo "mountGcsfuse: at least one argument is required: <gcsfuse-mount-path> <bucket-name-to-be-mounted> <options>"'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi ~/.bash_aliases +:171
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi ~/.bash_aliases +:171
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ source ~/.bash_aliases                                   
+bash: /usr/local/google/home/gargnitin/.bash_aliases: line 171: syntax error near unexpected token `<'
+bash: /usr/local/google/home/gargnitin/.bash_aliases: line 171: `#              echo "mountGcsfuse: at least one argument is required: <gcsfuse-mount-path> <
+bucket-name-to-be-mounted> <options>"'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ git diff HEAD ~/.bash_aliases                            
+diff --git a/.bash_aliases b/.bash_aliases
+index ce7fc6f..0e7322f 100644
+--- a/.bash_aliases
++++ b/.bash_aliases
+@@ -9,7 +9,8 @@ function genericAliases() {
+        alias aliases='vi ~/.bash_aliases'
+        alias bashrc='vi ~/.bashrc'
+        alias cls='clear'
+-        alias dlv='~/go/bin/dlv --check-go-version=false --init <(config source-list-line-count 20)'
++        # alias dlv='~/go/bin/dlv --check-go-version=false --init <(config source-list-line-count 20)'
++        alias dlv='~/go/bin/dlv --check-go-version=false 
+        alias goctl='/google/bin/releases/golinks/goctl/goctl.par'
+        alias htop='htop -u $USER -t'
+        alias install='sudo apt-get -y install'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi ~/.bash_aliases +/dlv                                   
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ source ~/.bash_aliases                              
+bash: /usr/local/google/home/gargnitin/.bash_aliases: line 171: syntax error near unexpected token `<'
+bash: /usr/local/google/home/gargnitin/.bash_aliases: line 171: `#              echo "mountGcsfuse: at least one argument is required: <gcsfuse-mount-path> <bucket-name-to-be-mounted> <options>"'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ git diff HEAD ~/.bash_aliases
+diff --git a/.bash_aliases b/.bash_aliases
+index ce7fc6f..0364cc6 100644
+--- a/.bash_aliases
++++ b/.bash_aliases
+@@ -9,7 +9,8 @@ function genericAliases() {
+        alias aliases='vi ~/.bash_aliases'
+        alias bashrc='vi ~/.bashrc'
+        alias cls='clear'
+-        alias dlv='~/go/bin/dlv --check-go-version=false --init <(config source-list-line-count 20)'
++        # alias dlv='~/go/bin/dlv --check-go-version=false --init <(config source-list-line-count 20)'
++        alias dlv='~/go/bin/dlv --check-go-version=false"
+        alias goctl='/google/bin/releases/golinks/goctl/goctl.par'
+        alias htop='htop -u $USER -t'
+        alias install='sudo apt-get -y install'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi ~/.bash_aliases +/dlv                            
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ source ~/.bash_aliases                              
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ type dlv
+dlv is aliased to `~/go/bin/dlv --check-go-version=false'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ dlv debug .                                              
+WARNING: undefined behavior - Go version go0.0 is too old for this version of Delve (minimum supported version 1.19)
+Type 'help' for list of commands.
+(dlv) b main.main^C
+(dlv) bp 
+Breakpoint runtime-fatal-throw (enabled) at 0x444324,0x45cace,0x444244 for (multiple functions)() <multiple locations>:0 (0)
+Breakpoint unrecovered-panic (enabled) at 0x4447e4 for runtime.fatalpanic() /usr/lib/google-golang/src/runtime/panic.go:1219 (0)
+        print runtime.curg._panic.arg
+(dlv) b main.main
+Breakpoint 1 set at 0xdfedf3 for main.main() ./test.go:39
+(dlv) r
+Process restarted with PID 1467671
+(dlv) c
+> main.main() ./test.go:39 (hits goroutine(1):1 total:1) (PC: 0xdfedf3)
+    34:         }
+    35:
+    36:         return err
+    37: }
+    38:
+=>  39: func main() {
+    40:         // fmt.Println("hello world")
+    41:         // path := "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/"
+    42:         // f = open(file=path+"\\0", mode="rb")
+    43:         // bytes = f.read(1)
+    44:         // fmt.Println(str(bytes))
+(dlv) config source-list-line-count 20
+(dlv) n
+> main.main() ./test.go:45 (PC: 0xdfedfa)
+    25:         if oh == nil {
+    26:                 return fmt.Errorf("failed to created object-handle")
+    27:         }
+    28:
+    29:         writer := oh.NewWriter(ctx)
+    30:         content := []byte(string("ABCDE"))
+    31:         n, err := writer.Write(content)
+    32:         if n != len(content) || err != nil {
+    33:                 return fmt.Errorf("failed to write to object. expected: %#v, actual: %#v, error: %w", n, len(content), err)
+    34:         }
+    35:
+    36:         return err
+    37: }
+    38:
+    39: func main() {
+    40:         // fmt.Println("hello world")
+    41:         // path := "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/"
+    42:         // f = open(file=path+"\\0", mode="rb")
+    43:         // bytes = f.read(1)
+    44:         // fmt.Println(str(bytes))
+=>  45:         bucket := "gargnitin-test-empty-dirname-asia-se1"
+    46:         object := "\000"
+    47:
+    48:         // command := []string{"gsutil", "cp", path + "0", "gs://" + bucket + "/" + object}
+    49:
+    50:         // command=["gsutil","cp",f"{path}0",f"gs://{bucket}/0"]
+    51:         // output=subprocess.run(command,capture_output=True,text=True)
+    52:         // fmt.Println(f'An error occurred in running ${command}: ${output}\n')
+    53:         // fmt.Println(output,'\n')
+    54:         // fmt.Println('moving on...\n')
+    55:
+    56:         // cmd := exec.Command("/bin/sh", append([]string{"-c"}, command...)...)
+    57:         // stdout, err := cmd.Output()
+    58:         // if err != nil {
+    59:         //      fmt.Println(err.Error())
+    60:         //      return
+    61:         // }
+    62:
+    63:         // // Print the output
+    64:         // fmt.Println(string(stdout))
+    65:
+(dlv) 
+> main.main() ./test.go:46 (PC: 0xdfee0f)
+    26:                 return fmt.Errorf("failed to created object-handle")
+    27:         }
+    28:
+    29:         writer := oh.NewWriter(ctx)
+    30:         content := []byte(string("ABCDE"))
+    31:         n, err := writer.Write(content)
+    32:         if n != len(content) || err != nil {
+    33:                 return fmt.Errorf("failed to write to object. expected: %#v, actual: %#v, error: %w", n, len(content), err)
+    34:         }
+    35:
+    36:         return err
+    37: }
+    38:
+    39: func main() {
+    40:         // fmt.Println("hello world")
+    41:         // path := "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/"
+    42:         // f = open(file=path+"\\0", mode="rb")
+    43:         // bytes = f.read(1)
+    44:         // fmt.Println(str(bytes))
+    45:         bucket := "gargnitin-test-empty-dirname-asia-se1"
+=>  46:         object := "\000"
+    47:
+    48:         // command := []string{"gsutil", "cp", path + "0", "gs://" + bucket + "/" + object}
+    49:
+    50:         // command=["gsutil","cp",f"{path}0",f"gs://{bucket}/0"]
+    51:         // output=subprocess.run(command,capture_output=True,text=True)
+    52:         // fmt.Println(f'An error occurred in running ${command}: ${output}\n')
+    53:         // fmt.Println(output,'\n')
+    54:         // fmt.Println('moving on...\n')
+    55:
+    56:         // cmd := exec.Command("/bin/sh", append([]string{"-c"}, command...)...)
+    57:         // stdout, err := cmd.Output()
+    58:         // if err != nil {
+    59:         //      fmt.Println(err.Error())
+    60:         //      return
+    61:         // }
+    62:
+    63:         // // Print the output
+    64:         // fmt.Println(string(stdout))
+    65:
+    66:         if err := createObject(bucket, object); err != nil {
+(dlv) 
+> main.main() ./test.go:66 (PC: 0xdfee24)
+    46:         object := "\000"
+    47:
+    48:         // command := []string{"gsutil", "cp", path + "0", "gs://" + bucket + "/" + object}
+    49:
+    50:         // command=["gsutil","cp",f"{path}0",f"gs://{bucket}/0"]
+    51:         // output=subprocess.run(command,capture_output=True,text=True)
+    52:         // fmt.Println(f'An error occurred in running ${command}: ${output}\n')
+    53:         // fmt.Println(output,'\n')
+    54:         // fmt.Println('moving on...\n')
+    55:
+    56:         // cmd := exec.Command("/bin/sh", append([]string{"-c"}, command...)...)
+    57:         // stdout, err := cmd.Output()
+    58:         // if err != nil {
+    59:         //      fmt.Println(err.Error())
+    60:         //      return
+    61:         // }
+    62:
+    63:         // // Print the output
+    64:         // fmt.Println(string(stdout))
+    65:
+=>  66:         if err := createObject(bucket, object); err != nil {
+    67:                 fmt.Printf("failed to create object: %v\n", err)
+    68:         }
+    69: }
+(dlv) s
+> main.createObject() ./test.go:10 (PC: 0xdfe7f6)
+     1: package main
+     2:
+     3: import (
+     4:         "context"
+     5:         "fmt"
+     6:
+     7:         "cloud.google.com/go/storage"
+     8: )
+     9:
+=>  10: func createObject(bucket, object string) error {
+    11:         ctx := context.Background()
+    12:
+    13:         client, err := storage.NewClient(ctx)
+    14:         if err != nil {
+    15:                 // TODO: Handle error.
+    16:                 return fmt.Errorf("failed to created client: %w", err)
+    17:         }
+    18:
+    19:         bh := client.Bucket(bucket)
+    20:         if bh == nil {
+    21:                 return fmt.Errorf("failed to created bucket-handle")
+    22:         }
+    23:
+    24:         oh := bh.Object(object)
+    25:         if oh == nil {
+    26:                 return fmt.Errorf("failed to created object-handle")
+    27:         }
+    28:
+    29:         writer := oh.NewWriter(ctx)
+    30:         content := []byte(string("ABCDE"))
+(dlv) n
+> main.createObject() ./test.go:11 (PC: 0xdfe823)
+     1: package main
+     2:
+     3: import (
+     4:         "context"
+     5:         "fmt"
+     6:
+     7:         "cloud.google.com/go/storage"
+     8: )
+     9:
+    10: func createObject(bucket, object string) error {
+=>  11:         ctx := context.Background()
+    12:
+    13:         client, err := storage.NewClient(ctx)
+    14:         if err != nil {
+    15:                 // TODO: Handle error.
+    16:                 return fmt.Errorf("failed to created client: %w", err)
+    17:         }
+    18:
+    19:         bh := client.Bucket(bucket)
+    20:         if bh == nil {
+    21:                 return fmt.Errorf("failed to created bucket-handle")
+    22:         }
+    23:
+    24:         oh := bh.Object(object)
+    25:         if oh == nil {
+    26:                 return fmt.Errorf("failed to created object-handle")
+    27:         }
+    28:
+    29:         writer := oh.NewWriter(ctx)
+    30:         content := []byte(string("ABCDE"))
+    31:         n, err := writer.Write(content)
+(dlv) 
+> main.createObject() ./test.go:13 (PC: 0xdfe835)
+     1: package main
+     2:
+     3: import (
+     4:         "context"
+     5:         "fmt"
+     6:
+     7:         "cloud.google.com/go/storage"
+     8: )
+     9:
+    10: func createObject(bucket, object string) error {
+    11:         ctx := context.Background()
+    12:
+=>  13:         client, err := storage.NewClient(ctx)
+    14:         if err != nil {
+    15:                 // TODO: Handle error.
+    16:                 return fmt.Errorf("failed to created client: %w", err)
+    17:         }
+    18:
+    19:         bh := client.Bucket(bucket)
+    20:         if bh == nil {
+    21:                 return fmt.Errorf("failed to created bucket-handle")
+    22:         }
+    23:
+    24:         oh := bh.Object(object)
+    25:         if oh == nil {
+    26:                 return fmt.Errorf("failed to created object-handle")
+    27:         }
+    28:
+    29:         writer := oh.NewWriter(ctx)
+    30:         content := []byte(string("ABCDE"))
+    31:         n, err := writer.Write(content)
+    32:         if n != len(content) || err != nil {
+    33:                 return fmt.Errorf("failed to write to object. expected: %#v, actual: %#v, error: %w", n, len(content), err)
+(dlv) 
+> main.createObject() ./test.go:14 (PC: 0xdfe8d7)
+     1: package main
+     2:
+     3: import (
+     4:         "context"
+     5:         "fmt"
+     6:
+     7:         "cloud.google.com/go/storage"
+     8: )
+     9:
+    10: func createObject(bucket, object string) error {
+    11:         ctx := context.Background()
+    12:
+    13:         client, err := storage.NewClient(ctx)
+=>  14:         if err != nil {
+    15:                 // TODO: Handle error.
+    16:                 return fmt.Errorf("failed to created client: %w", err)
+    17:         }
+    18:
+    19:         bh := client.Bucket(bucket)
+    20:         if bh == nil {
+    21:                 return fmt.Errorf("failed to created bucket-handle")
+    22:         }
+    23:
+    24:         oh := bh.Object(object)
+    25:         if oh == nil {
+    26:                 return fmt.Errorf("failed to created object-handle")
+    27:         }
+    28:
+    29:         writer := oh.NewWriter(ctx)
+    30:         content := []byte(string("ABCDE"))
+    31:         n, err := writer.Write(content)
+    32:         if n != len(content) || err != nil {
+    33:                 return fmt.Errorf("failed to write to object. expected: %#v, actual: %#v, error: %w", n, len(content), err)
+    34:         }
+(dlv) 
+> main.createObject() ./test.go:19 (PC: 0xdfe9ee)
+     1: package main
+     2:
+     3: import (
+     4:         "context"
+     5:         "fmt"
+     6:
+     7:         "cloud.google.com/go/storage"
+     8: )
+     9:
+    10: func createObject(bucket, object string) error {
+    11:         ctx := context.Background()
+    12:
+    13:         client, err := storage.NewClient(ctx)
+    14:         if err != nil {
+    15:                 // TODO: Handle error.
+    16:                 return fmt.Errorf("failed to created client: %w", err)
+    17:         }
+    18:
+=>  19:         bh := client.Bucket(bucket)
+    20:         if bh == nil {
+    21:                 return fmt.Errorf("failed to created bucket-handle")
+    22:         }
+    23:
+    24:         oh := bh.Object(object)
+    25:         if oh == nil {
+    26:                 return fmt.Errorf("failed to created object-handle")
+    27:         }
+    28:
+    29:         writer := oh.NewWriter(ctx)
+    30:         content := []byte(string("ABCDE"))
+    31:         n, err := writer.Write(content)
+    32:         if n != len(content) || err != nil {
+    33:                 return fmt.Errorf("failed to write to object. expected: %#v, actual: %#v, error: %w", n, len(content), err)
+    34:         }
+    35:
+    36:         return err
+    37: }
+    38:
+    39: func main() {
+(dlv) 
+> main.createObject() ./test.go:20 (PC: 0xdfea13)
+     1: package main
+     2:
+     3: import (
+     4:         "context"
+     5:         "fmt"
+     6:
+     7:         "cloud.google.com/go/storage"
+     8: )
+     9:
+    10: func createObject(bucket, object string) error {
+    11:         ctx := context.Background()
+    12:
+    13:         client, err := storage.NewClient(ctx)
+    14:         if err != nil {
+    15:                 // TODO: Handle error.
+    16:                 return fmt.Errorf("failed to created client: %w", err)
+    17:         }
+    18:
+    19:         bh := client.Bucket(bucket)
+=>  20:         if bh == nil {
+    21:                 return fmt.Errorf("failed to created bucket-handle")
+    22:         }
+    23:
+    24:         oh := bh.Object(object)
+    25:         if oh == nil {
+    26:                 return fmt.Errorf("failed to created object-handle")
+    27:         }
+    28:
+    29:         writer := oh.NewWriter(ctx)
+    30:         content := []byte(string("ABCDE"))
+    31:         n, err := writer.Write(content)
+    32:         if n != len(content) || err != nil {
+    33:                 return fmt.Errorf("failed to write to object. expected: %#v, actual: %#v, error: %w", n, len(content), err)
+    34:         }
+    35:
+    36:         return err
+    37: }
+    38:
+    39: func main() {
+    40:         // fmt.Println("hello world")
+(dlv) 
+> main.createObject() ./test.go:24 (PC: 0xdfea1d)
+     4:         "context"
+     5:         "fmt"
+     6:
+     7:         "cloud.google.com/go/storage"
+     8: )
+     9:
+    10: func createObject(bucket, object string) error {
+    11:         ctx := context.Background()
+    12:
+    13:         client, err := storage.NewClient(ctx)
+    14:         if err != nil {
+    15:                 // TODO: Handle error.
+    16:                 return fmt.Errorf("failed to created client: %w", err)
+    17:         }
+    18:
+    19:         bh := client.Bucket(bucket)
+    20:         if bh == nil {
+    21:                 return fmt.Errorf("failed to created bucket-handle")
+    22:         }
+    23:
+=>  24:         oh := bh.Object(object)
+    25:         if oh == nil {
+    26:                 return fmt.Errorf("failed to created object-handle")
+    27:         }
+    28:
+    29:         writer := oh.NewWriter(ctx)
+    30:         content := []byte(string("ABCDE"))
+    31:         n, err := writer.Write(content)
+    32:         if n != len(content) || err != nil {
+    33:                 return fmt.Errorf("failed to write to object. expected: %#v, actual: %#v, error: %w", n, len(content), err)
+    34:         }
+    35:
+    36:         return err
+    37: }
+    38:
+    39: func main() {
+    40:         // fmt.Println("hello world")
+    41:         // path := "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/"
+    42:         // f = open(file=path+"\\0", mode="rb")
+    43:         // bytes = f.read(1)
+    44:         // fmt.Println(str(bytes))
+(dlv) 
+> main.createObject() ./test.go:25 (PC: 0xdfea37)
+     5:         "fmt"
+     6:
+     7:         "cloud.google.com/go/storage"
+     8: )
+     9:
+    10: func createObject(bucket, object string) error {
+    11:         ctx := context.Background()
+    12:
+    13:         client, err := storage.NewClient(ctx)
+    14:         if err != nil {
+    15:                 // TODO: Handle error.
+    16:                 return fmt.Errorf("failed to created client: %w", err)
+    17:         }
+    18:
+    19:         bh := client.Bucket(bucket)
+    20:         if bh == nil {
+    21:                 return fmt.Errorf("failed to created bucket-handle")
+    22:         }
+    23:
+    24:         oh := bh.Object(object)
+=>  25:         if oh == nil {
+    26:                 return fmt.Errorf("failed to created object-handle")
+    27:         }
+    28:
+    29:         writer := oh.NewWriter(ctx)
+    30:         content := []byte(string("ABCDE"))
+    31:         n, err := writer.Write(content)
+    32:         if n != len(content) || err != nil {
+    33:                 return fmt.Errorf("failed to write to object. expected: %#v, actual: %#v, error: %w", n, len(content), err)
+    34:         }
+    35:
+    36:         return err
+    37: }
+    38:
+    39: func main() {
+    40:         // fmt.Println("hello world")
+    41:         // path := "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/"
+    42:         // f = open(file=path+"\\0", mode="rb")
+    43:         // bytes = f.read(1)
+    44:         // fmt.Println(str(bytes))
+    45:         bucket := "gargnitin-test-empty-dirname-asia-se1"
+(dlv) 
+> main.createObject() ./test.go:29 (PC: 0xdfea45)
+     9:
+    10: func createObject(bucket, object string) error {
+    11:         ctx := context.Background()
+    12:
+    13:         client, err := storage.NewClient(ctx)
+    14:         if err != nil {
+    15:                 // TODO: Handle error.
+    16:                 return fmt.Errorf("failed to created client: %w", err)
+    17:         }
+    18:
+    19:         bh := client.Bucket(bucket)
+    20:         if bh == nil {
+    21:                 return fmt.Errorf("failed to created bucket-handle")
+    22:         }
+    23:
+    24:         oh := bh.Object(object)
+    25:         if oh == nil {
+    26:                 return fmt.Errorf("failed to created object-handle")
+    27:         }
+    28:
+=>  29:         writer := oh.NewWriter(ctx)
+    30:         content := []byte(string("ABCDE"))
+    31:         n, err := writer.Write(content)
+    32:         if n != len(content) || err != nil {
+    33:                 return fmt.Errorf("failed to write to object. expected: %#v, actual: %#v, error: %w", n, len(content), err)
+    34:         }
+    35:
+    36:         return err
+    37: }
+    38:
+    39: func main() {
+    40:         // fmt.Println("hello world")
+    41:         // path := "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/"
+    42:         // f = open(file=path+"\\0", mode="rb")
+    43:         // bytes = f.read(1)
+    44:         // fmt.Println(str(bytes))
+    45:         bucket := "gargnitin-test-empty-dirname-asia-se1"
+    46:         object := "\000"
+    47:
+    48:         // command := []string{"gsutil", "cp", path + "0", "gs://" + bucket + "/" + object}
+    49:
+(dlv) p oh
+("*cloud.google.com/go/storage.ObjectHandle")(0xc00044c0c0)
+*cloud.google.com/go/storage.ObjectHandle {
+        c: *cloud.google.com/go/storage.Client {
+                hc: *(*"net/http.Client")(0xc0004372c0),
+                raw: *(*"google.golang.org/api/storage/v1.Service")(0xc0004467e0),
+                scheme: "https",
+                xmlHost: "storage.googleapis.com",
+                creds: *(*"golang.org/x/oauth2/google.Credentials")(0xc0000ff180),
+                retry: *cloud.google.com/go/storage.retryConfig nil,
+                tc: (unreadable invalid interface type),
+                useGRPC: false,},
+        bucket: "gargnitin-test-empty-dirname-asia-se1",
+        object: "\x00",
+        acl: cloud.google.com/go/storage.ACLHandle {
+                c: *(*"cloud.google.com/go/storage.Client")(0xc000434540),
+                bucket: "gargnitin-test-empty-dirname-asia-se1",
+                object: "\x00",
+                isDefault: false,
+                userProject: "",
+                retry: *cloud.google.com/go/storage.retryConfig nil,},
+        gen: -1,
+        conds: *cloud.google.com/go/storage.Conditions nil,
+        encryptionKey: []uint8 len: 0, cap: 0, nil,
+        userProject: "",
+        readCompressed: false,
+        retry: *cloud.google.com/go/storage.retryConfig nil,
+        overrideRetention: *bool nil,}
+(dlv) n
+> main.createObject() ./test.go:30 (PC: 0xdfea5c)
+    10: func createObject(bucket, object string) error {
+    11:         ctx := context.Background()
+    12:
+    13:         client, err := storage.NewClient(ctx)
+    14:         if err != nil {
+    15:                 // TODO: Handle error.
+    16:                 return fmt.Errorf("failed to created client: %w", err)
+    17:         }
+    18:
+    19:         bh := client.Bucket(bucket)
+    20:         if bh == nil {
+    21:                 return fmt.Errorf("failed to created bucket-handle")
+    22:         }
+    23:
+    24:         oh := bh.Object(object)
+    25:         if oh == nil {
+    26:                 return fmt.Errorf("failed to created object-handle")
+    27:         }
+    28:
+    29:         writer := oh.NewWriter(ctx)
+=>  30:         content := []byte(string("ABCDE"))
+    31:         n, err := writer.Write(content)
+    32:         if n != len(content) || err != nil {
+    33:                 return fmt.Errorf("failed to write to object. expected: %#v, actual: %#v, error: %w", n, len(content), err)
+    34:         }
+    35:
+    36:         return err
+    37: }
+    38:
+    39: func main() {
+    40:         // fmt.Println("hello world")
+    41:         // path := "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/"
+    42:         // f = open(file=path+"\\0", mode="rb")
+    43:         // bytes = f.read(1)
+    44:         // fmt.Println(str(bytes))
+    45:         bucket := "gargnitin-test-empty-dirname-asia-se1"
+    46:         object := "\000"
+    47:
+    48:         // command := []string{"gsutil", "cp", path + "0", "gs://" + bucket + "/" + object}
+    49:
+    50:         // command=["gsutil","cp",f"{path}0",f"gs://{bucket}/0"]
+(dlv) p writer
+Sending output to pager...
+("*cloud.google.com/go/storage.Writer")(0xc0001bd688)
+*cloud.google.com/go/storage.Writer {
+        ObjectAttrs: cloud.google.com/go/storage.ObjectAttrs {
+                Bucket: "",
+                Name: "\x00",
+                ContentType: "",
+                ContentLanguage: "",
+                CacheControl: "",
+                EventBasedHold: false,
+                TemporaryHold: false,
+                RetentionExpirationTime: (*time.Time)(0xc0001bd6e0),
+                ACL: []cloud.google.com/go/storage.ACLRule len: 0, cap: 0, nil,
+                PredefinedACL: "",
+                Owner: "",
+                Size: 0,
+                ContentEncoding: "",
+                ContentDisposition: "",
+                MD5: []uint8 len: 0, cap: 0, nil,
+                CRC32C: 0,
+                MediaLink: "",
+                Metadata: map[string]string nil,
+                Generation: 0,
+                Metageneration: 0,
+                StorageClass: "",
+                Created: (*time.Time)(0xc0001bd7b0),
+                Deleted: (*time.Time)(0xc0001bd7c8),
+                Updated: (*time.Time)(0xc0001bd7e0),
+                CustomerKeySHA256: "",
+                KMSKeyName: "",
+                Prefix: "",
+                Etag: "",
+                CustomTime: (*time.Time)(0xc0001bd838),
+                ComponentCount: 0,
+                Retention: *cloud.google.com/go/storage.ObjectRetention nil,},
+        SendCRC32C: false,
+        ChunkSize: 16777216,
+        ChunkRetryDeadline: 0,
+        ForceEmptyContentType: false,
+        ProgressFunc: nil,
+        ctx: (unreadable invalid interface type),
+        o: *cloud.google.com/go/storage.ObjectHandle {
+                c: *(*"cloud.google.com/go/storage.Client")(0xc000434540),
+                bucket: "gargnitin-test-empty-dirname-asia-se1",
+                object: "\x00",
+                acl: (*"cloud.google.com/go/storage.ACLHandle")(0xc00044c0e8),
+                gen: -1,
+                conds: *cloud.google.com/go/storage.Conditions nil,
+                encryptionKey: []uint8 len: 0, cap: 0, nil,
+                userProject: "",
+                readCompressed: false,
+                retry: *cloud.google.com/go/storage.retryConfig nil,
+                overrideRetention: *bool nil,},
+        opened: false,
+        pw: *io.PipeWriter nil,
+        donec: chan struct {} {
+                qcount: 0,
+                dataqsiz: 0,
+                buf: *[0]struct struct {} [],
+                elemsize: 0,
+                closed: 0,
+                timer: *runtime.timer nil,
+                elemtype: *internal/abi.Type {Size_: 0, PtrBytes: 0, Hash: 3842252374, TFlag: TFlagExtraStar|TFlagRegularMemory (10), Align_: 1, FieldAlign_:
+ 1, Kind_: internal/reflectlite.Struct (25), Equal: runtime.memequal0, GCData: *0, Str: 35931, PtrToThis: 0},
+                sendx: 0,
+                recvx: 0,
+                recvq: waitq<struct {}> {
+                        first: *sudog<struct {}> nil,
+                        last: *sudog<struct {}> nil,},
+                sendq: waitq<struct {}> {
+                        first: *sudog<struct {}> nil,
+                        last: *sudog<struct {}> nil,},
+                lock: runtime.mutex {
+                        lockRankStruct: runtime.lockRankStruct {},
+(dlv) l
+> main.createObject() ./test.go:30 (PC: 0xdfea5c)
+    10: func createObject(bucket, object string) error {
+    11:         ctx := context.Background()
+    12:
+    13:         client, err := storage.NewClient(ctx)
+    14:         if err != nil {
+    15:                 // TODO: Handle error.
+    16:                 return fmt.Errorf("failed to created client: %w", err)
+    17:         }
+    18:
+    19:         bh := client.Bucket(bucket)
+    20:         if bh == nil {
+    21:                 return fmt.Errorf("failed to created bucket-handle")
+    22:         }
+    23:
+    24:         oh := bh.Object(object)
+    25:         if oh == nil {
+    26:                 return fmt.Errorf("failed to created object-handle")
+    27:         }
+    28:
+    29:         writer := oh.NewWriter(ctx)
+=>  30:         content := []byte(string("ABCDE"))
+    31:         n, err := writer.Write(content)
+    32:         if n != len(content) || err != nil {
+    33:                 return fmt.Errorf("failed to write to object. expected: %#v, actual: %#v, error: %w", n, len(content), err)
+    34:         }
+    35:
+    36:         return err
+    37: }
+    38:
+    39: func main() {
+    40:         // fmt.Println("hello world")
+    41:         // path := "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/"
+    42:         // f = open(file=path+"\\0", mode="rb")
+    43:         // bytes = f.read(1)
+    44:         // fmt.Println(str(bytes))
+    45:         bucket := "gargnitin-test-empty-dirname-asia-se1"
+    46:         object := "\000"
+    47:
+    48:         // command := []string{"gsutil", "cp", path + "0", "gs://" + bucket + "/" + object}
+    49:
+    50:         // command=["gsutil","cp",f"{path}0",f"gs://{bucket}/0"]
+(dlv) n
+> main.createObject() ./test.go:31 (PC: 0xdfeaa6)
+    11:         ctx := context.Background()
+    12:
+    13:         client, err := storage.NewClient(ctx)
+    14:         if err != nil {
+    15:                 // TODO: Handle error.
+    16:                 return fmt.Errorf("failed to created client: %w", err)
+    17:         }
+    18:
+    19:         bh := client.Bucket(bucket)
+    20:         if bh == nil {
+    21:                 return fmt.Errorf("failed to created bucket-handle")
+    22:         }
+    23:
+    24:         oh := bh.Object(object)
+    25:         if oh == nil {
+    26:                 return fmt.Errorf("failed to created object-handle")
+    27:         }
+    28:
+    29:         writer := oh.NewWriter(ctx)
+    30:         content := []byte(string("ABCDE"))
+=>  31:         n, err := writer.Write(content)
+    32:         if n != len(content) || err != nil {
+    33:                 return fmt.Errorf("failed to write to object. expected: %#v, actual: %#v, error: %w", n, len(content), err)
+    34:         }
+    35:
+    36:         return err
+    37: }
+    38:
+    39: func main() {
+    40:         // fmt.Println("hello world")
+    41:         // path := "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/"
+    42:         // f = open(file=path+"\\0", mode="rb")
+    43:         // bytes = f.read(1)
+    44:         // fmt.Println(str(bytes))
+    45:         bucket := "gargnitin-test-empty-dirname-asia-se1"
+    46:         object := "\000"
+    47:
+    48:         // command := []string{"gsutil", "cp", path + "0", "gs://" + bucket + "/" + object}
+    49:
+    50:         // command=["gsutil","cp",f"{path}0",f"gs://{bucket}/0"]
+    51:         // output=subprocess.run(command,capture_output=True,text=True)
+(dlv) q
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ go run .                                                
+# scripts
+./test.go:36:10: invalid operation: n != nil (mismatched types int and untyped nil)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ go run .
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ lsfusemnts 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ go run .                                                                             
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ lsfusemnts                                                                           
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ go run .                                                                             
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ go run .
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ go run .
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ go run .
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ go run .                                                                             
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ go run .
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ go run .
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ lsfusemnts 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount4
+^C
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ ls
+__debug_bin1862474249  go.mod  go.sum  parse_dlio_outputs  test.go  test.py  utils
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ go build
+# scripts
+./test.go:76:2: syntax error: unexpected newline in argument list; possibly missing comma or )
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ go build
+# scripts
+./test.go:75:4: syntax error: unexpected ) at end of statement
+./test.go:79:2: syntax error: unexpected newline in argument list; possibly missing comma or )
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ go build
+# scripts
+./test.go:58:3: undefined: numIters
+./test.go:60:6: undefined: numIters
+./test.go:71:8: undefined: dirFoo
+./test.go:73:8: undefined: dirA
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ go build
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ source ~/.bash_aliasesl
+bash: /usr/local/google/home/gargnitin/.bash_aliasesl: No such file or directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ source ~/.bash_aliases 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ type dlv
+dlv is aliased to `~/go/bin/dlv --check-go-version=false'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ dlv debug .
+WARNING: undefined behavior - Go version go0.0 is too old for this version of Delve (minimum supported version 1.19)
+Type 'help' for list of commands.
+(dlv) b main.main
+Breakpoint 1 set at 0xc63696 for main.main() ./test.go:46
+(dlv) c
+> main.main() ./test.go:46 (hits goroutine(1):1 total:1) (PC: 0xc63696)
+    41:         }
+    42:
+    43:         return err
+    44: }
+    45:
+=>  46: func main() {
+    47:         // path := "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/"
+    48:         // mountpath := "│/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount"
+    49:
+    50:         //bucket := "gargnitin-test-empty-dirname-asia-se1"
+    51:         //if err := createObject(bucket, "\000/a"); err != nil {
+(dlv) n
+> main.main() ./test.go:54 (PC: 0xc6369d)
+    49:
+    50:         //bucket := "gargnitin-test-empty-dirname-asia-se1"
+    51:         //if err := createObject(bucket, "\000/a"); err != nil {
+    52:         //      fmt.Printf("failed to create object: %v\n", err)
+    53:         //}
+=>  54:         mntDir :=
+    55:                 "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount4"
+    56:         numIters := 0
+    57:         dirFoo := mntDir + "/foo"
+    58:         dirA := mntDir + "/a"
+    59:         err := filepath.WalkDir(mntDir, func(path string, d fs.DirEntry, err error) error {
+(dlv) 
+> main.main() ./test.go:56 (PC: 0xc636b2)
+    51:         //if err := createObject(bucket, "\000/a"); err != nil {
+    52:         //      fmt.Printf("failed to create object: %v\n", err)
+    53:         //}
+    54:         mntDir :=
+    55:                 "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount4"
+=>  56:         numIters := 0
+    57:         dirFoo := mntDir + "/foo"
+    58:         dirA := mntDir + "/a"
+    59:         err := filepath.WalkDir(mntDir, func(path string, d fs.DirEntry, err error) error {
+    60:                 fmt.Printf("WalkFn called with path=%v,dirEntry=%#v,err=%#v\n", path, d, err)
+    61:                 numIters++
+(dlv) 
+> main.main() ./test.go:57 (PC: 0xc636bb)
+    52:         //      fmt.Printf("failed to create object: %v\n", err)
+    53:         //}
+    54:         mntDir :=
+    55:                 "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount4"
+    56:         numIters := 0
+=>  57:         dirFoo := mntDir + "/foo"
+    58:         dirA := mntDir + "/a"
+    59:         err := filepath.WalkDir(mntDir, func(path string, d fs.DirEntry, err error) error {
+    60:                 fmt.Printf("WalkFn called with path=%v,dirEntry=%#v,err=%#v\n", path, d, err)
+    61:                 numIters++
+    62:
+(dlv) 
+> main.main() ./test.go:58 (PC: 0xc636e6)
+    53:         //}
+    54:         mntDir :=
+    55:                 "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount4"
+    56:         numIters := 0
+    57:         dirFoo := mntDir + "/foo"
+=>  58:         dirA := mntDir + "/a"
+    59:         err := filepath.WalkDir(mntDir, func(path string, d fs.DirEntry, err error) error {
+    60:                 fmt.Printf("WalkFn called with path=%v,dirEntry=%#v,err=%#v\n", path, d, err)
+    61:                 numIters++
+    62:
+    63:                 if numIters > 10 {
+(dlv) 
+> main.main() ./test.go:59 (PC: 0xc63716)
+    54:         mntDir :=
+    55:                 "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount4"
+    56:         numIters := 0
+    57:         dirFoo := mntDir + "/foo"
+    58:         dirA := mntDir + "/a"
+=>  59:         err := filepath.WalkDir(mntDir, func(path string, d fs.DirEntry, err error) error {
+    60:                 fmt.Printf("WalkFn called with path=%v,dirEntry=%#v,err=%#v\n", path, d, err)
+    61:                 numIters++
+    62:
+    63:                 if numIters > 10 {
+    64:                         return fmt.Errorf("walk went too deep")
+(dlv) p mntDir
+"/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfu...+60 more"
+(dlv) p dirFoo
+"/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfu...+64 more"
+(dlv) p dirA  
+"/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfu...+62 more"
+(dlv) b 60
+Breakpoint 2 set at 0xc63a55 for main.main.func1() ./test.go:60
+(dlv) b 82
+Breakpoint 3 set at 0xc63864 for main.main() ./test.go:82
+(dlv) b 83
+Breakpoint 4 set at 0xc6386e for main.main() ./test.go:83
+(dlv) b 59
+Breakpoint 5 set at 0xc639d6,0xc63716 for (multiple functions)() ./test.go:59
+(dlv) np
+Command failed: command not available
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x444244,0x444324,0x45ca6e for (multiple functions)() <multiple locations>:0 (0)
+Breakpoint unrecovered-panic (enabled) at 0x4447e4 for runtime.fatalpanic() /usr/lib/google-golang/src/runtime/panic.go:1219 (0)
+        print runtime.curg._panic.arg
+Breakpoint 1 (enabled) at 0xc63696 for main.main() ./test.go:46 (1)
+Breakpoint 2 (enabled) at 0xc63a55 for main.main.func1() ./test.go:60 (0)
+Breakpoint 3 (enabled) at 0xc63864 for main.main() ./test.go:82 (0)
+Breakpoint 4 (enabled) at 0xc6386e for main.main() ./test.go:83 (0)
+Breakpoint 5 (enabled) at 0xc639d6,0xc63716 for (multiple functions)() ./test.go:59 (0)
+(dlv) clear 1
+Breakpoint 1 cleared at 0xc63696 for main.main() ./test.go:46
+(dlv) c
+> main.main() ./test.go:59 (hits goroutine(1):1 total:1) (PC: 0xc63716)
+    54:         mntDir :=
+    55:                 "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount4"
+    56:         numIters := 0
+    57:         dirFoo := mntDir + "/foo"
+    58:         dirA := mntDir + "/a"
+=>  59:         err := filepath.WalkDir(mntDir, func(path string, d fs.DirEntry, err error) error {
+    60:                 fmt.Printf("WalkFn called with path=%v,dirEntry=%#v,err=%#v\n", path, d, err)
+    61:                 numIters++
+    62:
+    63:                 if numIters > 10 {
+    64:                         return fmt.Errorf("walk went too deep")
+(dlv) c
+> main.main.func1() ./test.go:59 (hits goroutine(1):2 total:2) (PC: 0xc639d6)
+    54:         mntDir :=
+    55:                 "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount4"
+    56:         numIters := 0
+    57:         dirFoo := mntDir + "/foo"
+    58:         dirA := mntDir + "/a"
+=>  59:         err := filepath.WalkDir(mntDir, func(path string, d fs.DirEntry, err error) error {
+    60:                 fmt.Printf("WalkFn called with path=%v,dirEntry=%#v,err=%#v\n", path, d, err)
+    61:                 numIters++
+    62:
+    63:                 if numIters > 10 {
+    64:                         return fmt.Errorf("walk went too deep")
+(dlv) c
+> main.main.func1() ./test.go:60 (hits goroutine(1):1 total:1) (PC: 0xc63a55)
+    55:                 "/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount4"
+    56:         numIters := 0
+    57:         dirFoo := mntDir + "/foo"
+    58:         dirA := mntDir + "/a"
+    59:         err := filepath.WalkDir(mntDir, func(path string, d fs.DirEntry, err error) error {
+=>  60:                 fmt.Printf("WalkFn called with path=%v,dirEntry=%#v,err=%#v\n", path, d, err)
+    61:                 numIters++
+    62:
+    63:                 if numIters > 10 {
+    64:                         return fmt.Errorf("walk went too deep")
+    65:                 }
+(dlv) p mntDir
+"/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfu...+60 more"
+(dlv) config max-string-len 128
+(dlv) p mntDir                 
+"/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount4"
+(dlv) c
+WalkFn called with path=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-test-empty-dirname-asia-se1-mount4,dirEntry=fs.dirInfo{fileInfo:(*os.fileStat)(0xc00042e270)},err=<nil>
+> main.main() ./test.go:82 (hits goroutine(1):1 total:1) (PC: 0xc63864)
+    77:                         break
+    78:                 }
+    79:
+    80:                 return nil
+    81:         })
+=>  82:         if err != nil {
+    83:                 fmt.Println("failed to walk dir: %v", err)
+    84:         }
+    85: }
+(dlv) p err
+error nil
+(dlv) c
+Process 1809693 has exited with status 0
+(dlv) q
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ cd -
+/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 1m -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs        
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.064s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ go test -timeout 1m -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs
+ok      github.com/googlecloudplatform/gcsfuse/v2/internal/fs   0.051s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$                                                                                
+If you do not reboot now, your system will reboot automatically                
+at Fri May 17 02:52:10 UTC 2024. For more info, see go/glinux-reboot-policy.   
+To reboot your computer 10 hours from now, on the command line run:            
+echo systemctl reboot | at now + 10 hours                                      
+Also you may have a pending maintenance. See go/cloudtop-faq#cloudtop-maintenan
+ce-scheduler                                                                   
+To run maintenance in 10 hours run:                                            
+ctop self maintenance schedule in 10h
+                                                                               
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ 

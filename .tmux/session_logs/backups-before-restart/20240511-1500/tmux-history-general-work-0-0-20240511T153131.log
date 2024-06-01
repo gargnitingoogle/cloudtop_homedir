@@ -1,0 +1,196 @@
+diff --git a/.bash_aliases b/.bash_aliases
+index ce3969e..634a8e8 100644
+--- a/.bash_aliases
++++ b/.bash_aliases
+@@ -22,6 +22,7 @@ function genericAliases() {
+        alias history='vi ~/.bash_history +:$'
+         alias runubuntucontainer='docker run --rm -it --entrypoint /bin/bash ubuntu'
+         alias rungocontainer='docker run -it --rm --entrypoint /bin/bash golang'
++        alias study='mkdir -p $HOME/work/study && cd $HOME/work/study'
+ }
+ 
+ genericAliases
+gargnitin@gargnitin:~/work/study/cpp/fastdirentcount$ git add ~/.bash_aliases && git ci -m 'add study alias in bashrc'
+[main df0319d] add study alias in bashrc
+ 1 file changed, 1 insertion(+)
+gargnitin@gargnitin:~/work/study/cpp/fastdirentcount$ git l
+df0319d (HEAD -> refs/heads/main) add study alias in bashrc
+888c19f change autocmd to au in vimrc
+d1b9d76 (refs/remotes/origin/main) fix dlv alias in bash_aliases
+064c8ad more advanced shortcuts for vim
+db28b7b update vim config
+gargnitin@gargnitin:~/work/study/cpp/fastdirentcount$ vi ~/.gitconfig
+gargnitin@gargnitin:~/work/study/cpp/fastdirentcount$ vi ~/.bash_aliases
+gargnitin@gargnitin:~/work/study/cpp/fastdirentcount$ git config --list
+include.path=/usr/share/git-core/config
+http.version=HTTP/2
+http.https://*.googlesource.com/.extraheader=X-Return-Encrypted-Headers: all
+feature.experimental=true
+core.commitgraph=false
+gc.writecommitgraph=false
+gc.cruftpacks=true
+init.defaultbranch=main
+protocol.persistent-https.allow=always
+protocol.rpc.allow=always
+protocol.sso.allow=always
+fetch.uriprotocols=https
+fetch.parallel=16
+submodule.fetchjobs=16
+url.https://github.com/.insteadof=http://github.com/
+url.https://github.com/.insteadof=git://github.com/
+transfer.advertisesid=true
+checkout.workers=2
+safe.barerepository=explicit
+include.path=/usr/share/git-core/mac_config
+include.path=/usr/share/git-core/git_secrets_config
+hook.commit-msg.command=git secrets --commit_msg_hook
+hook.pre-commit.command=git secrets --pre_commit_hook
+hook.prepare-commit-msg.command=git secrets --prepare_commit_msg_hook
+secrets.patterns=(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
+secrets.patterns=("|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)("|')?\s*(:|=>|=)\s*("|')?[A-Za-z0-9/\+=]{40}("|')?
+secrets.patterns=("|')?(AWS|aws|Aws)_?(ACCOUNT|account|Account)_?(ID|id|Id)?("|')?\s*(:|=>|=)\s*("|')?[0-9]{4}\-?[0-9]{4}\-?[0-9]{4}("|')?
+secrets.allowed=AKIAIOSFODNN7EXAMPLE
+secrets.allowed=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+secrets.patterns=AIza[0-9A-Za-z_-]{35}
+secrets.patterns=(^|[^0-9A-Za-z/+])1/[0-9A-Za-z_-]{43}
+secrets.patterns=(^|[^0-9A-Za-z/+])1/[0-9A-Za-z_-]{64}
+secrets.patterns=ya29\.[0-9A-Za-z_-]+
+include.path=/usr/share/git-core/jiri_config
+jiri.enablesubmodules=true
+include.path=/usr/share/git-core/trace_config
+trace2.eventtarget=af_unix:/run/git-trace-daemon.sock
+trace2.configparams=remote.*promisor,remote.*url,http.*useragent,http.*version,google.*,init.defaultbranch,protocol.version,submodule.recurse,feature.experimental,hookcmd.*.command,hook.*.command,push.negotiate,safe.barerepository
+trace2.envvars=GIO_LAUNCHED_DESKTOP_FILE,GIT_HTTP_USER_AGENT,USER,GIT_ALTERNATE_OBJECT_DIRECTORIES,GIT_OBJECT_DIRECTORY,GIT_DIR,_
+trace2.eventnesting=999
+include.path=/usr/share/git-repo/config
+repo.superprojectchoice=true
+includeif.hasconfig:remote.*.url:submodule-pilot::*://**.path=/usr/share/git-core/submodule_dogfood_config
+includeif.hasconfig:remote.*.url:sso://**.path=/usr/share/git-core/sso_config
+includeif.hasconfig:remote.*.url:rpc://**.path=/usr/share/git-core/sso_config
+includeif.hasconfig:remote.*.url:https://*.googlesource.com/**.path=/usr/share/git-core/sso_config
+alias.aliases=config --get-regexp ^alias
+alias.amend=!f() { if [ $# -lt 1 ] ; then git commit --amend --no-edit ; else git commit --fixup=amend:$1 ; fi; }; f
+alias.cb=branch --show-current
+alias.ci=commit
+alias.cl=!f() { git push origin HEAD:refs/for/${1:-main}; }; f
+alias.co=checkout
+alias.committed=!git show --pretty="" --stat
+alias.cp=cherry-pick --allow-empty
+alias.cpa=cherry-pick --abort
+alias.cpc=cherry-pick --continue
+alias.cps=cherry-pick --skip
+alias.curbranch=branch --show-current
+alias.delbranch=branch -D
+alias.delremote=branch -D --remote
+alias.difftool=difftool -y
+alias.dirty=!git diff --pretty="" --stat
+alias.dt=difftool
+alias.fa=fetch --all
+alias.ff=!f() { git fetch --all ; git pull --ff ; }; f
+alias.fixup=commit --fixup
+alias.graph=log --all --graph --decorate --oneline
+alias.l10=log --oneline --decorate=full -10
+alias.l15=log --oneline --decorate=full -15
+alias.l1=log --oneline --decorate=full -1
+alias.l20=log --oneline --decorate=full -20
+alias.l25=log --oneline --decorate=full -25
+alias.l30=log --oneline --decorate=full -30
+alias.l35=log --oneline --decorate=full -35
+alias.l40=log --oneline --decorate=full -40
+alias.l45=log --oneline --decorate=full -45
+alias.l50=log --oneline --decorate=full -50
+alias.l5=log --oneline --decorate=full -5
+alias.l=log --oneline --decorate=full -5
+alias.last=log -1 --decorate=full
+alias.loselast=reset --hard HEAD~1
+alias.ls=branch -l
+alias.lsremote=branch -l --remote
+alias.remotebranches=!f() { git branch -l --remote | grep $USER; }; f
+alias.new=switch -c
+alias.prev=switch -
+alias.pushthis=!git push -u origin $(git branch --show-current)
+alias.put=pushthis
+alias.r=rebase
+alias.ra=rebase --abort
+alias.rc=rebase --continue
+alias.rearrange=rebase -i HEAD~10
+alias.renamebranch=branch -m
+alias.reword=!f() { if [ $# -lt 1 ] ; then git commit --amend --only ; else git commit --fixup=reword:$1 ; fi; }; f
+alias.ri=rebase --interactive
+alias.st=status -uno
+alias.st-all=status -unormal
+alias.staged=!git diff --pretty="" --stat --cached
+alias.strip=reset --hard
+alias.uncommitted=!git diff --pretty="" --stat
+alias.undo=restore --source=HEAD
+alias.unpacklast=reset --soft HEAD~1
+alias.unstage=restore --staged
+alias.up=checkout
+alias.upload=put
+user.email=gargnitin@google.com
+user.name=Nitin Garg
+credential.https://github.com.helper=
+credential.https://github.com.helper=!/usr/bin/gh auth git-credential
+credential.https://gist.github.com.helper=
+credential.https://gist.github.com.helper=!/usr/bin/gh auth git-credential
+pull.rebase=true
+diff.tool=bc
+difftool.bc.cmd=/usr/bin/bcompare -expandall -solo "$LOCAL" "$REMOTE"
+difftool.bc.trustexitcode=true
+merge.tool=bc
+mergetool.bc.trustexitcode=true
+difftool.prompt=false
+rebase.autosquash=true
+mergetool.keepbackup=false
+http.cookiefile=/usr/local/google/home/gargnitin/.gitcookies
+url.sso://codelab/.insteadof=https://codelab.googlesource.com/
+url.sso://codelab/.insteadof=https://codelab-review.googlesource.com/
+url.sso://codelab/.insteadof=http://codelab.googlesource.com/
+url.sso://codelab/.insteadof=http://codelab-review.googlesource.com/
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=https://github.com/gargnitingoogle/cloudtop_homedir
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/main
+alias.xl=log origin/main~1.. --oneline --decorate=full
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+secrets.allowed=...
+gargnitin@gargnitin:~/work/study/cpp/fastdirentcount$ git config --list | grep dif
+alias.difftool=difftool -y
+alias.dirty=!git diff --pretty="" --stat
+alias.dt=difftool
+alias.staged=!git diff --pretty="" --stat --cached
+alias.uncommitted=!git diff --pretty="" --stat
+diff.tool=bc
+difftool.bc.cmd=/usr/bin/bcompare -expandall -solo "$LOCAL" "$REMOTE"
+difftool.bc.trustexitcode=true
+difftool.prompt=false
+gargnitin@gargnitin:~/work/study/cpp/fastdirentcount$ git config --list | grep diff
+alias.difftool=difftool -y
+alias.dirty=!git diff --pretty="" --stat
+alias.dt=difftool
+alias.staged=!git diff --pretty="" --stat --cached
+alias.uncommitted=!git diff --pretty="" --stat
+diff.tool=bc
+difftool.bc.cmd=/usr/bin/bcompare -expandall -solo "$LOCAL" "$REMOTE"
+difftool.bc.trustexitcode=true
+difftool.prompt=false
+gargnitin@gargnitin:~/work/study/cpp/fastdirentcount$ which vimdiff
+/usr/bin/vimdiff
+gargnitin@gargnitin:~/work/study/cpp/fastdirentcount$ man vimdiff
+gargnitin@gargnitin:~/work/study/cpp/fastdirentcount$ git config --list | grep code                                                                                                                                                                                                                                
+difftool.bc.trustexitcode=true
+mergetool.bc.trustexitcode=true
+url.sso://codelab/.insteadof=https://codelab.googlesource.com/
+url.sso://codelab/.insteadof=https://codelab-review.googlesource.com/
+url.sso://codelab/.insteadof=http://codelab.googlesource.com/
+url.sso://codelab/.insteadof=http://codelab-review.googlesource.com/
+gargnitin@gargnitin:~/work/study/cpp/fastdirentcount$ git config --list | grep editor
+gargnitin@gargnitin:~/work/study/cpp/fastdirentcount$ git config --list | grep edit  
+alias.amend=!f() { if [ $# -lt 1 ] ; then git commit --amend --no-edit ; else git commit --fixup=amend:$1 ; fi; }; f
+gargnitin@gargnitin:~/work/study/cpp/fastdirentcount$ gitconfig                                                                                                                                                                                                                                                  
+gargnitin@gargnitin:~/work/study/cpp/fastdirentcount$ 

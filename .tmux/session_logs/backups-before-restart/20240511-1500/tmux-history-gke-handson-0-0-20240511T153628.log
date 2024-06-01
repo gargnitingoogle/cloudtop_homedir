@@ -1,0 +1,58 @@
+gargnitin@gargnitin:~$ work
+gargnitin@gargnitin:~/DriveFileStream/My Drive/docs/work/cloud/storage/gcsfuse/tasks$ localwork 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ ls
+202307-08-gzip-support     20231215-low-fsync-frequency  20240202-stat-cache-entry-size-experiment  implit-dirs-io-error
+  playground
+202307-vertex_ai_job_slow  20240125-overlay-fs-expt      20240212-type-cache-size-effect            oncall
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ mkdir 20240306-gke-handson
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd 20240306-gke-handson                                                   
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240306-gke-handson$ type gcsfusetestvmconnect 
+gcsfusetestvmconnect is a function
+gcsfusetestvmconnect () 
+{ 
+    projectname=gcs-fuse-test;
+    if [ $# -lt 2 ]; then
+        echo "${FUNCNAME[0]} needs exactly 2 arguments: <vm-name> <gcp-zone>. It sets project name as $projectname" "${@:3}";
+        return 1;
+    fi;
+    zone=$2;
+    vmname=$1;
+    vmconnect "$vmname" "$zone" "$projectname" "${@:3}"
+}
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240306-gke-handson$ type vmconnect            
+vmconnect is a function
+vmconnect () 
+{ 
+    if [ $# -lt 3 ]; then
+        echo "${FUNCNAME[0]} needs exactly 3 arguments: <vm-name> <gcp-zone> <gcp-project-id>";
+        return 1;
+    fi;
+    projectname=$3;
+    zone=$2;
+    vmname=$1;
+    gcloud compute --project "$projectname" ssh --zone "$zone" "$vmname" -- -o ProxyCommand='corp-ssh-helper %h %p' "${@:4}"
+}
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240306-gke-handson$ vi info.sh 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240306-gke-handson$ vi info.sh
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240306-gke-handson$ vi info.sh
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240306-gke-handson$ vi info.sh
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240306-gke-handson$ vi info.sh
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240306-gke-handson$ exit
+exit
+gargnitin@gargnitin:~$ bash
+gargnitin@gargnitin:~$ cd ~/work/cloud/storage/client/gcsfuse/tasks/20240306-gke-handson
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240306-gke-handson$ vi info.sh 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240306-gke-handson$ 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240306-gke-handson$ 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240306-gke-handson$ 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240306-gke-handson$                                                                                
+If you do not reboot now, your system will reboot automatically                
+at Fri May 17 02:52:10 UTC 2024. For more info, see go/glinux-reboot-policy.   
+To reboot your computer 10 hours from now, on the command line run:            
+echo systemctl reboot | at now + 10 hours                                      
+Also you may have a pending maintenance. See go/cloudtop-faq#cloudtop-maintenan
+ce-scheduler                                                                   
+To run maintenance in 10 hours run:                                            
+ctop self maintenance schedule in 10h
+                                                                               
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240306-gke-handson$ 

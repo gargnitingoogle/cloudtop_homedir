@@ -1,0 +1,60 @@
+gargnitin@gargnitin:~$ bash
+locgargnitin@gargnitin:~$ localwork 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ ls
+202307-08-gzip-support     20231215-low-fsync-frequency  20240202-stat-cache-entry-size-experiment  20240306-gke-handson            202403-docker-failure-with-go-1.22  20240509-list-thru-metadata-cache-expt  implit-dirs-io-error  playground
+202307-vertex_ai_job_slow  20240125-overlay-fs-expt      20240212-type-cache-size-effect            20240318-vertex-ai-experiments  20240429-fix-empty-dirname-issue    2024q2-automate-perf-tests              oncall
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd oncall/202
+20230807/ 20230911/ 20231009/ 20240205/ 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd oncall/20230807/memory-issue-285956302/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302$ ls
+general_sized_objects_for_bucket  objects_for_bucket
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302$ cd objects_for_bucket/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ l
+total 319M
+drwxr-xr-x 8 gargnitin primarygroup 4.0K Aug 23  2023 .
+drwxr-xr-x 4 gargnitin primarygroup 4.0K Feb  7 09:57 ..
+drwxr-xr-x 2 gargnitin primarygroup 316M Nov  8  2023 10000000_objects
+drwxr-xr-x 2 gargnitin primarygroup 4.0K Nov  8  2023 1000000_objects
+drwxr-xr-x 2 gargnitin primarygroup 2.2M Nov  8  2023 100000_objects
+drwxr-xr-x 2 gargnitin primarygroup 388K Aug 14  2023 10000_objects
+drwxr-xr-x 2 gargnitin primarygroup  40K Aug 14  2023 1000_objects
+drwxr-xr-x 2 gargnitin primarygroup 4.0K Aug 14  2023 100_objects
+-rwxr-xr-x 1 gargnitin primarygroup  312 Aug  9  2023 createObjects.sh
+-rw-r--r-- 1 gargnitin primarygroup   19 Aug 23  2023 testfile.txt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 10000000_objects| wc -l                                                                                                                                                   
+^C
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 1000000_objects| wc -l                                                                                                                                                   
+0
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 100000_objects| wc -l                                                                                                                                                    
+54432
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 10000_objects| wc -l                                                                                                                                                     
+10000
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ vi createObjects.sh 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ vi createObjects.sh 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ mv 100000_objects/ 100000_objects_incomplete                                                                                                                                 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ./createObjects.sh 100000                   
+removed 'testfile.txt'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ du -sh 1000_objects
+4.0M    1000_objects
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ du -sh 10000_objects
+40M     10000_objects
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ du -sh 100000_objects
+395M    100000_objects
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ du -sh 1000000_objects
+457M    1000000_objects
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ du -sh 1000000_objects
+535M    1000000_objects
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls
+10000000_objects  100000_objects_incomplete  100_objects
+1000000_objects   10000_objects              createObjects.sh
+100000_objects    1000_objects               testfile.txt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls                                                                 │
+457M    1000000_objects                                                                                                                                 │                  ^C
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 10000000_objects | wc -l
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 10000000_objects | wc -l
+8140265
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ./createObjects.sh 10000000    
+removed 'testfile.txt'
+cp: cannot stat 'testfile.txt': No such file or directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ 

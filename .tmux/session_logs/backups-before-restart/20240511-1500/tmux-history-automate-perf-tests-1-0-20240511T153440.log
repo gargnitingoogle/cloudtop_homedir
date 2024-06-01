@@ -1,0 +1,1492 @@
+gargnitin@gargnitin:~$ bash
+scgargnitin@gargnitin:~$ src
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ lsfusemnts 
+gargnitin-fuse-test-bucket1 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ bash
+locagargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ localwork 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ ls
+202307-08-gzip-support        20240202-stat-cache-entry-size-experiment  202403-docker-failure-with-go-1.22                 playground
+202307-vertex_ai_job_slow     20240212-type-cache-size-effect            20240422-experiment-fio-single-file-parallel-read
+20231215-low-fsync-frequency  20240306-gke-handson                       implit-dirs-io-error
+20240125-overlay-fs-expt      20240318-vertex-ai-experiments             oncall
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd 2024q2-automate-ai-ml-perf
+bash: cd: 2024q2-automate-ai-ml-perf: No such file or directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ mkdir 2024q2-automate-ai-ml-perf                                                        
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd 2024q2-automate-ai-ml-perf
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf$ mv ../20240422-experiment-fio-single-file-parallel-read .
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf$ ls
+20240422-experiment-fio-single-file-parallel-read
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf$ mkdir 20240422-test-create-vm
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf$ cd 20240422-test-create-vm
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf/20240422-test-create-vm$ vi create_vm.sh
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf/20240422-test-create-vm$ chmod +x uog create_vm.sh 
+chmod: cannot access 'uog': No such file or directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf/20240422-test-create-vm$ chmod +x create_vm.sh                 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf/20240422-test-create-vm$ ./create_vm.sh gargnitin-test-n2std32-
++ vm_name=gargnitin-test-n2std32-us-west1
++ region=us-west1-b
++ curl https://raw.githubusercontent.com/GoogleCloudPlatform/gcsfuse/read_cache_release/perfmetrics/scripts/read_cache/setup.sh --output setup.sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  3374  100  3374    0     0   9062      0 --:--:-- --:--:-- --:--:--  9069
++ gcloud compute instances create gargnitin-test-n2std32-us-west1 --project=gcs-fuse-test --zone=us-west1-b --machine-type=n2-standard-32 --network-inteATE --metadata-from-file=startup-script=setup.sh --provisioning-model=STANDARD --service-account=927584127901-compute@developer.gserviceaccount.com --sc32-us-west1,image=projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20231101,mode=rw,size=100,type=projects/gcs-fuse-test/zones/us-central1-a/di-shielded-vtpm --shielded-integrity-monitoring --labels=goog-ops-agent-policy=v2-x86-template-1-1-0,goog-ec-src=vm_add-gcloud --reservation-affinity=any
+Created [https://www.googleapis.com/compute/v1/projects/gcs-fuse-test/zones/us-west1-b/instances/gargnitin-test-n2std32-us-west1].
+WARNING: Some requests generated warnings:
+ - Disk size: '100 GB' is larger than image size: '10 GB'. You might need to resize the root repartition manually if the operating system does not suppo
+ - The resource 'projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20231101' is deprecated. A suggested replacement is 'projects/ubuntu-os-cloud
+
+NAME                             ZONE        MACHINE_TYPE    PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
+gargnitin-test-n2std32-us-west1  us-west1-b  n2-standard-32               10.138.0.13  35.230.87.159  RUNNING
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf/20240422-test-create-vm$ vm_name=gargnitin-test-n2std32-
+us-west1
+Command us-west1 not found
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf/20240422-test-create-vm$ vm_name=gargnitin-test-n2std32-us-west
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf/20240422-test-create-vm$ gcloud compute ssh $vm_name -- -o Prox
+Did you mean zone [asia-southeast1-c] for instance: [gargnitin-test-n2std32-us-west1] (Y/n)?  n
+
+No zone specified. Using zone [us-west1-b] for instance: [gargnitin-test-n2std32-us-west1].
+Writing 3 keys to /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-1046-gcp x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Mon Apr 22 11:36:00 UTC 2024
+
+  System load:  0.37              Processes:             394
+  Usage of /:   2.6% of 96.73GB   Users logged in:       0
+  Memory usage: 0%                IPv4 address for ens5: 10.138.0.13
+  Swap usage:   0%
+
+Expanded Security Maintenance for Applications is not enabled.
+
+113 updates can be applied immediately.
+82 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+Creating directory '/home/gargnitin_google_com'.
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ google_metadata_script_runner startup
+Starting startup scripts (version 20230426.00-0ubuntu2~20.04.0).
+Found startup-script in metadata.
+startup-script: + set -e
+startup-script: + '[' '!' -d /mnt/disks/local_ssd ']'
+startup-script: + df -H
+startup-script: Filesystem      Size  Used Avail Use% Mounted on
+startup-script: /dev/root       104G  2.8G  102G   3% /
+startup-script: devtmpfs         68G     0   68G   0% /dev
+startup-script: tmpfs            68G     0   68G   0% /dev/shm
+startup-script: tmpfs            14G  1.3M   14G   1% /run
+startup-script: tmpfs           5.3M     0  5.3M   0% /run/lock
+startup-script: tmpfs            68G     0   68G   0% /sys/fs/cgroup
+startup-script: /dev/loop0       67M   67M     0 100% /snap/core20/2015
+startup-script: /dev/loop1      361M  361M     0 100% /snap/google-cloud-cli/189
+startup-script: /dev/loop2       97M   97M     0 100% /snap/lxd/24061
+startup-script: /dev/loop3       43M   43M     0 100% /snap/snapd/20290
+startup-script: /dev/sda15      110M  6.4M  104M   6% /boot/efi
+startup-script: /dev/md0        1.6T   29k  1.6T   1% /mnt/disks/local_ssd
+startup-script: tmpfs            14G     0   14G   0% /run/user/1364453796
+startup-script: + WD=/home/gargnitin_google_com/working_dir
+startup-script: + mkdir -p /home/gargnitin_google_com/working_dir
+startup-script: + cd /home/gargnitin_google_com/working_dir
+startup-script: + echo 'Installing fio ...'
+startup-script: Installing fio ...
+startup-script: + FIO_SRC_DIR=/home/gargnitin_google_com/working_dir/github
+startup-script: + mkdir -p /home/gargnitin_google_com/working_dir/github
+startup-script: + sudo apt-get install -y libaio-dev
+startup-script: Reading package lists...
+startup-script: Building dependency tree...
+startup-script: Reading state information...
+startup-script: The following packages were automatically installed and are no longer required:
+startup-script:   libatasmart4 libblockdev-fs2 libblockdev-loop2 libblockdev-part-err2
+startup-script:   libblockdev-part2 libblockdev-swap2 libblockdev-utils2 libblockdev2
+startup-script:   libmbim-glib4 libmbim-proxy libmm-glib0 libnspr4 libnss3 libnuma1
+startup-script:   libparted-fs-resize0 libqmi-glib5 libqmi-proxy libudisks2-0 libxmlb2
+startup-script:   usb-modeswitch usb-modeswitch-data
+startup-script: Use 'sudo apt autoremove' to remove them.
+startup-script: The following NEW packages will be installed:
+startup-script:   libaio-dev
+startup-script: 0 upgraded, 1 newly installed, 0 to remove and 107 not upgraded.
+startup-script: Need to get 13.7 kB of archives.
+startup-script: After this operation, 64.5 kB of additional disk space will be used.
+startup-script: Get:1 http://us-west1.gce.archive.ubuntu.com/ubuntu focal/main amd64 libaio-dev amd64 0.3.112-5 [13.7 kB]
+startup-script: Fetched 13.7 kB in 0s (813 kB/s)
+startup-script: Selecting previously unselected package libaio-dev:amd64.
+(Reading database ... 62453 files and directories currently installed.)
+startup-script: Preparing to unpack .../libaio-dev_0.3.112-5_amd64.deb ...
+startup-script: Unpacking libaio-dev:amd64 (0.3.112-5) ...
+startup-script: Setting up libaio-dev:amd64 (0.3.112-5) ...
+startup-script: Processing triggers for man-db (2.9.1-1) ...
+startup-script: + sudo apt-get install -y gcc make
+startup-script: Reading package lists...
+startup-script: Building dependency tree...
+startup-script: Reading state information...
+startup-script: The following packages were automatically installed and are no longer required:
+startup-script:   libatasmart4 libblockdev-fs2 libblockdev-loop2 libblockdev-part-err2
+startup-script:   libblockdev-part2 libblockdev-swap2 libblockdev-utils2 libblockdev2
+startup-script:   libmbim-glib4 libmbim-proxy libmm-glib0 libnspr4 libnss3 libnuma1
+startup-script:   libparted-fs-resize0 libqmi-glib5 libqmi-proxy libudisks2-0 libxmlb2
+startup-script:   usb-modeswitch usb-modeswitch-data
+startup-script: Use 'sudo apt autoremove' to remove them.
+startup-script: The following additional packages will be installed:
+startup-script:   binutils binutils-common binutils-x86-64-linux-gnu cpp cpp-9 gcc-9
+startup-script:   gcc-9-base libasan5 libatomic1 libbinutils libc-dev-bin libc6 libc6-dev
+startup-script:   libcc1-0 libcrypt-dev libctf-nobfd0 libctf0 libgcc-9-dev libgomp1 libisl22
+startup-script:   libitm1 liblsan0 libmpc3 libquadmath0 libtsan0 libubsan1 linux-libc-dev
+startup-script:   manpages-dev
+startup-script: Suggested packages:
+startup-script:   binutils-doc cpp-doc gcc-9-locales gcc-multilib autoconf automake libtool
+startup-script:   flex bison gdb gcc-doc gcc-9-multilib gcc-9-doc glibc-doc make-doc
+startup-script: The following NEW packages will be installed:
+startup-script:   binutils binutils-common binutils-x86-64-linux-gnu cpp cpp-9 gcc gcc-9
+startup-script:   gcc-9-base libasan5 libatomic1 libbinutils libc-dev-bin libc6-dev libcc1-0
+startup-script:   libcrypt-dev libctf-nobfd0 libctf0 libgcc-9-dev libgomp1 libisl22 libitm1
+startup-script:   liblsan0 libmpc3 libquadmath0 libtsan0 libubsan1 linux-libc-dev make
+startup-script:   manpages-dev
+startup-script: The following packages will be upgraded:
+startup-script:   libc6
+startup-script: 1 upgraded, 29 newly installed, 0 to remove and 106 not upgraded.
+startup-script: Need to get 36.9 MB of archives.
+startup-script: After this operation, 151 MB of additional disk space will be used.
+startup-script: Get:1 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 libc6 amd64 2.31-0ubuntu9.15 [2723 kB]
+startup-script: Get:2 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 binutils-common amd64 2.34-6ubuntu1.9 [208 kB]
+startup-script: Get:3 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 libbinutils amd64 2.34-6ubuntu1.9 [475 kB]
+startup-script: Get:4 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 libctf-nobfd0 amd64 2.34-6ubuntu1.9 [48.2 kB]
+startup-script: Get:5 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 libctf0 amd64 2.34-6ubuntu1.9 [46.6 kB]
+startup-script: Get:6 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 binutils-x86-64-linux-gnu amd64 2.34-6ubuntu1.9 [1614 kB]
+startup-script: Get:7 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 binutils amd64 2.34-6ubuntu1.9 [3380 B]
+startup-script: Get:8 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 gcc-9-base amd64 9.4.0-1ubuntu1~20.04.2 [18.9 kB]
+startup-script: Get:9 http://us-west1.gce.archive.ubuntu.com/ubuntu focal/main amd64 libisl22 amd64 0.22.1-1 [592 kB]
+startup-script: Get:10 http://us-west1.gce.archive.ubuntu.com/ubuntu focal/main amd64 libmpc3 amd64 1.1.0-1 [40.8 kB]
+startup-script: Get:11 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 cpp-9 amd64 9.4.0-1ubuntu1~20.04.2 [7502 kB]
+startup-script: Get:12 http://us-west1.gce.archive.ubuntu.com/ubuntu focal/main amd64 cpp amd64 4:9.3.0-1ubuntu2 [27.6 kB]
+startup-script: Get:13 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 libcc1-0 amd64 10.5.0-1ubuntu1~20.04 [48.8 kB]
+startup-script: Get:14 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 libgomp1 amd64 10.5.0-1ubuntu1~20.04 [102 kB]
+startup-script: Get:15 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 libitm1 amd64 10.5.0-1ubuntu1~20.04 [26.2 kB]
+startup-script: Get:16 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 libatomic1 amd64 10.5.0-1ubuntu1~20.04 [9284 B]
+startup-script: Get:17 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 libasan5 amd64 9.4.0-1ubuntu1~20.04.2 [2752 kB]
+startup-script: Get:18 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 liblsan0 amd64 10.5.0-1ubuntu1~20.04 [835 kB]
+startup-script: Get:19 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 libtsan0 amd64 10.5.0-1ubuntu1~20.04 [2016 kB]
+startup-script: Get:20 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 libubsan1 amd64 10.5.0-1ubuntu1~20.04 [785 kB]
+startup-script: Get:21 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 libquadmath0 amd64 10.5.0-1ubuntu1~20.04 [146 kB]
+startup-script: Get:22 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 libgcc-9-dev amd64 9.4.0-1ubuntu1~20.04.2 [2359 kB]
+startup-script: Get:23 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 gcc-9 amd64 9.4.0-1ubuntu1~20.04.2 [8276 kB]
+startup-script: Get:24 http://us-west1.gce.archive.ubuntu.com/ubuntu focal/main amd64 gcc amd64 4:9.3.0-1ubuntu2 [5208 B]
+startup-script: Get:25 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 libc-dev-bin amd64 2.31-0ubuntu9.15 [71.8 kB]
+startup-script: Get:26 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 linux-libc-dev amd64 5.4.0-177.197 [1128 kB]
+startup-script: Get:27 http://us-west1.gce.archive.ubuntu.com/ubuntu focal/main amd64 libcrypt-dev amd64 1:4.4.10-10ubuntu4 [104 kB]
+startup-script: Get:28 http://us-west1.gce.archive.ubuntu.com/ubuntu focal-updates/main amd64 libc6-dev amd64 2.31-0ubuntu9.15 [2519 kB]
+startup-script: Get:29 http://us-west1.gce.archive.ubuntu.com/ubuntu focal/main amd64 make amd64 4.2.1-1.2 [162 kB]
+startup-script: Get:30 http://us-west1.gce.archive.ubuntu.com/ubuntu focal/main amd64 manpages-dev all 5.05-1 [2266 kB]
+startup-script: Preconfiguring packages ...
+startup-script: Fetched 36.9 MB in 1s (59.0 MB/s)
+(Reading database ... 62469 files and directories currently installed.)
+startup-script: Preparing to unpack .../libc6_2.31-0ubuntu9.15_amd64.deb ...
+startup-script: Unpacking libc6:amd64 (2.31-0ubuntu9.15) over (2.31-0ubuntu9.12) ...
+startup-script: Setting up libc6:amd64 (2.31-0ubuntu9.15) ...
+startup-script: Selecting previously unselected package binutils-common:amd64.
+(Reading database ... 62469 files and directories currently installed.)
+startup-script: Preparing to unpack .../00-binutils-common_2.34-6ubuntu1.9_amd64.deb ...
+startup-script: Unpacking binutils-common:amd64 (2.34-6ubuntu1.9) ...
+startup-script: Selecting previously unselected package libbinutils:amd64.
+startup-script: Preparing to unpack .../01-libbinutils_2.34-6ubuntu1.9_amd64.deb ...
+startup-script: Unpacking libbinutils:amd64 (2.34-6ubuntu1.9) ...
+startup-script: Selecting previously unselected package libctf-nobfd0:amd64.
+startup-script: Preparing to unpack .../02-libctf-nobfd0_2.34-6ubuntu1.9_amd64.deb ...
+startup-script: Unpacking libctf-nobfd0:amd64 (2.34-6ubuntu1.9) ...
+startup-script: Selecting previously unselected package libctf0:amd64.
+startup-script: Preparing to unpack .../03-libctf0_2.34-6ubuntu1.9_amd64.deb ...
+startup-script: Unpacking libctf0:amd64 (2.34-6ubuntu1.9) ...
+startup-script: Selecting previously unselected package binutils-x86-64-linux-gnu.
+startup-script: Preparing to unpack .../04-binutils-x86-64-linux-gnu_2.34-6ubuntu1.9_amd64.deb ...
+startup-script: Unpacking binutils-x86-64-linux-gnu (2.34-6ubuntu1.9) ...
+startup-script: Selecting previously unselected package binutils.
+startup-script: Preparing to unpack .../05-binutils_2.34-6ubuntu1.9_amd64.deb ...
+startup-script: Unpacking binutils (2.34-6ubuntu1.9) ...
+startup-script: Selecting previously unselected package gcc-9-base:amd64.
+startup-script: Preparing to unpack .../06-gcc-9-base_9.4.0-1ubuntu1~20.04.2_amd64.deb ...
+startup-script: Unpacking gcc-9-base:amd64 (9.4.0-1ubuntu1~20.04.2) ...
+startup-script: Selecting previously unselected package libisl22:amd64.
+startup-script: Preparing to unpack .../07-libisl22_0.22.1-1_amd64.deb ...
+startup-script: Unpacking libisl22:amd64 (0.22.1-1) ...
+startup-script: Selecting previously unselected package libmpc3:amd64.
+startup-script: Preparing to unpack .../08-libmpc3_1.1.0-1_amd64.deb ...
+startup-script: Unpacking libmpc3:amd64 (1.1.0-1) ...
+startup-script: Selecting previously unselected package cpp-9.
+startup-script: Preparing to unpack .../09-cpp-9_9.4.0-1ubuntu1~20.04.2_amd64.deb ...
+startup-script: Unpacking cpp-9 (9.4.0-1ubuntu1~20.04.2) ...
+startup-script: Selecting previously unselected package cpp.
+startup-script: Preparing to unpack .../10-cpp_4%3a9.3.0-1ubuntu2_amd64.deb ...
+startup-script: Unpacking cpp (4:9.3.0-1ubuntu2) ...
+startup-script: Selecting previously unselected package libcc1-0:amd64.
+startup-script: Preparing to unpack .../11-libcc1-0_10.5.0-1ubuntu1~20.04_amd64.deb ...
+startup-script: Unpacking libcc1-0:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Selecting previously unselected package libgomp1:amd64.
+startup-script: Preparing to unpack .../12-libgomp1_10.5.0-1ubuntu1~20.04_amd64.deb ...
+startup-script: Unpacking libgomp1:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Selecting previously unselected package libitm1:amd64.
+startup-script: Preparing to unpack .../13-libitm1_10.5.0-1ubuntu1~20.04_amd64.deb ...
+startup-script: Unpacking libitm1:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Selecting previously unselected package libatomic1:amd64.
+startup-script: Preparing to unpack .../14-libatomic1_10.5.0-1ubuntu1~20.04_amd64.deb ...
+startup-script: Unpacking libatomic1:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Selecting previously unselected package libasan5:amd64.
+startup-script: Preparing to unpack .../15-libasan5_9.4.0-1ubuntu1~20.04.2_amd64.deb ...
+startup-script: Unpacking libasan5:amd64 (9.4.0-1ubuntu1~20.04.2) ...
+startup-script: Selecting previously unselected package liblsan0:amd64.
+startup-script: Preparing to unpack .../16-liblsan0_10.5.0-1ubuntu1~20.04_amd64.deb ...
+startup-script: Unpacking liblsan0:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Selecting previously unselected package libtsan0:amd64.
+startup-script: Preparing to unpack .../17-libtsan0_10.5.0-1ubuntu1~20.04_amd64.deb ...
+startup-script: Unpacking libtsan0:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Selecting previously unselected package libubsan1:amd64.
+startup-script: Preparing to unpack .../18-libubsan1_10.5.0-1ubuntu1~20.04_amd64.deb ...
+startup-script: Unpacking libubsan1:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Selecting previously unselected package libquadmath0:amd64.
+startup-script: Preparing to unpack .../19-libquadmath0_10.5.0-1ubuntu1~20.04_amd64.deb ...
+startup-script: Unpacking libquadmath0:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Selecting previously unselected package libgcc-9-dev:amd64.
+startup-script: Preparing to unpack .../20-libgcc-9-dev_9.4.0-1ubuntu1~20.04.2_amd64.deb ...
+startup-script: Unpacking libgcc-9-dev:amd64 (9.4.0-1ubuntu1~20.04.2) ...
+startup-script: Selecting previously unselected package gcc-9.
+startup-script: Preparing to unpack .../21-gcc-9_9.4.0-1ubuntu1~20.04.2_amd64.deb ...
+startup-script: Unpacking gcc-9 (9.4.0-1ubuntu1~20.04.2) ...
+startup-script: Selecting previously unselected package gcc.
+startup-script: Preparing to unpack .../22-gcc_4%3a9.3.0-1ubuntu2_amd64.deb ...
+startup-script: Unpacking gcc (4:9.3.0-1ubuntu2) ...
+startup-script: Selecting previously unselected package libc-dev-bin.
+startup-script: Preparing to unpack .../23-libc-dev-bin_2.31-0ubuntu9.15_amd64.deb ...
+startup-script: Unpacking libc-dev-bin (2.31-0ubuntu9.15) ...
+startup-script: Selecting previously unselected package linux-libc-dev:amd64.
+startup-script: Preparing to unpack .../24-linux-libc-dev_5.4.0-177.197_amd64.deb ...
+startup-script: Unpacking linux-libc-dev:amd64 (5.4.0-177.197) ...
+startup-script: Selecting previously unselected package libcrypt-dev:amd64.
+startup-script: Preparing to unpack .../25-libcrypt-dev_1%3a4.4.10-10ubuntu4_amd64.deb ...
+startup-script: Unpacking libcrypt-dev:amd64 (1:4.4.10-10ubuntu4) ...
+startup-script: Selecting previously unselected package libc6-dev:amd64.
+startup-script: Preparing to unpack .../26-libc6-dev_2.31-0ubuntu9.15_amd64.deb ...
+startup-script: Unpacking libc6-dev:amd64 (2.31-0ubuntu9.15) ...
+startup-script: Selecting previously unselected package make.
+startup-script: Preparing to unpack .../27-make_4.2.1-1.2_amd64.deb ...
+startup-script: Unpacking make (4.2.1-1.2) ...
+startup-script: Selecting previously unselected package manpages-dev.
+startup-script: Preparing to unpack .../28-manpages-dev_5.05-1_all.deb ...
+startup-script: Unpacking manpages-dev (5.05-1) ...
+startup-script: Setting up manpages-dev (5.05-1) ...
+startup-script: Setting up binutils-common:amd64 (2.34-6ubuntu1.9) ...
+startup-script: Setting up linux-libc-dev:amd64 (5.4.0-177.197) ...
+startup-script: Setting up libctf-nobfd0:amd64 (2.34-6ubuntu1.9) ...
+startup-script: Setting up libgomp1:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Setting up make (4.2.1-1.2) ...
+startup-script: Setting up libquadmath0:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Setting up libmpc3:amd64 (1.1.0-1) ...
+startup-script: Setting up libatomic1:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Setting up libubsan1:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Setting up libcrypt-dev:amd64 (1:4.4.10-10ubuntu4) ...
+startup-script: Setting up libisl22:amd64 (0.22.1-1) ...
+startup-script: Setting up libbinutils:amd64 (2.34-6ubuntu1.9) ...
+startup-script: Setting up libc-dev-bin (2.31-0ubuntu9.15) ...
+startup-script: Setting up libcc1-0:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Setting up liblsan0:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Setting up libitm1:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Setting up gcc-9-base:amd64 (9.4.0-1ubuntu1~20.04.2) ...
+startup-script: Setting up libtsan0:amd64 (10.5.0-1ubuntu1~20.04) ...
+startup-script: Setting up libctf0:amd64 (2.34-6ubuntu1.9) ...
+startup-script: Setting up libasan5:amd64 (9.4.0-1ubuntu1~20.04.2) ...
+startup-script: Setting up cpp-9 (9.4.0-1ubuntu1~20.04.2) ...
+startup-script: Setting up libc6-dev:amd64 (2.31-0ubuntu9.15) ...
+startup-script: Setting up binutils-x86-64-linux-gnu (2.34-6ubuntu1.9) ...
+startup-script: Setting up binutils (2.34-6ubuntu1.9) ...
+startup-script: Setting up libgcc-9-dev:amd64 (9.4.0-1ubuntu1~20.04.2) ...
+startup-script: Setting up cpp (4:9.3.0-1ubuntu2) ...
+startup-script: Setting up gcc-9 (9.4.0-1ubuntu1~20.04.2) ...
+startup-script: Setting up gcc (4:9.3.0-1ubuntu2) ...
+startup-script: Processing triggers for man-db (2.9.1-1) ...
+startup-script: Processing triggers for libc-bin (2.31-0ubuntu9.12) ...
+startup-script: + sudo rm -rf /home/gargnitin_google_com/working_dir/github
+startup-script: + git clone https://github.com/axboe/fio.git /home/gargnitin_google_com/working_dir/github
+startup-script: Cloning into '/home/gargnitin_google_com/working_dir/github'...
+startup-script: + cd /home/gargnitin_google_com/working_dir/github
+startup-script: + git checkout fio-3.36
+startup-script: Note: switching to 'fio-3.36'.
+startup-script:
+startup-script: You are in 'detached HEAD' state. You can look around, make experimental
+startup-script: changes and commit them, and you can discard any commits you make in this
+startup-script: state without impacting any branches by switching back to a branch.
+startup-script:
+startup-script: If you want to create a new branch to retain commits you create, you may
+startup-script: do so (now or later) by using -c with the switch command. Example:
+startup-script:
+startup-script:   git switch -c <new-branch-name>
+startup-script:
+startup-script: Or undo this operation with:
+startup-script:
+startup-script:   git switch -
+startup-script:
+startup-script: Turn off this advice by setting config variable advice.detachedHead to false
+startup-script:
+startup-script: HEAD is now at 624e263f Fio 3.36
+startup-script: + sed -i 's/define \+FIO_IO_U_PLAT_GROUP_NR \+\([0-9]\+\)/define FIO_IO_U_PLAT_GROUP_NR 32/g' stat.h
+startup-script: + ./configure
+startup-script: Operating system              Linux
+startup-script: CPU                           x86_64
+startup-script: Big endian                    no
+startup-script: Compiler                      gcc
+startup-script: Cross compile                 no
+startup-script:
+startup-script: Static build                  no
+startup-script: Wordsize                      64
+startup-script: zlib                          no
+startup-script: fcntl(F_FULLFSYNC)            no
+startup-script: Linux AIO support             yes
+startup-script: Linux AIO support rw flags    yes
+startup-script: POSIX AIO support             yes
+startup-script: POSIX AIO support needs -lrt  yes
+startup-script: POSIX AIO fsync               yes
+startup-script: POSIX pshared support         yes
+startup-script: pthread_condattr_setclock()   yes
+startup-script: pthread_sigmask()             yes
+startup-script: pthread_getaffinity_np()      yes
+startup-script: Solaris AIO support           no
+startup-script: __sync_fetch_and_add          yes
+startup-script: __sync_synchronize            yes
+startup-script: __sync_val_compare_and_swap   yes
+startup-script: libverbs                      no
+startup-script: rdmacm                        no
+startup-script: librpma                       no
+startup-script: libprotobuf_c                 no
+startup-script: asprintf()                    yes
+startup-script: vasprintf()                   yes
+startup-script: Linux fallocate               yes
+startup-script: POSIX fadvise                 yes
+startup-script: POSIX fallocate               yes
+startup-script: sched_setaffinity(3 arg)      yes
+startup-script: sched_setaffinity(2 arg)      no
+startup-script: clock_gettime                 yes
+startup-script: CLOCK_MONOTONIC               yes
+startup-script: clockid_t                     yes
+startup-script: gettimeofday                  yes
+startup-script: fdatasync                     yes
+startup-script: pipe()                        yes
+startup-script: pipe2()                       yes
+startup-script: pread()                       yes
+startup-script: sync_file_range               yes
+startup-script: ASharedMemory_create          no
+startup-script: EXT4 move extent              yes
+startup-script: Linux splice(2)               yes
+startup-script: libnuma                       no
+startup-script: strsep                        yes
+startup-script: strcasestr                    yes
+startup-script: strlcat                       no
+startup-script: getopt_long_only()            yes
+startup-script: inet_aton                     yes
+startup-script: socklen_t                     yes
+startup-script: __thread                      yes
+startup-script: RUSAGE_THREAD                 yes
+startup-script: SCHED_IDLE                    yes
+startup-script: TCP_NODELAY                   yes
+startup-script: Net engine window_size        yes
+startup-script: TCP_MAXSEG                    yes
+startup-script: RLIMIT_MEMLOCK                yes
+startup-script: pwritev/preadv                yes
+startup-script: pwritev2/preadv2              yes
+startup-script: IPv6 helpers                  yes
+startup-script: http engine                   no
+startup-script: Rados engine                  no
+startup-script: Rados Block Device engine     no
+startup-script: setvbuf                       yes
+startup-script: Gluster API engine            no
+startup-script: s390_z196_facilities          no
+startup-script: HDFS engine                   no
+startup-script: MTD                           yes
+startup-script: libpmem                       no
+startup-script: libpmem1_5                    no
+startup-script: libpmem2                      no
+startup-script: PMDK dev-dax engine           no
+startup-script: PMDK libpmem engine           no
+startup-script: DDN's Infinite Memory Engine  no
+startup-script: iscsi engine                  no
+startup-script: NBD engine                    no
+startup-script: DAOS File System (dfs) Engine no
+startup-script: NFS engine                    no
+startup-script: lex/yacc for arithmetic       no
+startup-script: getmntent                     yes
+startup-script: getmntinfo                    no
+startup-script: Static Assert                 yes
+startup-script: bool                          yes
+startup-script: strndup                       yes
+startup-script: Valgrind headers              no
+startup-script: Zoned block device support    yes
+startup-script: Zoned block device capacity   no
+startup-script: libzbc engine                 no
+startup-script: NVMe uring command support    no
+startup-script: xnvme                         missing pkg-config, can't check xnvme version
+startup-script: xnvme engine                  no
+startup-script: blkio                         missing pkg-config, can't check blkio version
+startup-script: libblkio engine               no
+startup-script: march_armv8_a_crc_crypto      no
+startup-script: cuda                          no
+startup-script: libcufile                     no
+startup-script: Build march=native            yes
+startup-script: CUnit                         no
+startup-script: __kernel_rwf_t                yes
+startup-script: -Wimplicit-fallthrough=2      yes
+startup-script: -Wno-stringop-truncation      yes
+startup-script: MADV_HUGEPAGE                 yes
+startup-script: gettid                        yes
+startup-script: statx(2)/libc                 yes
+startup-script: statx(2)/syscall              yes
+startup-script: Windows PDB generation        no
+startup-script: timerfd_create                yes
+startup-script: Consider installing zlib1g-dev (zlib-devel) as some fio features depend on it.
+startup-script: Lib-based ioengines dynamic   no
+startup-script: TCMalloc support              no
+startup-script: seed_buckets                  4
+startup-script: + make
+startup-script: FIO_VERSION = fio-3.36-dirty
+startup-script:     CC crc/crc16.o
+startup-script:     CC crc/crc32.o
+startup-script:     CC crc/crc32c-arm64.o
+startup-script:     CC crc/crc32c-intel.o
+startup-script:     CC crc/crc32c.o
+startup-script:     CC crc/crc64.o
+startup-script:     CC crc/crc7.o
+startup-script:     CC crc/crct10dif_common.o
+startup-script:     CC crc/fnv.o
+startup-script:     CC crc/md5.o
+startup-script:     CC crc/murmur3.o
+startup-script:     CC crc/sha1.o
+startup-script:     CC crc/sha256.o
+startup-script:     CC crc/sha3.o
+startup-script:     CC crc/sha512.o
+startup-script:     CC crc/test.o
+startup-script:     CC crc/xxhash.o
+startup-script:     CC lib/axmap.o
+startup-script:     CC lib/bloom.o
+startup-script:     CC lib/flist_sort.o
+startup-script:     CC lib/gauss.o
+startup-script:     CC lib/getrusage.o
+startup-script:     CC lib/hweight.o
+startup-script:     CC lib/ieee754.o
+startup-script:     CC lib/lfsr.o
+startup-script:     CC lib/memalign.o
+startup-script:     CC lib/memcpy.o
+startup-script:     CC lib/mountcheck.o
+startup-script:     CC lib/num2str.o
+startup-script:     CC lib/output_buffer.o
+startup-script:     CC lib/pattern.o
+startup-script:     CC lib/prio_tree.o
+startup-script:     CC lib/rand.o
+startup-script:     CC lib/rbtree.o
+startup-script:     CC lib/strntol.o
+startup-script:     CC lib/zipf.o
+startup-script:     CC gettime.o
+startup-script:     CC ioengines.o
+startup-script:     CC init.o
+startup-script:     CC stat.o
+startup-script:     CC log.o
+startup-script:     CC time.o
+startup-script:     CC filesetup.o
+startup-script:     CC eta.o
+startup-script:     CC verify.o
+startup-script:     CC memory.o
+startup-script:     CC io_u.o
+startup-script:     CC parse.o
+startup-script:     CC fio_sem.o
+startup-script:     CC rwlock.o
+startup-script:     CC pshared.o
+startup-script:     CC options.o
+startup-script:     CC smalloc.o
+startup-script:     CC filehash.o
+startup-script:     CC profile.o
+startup-script:     CC debug.o
+startup-script:     CC engines/cpu.o
+startup-script:     CC engines/mmap.o
+startup-script:     CC engines/sync.o
+startup-script:     CC engines/null.o
+startup-script:     CC engines/net.o
+startup-script:     CC engines/ftruncate.o
+startup-script:     CC engines/fileoperations.o
+startup-script:     CC engines/exec.o
+startup-script:     CC server.o
+startup-script:     CC client.o
+startup-script:     CC iolog.o
+startup-script:     CC backend.o
+startup-script:     CC libfio.o
+startup-script:     CC flow.o
+startup-script:     CC cconv.o
+startup-script:     CC gettime-thread.o
+startup-script:     CC helpers.o
+startup-script:     CC json.o
+startup-script:     CC idletime.o
+startup-script:     CC td_error.o
+startup-script:     CC profiles/tiobench.o
+startup-script:     CC profiles/act.o
+startup-script:     CC io_u_queue.o
+startup-script:     CC filelock.o
+startup-script:     CC workqueue.o
+startup-script:     CC rate-submit.o
+startup-script:     CC optgroup.o
+startup-script:     CC helper_thread.o
+startup-script:     CC steadystate.o
+startup-script:     CC zone-dist.o
+startup-script:     CC zbd.o
+startup-script:     CC dedupe.o
+startup-script:     CC fdp.o
+startup-script:     CC engines/posixaio.o
+startup-script:     CC engines/falloc.o
+startup-script:     CC engines/e4defrag.o
+startup-script:     CC engines/splice.o
+startup-script:     CC oslib/asprintf.o
+startup-script:     CC oslib/strlcat.o
+startup-script:     CC engines/mtd.o
+startup-script:     CC oslib/libmtd.o
+startup-script:     CC oslib/libmtd_legacy.o
+startup-script:     CC diskutil.o
+startup-script:     CC fifo.o
+startup-script:     CC blktrace.o
+startup-script:     CC cgroup.o
+startup-script:     CC trim.o
+startup-script:     CC engines/sg.o
+startup-script:     CC oslib/linux-dev-lookup.o
+startup-script:     CC engines/io_uring.o
+startup-script:     CC engines/nvme.o
+startup-script:     CC oslib/linux-blkzoned.o
+startup-script:     CC engines/cmdprio.o
+startup-script:     CC engines/libaio.o
+startup-script:     CC fio.o
+startup-script:   LINK fio
+startup-script:     CC t/log.o
+startup-script:     CC t/genzipf.o
+startup-script:     CC oslib/strcasestr.o
+startup-script:     CC oslib/strndup.o
+startup-script:   LINK t/fio-genzipf
+startup-script:     CC t/btrace2fio.o
+startup-script:   LINK t/fio-btrace2fio
+startup-script:     CC t/verify-state.o
+startup-script:     CC t/debug.o
+startup-script:   LINK t/fio-verify-state
+startup-script:     CC t/stest.o
+startup-script:     CC t/arch.o
+startup-script:   LINK t/stest
+startup-script:     CC t/ieee754.o
+startup-script:   LINK t/ieee754
+startup-script:     CC t/axmap.o
+startup-script:   LINK t/axmap
+startup-script:     CC t/lfsr-test.o
+startup-script:   LINK t/lfsr-test
+startup-script:     CC t/gen-rand.o
+startup-script:   LINK t/gen-rand
+startup-script:     CC t/memlock.o
+startup-script:   LINK t/memlock
+startup-script:     CC t/read-to-pipe-async.o
+startup-script:   LINK t/read-to-pipe-async
+startup-script:     CC t/io_uring.o
+startup-script:   LINK t/io_uring
+startup-script: + sudo make install
+startup-script: install -m 755 -d /usr/local/bin
+startup-script: install fio t/fio-genzipf t/fio-btrace2fio t/fio-verify-state ./tools/fio_generate_plots ./tools/plot/fio2gnuplot ./tools/genfio ./tools
+startup-script: install -m 755 -d /usr/local/man/man1
+startup-script: install -m 644 ./fio.1 /usr/local/man/man1
+startup-script: install -m 644 ./tools/fio_generate_plots.1 /usr/local/man/man1
+startup-script: install -m 644 ./tools/plot/fio2gnuplot.1 /usr/local/man/man1
+startup-script: install -m 644 ./tools/hist/fiologparser_hist.py.1 /usr/local/man/man1
+startup-script: install -m 755 -d /usr/local/share/fio
+startup-script: install -m 644 ./tools/plot/*gpm /usr/local/share/fio/
+startup-script: + cd -
+startup-script: /home/gargnitin_google_com/working_dir
+startup-script: + version=1.21.3
+startup-script: + wget -O go_tar.tar.gz https://go.dev/dl/go1.21.3.linux-amd64.tar.gz -q
+startup-script: + sudo rm -rf /usr/local/go
+startup-script: + tar -xzf go_tar.tar.gz
+startup-script: + sudo mv go /usr/local
+startup-script: + export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
+startup-script: + PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin
+startup-script: + go version
+startup-script: go version go1.21.3 linux/amd64
+startup-script: + rm go_tar.tar.gz
+startup-script: + export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home
+startup-script: + PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/gargni
+startup-script: + echo 'export PATH=$PATH:$HOME/go/bin/:/usr/local/go/bin'
+startup-script: + export WORKING_DIR=/home/gargnitin_google_com/working_dir
+startup-script: + WORKING_DIR=/home/gargnitin_google_com/working_dir
+startup-script: + echo 'export WORKING_DIR=/home/gargnitin_google_com/working_dir'
+startup-script: + CGO_ENABLED=0
+startup-script: + go install github.com/googlecloudplatform/gcsfuse@read_cache_release
+startup-script: go: downloading github.com/googlecloudplatform/gcsfuse v1.2.1-0.20240229081910-b00c4e7a451f
+startup-script: go: downloading google.golang.org/api v0.159.0
+startup-script: go: downloading github.com/jacobsa/fuse v0.0.0-20231003132804-d0f3daf365c3
+startup-script: go: downloading github.com/jacobsa/daemonize v0.0.0-20160101105449-e460293e890f
+startup-script: go: downloading github.com/jacobsa/timeutil v0.0.0-20170205232429-577e5acbbcf6
+startup-script: go: downloading github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0
+startup-script: go: downloading github.com/urfave/cli v1.22.14
+startup-script: go: downloading golang.org/x/net v0.20.0
+startup-script: go: downloading github.com/google/uuid v1.6.0
+startup-script: go: downloading gopkg.in/yaml.v3 v3.0.1
+startup-script: go: downloading gopkg.in/natefinch/lumberjack.v2 v2.2.1
+startup-script: go: downloading cloud.google.com/go/storage v1.37.0
+startup-script: go: downloading contrib.go.opencensus.io/exporter/ocagent v0.7.0
+startup-script: go: downloading github.com/fsouza/fake-gcs-server v1.40.3
+startup-script: go: downloading contrib.go.opencensus.io/exporter/stackdriver v0.13.14
+startup-script: go: downloading github.com/jacobsa/syncutil v0.0.0-20180201203307-228ac8e5a6c3
+startup-script: go: downloading golang.org/x/oauth2 v0.16.0
+startup-script: go: downloading go.opencensus.io v0.24.0
+startup-script: go: downloading github.com/googleapis/gax-go/v2 v2.12.0
+startup-script: go: downloading github.com/jacobsa/oglemock v0.0.0-20150831005832-e94d794d06ff
+startup-script: go: downloading golang.org/x/time v0.5.0
+startup-script: go: downloading github.com/jacobsa/oglematchers v0.0.0-20150720000706-141901ea67cd
+startup-script: go: downloading google.golang.org/protobuf v1.32.0
+startup-script: go: downloading google.golang.org/grpc v1.60.1
+startup-script: go: downloading google.golang.org/genproto/googleapis/rpc v0.0.0-20240116215550-a9fa1716bcac
+startup-script: go: downloading github.com/census-instrumentation/opencensus-proto v0.4.1
+startup-script: go: downloading github.com/golang/protobuf v1.5.3
+startup-script: go: downloading google.golang.org/genproto v0.0.0-20240116215550-a9fa1716bcac
+startup-script: go: downloading cloud.google.com/go/compute/metadata v0.2.3
+startup-script: go: downloading golang.org/x/sys v0.16.0
+startup-script: go: downloading cloud.google.com/go/monitoring v1.17.0
+startup-script: go: downloading cloud.google.com/go/trace v1.10.4
+startup-script: go: downloading github.com/prometheus/prometheus v0.35.0
+startup-script: go: downloading google.golang.org/genproto/googleapis/api v0.0.0-20240122161410-6c6643bf1457
+startup-script: go: downloading github.com/cpuguy83/go-md2man/v2 v2.0.2
+startup-script: go: downloading cloud.google.com/go v0.112.0
+startup-script: go: downloading cloud.google.com/go/compute v1.23.3
+startup-script: go: downloading github.com/gorilla/handlers v1.5.1
+startup-script: go: downloading github.com/gorilla/mux v1.8.0
+startup-script: go: downloading github.com/sirupsen/logrus v1.9.0
+startup-script: go: downloading github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da
+startup-script: go: downloading github.com/grpc-ecosystem/grpc-gateway/v2 v2.15.2
+startup-script: go: downloading github.com/russross/blackfriday/v2 v2.1.0
+startup-script: go: downloading github.com/pkg/xattr v0.4.9
+startup-script: go: downloading cloud.google.com/go/pubsub v1.33.0
+startup-script: go: downloading github.com/felixge/httpsnoop v1.0.4
+startup-script: go: downloading cloud.google.com/go/iam v1.1.5
+startup-script: go: downloading github.com/aws/aws-sdk-go v1.44.217
+startup-script: go: downloading go.opentelemetry.io/otel v1.22.0
+startup-script: go: downloading go.opentelemetry.io/otel/trace v1.22.0
+startup-script: go: downloading golang.org/x/sync v0.6.0
+startup-script: go: downloading github.com/go-logr/logr v1.4.1
+startup-script: go: downloading go.opentelemetry.io/otel/metric v1.22.0
+startup-script: go: downloading github.com/go-logr/stdr v1.2.2
+startup-script: go: downloading golang.org/x/text v0.14.0
+startup-script: go: downloading github.com/googleapis/enterprise-certificate-proxy v0.3.2
+startup-script: go: downloading go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.47.0
+startup-script: go: downloading go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.47.0
+startup-script: go: downloading github.com/google/s2a-go v0.1.7
+startup-script: go: downloading github.com/jmespath/go-jmespath v0.4.0
+startup-script: go: downloading golang.org/x/crypto v0.18.0
+startup-script: + '[' '!' -d ./gcsfuse ']'
+startup-script: + git clone -b read_cache_release https://github.com/GoogleCloudPlatform/gcsfuse.git
+startup-script: Cloning into 'gcsfuse'...
+startup-script: + /home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/read_cache/mount_gcsfuse.sh
+startup-script: + set -e
+startup-script: + cache_file_for_range_read=false
+startup-script: + max_size_mb=100
+startup-script: + cache_dir=/tmp/read_cache/
+startup-script: + bucket_name=gcsfuse-read-cache-fio-load-test
+startup-script: + stat_or_type_cache_ttl_secs=6048000
+startup-script: + stat_cache_max_size_mb=10
+startup-script: + enable_log=0
+startup-script: + getopts lhds:b:c:m: flag
+startup-script: + cd /home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/read_cache/
+startup-script: + mount_dir=/home/gargnitin_google_com/working_dir/gcs
+startup-script: + mkdir -p /home/gargnitin_google_com/working_dir/gcs
+startup-script: + mountpoint -q -- /home/gargnitin_google_com/working_dir/gcs
+startup-script: + export MAX_SIZE_MB=100
+startup-script: + MAX_SIZE_MB=100
+startup-script: + export CACHE_FILE_FOR_RANGE_READ=false
+startup-script: + CACHE_FILE_FOR_RANGE_READ=false
+startup-script: + export CACHE_DIR=/tmp/read_cache/
+startup-script: + CACHE_DIR=/tmp/read_cache/
+startup-script: + export TTL_SECS=6048000
+startup-script: + TTL_SECS=6048000
+startup-script: + export STAT_CACHE_MAX_SIZE_MB=10
+startup-script: + STAT_CACHE_MAX_SIZE_MB=10
+startup-script: + ./generate_yml_config.sh
+startup-script: + debug_flags=
+startup-script: + '[' 0 -eq 1 ']'
+startup-script: + echo 'Mounting gcsfuse...'
+startup-script: Mounting gcsfuse...
+startup-script: + gcsfuse --stackdriver-export-interval 30s --log-file /home/gargnitin_google_com/working_dir/gcsfuse_logs.txt --log-format text --confi
+startup-script: {"time":"22/04/2024 11:38:18.399091","severity":"INFO","message":"Value of [config-file] resolved from [./config.yml] to [/home/gargniti
+startup-script: {"time":"22/04/2024 11:38:18.399292","severity":"INFO","message":"Start gcsfuse/unknown (Go version go1.21.3) for app \"\" using mount p
+startup-script: {"time":"22/04/2024 11:38:18.399443","severity":"INFO","message":"GCSFuse mount command flags: {\"AppName\":\"\",\"Foreground\":false,\"420,\"Uid\":-1,\"Gid\":-1,\"ImplicitDirs\":false,\"OnlyDir\":\"\",\"RenameDirLimit\":0,\"CustomEndpoint\":null,\"BillingProject\":\"\",\"KeyFile\":\"\",
+eep\":30000000000,\"StatCacheCapacity\":20460,\"StatCacheTTL\":60000000000,\"TypeCacheTTL\":60000000000,\"HttpClientTimeout\":0,\"MaxRetryDuration\":-10"EnableNonexistentTypeCache\":false,\"StackdriverExportInterval\":30000000000,\"OtelCollectorAddress\":\"\",\"LogFile\":\"/home/gargnitin_google_com/worbugGCS\":false,\"DebugHTTP\":false,\"DebugInvariants\":false,\"DebugMutex\":false}"}
+startup-script: {"time":"22/04/2024 11:38:18.399493","severity":"INFO","message":"GCSFuse mount config flags: {\"CreateEmptyFile\":true,\"Severity\":\"ECount\":10,\"Compress\":true},\"MaxSizeMB\":100,\"CacheFileForRangeRead\":false,\"CacheDir\":\"/tmp/read_cache/\",\"TtlInSeconds\":6048000,\"TypeCacheMa
+startup-script: ++ ps -ax
+startup-script: ++ grep 'gcsfuse --foreground'
+startup-script: ++ head -n 1
+startup-script: ++ awk '{print $1}'
+startup-script: + gcsfuseID=15569
+startup-script: + echo 'Running GCSFuse process-id: 15569'
+startup-script: Running GCSFuse process-id: 15569
+startup-script: + cd -
+startup-script: /home/gargnitin_google_com/working_dir
+startup-script: + cat
+startup-script: + cd -
+startup-script: /home/gargnitin_google_com/working_dir/github
+startup-script exit status 0
+Finished running startup scripts.
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ df -h
+Filesystem                        Size  Used Avail Use% Mounted on
+/dev/root                          97G  4.5G   93G   5% /
+devtmpfs                           63G     0   63G   0% /dev
+tmpfs                              63G     0   63G   0% /dev/shm
+tmpfs                              13G  1.2M   13G   1% /run
+tmpfs                             5.0M     0  5.0M   0% /run/lock
+tmpfs                              63G     0   63G   0% /sys/fs/cgroup
+/dev/loop0                         64M   64M     0 100% /snap/core20/2015
+/dev/loop1                        344M  344M     0 100% /snap/google-cloud-cli/189
+/dev/loop2                         92M   92M     0 100% /snap/lxd/24061
+/dev/loop3                         41M   41M     0 100% /snap/snapd/20290
+/dev/sda15                        105M  6.1M   99M   6% /boot/efi
+/dev/md0                          1.5T   28K  1.4T   1% /mnt/disks/local_ssd
+tmpfs                              13G     0   13G   0% /run/user/1364453796
+gcsfuse-read-cache-fio-load-test  1.0P     0  1.0P   0% /home/gargnitin_google_com/working_dir/gcs
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ df -h /sdb*
+df: '/sdb*': No such file or directory
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ df -h /sd* 
+df: '/sd*': No such file or directory
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ df -h /sdb
+df: /sdb: No such file or directory
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ df -h     
+Filesystem                        Size  Used Avail Use% Mounted on
+/dev/root                          97G  4.5G   93G   5% /
+devtmpfs                           63G     0   63G   0% /dev
+tmpfs                              63G     0   63G   0% /dev/shm
+tmpfs                              13G  1.2M   13G   1% /run
+tmpfs                             5.0M     0  5.0M   0% /run/lock
+tmpfs                              63G     0   63G   0% /sys/fs/cgroup
+/dev/loop0                         64M   64M     0 100% /snap/core20/2015
+/dev/loop1                        344M  344M     0 100% /snap/google-cloud-cli/189
+/dev/loop2                         92M   92M     0 100% /snap/lxd/24061
+/dev/loop3                         41M   41M     0 100% /snap/snapd/20290
+/dev/sda15                        105M  6.1M   99M   6% /boot/efi
+/dev/md0                          1.5T   28K  1.4T   1% /mnt/disks/local_ssd
+tmpfs                              13G     0   13G   0% /run/user/1364453796
+gcsfuse-read-cache-fio-load-test  1.0P     0  1.0P   0% /home/gargnitin_google_com/working_dir/gcs
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ ls /dev/disk/by-id/
+google-gargnitin-test-n2std32-us-west1         nvme-nvme.1ae0-6e766d655f63617264-6e766d655f63617264-00000001
+google-gargnitin-test-n2std32-us-west1-part1   nvme-nvme.1ae0-6e766d655f63617264-6e766d655f63617264-00000002
+google-gargnitin-test-n2std32-us-west1-part14  nvme-nvme.1ae0-6e766d655f63617264-6e766d655f63617264-00000003
+google-gargnitin-test-n2std32-us-west1-part15  nvme-nvme.1ae0-6e766d655f63617264-6e766d655f63617264-00000004
+google-local-nvme-ssd-0                        nvme-nvme_card_nvme_card
+google-local-nvme-ssd-1                        scsi-0Google_PersistentDisk_gargnitin-test-n2std32-us-west1
+google-local-nvme-ssd-2                        scsi-0Google_PersistentDisk_gargnitin-test-n2std32-us-west1-part1
+google-local-nvme-ssd-3                        scsi-0Google_PersistentDisk_gargnitin-test-n2std32-us-west1-part14
+md-name-0                                      scsi-0Google_PersistentDisk_gargnitin-test-n2std32-us-west1-part15
+md-uuid-d1c86591:5db5057e:97e516f1:56c0a4b0
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ man mdadm
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ ^C
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ ^C
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ ^C
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ hostnamer
+
+Command 'hostnamer' not found, did you mean:
+
+  command 'hostname' from deb hostname (3.23)
+
+Try: apt install <deb name>
+
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ hostname 
+gargnitin-test-n2std32-us-west1
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ source ~/.bashrc
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ ls $WORKING_DIR/gcs
+1K  1M  5G  5M  single_file  single_file1  single_file10  single_file14  single_file2  single_file3  single_file4  single_file5  single_file6  single_fi
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ $WORKING_DIR/gcsfuse/perfmetrics/scripts/read_cache/
+-bash: /home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/read_cache/: Is a directory
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ $WORKING_DIR/gcsfuse_logs.txt
+-bash: /home/gargnitin_google_com/working_dir/gcsfuse_logs.txt: Permission denied
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ ls $WORKING_DIR/gcsfuse_logs.txt
+/home/gargnitin_google_com/working_dir/gcsfuse_logs.txt
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ vi $WORKING_DIR/gcsfuse_logs.txt                                                                
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ ls
+go  working_dir
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ mkdir test_runs
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ mkdir -p test_runs/fio/reads      
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ cd test_runs/fio/reads/
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ vi run.sh
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ vi run.sh
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ chmod +x run.sh                                                             
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ htop
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ htop -F gcsfuse
+htop: invalid option -- 'F'
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ htop           
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ cat run.sh 
+#!/bin/bash
+set -x
+set -e
+if [[ -z "${WORKING_DIR}" ]]; then
+        echo "Please set the working directory..."
+        exit 1
+fi
+readtype=$2
+num_of_threads=$1
+NUM_OF_FILES=1000000
+cache_capacity=$((3 * NUM_OF_FILES)) 
+cd $WORKING_DIR/gcsfuse/perfmetrics/scripts/read_cache/
+./mount_gcsfuse.sh -s 32769998 -m $cache_capacity  -c /dev/shm -d -b princer-read-cache-load-test-west
+workload_dir=$WORKING_DIR/gcs/128K
+#workload_dir=/dev/shm/256K
+#workload_dir=/mnt/disks/local_ssd/64K
+mkdir -p $workload_dir
+number_of_files_per_thread=$((NUM_OF_FILES / num_of_threads))
+./run_read_cache_fio_workload.sh -e 4 -n $number_of_files_per_thread -t $num_of_threads -r $readtype -s 128K -b 128K -p 20 -d $workload_dir
+cd -
+
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ ./run.sh read 50
++ set -e
++ [[ -z /home/gargnitin_google_com/working_dir ]]
++ readtype=50
++ num_of_threads=read
++ NUM_OF_FILES=1000000
++ cache_capacity=3000000
++ cd /home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/read_cache/
++ ./mount_gcsfuse.sh -s 32769998 -m 3000000 -c /dev/shm -d -b princer-read-cache-load-test-west
++ set -e
++ cache_file_for_range_read=false
++ max_size_mb=100
++ cache_dir=/tmp/read_cache/
++ bucket_name=gcsfuse-read-cache-fio-load-test
++ stat_or_type_cache_ttl_secs=6048000
++ stat_cache_max_size_mb=10
++ enable_log=0
++ getopts lhds:b:c:m: flag
++ case "${flag}" in
++ max_size_mb=32769998
++ getopts lhds:b:c:m: flag
++ case "${flag}" in
++ stat_cache_max_size_mb=3000000
++ getopts lhds:b:c:m: flag
++ case "${flag}" in
++ cache_dir=/dev/shm
++ getopts lhds:b:c:m: flag
++ case "${flag}" in
++ cache_file_for_range_read=true
++ getopts lhds:b:c:m: flag
++ case "${flag}" in
++ bucket_name=princer-read-cache-load-test-west
++ getopts lhds:b:c:m: flag
++ cd /home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/read_cache/
++ mount_dir=/home/gargnitin_google_com/working_dir/gcs
++ mkdir -p /home/gargnitin_google_com/working_dir/gcs
++ mountpoint -q -- /home/gargnitin_google_com/working_dir/gcs
++ echo 'Unmounting previous mount...'
+Unmounting previous mount...
++ umount /home/gargnitin_google_com/working_dir/gcs
++ sleep 10
++ export MAX_SIZE_MB=32769998
++ MAX_SIZE_MB=32769998
++ export CACHE_FILE_FOR_RANGE_READ=true
++ CACHE_FILE_FOR_RANGE_READ=true
++ export CACHE_DIR=/dev/shm
++ CACHE_DIR=/dev/shm
++ export TTL_SECS=6048000
++ TTL_SECS=6048000
++ export STAT_CACHE_MAX_SIZE_MB=3000000
++ STAT_CACHE_MAX_SIZE_MB=3000000
++ ./generate_yml_config.sh
++ debug_flags=
++ '[' 0 -eq 1 ']'
++ echo 'Mounting gcsfuse...'
+Mounting gcsfuse...
++ gcsfuse --stackdriver-export-interval 30s --log-file /home/gargnitin_google_com/working_dir/gcsfuse_logs.txt --log-format text --config-file ./config.
+{"time":"23/04/2024 03:57:28.627510","severity":"INFO","message":"Value of [config-file] resolved from [./config.yml] to [/home/gargnitin_google_com/wor
+{"time":"23/04/2024 03:57:28.627712","severity":"INFO","message":"Start gcsfuse/unknown (Go version go1.21.3) for app \"\" using mount point: /home/garg
+{"time":"23/04/2024 03:57:28.627866","severity":"INFO","message":"GCSFuse mount command flags: {\"AppName\":\"\",\"Foreground\":false,\"ConfigFile\":\"/"Gid\":-1,\"ImplicitDirs\":false,\"OnlyDir\":\"\",\"RenameDirLimit\":0,\"CustomEndpoint\":null,\"BillingProject\":\"\",\"KeyFile\":\"\",\"TokenUrl\":\"\atCacheCapacity\":20460,\"StatCacheTTL\":60000000000,\"TypeCacheTTL\":60000000000,\"HttpClientTimeout\":0,\"MaxRetryDuration\":-1000000000,\"RetryMultipCache\":false,\"StackdriverExportInterval\":30000000000,\"OtelCollectorAddress\":\"\",\"LogFile\":\"/home/gargnitin_google_com/working_dir/gcsfuse_logs.HTTP\":false,\"DebugInvariants\":false,\"DebugMutex\":false}"}
+{"time":"23/04/2024 03:57:28.627919","severity":"INFO","message":"GCSFuse mount config flags: {\"CreateEmptyFile\":true,\"Severity\":\"ERROR\",\"Format\press\":true},\"MaxSizeMB\":32769998,\"CacheFileForRangeRead\":true,\"CacheDir\":\"/dev/shm\",\"TtlInSeconds\":6048000,\"TypeCacheMaxSizeMB\":4,\"StatCa
+++ ps -ax
+++ grep 'gcsfuse --foreground'
+++ head -n 1
+++ awk '{print $1}'
++ gcsfuseID=68469
++ echo 'Running GCSFuse process-id: 68469'
+Running GCSFuse process-id: 68469
++ cd -
+/home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/read_cache
++ workload_dir=/home/gargnitin_google_com/working_dir/gcs/128K
++ mkdir -p /home/gargnitin_google_com/working_dir/gcs/128K
+./run.sh: line 18: NUM_OF_FILES / num_of_threads: division by 0 (error token is "num_of_threads")
++ ./run_read_cache_fio_workload.sh -e 4 -n -t read -r 50 -s 128K -b 128K -p 20 -d /home/gargnitin_google_com/working_dir/gcs/128K
++ set -e
++ epoch=2
++ no_of_files_per_thread=1
++ read_type=read
++ pause_in_seconds=5
++ block_size=1K
++ file_size=1K
++ num_of_threads=40
++ getopts he:p:n:r:d:s:b:t: flag
++ case "${flag}" in
++ epoch=4
++ getopts he:p:n:r:d:s:b:t: flag
++ case "${flag}" in
++ no_of_files_per_thread=-t
++ getopts he:p:n:r:d:s:b:t: flag
++ '[' '!' -d '' ']'
++ echo 'Please pass a valid workload dir with -d options...'
+Please pass a valid workload dir with -d options...
++ exit 1
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ lsb_release- a                                                              
+
+Command 'lsb_release-' not found, did you mean:
+
+  command 'lsb_release' from deb lsb-release (11.1.0ubuntu2)
+
+Try: apt install <deb name>
+
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 20.04.6 LTS
+Release:        20.04
+Codename:       focal
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ ls  /home/gargnitin_google_com/working_dir/gcs/128K | wc -l                 
+101
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ sudo apt-get install tmux                                                   
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+tmux is already the newest version (3.0a-2ubuntu0.4).
+tmux set to manually installed.
+The following packages were automatically installed and are no longer required:
+  libatasmart4 libblockdev-fs2 libblockdev-loop2 libblockdev-part-err2 libblockdev-part2 libblockdev-swap2 libblockdev-utils2 libblockdev2 libmbim-glib4
+  usb-modeswitch-data
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 106 not upgraded.
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ vi ~/.tmux.conf
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ vi ~/.bashrc
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ vi ~/.bashrc
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ source ~/.bashrc                                                            
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ htop
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ 
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ ./run.sh read 50                                                            
++ set -e
++ [[ -z /home/gargnitin_google_com/working_dir ]]
++ readtype=50
++ num_of_threads=read
++ NUM_OF_FILES=1000000
++ cache_capacity=3000000
++ cd /home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/read_cache/
++ ./mount_gcsfuse.sh -s 32769998 -m 3000000 -c /dev/shm -d -b princer-read-cache-load-test-west
++ set -e
++ cache_file_for_range_read=false
++ max_size_mb=100
++ cache_dir=/tmp/read_cache/
++ bucket_name=gcsfuse-read-cache-fio-load-test
++ stat_or_type_cache_ttl_secs=6048000
++ stat_cache_max_size_mb=10
++ enable_log=0
++ getopts lhds:b:c:m: flag
++ case "${flag}" in
++ max_size_mb=32769998
++ getopts lhds:b:c:m: flag
++ case "${flag}" in
++ stat_cache_max_size_mb=3000000
++ getopts lhds:b:c:m: flag
++ case "${flag}" in
++ cache_dir=/dev/shm
++ getopts lhds:b:c:m: flag
++ case "${flag}" in
++ cache_file_for_range_read=true
++ getopts lhds:b:c:m: flag
++ case "${flag}" in
++ bucket_name=princer-read-cache-load-test-west
++ getopts lhds:b:c:m: flag
++ cd /home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/read_cache/
++ mount_dir=/home/gargnitin_google_com/working_dir/gcs
++ mkdir -p /home/gargnitin_google_com/working_dir/gcs
++ mountpoint -q -- /home/gargnitin_google_com/working_dir/gcs
++ echo 'Unmounting previous mount...'
+Unmounting previous mount...
++ umount /home/gargnitin_google_com/working_dir/gcs
++ sleep 10
++ export MAX_SIZE_MB=32769998
++ MAX_SIZE_MB=32769998
++ export CACHE_FILE_FOR_RANGE_READ=true
++ CACHE_FILE_FOR_RANGE_READ=true
++ export CACHE_DIR=/dev/shm
++ CACHE_DIR=/dev/shm
++ export TTL_SECS=6048000
++ TTL_SECS=6048000
++ export STAT_CACHE_MAX_SIZE_MB=3000000
++ STAT_CACHE_MAX_SIZE_MB=3000000
++ ./generate_yml_config.sh
++ debug_flags=
++ '[' 0 -eq 1 ']'
++ echo 'Mounting gcsfuse...'
+Mounting gcsfuse...
++ gcsfuse --stackdriver-export-interval 30s --log-file /home/gargnitin_google_com/working_dir/gcsfuse_logs.txt --log-format text --config-file ./config.
+{"time":"23/04/2024 04:06:44.233323","severity":"INFO","message":"Value of [config-file] resolved from [./config.yml] to [/home/gargnitin_google_com/wor
+{"time":"23/04/2024 04:06:44.233512","severity":"INFO","message":"Start gcsfuse/unknown (Go version go1.21.3) for app \"\" using mount point: /home/garg
+{"time":"23/04/2024 04:06:44.233653","severity":"INFO","message":"GCSFuse mount command flags: {\"AppName\":\"\",\"Foreground\":false,\"ConfigFile\":\"/"Gid\":-1,\"ImplicitDirs\":false,\"OnlyDir\":\"\",\"RenameDirLimit\":0,\"CustomEndpoint\":null,\"BillingProject\":\"\",\"KeyFile\":\"\",\"TokenUrl\":\"\atCacheCapacity\":20460,\"StatCacheTTL\":60000000000,\"TypeCacheTTL\":60000000000,\"HttpClientTimeout\":0,\"MaxRetryDuration\":-1000000000,\"RetryMultipCache\":false,\"StackdriverExportInterval\":30000000000,\"OtelCollectorAddress\":\"\",\"LogFile\":\"/home/gargnitin_google_com/working_dir/gcsfuse_logs.HTTP\":false,\"DebugInvariants\":false,\"DebugMutex\":false}"}
+{"time":"23/04/2024 04:06:44.233712","severity":"INFO","message":"GCSFuse mount config flags: {\"CreateEmptyFile\":true,\"Severity\":\"ERROR\",\"Format\press\":true},\"MaxSizeMB\":32769998,\"CacheFileForRangeRead\":true,\"CacheDir\":\"/dev/shm\",\"TtlInSeconds\":6048000,\"TypeCacheMaxSizeMB\":4,\"StatCa
+++ ps -ax
+++ grep 'gcsfuse --foreground'
+++ head -n 1
+++ awk '{print $1}'
++ gcsfuseID=69052
++ echo 'Running GCSFuse process-id: 69052'
+Running GCSFuse process-id: 69052
++ cd -
+/home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/read_cache
++ workload_dir=/home/gargnitin_google_com/working_dir/gcs/128K
++ mkdir -p /home/gargnitin_google_com/working_dir/gcs/128K
+./run.sh: line 18: NUM_OF_FILES / num_of_threads: division by 0 (error token is "num_of_threads")
++ ./run_read_cache_fio_workload.sh -e 4 -n -t read -r 50 -s 128K -b 128K -p 20 -d /home/gargnitin_google_com/working_dir/gcs/128K
++ set -e
++ epoch=2
++ no_of_files_per_thread=1
++ read_type=read
++ pause_in_seconds=5
++ block_size=1K
++ file_size=1K
++ num_of_threads=40
++ getopts he:p:n:r:d:s:b:t: flag
++ case "${flag}" in
++ epoch=4
++ getopts he:p:n:r:d:s:b:t: flag
++ case "${flag}" in
++ no_of_files_per_thread=-t
++ getopts he:p:n:r:d:s:b:t: flag
++ '[' '!' -d '' ']'
++ echo 'Please pass a valid workload dir with -d options...'
+Please pass a valid workload dir with -d options...
++ exit 1
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ vi run.sh +/num_of_threads
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~/test_runs/fio/reads$ ./run.sh 50 read                                                            
++ set -e
++ [[ -z /home/gargnitin_google_com/working_dir ]]
++ readtype=read
++ num_of_threads=50
++ NUM_OF_FILES=1000000
++ cache_capacity=3000000
++ cd /home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/read_cache/
++ ./mount_gcsfuse.sh -s 32769998 -m 3000000 -c /dev/shm -d -b princer-read-cache-load-test-west
++ set -e
++ cache_file_for_range_read=false
++ max_size_mb=100
++ cache_dir=/tmp/read_cache/
++ bucket_name=gcsfuse-read-cache-fio-load-test
++ stat_or_type_cache_ttl_secs=6048000
++ stat_cache_max_size_mb=10
++ enable_log=0
++ getopts lhds:b:c:m: flag
++ case "${flag}" in
++ max_size_mb=32769998
++ getopts lhds:b:c:m: flag
++ case "${flag}" in
++ stat_cache_max_size_mb=3000000
++ getopts lhds:b:c:m: flag
++ case "${flag}" in
++ cache_dir=/dev/shm
++ getopts lhds:b:c:m: flag
++ case "${flag}" in
++ cache_file_for_range_read=true
++ getopts lhds:b:c:m: flag
++ case "${flag}" in
++ bucket_name=princer-read-cache-load-test-west
++ getopts lhds:b:c:m: flag
++ cd /home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/read_cache/
++ mount_dir=/home/gargnitin_google_com/working_dir/gcs
++ mkdir -p /home/gargnitin_google_com/working_dir/gcs
++ mountpoint -q -- /home/gargnitin_google_com/working_dir/gcs
++ echo 'Unmounting previous mount...'
+Unmounting previous mount...
++ umount /home/gargnitin_google_com/working_dir/gcs
++ sleep 10
++ export MAX_SIZE_MB=32769998
++ MAX_SIZE_MB=32769998
++ export CACHE_FILE_FOR_RANGE_READ=true
++ CACHE_FILE_FOR_RANGE_READ=true
++ export CACHE_DIR=/dev/shm
++ CACHE_DIR=/dev/shm
++ export TTL_SECS=6048000
++ TTL_SECS=6048000
++ export STAT_CACHE_MAX_SIZE_MB=3000000
++ STAT_CACHE_MAX_SIZE_MB=3000000
++ ./generate_yml_config.sh
++ debug_flags=
++ '[' 0 -eq 1 ']'
++ echo 'Mounting gcsfuse...'
+Mounting gcsfuse...
++ gcsfuse --stackdriver-export-interval 30s --log-file /home/gargnitin_google_com/working_dir/gcsfuse_logs.txt --log-format text --config-file ./config.
+{"time":"23/04/2024 04:07:29.204575","severity":"INFO","message":"Value of [config-file] resolved from [./config.yml] to [/home/gargnitin_google_com/wor
+{"time":"23/04/2024 04:07:29.204750","severity":"INFO","message":"Start gcsfuse/unknown (Go version go1.21.3) for app \"\" using mount point: /home/garg
+{"time":"23/04/2024 04:07:29.204889","severity":"INFO","message":"GCSFuse mount command flags: {\"AppName\":\"\",\"Foreground\":false,\"ConfigFile\":\"/"Gid\":-1,\"ImplicitDirs\":false,\"OnlyDir\":\"\",\"RenameDirLimit\":0,\"CustomEndpoint\":null,\"BillingProject\":\"\",\"KeyFile\":\"\",\"TokenUrl\":\"\atCacheCapacity\":20460,\"StatCacheTTL\":60000000000,\"TypeCacheTTL\":60000000000,\"HttpClientTimeout\":0,\"MaxRetryDuration\":-1000000000,\"RetryMultipCache\":false,\"StackdriverExportInterval\":30000000000,\"OtelCollectorAddress\":\"\",\"LogFile\":\"/home/gargnitin_google_com/working_dir/gcsfuse_logs.HTTP\":false,\"DebugInvariants\":false,\"DebugMutex\":false}"}
+{"time":"23/04/2024 04:07:29.204957","severity":"INFO","message":"GCSFuse mount config flags: {\"CreateEmptyFile\":true,\"Severity\":\"ERROR\",\"Format\press\":true},\"MaxSizeMB\":32769998,\"CacheFileForRangeRead\":true,\"CacheDir\":\"/dev/shm\",\"TtlInSeconds\":6048000,\"TypeCacheMaxSizeMB\":4,\"StatCa
+++ ps -ax
+++ grep 'gcsfuse --foreground'
+++ head -n 1
+++ awk '{print $1}'
++ gcsfuseID=69112
++ echo 'Running GCSFuse process-id: 69112'
+Running GCSFuse process-id: 69112
++ cd -
+/home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/read_cache
++ workload_dir=/home/gargnitin_google_com/working_dir/gcs/128K
++ mkdir -p /home/gargnitin_google_com/working_dir/gcs/128K
++ number_of_files_per_thread=20000
++ ./run_read_cache_fio_workload.sh -e 4 -n 20000 -t 50 -r read -s 128K -b 128K -p 20 -d /home/gargnitin_google_com/working_dir/gcs/128K
++ set -e
++ epoch=2
++ no_of_files_per_thread=1
++ read_type=read
++ pause_in_seconds=5
++ block_size=1K
++ file_size=1K
++ num_of_threads=40
++ getopts he:p:n:r:d:s:b:t: flag
++ case "${flag}" in
++ epoch=4
++ getopts he:p:n:r:d:s:b:t: flag
++ case "${flag}" in
++ no_of_files_per_thread=20000
++ getopts he:p:n:r:d:s:b:t: flag
++ case "${flag}" in
++ num_of_threads=50
++ getopts he:p:n:r:d:s:b:t: flag
++ case "${flag}" in
++ read_type=read
++ getopts he:p:n:r:d:s:b:t: flag
++ case "${flag}" in
++ file_size=128K
++ getopts he:p:n:r:d:s:b:t: flag
++ case "${flag}" in
++ block_size=128K
++ getopts he:p:n:r:d:s:b:t: flag
++ case "${flag}" in
++ pause_in_seconds=20
++ getopts he:p:n:r:d:s:b:t: flag
++ case "${flag}" in
++ workload_dir=/home/gargnitin_google_com/working_dir/gcs/128K
++ getopts he:p:n:r:d:s:b:t: flag
++ '[' '!' -d /home/gargnitin_google_com/working_dir/gcs/128K ']'
++ [[ -z /home/gargnitin_google_com/working_dir ]]
++ [[ read != \r\e\a\d ]]
++ sudo sh -c '/usr/bin/echo 3 > /proc/sys/vm/drop_caches'
++ ls -R /home/gargnitin_google_com/working_dir/gcs/128K
+
+real    1m31.070s
+user    0m0.841s
+sys     0m0.096s
++ cd /home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/read_cache/
+++ seq 4
++ for i in $(seq $epoch)
+++ date +%s
++ echo '[Epoch 1] start time:' 1713845340
+[Epoch 1] start time: 1713845340
++ free -mh
+              total        used        free      shared  buff/cache   available
+Mem:          125Gi       2.6Gi       122Gi       1.0Mi       356Mi       122Gi
+Swap:            0B          0B          0B
++ NUMJOBS=50
++ NRFILES=20000
++ FILE_SIZE=128K
++ BLOCK_SIZE=128K
++ READ_TYPE=read
++ DIR=/home/gargnitin_google_com/working_dir/gcs/128K
++ fio /home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/job_files/read_cache_load_test.fio --alloc-size=1048576
+Workload: (g=0): rw=read, bs=(R) 128KiB-128KiB, (W) 128KiB-128KiB, (T) 128KiB-128KiB, ioengine=libaio, iodepth=64
+ 
+
+
+
+...
+fio-3.36-dirty
+Starting 50 threads
+Jobs: 43 (f=42): [R(13),_(1),R(1),f(1),R(15),_(1),R(3),_(1),R(4),_(1),R(2),_(1),R(1),_(1),R(2),_(1),R(1)][98.8%][r=62.5Jobs: 39 (f=38): [R(13),_(1),R(1),R(4),_(1),R(1),_(2),R(1),_(1),R(1),_(2),R(1)][98.Jobs: 34 (f=34): [R(12),_(2),R(1),_(1),R(6),_(1),R(4),_(1),R(3),_(1),R(1),_(3),R(4),_(1),R(1),_(2),R(1(1),R(11),_(4),R(1),_(3),R(2),_(2),R(1),_(1),R(1),_(1),R(1),_(7),R(2),_(1),R(1),_(4),f(1),_(4),R(1)]Jobs: 18 (f=18): [_(1),R(10),_(5),R(1),_(3),R(2),_(2/s][r=180 IOPS][eta 00m:15s]   Jobs: 1 (f=1): [_(3),R(1),_(46)][100.0%][r=1408KiB/s][r=11 IOPS][eta 00m:00s]                                       
+Workload: (groupid=0, jobs=50): err= 0: pid=70332: Tue Apr 23 04:59:32 2024
+  read: IOPS=689, BW=86.2MiB/s (90.4MB/s)(122GiB/1450517msec)
+    slat (msec): min=19, max=3068, avg=68.98, stdev=29.56
+    clat (usec): min=2, max=2639, avg= 6.37, stdev=12.31
+     lat (msec): min=19, max=3068, avg=68.98, stdev=29.56
+    clat percentiles (usec):
+     |  1.00th=[    4],  5.00th=[    4], 10.00th=[    5], 20.00th=[    5],
+     | 30.00th=[    5], 40.00th=[    6], 50.00th=[    6], 60.00th=[    6],
+     | 70.00th=[    6], 80.00th=[    7], 90.00th=[    8], 95.00th=[   11],
+     | 99.00th=[   28], 99.50th=[   45], 99.90th=[   96], 99.95th=[  145],
+     | 99.99th=[  437]
+   bw (  KiB/s): min=17409, max=154148, per=100.00%, avg=89650.38, stdev=468.66, samples=142764
+   iops        : min=  136, max= 1204, avg=699.91, stdev= 3.66, samples=142764
+  lat (usec)   : 4=9.21%, 10=85.31%, 20=3.92%, 50=1.17%, 100=0.29%
+  lat (usec)   : 250=0.07%, 500=0.02%, 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%
+  cpu          : usr=2.64%, sys=0.10%, ctx=6017301, majf=18, minf=588754
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=1000000,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=86.2MiB/s (90.4MB/s), 86.2MiB/s-86.2MiB/s (90.4MB/s-90.4MB/s), io=122GiB (131GB), run=1450517-1450517msec
++ free -mh
+              total        used        free      shared  buff/cache   available
+Mem:          125Gi       5.9Gi        54Gi        62Gi        65Gi        55Gi
+Swap:            0B          0B          0B
+++ date +%s
++ echo '[Epoch 1] end time:' 1713848372
+[Epoch 1] end time: 1713848372
++ sudo sh -c '/usr/bin/echo 1 > /proc/sys/vm/drop_caches'
++ sleep 20
++ for i in $(seq $epoch)
+++ date +%s
++ echo '[Epoch 2] start time:' 1713848396
+[Epoch 2] start time: 1713848396
++ free -mh
+              total        used        free      shared  buff/cache   available
+Mem:          125Gi       5.9Gi        55Gi        62Gi        64Gi        56Gi
+Swap:            0B          0B          0B
++ NUMJOBS=50
++ NRFILES=20000
++ FILE_SIZE=128K
++ BLOCK_SIZE=128K
++ READ_TYPE=read
++ DIR=/home/gargnitin_google_com/working_dir/gcs/128K
++ fio /home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/job_files/read_cache_load_test.fio --alloc-size=1048576
+Workload: (g=0): rw=read, bs=(R) 128KiB-128KiB, (W) 128KiB-128KiB, (T) 128KiB-128KiB, ioengine=libaio, iodepth=64
+...
+fio-3.36-dirty
+Starting 50 threads
+Jobs: 50 (f=50): [R(50)][15.4%][r=128MiB/Jobs: 50 (f=46): [R(50)][16.1%][r=139MiB/Jobs: 50 (f=50): [R(50)][17.1%][r=134MiB/Jobs: 50 (f=50): [R(50)][17.950)][20.3%][r=135MiB/Jobs: 50 (f=50): [R(50)][20.3%][r=145MiB/Jobs: 50 (f=49): [R(50)][20.7%][r=130MiB/Jobs: 50 (f=47): [R(50)][20.8%][r=128MiB/Jobs: 50/Jobs: 50 (f=49): [R(50)][21.9%][r=141MiB/Jobs: 50 (f=50): [R(50)][22.2%][r=145MiB/Jobs: 50 (f=49): [R(50)][22.7%][r=136MiB/Jobs: 50 (f=50): [R(50)][22.(50)][23.4%][r=137MiB/Jobs: 50 (f=50): [R(50)][23.7%][r=133MiB/Jobs: 50 (f=50): [R(50)][23.8%][r=134MiB/Jobs: 50 (f=50): [R(50)][23.8%][r=136MiB/Jobs: 5B/Jobs: 50 (f=50): [R(50)][24.7%][r=142MiB/Jobs: 50 (f=49): [R(50)][24.8%][r=140MiB/Jobs: 50 (f=48): [R(50)][24.7%][r=139MiB/Jobs: 50 (f=50): [R(50)][24R(50)][25.3%][r=140MiB/Jobs: 50 (f=50): [R(50)][25.6%][r=140MiB/Jobs: 50 (f=50): [R(50)][25.9%][r=143MiB/Jobs: 50 (f=49): [R(50)][25.8%][r=136MiB/Jobs: iB/Jobs: 50 (f=46): [R(50)][26.5%][r=135MiB/Jobs: 50 (f=50): [R(50)][26.6%][r=134MiB/Jobs: 50 (f=50): [R(50)][26.6%][r=135MiB/Jobs: 50 (f=49): [R(50)][2[R(50)][27.1%][r=141MiB/Jobs: 50 (f=49): [R(50)][27.3%][r=138MiB/Jobs: 50 (f=48): [R(50)][27.4%][r=125MiB/Jobs: 50 (f=50): [R(50)][27.4%][r=140MiB/Jobs:MiB/Jobs: 50 (f=50): [R(50)][27.7%][r=134MiB/Jobs: 50 (f=50): [R(50)][27.7%][r=139MiB/Jobs: 50 (f=50): [R(50)][27.8%][r=134MiB/Jobs: 50 (f=50): [R(50)][ [R(50)][28.2%][r=135MiB/Jobs: 50 (f=50): [R(50)][28.4%][r=142MiB/Jobs: 50 (f=49): [R(50)][28.5%][r=134MiB/Jobs: 50 (f=50): [R(50)][28.5%][r=138MiB/Jobs8MiB/Jobs: 50 (f=50): [R(50)][28.9%][r=139MiB/Jobs: 50 (f=50): [R(50)][29.0%][r=142MiB/Jobs: 50 (f=50): [R(50)][29.1%][r=139MiB/Jobs: 50 (f=50): [R(50)]: [R(50)][29.8%][r=142MiB/Jobs: 50 (f=49): [R(50)][29.8%][r=131MiB/Jobs: 50 (f=49): [R(50)][29.8%][r=140MiB/Jobs: 50 (f=50): [R(50)][29.9%][r=133MiB/Job38MiB/Jobs: 50 (f=50): [R(50)][30.4%][r=126MiB/Jobs: 50 (f=49): [R(50)][30.6%][r=139MiB/Jobs: 50 (f=50): [R(50)][30.7%][r=137MiB/Jobs: 50 (f=48): [R(50)): [R(50)][31.0%][r=136MiB/Jobs: 50 (f=50): [R(50)][31.3%][r=147MiB/Jobs: 50 (f=49): [R(50)][31.3%][r=132MiB/Jobs: 50 (f=50): [R(50)][31.5%][r=142MiB/Jo142MiB/Jobs: 50 (f=50): [R(50)][31.9%][r=140MiB/Jobs: 50 (f=49): [R(50)][32.0%][r=144MiB/Jobs: 50 (f=49): [R(50)][32.1%][r=147MiB/Jobs: 50 (f=50): [R(500): [R(50)][32.5%][r=141MiB/Jobs: 50 (f=50): [R(50)][32.7%][r=146MiB/Jobs: 50 (f=50): [R(50)][32.7%][r=139MiB/Jobs: 50 (f=50): [R(50)][32.9%][r=147MiB/J=149MiB/Jobs: 50 (f=50): [R(50)][33.1%][r=140MiB/Jobs: 50 (f=49): [R(50)][33.2%][r=141MiB/Jobs: 50 (f=50): [R(50)][33.5%][r=144MiB/Jobs: 50 (f=50): [R(549): [R(50)][34.0%][r=140MiB/Jobs: 50 (f=50): [R(50)][34.1%][r=140MiB/Jobs: 50 (f=50): [R(50)][34.1%][r=135MiB/Jobs: 50 (f=50): [R(50)][34.3%][r=138MiB/r=133MiB/Jobs: 50 (f=50): [R(50)][34.6%][r=123MiB/Jobs: 50 (f=50): [R(50)][34.7%][r=142MiB/Jobs: 50 (f=50): [R(50)][34.8%][r=145MiB/Jobs: 50 (f=49): [R(=49): [R(50)][35.3%][r=132MiB/Jobs: 50 (f=48): [R(50)][35.4%][r=143MiB/Jobs: 50 (f=50): [R(50)][35.4%][r=148MiB/Jobs: 50 (f=50): [R(50)][35.5%][r=148MiB[r=145MiB/Jobs: 50 (f=50): [R(50)][36.0%][r=136MiB/Jobs: 50 (f=49): [R(50)][36.0%][r=138MiB/Jobs: 50 (f=48): [R(50)][36.1%][r=143MiB/Jobs: 50 (f=50): [Rf=50): [R(50)][36.6%][r=139MiB/Jobs: 50 (f=50): [R(50)][36.6%][r=144MiB/Jobs: 50 (f=46): [R(50)][36.7%][r=137MiB/Jobs: 50 (f=49): [R(50)][36.9%][r=149Mi][r=144MiB/Jobs: 50 (f=50): [R(50)][37.3%][r=145MiB/Jobs: 50 (f=50): [R(50)][37.4%][r=141MiB/Jobs: 50 (f=49): [R(50)][37.6%][r=148MiB/Jobs: 50 (f=50): [(f=50): [R(50)][38.0%][r=142MiB/Jobs: 50 (f=49): [R(50)][38.1%][r=139MiB/Jobs: 50 (f=49): [R(50)][38.2%][r=145MiB/Jobs: 50 (f=49): [R(50)][38.3%][r=138M%][r=142MiB/Jobs: 50 (f=50): [R(50)][38.6%][r=143MiB/Jobs: 50 (f=49): [R(50)][38.7%][r=148MiB/Jobs: 50 (f=49): [R(50)][38.7%][r=138MiB/Jobs: 50 (f=48):  (f=50): [R(50)][39.2%][r=142MiB/Jobs: 50 (f=50): [R(50)][39.3%][r=140MiB/Jobs: 50 (f=50): [R(50)][39.3%][r=148MiB/Jobs: 50 (f=50): [R(50)][39.4%][r=1468%][r=141MiB/Jobs: 50 (f=50): [R(50)][39.9%][r=146MiB/Jobs: 50 (f=49): [R(50)][39.9%][r=140MiB/Jobs: 50 (f=50): [R(50)][40.0%][r=145MiB/Jobs: 50 (f=49):0 (f=49): [R(50)][40.5%][r=143MiB/Jobs: 50 (f=50): [R(50)][40.6%][r=146MiB/Jobs: 50 (f=50): [R(50)][40.7%][r=130MiB/Jobs: 50 (f=50): [R(50)][40.8%][r=1350)][41.0%][r=146MiB/s][r=11^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[AJobs: 50 (f=49): ^[[A^[[A^[[A^[[A^[[AJobs: 50 (f=49): [R(50)][411),R(8)][96.6%][r=143MiB/s][rJobs: 46 (f=44): [R(12),_(1),R(12),_(1),R(15),_(1),R(3),_(1),R(4)][96.6%][r=1Jobs: 42 (f=42): [R(12),_(1),R(12),_(1),R(5),_4),f(1),_(1),R(3),_(1),R(4),_(Jobs: 32 (f=32): [_(1),R(11),_(1),R(12),_(1),R(3),_(3),R(1),_(1),R(1),_(1),R(Jobs: 30 (f=30): [_(1),R(11),_(1),R(2),_(1),R,R(1),_(3)][97.1%][r=76.2MiB/s]Jobs: 23 (f=23): [_(1),R(11),_(2),R(1),_(1),R(3),_(1),R(2),_(4),R(1),_(1),R(1),_(3),R(1),_(3),R(2),_(8),R(1),_(3)][97.3%].4%][r=60.7MiB/s][r=485 IOPS][etJobs: 20 (f=19): [_(1),R(10),_(3),R(1),_(2),R(1),f(1),_(1),R(2),_(6),R(1),_(3),R(1),_(3),R(2),_(8),R(1),_(3)][97.5%][r=6R(1),_(3),R(1),_(10),R(1),_(3),R(Jobs: 15 (f=15): [_(1),R(10),_(3),R(1),_(2),R(1),_(3),R(1),_(14),R(1),_(9),R(Jobs: 13 (f=13): [_(1),R(10),_(3),R(1),_(2)][97.9%][r=31.2MiB/s][r=250 IOPS]Jobs: 11 (f=11): [_(1),R(10),_(6),R(1),_(32)][98.0%][r=30.0MiB/s][r=240 IOPS]Jobs: 10 (f=10): [_(1),R(10),_(39)][98.0%[r=29.6MiB/s][r=237 IOPS][eta 00m:2Jobs: 10 (f=10): [_(1),R(10),_(39)][98.2%][r=25.2MiB/s][r=202 IOPS][eta 00m:2Jobs: 10 (f=10): [_(1),R(10),_(39)][98.3][r=23.8MiB/s][r=190 IOPS][eta 00m:1Jobs: 10 (f=10): [_(1),R(10),_(39)][98.6%][r=28.4MiB/s][r=227 IOPS][eta 00m:1Jobs: 10 (f=10): [_(1),R(10),_(39)][98.%][r=26.9MiB/s][r=215 IOPS][eta 00m:1Jobs: 9 (f=9): [_(1),R(4),_(1),R(5),_(39)][98.9%][r=28.4MiB/s][r=227 IOPS][etJobs: 9 (f=9): [_(1),R(4),_(1),R(5),_(0)][99.2%][r=27.2MiB/s][r=218 IOPS][etJobs: 8 (f=7): [_(1),R(4),_(1),R(4),_(40)][99.2%][r=22.9MiB/s][r=183 IOPS][etJobs: 7 (f=7): [_(1),R(4),_(1),R(2),_1),R(1),_(2),R(1),_(40)][99.5%][r=11.8MJobs: 5 (f=5): [_(1),R(1),_(1),R(2),_(1),R(1),_(2),R(1),_(40)][99.6%][r=16.1MJobs: 4 (f=4): [_(3),R(2),_(1),R(1),(43)][99.8%][r=7175KiB/s][r=56 IOPS][etaJobs: 2 (f=2): [_(4),R(1),_(1),R(1),_(43)][99.9%][r=4096KiB/s][r=32 IOPS][etaJobs: 1 (f=1): [_(6),R(1),_(43)][10
+Workload: (groupid=0, jobs=50): err= 0: pid=72400: Tue Apr 23 05:24:03 2024
+  read: IOPS=1106, BW=138MiB/s (145MB/s)(122GiB/904146msec)
+    slat (usec): min=102, max=1030.4k, avg=41209.08, stdev=46807.28
+    clat (nsec): min=773, max=13802k, avg=4646.17, stdev=22005.85
+     lat (usec): min=104, max=1030.4k, avg=41213.73, stdev=46809.03
+    clat percentiles (nsec):
+     |  1.00th=[  1224],  5.00th=[  1512], 10.00th=[  1736], 20.00th=[  2064],
+     | 30.00th=[  2480], 40.00th=[  3152], 50.00th=[  4192], 60.00th=[  4768],
+     | 70.00th=[  5216], 80.00th=[  5728], 90.00th=[  6688], 95.00th=[  8512],
+     | 99.00th=[ 18816], 99.50th=[ 29312], 99.90th=[ 73216], 99.95th=[110080],
+     | 99.99th=[346112]
+   bw (  KiB/s): min=39419, max=375386, per=100.00%, avg=146756.77, stdev=958.39, samples=87211
+   iops        : min=  305, max= 2931, avg=1145.54, stdev= 7.49, samples=87211
+  lat (nsec)   : 1000=0.08%
+  lat (usec)   : 2=18.29%, 4=29.43%, 10=48.76%, 20=2.54%, 50=0.69%
+  lat (usec)   : 100=0.15%, 250=0.04%, 500=0.01%, 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=0.01%, 20=0.01%
+  cpu          : usr=4.07%, sys=0.16%, ctx=6025461, majf=20, minf=370717
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=1000000,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=138MiB/s (145MB/s), 138MiB/s-138MiB/s (145MB/s-145MB/s), io=122GiB (131GB), run=904146-904146msec
++ free -mh
+              total        used        free      shared  buff/cache   available
+Mem:          125Gi       6.1Gi        54Gi        62Gi        65Gi        55Gi
+Swap:            0B          0B          0B
+++ date +%s
++ echo '[Epoch 2] end time:' 1713849843
+[Epoch 2] end time: 1713849843
++ sudo sh -c '/usr/bin/echo 1 > /proc/sys/vm/drop_caches'
++ sleep 20
++ for i in $(seq $epoch)
+++ date +%s
++ echo '[Epoch 3] start time:' 1713849866
+[Epoch 3] start time: 1713849866
++ free -mh
+              total        used        free      shared  buff/cache   available
+Mem:          125Gi       6.1Gi        54Gi        62Gi        65Gi        55Gi
+Swap:            0B          0B          0B
++ NUMJOBS=50
++ NRFILES=20000
++ FILE_SIZE=128K
++ BLOCK_SIZE=128K
++ READ_TYPE=read
++ DIR=/home/gargnitin_google_com/working_dir/gcs/128K
++ fio /home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/job_files/read_cache_load_test.fio --alloc-size=1048576
+Workload: (g=0): rw=read, bs=(R) 128KiB-128KiB, (W) 128KiB-128KiB, (T) 128KiB-128KiB, ioengine=libaio, iodepth=64
+...
+fio-3.36-dirty
+Starting 50 threads
+Jobs: 50 (f=49): [R(50)][95.5%][r=191MiB/s][r=1526 IOPS][eta 00m:47s]
+
+
+
+Jobs: 37 (f=36): [_(1),R(11),_(2),R(5),_(1),R(11),_(1),R(1),_(1),R(1),_(1),R(4),_(2),R(1),_(3),R(2),_(1),R(1)][97.6%][r=134MiB/s][r=1070 IOPS][eta 00m:2eJobs: 34 (f=34): [_(1),R(11),_(2),R(1),_(1),R(3),_(1),R(7),_(1),R(3),_(1),R(1),_(1),R(1),_(1),R(2),_(1),R(1),_(2),R(1),_(3),R(2),_(1),R(1)][97.8%][r=12taJobs: 22 (f=22): [_(1),R(10),_(3),R(1),_(1),R(3),_(1),R(1),_(1),R(1),_(1),R(1),_(3),R(2),_(6),R(2),_(11),R(1)][97.9%][r=96.5MiB/s][r=772 IOPS][eta 00m20sJobs: 18 (f=17): [_(1),R(10),_(5),R(1),_(1),R(1),_(1),R(1),_(1),R(1),_(6),R(1),_(6),f(1),R(1),_(11),R(1)][98.2%][r=65.8MiB/s][r=526 IOPS][eta 00m:19s
+Workload: (groupid=0, jobs=50): err= 0: pid=73488: Tue Apr 23 05:45:57 2024
+  read: IOPS=1339, BW=167MiB/s (176MB/s)(122GiB/746663msec)
+    slat (usec): min=105, max=1779.4k, avg=33860.54, stdev=39256.88
+    clat (nsec): min=789, max=4901.6k, avg=4785.62, stdev=13962.60
+     lat (usec): min=107, max=1779.4k, avg=33865.32, stdev=39258.44
+    clat percentiles (nsec):
+     |  1.00th=[  1320],  5.00th=[  1672], 10.00th=[  1896], 20.00th=[  2256],
+     | 30.00th=[  2736], 40.00th=[  3472], 50.00th=[  4320], 60.00th=[  4832],
+     | 70.00th=[  5216], 80.00th=[  5728], 90.00th=[  6688], 95.00th=[  8640],
+     | 99.00th=[ 19072], 99.50th=[ 29568], 99.90th=[ 73216], 99.95th=[112128],
+     | 99.99th=[399360]
+   bw (  KiB/s): min=50933, max=410926, per=100.00%, avg=175883.44, stdev=1059.96, samples=72748
+   iops        : min=  394, max= 3210, avg=1372.08, stdev= 8.28, samples=72748
+  lat (nsec)   : 1000=0.05%
+  lat (usec)   : 2=12.83%, 4=32.59%, 10=50.90%, 20=2.71%, 50=0.72%
+  lat (usec)   : 100=0.15%, 250=0.04%, 500=0.01%, 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=0.01%
+  cpu          : usr=5.03%, sys=0.20%, ctx=6031406, majf=33, minf=384218
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=1000000,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=167MiB/s (176MB/s), 167MiB/s-167MiB/s (176MB/s-176MB/s), io=122GiB (131GB), run=746663-746663msec
++ free -mh
+              total        used        free      shared  buff/cache   available
+Mem:          125Gi       6.1Gi        54Gi        62Gi        65Gi        55Gi
+Swap:            0B          0B          0B
+++ date +%s
++ echo '[Epoch 3] end time:' 1713851157
+[Epoch 3] end time: 1713851157
++ sudo sh -c '/usr/bin/echo 1 > /proc/sys/vm/drop_caches'
++ sleep 20
++ for i in $(seq $epoch)
+++ date +%s
++ echo '[Epoch 4] start time:' 1713851181
+[Epoch 4] start time: 1713851181
++ free -mh
+              total        used        free      shared  buff/cache   available
+Mem:          125Gi       6.1Gi        55Gi        62Gi        64Gi        55Gi
+Swap:            0B          0B          0B
++ NUMJOBS=50
++ NRFILES=20000
++ FILE_SIZE=128K
++ BLOCK_SIZE=128K
++ READ_TYPE=read
++ DIR=/home/gargnitin_google_com/working_dir/gcs/128K
++ fio /home/gargnitin_google_com/working_dir/gcsfuse/perfmetrics/scripts/job_files/read_cache_load_test.fio --alloc-size=1048576
+Workload: (g=0): rw=read, bs=(R) 128KiB-128KiB, (W) 128KiB-128KiB, (T) 128KiB-128KiB, ioengine=libaio, iodepth=64
+...
+fio-3.36-dirty
+Starting 50 threads
+Jobs: 15 (f=15): [R(1),I(1),R(3),I(1),R(1),I(1),R(1),I(4),R(1),I(5),R(1),I(1),R(1),I(1),R(1),I(8),R(1),I(1),R(2),I(6),R(2),I(6)][-1.9%][r=6KiB/s][r=0 IO Jobs: 38 (f=38): [_(1),R(14),_(1),R(3),_(1),R(11),_(1),R(3),_(1),R(2),_(1),R(1),_(1),R(1),_(2),R(1),_(1),R(2),_(2)][97.9%][r=183MiB/s][r=1460 IOPS][eta20Jobs: 28 (f=27): [_(1),R(12),_(3),R(3),_(1),R(4),_(1),R(2),_(1),R(1),_(4),R(2),_(1),R(1),_(2),R(1),_(4),R(1),_(2),R(1),_(2)][98.2%][r=149MiB/s][r=1193etaJobs: 16 (f=16): [_(1),R(10),_(6),R(1),_(2),R(2),_(14),R(1),_(2),R(1),_(4),R(1),_(5)][98.6%][r=77.7MiB/s][r=621 IOPS][eta 00m:13s]                   
+Workload: (groupid=0, jobs=50): err= 0: pid=74563: Tue Apr 23 06:05:48 2024
+  read: IOPS=1604, BW=201MiB/s (210MB/s)(122GiB/623075msec)
+    slat (usec): min=118, max=4867.1k, avg=27671.53, stdev=32476.06
+    clat (nsec): min=832, max=7689.7k, avg=5169.95, stdev=19476.80
+     lat (usec): min=120, max=4867.1k, avg=27676.70, stdev=32477.66
+    clat percentiles (nsec):
+     |  1.00th=[  1464],  5.00th=[  1832], 10.00th=[  2064], 20.00th=[  2480],
+     | 30.00th=[  2992], 40.00th=[  3792], 50.00th=[  4576], 60.00th=[  5088],
+     | 70.00th=[  5472], 80.00th=[  6048], 90.00th=[  7072], 95.00th=[  9280],
+     | 99.00th=[ 21632], 99.50th=[ 35072], 99.90th=[ 82432], 99.95th=[129536],
+     | 99.99th=[428032]
+   bw (  KiB/s): min=62956, max=455253, per=100.00%, avg=210308.68, stdev=1181.47, samples=60830
+   iops        : min=  486, max= 3556, avg=1640.78, stdev= 9.25, samples=60830
+  lat (nsec)   : 1000=0.01%
+  lat (usec)   : 2=8.65%, 4=33.56%, 10=53.50%, 20=3.13%, 50=0.87%
+  lat (usec)   : 100=0.20%, 250=0.05%, 500=0.01%, 750=0.01%, 1000=0.01%
+  lat (msec)   : 2=0.01%, 4=0.01%, 10=0.01%
+  cpu          : usr=6.42%, sys=0.27%, ctx=6038062, majf=58, minf=406606
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=1000000,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=201MiB/s (210MB/s), 201MiB/s-201MiB/s (210MB/s-210MB/s), io=122GiB (131GB), run=623075-623075msec
++ free -mh
+              total        used        free      shared  buff/cache   available
+Mem:          125Gi       6.3Gi        53Gi        62Gi        65Gi        55Gi
+Swap:            0B          0B          0B
+++ date +%s
++ echo '[Epoch 4] end time:' 1713852348
+[Epoch 4] end time: 1713852348
++ sudo sh -c '/usr/bin/echo 1 > /proc/sys/vm/drop_caches'
++ sleep 20
+  2 #workload_dir=/mnt/disks/local_ssd/64K
+  1 mkdir -p $workload_dir
+18  number_of_files_per_thread=$((NUM_OF_F0427 13:33:39.403714       1 helper.go:471] websocket: close 1006 (abnormal closure): unexpected EOF
+  1 ./run_read_cache_fio_workload.sh -e 4 -n $number_of_files_per_thread -t $num_of_threads -r $readtype -s 128K -b 128K -p 20 -d $workload_diclient_loop: send disconnect: Broken pipe
+  3 
+Recommendation: To check for possible causes of SSH connectivity issues and get                                                                   
+recommendations, rerun the ssh command with the --troubleshoot option.                                                                            
+~                                                                                                                                                 
+gcloud compute ssh gargnitin-test-n2std32-us-west1 --project=gcs-fuse-test --zone=us-west1-b --troubleshoot                                       
+                                                                                                                                18,38         Bot
+Or, to investigate an IAP tunneling issue:                                                                 "gargnitin-test-n2std3" 13:33 27-Apr-24
+
+gcloud compute ssh gargnitin-test-n2std32-us-west1 --project=gcs-fuse-test --zone=us-west1-b --troubleshoot --tunnel-through-iap
+
+ERROR: (gcloud.compute.ssh) [/usr/bin/ssh] exited with return code [255].
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf/20240422-test-create-vm$ gcsfusetestvmconnect $vm_name us-west1
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-1046-gcp x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Mon May  6 14:03:54 UTC 2024
+
+  System load:  0.0               Processes:             373
+  Usage of /:   6.8% of 96.73GB   Users logged in:       1
+  Memory usage: 5%                IPv4 address for ens5: 10.138.0.13
+  Swap usage:   0%
+
+  => There is 1 zombie process.
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+32 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+*** System restart required ***
+Last login: Fri Apr 26 17:33:42 2024 from 72.14.229.161
+gargnitin_google_com@gargnitin-test-n2std32-us-west1:~$ tmux a -t fioF0507 10:03:52.387675       1 helper.go:471] websocket: close 1006 (abnormal closur
+                                                                                                                                                        
+
+Recommendation: To check for possible causes of SSH connectivity issues and get
+recommendations, rerun the ssh command with the --troubleshoot option.
+
+gcloud compute ssh gargnitin-test-n2std32-us-west1 --project=gcs-fuse-test --zone=us-west1-b --troubleshoot
+
+Or, to investigate an IAP tunneling issue:
+
+gcloud compute ssh gargnitin-test-n2std32-us-west1 --project=gcs-fuse-test --zone=us-west1-b --troubleshoot --tunnel-through-iap
+
+ERROR: (gcloud.compute.ssh) [/usr/bin/ssh] exited with return code [255].
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf/20240422-test-create-vm$ gcsfusetestvmconnect $vm_name us-west1
+If you do not reboot now, your system will reboot automatically                
+at Fri May 17 02:52:10 UTC 2024. For more info, see go/glinux-reboot-policy.   
+To reboot your computer 10 hours from now, on the command line run:            
+echo systemctl reboot | at now + 10 hours                                      
+Also you may have a pending maintenance. See go/cloudtop-faq#cloudtop-maintenan
+ce-scheduler                                                                   
+To run maintenance in 10 hours run:                                            
+ctop self maintenance schedule in 10h
+                                                                               
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf/20240422-test-create-vm$ gcsfusetestvmconnect $vm_name us-west1-b

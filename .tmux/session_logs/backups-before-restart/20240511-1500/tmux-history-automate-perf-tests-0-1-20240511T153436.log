@@ -1,0 +1,468 @@
+gargnitin@gargnitin:~$ bash
+tagargnitin@gargnitin:~$ tasks
+Command tasks not found
+gargnitin@gargnitin:~$ work
+bash: cd: /usr/local/google/home/gargnitin/DriveFileStream/My Drive/docs/work/cloud/storage/gcsfuse/tasks: No such file or directory
+gargnitin@gargnitin:~$ localwork 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ mkdir 20240422-experiment-fio-single-file-parallel-read
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd 20240422-experiment-fio-single-file-parallel-read
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ vi job.fio
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ vi job.fio
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ fio job=./job.fio job=read
+fio: unable to open 'job=./job.fio' job file
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ ls
+job.fio
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ fio ./job.fio job=read                 
+Bad option <$filename=/home/princer_google_com/working_dir/gcs/single_file14>
+Did you mean filename?
+fio: job global dropped
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ fio ./job.fio --name=read              
+read: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=psync, iodepth=1
+Bad option <$filename=/home/princer_google_com/working_dir/gcs/single_file14>
+Did you mean filename?
+fio: job global dropped
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ vi job.fio                           
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ fio ./job.fio --name=read
+read: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=psync, iodepth=1
+Workload: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=64
+...
+read: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=64
+...
+fio-3.36
+Starting 10 threads and 1 process
+read: you need to specify size=
+fio: pid=0, err=22/file:filesetup.c:1144, func=total_file_size, error=Invalid argument
+Workload: Laying out IO file (1 file / 25MiB)
+Workload: Laying out IO file (1 file / 25MiB)
+Workload: Laying out IO file (1 file / 25MiB)
+Workload: Laying out IO file (1 file / 25MiB)
+Workload: Laying out IO file (1 file / 25MiB)
+fio: pid=2315066, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2315070, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2315067, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2315068, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2315062, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2315065, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2315064, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2315063, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2315061, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+Jobs: 4 (f=0): [X(1),f(1),X(1),f(3),X(3),_(1),X(1)][-.-%][r=4883KiB/s][r=1220 IOPS][eta 00m:00s]
+read: (groupid=0, jobs=11): err=22 (file:filesetup.c:1144, func=total_file_size, error=Invalid argument): pid=0: Mon Apr 22 04:22:29 2024
+  read: IOPS=1507, BW=6031KiB/s (6175kB/s)(23.8MiB/4048msec)
+    slat (usec): min=66, max=1501.9k, avg=660.83, stdev=25130.33
+    clat (usec): min=3, max=1742.7k, avg=14276.47, stdev=75947.51
+     lat (usec): min=126, max=2987.5k, avg=14937.29, stdev=84962.55
+    clat percentiles (msec):
+     |  1.00th=[    6],  5.00th=[    7], 10.00th=[    7], 20.00th=[    7],
+     | 30.00th=[    8], 40.00th=[    8], 50.00th=[    8], 60.00th=[    8],
+     | 70.00th=[    9], 80.00th=[    9], 90.00th=[   14], 95.00th=[   39],
+     | 99.00th=[   75], 99.50th=[   75], 99.90th=[ 1720], 99.95th=[ 1720],
+     | 99.99th=[ 1737]
+   bw (  KiB/s): min=  520, max=23525, per=100.00%, avg=12022.50, stdev=16266.99, samples=2
+   iops        : min=  130, max= 5881, avg=3005.50, stdev=4066.57, samples=2
+  lat (usec)   : 4=0.02%, 250=0.02%, 500=0.03%, 750=0.03%, 1000=0.05%
+  lat (msec)   : 2=0.11%, 4=0.25%, 10=87.02%, 20=6.21%, 50=1.93%
+  lat (msec)   : 100=4.13%, 2000=0.20%
+  cpu          : usr=0.08%, sys=0.39%, ctx=6141, majf=0, minf=65
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.3%, 32=0.5%, >=64=99.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.1%, 4=99.8%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued rwts: total=6103,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=6031KiB/s (6175kB/s), 6031KiB/s-6031KiB/s (6175kB/s-6175kB/s), io=23.8MiB (25.0MB), run=4048-4048msec
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ vi job.fio               
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ fio ./job.fio --name=read
+read: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=psync, iodepth=1
+Workload: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=64
+...
+read: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=64
+...
+fio-3.36
+Starting 10 threads and 1 process
+read: you need to specify size=
+fio: pid=0, err=22/file:filesetup.c:1144, func=total_file_size, error=Invalid argument
+Workload: Laying out IO file (1 file / 1024MiB)
+Workload: Laying out IO file (1 file / 1024MiB)
+Workload: Laying out IO file (1 file / 1024MiB)
+Workload: Laying out IO file (1 file / 1024MiB)
+Workload: Laying out IO file (1 file / 1024MiB)
+fio: pid=2328162, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2328161, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2328163, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2328164, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2328157, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2328160, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2328159, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2328156, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2328158, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=0, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=4096, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=8192, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=12288, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=16384, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=20480, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=24576, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=28672, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=32768, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=36864, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=40960, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=45056, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=49152, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=53248, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=57344, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=61440, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=65536, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=69632, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=73728, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=77824, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=81920, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=86016, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=90112, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=94208, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=98304, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=102400, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=106496, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=110592, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=114688, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=118784, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=122880, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=126976, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=131072, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=135168, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=139264, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=143360, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=147456, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=151552, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=155648, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=159744, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=163840, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=167936, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=172032, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=176128, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=180224, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=184320, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=188416, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=192512, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=196608, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=200704, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=204800, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=208896, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=212992, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=217088, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=221184, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=225280, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=229376, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=233472, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=237568, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=241664, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=245760, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=249856, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=253952, buflen=4096
+fio: io_u error on file /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount/sample_1GB.dat: No such file or directory: read offset=258048, buflen=4096
+fio: pid=2328165, err=2/file:io_u.c:1896, func=io_u error, error=No such file or directory
+Jobs: 1 (f=0): [X(10),f(1)][-.-%][eta 00m:00s]
+read: (groupid=0, jobs=11): err=22 (file:filesetup.c:1144, func=total_file_size, error=Invalid argument): pid=0: Mon Apr 22 04:39:41 2024
+  cpu          : usr=0.00%, sys=0.22%, ctx=96, majf=0, minf=70
+  IO depths    : 1=1.6%, 2=3.1%, 4=6.2%, 8=12.5%, 16=25.0%, 32=50.0%, >=64=1.6%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=75.0%, 4=16.7%, 8=0.0%, 16=0.0%, 32=0.0%, 64=8.3%, >=64=0.0%
+     issued rwts: total=64,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ vi job.fio                
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ fio ./job.fio --name=read
+read: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=psync, iodepth=1
+Workload: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=64
+...
+read: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=64
+...
+fio-3.36
+Starting 10 threads and 1 process
+read: you need to specify size=
+fio: pid=0, err=22/file:filesetup.c:1144, func=total_file_size, error=Invalid argument
+Workload: Laying out IO file (1 file / 10MiB)
+read: you need to specify size=
+Workload: Laying out IO file (1 file / 10MiB)
+Workload: Laying out IO file (1 file / 10MiB)
+read: you need to specify size=
+Workload: Laying out IO file (1 file / 10MiB)
+Workload: Laying out IO file (1 file / 10MiB)
+read: you need to specify size=
+fio: pid=2333470, err=22/file:filesetup.c:1144, func=total_file_size, error=Invalid argument
+read: you need to specify size=
+fio: pid=2333474, err=22/file:filesetup.c:1144, func=total_file_size, error=Invalid argument
+read: you need to specify size=
+fio: pid=2333473, err=22/file:filesetup.c:1144, func=total_file_size, error=Invalid argument
+fio: pid=2333472, err=22/file:filesetup.c:1144, func=total_file_size, error=Invalid argument
+fio: pid=2333471, err=22/file:filesetup.c:1144, func=total_file_size, error=Invalid argument
+
+read: (groupid=0, jobs=11): err=22 (file:filesetup.c:1144, func=total_file_size, error=Invalid argument): pid=0: Mon Apr 22 04:44:54 2024
+  read: IOPS=1666, BW=1667MiB/s (1748MB/s)(10.0MiB/6msec)
+    slat (usec): min=231, max=742, avg=536.46, stdev=183.15
+    clat (usec): min=2153, max=5589, avg=3494.41, stdev=1205.36
+     lat (usec): min=2895, max=5838, avg=4030.87, stdev=1028.77
+    clat percentiles (usec):
+     |  1.00th=[ 2147],  5.00th=[ 2147], 10.00th=[ 2147], 20.00th=[ 2343],
+     | 30.00th=[ 2507], 40.00th=[ 2900], 50.00th=[ 3064], 60.00th=[ 3228],
+     | 70.00th=[ 3621], 80.00th=[ 4228], 90.00th=[ 5342], 95.00th=[ 5604],
+     | 99.00th=[ 5604], 99.50th=[ 5604], 99.90th=[ 5604], 99.95th=[ 5604],
+     | 99.99th=[ 5604]
+  lat (msec)   : 4=70.00%, 10=30.00%
+  cpu          : usr=0.00%, sys=38.89%, ctx=10, majf=0, minf=2021
+  IO depths    : 1=50.0%, 2=50.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=10,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+
+Run status group 0 (all jobs):
+   READ: bw=1667MiB/s (1748MB/s), 1667MiB/s-1667MiB/s (1748MB/s-1748MB/s), io=10.0MiB (10.5MB), run=6-6msec
+
+Disk stats (read/write):
+    dm-1: ios=0/0, sectors=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%, aggrios=10/80, aggsectors=20480/61800, aggrmerge=0/0, aggrticks=16/352, aggrin_queue=368, aggrutil=12.65%
+    dm-0: ios=10/80, sectors=20480/61800, merge=0/0, ticks=16/352, in_queue=368, util=12.65%, aggrios=40/140, aggsectors=20480/61800, aggrmerge=0/30, aggrticks=90/578, aggrin_queue=668, aggrutil=12.70%
+  sda: ios=40/140, sectors=20480/61800, merge=0/30, ticks=90/578, in_queue=668, util=12.70%
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ vi job.fio                
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ fio ./job.fio --name=read
+read: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=psync, iodepth=1
+Workload: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=64
+...
+read: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=64
+...
+fio-3.36
+Starting 10 threads and 1 process
+read: you need to specify size=
+fio: pid=0, err=22/file:filesetup.c:1144, func=total_file_size, error=Invalid argument
+
+read: (groupid=0, jobs=11): err=22 (file:filesetup.c:1144, func=total_file_size, error=Invalid argument): pid=0: Mon Apr 22 04:46:17 2024
+  read: IOPS=129k, BW=606MiB/s (636MB/s)(60.0MiB/99msec)
+    slat (usec): min=5, max=4137, avg=36.08, stdev=104.07
+    clat (usec): min=514, max=15005, avg=2342.43, stdev=807.49
+     lat (usec): min=521, max=15892, avg=2378.50, stdev=833.23
+    clat percentiles (usec):
+     |  1.00th=[ 1418],  5.00th=[ 1696], 10.00th=[ 1795], 20.00th=[ 1926],
+     | 30.00th=[ 2008], 40.00th=[ 2114], 50.00th=[ 2180], 60.00th=[ 2278],
+     | 70.00th=[ 2409], 80.00th=[ 2540], 90.00th=[ 2868], 95.00th=[ 3228],
+     | 99.00th=[ 6718], 99.50th=[ 7308], 99.90th=[ 8979], 99.95th=[ 9503],
+     | 99.99th=[13960]
+  lat (usec)   : 750=0.12%, 1000=0.18%
+  lat (msec)   : 2=28.22%, 4=68.20%, 10=3.24%, 20=0.03%
+  cpu          : usr=4.20%, sys=49.36%, ctx=3552, majf=0, minf=2356
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.2%, 8=0.3%, 16=0.6%, 32=1.2%, >=64=97.5%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued rwts: total=12810,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=606MiB/s (636MB/s), 606MiB/s-606MiB/s (636MB/s-636MB/s), io=60.0MiB (62.9MB), run=99-99msec
+
+Disk stats (read/write):
+    dm-1: ios=0/0, sectors=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%, aggrios=12810/0, aggsectors=122880/0, aggrmerge=0/0, aggrticks=24372/0, aggrin_queue=24372, aggrutil=33.23%
+    dm-0: ios=12810/0, sectors=122880/0, merge=0/0, ticks=24372/0, in_queue=24372, util=33.23%, aggrios=12799/0, aggsectors=122880/0, aggrmerge=41/0, aggrticks=24124/0, aggrin_queue=24124, aggrutil=33.23%
+  sda: ios=12799/0, sectors=122880/0, merge=41/0, ticks=24124/0, in_queue=24124, util=33.23%
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ ls -l
+total 10244
+-rw-r----- 1 gargnitin primarygroup      745 Apr 22 04:44 job.fio
+-rw-r----- 1 gargnitin primarygroup 10485760 Apr 22 04:44 sample_10MB.dat
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ rm sample_10MB.dat 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ ls -l              
+total 4
+-rw-r----- 1 gargnitin primarygroup 745 Apr 22 04:44 job.fio
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ vi job.fio                
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ fio ./job.fio --name=read         
+read: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=psync, iodepth=1
+read: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=64
+...
+fio-3.36
+Starting 5 threads and 1 process
+read: you need to specify size=
+fio: pid=0, err=22/file:filesetup.c:1144, func=total_file_size, error=Invalid argument
+read: Laying out IO file (1 file / 10MiB)
+read: Laying out IO file (1 file / 10MiB)
+read: Laying out IO file (1 file / 10MiB)
+read: Laying out IO file (1 file / 10MiB)
+read: Laying out IO file (1 file / 10MiB)
+fio: pid=2335426, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2335424, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2335425, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2335427, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2335428, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+
+
+Run status group 0 (all jobs):
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ vi job.fio                
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ fio ./job.fio --name=read
+read: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=psync, iodepth=1
+read: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=64
+...
+fio-3.36
+Starting 5 threads and 1 process
+read: you need to specify size=
+fio: pid=0, err=22/file:filesetup.c:1144, func=total_file_size, error=Invalid argument
+Jobs: 3 (f=3)
+read: (groupid=0, jobs=6): err=22 (file:filesetup.c:1144, func=total_file_size, error=Invalid argument): pid=0: Mon Apr 22 04:49:19 2024
+  read: IOPS=3, BW=3794KiB/s (3885kB/s)(10.0MiB/2699msec)
+    slat (msec): min=190, max=2491, avg=1116.88, stdev=1035.89
+    clat (usec): min=3, max=204806, avg=97787.55, stdev=103133.98
+     lat (msec): min=190, max=2696, avg=1214.67, stdev=1133.37
+    clat percentiles (usec):
+     |  1.00th=[     4],  5.00th=[     4], 10.00th=[     4], 20.00th=[     5],
+     | 30.00th=[     5], 40.00th=[     5], 50.00th=[    13], 60.00th=[189793],
+     | 70.00th=[193987], 80.00th=[193987], 90.00th=[193987], 95.00th=[204473],
+     | 99.00th=[204473], 99.50th=[204473], 99.90th=[204473], 99.95th=[204473],
+     | 99.99th=[204473]
+  lat (usec)   : 4=10.00%, 10=30.00%, 20=10.00%
+  lat (msec)   : 250=50.00%
+  cpu          : usr=0.09%, sys=0.00%, ctx=35, majf=0, minf=1524
+  IO depths    : 1=50.0%, 2=50.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=10,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=3794KiB/s (3885kB/s), 3794KiB/s-3794KiB/s (3885kB/s-3885kB/s), io=10.0MiB (10.5MB), run=2699-2699msec
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ vi job.fio                
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ fio ./job.fio --name=read
+read: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=psync, iodepth=1
+read: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=64
+...
+fio-3.36
+Starting 5 threads and 1 process
+read: you need to specify size=
+fio: pid=0, err=22/file:filesetup.c:1144, func=total_file_size, error=Invalid argument
+Jobs: 1 (f=0): [X(1),_(1),f(1),_(3)][-.-%][r=3414KiB/s][r=3 IOPS][eta 00m:00s]
+read: (groupid=0, jobs=6): err=22 (file:filesetup.c:1144, func=total_file_size, error=Invalid argument): pid=0: Mon Apr 22 04:51:15 2024
+  read: IOPS=3, BW=3666KiB/s (3754kB/s)(10.0MiB/2793msec)
+    slat (msec): min=193, max=2587, avg=1366.49, stdev=1230.75
+    clat (usec): min=4, max=206420, avg=99703.74, stdev=105159.32
+     lat (msec): min=193, max=2790, avg=1466.19, stdev=1335.84
+    clat percentiles (usec):
+     |  1.00th=[     5],  5.00th=[     5], 10.00th=[     5], 20.00th=[     5],
+     | 30.00th=[     8], 40.00th=[     8], 50.00th=[     8], 60.00th=[193987],
+     | 70.00th=[196084], 80.00th=[196084], 90.00th=[204473], 95.00th=[206570],
+     | 99.00th=[206570], 99.50th=[206570], 99.90th=[206570], 99.95th=[206570],
+     | 99.99th=[206570]
+  lat (usec)   : 10=50.00%
+  lat (msec)   : 250=50.00%
+  cpu          : usr=0.01%, sys=0.01%, ctx=28, majf=0, minf=2021
+  IO depths    : 1=50.0%, 2=50.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=10,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=3666KiB/s (3754kB/s), 3666KiB/s-3666KiB/s (3754kB/s-3754kB/s), io=10.0MiB (10.5MB), run=2793-2793msec
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ vi job.fio                
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ fio ./job.fio --name=read
+read: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=psync, iodepth=1
+read: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=64
+...
+fio-3.36
+Starting 5 threads and 1 process
+read: you need to specify size=
+fio: pid=0, err=22/file:filesetup.c:1144, func=total_file_size, error=Invalid argument
+Jobs: 3 (f=2)
+read: (groupid=0, jobs=6): err=22 (file:filesetup.c:1144, func=total_file_size, error=Invalid argument): pid=0: Mon Apr 22 04:56:42 2024
+  read: IOPS=3, BW=3821KiB/s (3913kB/s)(10.0MiB/2680msec)
+    slat (msec): min=196, max=2479, avg=1049.63, stdev=956.83
+    clat (usec): min=4, max=227107, avg=101956.09, stdev=107812.22
+     lat (msec): min=196, max=2677, avg=1151.58, stdev=1057.03
+    clat percentiles (usec):
+     |  1.00th=[     5],  5.00th=[     5], 10.00th=[     5], 20.00th=[     6],
+     | 30.00th=[     8], 40.00th=[     8], 50.00th=[     9], 60.00th=[196084],
+     | 70.00th=[198181], 80.00th=[198181], 90.00th=[198181], 95.00th=[227541],
+     | 99.00th=[227541], 99.50th=[227541], 99.90th=[227541], 99.95th=[227541],
+     | 99.99th=[227541]
+  lat (usec)   : 10=50.00%
+  lat (msec)   : 250=50.00%
+  cpu          : usr=0.03%, sys=0.00%, ctx=28, majf=0, minf=1524
+  IO depths    : 1=50.0%, 2=50.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=10,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=3821KiB/s (3913kB/s), 3821KiB/s-3821KiB/s (3913kB/s-3913kB/s), io=10.0MiB (10.5MB), run=2680-2680msec
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ vi job.fio                
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ fio ./job.fio --name=read
+read: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=psync, iodepth=1
+read: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=64
+...
+fio-3.36
+Starting 5 threads and 1 process
+fio: pid=0, err=22/file:filesetup.c:1144, func=total_file_size, error=Invalid argument
+read: Laying out IO file (1 file / 1024MiB)
+read: Laying out IO file (1 file / 1024MiB)
+read: Laying out IO file (1 file / 1024MiB)
+read: Laying out IO file (1 file / 1024MiB)
+read: Laying out IO file (1 file / 1024MiB)
+fio: pid=2345137, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2345136, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2345134, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2345133, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2345135, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+Jobs: 3 (f=0): [X(1),f(3),X(1),E(1)][-.-%][eta 00m:00s]
+
+Run status group 0 (all jobs):
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ fio ./job.fio --name=read
+read: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=psync, iodepth=1
+read: (g=0): rw=read, bs=(R) 1024KiB-1024KiB, (W) 1024KiB-1024KiB, (T) 1024KiB-1024KiB, ioengine=libaio, iodepth=64
+...
+fio-3.36
+Starting 5 threads and 1 process
+read: you need to specify size=
+fio: pid=0, err=22/file:filesetup.c:1144, func=total_file_size, error=Invalid argument
+read: Laying out IO file (1 file / 1024MiB)
+read: Laying out IO file (1 file / 1024MiB)
+read: Laying out IO file (1 file / 1024MiB)
+read: Laying out IO file (1 file / 1024MiB)
+read: Laying out IO file (1 file / 1024MiB)
+fio: pid=2345305, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2345308, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2345306, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2345309, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+fio: pid=2345307, err=2/file:filesetup.c:794, func=open(/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-fuse-
+
+
+Run status group 0 (all jobs):
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ vi job.fio                
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read$ ..  
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$  
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd -
+bash: cd: /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read: No such file or directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd ~/work/
+cloud/   gcsfuse/ src/     study/   
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd ~/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read
+bash: cd: /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/20240422-experiment-fio-single-file-parallel-read: No such file or directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ vi jo
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd 
+202307-08-gzip-support/                    20240212-type-cache-size-effect/           implit-dirs-io-error/
+202307-vertex_ai_job_slow/                 20240306-gke-handson/                      oncall/
+20231215-low-fsync-frequency/              20240318-vertex-ai-experiments/            playground/
+20240125-overlay-fs-expt/                  202403-docker-failure-with-go-1.22/        
+20240202-stat-cache-entry-size-experiment/ 2024q2-automate-ai-ml-perf/                
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd 2024q2-automate-ai-ml-perf/20240422-
+20240422-experiment-fio-single-file-parallel-read/ 20240422-test-create-vm/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd 2024q2-automate-ai-ml-perf/20240422-
+20240422-experiment-fio-single-file-parallel-read/ 20240422-test-create-vm/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd 2024q2-automate-ai-ml-perf/20240422-experiment-fio-single-file-parallel-read/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf/20240422-experiment-fio-single-file-parallel-read$ ls
+job.fio
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf/20240422-experiment-fio-single-file-parallel-read$ vi job.fio 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf/20240422-experiment-fio-single-file-parallel-read$                                                                                
+If you do not reboot now, your system will reboot automatically                
+at Fri May 17 02:52:10 UTC 2024. For more info, see go/glinux-reboot-policy.   
+To reboot your computer 10 hours from now, on the command line run:            
+echo systemctl reboot | at now + 10 hours                                      
+Also you may have a pending maintenance. See go/cloudtop-faq#cloudtop-maintenan
+ce-scheduler                                                                   
+To run maintenance in 10 hours run:                                            
+ctop self maintenance schedule in 10h
+                                                                               
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-ai-ml-perf/20240422-experiment-fio-single-file-parallel-read$ 

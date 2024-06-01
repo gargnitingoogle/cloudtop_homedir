@@ -1,0 +1,100 @@
+diff --git a/.gitconfig b/.gitconfig
+diff --git a/.gitconfig b/.gitconfig
+diff --git a/.gitconfig b/.gitconfig
+diff --git a/.gitconfig b/.gitconfig
+diff --git a/.gitconfig b/.gitconfig
+index ce68541..14589eb 100644
+--- a/.gitconfig
++++ b/.gitconfig
+@@ -15,7 +15,7 @@ delbranch=branch -D
+ delremote=branch -D --remote
+ difftool=difftool -y
+ dirty= !git diff --pretty=\"\" --stat
+-dt=difftool
++dt=difftool -g
+ fa=fetch --all
+ ff="!f() { git fetch --all ; git pull --ff ; }; f"
+ fixup=commit --fixup
+@@ -36,7 +36,6 @@ last=log -1 --decorate=full
+ loselast=reset --hard HEAD~1
+ ls=branch -l
+ lsremote=branch -l --remote
+-remotebranches="!f() { git branch -l --remote | grep $USER; }; f"
+ new=switch -c
+ prev=switch -
+ pushthis=!git push -u origin $(git branch --show-current)
+@@ -45,11 +44,12 @@ r=rebase
+ ra=rebase --abort
+ rc=rebase --continue
+ rearrange=rebase -i HEAD~10
++remotebranches="!f() { git branch -l --remote | grep $USER; }; f"
+ renamebranch=branch -m
+ reword="!f() { if [ $# -lt 1 ] ; then git commit --amend --only ; else git commit --fixup=reword:$1 ; fi; }; f"
+ ri=rebase --interactive
+-st=status -uno
+ st-all=status -unormal
++st=status -uno
+ staged= !git diff --pretty=\"\" --stat --cached
+ strip=reset --hard
+ uncommitted= !git diff --pretty=\"\" --stat
+@@ -58,6 +58,7 @@ unpacklast=reset --soft HEAD~1
+ unstage=restore --staged
+ up=checkout
+ upload=put
++vimdiff=difftool
+ 
+ 
+ [user]
+@@ -72,10 +73,14 @@ upload=put
+ [pull]
+        rebase = true
+ [diff]
+-       tool = bc
++       guitool = bc
++       tool = vim
+ [difftool "bc"]
+        cmd=/usr/bin/bcompare -expandall -solo \"$LOCAL\" \"$REMOTE\"
+        trustExitCode = true
++[difftool "vim"]
++       cmd=/usr/bin/vimdiff \"$LOCAL\" \"$REMOTE\"
++       trustExitCode = true
+ [merge]
+        tool = bc
+ [mergetool "bc"]
+diff --git a/.vimrc b/.vimrc
+index a5c9de0..575ea27 100644
+--- a/.vimrc
++++ b/.vimrc
+@@ -85,6 +85,10 @@ au FileType go,c,cpp,sh,make,vimrc nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
+ :inoremap <C-s> <Esc>:w<CR>i
+ :nnoremap <C-s> <ESC>:w<CR>
+ 
++" Fold/unfold using Ctrl-- and Ctrl-+ respectively.
++":nnoremap <buffer> <C-/> <Esc>zo
++":nnoremap <buffer> <C-_> <Esc>zc
++
+ " Open a new unnamed tab on Ctrl+N
+ :nnoremap <C-n> <Esc>:tabnew<CR>
+gargnitin@gargnitin:~$ ls ~/.tmux/session_logs/
+automate-perf-tests-cloudtop-0.log                                   tmux-history-ignore-unsupported-directories-0-2-20240509T061604.log  tmux-history-ignore-unsupported-directories-3-0-20240509T061727.log  tmux-ignore-unsupported-directories-2-0-20240507T073343.log
+tmux-history-ignore-unsupported-directories-0-0-20240509T061619.log  tmux-history-ignore-unsupported-directories-2-0-20240507T074026.log  tmux-history-ignore-unsupported-directories-6-0-20240509T061754.log
+tmux-history-ignore-unsupported-directories-0-0-20240509T061636.log  tmux-history-ignore-unsupported-directories-2-0-20240507T074340.log  tmux-history-ignore-unsupported-directories-6-1-20240509T061746.log
+tmux-history-ignore-unsupported-directories-0-2-20240509T061543.log  tmux-history-ignore-unsupported-directories-2-0-20240507T085327.log  tmux-history-list-thru-metadata-cache-expt-0-1-20240510T143447.log
+gargnitin@gargnitin:~$ ls -lh ~/.tmux/session_logs/
+total 4.7M
+-rw-r----- 1 gargnitin primarygroup 1.2M May  7 13:32 automate-perf-tests-cloudtop-0.log
+-rw-r----- 1 gargnitin primarygroup 1.2M May  9 06:16 tmux-history-ignore-unsupported-directories-0-0-20240509T061619.log
+-rw-r----- 1 gargnitin primarygroup 1.2M May  9 06:16 tmux-history-ignore-unsupported-directories-0-0-20240509T061636.log
+-rw-r----- 1 gargnitin primarygroup  27K May  9 06:15 tmux-history-ignore-unsupported-directories-0-2-20240509T061543.log
+-rw-r----- 1 gargnitin primarygroup  27K May  9 06:16 tmux-history-ignore-unsupported-directories-0-2-20240509T061604.log
+-rw-r----- 1 gargnitin primarygroup  51K May  7 07:40 tmux-history-ignore-unsupported-directories-2-0-20240507T074026.log
+-rw-r----- 1 gargnitin primarygroup  51K May  7 07:43 tmux-history-ignore-unsupported-directories-2-0-20240507T074340.log
+-rw-r----- 1 gargnitin primarygroup  49K May  7 08:53 tmux-history-ignore-unsupported-directories-2-0-20240507T085327.log
+-rw-r----- 1 gargnitin primarygroup  46K May  9 06:17 tmux-history-ignore-unsupported-directories-3-0-20240509T061727.log
+-rw-r----- 1 gargnitin primarygroup  22K May  9 06:17 tmux-history-ignore-unsupported-directories-6-0-20240509T061754.log
+-rw-r----- 1 gargnitin primarygroup 159K May  9 06:17 tmux-history-ignore-unsupported-directories-6-1-20240509T061746.log
+-rw-r----- 1 gargnitin primarygroup 751K May 10 14:34 tmux-history-list-thru-metadata-cache-expt-0-1-20240510T143447.log
+-rw-r----- 1 gargnitin primarygroup 7.4K May  7 07:34 tmux-ignore-unsupported-directories-2-0-20240507T073343.log
+gargnitin@gargnitin:~$ vi ~/.tmux/tmux-history-list-thru-metadata-cache-expt-0-1-20240510T143447.log                                                                                                                                                                                                              
+gargnitin@gargnitin:~$ vi ~/.tmux/session_logs/tmux-history-list-thru-metadata-cache-expt-0-1-20240510T143447.log                                                                                                                                                                                                 
+gargnitin@gargnitin:~$ 

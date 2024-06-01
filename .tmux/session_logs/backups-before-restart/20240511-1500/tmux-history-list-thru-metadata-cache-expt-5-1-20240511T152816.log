@@ -1,0 +1,101 @@
+gargnitin@gargnitin:~$ bash
+srgargnitin@gargnitin:~$ src
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ grep -rn '.gcsfuse_tmp' internal
+internal/gcsx/append_object_creator_test.go:64:const prefix = ".gcsfuse_tmp/"
+internal/gcsx/integration_test.go:89:   const tmpObjectPrefix = ".gcsfuse_tmp/"
+internal/fs/handle/dir_handle_test.go:56:               1, ".gcsfuse_tmp/", fake.NewFakeBucket(&t.clock, "some_bucket"))
+grep: internal/fs/__debug_bin2116642442: binary file matches
+grep: internal/fs/__debug_bin4281281759: binary file matches
+grep: internal/fs/__debug_bin3394779426: binary file matches
+internal/fs/fs_test.go:137:             tmpObjectPrefix: ".gcsfuse_tmp/",
+grep: internal/fs/__debug_bin2675680649: binary file matches
+grep: internal/fs/__debug_bin1074535237: binary file matches
+internal/fs/inode/file_test.go:110:             ".gcsfuse_tmp/",
+internal/fs/inode/base_dir_test.go:61:          ".gcsfuse_tmp/",
+internal/fs/inode/base_dir_test.go:66:          ".gcsfuse_tmp/",
+internal/fs/inode/core_test.go:51:              1, ".gcsfuse_tmp/", fake.NewFakeBucket(&t.clock, "some_bucket"))
+internal/fs/inode/dir_test.go:72:               ".gcsfuse_tmp/",
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ grep -rn 'gcsfuse_tmp' internal                                                                                                                                                                                                              
+internal/gcsx/append_object_creator_test.go:64:const prefix = ".gcsfuse_tmp/"
+internal/gcsx/integration_test.go:89:   const tmpObjectPrefix = ".gcsfuse_tmp/"
+internal/fs/handle/dir_handle_test.go:56:               1, ".gcsfuse_tmp/", fake.NewFakeBucket(&t.clock, "some_bucket"))
+grep: internal/fs/__debug_bin2116642442: binary file matches
+grep: internal/fs/__debug_bin4281281759: binary file matches
+grep: internal/fs/__debug_bin3394779426: binary file matches
+internal/fs/fs_test.go:137:             tmpObjectPrefix: ".gcsfuse_tmp/",
+grep: internal/fs/__debug_bin2675680649: binary file matches
+grep: internal/fs/__debug_bin1074535237: binary file matches
+internal/fs/inode/file_test.go:110:             ".gcsfuse_tmp/",
+internal/fs/inode/base_dir_test.go:61:          ".gcsfuse_tmp/",
+internal/fs/inode/base_dir_test.go:66:          ".gcsfuse_tmp/",
+internal/fs/inode/core_test.go:51:              1, ".gcsfuse_tmp/", fake.NewFakeBucket(&t.clock, "some_bucket"))
+internal/fs/inode/dir_test.go:72:               ".gcsfuse_tmp/",
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ grep -rn 'Starting a garbage collection run' internal                                                                                                                                                                                         
+internal/gcsx/garbage_collect.go:115:           logger.Info("Starting a garbage collection run.")
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ grep -rn 'garbageCollect' internal                                                                                                                                                                                                            
+internal/gcsx/bucket_manager.go:235:    go garbageCollect(bm.gcCtx, bm.config.TmpObjectPrefix, sb)
+internal/gcsx/garbage_collect.go:30:func garbageCollectOnce(
+internal/gcsx/garbage_collect.go:99:func garbageCollect(
+internal/gcsx/garbage_collect.go:118:           objectsDeleted, err := garbageCollectOnce(ctx, tmpObjectPrefix, bucket)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ lsfusemnts 
+gargnitin-empty-bucket /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-empty-bucket-mount
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$                                                                                
+If you do not reboot now, your system will reboot automatically                
+at Fri May 17 02:52:10 UTC 2024. For more info, see go/glinux-reboot-policy.   
+To reboot your computer 10 hours from now, on the command line run:            
+echo systemctl reboot | at now + 10 hours                                      
+Also you may have a pending maintenance. See go/cloudtop-faq#cloudtop-maintenan
+ce-scheduler                                                                   
+To run maintenance in 10 hours run:                                            
+ctop self maintenance schedule in 10h
+                                                                               
+^C
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ restartCRD 
+[sudo] password for gargnitin: 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ type restartCRD                                                                                                                                                                                                                               
+restartCRD is aliased to `sudo systemctl restart chrome-remote-desktop@${USER}'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ lsfusemnts 
+gargnitin-memory-testing-bucket-20230809 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+gargnitin-memory-testing-bucket-20230809 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount
+gargnitin-bucket-asia-se1-1 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-bucket-asia-se1-1-mount
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ fusermount -uz /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ alias unload='fusermount -uz'                                                                                                 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ unload /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount
+fusermount: entry for /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount not found in /etc/mtab
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ unload /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-bucket-asia-se1-1-mount
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ lsfusemnts 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ lsfusemnts 
+gargnitin-memory-testing-bucket-20230809 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount
+gargnitin-memory-testing-bucket-20230809 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+gargnitin-bucket-asia-se1-1 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-bucket-asia-se1-1-mount
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ lsfusemnts 
+gargnitin-memory-testing-bucket-20230809 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount
+gargnitin-memory-testing-bucket-20230809 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+gargnitin-bucket-asia-se1-1 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-bucket-asia-se1-1-mount2
+gargnitin-bucket-asia-se1-1 /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-bucket-asia-se1-1-mount
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ lsfusemnts | tail -f' ' -d2
+tail: invalid option -- ' '
+Try 'tail --help' for more information.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ lsfusemnts | cut -f' ' -d2                                                         
+cut: fields are numbered from 1
+Try 'cut --help' for more information.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ lsfusemnts | cut -d' ' -f2                                                         
+/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount
+/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-memory-testing-bucket-20230809-mount2
+/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-bucket-asia-se1-1-mount2
+/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-bucket-asia-se1-1-mount
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ lsfusemnts | cut -d' ' -f2 | xargs fusermount -uz
+fusermount: extra arguments after the mountpoint
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ lsfusemnts | cut -d' ' -f2 | xargs fusermount -uz {} \;
+fusermount: extra arguments after the mountpoint
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ lsfusemnts | cut -d' ' -f2 | xargs fusermount -uz {} \;^C
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ restartCRD                                             
+[sudo] password for gargnitin: 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ restartCRD                                             
+[sudo] password for gargnitin: 
+pam_glogin: invalid password
+Sorry, try again.
+[sudo] password for gargnitin: 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ restartCRD 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ lsfusemnts | cut -d' ' -f2 | xargs fusermount -uz {} \;
+                                                                                                                                                           

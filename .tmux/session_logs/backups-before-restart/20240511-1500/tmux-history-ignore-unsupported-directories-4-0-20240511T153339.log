@@ -1,0 +1,732 @@
+gargnitin@gargnitin:~$ bash  
+src
+gargnitin@gargnitin:~$ src
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git st
+On branch gargnitin/fix-empty-directory-list-issue
+Your branch is ahead of 'origin/gargnitin/fix-empty-directory-list-issue' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   tools/integration_tests/implicit_dir/list_test.go
+        modified:   tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+        new file:   tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   tools/integration_tests/implicit_dir/list_test.go
+        modified:   tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+        modified:   tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+
+Untracked files not listed (use -u option to show untracked files)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff
+diff --git a/tools/integration_tests/implicit_dir/list_test.go b/tools/integration_tests/implicit_dir/list_test.go
+index 26de5be33..5cc48e39c 100644
+--- a/tools/integration_tests/implicit_dir/list_test.go
++++ b/tools/integration_tests/implicit_dir/list_test.go
+@@ -45,8 +45,8 @@ func TestListImplicitObjectsFromBucket(t *testing.T) {
+        // testBucket/dirForImplicitDirTests//fileInUnsupportedImplicitDir3                                     -- File
+ 
+        implicit_and_explicit_dir_setup.CreateImplicitDirectoryStructure(DirForImplicitDirTests)
+-       implicit_and_explicit_dir_setup.CreateUnsupportedImplicitDirectoryStructure(DirForImplicitDirTests)
+        implicit_and_explicit_dir_setup.CreateExplicitDirectoryStructure(DirForImplicitDirTests, t)
++       implicit_and_explicit_dir_setup.CreateUnsupportedImplicitDirectoryStructure(DirForImplicitDirTests)
+ 
+        err := filepath.WalkDir(testDir, func(path string, dir fs.DirEntry, err error) error {
+                if err != nil {
+@@ -68,21 +68,21 @@ func TestListImplicitObjectsFromBucket(t *testing.T) {
+                if path == testDir {
+                        // numberOfObjects - 3
+                        if len(objs) != implicit_and_explicit_dir_setup.NumberOfTotalObjects {
+-                               t.Errorf("Incorrect number of objects in the bucket.")
++                               t.Errorf("Incorrect number of objects in the bucket. Expected: %v, Actual: %v", implicit_and_explicit_dir_setup.NumberOfTotalObjects, len(objs))
+                        }
+ 
+                        // testBucket/dirForImplicitDirTests/explicitDir     -- Dir
+                        if objs[0].Name() != implicit_and_explicit_dir_setup.ExplicitDirectory || objs[0].IsDir() != true {
+-                               t.Errorf("Listed incorrect object")
++                               t.Errorf("Listed incorrect object #0. Expected: %v, Actual: %v", implicit_and_explicit_dir_setup.ExplicitDirectory, objs[0].Name())
+                        }
+                        // testBucket/dirForImplicitDirTests/explicitFile    -- File
+                        if objs[1].Name() != implicit_and_explicit_dir_setup.ExplicitFile || objs[1].IsDir() != false {
+-                               t.Errorf("Listed incorrect object")
++                               t.Errorf("Listed incorrect object #1. Expected: %v, Actual: %v", implicit_and_explicit_dir_setup.ExplicitFile, objs[1].Name())
+                        }
+ 
+                        // testBucket/dirForImplicitDirTests/implicitDir     -- Dir
+                        if objs[2].Name() != implicit_and_explicit_dir_setup.ImplicitDirectory || objs[2].IsDir() != true {
+-                               t.Errorf("Listed incorrect object")
++                               t.Errorf("Listed incorrect object #3. Expected: %v, Actual: %v", implicit_and_explicit_dir_setup.ImplicitDirectory, objs[2].Name())
+                        }
+                }
+ 
+diff --git a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+index ceffab529..0010bed64 100644
+--- a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
++++ b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+@@ -44,7 +44,7 @@ const UnsupportedImplicitDirectory1 = ".."
+ const FileInUnsupportedImplicitDirectory1 = "fileInUnsupportedImplicitDir1"
+ const UnsupportedImplicitDirectory2 = "."
+ const FileInUnsupportedImplicitDirectory2 = "fileInUnsupportedImplicitDir2"
+-const UnsupportedImplicitDirectory3 = ""
++const UnsupportedImplicitDirectory3 = "/"
+ const FileInUnsupportedImplicitDirectory3 = "fileInUnsupportedImplicitDir3"
+ 
+ func RunTestsForImplicitDirAndExplicitDir(flags [][]string, m *testing.M) int {
+@@ -91,12 +91,12 @@ func CreateImplicitDirectoryStructure(testDir string) {
+ 
+ func CreateUnsupportedImplicitDirectoryStructure(testDir string) {
+        // Implicit Directory Structure
+-       // testBucket/testDir/../                                                                                -- Dir
+-       // testBucket/testDir/../fileInUnsupportedImplicitDir1                                   -- File
+-       // testBucket/testDir/./                                                                                 -- Dir
+-       // testBucket/testDir/./fileInUnsupportedImplicitDir2                                    -- File
+-       // testBucket/testDir//                                                                                  -- Dir
+-       // testBucket/testDir//fileInUnsupportedImplicitDir3                                             -- File
++       // testBucket/testDir/../                                                                -- Dir
++       // testBucket/testDir/../fileInUnsupportedImplicitDir1                                   -- File
++       // testBucket/testDir/.                                                                  -- Dir
++       // testBucket/testDir/./fileInUnsupportedImplicitDir2                                    -- File
++       // testBucket/testDir//                                                                  -- Dir
++       // testBucket/testDir//fileInUnsupportedImplicitDir3                                     -- File
+ 
+        // Create implicit directory in bucket for testing.
+        setup.RunScriptForTestData("../util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh", path.Join(setup.TestBucket(), testDir))
+diff --git a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+index 759545d8e..72823039b 100755
+--- a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
++++ b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+@@ -21,4 +21,4 @@ echo "This is from directory . file fileInUnsupportedImplicitDir2" > fileInUnsup
+ gcloud storage cp fileInUnsupportedImplicitDir2 gs://$1/./
+ echo "This is from directory \"\" file fileInUnsupportedImplicitDir3" > fileInUnsupportedImplicitDir3
+ # bucket/testdir//fileInImplicitDir3
+-gcloud storage cp fileInUnsupportedImplicitDir3 gs://$1//
++gcloud storage cp fileInUnsupportedImplicitDir3 gs://$1//fileInUnsupportedImplicitDir3
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git l
+530fa0080 (HEAD -> refs/heads/gargnitin/fix-empty-directory-list-issue) fixup! Add tests for unsupported directory names
+89a3a2eb5 (refs/remotes/origin/gargnitin/fix-empty-directory-list-issue) Skip unsupported directory/file names in list
+fc7172a1b Add tests for unsupported directory names
+923987bb5 (refs/remotes/origin/master, refs/remotes/origin/HEAD) Upgrading go version to 1.22.2 (#1882)
+9313e1c7a Fix only dir mounting e2e test (#1880)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git fa
+remote: Enumerating objects: 48, done.
+remote: Counting objects: 100% (48/48), done.
+remote: Compressing objects: 100% (18/18), done.
+remote: Total 48 (delta 27), reused 48 (delta 27), pack-reused 0
+Unpacking objects: 100% (48/48), 9.75 KiB | 587.00 KiB/s, done.
+From https://github.com/googlecloudplatform/gcsfuse
+   0a009e051..45ca0718c  printing_logs_on_test_logs -> origin/printing_logs_on_test_logs
+ * [new branch]          send_fail_logs_on_kokoro   -> origin/send_fail_logs_on_kokoro
+   cdc825d93..06b4e197d  storage_control_client     -> origin/storage_control_client
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git st
+On branch gargnitin/fix-empty-directory-list-issue
+Your branch is ahead of 'origin/gargnitin/fix-empty-directory-list-issue' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   tools/integration_tests/implicit_dir/list_test.go
+        modified:   tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+        new file:   tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   tools/integration_tests/implicit_dir/list_test.go
+        modified:   tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+        modified:   tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+
+Untracked files not listed (use -u option to show untracked files)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git l
+530fa0080 (HEAD -> refs/heads/gargnitin/fix-empty-directory-list-issue) fixup! Add tests for unsupported directory names
+89a3a2eb5 (refs/remotes/origin/gargnitin/fix-empty-directory-list-issue) Skip unsupported directory/file names in list
+fc7172a1b Add tests for unsupported directory names
+923987bb5 (refs/remotes/origin/master, refs/remotes/origin/HEAD) Upgrading go version to 1.22.2 (#1882)
+9313e1c7a Fix only dir mounting e2e test (#1880)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git add tools/integration_tests/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git st
+On branch gargnitin/fix-empty-directory-list-issue
+Your branch is ahead of 'origin/gargnitin/fix-empty-directory-list-issue' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   tools/integration_tests/implicit_dir/fileInImplicitDir1
+        new file:   tools/integration_tests/implicit_dir/fileInImplicitDir2
+        new file:   tools/integration_tests/implicit_dir/fileInUnsupportedImplicitDir1
+        new file:   tools/integration_tests/implicit_dir/fileInUnsupportedImplicitDir2
+        new file:   tools/integration_tests/implicit_dir/fileInUnsupportedImplicitDir3
+        modified:   tools/integration_tests/implicit_dir/list_test.go
+        modified:   tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+        new file:   tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+
+Untracked files not listed (use -u option to show untracked files)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git ci  
+[gargnitin/fix-empty-directory-list-issue 7d017d32b] Add integration tests for unsupported directories
+ 8 files changed, 76 insertions(+), 4 deletions(-)
+ create mode 100644 tools/integration_tests/implicit_dir/fileInImplicitDir1
+ create mode 100644 tools/integration_tests/implicit_dir/fileInImplicitDir2
+ create mode 100644 tools/integration_tests/implicit_dir/fileInUnsupportedImplicitDir1
+ create mode 100644 tools/integration_tests/implicit_dir/fileInUnsupportedImplicitDir2
+ create mode 100644 tools/integration_tests/implicit_dir/fileInUnsupportedImplicitDir3
+ create mode 100755 tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git l
+7d017d32b (HEAD -> refs/heads/gargnitin/fix-empty-directory-list-issue) Add integration tests for unsupported directories
+530fa0080 fixup! Add tests for unsupported directory names
+89a3a2eb5 (refs/remotes/origin/gargnitin/fix-empty-directory-list-issue) Skip unsupported directory/file names in list
+fc7172a1b Add tests for unsupported directory names
+923987bb5 (refs/remotes/origin/master, refs/remotes/origin/HEAD) Upgrading go version to 1.22.2 (#1882)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git rm tools/integration_tests/implicit_dir/fileIn*
+rm 'tools/integration_tests/implicit_dir/fileInImplicitDir1'
+rm 'tools/integration_tests/implicit_dir/fileInImplicitDir2'
+rm 'tools/integration_tests/implicit_dir/fileInUnsupportedImplicitDir1'
+rm 'tools/integration_tests/implicit_dir/fileInUnsupportedImplicitDir2'
+rm 'tools/integration_tests/implicit_dir/fileInUnsupportedImplicitDir3'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git l
+7d017d32b (HEAD -> refs/heads/gargnitin/fix-empty-directory-list-issue) Add integration tests for unsupported directories
+530fa0080 fixup! Add tests for unsupported directory names
+89a3a2eb5 (refs/remotes/origin/gargnitin/fix-empty-directory-list-issue) Skip unsupported directory/file names in list
+fc7172a1b Add tests for unsupported directory names
+923987bb5 (refs/remotes/origin/master, refs/remotes/origin/HEAD) Upgrading go version to 1.22.2 (#1882)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff HEAD~2..HEAD~1 --name-only
+internal/fs/implicit_dirs_test.go
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git ri EAD~5
+fatal: invalid upstream 'EAD~5'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git ri HEAD~5
+error: cannot rebase: Your index contains uncommitted changes.
+error: Please commit or stash them.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git st
+On branch gargnitin/fix-empty-directory-list-issue
+Your branch is ahead of 'origin/gargnitin/fix-empty-directory-list-issue' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    tools/integration_tests/implicit_dir/fileInImplicitDir1
+        deleted:    tools/integration_tests/implicit_dir/fileInImplicitDir2
+        deleted:    tools/integration_tests/implicit_dir/fileInUnsupportedImplicitDir1
+        deleted:    tools/integration_tests/implicit_dir/fileInUnsupportedImplicitDir2
+        deleted:    tools/integration_tests/implicit_dir/fileInUnsupportedImplicitDir3
+
+Untracked files not listed (use -u option to show untracked files)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git amend
+[gargnitin/fix-empty-directory-list-issue c0477e85d] Add integration tests for unsupported directories
+ Date: Mon May 6 07:04:38 2024 +0000
+ 3 files changed, 71 insertions(+), 4 deletions(-)
+ create mode 100755 tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git st                                                                                                                                                                                                                                     
+On branch gargnitin/fix-empty-directory-list-issue
+Your branch is ahead of 'origin/gargnitin/fix-empty-directory-list-issue' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit (use -u to show untracked files)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git ri HEAD~10                                                                                                                                                                                                                               
+Successfully rebased and updated refs/heads/gargnitin/fix-empty-directory-list-issue.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git reword
+[gargnitin/fix-empty-directory-list-issue 02488f1e0] Add integration tests for unsupported directories
+ Date: Mon May 6 07:04:38 2024 +0000
+ 3 files changed, 71 insertions(+), 4 deletions(-)
+ create mode 100755 tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git l
+02488f1e0 (HEAD -> refs/heads/gargnitin/fix-empty-directory-list-issue) Add integration tests for unsupported directories
+ef0b1fe77 Skip unsupported directory/file names in list
+f08970232 Add tests for unsupported directory names
+923987bb5 (refs/remotes/origin/master, refs/remotes/origin/HEAD) Upgrading go version to 1.22.2 (#1882)
+9313e1c7a Fix only dir mounting e2e test (#1880)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git fa && git r origin/master
+Current branch gargnitin/fix-empty-directory-list-issue is up to date.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git l
+02488f1e0 (HEAD -> refs/heads/gargnitin/fix-empty-directory-list-issue) Add integration tests for unsupported directories
+ef0b1fe77 Skip unsupported directory/file names in list
+f08970232 Add tests for unsupported directory names
+923987bb5 (refs/remotes/origin/master, refs/remotes/origin/HEAD) Upgrading go version to 1.22.2 (#1882)
+9313e1c7a Fix only dir mounting e2e test (#1880)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git put -f
+Enumerating objects: 48, done.
+Counting objects: 100% (48/48), done.
+Delta compression using up to 48 threads
+Compressing objects: 100% (28/28), done.
+Writing objects: 100% (28/28), 5.41 KiB | 1.80 MiB/s, done.
+Total 28 (delta 22), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (22/22), completed with 17 local objects.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/GoogleCloudPlatform/gcsfuse.git
+remote: 
+remote: GitHub found 8 vulnerabilities on GoogleCloudPlatform/gcsfuse's default branch (3 high, 5 moderate). To find out more, visit:
+remote:      https://github.com/GoogleCloudPlatform/gcsfuse/security/dependabot
+remote: 
+To https://github.com/googlecloudplatform/gcsfuse.git
+ + 89a3a2eb5...02488f1e0 gargnitin/fix-empty-directory-list-issue -> gargnitin/fix-empty-directory-list-issue (forced update)
+branch 'gargnitin/fix-empty-directory-list-issue' set up to track 'origin/gargnitin/fix-empty-directory-list-issue'.
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ grep -irn 'CreateImplicitDirectoryInExplicitDirectoryStructure' tools/integration_tests/ 
+tools/integration_tests/implicit_dir/delete_test.go:105:        implicit_and_explicit_dir_setup.CreateImplicitDirectoryInExplicitDirectoryStructure(DirForImplicitDirTests, t)
+tools/integration_tests/implicit_dir/delete_test.go:123:        implicit_and_explicit_dir_setup.CreateImplicitDirectoryInExplicitDirectoryStructure(DirForImplicitDirTests, t)
+tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go:124:func CreateImplicitDirectoryInExplicitDirectoryStructure(testDir string, t *testing.T) {
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git st                                                                                  
+On branch gargnitin/fix-empty-directory-list-issue
+Your branch is up to date with 'origin/gargnitin/fix-empty-directory-list-issue'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   tools/integration_tests/implicit_dir/delete_test.go
+        modified:   tools/integration_tests/implicit_dir/list_test.go
+        modified:   tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+
+no changes added to commit (use "git add" and/or "git commit -a")
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git l
+02488f1e0 (HEAD -> refs/heads/gargnitin/fix-empty-directory-list-issue, refs/remotes/origin/gargnitin/fix-empty-directory-list-issue) Add integration tests for unsupported directories
+ef0b1fe77 Skip unsupported directory/file names in list
+f08970232 Add tests for unsupported directory names
+923987bb5 (refs/remotes/origin/master, refs/remotes/origin/HEAD) Upgrading go version to 1.22.2 (#1882)
+9313e1c7a Fix only dir mounting e2e test (#1880)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff HEAD~1
+diff --git a/tools/integration_tests/implicit_dir/delete_test.go b/tools/integration_tests/implicit_dir/delete_test.go
+index 1060d88f4..52ae526d5 100644
+--- a/tools/integration_tests/implicit_dir/delete_test.go
++++ b/tools/integration_tests/implicit_dir/delete_test.go
+@@ -120,7 +120,6 @@ func TestDeleteImplicitDirInExplicitDir(t *testing.T) {
+ // testBucket/dirForImplicitDirTests/explicitDirectory/implicitDirectory/implicitSubDirectory/fileInImplicitDir2         -- File
+ func TestDeleteExplicitDirContainingImplicitSubDir(t *testing.T) {
+        testDir := setup.SetupTestDirectory(DirForImplicitDirTests)
+-       implicit_and_explicit_dir_setup.CreateImplicitDirectoryInExplicitDirectoryStructure(DirForImplicitDirTests, t)
+ 
+        dirPath := path.Join(testDir, implicit_and_explicit_dir_setup.ExplicitDirectory)
+ 
+diff --git a/tools/integration_tests/implicit_dir/list_test.go b/tools/integration_tests/implicit_dir/list_test.go
+index 67d70df3b..0c5bd16f4 100644
+--- a/tools/integration_tests/implicit_dir/list_test.go
++++ b/tools/integration_tests/implicit_dir/list_test.go
+@@ -36,10 +36,16 @@ func TestListImplicitObjectsFromBucket(t *testing.T) {
+        // testBucket/dirForImplicitDirTests/explicitDirectory                                                  -- Dir
+        // testBucket/dirForImplicitDirTests/explicitFile                                                       -- File
+        // testBucket/dirForImplicitDirTests/explicitDirectory/fileInExplicitDir1                               -- File
+-       // testBucket/dirForImplicitDirTests/explicitDirectory/fileInExplicitDir2                               -- File
++       // testBucket/dirForImplicitDirTests/..                                                                 -- Dir
++       // testBucket/dirForImplicitDirTests/../fileInUnsupportedImplicitDir1                                   -- File
++       // testBucket/dirForImplicitDirTests/.                                                                  -- Dir
++       // testBucket/dirForImplicitDirTests/./fileInUnsupportedImplicitDir2                                    -- File
++       // testBucket/dirForImplicitDirTests//                                                                  -- Dir
++       // testBucket/dirForImplicitDirTests//fileInUnsupportedImplicitDir3                                     -- File
+ 
+        implicit_and_explicit_dir_setup.CreateImplicitDirectoryStructure(DirForImplicitDirTests)
+        implicit_and_explicit_dir_setup.CreateExplicitDirectoryStructure(DirForImplicitDirTests, t)
++       implicit_and_explicit_dir_setup.CreateUnsupportedImplicitDirectoryStructure(DirForImplicitDirTests)
+ 
+        err := filepath.WalkDir(testDir, func(path string, dir fs.DirEntry, err error) error {
+                if err != nil {
+@@ -61,21 +67,21 @@ func TestListImplicitObjectsFromBucket(t *testing.T) {
+                if path == testDir {
+                        // numberOfObjects - 3
+                        if len(objs) != implicit_and_explicit_dir_setup.NumberOfTotalObjects {
+-                               t.Errorf("Incorrect number of objects in the bucket.")
++                               t.Errorf("Incorrect number of objects in the bucket. Expected: %v, Actual: %v", implicit_and_explicit_dir_setup.NumberOfTotalObjects, len(objs))
+                        }
+ 
+                        // testBucket/dirForImplicitDirTests/explicitDir     -- Dir
+                        if objs[0].Name() != implicit_and_explicit_dir_setup.ExplicitDirectory || objs[0].IsDir() != true {
+-                               t.Errorf("Listed incorrect object")
++                               t.Errorf("Listed incorrect object #0. Expected: %v, Actual: %v", implicit_and_explicit_dir_setup.ExplicitDirectory, objs[0].Name())
+                        }
+                        // testBucket/dirForImplicitDirTests/explicitFile    -- File
+                        if objs[1].Name() != implicit_and_explicit_dir_setup.ExplicitFile || objs[1].IsDir() != false {
+-                               t.Errorf("Listed incorrect object")
++                               t.Errorf("Listed incorrect object #1. Expected: %v, Actual: %v", implicit_and_explicit_dir_setup.ExplicitFile, objs[1].Name())
+                        }
+ 
+                        // testBucket/dirForImplicitDirTests/implicitDir     -- Dir
+                        if objs[2].Name() != implicit_and_explicit_dir_setup.ImplicitDirectory || objs[2].IsDir() != true {
+-                               t.Errorf("Listed incorrect object")
++                               t.Errorf("Listed incorrect object #3. Expected: %v, Actual: %v", implicit_and_explicit_dir_setup.ImplicitDirectory, objs[2].Name())
+                        }
+                }
+ 
+diff --git a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+index 1d09b03a4..07ab98c92 100644
+--- a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
++++ b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+@@ -40,6 +40,12 @@ const FirstFileInExplicitDirectory = "fileInExplicitDir1"
+ const SecondFileInExplicitDirectory = "fileInExplicitDir2"
+ const FileInImplicitDirectory = "fileInImplicitDir1"
+ const FileInImplicitSubDirectory = "fileInImplicitDir2"
++const UnsupportedImplicitDirectory1 = ".."
++const FileInUnsupportedImplicitDirectory1 = "fileInUnsupportedImplicitDir1"
++const UnsupportedImplicitDirectory2 = "."
++const FileInUnsupportedImplicitDirectory2 = "fileInUnsupportedImplicitDir2"
++const UnsupportedImplicitDirectory3 = "/"
++const FileInUnsupportedImplicitDirectory3 = "fileInUnsupportedImplicitDir3"
+ 
+ func RunTestsForImplicitDirAndExplicitDir(flags [][]string, m *testing.M) int {
+        setup.ExitWithFailureIfBothTestBucketAndMountedDirectoryFlagsAreNotSet()
+@@ -83,6 +89,19 @@ func CreateImplicitDirectoryStructure(testDir string) {
+        setup.RunScriptForTestData("../util/setup/implicit_and_explicit_dir_setup/testdata/create_objects.sh", path.Join(setup.TestBucket(), testDir))
+ }
+ 
++func CreateUnsupportedImplicitDirectoryStructure(testDir string) {
++       // Implicit Directory Structure
++       // testBucket/testDir/../                                                                -- Dir
++       // testBucket/testDir/../fileInUnsupportedImplicitDir1                                   -- File
++       // testBucket/testDir/.                                                                  -- Dir
++       // testBucket/testDir/./fileInUnsupportedImplicitDir2                                    -- File
++       // testBucket/testDir//                                                                  -- Dir
++       // testBucket/testDir//fileInUnsupportedImplicitDir3                                     -- File
++
++       // Create implicit directory in bucket for testing.
++       setup.RunScriptForTestData("../util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh", path.Join(setup.TestBucket(), testDir))
++}
++
+ func CreateExplicitDirectoryStructure(testDir string, t *testing.T) {
+        // Explicit Directory structure
+        // testBucket/testDir/explicitDirectory                            -- Dir
+@@ -116,3 +135,20 @@ func CreateImplicitDirectoryInExplicitDirectoryStructure(testDir string, t *test
+        dirPathInBucket := path.Join(setup.TestBucket(), testDir, ExplicitDirectory)
+        setup.RunScriptForTestData("../util/setup/implicit_and_explicit_dir_setup/testdata/create_objects.sh", dirPathInBucket)
+ }
++
++func CreateUnsupportedImplicitDirectoryInExplicitDirectoryStructure(testDir string, t *testing.T) {
++       // testBucket/testDir/explicitDirectory                                                                   -- Dir
++       // testBucket/testDir/explictFile                                                                         -- File
++       // testBucket/testDir/explicitDirectory/fileInExplicitDir1                                                -- File
++       // testBucket/testDir/explicitDirectory/fileInExplicitDir2                                                -- File
++       // testBucket/testDir/explicitDirectory/..                                                                -- Dir
++       // testBucket/testDir/explicitDirectory/../fileInUnsupportedImplicitDir1                                  -- File
++       // testBucket/testDir/explicitDirectory/.                                                                 -- Dir
++       // testBucket/testDir/explicitDirectory/./fileInUnsupportedImplicitDir2                                   -- File
++       // testBucket/testDir/explicitDirectory//                                                                 -- Dir
++       // testBucket/testDir/explicitDirectory//fileInUnsupportedImplicitDir3                                    -- File
++
++       CreateExplicitDirectoryStructure(testDir, t)
++       dirPathInBucket := path.Join(setup.TestBucket(), testDir, ExplicitDirectory)
++       setup.RunScriptForTestData("../util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh", dirPathInBucket)
++}
+diff --git a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+new file mode 100755
+:
+                        // testBucket/dirForImplicitDirTests/explicitFile    -- File
+                        if objs[1].Name() != implicit_and_explicit_dir_setup.ExplicitFile || objs[1].IsDir() != false {
+-                               t.Errorf("Listed incorrect object")
++                               t.Errorf("Listed incorrect object #1. Expected: %v, Actual: %v", implicit_and_explicit_dir_setup.ExplicitFile, objs[1].Name())
+                        }
+ 
+                        // testBucket/dirForImplicitDirTests/implicitDir     -- Dir
+                        if objs[2].Name() != implicit_and_explicit_dir_setup.ImplicitDirectory || objs[2].IsDir() != true {
+-                               t.Errorf("Listed incorrect object")
++                               t.Errorf("Listed incorrect object #3. Expected: %v, Actual: %v", implicit_and_explicit_dir_setup.ImplicitDirectory, objs[2].Name())
+                        }
+                }
+ 
+diff --git a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+index 1d09b03a4..07ab98c92 100644
+--- a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
++++ b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+@@ -40,6 +40,12 @@ const FirstFileInExplicitDirectory = "fileInExplicitDir1"
+ const SecondFileInExplicitDirectory = "fileInExplicitDir2"
+ const FileInImplicitDirectory = "fileInImplicitDir1"
+ const FileInImplicitSubDirectory = "fileInImplicitDir2"
++const UnsupportedImplicitDirectory1 = ".."
++const FileInUnsupportedImplicitDirectory1 = "fileInUnsupportedImplicitDir1"
++const UnsupportedImplicitDirectory2 = "."
++const FileInUnsupportedImplicitDirectory2 = "fileInUnsupportedImplicitDir2"
++const UnsupportedImplicitDirectory3 = "/"
++const FileInUnsupportedImplicitDirectory3 = "fileInUnsupportedImplicitDir3"
+ 
+ func RunTestsForImplicitDirAndExplicitDir(flags [][]string, m *testing.M) int {
+        setup.ExitWithFailureIfBothTestBucketAndMountedDirectoryFlagsAreNotSet()
+@@ -83,6 +89,19 @@ func CreateImplicitDirectoryStructure(testDir string) {
+        setup.RunScriptForTestData("../util/setup/implicit_and_explicit_dir_setup/testdata/create_objects.sh", path.Join(setup.TestBucket(), testDir))
+ }
+ 
++func CreateUnsupportedImplicitDirectoryStructure(testDir string) {
++       // Implicit Directory Structure
++       // testBucket/testDir/../                                                                -- Dir
++       // testBucket/testDir/../fileInUnsupportedImplicitDir1                                   -- File
++       // testBucket/testDir/.                                                                  -- Dir
++       // testBucket/testDir/./fileInUnsupportedImplicitDir2                                    -- File
++       // testBucket/testDir//                                                                  -- Dir
++       // testBucket/testDir//fileInUnsupportedImplicitDir3                                     -- File
++
++       // Create implicit directory in bucket for testing.
++       setup.RunScriptForTestData("../util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh", path.Join(setup.TestBucket(), testDir))
++}
++
+ func CreateExplicitDirectoryStructure(testDir string, t *testing.T) {
+        // Explicit Directory structure
+        // testBucket/testDir/explicitDirectory                            -- Dir
+@@ -116,3 +135,20 @@ func CreateImplicitDirectoryInExplicitDirectoryStructure(testDir string, t *test
+        dirPathInBucket := path.Join(setup.TestBucket(), testDir, ExplicitDirectory)
+        setup.RunScriptForTestData("../util/setup/implicit_and_explicit_dir_setup/testdata/create_objects.sh", dirPathInBucket)
+ }
++
++func CreateUnsupportedImplicitDirectoryInExplicitDirectoryStructure(testDir string, t *testing.T) {
++       // testBucket/testDir/explicitDirectory                                                                   -- Dir
++       // testBucket/testDir/explictFile                                                                         -- File
++       // testBucket/testDir/explicitDirectory/fileInExplicitDir1                                                -- File
++       // testBucket/testDir/explicitDirectory/fileInExplicitDir2                                                -- File
++       // testBucket/testDir/explicitDirectory/..                                                                -- Dir
++       // testBucket/testDir/explicitDirectory/../fileInUnsupportedImplicitDir1                                  -- File
++       // testBucket/testDir/explicitDirectory/.                                                                 -- Dir
++       // testBucket/testDir/explicitDirectory/./fileInUnsupportedImplicitDir2                                   -- File
++       // testBucket/testDir/explicitDirectory//                                                                 -- Dir
++       // testBucket/testDir/explicitDirectory//fileInUnsupportedImplicitDir3                                    -- File
++
++       CreateExplicitDirectoryStructure(testDir, t)
++       dirPathInBucket := path.Join(setup.TestBucket(), testDir, ExplicitDirectory)
+:
+                        // testBucket/dirForImplicitDirTests/explicitFile    -- File
+                        if objs[1].Name() != implicit_and_explicit_dir_setup.ExplicitFile || objs[1].IsDir() != false {
+-                               t.Errorf("Listed incorrect object")
++                               t.Errorf("Listed incorrect object #1. Expected: %v, Actual: %v", implicit_and_explicit_dir_setup.ExplicitFile, objs[1].Name())
+                        }
+ 
+                        // testBucket/dirForImplicitDirTests/implicitDir     -- Dir
+                        if objs[2].Name() != implicit_and_explicit_dir_setup.ImplicitDirectory || objs[2].IsDir() != true {
+-                               t.Errorf("Listed incorrect object")
++                               t.Errorf("Listed incorrect object #3. Expected: %v, Actual: %v", implicit_and_explicit_dir_setup.ImplicitDirectory, objs[2].Name())
+                        }
+                }
+ 
+diff --git a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+index 1d09b03a4..07ab98c92 100644
+--- a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
++++ b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+@@ -40,6 +40,12 @@ const FirstFileInExplicitDirectory = "fileInExplicitDir1"
+ const SecondFileInExplicitDirectory = "fileInExplicitDir2"
+ const FileInImplicitDirectory = "fileInImplicitDir1"
+ const FileInImplicitSubDirectory = "fileInImplicitDir2"
++const UnsupportedImplicitDirectory1 = ".."
++const FileInUnsupportedImplicitDirectory1 = "fileInUnsupportedImplicitDir1"
++const UnsupportedImplicitDirectory2 = "."
++const FileInUnsupportedImplicitDirectory2 = "fileInUnsupportedImplicitDir2"
++const UnsupportedImplicitDirectory3 = "/"
++const FileInUnsupportedImplicitDirectory3 = "fileInUnsupportedImplicitDir3"
+ 
+ func RunTestsForImplicitDirAndExplicitDir(flags [][]string, m *testing.M) int {
+        setup.ExitWithFailureIfBothTestBucketAndMountedDirectoryFlagsAreNotSet()
+@@ -83,6 +89,19 @@ func CreateImplicitDirectoryStructure(testDir string) {
+        setup.RunScriptForTestData("../util/setup/implicit_and_explicit_dir_setup/testdata/create_objects.sh", path.Join(setup.TestBucket(), testDir))
+ }
+ 
++func CreateUnsupportedImplicitDirectoryStructure(testDir string) {
++       // Implicit Directory Structure
++       // testBucket/testDir/../                                                                -- Dir
++       // testBucket/testDir/../fileInUnsupportedImplicitDir1                                   -- File
++       // testBucket/testDir/.                                                                  -- Dir
++       // testBucket/testDir/./fileInUnsupportedImplicitDir2                                    -- File
++       // testBucket/testDir//                                                                  -- Dir
++       // testBucket/testDir//fileInUnsupportedImplicitDir3                                     -- File
++
++       // Create implicit directory in bucket for testing.
++       setup.RunScriptForTestData("../util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh", path.Join(setup.TestBucket(), testDir))
++}
++
+ func CreateExplicitDirectoryStructure(testDir string, t *testing.T) {
+        // Explicit Directory structure
+        // testBucket/testDir/explicitDirectory                            -- Dir
+@@ -116,3 +135,20 @@ func CreateImplicitDirectoryInExplicitDirectoryStructure(testDir string, t *test
+        dirPathInBucket := path.Join(setup.TestBucket(), testDir, ExplicitDirectory)
+        setup.RunScriptForTestData("../util/setup/implicit_and_explicit_dir_setup/testdata/create_objects.sh", dirPathInBucket)
+ }
++
++func CreateUnsupportedImplicitDirectoryInExplicitDirectoryStructure(testDir string, t *testing.T) {
++       // testBucket/testDir/explicitDirectory                                                                   -- Dir
++       // testBucket/testDir/explictFile                                                                         -- File
++       // testBucket/testDir/explicitDirectory/fileInExplicitDir1                                                -- File
++       // testBucket/testDir/explicitDirectory/fileInExplicitDir2                                                -- File
++       // testBucket/testDir/explicitDirectory/..                                                                -- Dir
++       // testBucket/testDir/explicitDirectory/../fileInUnsupportedImplicitDir1                                  -- File
++       // testBucket/testDir/explicitDirectory/.                                                                 -- Dir
++       // testBucket/testDir/explicitDirectory/./fileInUnsupportedImplicitDir2                                   -- File
++       // testBucket/testDir/explicitDirectory//                                                                 -- Dir
++       // testBucket/testDir/explicitDirectory//fileInUnsupportedImplicitDir3                                    -- File
++
+:
+                        // testBucket/dirForImplicitDirTests/explicitFile    -- File
+                        if objs[1].Name() != implicit_and_explicit_dir_setup.ExplicitFile || objs[1].IsDir() != false {
+-                               t.Errorf("Listed incorrect object")
++                               t.Errorf("Listed incorrect object #1. Expected: %v, Actual: %v", implicit_and_explicit_dir_setup.ExplicitFile, objs[1].Name())
+                        }
+ 
+                        // testBucket/dirForImplicitDirTests/implicitDir     -- Dir
+                        if objs[2].Name() != implicit_and_explicit_dir_setup.ImplicitDirectory || objs[2].IsDir() != true {
+-                               t.Errorf("Listed incorrect object")
++                               t.Errorf("Listed incorrect object #3. Expected: %v, Actual: %v", implicit_and_explicit_dir_setup.ImplicitDirectory, objs[2].Name())
+                        }
+                }
+ 
+diff --git a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+index 1d09b03a4..07ab98c92 100644
+--- a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
++++ b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/implicit_and_explicit_dir_setup.go
+@@ -40,6 +40,12 @@ const FirstFileInExplicitDirectory = "fileInExplicitDir1"
+ const SecondFileInExplicitDirectory = "fileInExplicitDir2"
+ const FileInImplicitDirectory = "fileInImplicitDir1"
+ const FileInImplicitSubDirectory = "fileInImplicitDir2"
++const UnsupportedImplicitDirectory1 = ".."
++const FileInUnsupportedImplicitDirectory1 = "fileInUnsupportedImplicitDir1"
++const UnsupportedImplicitDirectory2 = "."
++const FileInUnsupportedImplicitDirectory2 = "fileInUnsupportedImplicitDir2"
++const UnsupportedImplicitDirectory3 = "/"
++const FileInUnsupportedImplicitDirectory3 = "fileInUnsupportedImplicitDir3"
+ 
+ func RunTestsForImplicitDirAndExplicitDir(flags [][]string, m *testing.M) int {
+        setup.ExitWithFailureIfBothTestBucketAndMountedDirectoryFlagsAreNotSet()
+@@ -83,6 +89,19 @@ func CreateImplicitDirectoryStructure(testDir string) {
+        setup.RunScriptForTestData("../util/setup/implicit_and_explicit_dir_setup/testdata/create_objects.sh", path.Join(setup.TestBucket(), testDir))
+ }
+ 
++func CreateUnsupportedImplicitDirectoryStructure(testDir string) {
++       // Implicit Directory Structure
++       // testBucket/testDir/../                                                                -- Dir
++       // testBucket/testDir/../fileInUnsupportedImplicitDir1                                   -- File
++       // testBucket/testDir/.                                                                  -- Dir
++       // testBucket/testDir/./fileInUnsupportedImplicitDir2                                    -- File
++       // testBucket/testDir//                                                                  -- Dir
++       // testBucket/testDir//fileInUnsupportedImplicitDir3                                     -- File
++
++       // Create implicit directory in bucket for testing.
++       setup.RunScriptForTestData("../util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh", path.Join(setup.TestBucket(), testDir))
++}
++
+ func CreateExplicitDirectoryStructure(testDir string, t *testing.T) {
+        // Explicit Directory structure
+        // testBucket/testDir/explicitDirectory                            -- Dir
+@@ -116,3 +135,20 @@ func CreateImplicitDirectoryInExplicitDirectoryStructure(testDir string, t *test
+        dirPathInBucket := path.Join(setup.TestBucket(), testDir, ExplicitDirectory)
+        setup.RunScriptForTestData("../util/setup/implicit_and_explicit_dir_setup/testdata/create_objects.sh", dirPathInBucket)
+ }
++
++func CreateUnsupportedImplicitDirectoryInExplicitDirectoryStructure(testDir string, t *testing.T) {
++       // testBucket/testDir/explicitDirectory                                                                   -- Dir
++       // testBucket/testDir/explictFile                                                                         -- File
++       // testBucket/testDir/explicitDirectory/fileInExplicitDir1                                                -- File
++       // testBucket/testDir/explicitDirectory/fileInExplicitDir2                                                -- File
++       // testBucket/testDir/explicitDirectory/..                                                                -- Dir
++       // testBucket/testDir/explicitDirectory/../fileInUnsupportedImplicitDir1                                  -- File
++       // testBucket/testDir/explicitDirectory/.                                                                 -- Dir
++       // testBucket/testDir/explicitDirectory/./fileInUnsupportedImplicitDir2                                   -- File
++       // testBucket/testDir/explicitDirectory//                                                                 -- Dir
++       // testBucket/testDir/explicitDirectory//fileInUnsupportedImplicitDir3                                    -- File
++
++       CreateExplicitDirectoryStructure(testDir, t)
++       dirPathInBucket := path.Join(setup.TestBucket(), testDir, ExplicitDirectory)
++       setup.RunScriptForTestData("../util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh", dirPathInBucket)
++}
+diff --git a/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh b/tools/integration_tests/util/setup/implicit_and_explicit_dir_setup/testdata/create_objects_in_unsupported_directories.sh
+new file mode 100755
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ exit
+exit
+gargnitin@gargnitin:~$ bashgit st
+Command bashgit not found
+gargnitin@gargnitin:~$ src
+Command src not found
+gargnitin@gargnitin:~$ bash
+srgargnitin@gargnitin:~$ src
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git st
+On branch gargnitin/fix-empty-directory-list-issue
+Your branch is up to date with 'origin/gargnitin/fix-empty-directory-list-issue'.
+
+nothing to commit (use -u to show untracked files)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git l
+80306c200 (HEAD -> refs/heads/gargnitin/fix-empty-directory-list-issue, refs/remotes/origin/gargnitin/fix-empty-directory-list-issue) fix lint error
+cca204a91 remove unwanted add executables
+810bb3d74 Add integration tests for unsupported directory names
+67741f93d Add unit tests for unsupported directory names
+8ecc12e5e Skip unsupported directory/file names in list
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git fa
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 5 (delta 2), reused 5 (delta 2), pack-reused 0
+Unpacking objects: 100% (5/5), 1.85 KiB | 946.00 KiB/s, done.
+From https://github.com/googlecloudplatform/gcsfuse
+ * [new branch]          poc_async_job_parallel_download -> origin/poc_async_job_parallel_download
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git switch master && git ff
+Switched to branch 'master'
+Your branch is behind 'origin/master' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+Updating 923987bb5..744605e7a
+Fast-forward
+ tools/integration_tests/util/mounting/dynamic_mounting/dynamic_mounting.go        | 1 +
+ tools/integration_tests/util/mounting/only_dir_mounting/only_dir_mounting.go      | 1 +
+ tools/integration_tests/util/mounting/persistent_mounting/perisistent_mounting.go | 1 +
+ tools/integration_tests/util/mounting/static_mounting/static_mounting.go          | 1 +
+ tools/integration_tests/util/setup/setup.go                                       | 4 ++--
+ 5 files changed, 6 insertions(+), 2 deletions(-)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git l
+744605e7a (HEAD -> refs/heads/master, refs/remotes/origin/master, refs/remotes/origin/HEAD) Printing flags in test logs (#1885)
+61c952309 Fix send failure logs on kokoro artifacts (#1886)
+923987bb5 Upgrading go version to 1.22.2 (#1882)
+9313e1c7a Fix only dir mounting e2e test (#1880)
+c7baf1ac3 Upgrading depenencies as per dependabot suggestions (#1881)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git log -1
+commit 744605e7a0d1b88f171c4542c90da079e7285d18 (HEAD -> master, origin/master, origin/HEAD)
+Author: Tulsi Shah <46474643+Tulsishah@users.noreply.github.com>
+Date:   Mon May 6 17:49:19 2024 +0530
+
+    Printing flags in test logs (#1885)
+    
+    * pritinting logs
+    
+    * review comment
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ git diff HEAD~
+diff --git a/tools/integration_tests/util/mounting/dynamic_mounting/dynamic_mounting.go b/tools/integration_tests/util/mounting/dynamic_mounting/dynamic_mounting.go
+index 62ad64fb2..e6c7c01d4 100644
+--- a/tools/integration_tests/util/mounting/dynamic_mounting/dynamic_mounting.go
++++ b/tools/integration_tests/util/mounting/dynamic_mounting/dynamic_mounting.go
+@@ -60,6 +60,7 @@ func runTestsOnGivenMountedTestBucket(bucketName string, flags [][]string, rootM
+ 
+                setup.SetMntDir(mntDirOfTestBucket)
+ 
++               log.Printf("Running dynamic mounting tests with flags: %s", flags[i])
+                // Running tests on flags.
+                successCode = setup.ExecuteTest(m)
+ 
+diff --git a/tools/integration_tests/util/mounting/only_dir_mounting/only_dir_mounting.go b/tools/integration_tests/util/mounting/only_dir_mounting/only_dir_mounting.go
+index e8f6c8bd6..9ddd36aec 100644
+--- a/tools/integration_tests/util/mounting/only_dir_mounting/only_dir_mounting.go
++++ b/tools/integration_tests/util/mounting/only_dir_mounting/only_dir_mounting.go
+@@ -51,6 +51,7 @@ func mountGcsFuseForFlagsAndExecuteTests(flags [][]string, m *testing.M) (succes
+                if err := MountGcsfuseWithOnlyDir(flags[i]); err != nil {
+                        setup.LogAndExit(fmt.Sprintf("mountGcsfuse: %v\n", err))
+                }
++               log.Printf("Running only dir mounting tests with flags: %s", flags[i])
+                successCode = setup.ExecuteTestForFlagsSet(flags[i], m)
+        }
+        return
+diff --git a/tools/integration_tests/util/mounting/persistent_mounting/perisistent_mounting.go b/tools/integration_tests/util/mounting/persistent_mounting/perisistent_mounting.go
+index 386e5a7cb..a906dd30f 100644
+--- a/tools/integration_tests/util/mounting/persistent_mounting/perisistent_mounting.go
++++ b/tools/integration_tests/util/mounting/persistent_mounting/perisistent_mounting.go
+@@ -76,6 +76,7 @@ func executeTestsForPersistentMounting(flagsSet [][]string, m *testing.M) (succe
+                if err = mountGcsfuseWithPersistentMounting(flagsSet[i]); err != nil {
+                        setup.LogAndExit(fmt.Sprintf("mountGcsfuse: %v\n", err))
+                }
++               log.Printf("Running persistent mounting tests with flags: %s", flagsSet[i])
+                successCode = setup.ExecuteTestForFlagsSet(flagsSet[i], m)
+        }
+        return
+diff --git a/tools/integration_tests/util/mounting/static_mounting/static_mounting.go b/tools/integration_tests/util/mounting/static_mounting/static_mounting.go
+index 1ed2caa9c..cd8475baa 100644
+--- a/tools/integration_tests/util/mounting/static_mounting/static_mounting.go
++++ b/tools/integration_tests/util/mounting/static_mounting/static_mounting.go
+@@ -48,6 +48,7 @@ func executeTestsForStaticMounting(flagsSet [][]string, m *testing.M) (successCo
+                if err = MountGcsfuseWithStaticMounting(flagsSet[i]); err != nil {
+                        setup.LogAndExit(fmt.Sprintf("mountGcsfuse: %v\n", err))
+                }
++               log.Printf("Running static mounting tests with flags: %s", flagsSet[i])
+                successCode = setup.ExecuteTestForFlagsSet(flagsSet[i], m)
+        }
+        return
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$                                                                                
+If you do not reboot now, your system will reboot automatically                
+at Fri May 17 02:52:10 UTC 2024. For more info, see go/glinux-reboot-policy.   
+To reboot your computer 10 hours from now, on the command line run:            
+echo systemctl reboot | at now + 10 hours                                      
+Also you may have a pending maintenance. See go/cloudtop-faq#cloudtop-maintenan
+ce-scheduler                                                                   
+To run maintenance in 10 hours run:                                            
+ctop self maintenance schedule in 10h
+                                                                               
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ 

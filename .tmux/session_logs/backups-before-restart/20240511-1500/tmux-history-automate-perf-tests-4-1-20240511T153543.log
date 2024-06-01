@@ -1,0 +1,24 @@
+gargnitin@gargnitin:~$ bash
+gargnitin@gargnitin:~$ cd /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests$ ls
+20240422-experiment-fio-single-file-parallel-read  20240422-test-create-vm  20240425-dlio-test-runs  scripts
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests$ cd 20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ ls
+output_files  vm_metrics_exported
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST$ cd output_files/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files$ ls
+001_20240425-1700IST_Micro_100KB-500MB_Load_4_threads   006_20240426-0213IST_Small_3MB-150GB_Load_4_threads
+002_20240425-1800IST_Micro_100KB-50GB_Load_4_threads    007_20240426-0813IST_Small_3MB-150GB_Load_12_threads
+003_20240425-1820IST_Micro_100KB-50GB_Load_10_threads   008_20240426-0813IST_Large_150Mb-750GB_Load_4_threads
+004_20240425-2236IST_Small_500KB-1100GB_Load_4_threads  009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files$                                                                                
+If you do not reboot now, your system will reboot automatically                
+at Fri May 17 02:52:10 UTC 2024. For more info, see go/glinux-reboot-policy.   
+To reboot your computer 10 hours from now, on the command line run:            
+echo systemctl reboot | at now + 10 hours                                      
+Also you may have a pending maintenance. See go/cloudtop-faq#cloudtop-maintenan
+ce-scheduler                                                                   
+To run maintenance in 10 hours run:                                            
+ctop self maintenance schedule in 10h
+                                                                            
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files$ 

@@ -1,0 +1,162 @@
+gargnitin@gargnitin:~$ bash
+gargnitin@gargnitin:~$ localwork 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ ls
+202307-08-gzip-support        20240202-stat-cache-entry-size-experiment  202403-docker-failure-with-go-1.22  oncall
+202307-vertex_ai_job_slow     20240212-type-cache-size-effect            20240429-fix-empty-dirname-issue    playground
+20231215-low-fsync-frequency  20240306-gke-handson                       2024q2-automate-perf-tests
+20240125-overlay-fs-expt      20240318-vertex-ai-experiments             implit-dirs-io-error
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks$ cd 2024q2-automate-perf-tests
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests$ lsl
+Command lsl not found
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests$ ls
+20240422-experiment-fio-single-file-parallel-read  20240422-test-create-vm  20240425-dlio-test-runs
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests$ mkdir scripts
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests$ cd scripts/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ ls
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ mkdir parse_dlio_outputs                             
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/parse_summary.py
+ 24             f"gs://{bucketName}/logs",$                                                                                                                                                                                                                                                                        
+ 23             LOCAL_LOGS_LOCATION,$                                                                                                                                                                                                                                                                              
+ 22         ],$                                                                                                                                                                                                                                                                                                    
+ 21         capture_output=False,$                                                                                                                                                                                                                                                                                 
+ 20         text=True,$                                                                                                                                                                                                                                                                                            
+ 19     )$                                                                                                                                                                                                                                                                                                         
+ 18     if result.returncode < 0:$                                                                                                                                                                                                                                                                                 
+ 17       print(f"failed to fetch DLIO logs, error: {result.stderr}")$                                                                                                                                                                                                                                             
+ 16 $                                                                                                                                                                                                                                                                                                              
+ 15 $                                                                                                                                                                                                                                                                                                              
+ 14 if __name__ == "__main__":$                                                                                                                                                                                                                                                                                    
+ 13   '''$                                                                                                                                                                                                                                                                                                         
+ 12   "{num_files_train}-{mean_file_size}-{batch_size}":$                                                                                                                                                                                                                                                          
+ 11       "mean_file_size": str$                                                                                                                                                                                                                                                                                   
+ 10       "num_files_train": str$                                                                                                                                                                                                                                                                                  
+  9       "batch_size": str$                                                                                                                                                                                                                                                                                       
+  8       "records":$                                                                                                                                                                                                                                                                                              
+  7           "local-ssd": [record1, record2, record3, record4]$                                                                                                                                                                                                                                                   
+  6           "gcsfuse-file-cache": [record1, record2, record3, record4]$                                                                                                                                                                                                                                          
+  5           "gcsfuse-no-file-cache": [record1, record2, record3, record4]$                                                                                                                                                                                                                                       
+  4   '''$                                                                                                                                                                                                                                                                                                         
+  3   output = {}$                                                                                                                                                                                                                                                                                                 
+  2   mash_installed = is_mash_installed()$                                                                                                                                                                                                                                                                        
+  1   if not mash_installed:$                                                                                                                                                                                                                                                                                      
+125     print("Mash is not installed, will      skip parsing CPU and memory usage.")$                                                                                                                                                                                                                              
+  1 $                                                                                                                                                                                                                                                                                                              
+  2   for root, _, files in os.walk(DOWNLOADED_LOGS_LOCATION):$                                                                                                                                                                                                                                                    
+  3     if files:$                                                                                                                                                                                                                                                                                                 
+  4       per_epoch_stats_file = root + "/per_epoch_stats.json"$                                                                                                                                                                                                                                                   
+  5       summary_file = root + "/summary.json"$                                                                                                                                                                                                                                                                   
+  6 $                                                                                                                                                                                                                                                                                                              
+  7       with open(per_epoch_stats_file, "r") as f:$                                                                                                                                                                                                                                                              
+  8         per_epoch_stats_data = json.load(f)$                                                                                                                                                                                                                                                                   
+  9       with open(summary_file, "r") as f:$                                                                                                                                                                                                                                                                      
+ 10         summary_data = json.load(f)$                                                                                                                                                                                                                                                                           
+ 11 $                                                                                                                                                                                                                                                                                                              
+ 12       for i in range(summary_data["epochs"]):$                                                                                                                                                                                                                                                                 
+ 13         test_name = summary_data["hostname"]$                                                                                                                                                                                                                                                                  
+ 14         part_list = test_name.split("-")$                                                                                                                                                                                                                                                                      
+ 15         key = "-".join(part_list[2:5])$                                                                                                                                                                                                                                                                        
+ 16 $                                                                                                                                                                                                                                                                                                              
+ 17         if key not in output:$                                                                                                                                                                                                                                                                                 
+ 18           output[key] = {$                                                                                                                                                                                                                                                                                     
+ 19               "num_files_train": part_list[2],$                                                                                                                                                                                                                                                                
+ 20               "mean_file_size": part_list[3],$                                                                                                                                                                                                                                                                 
+ 21               "batch_size": part_list[4],$                                                                                                          gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ ls -R ../
+20240422-experiment-fio-single-file-parallel-read/ 20240425-dlio-test-runs/
+20240422-test-create-vm/                           scripts/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ ls -R ../20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/
+runs/                vm_metrics_exported/ 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ ls -R ../20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/
+runs/                vm_metrics_exported/ 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ ls -R ../20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads/
+../20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads/:
+pastebin.txt  thread_outputs
+
+../20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/runs/009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads/thread_outputs:
+0_output.json   11_output.json  2_output.json  4_output.json  6_output.json  8_output.json
+10_output.json  1_output.json   3_output.json  5_output.json  7_output.json  9_output.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/parse_summary.py                
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ cd ../
+20240422-experiment-fio-single-file-parallel-read/ 20240425-dlio-test-runs/
+20240422-test-create-vm/                           scripts/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ cd ../20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads$ vi parse_dlio_outputs/parse_summary.py                                                    
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads$ ls
+pastebin.txt  per_epoch_stats.json  summary.json  thread_outputs
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/20240425-dlio-test-runs/20240425_1600-20240426_1200-IST/output_files/009_20240426-1000IST_Large_150Mb-750GB_Load_12_threads$ cd -
+/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/parse_summary.py              
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/parse_summary.py 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/parse_summary.py 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/parse_summary.py parse_dlio_outputs/^C
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/parse_summary.py 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/parse_summary.py 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ ls
+parse_dlio_outputs
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ ls
+parse_dlio_outputs
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ cd oa
+bash: cd: oa: No such file or directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ cd parse_dlio_outputs/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts/parse_dlio_outputs$ ls
+parse_summary.py
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts/parse_dlio_outputs$ ln -sfv /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcs-fuse-csi-driver/examples/utils/ .
+'./utils' -> '/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcs-fuse-csi-driver/examples/utils/'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts/parse_dlio_outputs$ ls -l
+total 12
+-rw-r----- 1 gargnitin primarygroup 6197 May  7 11:58 parse_summary.py
+lrwxrwxrwx 1 gargnitin primarygroup  106 May  7 13:06 utils -> /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcs-fuse-csi-driver/examples/utils/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts/parse_dlio_outputs$ mv utils ..
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts/parse_dlio_outputs$ ls
+parse_summary.py
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts/parse_dlio_outputs$ cd ..
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ ls -l
+total 8
+drwxr-x--- 2 gargnitin primarygroup 4096 May  7 13:06 parse_dlio_outputs
+lrwxrwxrwx 1 gargnitin primarygroup  106 May  7 13:06 utils -> /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcs-fuse-csi-driver/examples/utils/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ ln -sfv /usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcs-fuse-csi-driver/examples/u^C     
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/parse_summary.py 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/parse_summary.py 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ which pyformat
+/usr/bin/pyformat
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/parse_summary.py                                                                                                                                                  
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ pyformat --assume_filename parse_dlio_outputs/parse_summary.py --lines 1-374                                                                                                                                     
+^CTraceback (most recent call last):
+  File "<embedded module '_launcher'>", line 174, in run_filename_from_loader_as_main
+  File "<embedded module '_launcher'>", line 35, in _run_code_in_main
+  File "/usr/bin/pyformat/google3/devtools/python/pyformat/pyformat.py", line 287, in <module>
+    app.run(main)
+  File "third_party/py/absl/app.py", line 473, in run
+    _run_main(main, args)
+  File "third_party/py/absl/app.py", line 395, in _run_main
+    sys.exit(main(argv))
+             ^^^^^^^^^^
+  File "/usr/bin/pyformat/google3/devtools/python/pyformat/pyformat.py", line 133, in main
+    original_code = _read_stdin_code()
+                    ^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/pyformat/google3/devtools/python/pyformat/pyformat.py", line 280, in _read_stdin_code
+    original_code.append(input() + '\n')
+                         ^^^^^^^
+KeyboardInterrupt
+
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ realpath .
+/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/                                                                                                                                                      
+output.csv        parse_summary.py  
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/parse_summary.py 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/parse_summary.py 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ realpath ../
+/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/parse_summary.py 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ vi parse_dlio_outputs/parse_summary.py +:94
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$                                                                                
+If you do not reboot now, your system will reboot automatically                
+at Fri May 17 02:52:10 UTC 2024. For more info, see go/glinux-reboot-policy.   
+To reboot your computer 10 hours from now, on the command line run:            
+echo systemctl reboot | at now + 10 hours                                      
+Also you may have a pending maintenance. See go/cloudtop-faq#cloudtop-maintenan
+ce-scheduler                                                                   
+To run maintenance in 10 hours run:                                            
+ctop self maintenance schedule in 10h
+                                                                               
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/2024q2-automate-perf-tests/scripts$ 

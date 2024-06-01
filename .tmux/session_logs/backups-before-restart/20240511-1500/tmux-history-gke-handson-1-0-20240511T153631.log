@@ -1,0 +1,1542 @@
+gargnitin@gargnitin:~$ gcsfusetestvmconnect gargnitin-n2std4-ubuntu2204-uscentral1 us-central1-c
+Command gcsfusetestvmconnect not found
+gargnitin@gargnitin:~$ bash
+gargnitin@gargnitin:~$ gcsfusetestvmconnect gargnitin-n2std4-ubuntu2204-uscentral1 us-central1-c
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Linux gargnitin-n2std4-ubuntu2204-uscentral1 6.1.0-18-cloud-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.76-1 (2024-02-01) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Wed Mar  6 05:49:20 2024 from 72.14.229.161
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ htop
+-bash: htop: command not found
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ sudo apt install htop
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libnl-3-200 libnl-genl-3-200
+Suggested packages:
+  lm-sensors lsof strace
+The following NEW packages will be installed:
+  htop libnl-3-200 libnl-genl-3-200
+0 upgraded, 3 newly installed, 0 to remove and 5 not upgraded.
+Need to get 237 kB of archives.
+After this operation, 633 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:2 https://deb.debian.org/debian bookworm/main amd64 libnl-3-200 amd64 3.7.0-0.2+b1 [63.1 kB]
+Get:3 https://deb.debian.org/debian bookworm/main amd64 libnl-genl-3-200 amd64 3.7.0-0.2+b1 [21.6 kB]
+Get:4 https://deb.debian.org/debian bookworm/main amd64 htop amd64 3.2.2-2 [152 kB]
+Fetched 237 kB in 0s (677 kB/s)
+Selecting previously unselected package libnl-3-200:amd64.
+(Reading database ... 63720 files and directories currently installed.)
+Preparing to unpack .../libnl-3-200_3.7.0-0.2+b1_amd64.deb ...
+Unpacking libnl-3-200:amd64 (3.7.0-0.2+b1) ...
+Selecting previously unselected package libnl-genl-3-200:amd64.
+Preparing to unpack .../libnl-genl-3-200_3.7.0-0.2+b1_amd64.deb ...
+Unpacking libnl-genl-3-200:amd64 (3.7.0-0.2+b1) ...
+Selecting previously unselected package htop.
+Preparing to unpack .../htop_3.2.2-2_amd64.deb ...
+Unpacking htop (3.2.2-2) ...
+Setting up libnl-3-200:amd64 (3.7.0-0.2+b1) ...
+Setting up libnl-genl-3-200:amd64 (3.7.0-0.2+b1) ...
+Setting up htop (3.2.2-2) ...
+Processing triggers for man-db (2.11.2-2) ...
+Processing triggers for libc-bin (2.36-9+deb12u4) ...
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ htop           
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud container clusters create gargnitin-hands-on-1 \
+    --region=us-central1-c \
+    --workload-pool=gcs-fuse-test.svc.id.goog
+WARNING: Accessing a Kubernetes Engine cluster requires the kubernetes commandline
+client [kubectl]. To install, run
+  $ gcloud components install kubectl
+
+Default change: VPC-native is the default mode during cluster creation for versions greater than 1.21.0-gke.1500. To create advanced routes based clusters, please pass the `--no-enable-ip-alias` flag
+Note: Your Pod address range (`--cluster-ipv4-cidr`) can accommodate at most 1008 node(s).
+ERROR: (gcloud.container.clusters.create) ResponseError: code=403, message=Request had insufficient authentication scopes.
+
+If you are in a compute engine VM, it is likely that the specified scopes during VM creation are not enough to run this command.
+See https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam for more information about access scopes.
+See https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes for how to update access scopes of the VM.
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ echo $?
+1
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud auth login
+
+You are running on a Google Compute Engine virtual machine.
+It is recommended that you use service accounts for authentication.
+
+You can run:
+
+  $ gcloud config set account `ACCOUNT`
+
+to switch accounts if necessary.
+
+Your credentials may be visible to others with access to this
+virtual machine. Are you sure you want to authenticate with
+your personal account?
+
+Do you want to continue (Y/n)?  Y
+
+Go to the following link in your browser:
+
+    https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=32555940559.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fsdk.cloud.google.com%2Fauthcode.html&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fappengine.admin+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fsqlservice.login+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcompute+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faccounts.reauth&state=Sj91E5fVpbdTQ7srexLWbODHeR3FAH&prompt=consent&access_type=offline&code_challenge=Opd4rDaDyxIqa-YBgoa3PXrfGnWxBTG4BoAXF5zb5OE&code_challenge_method=S256
+
+Enter authorization code: 4/0AeaYSHBrFmR_4KIAkeakZn5F7a9uDjiZsT7zFFzRbtKHlWJwupcLuMd_MUxTB9LDgNmlKQ
+
+You are now logged in as [gargnitin@google.com].
+Your current project is [gcs-fuse-test].  You can change this setting by running:
+  $ gcloud config set project PROJECT_ID
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud config set project gcs-fuse-test
+Updated property [core/project].
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud container clusters create gargnitin-hands-on-1     --region=us-central1-c     --workload-pool=gcs-fuse-test.svc.id.goog
+WARNING: Accessing a Kubernetes Engine cluster requires the kubernetes commandline
+client [kubectl]. To install, run
+  $ gcloud components install kubectl
+
+Default change: VPC-native is the default mode during cluster creation for versions greater than 1.21.0-gke.1500. To create advanced routes based clusters, please pass the `--no-enable-ip-alias` flag
+Note: Your Pod address range (`--cluster-ipv4-cidr`) can accommodate at most 1008 node(s).
+ERROR: (gcloud.container.clusters.create) ResponseError: code=409, message=Already exists: projects/gcs-fuse-test/zones/us-central1-c/clusters/gargnitin-hands-on-1.
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ echo $?
+1
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud container clusters update gargnitin-hands-on-1 \
+    --region=us-central1-c \
+    --workload-pool=gcs-fuse-test.svc.id.goog
+Updating gargnitin-hands-on-1...done.                                                                                                    
+Updated [https://container.googleapis.com/v1/projects/gcs-fuse-test/zones/us-central1-c/clusters/gargnitin-hands-on-1].
+To inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/us-central1-c/gargnitin-hands-on-1?project=gcs-fuse-test
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud container node-pools update default-pool \
+    --cluster=gargnitin-hands-on-1 \
+    --region=us-central1-c \
+    --workload-metadata=GKE_METADATA
+Updating node pool default-pool... Updating default-pool, done with 1 out of 1 nodes (100.0%): 1 succeeded...done.                       
+Updated [https://container.googleapis.com/v1/projects/gcs-fuse-test/zones/us-central1-c/clusters/gargnitin-hands-on-1/nodePools/default-pool].
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud container clusters update gargnitin-hands-on-1 \
+    --update-addons GcsFuseCsiDriver=ENABLED \
+    --region=us-central1-c
+Updating gargnitin-hands-on-1...⠼                                                                                                        
+Updating gargnitin-hands-on-1...done.                                                                                                    
+Updated [https://container.googleapis.com/v1/projects/gcs-fuse-test/zones/us-central1-c/clusters/gargnitin-hands-on-1].
+To inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/us-central1-c/gargnitin-hands-on-1?project=gcs-fuse-test
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ 
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ echo $?
+0
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud container clusters get-credentials gargnitin-hands-on-1 \
+    --region=us-central1-c
+WARNING: Accessing a Kubernetes Engine cluster requires the kubernetes commandline
+client [kubectl]. To install, run
+  $ gcloud components install kubectl
+
+Fetching cluster endpoint and auth data.
+CRITICAL: ACTION REQUIRED: gke-gcloud-auth-plugin, which is needed for continued use of kubectl, was not found or is not executable. Install gke-gcloud-auth-plugin for use with kubectl by following https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke
+kubeconfig entry generated for gargnitin-hands-on-1.
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud components install kubectl
+ERROR: (gcloud.components.install) 
+You cannot perform this action because the Google Cloud CLI component manager 
+is disabled for this installation. You can run the following command 
+to achieve the same result for this installation: 
+
+sudo apt-get install kubectl
+
+
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ sudo apt-get install kubectl
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  kubectl
+0 upgraded, 1 newly installed, 0 to remove and 2 not upgraded.
+Need to get 51.3 MB of archives.
+After this operation, 247 MB of additional disk space will be used.
+Get:1 https://packages.cloud.google.com/apt cloud-sdk-bookworm/main amd64 kubectl amd64 1:467.0.0-0 [51.3 MB]
+Fetched 51.3 MB in 1s (73.6 MB/s)   
+Selecting previously unselected package kubectl.
+(Reading database ... 63749 files and directories currently installed.)
+Preparing to unpack .../kubectl_1%3a467.0.0-0_amd64.deb ...
+Unpacking kubectl (1:467.0.0-0) ...
+Setting up kubectl (1:467.0.0-0) ...
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud components install kubectl                                          
+ERROR: (gcloud.components.install) 
+You cannot perform this action because the Google Cloud CLI component manager 
+is disabled for this installation. You can run the following command 
+to achieve the same result for this installation: 
+
+sudo apt-get install kubectl
+
+
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
+
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  google-cloud-cli-gke-gcloud-auth-plugin
+The following NEW packages will be installed:
+  google-cloud-cli-gke-gcloud-auth-plugin google-cloud-sdk-gke-gcloud-auth-plugin
+0 upgraded, 2 newly installed, 0 to remove and 2 not upgraded.
+Need to get 3228 kB of archives.
+After this operation, 11.3 MB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 https://packages.cloud.google.com/apt cloud-sdk-bookworm/main amd64 google-cloud-cli-gke-gcloud-auth-plugin amd64 467.0.0-0 [3223 kB]
+Get:2 https://packages.cloud.google.com/apt cloud-sdk-bookworm/main amd64 google-cloud-sdk-gke-gcloud-auth-plugin all 467.0.0-0 [5018 B]
+Fetched 3228 kB in 0s (18.1 MB/s)                                
+Selecting previously unselected package google-cloud-cli-gke-gcloud-auth-plugin.
+(Reading database ... 63762 files and directories currently installed.)
+Preparing to unpack .../google-cloud-cli-gke-gcloud-auth-plugin_467.0.0-0_amd64.deb ...
+Unpacking google-cloud-cli-gke-gcloud-auth-plugin (467.0.0-0) ...
+Selecting previously unselected package google-cloud-sdk-gke-gcloud-auth-plugin.
+Preparing to unpack .../google-cloud-sdk-gke-gcloud-auth-plugin_467.0.0-0_all.deb ...
+Unpacking google-cloud-sdk-gke-gcloud-auth-plugin (467.0.0-0) ...
+Setting up google-cloud-cli-gke-gcloud-auth-plugin (467.0.0-0) ...
+Setting up google-cloud-sdk-gke-gcloud-auth-plugin (467.0.0-0) ...
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ sudo apt-ger update
+sudo: apt-ger: command not found
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ sudo apt-get update                                                       
+Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:2 file:/etc/apt/mirrors/debian-security.list Mirrorlist [39 B]
+Hit:7 https://packages.cloud.google.com/apt google-compute-engine-bookworm-stable InRelease
+Hit:8 https://packages.cloud.google.com/apt cloud-sdk-bookworm InRelease
+Hit:9 https://packages.cloud.google.com/apt google-cloud-ops-agent-bookworm-2 InRelease
+Hit:3 https://deb.debian.org/debian bookworm InRelease   
+Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:5 https://deb.debian.org/debian bookworm-backports InRelease
+Hit:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Reading package lists... Done
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+google-cloud-sdk-gke-gcloud-auth-plugin is already the newest version (467.0.0-0).
+0 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud components install kubectl                           
+ERROR: (gcloud.components.install) 
+You cannot perform this action because the Google Cloud CLI component manager 
+is disabled for this installation. You can run the following command 
+to achieve the same result for this installation: 
+
+sudo apt-get install kubectl
+
+
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud components update
+To help improve the quality of this product, we collect anonymized usage data and anonymized stacktraces when crashes are encountered; 
+additional information is available at <https://cloud.google.com/sdk/usage-statistics>. This data is handled in accordance with our 
+privacy policy <https://cloud.google.com/terms/cloud-privacy-notice>. You may choose to opt in this collection now (by choosing 'Y' at the
+ below prompt), or at any time in the future by running the following command:
+
+    gcloud config set disable_usage_reporting false
+
+Do you want to opt-in (y/N)?  n
+
+Beginning update. This process may take several minutes.
+ERROR: (gcloud.components.update) 
+You cannot perform this action because the Google Cloud CLI component manager 
+is disabled for this installation. You can run the following command 
+to achieve the same result for this installation: 
+
+sudo apt-get update && sudo apt-get --only-upgrade install google-cloud-sdk-firestore-emulator google-cloud-sdk-app-engine-python-extras google-cloud-sdk-app-engine-grpc google-cloud-sdk-pubsub-emulator google-cloud-sdk-terraform-tools google-cloud-sdk-bigtable-emulator google-cloud-sdk-minikube google-cloud-sdk-gke-gcloud-auth-plugin google-cloud-sdk-log-streaming google-cloud-sdk-spanner-emulator google-cloud-sdk-datastore-emulator google-cloud-sdk-nomos google-cloud-sdk-spanner-migration-tool kubectl google-cloud-sdk-skaffold google-cloud-sdk-app-engine-go google-cloud-sdk-anthos-auth google-cloud-sdk-cbt google-cloud-sdk-cloud-run-proxy google-cloud-sdk-package-go-module google-cloud-sdk-app-engine-java google-cloud-sdk-kubectl-oidc google-cloud-sdk-harbourbridge google-cloud-sdk-enterprise-certificate-proxy google-cloud-sdk-cloud-build-local google-cloud-sdk-kpt google-cloud-sdk-local-extract google-cloud-sdk-app-engine-python google-cloud-sdk-istioctl google-cloud-sdk-config-connector google-cloud-cli-docker-credential-gcr google-cloud-sdk
+
+
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ sudo apt-get install apt-transport-https ca-certificates gnupg curl
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+ca-certificates is already the newest version (20230311).
+gnupg is already the newest version (2.2.40-1.1).
+gnupg set to manually installed.
+curl is already the newest version (7.88.1-10+deb12u5).
+The following NEW packages will be installed:
+  apt-transport-https
+0 upgraded, 1 newly installed, 0 to remove and 2 not upgraded.
+Need to get 25.2 kB of archives.
+After this operation, 35.8 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:2 https://deb.debian.org/debian bookworm/main amd64 apt-transport-https all 2.6.1 [25.2 kB]
+Fetched 25.2 kB in 0s (143 kB/s)              
+Selecting previously unselected package apt-transport-https.
+(Reading database ... 63774 files and directories currently installed.)
+Preparing to unpack .../apt-transport-https_2.6.1_all.deb ...
+Unpacking apt-transport-https (2.6.1) ...
+Setting up apt-transport-https (2.6.1) ...
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud components install kubectl                                  
+ERROR: (gcloud.components.install) 
+You cannot perform this action because the Google Cloud CLI component manager 
+is disabled for this installation. You can run the following command 
+to achieve the same result for this installation: 
+
+sudo apt-get install kubectl
+
+
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud -v                        
+Google Cloud SDK 464.0.0
+alpha 2024.02.09
+beta 2024.02.09
+bq 2.0.101
+bundled-python3-unix 3.11.7
+core 2024.02.09
+gcloud-crc32c 1.0.0
+gke-gcloud-auth-plugin 0.5.8
+gsutil 5.27
+kubectl 1.26.13
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud -v^C                                                        
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ sudo apt-get update
+Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:2 file:/etc/apt/mirrors/debian-security.list Mirrorlist [39 B]
+Hit:7 https://packages.cloud.google.com/apt google-compute-engine-bookworm-stable InRelease
+Hit:8 https://packages.cloud.google.com/apt cloud-sdk-bookworm InRelease
+Hit:9 https://packages.cloud.google.com/apt google-cloud-ops-agent-bookworm-2 InRelease
+Hit:3 https://deb.debian.org/debian bookworm InRelease   
+Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:5 https://deb.debian.org/debian bookworm-backports InRelease
+Hit:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Reading package lists... Done
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ sudo apt-get install apt-transport-https ca-certificates gnupg curl
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+apt-transport-https is already the newest version (2.6.1).
+ca-certificates is already the newest version (20230311).
+gnupg is already the newest version (2.2.40-1.1).
+curl is already the newest version (7.88.1-10+deb12u5).
+0 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2659  100  2659    0     0  54348      0 --:--:-- --:--:-- --:--:-- 55395
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ sudo apt-get update && sudo apt-get install google-cloud-cli
+Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:4 file:/etc/apt/mirrors/debian-security.list Mirrorlist [39 B]                      
+Get:7 https://packages.cloud.google.com/apt cloud-sdk InRelease [6361 B]
+Hit:8 https://packages.cloud.google.com/apt google-compute-engine-bookworm-stable InRelease
+Hit:9 https://packages.cloud.google.com/apt cloud-sdk-bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:10 https://packages.cloud.google.com/apt google-cloud-ops-agent-bookworm-2 InRelease
+Get:11 https://packages.cloud.google.com/apt cloud-sdk/main amd64 Packages [616 kB]
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:5 https://deb.debian.org/debian bookworm-backports InRelease
+Hit:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Fetched 622 kB in 1s (718 kB/s)
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Suggested packages:
+  google-cloud-cli-app-engine-java google-cloud-cli-app-engine-python google-cloud-cli-pubsub-emulator
+  google-cloud-cli-bigtable-emulator google-cloud-cli-datastore-emulator
+The following packages will be upgraded:
+  google-cloud-cli
+1 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+Need to get 108 MB of archives.
+After this operation, 9189 kB of additional disk space will be used.
+Get:1 https://packages.cloud.google.com/apt cloud-sdk/main amd64 google-cloud-cli amd64 467.0.0-0 [108 MB]
+Fetched 108 MB in 2s (58.0 MB/s)           
+Reading changelogs... Done
+(Reading database ... 63778 files and directories currently installed.)
+Preparing to unpack .../google-cloud-cli_467.0.0-0_amd64.deb ...
+
+
+Unpacking google-cloud-cli (467.0.0-0) over (464.0.0-0) ...
+Setting up google-cloud-cli (467.0.0-0) ...
+Processing triggers for man-db (2.11.2-2) ...
+Processing triggers for libc-bin (2.36-9+deb12u4) ...
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud -v
+Google Cloud SDK 467.0.0
+alpha 2024.02.29
+beta 2024.02.29
+bq 2.0.101
+bundled-python3-unix 3.11.8
+core 2024.02.29
+gcloud-crc32c 1.0.0
+gke-gcloud-auth-plugin 0.5.8
+gsutil 5.27
+kubectl 1.26.13
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud components install kubectl                                          
+ERROR: (gcloud.components.install) 
+You cannot perform this action because the Google Cloud CLI component manager 
+is disabled for this installation. You can run the following command 
+to achieve the same result for this installation: 
+
+sudo apt-get install kubectl
+
+
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ beta 2024.02.29
+bq 2.0.101
+bundled-python3-unix 3.11.8
+core 2024.02.29
+gcloud-crc32c 1.0.0^C
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ sudo apt-get update && sudo apt-get install google-cloud-cli-gke-gcloud-auth-plugin
+Get:1 file:/etc/apt/mirrors/debian.list Mirrorlist [30 B]
+Get:2 file:/etc/apt/mirrors/debian-security.list Mirrorlist [39 B]
+Hit:7 https://packages.cloud.google.com/apt cloud-sdk InRelease
+Hit:8 https://packages.cloud.google.com/apt google-compute-engine-bookworm-stable InRelease
+Hit:9 https://packages.cloud.google.com/apt cloud-sdk-bookworm InRelease
+Hit:10 https://packages.cloud.google.com/apt google-cloud-ops-agent-bookworm-2 InRelease
+Hit:3 https://deb.debian.org/debian bookworm InRelease                        
+Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:5 https://deb.debian.org/debian bookworm-backports InRelease
+Hit:6 https://deb.debian.org/debian-security bookworm-security InRelease
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+google-cloud-cli-gke-gcloud-auth-plugin is already the newest version (467.0.0-0).
+google-cloud-cli-gke-gcloud-auth-plugin set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud components install kubectl                                          
+ERROR: (gcloud.components.install) 
+You cannot perform this action because the Google Cloud CLI component manager 
+is disabled for this installation. You can run the following command 
+to achieve the same result for this installation: 
+
+sudo apt-get install kubectl
+
+
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud components update kubectl                                          
+You have specified individual components to update.  If you are trying to install new components, use:
+  $ gcloud components install kubectl
+
+Do you want to run install instead (y/N)?  y
+
+ERROR: (gcloud.components.update) 
+You cannot perform this action because the Google Cloud CLI component manager 
+is disabled for this installation. You can run the following command 
+to achieve the same result for this installation: 
+
+sudo apt-get install kubectl
+
+
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ sudo apt-get install -y kubectl
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+kubectl is already the newest version (1:467.0.0-0).
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud components update kubectl                                           
+You have specified individual components to update.  If you are trying to install new components, use:
+  $ gcloud components install kubectl
+
+Do you want to run install instead (y/N)?  y
+
+ERROR: (gcloud.components.update) 
+You cannot perform this action because the Google Cloud CLI component manager 
+is disabled for this installation. You can run the following command 
+to achieve the same result for this installation: 
+
+sudo apt-get install kubectl
+
+
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ 
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ sudo apt-get install -y kubectl                                            
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+kubectl is already the newest version (1:467.0.0-0).
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ gcloud container clusters get-credentials gargnitin-hands-on-1 \           
+    --region=us-central1-c
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for gargnitin-hands-on-1.
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ kubectl create namespace gargnitin-gke-hands-on
+namespace/gargnitin-gke-hands-on created
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ tmux ls
+no server running on /tmp/tmux-1364453796/default
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ tmux new -s gke-hands-on
+[detached (from session gke-hands-on)]
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ kubectl create serviceaccount gargnitin-gke-handson-sa
+serviceaccount/gargnitin-gke-handson-sa created
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ kubectl describe serviceaccount gargnitin-gke-handson-sa                                                                                                                                                                 
+Name:                gargnitin-gke-handson-sa
+Namespace:           default
+Labels:              <none>
+Annotations:         <none>
+Image pull secrets:  <none>
+Mountable secrets:   <none>
+Tokens:              <none>
+Events:              <none>
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ kubectl delete serviceaccount gargnitin-gke-handson-sa                                                                                                                                                                   
+serviceaccount "gargnitin-gke-handson-sa" deleted
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ tmux ls                                                                                                                                                                                                                  
+gke-hands-on: 2 windows (created Wed Mar  6 07:13:57 2024)
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ tmux a -t gke
+[detached (from session gke-hands-on)]
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ mkdir -pv ~/work/gcsfuse/packages/ 
+mkdir: created directory '/home/gargnitin_google_com/work'
+mkdir: created directory '/home/gargnitin_google_com/work/gcsfuse'
+mkdir: created directory '/home/gargnitin_google_com/work/gcsfuse/packages/'
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ mkdir -pv ~/work/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount
+mkdir: created directory '/home/gargnitin_google_com/work/gcsfuse/test_buckets'
+mkdir: created directory '/home/gargnitin_google_com/work/gcsfuse/test_buckets/gargnitin-fuse-test-bucket1-mount'
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ F0307 02:09:16.912174       1 helper.go:471] websocket: close 1006 (abnormal closure): unexpected EOF
+                                                                                                                                                                    client_loop: send disconnect: Broken pipe
+
+Recommendation: To check for possible causes of SSH connectivity issues and get
+recommendations, rerun the ssh command with the --troubleshoot option.
+
+gcloud compute ssh gargnitin-n2std4-ubuntu2204-uscentral1 --project=gcs-fuse-test --zone=us-central1-c --troubleshoot
+
+Or, to investigate an IAP tunneling issue:
+
+gcloud compute ssh gargnitin-n2std4-ubuntu2204-uscentral1 --project=gcs-fuse-test --zone=us-central1-c --troubleshoot --tunnel-through-iap
+
+ERROR: (gcloud.compute.ssh) [/usr/bin/ssh] exited with return code [255].
+gargnitin@gargnitin:~$ gcsfusetestvmconnect gargnitin-n2std4-ubuntu2204-uscentral1 us-central1-c
+Existing host keys found in /usr/local/google/home/gargnitin/.ssh/google_compute_known_hosts
+Linux gargnitin-n2std4-ubuntu2204-uscentral1 6.1.0-18-cloud-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.76-1 (2024-02-01) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Wed Mar  6 08:48:11 2024 from 72.14.229.161
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ tmux ls
+gke-hands-on: 2 windows (created Wed Mar  6 07:13:57 2024)
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~$ tmux a -t gke-ha
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ mv manifest.yaml sample.yaml    
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ cat sample.yaml 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gcs-fuse-csi-example-ephemeral
+  namespace: gargnitin-gke-hands-on
+  annotations:
+    gke-gcsfuse/volumes: "true"
+spec:
+  terminationGracePeriodSeconds: 60
+  containers:
+  - image: busybox
+    name: busybox
+    command: ["sleep"]
+    args: ["infinity"]
+    volumeMounts:
+    - name: gcs-fuse-csi-ephemeral
+      mountPath: /data
+      readOnly: true
+  serviceAccountName: gargnitin-gke-handson-sa
+  volumes:
+  - name: gcs-fuse-csi-ephemeral
+    csi:
+      driver: gcsfuse.csi.storage.gke.io
+      readOnly: true
+      volumeAttributes:
+        bucketName: gargnitin-gke-hands-on-usmultiregion
+        mountOptions: "implicit-dirs"
+
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ vi sample.yaml 
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ vi sample.yaml 
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ cat sample.yaml                                          
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gcs-fuse
+  namespace: gargnitin-gke-hands-on
+  annotations:
+    gke-gcsfuse/volumes: "true"
+spec:
+  terminationGracePeriodSeconds: 60
+  containers:
+    - image: ubuntu:20.04
+    name: gargnitin-gke-hands-on-container
+    command: ["sleep"]
+    args: ["infinity"]
+    volumeMounts:
+    - name: gcs-fuse-csi-ephemeral
+      mountPath: /data
+      readOnly: false
+  serviceAccountName: gargnitin-gke-handson-sa
+  volumes:
+  - name: gcs-fuse-csi-ephemeral
+    csi:
+      driver: gcsfuse.csi.storage.gke.io
+      readOnly: false
+      volumeAttributes:
+        bucketName: gargnitin-gke-hands-on-usmultiregion
+        mountOptions: "implicit-dirs,debug_gcs,debug_fuse"
+
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ realpath sample.yaml 
+/home/gargnitin_google_com/work/gke-hands-on/sample.yaml
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ kubectl get pods -A
+NAMESPACE     NAME                                                             READY   STATUS    RESTARTS     AGE
+gmp-system    alertmanager-0                                                   2/2     Running   0            7d
+gmp-system    collector-xflz9                                                  2/2     Running   0            7d
+gmp-system    gmp-operator-6b5855d5fb-vxsk7                                    1/1     Running   0            7d
+gmp-system    rule-evaluator-644695c99c-xmsj4                                  2/2     Running   1 (7d ago)   7d
+kube-system   event-exporter-gke-5b8bcb44f7-5qwj9                              2/2     Running   0            7d
+kube-system   fluentbit-gke-b9lfs                                              2/2     Running   0            7d
+kube-system   gcsfusecsi-node-wqds9                                            2/2     Running   0            7d
+kube-system   gke-metadata-server-nr4h2                                        1/1     Running   0            7d
+kube-system   gke-metrics-agent-598jz                                          2/2     Running   0            7d
+kube-system   konnectivity-agent-9c9ffc67d-zxb99                               1/1     Running   0            7d
+kube-system   konnectivity-agent-autoscaler-5d9dbcc6d8-7l26l                   1/1     Running   0            7d
+kube-system   kube-dns-6f9b8847ff-cw9rc                                        4/4     Running   0            7d
+kube-system   kube-dns-autoscaler-84b8db4dc7-6fbvd                             1/1     Running   0            7d
+kube-system   kube-proxy-gke-gargnitin-hands-on-1-default-pool-ed04aa19-1k0b   1/1     Running   0            7d
+kube-system   l7-default-backend-cf7cdc6f6-cngn5                               1/1     Running   0            7d
+kube-system   metrics-server-v0.5.2-8fb865474-kp9lz                            2/2     Running   0            7d
+kube-system   netd-whcwh                                                       1/1     Running   0            7d
+kube-system   pdcsi-node-pcm89                                                 2/2     Running   0            7d
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ cat sample.yaml 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gcs-fuse
+  namespace: gargnitin-gke-hands-on
+  annotations:
+    gke-gcsfuse/volumes: "true"
+spec:
+  terminationGracePeriodSeconds: 60
+  containers:
+    - image: ubuntu:20.04
+    name: gargnitin-gke-hands-on-container
+    command: ["sleep"]
+    args: ["infinity"]
+    volumeMounts:
+    - name: gcs-fuse-csi-ephemeral
+      mountPath: /data
+      readOnly: false
+  serviceAccountName: gargnitin-gke-handson-sa
+  volumes:
+  - name: gcs-fuse-csi-ephemeral
+    csi:
+      driver: gcsfuse.csi.storage.gke.io
+      readOnly: false
+      volumeAttributes:
+        bucketName: gargnitin-gke-hands-on-usmultiregion
+        mountOptions: "implicit-dirs,debug_gcs,debug_fuse"
+
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ kubectl get pods -A
+NAMESPACE     NAME                                                             READY   STATUS    RESTARTS     AGE
+gmp-system    alertmanager-0                                                   2/2     Running   0            7d
+gmp-system    collector-xflz9                                                  2/2     Running   0            7d
+gmp-system    gmp-operator-6b5855d5fb-vxsk7                                    1/1     Running   0            7d
+gmp-system    rule-evaluator-644695c99c-xmsj4                                  2/2     Running   1 (7d ago)   7d
+kube-system   event-exporter-gke-5b8bcb44f7-5qwj9                              2/2     Running   0            7d
+kube-system   fluentbit-gke-b9lfs                                              2/2     Running   0            7d
+kube-system   gcsfusecsi-node-wqds9                                            2/2     Running   0            7d
+kube-system   gke-metadata-server-nr4h2                                        1/1     Running   0            7d
+kube-system   gke-metrics-agent-598jz                                          2/2     Running   0            7d
+kube-system   konnectivity-agent-9c9ffc67d-zxb99                               1/1     Running   0            7d
+kube-system   konnectivity-agent-autoscaler-5d9dbcc6d8-7l26l                   1/1     Running   0            7d
+kube-system   kube-dns-6f9b8847ff-cw9rc                                        4/4     Running   0            7d
+kube-system   kube-dns-autoscaler-84b8db4dc7-6fbvd                             1/1     Running   0            7d
+kube-system   kube-proxy-gke-gargnitin-hands-on-1-default-pool-ed04aa19-1k0b   1/1     Running   0            7d
+kube-system   l7-default-backend-cf7cdc6f6-cngn5                               1/1     Running   0            7d
+kube-system   metrics-server-v0.5.2-8fb865474-kp9lz                            2/2     Running   0            7d
+kube-system   netd-whcwh                                                       1/1     Running   0            7d
+kube-system   pdcsi-node-pcm89                                                 2/2     Running   0            7d
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ kubectl apply -f /home/gargnitin_google_com/work/gke-hands-on/sample.yaml
+error: error parsing /home/gargnitin_google_com/work/gke-hands-on/sample.yaml: error converting YAML to JSON: yaml: line 11: did not find expected '-' indicator
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ vi sample.yaml +:11                                      
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ kubectl apply -f /home/gargnitin_google_com/work/gke-hands-on/sample.yaml
+pod/gcs-fuse created
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ vi sample.yaml +:11                                      
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ kubectl get pods -A                                      
+NAMESPACE                NAME                                                             READY   STATUS    RESTARTS     AGE
+gargnitin-gke-hands-on   gcs-fuse                                                         2/2     Running   0            26s
+gmp-system               alertmanager-0                                                   2/2     Running   0            7d
+gmp-system               collector-xflz9                                                  2/2     Running   0            7d
+gmp-system               gmp-operator-6b5855d5fb-vxsk7                                    1/1     Running   0            7d
+gmp-system               rule-evaluator-644695c99c-xmsj4                                  2/2     Running   1 (7d ago)   7d
+kube-system              event-exporter-gke-5b8bcb44f7-5qwj9                              2/2     Running   0            7d
+kube-system              fluentbit-gke-b9lfs                                              2/2     Running   0            7d
+kube-system              gcsfusecsi-node-wqds9                                            2/2     Running   0            7d
+kube-system              gke-metadata-server-nr4h2                                        1/1     Running   0            7d
+kube-system              gke-metrics-agent-598jz                                          2/2     Running   0            7d
+kube-system              konnectivity-agent-9c9ffc67d-zxb99                               1/1     Running   0            7d
+kube-system              konnectivity-agent-autoscaler-5d9dbcc6d8-7l26l                   1/1     Running   0            7d
+kube-system              kube-dns-6f9b8847ff-cw9rc                                        4/4     Running   0            7d
+kube-system              kube-dns-autoscaler-84b8db4dc7-6fbvd                             1/1     Running   0            7d
+kube-system              kube-proxy-gke-gargnitin-hands-on-1-default-pool-ed04aa19-1k0b   1/1     Running   0            7d
+kube-system              l7-default-backend-cf7cdc6f6-cngn5                               1/1     Running   0            7d
+kube-system              metrics-server-v0.5.2-8fb865474-kp9lz                            2/2     Running   0            7d
+kube-system              netd-whcwh                                                       1/1     Running   0            7d
+kube-system              pdcsi-node-pcm89                                                 2/2     Running   0            7d
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ kubectl get pods -A -n gargnitin-gke-hands-on
+NAMESPACE                NAME                                                             READY   STATUS    RESTARTS     AGE
+gargnitin-gke-hands-on   gcs-fuse                                                         2/2     Running   0            81s
+gmp-system               alertmanager-0                                                   2/2     Running   0            7d
+gmp-system               collector-xflz9                                                  2/2     Running   0            7d
+gmp-system               gmp-operator-6b5855d5fb-vxsk7                                    1/1     Running   0            7d
+gmp-system               rule-evaluator-644695c99c-xmsj4                                  2/2     Running   1 (7d ago)   7d
+kube-system              event-exporter-gke-5b8bcb44f7-5qwj9                              2/2     Running   0            7d
+kube-system              fluentbit-gke-b9lfs                                              2/2     Running   0            7d
+kube-system              gcsfusecsi-node-wqds9                                            2/2     Running   0            7d
+kube-system              gke-metadata-server-nr4h2                                        1/1     Running   0            7d
+kube-system              gke-metrics-agent-598jz                                          2/2     Running   0            7d
+kube-system              konnectivity-agent-9c9ffc67d-zxb99                               1/1     Running   0            7d
+kube-system              konnectivity-agent-autoscaler-5d9dbcc6d8-7l26l                   1/1     Running   0            7d
+kube-system              kube-dns-6f9b8847ff-cw9rc                                        4/4     Running   0            7d
+kube-system              kube-dns-autoscaler-84b8db4dc7-6fbvd                             1/1     Running   0            7d
+kube-system              kube-proxy-gke-gargnitin-hands-on-1-default-pool-ed04aa19-1k0b   1/1     Running   0            7d
+kube-system              l7-default-backend-cf7cdc6f6-cngn5                               1/1     Running   0            7d
+kube-system              metrics-server-v0.5.2-8fb865474-kp9lz                            2/2     Running   0            7d
+kube-system              netd-whcwh                                                       1/1     Running   0            7d
+kube-system              pdcsi-node-pcm89                                                 2/2     Running   0            7d
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ kubectl help get
+Display one or many resources.
+
+ Prints a table of the most important information about the specified resources. You can filter the list using a label
+selector and the --selector flag. If the desired resource type is namespaced you will only see results in your current
+namespace unless you pass --all-namespaces.
+
+ By specifying the output as 'template' and providing a Go template as the value of the --template flag, you can filter
+the attributes of the fetched resources.
+
+Use "kubectl api-resources" for a complete list of supported resources.
+
+Examples:
+  # List all pods in ps output format
+  kubectl get pods
+  
+  # List all pods in ps output format with more information (such as node name)
+  kubectl get pods -o wide
+  
+  # List a single replication controller with specified NAME in ps output format
+  kubectl get replicationcontroller web
+  
+  # List deployments in JSON output format, in the "v1" version of the "apps" API group
+  kubectl get deployments.v1.apps -o json
+  
+  # List a single pod in JSON output format
+  kubectl get -o json pod web-pod-13je7
+  
+  # List a pod identified by type and name specified in "pod.yaml" in JSON output format
+  kubectl get -f pod.yaml -o json
+  
+  # List resources from a directory with kustomization.yaml - e.g. dir/kustomization.yaml
+  kubectl get -k dir/
+  
+  # Return only the phase value of the specified pod
+  kubectl get -o template pod/web-pod-13je7 --template={{.status.phase}}
+  
+  # List resource information in custom columns
+  kubectl get pod test-pod -o custom-columns=CONTAINER:.spec.containers[0].name,IMAGE:.spec.containers[0].image
+  
+  # List all replication controllers and services together in ps output format
+  kubectl get rc,services
+  
+  # List one or more resources by their type and names
+  kubectl get rc/web service/frontend pods/web-pod-13je7
+  
+  # List status subresource for a single pod.
+  kubectl get pod web-pod-13je7 --subresource status
+
+Options:
+    -A, --all-namespaces=false:
+        If present, list the requested object(s) across all namespaces. Namespace in current context is ignored even
+        if specified with --namespace.
+
+    --allow-missing-template-keys=true:
+        If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to
+        golang and jsonpath output formats.
+
+    --chunk-size=500:
+        Return large lists in chunks rather than all at once. Pass 0 to disable. This flag is beta and may change in
+        the future.
+
+    --field-selector='':
+        Selector (field query) to filter on, supports '=', '==', and '!='.(e.g. --field-selector
+        key1=value1,key2=value2). The server only supports a limited number of field queries per type.
+
+    -f, --filename=[]:
+        Filename, directory, or URL to files identifying the resource to get from a server.
+
+    --ignore-not-found=false:
+        If the requested object does not exist the command will return exit code 0.
+
+    -k, --kustomize='':
+        Process the kustomization directory. This flag can't be used together with -f or -R.
+
+    -L, --label-columns=[]:
+        Accepts a comma separated list of labels that are going to be presented as columns. Names are case-sensitive.
+        You can also use multiple flag options like -L label1 -L label2...
+
+    --no-headers=false:
+        When using the default or custom-column output format, don't print headers (default print headers).
+
+    -o, --output='':
+        Output format. One of: (json, yaml, name, go-template, go-template-file, template, templatefile, jsonpath,
+        jsonpath-as-json, jsonpath-file, custom-columns, custom-columns-file, wide). See custom columns
+        [https://kubernetes.io/docs/reference/kubectl/#custom-columns], golang template
+        [http://golang.org/pkg/text/template/#pkg-overview] and jsonpath template
+        [https://kubernetes.io/docs/reference/kubectl/jsonpath/].
+
+    --output-watch-events=false:
+        Output watch event objects when --watch or --watch-only is used. Existing objects are output as initial ADDED
+        events.
+
+    --raw='':
+        Raw URI to request from the server.  Uses the transport specified by the kubeconfig file.
+
+    -R, --recursive=false:
+        Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests
+        organized within the same directory.
+
+    -l, --selector='':
+        Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2). Matching
+        objects must satisfy all of the specified label constraints.
+
+    --server-print=true:
+        If true, have the server return the appropriate table output. Supports extension APIs and CRDs.
+
+    --show-kind=false:
+        If present, list the resource type for the requested object(s).
+
+    --show-labels=false:
+        When printing, show all labels as the last column (default hide labels column)
+
+    --show-managed-fields=false:
+        If true, keep the managedFields when printing objects in JSON or YAML format.
+
+    --sort-by='':
+        If non-empty, sort list types using this field specification.  The field specification is expressed as a
+        JSONPath expression (e.g. '{.metadata.name}'). The field in the API resource specified by this JSONPath
+        expression must be an integer or a string.
+
+    --subresource='':
+        If specified, gets the subresource of the requested object. Must be one of [status scale]. This flag is beta
+        and may change in the future.
+
+    --template='':
+        Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format
+        is golang templates [http://golang.org/pkg/text/template/#pkg-overview].
+
+    -w, --watch=false:
+        After listing/getting the requested object, watch for changes.
+
+    --watch-only=false:
+        Watch for changes to the requested object(s), without listing/getting first.
+
+Usage:
+  kubectl get
+[(-o|--output=)json|yaml|name|go-template|go-template-file|template|templatefile|jsonpath|jsonpath-as-json|jsonpath-file|custom-columns|custom-columns-file|wide]
+(TYPE[.VERSION][.GROUP] [NAME | -l label] | TYPE[.VERSION][.GROUP]/NAME ...) [flags] [options]
+
+Use "kubectl options" for a list of global command-line options (applies to all commands).
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ kubectl get pods -A gargnitin-gke-hands-on              
+error: a resource cannot be retrieved by name across all namespaces
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ kubectl get pods -n gargnitin-gke-hands-on              
+NAME       READY   STATUS    RESTARTS   AGE
+gcs-fuse   2/2     Running   0          118s
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ htop
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ kubectl exec -it gcs-fuse --container ^C  
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ cat sample.yaml 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gcs-fuse
+  namespace: gargnitin-gke-hands-on
+  annotations:
+    gke-gcsfuse/volumes: "true"
+spec:
+  terminationGracePeriodSeconds: 60
+  containers:
+  - image: ubuntu:20.04
+    name: gargnitin-gke-hands-on-container
+    command: ["sleep"]
+    args: ["infinity"]
+    volumeMounts:
+    - name: gcs-fuse-csi-ephemeral
+      mountPath: /data
+      readOnly: false
+  serviceAccountName: gargnitin-gke-handson-sa
+  volumes:
+  - name: gcs-fuse-csi-ephemeral
+    csi:
+      driver: gcsfuse.csi.storage.gke.io
+      readOnly: false
+      volumeAttributes:
+        bucketName: gargnitin-gke-hands-on-usmultiregion
+        mountOptions: "implicit-dirs,debug_gcs,debug_fuse"
+
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ kubectl exec -it gcs-fuse --container gargnitin-gke-hands-on-container -n gargnitin-gke-hands-on -- bash
+root@gcs-fuse:/# ls /data
+root@gcs-fuse:/# vi data.txt
+bash: vi: command not found
+root@gcs-fuse:/# apt-get update && apt-get  install -y vi                                                                                 
+Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]                        
+Get:3 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [29.7 kB]
+Get:4 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [3364 kB]
+Get:5 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [1191 kB]
+Get:6 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [3452 kB]      
+Get:7 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]                  
+Get:8 http://archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages [1275 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal/restricted amd64 Packages [33.4 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [11.3 MB]
+Get:12 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [177 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [32.4 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1487 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [3517 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [3928 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [28.6 kB]
+Get:18 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [55.2 kB]
+Fetched 30.5 MB in 3s (10.1 MB/s)                            
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package vi
+root@gcs-fuse:/# apt-get update && apt-get  install -y vim
+Hit:1 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  alsa-topology-conf alsa-ucm-conf file libasound2 libasound2-data libcanberra0 libexpat1 libgpm2 libltdl7 libmagic-mgc libmagic1
+  libmpdec2 libogg0 libpython3.8 libpython3.8-minimal libpython3.8-stdlib libreadline8 libsqlite3-0 libssl1.1 libtdb1 libvorbis0a
+  libvorbisfile3 mime-support readline-common sound-theme-freedesktop vim-common vim-runtime xxd xz-utils
+Suggested packages:
+  libasound2-plugins alsa-utils libcanberra-gtk0 libcanberra-pulse gpm readline-doc ctags vim-doc vim-scripts
+The following NEW packages will be installed:
+  alsa-topology-conf alsa-ucm-conf file libasound2 libasound2-data libcanberra0 libexpat1 libgpm2 libltdl7 libmagic-mgc libmagic1
+  libmpdec2 libogg0 libpython3.8 libpython3.8-minimal libpython3.8-stdlib libreadline8 libsqlite3-0 libssl1.1 libtdb1 libvorbis0a
+  libvorbisfile3 mime-support readline-common sound-theme-freedesktop vim vim-common vim-runtime xxd xz-utils
+0 upgraded, 30 newly installed, 0 to remove and 0 not upgraded.
+Need to get 15.0 MB of archives.
+After this operation, 70.6 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 libmagic-mgc amd64 1:5.38-4 [218 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal/main amd64 libmagic1 amd64 1:5.38-4 [75.9 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal/main amd64 file amd64 1:5.38-4 [23.3 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libexpat1 amd64 2.2.9-1ubuntu0.6 [74.6 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal/main amd64 libmpdec2 amd64 2.4.2-3 [81.1 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libssl1.1 amd64 1.1.1f-1ubuntu2.22 [1323 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8-minimal amd64 3.8.10-0ubuntu1~20.04.9 [718 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal/main amd64 mime-support all 3.64ubuntu1 [30.6 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal/main amd64 readline-common all 8.0-4 [53.5 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal/main amd64 libreadline8 amd64 8.0-4 [131 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libsqlite3-0 amd64 3.31.1-4ubuntu0.6 [549 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8-stdlib amd64 3.8.10-0ubuntu1~20.04.9 [1674 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 xxd amd64 2:8.1.2269-1ubuntu5.21 [53.2 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 vim-common all 2:8.1.2269-1ubuntu5.21 [88.2 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 xz-utils amd64 5.2.4-1ubuntu1.1 [82.6 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal/main amd64 alsa-topology-conf all 1.2.2-1 [7364 B]
+Get:17 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 alsa-ucm-conf all 1.2.2-1ubuntu0.13 [27.0 kB]
+Get:18 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libasound2-data all 1.2.2-2.1ubuntu2.5 [20.1 kB]
+Get:19 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libasound2 amd64 1.2.2-2.1ubuntu2.5 [335 kB]
+Get:20 http://archive.ubuntu.com/ubuntu focal/main amd64 libltdl7 amd64 2.4.6-14 [38.5 kB]
+Get:21 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libtdb1 amd64 1.4.5-0ubuntu0.20.04.1 [44.2 kB]
+Get:22 http://archive.ubuntu.com/ubuntu focal/main amd64 libogg0 amd64 1.3.4-0ubuntu1 [24.0 kB]
+Get:23 http://archive.ubuntu.com/ubuntu focal/main amd64 libvorbis0a amd64 1.3.6-2ubuntu1 [87.0 kB]
+Get:24 http://archive.ubuntu.com/ubuntu focal/main amd64 libvorbisfile3 amd64 1.3.6-2ubuntu1 [16.1 kB]
+Get:25 http://archive.ubuntu.com/ubuntu focal/main amd64 sound-theme-freedesktop all 0.8-2ubuntu1 [384 kB]
+Get:26 http://archive.ubuntu.com/ubuntu focal/main amd64 libcanberra0 amd64 0.30-7ubuntu1 [38.1 kB]
+Get:27 http://archive.ubuntu.com/ubuntu focal/main amd64 libgpm2 amd64 1.20.7-5 [15.1 kB]
+Get:28 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libpython3.8 amd64 3.8.10-0ubuntu1~20.04.9 [1625 kB]
+Get:29 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 vim-runtime all 2:8.1.2269-1ubuntu5.21 [5878 kB]
+Get:30 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 vim amd64 2:8.1.2269-1ubuntu5.21 [1243 kB]
+Fetched 15.0 MB in 1s (26.2 MB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libmagic-mgc.
+(Reading database ... 4124 files and directories currently installed.)
+Preparing to unpack .../00-libmagic-mgc_1%3a5.38-4_amd64.deb ...
+Unpacking libmagic-mgc (1:5.38-4) ...
+Selecting previously unselected package libmagic1:amd64.
+Preparing to unpack .../01-libmagic1_1%3a5.38-4_amd64.deb ...
+Unpacking libmagic1:amd64 (1:5.38-4) ...
+Selecting previously unselected package file.
+Preparing to unpack .../02-file_1%3a5.38-4_amd64.deb ...
+Unpacking file (1:5.38-4) ...
+Selecting previously unselected package libexpat1:amd64.
+Preparing to unpack .../03-libexpat1_2.2.9-1ubuntu0.6_amd64.deb ...
+Unpacking libexpat1:amd64 (2.2.9-1ubuntu0.6) ...
+Selecting previously unselected package libmpdec2:amd64.
+Preparing to unpack .../04-libmpdec2_2.4.2-3_amd64.deb ...
+Unpacking libmpdec2:amd64 (2.4.2-3) ...
+Selecting previously unselected package libssl1.1:amd64.
+Preparing to unpack .../05-libssl1.1_1.1.1f-1ubuntu2.22_amd64.deb ...
+Unpacking libssl1.1:amd64 (1.1.1f-1ubuntu2.22) ...
+Selecting previously unselected package libpython3.8-minimal:amd64.
+Preparing to unpack .../06-libpython3.8-minimal_3.8.10-0ubuntu1~20.04.9_amd64.deb ...
+Unpacking libpython3.8-minimal:amd64 (3.8.10-0ubuntu1~20.04.9) ...
+Selecting previously unselected package mime-support.
+Preparing to unpack .../07-mime-support_3.64ubuntu1_all.deb ...
+Unpacking mime-support (3.64ubuntu1) ...
+Selecting previously unselected package readline-common.
+Preparing to unpack .../08-readline-common_8.0-4_all.deb ...
+Unpacking readline-common (8.0-4) ...
+Selecting previously unselected package libreadline8:amd64.
+Preparing to unpack .../09-libreadline8_8.0-4_amd64.deb ...
+Unpacking libreadline8:amd64 (8.0-4) ...
+Selecting previously unselected package libsqlite3-0:amd64.
+Preparing to unpack .../10-libsqlite3-0_3.31.1-4ubuntu0.6_amd64.deb ...
+Unpacking libsqlite3-0:amd64 (3.31.1-4ubuntu0.6) ...
+Selecting previously unselected package libpython3.8-stdlib:amd64.
+Preparing to unpack .../11-libpython3.8-stdlib_3.8.10-0ubuntu1~20.04.9_amd64.deb ...
+Unpacking libpython3.8-stdlib:amd64 (3.8.10-0ubuntu1~20.04.9) ...
+Selecting previously unselected package xxd.
+Preparing to unpack .../12-xxd_2%3a8.1.2269-1ubuntu5.21_amd64.deb ...
+Unpacking xxd (2:8.1.2269-1ubuntu5.21) ...
+Selecting previously unselected package vim-common.
+Preparing to unpack .../13-vim-common_2%3a8.1.2269-1ubuntu5.21_all.deb ...
+Unpacking vim-common (2:8.1.2269-1ubuntu5.21) ...
+Selecting previously unselected package xz-utils.
+Preparing to unpack .../14-xz-utils_5.2.4-1ubuntu1.1_amd64.deb ...
+Unpacking xz-utils (5.2.4-1ubuntu1.1) ...
+Selecting previously unselected package alsa-topology-conf.
+Preparing to unpack .../15-alsa-topology-conf_1.2.2-1_all.deb ...
+Unpacking alsa-topology-conf (1.2.2-1) ...
+Selecting previously unselected package alsa-ucm-conf.
+Preparing to unpack .../16-alsa-ucm-conf_1.2.2-1ubuntu0.13_all.deb ...
+Unpacking alsa-ucm-conf (1.2.2-1ubuntu0.13) ...
+Selecting previously unselected package libasound2-data.
+Preparing to unpack .../17-libasound2-data_1.2.2-2.1ubuntu2.5_all.deb ...
+Unpacking libasound2-data (1.2.2-2.1ubuntu2.5) ...
+Selecting previously unselected package libasound2:amd64.
+Preparing to unpack .../18-libasound2_1.2.2-2.1ubuntu2.5_amd64.deb ...
+Unpacking libasound2:amd64 (1.2.2-2.1ubuntu2.5) ...
+Selecting previously unselected package libltdl7:amd64.
+Preparing to unpack .../19-libltdl7_2.4.6-14_amd64.deb ...
+Unpacking libltdl7:amd64 (2.4.6-14) ...
+Selecting previously unselected package libtdb1:amd64.
+Preparing to unpack .../20-libtdb1_1.4.5-0ubuntu0.20.04.1_amd64.deb ...
+Unpacking libtdb1:amd64 (1.4.5-0ubuntu0.20.04.1) ...
+Selecting previously unselected package libogg0:amd64.
+Preparing to unpack .../21-libogg0_1.3.4-0ubuntu1_amd64.deb ...
+Unpacking libogg0:amd64 (1.3.4-0ubuntu1) ...
+Selecting previously unselected package libvorbis0a:amd64.
+Preparing to unpack .../22-libvorbis0a_1.3.6-2ubuntu1_amd64.deb ...
+Unpacking libvorbis0a:amd64 (1.3.6-2ubuntu1) ...
+Selecting previously unselected package libvorbisfile3:amd64.
+Preparing to unpack .../23-libvorbisfile3_1.3.6-2ubuntu1_amd64.deb ...
+Unpacking libvorbisfile3:amd64 (1.3.6-2ubuntu1) ...
+Selecting previously unselected package sound-theme-freedesktop.
+Preparing to unpack .../24-sound-theme-freedesktop_0.8-2ubuntu1_all.deb ...
+Unpacking sound-theme-freedesktop (0.8-2ubuntu1) ...
+Selecting previously unselected package libcanberra0:amd64.
+Preparing to unpack .../25-libcanberra0_0.30-7ubuntu1_amd64.deb ...
+Unpacking libcanberra0:amd64 (0.30-7ubuntu1) ...
+Selecting previously unselected package libgpm2:amd64.
+Preparing to unpack .../26-libgpm2_1.20.7-5_amd64.deb ...
+Unpacking libgpm2:amd64 (1.20.7-5) ...
+Selecting previously unselected package libpython3.8:amd64.
+Preparing to unpack .../27-libpython3.8_3.8.10-0ubuntu1~20.04.9_amd64.deb ...
+Unpacking libpython3.8:amd64 (3.8.10-0ubuntu1~20.04.9) ...
+Selecting previously unselected package vim-runtime.
+Preparing to unpack .../28-vim-runtime_2%3a8.1.2269-1ubuntu5.21_all.deb ...
+Adding 'diversion of /usr/share/vim/vim81/doc/help.txt to /usr/share/vim/vim81/doc/help.txt.vim-tiny by vim-runtime'
+Adding 'diversion of /usr/share/vim/vim81/doc/tags to /usr/share/vim/vim81/doc/tags.vim-tiny by vim-runtime'
+Unpacking vim-runtime (2:8.1.2269-1ubuntu5.21) ...
+Selecting previously unselected package vim.
+Preparing to unpack .../29-vim_2%3a8.1.2269-1ubuntu5.21_amd64.deb ...
+Unpacking vim (2:8.1.2269-1ubuntu5.21) ...
+Setting up libexpat1:amd64 (2.2.9-1ubuntu0.6) ...
+Setting up libgpm2:amd64 (1.20.7-5) ...
+Setting up libogg0:amd64 (1.3.4-0ubuntu1) ...
+Setting up mime-support (3.64ubuntu1) ...
+Setting up alsa-ucm-conf (1.2.2-1ubuntu0.13) ...
+Setting up libmagic-mgc (1:5.38-4) ...
+Setting up libtdb1:amd64 (1.4.5-0ubuntu0.20.04.1) ...
+Setting up libssl1.1:amd64 (1.1.1f-1ubuntu2.22) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.30.0 /usr/local/share/perl/5.30.0 /usr/lib/x86_64-linux-gnu/perl5/5.30 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.30 /usr/share/perl/5.30 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up libsqlite3-0:amd64 (3.31.1-4ubuntu0.6) ...
+Setting up libmagic1:amd64 (1:5.38-4) ...
+Setting up file (1:5.38-4) ...
+Setting up xxd (2:8.1.2269-1ubuntu5.21) ...
+Setting up libasound2-data (1.2.2-2.1ubuntu2.5) ...
+Setting up vim-common (2:8.1.2269-1ubuntu5.21) ...
+Setting up xz-utils (5.2.4-1ubuntu1.1) ...
+update-alternatives: using /usr/bin/xz to provide /usr/bin/lzma (lzma) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzma.1.gz because associated file /usr/share/man/man1/xz.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/unlzma.1.gz because associated file /usr/share/man/man1/unxz.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzcat.1.gz because associated file /usr/share/man/man1/xzcat.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzmore.1.gz because associated file /usr/share/man/man1/xzmore.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzless.1.gz because associated file /usr/share/man/man1/xzless.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzdiff.1.gz because associated file /usr/share/man/man1/xzdiff.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzcmp.1.gz because associated file /usr/share/man/man1/xzcmp.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzgrep.1.gz because associated file /usr/share/man/man1/xzgrep.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzegrep.1.gz because associated file /usr/share/man/man1/xzegrep.1.gz (of link group lzma) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/lzfgrep.1.gz because associated file /usr/share/man/man1/xzfgrep.1.gz (of link group lzma) doesn't exist
+Setting up libvorbis0a:amd64 (1.3.6-2ubuntu1) ...
+Setting up libltdl7:amd64 (2.4.6-14) ...
+Setting up alsa-topology-conf (1.2.2-1) ...
+Setting up sound-theme-freedesktop (0.8-2ubuntu1) ...
+Setting up libasound2:amd64 (1.2.2-2.1ubuntu2.5) ...
+Setting up libmpdec2:amd64 (2.4.2-3) ...
+Setting up vim-runtime (2:8.1.2269-1ubuntu5.21) ...
+Setting up readline-common (8.0-4) ...
+Setting up libpython3.8-minimal:amd64 (3.8.10-0ubuntu1~20.04.9) ...
+Setting up libreadline8:amd64 (8.0-4) ...
+Setting up libvorbisfile3:amd64 (1.3.6-2ubuntu1) ...
+Setting up libpython3.8-stdlib:amd64 (3.8.10-0ubuntu1~20.04.9) ...
+Setting up libcanberra0:amd64 (0.30-7ubuntu1) ...
+Setting up libpython3.8:amd64 (3.8.10-0ubuntu1~20.04.9) ...
+Setting up vim (2:8.1.2269-1ubuntu5.21) ...
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vim (vim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vimdiff (vimdiff) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rvim (rvim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rview (rview) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vi (vi) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/da/man1/vi.1.gz because associated file /usr/share/man/da/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/de/man1/vi.1.gz because associated file /usr/share/man/de/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/vi.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/vi.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/vi.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/vi.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/vi.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/vi.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/view (view) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/da/man1/view.1.gz because associated file /usr/share/man/da/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/de/man1/view.1.gz because associated file /usr/share/man/de/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/view.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/view.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/view.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/view.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/view.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/view.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/ex (ex) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/da/man1/ex.1.gz because associated file /usr/share/man/da/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/de/man1/ex.1.gz because associated file /usr/share/man/de/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/ex.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/ex.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/ex.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/ex.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/ex.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/ex.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/da/man1/editor.1.gz because associated file /usr/share/man/da/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/de/man1/editor.1.gz because associated file /usr/share/man/de/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/editor.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/editor.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/editor.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/editor.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/editor.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group editor) doesn't exist
+Processing triggers for libc-bin (2.31-0ubuntu9.14) ...
+root@gcs-fuse:/# echo hello > hello.txt                   
+root@gcs-fuse:/# ls
+bin  boot  data  dev  etc  hello.txt  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@gcs-fuse:/# mv hello.txt /data
+root@gcs-fuse:/# ls /data          
+hello.txt  key_id.txt
+root@gcs-fuse:/# cat /data/*                                                                                                              
+hello
+ERROR: (gcloud.iam.service-accounts.keys.create) INVALID_ARGUMENT: Unknown error
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: 'Was unable to extract resource containers for Chemist from the incoming
+    request. Error message during extraction: Unknown error'
+root@gcs-fuse:/# cat /data/hello.txt
+hello
+root@gcs-fuse:/# cat /data/key_id.txt
+ERROR: (gcloud.iam.service-accounts.keys.create) INVALID_ARGUMENT: Unknown error
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: 'Was unable to extract resource containers for Chemist from the incoming
+    request. Error message during extraction: Unknown error'
+root@gcs-fuse:/# exit
+exit
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ kubectl exec -it gcs-fuse --container gargnitin-gke-hands-on-container -n gargnitin-gke-hands-on -- bash
+root@gcs-fuse:/# ls /data
+hello.txt  key_id.txt
+root@gcs-fuse:/# cat /data/key_id.txt                                                                                                     
+ERROR: (gcloud.iam.service-accounts.keys.create) INVALID_ARGUMENT: Unknown error
+- '@type': type.googleapis.com/google.rpc.DebugInfo
+  detail: 'Was unable to extract resource containers for Chemist from the incoming
+    request. Error message during extraction: Unknown error'
+root@gcs-fuse:/# ls -l /data/hello.txt                                                                                                    
+-rw-r--r-- 1 root root 6 Mar 13 07:27 /data/hello.txt
+root@gcs-fuse:/# cat /data/hello.txt                                                                                                      
+hello
+root@gcs-fuse:/# cat /data/         
+cat: /data/: Is a directory
+root@gcs-fuse:/# ls -l /data/                                                                                                             
+total 1
+-rw-r--r-- 1 root root   6 Mar 13 07:27 hello.txt
+-rw-r--r-- 1 root root 277 Mar 13 07:29 key_id.txt
+root@gcs-fuse:/# apt-get update && apt-get install -y fio                                                                                 
+Hit:1 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://security.ubuntu.com/ubuntu focal-security InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  ibverbs-providers krb5-locales libaio1 libboost-iostreams1.71.0 libboost-thread1.71.0 libgfapi0 libgfrpc0 libgfxdr0 libglusterfs0
+  libgssapi-krb5-2 libibverbs1 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libnl-3-200 libnl-route-3-200 libnuma1
+  libpython2.7-minimal libpython2.7-stdlib librados2 librbd1 librdmacm1 libtirpc-common libtirpc3 python2.7 python2.7-minimal
+Suggested packages:
+  gnuplot gfio python-scipy krb5-doc krb5-user python2.7-doc binutils binfmt-support
+The following NEW packages will be installed:
+  fio ibverbs-providers krb5-locales libaio1 libboost-iostreams1.71.0 libboost-thread1.71.0 libgfapi0 libgfrpc0 libgfxdr0 libglusterfs0
+  libgssapi-krb5-2 libibverbs1 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libnl-3-200 libnl-route-3-200 libnuma1
+  libpython2.7-minimal libpython2.7-stdlib librados2 librbd1 librdmacm1 libtirpc-common libtirpc3 python2.7 python2.7-minimal
+0 upgraded, 28 newly installed, 0 to remove and 0 not upgraded.
+Need to get 11.3 MB of archives.
+After this operation, 49.2 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 libpython2.7-minimal amd64 2.7.18-1~20.04.3 [336 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 python2.7-minimal amd64 2.7.18-1~20.04.3 [1280 kB]
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 krb5-locales all 1.17-6ubuntu4.4 [11.5 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libkrb5support0 amd64 1.17-6ubuntu4.4 [31.0 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libk5crypto3 amd64 1.17-6ubuntu4.4 [79.9 kB]
+Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libkeyutils1 amd64 1.6-6ubuntu1.1 [10.3 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libkrb5-3 amd64 1.17-6ubuntu4.4 [330 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libgssapi-krb5-2 amd64 1.17-6ubuntu4.4 [121 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal/main amd64 libnuma1 amd64 2.0.12-1 [20.8 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal/main amd64 libaio1 amd64 0.3.112-5 [7184 B]
+Get:11 http://archive.ubuntu.com/ubuntu focal/universe amd64 libglusterfs0 amd64 7.2-2build1 [286 kB]
+Get:12 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libtirpc-common all 1.2.5-1ubuntu0.1 [7712 B]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libtirpc3 amd64 1.2.5-1ubuntu0.1 [77.9 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal/universe amd64 libgfxdr0 amd64 7.2-2build1 [24.2 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal/universe amd64 libgfrpc0 amd64 7.2-2build1 [46.1 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal/universe amd64 libgfapi0 amd64 7.2-2build1 [72.6 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libnl-3-200 amd64 3.4.0-1ubuntu0.1 [54.4 kB]
+Get:18 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 libnl-route-3-200 amd64 3.4.0-1ubuntu0.1 [151 kB]
+Get:19 http://archive.ubuntu.com/ubuntu focal/main amd64 libibverbs1 amd64 28.0-1ubuntu1 [53.6 kB]
+Get:20 http://archive.ubuntu.com/ubuntu focal/main amd64 libboost-iostreams1.71.0 amd64 1.71.0-6ubuntu6 [237 kB]
+Get:21 http://archive.ubuntu.com/ubuntu focal/main amd64 libboost-thread1.71.0 amd64 1.71.0-6ubuntu6 [249 kB]
+Get:22 http://archive.ubuntu.com/ubuntu focal/main amd64 librdmacm1 amd64 28.0-1ubuntu1 [64.9 kB]
+Get:23 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 librados2 amd64 15.2.17-0ubuntu0.20.04.6 [3227 kB]
+Get:24 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 librbd1 amd64 15.2.17-0ubuntu0.20.04.6 [1625 kB]
+Get:25 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 libpython2.7-stdlib amd64 2.7.18-1~20.04.3 [1888 kB]
+Get:26 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 python2.7 amd64 2.7.18-1~20.04.3 [248 kB]
+Get:27 http://archive.ubuntu.com/ubuntu focal/universe amd64 fio amd64 3.16-1 [507 kB]
+Get:28 http://archive.ubuntu.com/ubuntu focal/main amd64 ibverbs-providers amd64 28.0-1ubuntu1 [232 kB]
+Fetched 11.3 MB in 1s (16.9 MB/s)            
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libpython2.7-minimal:amd64.
+(Reading database ... 7233 files and directories currently installed.)
+Preparing to unpack .../00-libpython2.7-minimal_2.7.18-1~20.04.3_amd64.deb ...
+Unpacking libpython2.7-minimal:amd64 (2.7.18-1~20.04.3) ...
+Selecting previously unselected package python2.7-minimal.
+Preparing to unpack .../01-python2.7-minimal_2.7.18-1~20.04.3_amd64.deb ...
+Unpacking python2.7-minimal (2.7.18-1~20.04.3) ...
+Selecting previously unselected package krb5-locales.
+Preparing to unpack .../02-krb5-locales_1.17-6ubuntu4.4_all.deb ...
+Unpacking krb5-locales (1.17-6ubuntu4.4) ...
+Selecting previously unselected package libkrb5support0:amd64.
+Preparing to unpack .../03-libkrb5support0_1.17-6ubuntu4.4_amd64.deb ...
+Unpacking libkrb5support0:amd64 (1.17-6ubuntu4.4) ...
+Selecting previously unselected package libk5crypto3:amd64.
+Preparing to unpack .../04-libk5crypto3_1.17-6ubuntu4.4_amd64.deb ...
+Unpacking libk5crypto3:amd64 (1.17-6ubuntu4.4) ...
+Selecting previously unselected package libkeyutils1:amd64.
+Preparing to unpack .../05-libkeyutils1_1.6-6ubuntu1.1_amd64.deb ...
+Unpacking libkeyutils1:amd64 (1.6-6ubuntu1.1) ...
+Selecting previously unselected package libkrb5-3:amd64.
+Preparing to unpack .../06-libkrb5-3_1.17-6ubuntu4.4_amd64.deb ...
+Unpacking libkrb5-3:amd64 (1.17-6ubuntu4.4) ...
+Selecting previously unselected package libgssapi-krb5-2:amd64.
+Preparing to unpack .../07-libgssapi-krb5-2_1.17-6ubuntu4.4_amd64.deb ...
+Unpacking libgssapi-krb5-2:amd64 (1.17-6ubuntu4.4) ...
+Selecting previously unselected package libnuma1:amd64.
+Preparing to unpack .../08-libnuma1_2.0.12-1_amd64.deb ...
+Unpacking libnuma1:amd64 (2.0.12-1) ...
+Selecting previously unselected package libaio1:amd64.
+Preparing to unpack .../09-libaio1_0.3.112-5_amd64.deb ...
+Unpacking libaio1:amd64 (0.3.112-5) ...
+Selecting previously unselected package libglusterfs0:amd64.
+Preparing to unpack .../10-libglusterfs0_7.2-2build1_amd64.deb ...
+Unpacking libglusterfs0:amd64 (7.2-2build1) ...
+Selecting previously unselected package libtirpc-common.
+Preparing to unpack .../11-libtirpc-common_1.2.5-1ubuntu0.1_all.deb ...
+Unpacking libtirpc-common (1.2.5-1ubuntu0.1) ...
+Selecting previously unselected package libtirpc3:amd64.
+Preparing to unpack .../12-libtirpc3_1.2.5-1ubuntu0.1_amd64.deb ...
+Unpacking libtirpc3:amd64 (1.2.5-1ubuntu0.1) ...
+Selecting previously unselected package libgfxdr0:amd64.
+Preparing to unpack .../13-libgfxdr0_7.2-2build1_amd64.deb ...
+Unpacking libgfxdr0:amd64 (7.2-2build1) ...
+Selecting previously unselected package libgfrpc0:amd64.
+Preparing to unpack .../14-libgfrpc0_7.2-2build1_amd64.deb ...
+Unpacking libgfrpc0:amd64 (7.2-2build1) ...
+Selecting previously unselected package libgfapi0:amd64.
+Preparing to unpack .../15-libgfapi0_7.2-2build1_amd64.deb ...
+Unpacking libgfapi0:amd64 (7.2-2build1) ...
+Selecting previously unselected package libnl-3-200:amd64.
+Preparing to unpack .../16-libnl-3-200_3.4.0-1ubuntu0.1_amd64.deb ...
+Unpacking libnl-3-200:amd64 (3.4.0-1ubuntu0.1) ...
+Selecting previously unselected package libnl-route-3-200:amd64.
+Preparing to unpack .../17-libnl-route-3-200_3.4.0-1ubuntu0.1_amd64.deb ...
+Unpacking libnl-route-3-200:amd64 (3.4.0-1ubuntu0.1) ...
+Selecting previously unselected package libibverbs1:amd64.
+Preparing to unpack .../18-libibverbs1_28.0-1ubuntu1_amd64.deb ...
+Unpacking libibverbs1:amd64 (28.0-1ubuntu1) ...
+Selecting previously unselected package libboost-iostreams1.71.0:amd64.
+Preparing to unpack .../19-libboost-iostreams1.71.0_1.71.0-6ubuntu6_amd64.deb ...
+Unpacking libboost-iostreams1.71.0:amd64 (1.71.0-6ubuntu6) ...
+Selecting previously unselected package libboost-thread1.71.0:amd64.
+Preparing to unpack .../20-libboost-thread1.71.0_1.71.0-6ubuntu6_amd64.deb ...
+Unpacking libboost-thread1.71.0:amd64 (1.71.0-6ubuntu6) ...
+Selecting previously unselected package librdmacm1:amd64.
+Preparing to unpack .../21-librdmacm1_28.0-1ubuntu1_amd64.deb ...
+Unpacking librdmacm1:amd64 (28.0-1ubuntu1) ...
+Selecting previously unselected package librados2.
+Preparing to unpack .../22-librados2_15.2.17-0ubuntu0.20.04.6_amd64.deb ...
+Unpacking librados2 (15.2.17-0ubuntu0.20.04.6) ...
+Selecting previously unselected package librbd1.
+Preparing to unpack .../23-librbd1_15.2.17-0ubuntu0.20.04.6_amd64.deb ...
+Unpacking librbd1 (15.2.17-0ubuntu0.20.04.6) ...
+Selecting previously unselected package libpython2.7-stdlib:amd64.
+Preparing to unpack .../24-libpython2.7-stdlib_2.7.18-1~20.04.3_amd64.deb ...
+Unpacking libpython2.7-stdlib:amd64 (2.7.18-1~20.04.3) ...
+Selecting previously unselected package python2.7.
+Preparing to unpack .../25-python2.7_2.7.18-1~20.04.3_amd64.deb ...
+Unpacking python2.7 (2.7.18-1~20.04.3) ...
+Selecting previously unselected package fio.
+Preparing to unpack .../26-fio_3.16-1_amd64.deb ...
+Unpacking fio (3.16-1) ...
+Selecting previously unselected package ibverbs-providers:amd64.
+Preparing to unpack .../27-ibverbs-providers_28.0-1ubuntu1_amd64.deb ...
+Unpacking ibverbs-providers:amd64 (28.0-1ubuntu1) ...
+Setting up libkeyutils1:amd64 (1.6-6ubuntu1.1) ...
+Setting up libtirpc-common (1.2.5-1ubuntu0.1) ...
+Setting up krb5-locales (1.17-6ubuntu4.4) ...
+Setting up libboost-iostreams1.71.0:amd64 (1.71.0-6ubuntu6) ...
+Setting up libkrb5support0:amd64 (1.17-6ubuntu4.4) ...
+Setting up libglusterfs0:amd64 (7.2-2build1) ...
+Setting up libpython2.7-minimal:amd64 (2.7.18-1~20.04.3) ...
+Setting up python2.7-minimal (2.7.18-1~20.04.3) ...
+Linking and byte-compiling packages for runtime python2.7...
+Setting up libk5crypto3:amd64 (1.17-6ubuntu4.4) ...
+Setting up libnuma1:amd64 (2.0.12-1) ...
+Setting up libnl-3-200:amd64 (3.4.0-1ubuntu0.1) ...
+Setting up libboost-thread1.71.0:amd64 (1.71.0-6ubuntu6) ...
+Setting up libkrb5-3:amd64 (1.17-6ubuntu4.4) ...
+Setting up libaio1:amd64 (0.3.112-5) ...
+Setting up libnl-route-3-200:amd64 (3.4.0-1ubuntu0.1) ...
+Setting up libpython2.7-stdlib:amd64 (2.7.18-1~20.04.3) ...
+Setting up libgssapi-krb5-2:amd64 (1.17-6ubuntu4.4) ...
+Setting up libtirpc3:amd64 (1.2.5-1ubuntu0.1) ...
+Setting up libibverbs1:amd64 (28.0-1ubuntu1) ...
+Setting up python2.7 (2.7.18-1~20.04.3) ...
+Setting up ibverbs-providers:amd64 (28.0-1ubuntu1) ...
+Setting up libgfxdr0:amd64 (7.2-2build1) ...
+Setting up librdmacm1:amd64 (28.0-1ubuntu1) ...
+Setting up librados2 (15.2.17-0ubuntu0.20.04.6) ...
+Setting up librbd1 (15.2.17-0ubuntu0.20.04.6) ...
+Setting up libgfrpc0:amd64 (7.2-2build1) ...
+Setting up libgfapi0:amd64 (7.2-2build1) ...
+Setting up fio (3.16-1) ...
+Processing triggers for libc-bin (2.31-0ubuntu9.14) ...
+Processing triggers for mime-support (3.64ubuntu1) ...
+root@gcs-fuse:/# which fio
+/usr/bin/fio
+root@gcs-fuse:/# which vi
+/usr/bin/vi
+root@gcs-fuse:/# exit
+exit
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ cat sample.yaml                                          
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gcs-fuse
+  namespace: gargnitin-gke-hands-on
+  annotations:
+    gke-gcsfuse/volumes: "true"
+spec:
+  terminationGracePeriodSeconds: 60
+  containers:
+  - image: ubuntu:20.04
+    name: gargnitin-gke-hands-on-container
+    command: ["sleep"]
+    args: ["infinity"]
+    volumeMounts:
+    - name: gcs-fuse-csi-ephemeral
+      mountPath: /data
+      readOnly: false
+  serviceAccountName: gargnitin-gke-handson-sa
+  volumes:
+  - name: gcs-fuse-csi-ephemeral
+    csi:
+      driver: gcsfuse.csi.storage.gke.io
+      readOnly: false
+      volumeAttributes:
+        bucketName: gargnitin-gke-hands-on-usmultiregion
+        mountOptions: "implicit-dirs,debug_gcs,debug_fuse"
+
+gargnitin_google_com@gargnitin-n2std4-ubuntu2204-uscentral1:~/work/gke-hands-on$ kubectl exec -it gcs-fuse --container gargnitin-gke-hands-on-container -n gargnitin-gke-hands-on -- bash
+root@gcs-fuse:/# top
+top - 07:36:28 up 7 days, 58 min,  0 users,  load average: 0.10, 0.14, 0.09
+Tasks:   3 total,   1 running,   2 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.3 us,  0.5 sy,  0.0 ni, 97.9 id,  0.3 wa,  0.0 hi,  0.1 si,  0.0 st
+MiB Mem :  15986.3 total,  10417.1 free,    921.5 used,   4647.6 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.  14672.4 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                            
+      1 root      20   0    2516    512    452 S   0.0   0.0   0:00.01 sleep                                                              
+   1406 root      20   0    4248   3372   2916 S   0.0   0.0   0:00.00 bash                                                               
+   1414 root      20   0    6172   3368   2848 R   0.0   0.0   0:00.00 top                                                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+root@gcs-fuse:/# mkdir /data/256kb
+root@gcs-fuse:/# 
+root@gcs-fuse:/# fio --name=read_throughput --directory=/data/256kb --filesize=256K --numjobs=4 --time_based --ramp_time=2s --runtime=30s --ioengine=libaio --direct=1 --verify=0 --iodepth=1 --rw=read
+read_throughput: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=1
+...
+fio-3.16
+Starting 4 processes
+read_throughput: Laying out IO file (1 file / 0MiB)
+read_throughput: Laying out IO file (1 file / 0MiB)
+read_throughput: Laying out IO file (1 file / 0MiB)
+read_throughput: Laying out IO file (1 file / 0MiB)
+Jobs: 4 (f=4): [R(4)][100.0%][r=5685KiB/s][r=1421 IOPS][eta 00m:00s]
+read_throughput: (groupid=0, jobs=1): err= 0: pid=1422: Wed Mar 13 07:37:11 2024
+  read: IOPS=354, BW=1420KiB/s (1454kB/s)(41.6MiB/30001msec)
+    slat (usec): min=103, max=166374, avg=2817.38, stdev=12805.95
+    clat (nsec): min=868, max=915141, avg=3845.65, stdev=14834.91
+     lat (usec): min=105, max=166380, avg=2815.10, stdev=12785.43
+    clat percentiles (nsec):
+     |  1.00th=[  1160],  5.00th=[  1288], 10.00th=[  1432], 20.00th=[  1656],
+     | 30.00th=[  1848], 40.00th=[  1992], 50.00th=[  2096], 60.00th=[  2192],
+     | 70.00th=[  2320], 80.00th=[  2448], 90.00th=[  2832], 95.00th=[  6304],
+     | 99.00th=[ 47872], 99.50th=[ 74240], 99.90th=[168960], 99.95th=[259072],
+     | 99.99th=[370688]
+   bw (  KiB/s): min= 1080, max= 1800, per=24.40%, avg=1417.85, stdev=181.18, samples=59
+   iops        : min=  270, max=  450, avg=354.42, stdev=45.31, samples=59
+  lat (nsec)   : 1000=0.03%
+  lat (usec)   : 2=40.82%, 4=52.78%, 10=1.77%, 20=2.00%, 50=1.63%
+  lat (usec)   : 100=0.61%, 250=0.30%, 500=0.05%, 1000=0.01%
+  cpu          : usr=0.16%, sys=0.57%, ctx=12570, majf=0, minf=16
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=10648,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+read_throughput: (groupid=0, jobs=1): err= 0: pid=1423: Wed Mar 13 07:37:11 2024
+  read: IOPS=352, BW=1410KiB/s (1444kB/s)(41.3MiB/30001msec)
+    slat (usec): min=79, max=192315, avg=2837.49, stdev=13001.36
+    clat (nsec): min=873, max=1049.0k, avg=4019.90, stdev=17147.98
+     lat (usec): min=80, max=192320, avg=2835.26, stdev=12980.11
+    clat percentiles (nsec):
+     |  1.00th=[  1176],  5.00th=[  1336], 10.00th=[  1464], 20.00th=[  1688],
+     | 30.00th=[  1880], 40.00th=[  2024], 50.00th=[  2160], 60.00th=[  2256],
+     | 70.00th=[  2352], 80.00th=[  2480], 90.00th=[  2992], 95.00th=[  9664],
+     | 99.00th=[ 47360], 99.50th=[ 76288], 99.90th=[179200], 99.95th=[346112],
+     | 99.99th=[544768]
+   bw (  KiB/s): min= 1064, max= 1936, per=24.24%, avg=1408.58, stdev=186.44, samples=59
+   iops        : min=  266, max=  484, avg=352.12, stdev=46.61, samples=59
+  lat (nsec)   : 1000=0.05%
+  lat (usec)   : 2=38.40%, 4=54.53%, 10=2.08%, 20=2.36%, 50=1.64%
+  lat (usec)   : 100=0.63%, 250=0.24%, 500=0.05%, 750=0.01%
+  lat (msec)   : 2=0.01%
+  cpu          : usr=0.21%, sys=0.52%, ctx=12528, majf=0, minf=16
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=10572,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+read_throughput: (groupid=0, jobs=1): err= 0: pid=1424: Wed Mar 13 07:37:11 2024
+  read: IOPS=376, BW=1505KiB/s (1541kB/s)(44.1MiB/30001msec)
+    slat (usec): min=99, max=167404, avg=2657.74, stdev=12185.66
+    clat (nsec): min=917, max=678110, avg=4115.84, stdev=15988.94
+     lat (usec): min=101, max=167413, avg=2656.14, stdev=12164.91
+    clat percentiles (nsec):
+     |  1.00th=[  1192],  5.00th=[  1336], 10.00th=[  1480], 20.00th=[  1704],
+     | 30.00th=[  1880], 40.00th=[  2024], 50.00th=[  2160], 60.00th=[  2256],
+     | 70.00th=[  2352], 80.00th=[  2512], 90.00th=[  2992], 95.00th=[  8512],
+     | 99.00th=[ 54528], 99.50th=[ 80384], 99.90th=[232448], 99.95th=[317440],
+     | 99.99th=[667648]
+   bw (  KiB/s): min= 1096, max= 1992, per=25.88%, avg=1503.86, stdev=190.20, samples=59
+   iops        : min=  274, max=  498, avg=375.93, stdev=47.57, samples=59
+  lat (nsec)   : 1000=0.04%
+  lat (usec)   : 2=37.79%, 4=54.89%, 10=2.42%, 20=2.30%, 50=1.47%
+  lat (usec)   : 100=0.69%, 250=0.33%, 500=0.05%, 750=0.02%
+  cpu          : usr=0.24%, sys=0.55%, ctx=13406, majf=0, minf=16
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=11285,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+read_throughput: (groupid=0, jobs=1): err= 0: pid=1425: Wed Mar 13 07:37:11 2024
+  read: IOPS=369, BW=1478KiB/s (1514kB/s)(43.3MiB/30001msec)
+    slat (usec): min=86, max=176718, avg=2705.49, stdev=12542.52
+    clat (nsec): min=852, max=424523, avg=4008.96, stdev=13088.55
+     lat (usec): min=88, max=176788, avg=2703.62, stdev=12522.36
+    clat percentiles (nsec):
+     |  1.00th=[  1176],  5.00th=[  1320], 10.00th=[  1464], 20.00th=[  1704],
+     | 30.00th=[  1896], 40.00th=[  2040], 50.00th=[  2160], 60.00th=[  2224],
+     | 70.00th=[  2352], 80.00th=[  2480], 90.00th=[  2992], 95.00th=[ 10816],
+     | 99.00th=[ 54528], 99.50th=[ 77312], 99.90th=[179200], 99.95th=[280576],
+     | 99.99th=[370688]
+   bw (  KiB/s): min= 1072, max= 2032, per=25.43%, avg=1477.75, stdev=193.69, samples=60
+   iops        : min=  268, max=  508, avg=369.40, stdev=48.44, samples=60
+  lat (nsec)   : 1000=0.06%
+  lat (usec)   : 2=36.57%, 4=56.08%, 10=2.08%, 20=2.46%, 50=1.60%
+  lat (usec)   : 100=0.86%, 250=0.22%, 500=0.06%
+  cpu          : usr=0.30%, sys=0.47%, ctx=13047, majf=0, minf=16
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=11087,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=5813KiB/s (5952kB/s), 1410KiB/s-1505KiB/s (1444kB/s-1541kB/s), io=170MiB (179MB), run=30001-30001msec
+root@gcs-fuse:/# F0314 01:07:02.471814       1 helper.go:471] websocket: close 1006 (abnormal closure): unexpected EOF
+                                                                                                                      client_loop: send disconnect: Broken pipe
+
+Recommendation: To check for possible causes of SSH connectivity issues and get
+recommendations, rerun the ssh command with the --troubleshoot option.
+
+gcloud compute ssh gargnitin-n2std4-ubuntu2204-uscentral1 --project=gcs-fuse-test --zone=us-central1-c --troubleshoot
+
+Or, to investigate an IAP tunneling issue:
+
+gcloud compute ssh gargnitin-n2std4-ubuntu2204-uscentral1 --project=gcs-fuse-test --zone=us-central1-c --troubleshoot --tunnel-through-iap
+
+ERROR: (gcloud.compute.ssh) [/usr/bin/ssh] exited with return code [255].
+gargnitin@gargnitin:~$                                                                                
+If you do not reboot now, your system will reboot automatically
+at Fri Mar 22 02:54:08 UTC 2024. For more info, see go/glinux-reboot-policy.
+To reboot your computer 10 hours from now, on the command line run:
+echo systemctl reboot | at now + 10 hours
+                                                                               
+gargnitin@gargnitin:~$ 
+gargnitin@gargnitin:~$ 
+gargnitin@gargnitin:~$ 
+gargnitin@gargnitin:~$                                                                                
+If you do not reboot now, your system will reboot automatically                
+at Fri May 17 02:52:10 UTC 2024. For more info, see go/glinux-reboot-policy.   
+To reboot your computer 10 hours from now, on the command line run:            
+echo systemctl reboot | at now + 10 hours                                      
+Also you may have a pending maintenance. See go/cloudtop-faq#cloudtop-maintenan
+ce-scheduler                                                                   
+To run maintenance in 10 hours run:                                            
+ctop self maintenance schedule in 10h
+                                                                               
+gargnitin@gargnitin:~$ 

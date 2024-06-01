@@ -1,0 +1,444 @@
+diff --git a/.vimrc b/.vimrc
+index 9916066..7befd23 100644
+--- a/.vimrc
++++ b/.vimrc
+@@ -38,6 +38,16 @@ set listchars=tab:>-
+ 
+ " enable mouse in all modes
+ set mouse=a
++  
++" check one time after 4s of inactivity in normal mode
++set autoread                                                                                                                                                                                    
++au CursorHold * checktime  
++
++" autocmd FileType c,cpp,go 
++nnoremap <C-k><C-c> <Esc>i<Home>//<Esc>
++noremap <C-d> dd
++noremap <C-z> u
++noremap <C-y> <C-r>
+ 
+ " Shortcut to discard everything and close all files on Ctrl+q 
+ :map <C-q> <Esc>:qa<CR>
+@@ -63,14 +73,14 @@ augroup autoformat_settings
+   autocmd FileType go AutoFormatBuffer gofmt
+   autocmd FileType java AutoFormatBuffer google-java-format
+   autocmd FileType jslayout AutoFormatBuffer jslfmt
+-"  autocmd FileType markdown AutoFormatBuffer mdformat
++  autocmd FileType markdown AutoFormatBuffer mdformat
+   autocmd FileType ncl AutoFormatBuffer nclfmt
+   autocmd FileType python AutoFormatBuffer pyformat
+   autocmd FileType soy AutoFormatBuffer soyfmt
+   autocmd FileType textpb AutoFormatBuffer text-proto-format
+   autocmd FileType proto AutoFormatBuffer protofmt
+   autocmd FileType sql AutoFormatBuffer format_sql
+-  " autocmd FileType html,css,json AutoFormatBuffer js-beautify
++  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+ augroup END
+ 
+ Glug whitespace !highlight
+@@ -155,3 +165,9 @@ filetype plugin indent on
+ Glug relatedfiles
+ Glug relatedfiles plugin[mappings]=',f'
+ 
++Glug libgit
++Glug refactorer
++Glug refactorer plugin[mappings]='F2'
++Glug add_usings
++Glug colorscheme-primary
++set guitablabel=%t
+gargnitin@gargnitin:~$ src                                                                                                                              
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ study
+Command study not found
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ ......
+gargnitin@gargnitin:~/work/cloud$ ls
+storage  transfer
+gargnitin@gargnitin:~/work/cloud$ .. 
+gargnitin@gargnitin:~/work$ ls
+cloud  gcsfuse  src  study
+gargnitin@gargnitin:~/work$ cd study/
+gargnitin@gargnitin:~/work/study$ ls
+c  cpp  go  go.work  interview_questions  kubernetes  python  shell  strace
+gargnitin@gargnitin:~/work/study$ cd interview_questions/
+gargnitin@gargnitin:~/work/study/interview_questions$ ls
+interview_question_2895  interview_question_4165
+gargnitin@gargnitin:~/work/study/interview_questions$ cd interview_question_4165
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ ls
+abin_solution.py  main  main.cpp
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi main.cpp 
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi abin_solution.py 
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ~/.vimrc
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git diff
+diff --git a/.vimrc b/.vimrc
+index 9916066..15a0de3 100644
+--- a/.vimrc
++++ b/.vimrc
+@@ -38,13 +38,22 @@ set listchars=tab:>-
+ 
+ " enable mouse in all modes
+ set mouse=a
++  
++" check one time after 4s of inactivity in normal mode
++set autoread                                                                                                                                                                                    
++au CursorHold * checktime  
++
++" autocmd FileType c,cpp,go 
++nnoremap <C-k><C-c> <Esc>i<Home>//<Esc>
++noremap <C-d> dd
++noremap <C-z> u
++noremap <C-y> <C-r>
+ 
+ " Shortcut to discard everything and close all files on Ctrl+q 
+-:map <C-q> <Esc>:qa<CR>
+-:imap <C-q> <Esc>:qa<CR>
++:noremap <C-q> <Esc>:qa<CR>
+ "Short cut to save the file on Ctrl+s
+-:imap <C-s> <Esc>:w<CR>i
+-:nmap <C-s> <ESC>:w<CR>
++:inoremap <C-s> <Esc>:w<CR>i
++:nnoremap <C-s> <ESC>:w<CR>
+ "set listchars=tab:▷▷⋮
+ "set invlist
+ "noremap <Leader><Tab><Tab> :set invlist<CR>
+@@ -63,14 +72,14 @@ augroup autoformat_settings
+   autocmd FileType go AutoFormatBuffer gofmt
+   autocmd FileType java AutoFormatBuffer google-java-format
+   autocmd FileType jslayout AutoFormatBuffer jslfmt
+-"  autocmd FileType markdown AutoFormatBuffer mdformat
++  autocmd FileType markdown AutoFormatBuffer mdformat
+   autocmd FileType ncl AutoFormatBuffer nclfmt
+   autocmd FileType python AutoFormatBuffer pyformat
+   autocmd FileType soy AutoFormatBuffer soyfmt
+   autocmd FileType textpb AutoFormatBuffer text-proto-format
+   autocmd FileType proto AutoFormatBuffer protofmt
+   autocmd FileType sql AutoFormatBuffer format_sql
+-  " autocmd FileType html,css,json AutoFormatBuffer js-beautify
++  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+ augroup END
+ 
+ Glug whitespace !highlight
+@@ -155,3 +164,10 @@ filetype plugin indent on
+ Glug relatedfiles
+ Glug relatedfiles plugin[mappings]=',f'
+ 
++Glug libgit
++Glug refactorer
++Glug refactorer plugin[mappings]='F2'
++Glug add_usings
++Glug colorscheme-primary
++set guitablabel=%t
++Glug outline-window
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ~/.vimrc                                                            
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git diff                                                               
+diff --git a/.vimrc b/.vimrc
+index 9916066..7f9e2af 100644
+--- a/.vimrc
++++ b/.vimrc
+@@ -35,19 +35,26 @@ set autoread
+ " show tabs
+ set list
+ set listchars=tab:>-
++noremap <Leader><Tab><Tab> :set invlist<CR>
+ 
+ " enable mouse in all modes
+ set mouse=a
++  
++" check one time after 4s of inactivity in normal mode
++set autoread                                                                                                                                                                                    
++au CursorHold * checktime  
++
++" autocmd FileType c,cpp,go 
++nnoremap <C-k><C-c> <Esc>i<Home>//<Esc>
++noremap <C-d> dd
++noremap <C-z> u
++noremap <C-y> <C-r>
+ 
+ " Shortcut to discard everything and close all files on Ctrl+q 
+-:map <C-q> <Esc>:qa<CR>
+-:imap <C-q> <Esc>:qa<CR>
++:noremap <C-q> <Esc>:qa<CR>
+ "Short cut to save the file on Ctrl+s
+-:imap <C-s> <Esc>:w<CR>i
+-:nmap <C-s> <ESC>:w<CR>
+-"set listchars=tab:▷▷⋮
+-"set invlist
+-"noremap <Leader><Tab><Tab> :set invlist<CR>
++:inoremap <C-s> <Esc>:w<CR>i
++:nnoremap <C-s> <ESC>:w<CR>
+ 
+ " Use the 'google' package by default (see http://go/vim/packages).
+ source /usr/share/vim/google/google.vim
+@@ -63,14 +70,14 @@ augroup autoformat_settings
+   autocmd FileType go AutoFormatBuffer gofmt
+   autocmd FileType java AutoFormatBuffer google-java-format
+   autocmd FileType jslayout AutoFormatBuffer jslfmt
+-"  autocmd FileType markdown AutoFormatBuffer mdformat
++  autocmd FileType markdown AutoFormatBuffer mdformat
+   autocmd FileType ncl AutoFormatBuffer nclfmt
+   autocmd FileType python AutoFormatBuffer pyformat
+   autocmd FileType soy AutoFormatBuffer soyfmt
+   autocmd FileType textpb AutoFormatBuffer text-proto-format
+   autocmd FileType proto AutoFormatBuffer protofmt
+   autocmd FileType sql AutoFormatBuffer format_sql
+-  " autocmd FileType html,css,json AutoFormatBuffer js-beautify
++  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+ augroup END
+ 
+ Glug whitespace !highlight
+@@ -155,3 +162,10 @@ filetype plugin indent on
+ Glug relatedfiles
+ Glug relatedfiles plugin[mappings]=',f'
+ 
++Glug libgit
++Glug refactorer
++Glug refactorer plugin[mappings]='F2'
++Glug add_usings
++Glug colorscheme-primary
++set guitablabel=%t
++Glug outline-window
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ~/.vimrc +/autoread
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git diff                                                    
+diff --git a/.vimrc b/.vimrc
+index 9916066..86e4a26 100644
+--- a/.vimrc
++++ b/.vimrc
+@@ -35,19 +35,22 @@ set autoread
+ " show tabs
+ set list
+ set listchars=tab:>-
++noremap <Leader><Tab><Tab> :set invlist<CR>
+ 
+ " enable mouse in all modes
+ set mouse=a
++  
++" autocmd FileType c,cpp,go 
++nnoremap <C-k><C-c> <Esc>i<Home>//<Esc>
++noremap <C-d> dd
++noremap <C-z> u
++noremap <C-y> <C-r>
+ 
+ " Shortcut to discard everything and close all files on Ctrl+q 
+-:map <C-q> <Esc>:qa<CR>
+-:imap <C-q> <Esc>:qa<CR>
++:noremap <C-q> <Esc>:qa<CR>
+ "Short cut to save the file on Ctrl+s
+-:imap <C-s> <Esc>:w<CR>i
+-:nmap <C-s> <ESC>:w<CR>
+-"set listchars=tab:▷▷⋮
+-"set invlist
+-"noremap <Leader><Tab><Tab> :set invlist<CR>
++:inoremap <C-s> <Esc>:w<CR>i
++:nnoremap <C-s> <ESC>:w<CR>
+ 
+ " Use the 'google' package by default (see http://go/vim/packages).
+ source /usr/share/vim/google/google.vim
+@@ -63,14 +66,14 @@ augroup autoformat_settings
+   autocmd FileType go AutoFormatBuffer gofmt
+   autocmd FileType java AutoFormatBuffer google-java-format
+   autocmd FileType jslayout AutoFormatBuffer jslfmt
+-"  autocmd FileType markdown AutoFormatBuffer mdformat
++  autocmd FileType markdown AutoFormatBuffer mdformat
+   autocmd FileType ncl AutoFormatBuffer nclfmt
+   autocmd FileType python AutoFormatBuffer pyformat
+   autocmd FileType soy AutoFormatBuffer soyfmt
+   autocmd FileType textpb AutoFormatBuffer text-proto-format
+   autocmd FileType proto AutoFormatBuffer protofmt
+   autocmd FileType sql AutoFormatBuffer format_sql
+-  " autocmd FileType html,css,json AutoFormatBuffer js-beautify
++  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+ augroup END
+ 
+ Glug whitespace !highlight
+@@ -155,3 +158,10 @@ filetype plugin indent on
+ Glug relatedfiles
+ Glug relatedfiles plugin[mappings]=',f'
+ 
++Glug libgit
++Glug refactorer
++Glug refactorer plugin[mappings]='F2'
++Glug add_usings
++Glug colorscheme-primary
++set guitablabel=%t
++Glug outline-window
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git diff
+diff --git a/.vimrc b/.vimrc
+index 9916066..86e4a26 100644
+--- a/.vimrc
++++ b/.vimrc
+@@ -35,19 +35,22 @@ set autoread
+ " show tabs
+ set list
+ set listchars=tab:>-
++noremap <Leader><Tab><Tab> :set invlist<CR>
+ 
+ " enable mouse in all modes
+ set mouse=a
++  
++" autocmd FileType c,cpp,go 
++nnoremap <C-k><C-c> <Esc>i<Home>//<Esc>
++noremap <C-d> dd
++noremap <C-z> u
++noremap <C-y> <C-r>
+ 
+ " Shortcut to discard everything and close all files on Ctrl+q 
+-:map <C-q> <Esc>:qa<CR>
+-:imap <C-q> <Esc>:qa<CR>
++:noremap <C-q> <Esc>:qa<CR>
+ "Short cut to save the file on Ctrl+s
+-:imap <C-s> <Esc>:w<CR>i
+-:nmap <C-s> <ESC>:w<CR>
+-"set listchars=tab:▷▷⋮
+-"set invlist
+-"noremap <Leader><Tab><Tab> :set invlist<CR>
++:inoremap <C-s> <Esc>:w<CR>i
++:nnoremap <C-s> <ESC>:w<CR>
+ 
+ " Use the 'google' package by default (see http://go/vim/packages).
+ source /usr/share/vim/google/google.vim
+@@ -63,14 +66,14 @@ augroup autoformat_settings
+   autocmd FileType go AutoFormatBuffer gofmt
+   autocmd FileType java AutoFormatBuffer google-java-format
+   autocmd FileType jslayout AutoFormatBuffer jslfmt
+-"  autocmd FileType markdown AutoFormatBuffer mdformat
++  autocmd FileType markdown AutoFormatBuffer mdformat
+   autocmd FileType ncl AutoFormatBuffer nclfmt
+   autocmd FileType python AutoFormatBuffer pyformat
+   autocmd FileType soy AutoFormatBuffer soyfmt
+   autocmd FileType textpb AutoFormatBuffer text-proto-format
+   autocmd FileType proto AutoFormatBuffer protofmt
+   autocmd FileType sql AutoFormatBuffer format_sql
+-  " autocmd FileType html,css,json AutoFormatBuffer js-beautify
++  autocmd FileType html,css,json AutoFormatBuffer js-beautify
+ augroup END
+ 
+ Glug whitespace !highlight
+@@ -155,3 +158,10 @@ filetype plugin indent on
+ Glug relatedfiles
+ Glug relatedfiles plugin[mappings]=',f'
+ 
++Glug libgit
++Glug refactorer
++Glug refactorer plugin[mappings]='F2'
++Glug add_usings
++Glug colorscheme-primary
++set guitablabel=%t
++Glug outline-window
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git st
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../../../../.vimrc
+
+no changes added to commit (use "git add" and/or "git commit -a")
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git add ../../../../.vimrc
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git ci -m 'add more vim plugins' && git put 
+[main 9f03a83] add more vim plugins
+ 1 file changed, 19 insertions(+), 9 deletions(-)
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 48 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 555 bytes | 555.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/gargnitingoogle/cloudtop_homedir
+   40f9f72..9f03a83  main -> main
+branch 'main' set up to track 'origin/main'.
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git ls
+* main
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git ff
+Already up to date.
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git fa
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git l
+9f03a83 (HEAD -> refs/heads/main, refs/remotes/origin/main) add more vim plugins
+40f9f72 some useful changes in vim
+8f194cd increase delve code context
+b5fa692 enhance tmux features
+1f41b89 fix unmountGcsfuse alias
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git switch master
+fatal: invalid reference: master
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git switch origin/master
+fatal: invalid reference: origin/master
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git fetch --all
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git switch origin/master
+fatal: invalid reference: origin/master
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git list
+git: 'list' is not a git command. See 'git --help'.
+
+The most similar command is
+        last
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git files
+git: 'files' is not a git command. See 'git --help'.
+
+The most similar command is
+        ls-files
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git file 
+git: 'file' is not a git command. See 'git --help'.
+
+The most similar commands are
+        cat-file
+        ls-files
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git ls-files
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git ls-files /
+fatal: /: '/' is outside repository at '/usr/local/google/home/gargnitin'
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git ls-files ~
+../../../../.bash_aliases
+../../../../.bashrc
+../../../../.blazerc
+../../../../.gitconfig
+../../../../.githooks/applypatch-msg.sample
+../../../../.githooks/commit-msg.sample
+../../../../.githooks/fsmonitor-watchman.sample
+../../../../.githooks/post-update.sample
+../../../../.githooks/pre-applypatch.sample
+../../../../.githooks/pre-commit.sample
+../../../../.githooks/pre-merge-commit.sample
+../../../../.githooks/pre-push.sample
+../../../../.githooks/pre-rebase.sample
+../../../../.githooks/pre-receive
+../../../../.githooks/pre-receive.sample
+../../../../.githooks/prepare-commit-msg.sample
+../../../../.githooks/push-to-checkout.sample
+../../../../.githooks/sendemail-validate.sample
+../../../../.githooks/update.sample
+../../../../.gitignore
+../../../../.hgrc
+../../../../.sorted_unique_bash_history
+../../../../.tmux.conf
+../../../../.vimrc
+../../../../README.md
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ git rm ../../../../.sorted_unique_bash_history
+rm '.sorted_unique_bash_history'
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ../../../../README.md
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ../../../../.blazerc
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ../../../../.gitconfig
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ../../../../.hgrc
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ vi ../../../../.githooks/pre-rebase.sample
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ htop -F gcsfuse
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ htop -F gcsfuse
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ restartCRD 
+[sudo] password for gargnitin: 
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$                                                                                                                                                                                                                                  
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$                                                                                
+If you do not reboot now, your system will reboot automatically                
+at Fri May 17 02:52:10 UTC 2024. For more info, see go/glinux-reboot-policy.   
+To reboot your computer 10 hours from now, on the command line run:            
+echo systemctl reboot | at now + 10 hours                                      
+Also you may have a pending maintenance. See go/cloudtop-faq#cloudtop-maintenan
+ce-scheduler                                                                   
+To run maintenance in 10 hours run:                                            
+ctop self maintenance schedule in 10h
+                                                                               
+gargnitin@gargnitin:~/work/study/interview_questions/interview_question_4165$ 

@@ -1,0 +1,154 @@
+gargnitin@gargnitin:~$ bash
+cdgargnitin@gargnitin:~$ cd ~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 100000_objects | wc -l
+34056
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 100000_objects | wc -l
+36139
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 100000_objects | wc -l
+36659
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 100000_objects | wc -l
+37348
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 1000000_objects | wc -l
+27422
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 1000000_objects | wc -l
+29565
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 1000000_objects | wc -l
+30072
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 100000_objects | wc -l                                                                     
+100000
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 1000000_objects | wc -l
+100826
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 1000000_objects | wc -l
+102850
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 1000000_objects | wc -l
+132759
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 1000000_objects | wc -l
+336573
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ gsutil -mq cp -rf 1000000_objects/ gs://gargnitin-memory-testing-bucket-20
+230809 && gsutil -mq cp gs://gs://gargnitin-memory-testing-bucket-20230809/1000000_objects/ gs://gargnitin-bucket-asia-se1-1/
+CommandException: Incorrect option(s) specified. Usage:
+
+  gsutil cp [OPTION]... src_url dst_url
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ gsutil -mq cp -r 1000000_objects/ gs://gargnitin-memory-testing-bucket-20230809 && gsutil -mq cp -r gs://gs://gargnitin-memory-testing-bucket-20230809/1000000_objects/ gs://gargnitin-buc
+ket-asia-se1-1/^C
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ gsutil ls gs://gargnitin-bucket-asia-se1-1/
+gs://gargnitin-bucket-asia-se1-1/1000000_objects/
+gs://gargnitin-bucket-asia-se1-1/100000_objects/
+gs://gargnitin-bucket-asia-se1-1/10000_objects/
+gs://gargnitin-bucket-asia-se1-1/1000_objects/
+gs://gargnitin-bucket-asia-se1-1/100_objects/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ gsutil ls gs://gargnitin-bucket-asia-se1-1/10000_objects/ | wc -l                                                                                                                        
+10000
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ gsutil ls gs://gargnitin-bucket-asia-se1-1/100000_objects/ | wc -l                                                                                                                        
+100000
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ gsutil ls gs://gargnitin-bucket-asia-se1-1/1000000_objects/ | wc -l                                                                                                                       
+35012
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ gsutil ls gs://gargnitin-bucket-asia-se1-1/1000000_objects/ | wc -l
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ echo $near_bucket 
+gargnitin-bucket-asia-se1-1
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ echo $far_bucket  
+gargnitin-memory-testing-bucket-20230809
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ gsutil -mq ls gs://$near_bucket | wc -l                                                                                                                                                
+5
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ gsutil -mq ls gs://$near_bucket        
+gs://gargnitin-bucket-asia-se1-1/1000000_objects/
+gs://gargnitin-bucket-asia-se1-1/100000_objects/
+gs://gargnitin-bucket-asia-se1-1/10000_objects/
+gs://gargnitin-bucket-asia-se1-1/1000_objects/
+gs://gargnitin-bucket-asia-se1-1/100_objects/
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ gsutil -mq ls gs://$near_bucket/1000000_objects/ | wc -l
+867440
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ time gsutil -mq ls gs://$near_bucket/1000000_objects/ | wc -l                                                                
+958949
+
+real    1m58.577s
+user    1m18.079s
+sys     0m0.943s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ time gsutil -mq ls gs://$far_bucket/1000000_objects/ | wc -l                                                                 
+1000000
+
+real    6m16.544s
+user    1m13.618s
+sys     0m0.827s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ echo $near_bucket                          
+gargnitin-bucket-asia-se1-1
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ echo $far_bucket                           
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ echo $far_bucket 
+gargnitin-memory-testing-bucket-20230809
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls
+10000000_objects  1000000_objects  100000_objects  100000_objects_incomplete  10000_objects  1000_objects  100_objects  createObjects.sh  testfile.txt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 100000_objects | wc -l
+100000
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls 1000000_objects | wc -l                                                                                                                                                                
+^C
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ time (ls 1000000_objects | wc -l)                                                                                                                                                         
+1000000
+
+real    0m4.466s
+user    0m4.007s
+sys     0m0.480s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ time (ls -f 1000000_objects | wc -l)                                                                                                                                                      
+1000002
+
+real    0m0.552s
+user    0m0.178s
+sys     0m0.398s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ time (find 1000000_objects | wc -l)                                                                                                                                                       
+1000001
+
+real    0m0.883s
+user    0m0.448s
+sys     0m0.475s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ time (find 1000000_objects | wc -l)
+1000001
+
+real    0m0.845s
+user    0m0.429s
+sys     0m0.462s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ time (ls -f 1000000_objects | wc -l)                                                                                                                                                      
+1000002
+
+real    0m0.553s
+user    0m0.155s
+sys     0m0.423s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ./createObjects.sh 10
+removed 'testfile.txt'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls
+10000000_objects  1000000_objects  100000_objects  100000_objects_incomplete  10000_objects  1000_objects  100_objects  10_objects  createObjects.sh  testfile.txt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ./createObjects.sh 5000 
+removed 'testfile.txt'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ls -l
+total 204644
+drwxr-x--- 2 gargnitin primarygroup 162291712 May 10 16:14 10000000_objects
+drwxr-x--- 2 gargnitin primarygroup  40177664 May 10 09:53 1000000_objects
+drwxr-x--- 2 gargnitin primarygroup   4132864 May 10 09:15 100000_objects
+drwxr-xr-x 2 gargnitin primarygroup   2248704 Nov  8  2023 100000_objects_incomplete
+drwxr-xr-x 2 gargnitin primarygroup    397312 Aug 14  2023 10000_objects
+drwxr-xr-x 2 gargnitin primarygroup     40960 Aug 14  2023 1000_objects
+drwxr-xr-x 2 gargnitin primarygroup      4096 Aug 14  2023 100_objects
+drwxr-x--- 2 gargnitin primarygroup      4096 May 10 16:13 10_objects
+drwxr-x--- 2 gargnitin primarygroup    217088 May 10 16:14 5000_objects
+-rwxr-xr-x 1 gargnitin primarygroup       312 Aug  9  2023 createObjects.sh
+-rw-r----- 1 gargnitin primarygroup        19 May 10 16:14 testfile.txt
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ ./createObjects.sh 50000
+removed 'testfile.txt'
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ time (ls -f 1000000_objects | wc -l)
+1000002
+
+real    0m0.551s
+user    0m0.164s
+sys     0m0.411s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ time (ls -f 10000000_objects | wc -l)
+8984523
+
+real    0m5.196s
+user    0m1.610s
+sys     0m3.800s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ time (ls -f 10000000_objects | wc -l)
+8989683
+
+real    0m5.037s
+user    0m1.465s
+sys     0m3.777s
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/tasks/oncall/20230807/memory-issue-285956302/objects_for_bucket$ 

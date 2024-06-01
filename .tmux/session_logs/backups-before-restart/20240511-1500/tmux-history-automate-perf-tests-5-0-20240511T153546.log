@@ -1,0 +1,179 @@
+gargnitin@gargnitin:~$ htop
+gargnitin@gargnitin:~$ bash
+srgargnitin@gargnitin:~$ src
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ grep -irn perfmetrics/scripts/
+bigquery/                           continuous_test/                    generate_files.py                   load_tests/                         populate_metrics.sh                 presubmit_test/                     requirements.in                     utils/
+build_and_install_gcsfuse.sh        fetch_and_upload_metrics.py         gsheet/                             ls_metrics/                         populate_vm_metrics.py              read_cache/                         requirements.txt                    vm_metrics/
+compare_fuse_types_using_fio.py     fio/                                job_files/                          ml_tests/                           presubmit/                          README.md                           run_load_test_and_fetch_metrics.sh  
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ grep -irn perfmetrics/scripts/
+bigquery/                           continuous_test/                    generate_files.py                   load_tests/                         populate_metrics.sh                 presubmit_test/                     requirements.in                     utils/
+build_and_install_gcsfuse.sh        fetch_and_upload_metrics.py         gsheet/                             ls_metrics/                         populate_vm_metrics.py              read_cache/                         requirements.txt                    vm_metrics/
+compare_fuse_types_using_fio.py     fio/                                job_files/                          ml_tests/                           presubmit/                          README.md                           run_load_test_and_fetch_metrics.sh  
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ grep -irn perfmetrics/scripts/vm_metrics/ 'mem'
+grep: mem: No such file or directory
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ grep -irn mem perfmetrics/scripts/vm_metrics/                                                                                                                                                                                                 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ grep -irn mem perfmetrics/scripts/vm_metrics/*
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ grep -irn cpu perfmetrics/scripts/vm_metrics/*                                                                                                                                                                                               
+perfmetrics/scripts/vm_metrics/testdata/peak_cpu_utilization_response.json:7:  "type": "compute.googleapis.com/instance/cpu/utilization"
+perfmetrics/scripts/vm_metrics/testdata/mean_cpu_utilization_response.json:3:    "type": "compute.googleapis.com/instance/cpu/utilization",
+perfmetrics/scripts/vm_metrics/vm_metrics.py:22:   1.Peak Cpu Utilization(%)
+perfmetrics/scripts/vm_metrics/vm_metrics.py:23:   2.Mean Cpu Utilization(%)
+perfmetrics/scripts/vm_metrics/vm_metrics.py:46:CPU_UTI_METRIC_TYPE = 'compute.googleapis.com/instance/cpu/utilization'
+perfmetrics/scripts/vm_metrics/vm_metrics.py:71:CPU_UTI_PEAK = Metric(
+perfmetrics/scripts/vm_metrics/vm_metrics.py:72:    metric_type=CPU_UTI_METRIC_TYPE, factor=1 / 100, aligner='ALIGN_MAX')
+perfmetrics/scripts/vm_metrics/vm_metrics.py:73:CPU_UTI_MEAN = Metric(
+perfmetrics/scripts/vm_metrics/vm_metrics.py:74:    metric_type=CPU_UTI_METRIC_TYPE, factor=1 / 100, aligner='ALIGN_MEAN')
+perfmetrics/scripts/vm_metrics/vm_metrics.py:96:    CPU_UTI_PEAK, CPU_UTI_MEAN, REC_BYTES_PEAK, REC_BYTES_MEAN,
+perfmetrics/scripts/vm_metrics/vm_metrics.py:307:      list[[period end time, interval end time, CPU_UTI_PEAK, CPU_UTI_MEAN,
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:28:CPU_UTI_METRIC_TYPE = 'compute.googleapis.com/instance/cpu/utilization'
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:41:CPU_UTI_PEAK = vm_metrics.Metric(metric_type=CPU_UTI_METRIC_TYPE, factor=1/100, aligner='ALIGN_MAX')
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:42:CPU_UTI_MEAN = vm_metrics.Metric(metric_type=CPU_UTI_METRIC_TYPE, factor=1/100, aligner='ALIGN_MEAN')
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:55:METRICS_LIST = [CPU_UTI_PEAK, CPU_UTI_MEAN, REC_BYTES_PEAK, REC_BYTES_MEAN, READ_BYTES_COUNT, OPS_ERROR_COUNT, OPS_LATENCY_FILTER]
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:69:CPU_UTI_MEAN_METRIC_POINT_1 = vm_metrics.MetricPoint(22.022823358129244, 1656300720, 1656300720)
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:70:CPU_UTI_MEAN_METRIC_POINT_2 = vm_metrics.MetricPoint(23.330100279029768, 1656300840, 1656300840)
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:71:CPU_UTI_MEAN_METRIC_POINT_3 = vm_metrics.MetricPoint(23.58245408118819, 1656300960, 1656300960)
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:72:EXPECTED_CPU_UTI_MEAN_DATA = [CPU_UTI_MEAN_METRIC_POINT_1, CPU_UTI_MEAN_METRIC_POINT_2, 
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:73:                            CPU_UTI_MEAN_METRIC_POINT_3]
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:75:CPU_UTI_PEAK_METRIC_POINT_1 = vm_metrics.MetricPoint(22.053231452171328, 1656300720, 1656300720)
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:76:CPU_UTI_PEAK_METRIC_POINT_2 = vm_metrics.MetricPoint(23.417254448480286, 1656300840, 1656300840)
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:77:CPU_UTI_PEAK_METRIC_POINT_3 = vm_metrics.MetricPoint(23.810199799611127, 1656300960, 1656300960)
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:78:EXPECTED_CPU_UTI_PEAK_DATA = [CPU_UTI_PEAK_METRIC_POINT_1, CPU_UTI_PEAK_METRIC_POINT_2, 
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:79:                            CPU_UTI_PEAK_METRIC_POINT_3]
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:186:    metric = get_response_from_filename('peak_cpu_utilization_response')
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:192:    metric = get_response_from_filename('peak_cpu_utilization_response')
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:234:  def test_get_metrics_for_cpu_utilization_peak_throws_no_values_error(
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:240:                                       TEST_INSTANCE, TEST_PERIOD, CPU_UTI_PEAK)
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:243:  def test_get_metrics_for_cpu_utilization_mean_throws_no_values_error(
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:249:                                       TEST_INSTANCE, TEST_PERIOD, CPU_UTI_MEAN)
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:298:  def test_get_metrics_for_cpu_utilization_peak(self, mock_get_api_response):
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:300:        'peak_cpu_utilization_response')
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:303:    cpu_uti_peak_data = self.vm_metrics_obj._get_metrics(TEST_START_TIME_SEC,
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:305:                                                    TEST_INSTANCE, TEST_PERIOD, CPU_UTI_PEAK)
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:307:    self.assertEqual(cpu_uti_peak_data, EXPECTED_CPU_UTI_PEAK_DATA)
+ 35   elif value_type == 5:                                                                                                                                                                                                                                                                                        
+ 34     return value.distribution_value.mean                                                                                                                                                                                                                                                                       
+ 33   else:                                                                                                                                                                                                                                                                                                        
+ 32     raise Exception('Unhandled Value type')                                                                                                                                                                                                                                                                    
+ 31                                                                                                                                                                                                                                                                                                                
+ 30 def _get_metric_filter(type, metric_type, instance, extra_filter):                                                                                                                                                                                                                                              29   """Getting the metrics filter string from metric type, instance name and extra filter.                                                                                                                                                                                                                       
+ 28                                                                                                                                                                                                                                                                                                                
+ 27     Args:                                                                                                                                                                                                                                                                                                      
+ 26       metric_type (str): The type of metric, Metric.metric_type                                                                                                                                                                                                                                                
+ 25       instance (str): VM instance name                                                                                                                                                                                                                                                                         
+ 24       extra_filter(str): Metric.extra_filter                                                                                                                                                                                                                                                                   
+ 23   """                                                                                                                                                                                                                                                                                                          
+ 22   if (type == 'compute'):                                                                                                                                                                                                                                                                                      
+ 21     metric_filter = (                                                                                                                                                                                                                                                                                          
+ 20         'metric.type = "{metric_type}" AND metric.label.instance_name '                                                                                                                                                                                                                                         19         '={instance_name}').format(                                                                                                                                                                                                                                                                            
+ 18             metric_type=metric_type, instance_name=instance)                                                                                                                                                                                                                                                   
+ 17   elif (type == 'custom'):                                                                                                                                                                                                                                                                                     
+ 16     metric_filter = (                                                                                                                                                                                                                                                                                          
+ 15         'metric.type = "{metric_type}" AND metric.labels.opencensus_task = '                                                                                                                                                                                                                                   
+ 14         'ends_with("{instance_name}")').format(                                                                                                                                                                                                                                                                 13             metric_type=metric_type, instance_name=instance)                                                                                                                                                                                                                                                   
+ 12                                                                                                                                                                                                                                                                                                                
+ 11   if (extra_filter == ''):                                                                                                                                                                                                                                                                                     
+ 10     return metric_filter                                                                                                                                                                                                                                                                                       
+  9   return '{} AND {}'.format(metric_filter, extra_filter)                                                                                                                                                                                                                                                       
+  8                                                                                                                                                                                                                                                                                                                
+  7 def _create_metric_points_from_response(metrics_response, factor):                                                                                                                                                                                                                                             
+  6   """Parses the given metrics API response and returns a list of MetricPoint.                                                                                                                                                                                                                                  
+  5                                                                                                                                                                                                                                                                                                                
+  4     Args:                                                                                                                                                                                                                                                                                                        3       metrics_response (object): The metrics API response                                                                                                                                                                                                                                                      
+  2       factor (float) : Converting the API response values into appropriate unit                                                                                                                                                                                                                                
+  1     Returns:                                                                                                                                                                                                                                                                                                   
+155       list[MetricPoint]                                                                                                                                                                                                                                                                                        
+  1   """                                                                                                                                                                                                                                                                                                          
+  2   metric_point_list = []                                                                                                                                                                                                                                                                                       
+  3   for metric in metrics_response:                                                                                                                                                                                                                                                                              
+  4     for point in metric.points:                                                                                                                                                                                                                                                                                
+  5       value = _parse_metric_value_by_type(point.value, metric.value_type)                                                                                                                                                                                                                                      
+  6       metric_point = MetricPoint(value / factor,                                                                                                                                                                                                                                                               
+  7                                  point.interval.start_time.timestamp(),                                                                                                                                                                                                                                        
+  8                                  point.interval.end_time.timestamp())                                                                                                                                                                                                                                          
+  9                                                                                                                                                                                                                                                                                                                
+ 10       metric_point_list.append(metric_point)                                                                                                                                                                                                                                                                   
+ 11   metric_point_list.reverse()                                                                                                                                                                                                                                                                                  
+ 12   return metric_point_list                                                                                                                                                                                                                                                                                     
+ 13                                                                                                                                                                                                                                                                                                             perfmetrics/scripts/vm_metrics/vm_metrics_test.py:310:  def test_get_metrics_for_cpu_utilization_mean(self, mock_get_api_response):
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:312:        'mean_cpu_utilization_response')
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:315:    cpu_uti_mean_data = self.vm_metrics_obj._get_metrics(TEST_START_TIME_SEC,
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:317:                                                    TEST_INSTANCE, TEST_PERIOD, CPU_UTI_MEAN)
+perfmetrics/scripts/vm_metrics/vm_metrics_test.py:319:    self.assertEqual(cpu_uti_mean_data, EXPECTED_CPU_UTI_MEAN_DATA)
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ grep -irn mem perfmetrics/scripts/vm_metrics/*
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ which anamnesis
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ sudo apt-get install -y anamnesis                                                 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package anamnesis
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ ....
+gargnitin@gargnitin:~/work/cloud/storage/client$ ....
+gargnitin@gargnitin:~/work$ ls
+cloud  gcsfuse  src  study
+gargnitin@gargnitin:~/work$ curl -sSL https://github.com/Slackadays/Clipboard/raw/main/install.sh | sh
+Skippy Security Tip: It seems that you are trying to run a script directly from an external source.
+Suggestion: Do not execute untrusted shell scripts, regardless of whether they are served over https or not. Preferred installation is via signed packages.
+More info: http://go/roole/curl_pipe_sh.md
+Do you still want to execute this command? [y/n]n
+gargnitin@gargnitin:~/work$ ls   
+cloud  gcsfuse  src  study
+gargnitin@gargnitin:~/work$ curl -sSL https://github.com/Slackadays/Clipboard/raw/main/install.sh > install_clipboard.sh                                
+gargnitin@gargnitin:~/work$ vi install_clipboard.sh 
+gargnitin@gargnitin:~/work$ sudo apt-get install -y clipboard
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package clipboard
+gargnitin@gargnitin:~/work$ brew install clipboard
+Command brew not found
+gargnitin@gargnitin:~/work$ sudo apt-get install -y brew                                                                                                
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package brew
+gargnitin@gargnitin:~/work$ sudo apt-get install -y br  
+br2684ctl                         breakglass-enroll                 brightnessctl-dbgsym              brotli-dbgsym
+br2684ctl-dbgsym                  breathe-doc                       brightness-udev                   brotli-rs
+braa                              brebis                            briquolo                          brotli-rs-dbgsym
+braa-dbgsym                       breeze                            briquolo-data                     brp-pacu
+brag                              breeze-cursor-theme               briquolo-dbgsym                   brp-pacu-dbgsym
+braillefont                       breeze-dbgsym                     bristol                           brutalchess
+braillefont-dbgsym                breeze-dev                        bristol-data                      brutalchess-dbgsym
+braillegraph                      breeze-gtk-theme                  bristol-dbgsym                    brutefir
+brailleutils                      breeze-icon-theme                 brltty                            brutefir-dbgsym
+brain2mesh-demos                  breeze-icon-theme-rcc             brltty-dbgsym                     bruteforce-luks
+brainparty                        brewtarget                        brltty-espeak                     bruteforce-luks-dbgsym
+brainparty-data                   brewtarget-dbgsym                 brltty-espeak-dbgsym              bruteforce-salted-openssl
+brainparty-dbgsym                 brickos                           brltty-flite                      bruteforce-salted-openssl-dbgsym
+brandy                            brickos-dbgsym                    brltty-flite-dbgsym               bruteforce-wallet
+brandy-dbgsym                     brickos-doc                       brltty-speechd                    bruteforce-wallet-dbgsym
+brasero                           bridge-utils                      brltty-speechd-dbgsym             brutespray
+brasero-cdrkit                    bridge-utils-dbgsym               brltty-x11                        brz
+brasero-cdrkit-dbgsym             brig                              brltty-x11-dbgsym                 brz-debian
+brasero-common                    brightd                           bro-aux                           brz-doc
+brasero-dbgsym                    brightd-dbgsym                    bro-aux-dbgsym                    
+brazilian-conjugate               brightnessctl                     brotli                            
+gargnitin@gargnitin:~/work$ sudo apt-get install -y bre
+breakglass-enroll      brebis                 breeze-cursor-theme    breeze-dev             breeze-icon-theme      brewtarget
+breathe-doc            breeze                 breeze-dbgsym          breeze-gtk-theme       breeze-icon-theme-rcc  brewtarget-dbgsym
+gargnitin@gargnitin:~/work$ sudo apt-get install -y bre
+breakglass-enroll      brebis                 breeze-cursor-theme    breeze-dev             breeze-icon-theme      brewtarget
+breathe-doc            breeze                 breeze-dbgsym          breeze-gtk-theme       breeze-icon-theme-rcc  brewtarget-dbgsym
+gargnitin@gargnitin:~/work$ sudo apt-get install -y brewtarget
+brewtarget         brewtarget-dbgsym  
+gargnitin@gargnitin:~/work$ src                               
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi compute.googleapis.com/instance/cpu/utilization
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi perfmetrics/scripts/vm_metrics/testdata/mean_cpu_utilization_response.json
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi perfmetrics/scripts/vm_metrics/vm_metrics                                 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ vi perfmetrics/scripts/vm_metrics/vm_metrics.py 
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$                                                                                
+If you do not reboot now, your system will reboot automatically                
+at Fri May 17 02:52:10 UTC 2024. For more info, see go/glinux-reboot-policy.   
+To reboot your computer 10 hours from now, on the command line run:            
+echo systemctl reboot | at now + 10 hours                                      
+Also you may have a pending maintenance. See go/cloudtop-faq#cloudtop-maintenan
+ce-scheduler                                                                   
+To run maintenance in 10 hours run:                                            
+ctop self maintenance schedule in 10h
+                                                                               
+gargnitin@gargnitin:~/work/cloud/storage/client/gcsfuse/src/gcsfuse$ 
