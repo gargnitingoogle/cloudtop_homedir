@@ -74,7 +74,8 @@ au FileType sh,make nnoremap <buffer> <C-c><C-c> <Esc>^i# <Esc><Down>
 " Add shortcuts to uncomment lines
 au FileType go,c,cpp,sh,make,vimrc nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
 " Delete line on Ctrl-d
-:noremap <C-d> dd
+:nnoremap <C-d> dd
+:inoremap <C-d> <Esc>ddi
 " Undo on Ctrl-z
 :noremap <C-z> u
 " Redo on Ctrl-y
