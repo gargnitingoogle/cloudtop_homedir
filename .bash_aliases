@@ -242,6 +242,13 @@ function gcsfuseSrcAliases() {
 	#alias encoding='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-08-gzip-support'
         alias lsbuckets='gsutil ls gs:// | grep gargnitin | rev | cut -f2 -d/ | rev'
         alias lsvm='gcloud compute instances list | grep ${USER}'
+
+        #gcsfuse unit test runs - TODO: move to a different function
+        alias runFsTest='go test -v -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs'
+        alias debugFsTest='cd internal/fs && dlv test -- -test.v -test.run ^TestFS$ && cd -'
+
+        #gcsfuse integration test runs
+        alias runIntegrationTestTestListDirectoryRecursively='cd tools/integration_tests/operations/ && GODEBUG=asyncpreemptoff=1 dlv test . --  -test.parallel 1 -test.v -integrationTest --mountedDirectory=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount2 --testbucket=gargnitin-gcsfuse-integration-tests-playground -test.run TestListDirectoryRecursively && cd -'
 }
 
 function unmountGcsfuse() {
