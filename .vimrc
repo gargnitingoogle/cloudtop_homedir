@@ -30,6 +30,9 @@ augroup remember_folds
   au BufWinEnter * silent! loadview
 augroup END
 
+" trigger autoread when changing buffers inside while inside vim:
+au FocusGained,BufEnter * :checktime
+
 " show line numbers
 se nu
 " show relative line numbers
@@ -62,8 +65,8 @@ set mouse=a
 set autochdir
 " highlight current line
 set cursorline
-" Wrap lines after x chars.
-set tw=80
+" " Wrap lines after x chars.
+" set tw=80
 " Add shortcuts to comment out lines
 au FileType go,c,cpp nnoremap <buffer> <C-c><C-c> <Esc>^i//<Esc><Down>
 au FileType sh,make nnoremap <buffer> <C-c><C-c> <Esc>^i# <Esc><Down>
