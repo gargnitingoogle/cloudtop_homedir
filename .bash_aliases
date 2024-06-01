@@ -244,6 +244,7 @@ function gcsfuseSrcAliases() {
         alias lsvm='gcloud compute instances list | grep ${USER}'
 
         #gcsfuse unit test runs - TODO: move to a different function
+        alias runAllUnitTests='go test ./... -timeout 10m'
         alias runFsTest='go test -v -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs'
         alias debugFsTest='cd internal/fs && dlv test -- -test.v -test.run ^TestFS$ && cd -'
 
