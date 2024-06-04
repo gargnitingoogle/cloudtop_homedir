@@ -250,6 +250,7 @@ function gcsfuseSrcAliases() {
 
         #gcsfuse integration test runs
         alias runIntegrationTestTestListDirectoryRecursively='cd tools/integration_tests/operations/ && GODEBUG=asyncpreemptoff=1 dlv test . --  -test.parallel 1 -test.v -integrationTest --mountedDirectory=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount2 --testbucket=gargnitin-gcsfuse-integration-tests-playground -test.run TestListDirectoryRecursively && cd -'
+        alias runIntegrationTestCurDir='GODEBUG=asyncpreemptoff=1 go test . -test.parallel 1 --integrationTest -test.v  --testbucket=$bucket'
 }
 
 function unmountGcsfuse() {
