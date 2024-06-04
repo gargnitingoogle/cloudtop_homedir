@@ -41,7 +41,7 @@ se relativenumber
 set hlsearch
 " Enable syntax highlighting
 syntax on
-
+   
 " set color-scheme
 colorscheme habamax
 
@@ -55,6 +55,10 @@ set listchars=tab:>-
 " noremap <Leader><Tab><Tab> :set invlist<CR>
 " enable mouse in all modes
 set mouse=a
+:nnoremap M :set mouse=a<CR> 
+:nnoremap m :set mouse=<CR> 
+:inoremap M <Esc>:set mouse=a<CR><Esc>i 
+:inoremap m <Esc>:set mouse=<CR><Esc>i 
 "set formatoptions=croqlj
 "set ruler
 "set number
