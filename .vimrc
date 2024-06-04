@@ -57,8 +57,6 @@ set listchars=tab:>-
 set mouse=a
 :nnoremap M :set mouse=a<CR> 
 :nnoremap m :set mouse=<CR> 
-:inoremap M <Esc>:set mouse=a<CR><Esc>i 
-:inoremap m <Esc>:set mouse=<CR><Esc>i 
 "set formatoptions=croqlj
 "set ruler
 "set number
