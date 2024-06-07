@@ -243,14 +243,26 @@ function gcsfuseSrcAliases() {
         alias lsbuckets='gsutil ls gs:// | grep gargnitin | rev | cut -f2 -d/ | rev'
         alias lsvm='gcloud compute instances list | grep ${USER}'
 
-        #gcsfuse unit test runs - TODO: move to a different function
+        #gcsfuse unit test runs - TODO: move to a different function/file
         alias runAllUnitTests='go test ./... -timeout 10m'
-        alias runFsTest='go test -v -timeout 30s -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs'
-        alias debugFsTest='cd internal/fs && dlv test -- -test.v -test.run ^TestFS$ && cd -'
+        # unitTestOptions='-v -timeout 30s'
+        unitTestOptions='-timeout 30s'
+        # unitTestOptions='-v -timeout 5m'
+        alias runFsTest='go test $unitTestOptions -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs'
+        alias runBucketHandleUnitTests='go test $unitTestOptions -run ^TestBucketHandleTestSuite$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage'
+        alias runBucketUnitTests='go test $unitTestOptions -run ^TestBucket$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage/fake'
+        alias runAppendObjectCreatorUnitTests='go test $unitTestOptions -run ^TestAppendObjectCreator$ github.com/googlecloudplatform/gcsfuse/v2/internal/gcsx' 
+        alias runUtilUnitTests='go test $unitTestOptions -run ^TestUtilSuite$ github.com/googlecloudplatform/gcsfuse/v2/internal/util' 
+        alias debugBucketUnitTests='cd internal/storage/fake && dlv test . -- -test.v -test.run ^TestBucket$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage/fake ; cd -'
+        alias debugFsTest='cd internal/fs && dlv test -- -test.v -test.run ^TestFS$ ; cd -'
 
         #gcsfuse integration test runs
-        alias runIntegrationTestTestListDirectoryRecursively='cd tools/integration_tests/operations/ && GODEBUG=asyncpreemptoff=1 dlv test . --  -test.parallel 1 -test.v -integrationTest --mountedDirectory=/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/test_buckets/gargnitin-gcsfuse-integration-tests-playground-mount2 --testbucket=gargnitin-gcsfuse-integration-tests-playground -test.run TestListDirectoryRecursively && cd -'
-        alias runIntegrationTestCurDir='GODEBUG=asyncpreemptoff=1 go test . -test.parallel 1 --integrationTest -test.v  --testbucket=$bucket'
+        alias runIntegrationTestCurDir='GODEBUG=asyncpreemptoff=1 go test . -test.parallel 1 --integrationTest -test.v -testbucket=$bucket -mountedDirectory=$mountpath'
+        alias runIntegrationTestListDirectoryRecursively='cd tools/integration_tests/operations/ && runIntegrationTestCurDir -test.run TestListDirectoryRecursively ; cd -'
+        alias runIntegrationTestListImplicitObjectsFromBucket='cd tools/integration_tests/implicit_dir && runIntegrationTestCurDir -test.run TestListImplicitObjectsFromBucket ; cd -'
+        alias debugIntegrationTestCurDir='GODEBUG=asyncpreemptoff=1 dlv test . -- -test.parallel 1 --integrationTest -test.v -testbucket=$bucket -mountedDirectory=$mountpath'
+        alias debugIntegrationTestListDirectoryRecursively='cd tools/integration_tests/operations/ && debugIntegrationTestCurDir -test.run TestListDirectoryRecursively ; cd -'
+        alias debugIntegrationTestListImplicitObjectsFromBucket='cd tools/integration_tests/implicit_dir && debugIntegrationTestCurDir -test.run TestListImplicitObjectsFromBucket -mountedDirectory=$mountpath -testbucket=$bucket ; cd -'
 }
 
 function unmountGcsfuse() {
