@@ -109,28 +109,23 @@ au FileType go,c,cpp,sh,make,vimrc nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
 nnoremap <C-o> <Esc>:tabe  
 
 " code navigation
-" Go to definition
+" Go to definition of symbol under cursor using gd or F12
 :nnoremap <> gd 
-" Shortcut for navigate back
+:nnoremap <F12> gd 
+" Navigate forward/back using Alt-Right/Left
 :noremap <M-Left> <C-o>
-" Shortcut for navigate forward
 :noremap <M-Right> <C-i>
-" Go to Next/previous functions
+
+" Go to Next/previous functions using Ctrl-Down and Ctrl-Up
 " Go to next function
-au FileType go nnoremap <buffer> <C-Down> <Esc>:/^\<func\><CR><Esc>:noh<CR>
-" Go to prev function
-au FileType go nnoremap <buffer> <C-Up> <Esc>:?^\<func\><CR><Esc>:noh<CR>
-" Go to next function
+au FileType go nnoremap <buffer> <C-Down> <Esc>:/^\<func\]c><CR><Esc>:noh<CR>
 au FileType python nnoremap <buffer> <C-Down> <Esc>:/^\<def\><CR><Esc>:noh<CR>
-" Go to prev function
-au FileType python nnoremap <buffer> <C-Up> <Esc>:?^\<def\><CR><Esc>:noh<CR>
-" Go to next function
 au FileType sh nnoremap <buffer> <C-Down> <Esc>:/^\<function\><CR><Esc>:noh<CR>
-" Go to prev function
-au FileType sh nnoremap <buffer> <C-Up> <Esc>:?^\<function\><CR><Esc>:noh<CR>
-" Go to next function
 au FileType c,cpp,java nnoremap <buffer> <C-Down> <Esc>:/^[a-zA-Z]<CR><Esc>:noh<CR>
 " Go to prev function
+au FileType go nnoremap <buffer> <C-Up> <Esc>:?^\<func\><CR><Esc>:noh<CR>
+au FileType python nnoremap <buffer> <C-Up> <Esc>:?^\<def\><CR><Esc>:noh<CR>
+au FileType sh nnoremap <buffer> <C-Up> <Esc>:?^\<function\><CR><Esc>:noh<CR>
 au FileType c,cpp,java nnoremap <buffer> <C-Up> <Esc>:?^[a-zA-Z]<CR><Esc>:noh<CR>
 
 " insert a newline on pressing br
