@@ -33,10 +33,15 @@ augroup END
 " trigger autoread when changing buffers inside while inside vim:
 au FocusGained,BufEnter * :checktime
 
-" show line numbers
+" show line numbers by default
 se nu
-" show relative line numbers
-se relativenumber
+" show/hide line numbers on ll
+:nnoremap ll :se invnumber<CR>
+" " show relative line numbers by default
+" se relativenumber
+" " Go to line number using Ctrl-g
+" :nnoremap <C-g> :
+" :inoremap <C-g> <Esc>:
 " highlight search results
 set hlsearch
 " Enable syntax highlighting
