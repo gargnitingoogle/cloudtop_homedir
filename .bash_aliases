@@ -19,6 +19,7 @@ function genericAliases() {
         alias runubuntucontainer='docker run --rm -it --entrypoint /bin/bash ubuntu'
         alias rungocontainer='docker run -it --rm --entrypoint /bin/bash golang'
         alias study='mkdir -p $HOME/work/study && cd $HOME/work/study'
+        alias tmx='tmux'
 }
 
 genericAliases

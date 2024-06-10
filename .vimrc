@@ -52,22 +52,26 @@ colorscheme habamax
 
 " do not wrap search back to head of file
 set nowrapscan
-" " auto reload file
-" set autoread
+" auto reload file
+set autoread
 " show tabs and whitespaces
 set list
 set listchars=tab:>-
 " noremap <Leader><Tab><Tab> :set invlist<CR>
+
 " enable mouse in all modes
 set mouse=a
+" disable mouse-mode with 'm' and re-enable with 'M'
 :nnoremap M :set mouse=a<CR> 
 :nnoremap m :set mouse=<CR> 
+
 "set formatoptions=croqlj
 "set ruler
 "set number
 " set background=dark
 "highlight default link TrailingWhitespace Error 
 " set paste
+
 " change currentdir to directory of current file.
 set autochdir
 " highlight current line
@@ -109,9 +113,8 @@ au FileType go,c,cpp,sh,make,vimrc nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
 nnoremap <C-o> <Esc>:tabe  
 
 " code navigation
-" Go to definition of symbol under cursor using gd or F12
+" Go to definition of symbol under cursor using gd
 :nnoremap <> gd 
-:nnoremap <F12> gd 
 " Navigate forward/back using Alt-Right/Left
 :noremap <M-Left> <C-o>
 :noremap <M-Right> <C-i>
