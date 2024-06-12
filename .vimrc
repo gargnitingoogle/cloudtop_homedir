@@ -94,8 +94,8 @@ au FileType go,c,cpp,sh,make,vimrc nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
 " Find in file\
 :nnoremap <C-f> <Esc>:/
 
-" Shortcut to discard everything and close all files on Ctrl+q 
-:noremap <C-q> <Esc>:qa<CR>
+" Shortcut to discard everything and close current tab on Ctrl+q 
+:nnoremap <C-q> <Esc>:q<CR>
 "Short cut to save the file on Ctrl+s
 :inoremap <C-s> <Esc>:w<CR>i
 :nnoremap <C-s> <Esc>:w<CR>
@@ -121,7 +121,7 @@ nnoremap <C-o> <Esc>:tabe
 
 " Go to Next/previous functions using Ctrl-Down and Ctrl-Up
 " Go to next function
-au FileType go nnoremap <buffer> <C-Down> <Esc>:/^\<func\]c><CR><Esc>:noh<CR>
+au FileType go nnoremap <buffer> <C-Down> <Esc>:/^\<func\><CR><Esc>:noh<CR>
 au FileType python nnoremap <buffer> <C-Down> <Esc>:/^\<def\><CR><Esc>:noh<CR>
 au FileType sh nnoremap <buffer> <C-Down> <Esc>:/^\<function\><CR><Esc>:noh<CR>
 au FileType c,cpp,java nnoremap <buffer> <C-Down> <Esc>:/^[a-zA-Z]<CR><Esc>:noh<CR>
