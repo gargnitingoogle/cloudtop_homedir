@@ -80,10 +80,14 @@ set cursorline
 " set tw=80
 " Add shortcuts to comment out lines
 au FileType go,c,cpp nnoremap <buffer> <C-c><C-c> <Esc>^i//<Esc><Down>
+"au FileType go,c,cpp nnoremap <buffer> <C-_> <Esc>^i//<Esc><Down>
 au FileType sh,make nnoremap <buffer> <C-c><C-c> <Esc>^i# <Esc><Down>
-"au FileType vimrc nnoremap <buffer> <C-c><C-c> <Esc>^i" <Esc><Down>
+"au FileType vim nnoremap <buffer> <C-c><C-c> <Esc>^i" <Esc<Down>
 " Add shortcuts to uncomment lines
-au FileType go,c,cpp,sh,make,vimrc nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
+au FileType go,c,cpp,sh,make nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
+"au FileType vim nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
+"au FileType go,c,cpp,sh,make nnoremap <buffer> <C-_><C-_> <Esc>^xx<Down>
+"au FileType vim nnoremap <buffer> <C-_><C-_> <Esc>^xx<Down>
 " Delete line on Ctrl-d
 :nnoremap <C-d> dd
 :inoremap <C-d> <Esc>ddi
