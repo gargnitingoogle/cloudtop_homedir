@@ -31,6 +31,15 @@ l40=log --oneline --decorate=full -40
 l45=log --oneline --decorate=full -45
 l50=log --oneline --decorate=full -50
 l5=log --oneline --decorate=full -5
+l55=log --oneline --decorate=full -55
+l60=log --oneline --decorate=full -60
+l65=log --oneline --decorate=full -65
+l70=log --oneline --decorate=full -70
+l75=log --oneline --decorate=full -75
+l80=log --oneline --decorate=full -80
+l90=log --oneline --decorate=full -90
+l100=log --oneline --decorate=full -100
+l120=log --oneline --decorate=full -120
 l=log --oneline --decorate=full -5
 last=log -1 --decorate=full
 loselast=reset --hard HEAD~1
