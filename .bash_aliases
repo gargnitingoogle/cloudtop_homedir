@@ -254,6 +254,7 @@ function gcsfuseSrcAliases() {
         alias runBucketUnitTests='go test $unitTestOptions -run ^TestBucket$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage/fake'
         alias runAppendObjectCreatorUnitTests='go test $unitTestOptions -run ^TestAppendObjectCreator$ github.com/googlecloudplatform/gcsfuse/v2/internal/gcsx' 
         alias runUtilUnitTests='go test $unitTestOptions -run ^TestUtilSuite$ github.com/googlecloudplatform/gcsfuse/v2/internal/util' 
+        alias runDirUnitTests='go test $unitTestOptions -run ^TestDir$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs/inode' 
         alias debugBucketUnitTests='cd internal/storage/fake && dlv test . -- -test.v -test.run ^TestBucket$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage/fake ; cd -'
         alias debugFsTest='cd internal/fs && dlv test -- -test.v -test.run ^TestFS$ ; cd -'
 
