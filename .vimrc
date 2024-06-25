@@ -106,8 +106,8 @@ au FileType go,c,cpp,sh,make nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
 " Go to definition of symbol under cursor using gd
 :nnoremap <> gd 
 " Navigate forward/back using Alt-Right/Left
-:noremap <M-Left> <C-o>
-:noremap <M-Right> <C-i>
+:nnoremap <M-Left> <C-o>
+:nnoremap <M-Right> <C-i>
 " Go to Next/previous functions using Ctrl-Down and Ctrl-Up
 " next function
 au FileType go nnoremap <buffer> <C-Down> <Esc>:/^\<func\><CR><Esc>:noh<CR>
@@ -134,9 +134,10 @@ au FileType c,cpp,java nnoremap <buffer> <C-Up> <Esc>:?^[a-zA-Z]<CR><Esc>:noh<CR
 " Clone current tab with Ctrl+N
 :nnoremap <C-n> <Esc>:tabnew %<CR>
 " Open a new tab with file to pick from same directory, on Ctrl+o
-nnoremap <C-o> <Esc>:tabe .<CR><Esc>
+:nnoremap <C-o> <Esc>:tabe 
 " Press Alt-Up to navigate the parent directory of the current directory.
 :nnoremap <M-up> <Esc>:tabf ..<CR><Esc> 
+:nnoremap <M-down> <Esc>:tabe .<CR><Esc> 
 " Redraw tab bar on gt
 :nnoremap gt gt:redraw<bar>file<cr>
 " Go to next tab with Ctrl+Right-arrow
@@ -145,6 +146,11 @@ nnoremap <C-o> <Esc>:tabe .<CR><Esc>
 :nnoremap <C-Left> <Esc>:tabp<CR><Esc>
 "Go to previous active tab using tt
 :nnoremap tt <Esc>g<Tab>
+
+" Reload file-content on F5
+:nnoremap <F5> <Esc>:e<CR><Esc>
+" Reload vim-config on ff
+:nnoremap ff <Esc>:source ~/.vimrc<CR><Esc>
 
 " Use the 'google' package by default (see http://go/vim/packages).
 source /usr/share/vim/google/google.vim
