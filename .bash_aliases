@@ -179,6 +179,25 @@ function installGoVersion ()
     wget -O go_tar.tar.gz https://go.dev/dl/go${version}.linux-amd64.tar.gz && sudo rm -rf /usr/local/go && tar -xzf go_tar.tar.gz && sudo mv go /usr/local && export PATH=$PATH:/usr/local/go/bin && go version
 }
 
+function listAllContainers() {
+  if [ $# -lt 1 ] ; then
+    >2 echo "expected at least one input (pod-name)"
+    exit 1
+  fi
+  local podname=$1
+  shift 1
+  kubectl get pods ${podname} -o jsonpath='{.spec.containers[*].name}'  "$@"
+  echo ""
+}
+
+function listAllPods() {
+  kubectl get pods --namespace=default "$@"
+}
+
+function deleteAllPods() {
+  kubectl get pods "$@" | tail -n +2 | cut -d' ' -f1 | while read podname ; do kubectl delete pod/$podname "$@" ; done
+}
+
 function transferApplianceAliases() {
 	# appliance OS
 	alias buildimaedgeForVm='blaze run //cloud/transfer/appliance/offline/zimbrage:zim_build -- --b_liv=false --b_zim=false --b_cld=true --env=dev --os=imaedge --bucket=$USER-bucket'
