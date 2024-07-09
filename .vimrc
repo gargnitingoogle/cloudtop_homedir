@@ -152,6 +152,9 @@ au FileType c,cpp,java nnoremap <buffer> <C-Up> <Esc>:?^[a-zA-Z]<CR><Esc>:noh<CR
 " Reload vim-config on ff
 :nnoremap ff <Esc>:source ~/.vimrc<CR><Esc>
 
+" Copy to the other side in a diff window using Ctrl+Shift+R
+:nnoremap <C-S-R> yy<C-W><C-W>Pjddk<C-W><C-W><Esc>
+
 " Use the 'google' package by default (see http://go/vim/packages).
 source /usr/share/vim/google/google.vim
 " Glug g4
