@@ -182,7 +182,7 @@ function installGoVersion ()
 function listAllContainers() {
   if [ $# -lt 1 ] ; then
     >2 echo "expected at least one input (pod-name)"
-    exit 1
+    return 1
   fi
   local podname=$1
   shift 1
@@ -249,6 +249,54 @@ function transferApplianceAliases() {
 
 # transferApplianceAliases
 
+function mkbucket() {
+  if [ $# -lt 2 ] ; then
+    echo "Not enough arguments for mkbucket. expected arguments:\
+      \$1: bucket-name e.g. ${USER}-test-bucket
+      \$2: location e.g. us-central1 or us or asia-southeast1 \
+      "
+      return 1
+  fi
+
+  local bucket=$1
+  local location=$2
+  shift 2
+  gcloud storage buckets create gs://$bucket --location=$location "$@"
+}
+
+function rmbucket() {
+  if [ $# -lt 1 ] ; then
+    echo "Too few arguments for rmbucket. expected arguments: [-y|-n] bucket-name"
+    return 1
+  fi
+
+  if [ "$1" = "-n" ] ; then
+    #echo "skipping because of -n"
+    return 0
+  elif [ "$1" != "-y" ] ; then
+    local bucket="$1"
+    # prompting for confirmation
+    read -p "Do you really want to delete the bucket \"${bucket}\" (y)Yes/(n)No [Default: No]:- " choice
+
+    # giving choices there tasks using
+    case $choice in
+        [yY]* ) echo "Going ahead with deleting \"${bucket}\" ..." ;;
+        [nN]* ) echo "Cancelling deletion of \"${bucket}\"" ; return 0 ;;
+        *) echo "No confirmation received, so cancelling deletion." ;;
+    esac
+  else
+    shift 1
+    local bucket="$1"
+  fi
+
+  if  [ -z "$bucket" ] ; then
+    echo "no bucket-name passed"
+    return 1
+  fi
+
+  gcloud storage buckets delete gs://${bucket}
+}
+
 function gcsfuseSrcAliases() {
         export gcsfuse_src_dir=~/work/cloud/storage/client/gcsfuse/src/gcsfuse
         export gcsfuse_src2_dir=~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
@@ -264,6 +312,7 @@ function gcsfuseSrcAliases() {
         alias lsallbuckets='gcloud storage ls gs:// | rev | cut -f2 -d/ | rev'
         alias lsvm='gcloud compute instances list | grep ${USER}'
         alias lsallvm='gcloud compute instances list'
+        alias lsIamStorageRoles='gcloud iam roles list | egrep '"'"'^name: roles/storage\\..*'"'"''
 
         #gcsfuse unit test runs - TODO: move to a different function/file
         alias runAllUnitTests='go test ./... -timeout 10m'
