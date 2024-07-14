@@ -297,10 +297,28 @@ function rmbucket() {
   gcloud storage buckets delete gs://${bucket}
 }
 
+function lsbuckets() {
+  gcloud storage ls "$@" | grep $USER | rev | cut -f2 -d/ | rev
+}
+
+function lsallbuckets() {
+  gcloud storage ls "$@" | rev | cut -f2 -d/ | rev
+}
+
+function lsvm() {
+  gcloud compute instances list "$@" | grep ${USER}
+}
+
+function lsallvm() {
+  gcloud compute instances list "$@"
+}
+
 function gcsfuseSrcAliases() {
         export gcsfuse_src_dir=~/work/cloud/storage/client/gcsfuse/src/gcsfuse
+        export csi_src_dir=~/work/cloud/storage/client/gcsfuse/src/gcs-fuse-csi-driver
         export gcsfuse_src2_dir=~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
         alias src='cd ${gcsfuse_src_dir}'
+        alias csi='cd ${csi_src_dir}'
         alias src2='cd ${gcsfuse_src2_dir}'
         alias lsfusemnts='cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2'
 #        alias lsfusemnts='echo From df command: ; df -h --output=source,fstype,target | grep '"'"'gcsfuse\|Mounted'"'"' ; echo . ; echo From /etc/mtab:  ;  cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2 '
@@ -308,10 +326,6 @@ function gcsfuseSrcAliases() {
         alias work='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks'
         #alias golang='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-golang1.20.5'
         #alias encoding='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-08-gzip-support'
-        alias lsbuckets='gcloud storage ls gs:// | grep $USER | rev | cut -f2 -d/ | rev'
-        alias lsallbuckets='gcloud storage ls gs:// | rev | cut -f2 -d/ | rev'
-        alias lsvm='gcloud compute instances list | grep ${USER}'
-        alias lsallvm='gcloud compute instances list'
         alias lsIamStorageRoles='gcloud iam roles list | egrep '"'"'^name: roles/storage\\..*'"'"''
 
         #gcsfuse unit test runs - TODO: move to a different function/file
@@ -338,16 +352,11 @@ function gcsfuseSrcAliases() {
 }
 
 function unmountGcsfuse() {
-#	set -e
 	if [[ $# -ne 1 ]]; then
 		echo "unmountGcsfuse: expected 1 input: <gcsfuse-mount-path-to-be-unmounted>"
 		return 1
 	fi
 	mntpath=$1
-#	if [ ! -d "$mntpath" ] ; then
-#		echo "unmountGcsfuse: passed argument \'"${mntpath}"\' is not a directory"
-#		return 1
-#	fi
 	echo "Unmounting gcsfuse mount "${mntpath}" ..."
 	fusermount -uz $mntpath
 	echo "... Unmounted "${mntpath}
@@ -413,7 +422,6 @@ function gcsfuseTestAliases() {
 	alias unloadfusedynamic='unmountGcsfuse  $dynamicmountpath'
 
 	alias gcsdescribe='gcloud storage objects describe'
-	#alias gcscp='gcloud storage cp'
 }
 
 gcsfuseSrcAliases
