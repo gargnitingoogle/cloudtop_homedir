@@ -46,7 +46,7 @@ se nu
 set hlsearch
 " Enable syntax highlighting
 syntax on
-   
+
 " set color-scheme
 colorscheme habamax
 
@@ -62,14 +62,14 @@ set listchars=tab:>-
 " enable mouse in all modes
 set mouse=a
 " disable mouse-mode with 'm' and re-enable with 'M'
-:nnoremap M :set mouse=a<CR> 
-:nnoremap m :set mouse=<CR> 
+:nnoremap M :set mouse=a<CR>
+:nnoremap m :set mouse=<CR>
 
 "set formatoptions=croqlj
 "set ruler
 "set number
 " set background=dark
-"highlight default link TrailingWhitespace Error 
+"highlight default link TrailingWhitespace Error
 " set paste
 
 " change currentdir to directory of current file.
@@ -79,12 +79,12 @@ set cursorline
 " " Wrap lines after x chars.
 " set tw=80
 " Add shortcuts to comment out lines
-au FileType go,c,cpp nnoremap <buffer> <C-c><C-c> <Esc>^i//<Esc><Down>
+au FileType go,c,cpp,java,javascript nnoremap <buffer> <C-c><C-c> <Esc>^i//<Esc><Down>
 "au FileType go,c,cpp nnoremap <buffer> <C-_> <Esc>^i//<Esc><Down>
-au FileType sh,make nnoremap <buffer> <C-c><C-c> <Esc>^i# <Esc><Down>
+au FileType sh,make,python,java,javascript nnoremap <buffer> <C-c><C-c> <Esc>^i# <Esc><Down>
 "au FileType vim nnoremap <buffer> <C-c><C-c> <Esc>^i" <Esc<Down>
 " Add shortcuts to uncomment lines
-au FileType go,c,cpp,sh,make nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
+au FileType go,c,cpp,sh,make,python nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
 "au FileType vim nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
 "au FileType go,c,cpp,sh,make nnoremap <buffer> <C-_><C-_> <Esc>^xx<Down>
 "au FileType vim nnoremap <buffer> <C-_><C-_> <Esc>^xx<Down>
@@ -104,7 +104,7 @@ au FileType go,c,cpp,sh,make nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
 
 " code navigation
 " Go to definition of symbol under cursor using gd
-:nnoremap <> gd 
+:nnoremap <> gd
 " Navigate forward/back using Alt-Right/Left
 :nnoremap <M-Left> <C-o>
 :nnoremap <M-Right> <C-i>
@@ -126,7 +126,7 @@ au FileType c,cpp,java nnoremap <buffer> <C-Up> <Esc>:?^[a-zA-Z]<CR><Esc>:noh<CR
 :nnoremap ,<space> :nohlsearch<cr>
 
 " Tab navigation shortcuts
-" discard everything and close current tab on Ctrl+q 
+" discard everything and close current tab on Ctrl+q
 :nnoremap <C-q> <Esc>:q<CR>
 "Short cut to save the file on Ctrl+s
 :inoremap <C-s> <Esc>:w<CR>i
@@ -134,10 +134,10 @@ au FileType c,cpp,java nnoremap <buffer> <C-Up> <Esc>:?^[a-zA-Z]<CR><Esc>:noh<CR
 " Clone current tab with Ctrl+N
 :nnoremap <C-n> <Esc>:tabnew %<CR>
 " Open a new tab with file to pick from same directory, on Ctrl+o
-:nnoremap <C-o> <Esc>:tabe 
+:nnoremap <C-o> <Esc>:tabe
 " Press Alt-Up to navigate the parent directory of the current directory.
-:nnoremap <M-up> <Esc>:tabf ..<CR><Esc> 
-:nnoremap <M-down> <Esc>:tabe .<CR><Esc> 
+:nnoremap <M-up> <Esc>:tabf ..<CR><Esc>
+:nnoremap <M-down> <Esc>:tabe .<CR><Esc>
 " Redraw tab bar on gt
 :nnoremap gt gt:redraw<bar>file<cr>
 " Go to next tab with Ctrl+Right-arrow
@@ -158,6 +158,13 @@ au FileType c,cpp,java nnoremap <buffer> <C-Up> <Esc>:?^[a-zA-Z]<CR><Esc>:noh<CR
 " highlight trailing spaces
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :match ExtraWhitespace /\s\+$/
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+command! TrimWhitespace call TrimWhitespace()
 
 " Use the 'google' package by default (see http://go/vim/packages).
 source /usr/share/vim/google/google.vim
