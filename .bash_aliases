@@ -22,6 +22,19 @@ function genericAliases() {
         alias tmx='tmux'
 }
 
+function showLastNGitCommits() {
+  local n=${1}
+  for i in $(seq $((n-1)) -1 0 ) ; do
+    git log -1 HEAD~$i --name-only \
+      && sleep 5 \
+      && git vimdiff HEAD~$((i+1))..HEAD~$i
+  done
+}
+
+function showUncommittedGitChanges() {
+  git diff --name-only HEAD && sleep 2 && git vimdiff HEAD
+}
+
 genericAliases
 
 function openConfigFile() {
