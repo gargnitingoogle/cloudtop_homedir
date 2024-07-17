@@ -30,9 +30,9 @@ function diffDirs() {
   fi
 
   local dir1="$1"
-  if [ ! -d "$dir1" ] ; then echo $dir1" does not exist" ; return 1 ; fi
+  if [ ! -d "$dir1" ] ; then echo "Directory "$dir1" does not exist" ; return 1 ; fi
   local dir2="$2"
-  if [ ! -d "$dir2" ] ; then echo $dir2" does not exist" ; return 1 ; fi
+  if [ ! -d "$dir2" ] ; then echo "Directory "$dir2" does not exist" ; return 1 ; fi
   echo "Comparing "$dir1" and "$dir2" ..." && \
 
   diff -qr "${dir1}" "${dir2}" | \
