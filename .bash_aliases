@@ -183,6 +183,35 @@ function gcestart() {
   startvm "$vmname" "$zone" "$projectname" "${@:3}"
 }
 
+function rmvm() {
+  if [ $# -lt 3 ]
+  then
+    echo "${FUNCNAME[0]} needs exactly 3 arguments: <vm-name> <gcp-zone> <gcp-project-id>"
+    return 1
+  fi
+
+  projectname=$3
+  zone=$2
+  vmname=$1
+
+  gcloud compute instances delete "$vmname" --project="$projectname" --zone="$zone"
+}
+
+function gcerm() {
+  projectname=gcs-fuse-test
+
+  if [ $# -lt 2 ]
+  then
+    echo "${FUNCNAME[0]} needs exactly 2 arguments: <vm-name> <gcp-zone>. It sets project name as $projectname" "${@:3}"
+    return 1
+  fi
+
+  zone=$2
+  vmname=$1
+
+  rmvm "$vmname" "$zone" "$projectname" "${@:3}"
+}
+
 function describevm() {
   if [ $# -lt 3 ]
   then
