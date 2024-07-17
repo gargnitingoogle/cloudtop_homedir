@@ -37,6 +37,14 @@ function showUncommittedGitChanges() {
 
 genericAliases
 
+function shpool-ssh () {
+    if [ $# -ne 2 ] ; then
+        echo "usage: shpool-ssh <remote-machine> <session-name>" >&2
+        return 1
+    fi
+    ssh -t "-oRemoteCommand=shpool attach -f $2" "$1"
+}
+
 function openConfigFile() {
 	alias aliases='vi ~/.bash_aliases && source ~/.bash_aliases'
 	alias bashrc='vi ~/.bashrc'
