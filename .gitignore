@@ -20,3 +20,5 @@
 !.githooks
 !*.hgrc
 !.tmux.conf
+!*.ssh/config
+
