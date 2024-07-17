@@ -22,6 +22,30 @@ function genericAliases() {
         alias tmx='tmux'
 }
 
+function diffDirs() {
+  if [ $# -ne 2 ] ; then
+    echo "Expected 2 arguments for comparing directories, but got "$#"
+    arguments: "$@""
+    return 1
+  fi
+
+  local dir1="$1"
+  if [ ! -d "$dir1" ] ; then echo $dir1" does not exist" ; return 1 ; fi
+  local dir2="$2"
+  if [ ! -d "$dir2" ] ; then echo $dir2" does not exist" ; return 1 ; fi
+  echo "Comparing "$dir1" and "$dir2" ..." && \
+
+  diff -qr "${dir1}" "${dir2}" | \
+  egrep -i "Files [a-z0-9\.\/\-]+ and [a-z0-9\.\/\-]+ differ" | \
+  cut -d' ' -f2,4 $diffOutput | while read files ; do \
+    f1=""$(echo $files | cut -d' ' -f1) \
+    && f2=""$(echo $files | cut -d' ' -f2) \
+    && echo "Comparing ${f1} and ${f2} ..." \
+    && sleep 2 \
+    && vimdiff $f1 $f2 </dev/tty ; \
+  done
+}
+
 function showLastNGitCommits() {
   local n=${1}
   for i in $(seq $((n-1)) -1 0 ) ; do
