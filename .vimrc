@@ -134,7 +134,7 @@ au FileType c,cpp,java nnoremap <buffer> <C-Up> <Esc>:?^[a-zA-Z]<CR><Esc>:noh<CR
 " Clone current tab with Ctrl+N
 :nnoremap <C-n> <Esc>:tabnew %<CR>
 " Open a new tab with file to pick from same directory, on Ctrl+o
-:nnoremap <C-o> <Esc>:tabe
+:nnoremap <C-o> <Esc>:tabe 
 " Press Alt-Up to navigate the parent directory of the current directory.
 :nnoremap <M-up> <Esc>:tabf ..<CR><Esc>
 :nnoremap <M-down> <Esc>:tabe .<CR><Esc>
@@ -165,6 +165,19 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 command! TrimWhitespace call TrimWhitespace()
+
+" find and replace in visual mode with Ctrl+R
+:vnoremap <C-F> "hy/<C-r>h<CR>
+:vnoremap <C-H> "hy:%s/<C-r>h/<C-r>h/gc<left><left><left>
+
+" :nnoremap <expr> <C-PageDown> &diff ? ']c' : '<C-PageDown>'
+" :nnoremap <expr> <C-PageUp>   &diff ? '[c' : '<C-PageUp>'
+
+" " set mouse+=a
+" if &term =~ '^screen'
+"     " tmux knows the extended mouse mode
+"     set ttymouse=xterm2
+" endif
 
 " Use the 'google' package by default (see http://go/vim/packages).
 source /usr/share/vim/google/google.vim
