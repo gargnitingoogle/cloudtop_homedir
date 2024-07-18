@@ -179,6 +179,9 @@ command! TrimWhitespace call TrimWhitespace()
 "     set ttymouse=xterm2
 " endif
 
+:nnoremap <space> i <Esc>
+:nnoremap <backspace> i<backspace><right><Esc>
+
 " Use the 'google' package by default (see http://go/vim/packages).
 source /usr/share/vim/google/google.vim
 " Glug g4
