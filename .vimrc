@@ -54,6 +54,7 @@ colorscheme habamax
 set nowrapscan
 " auto reload file
 set autoread
+au CursorHold * checktime
 " show tabs and whitespaces
 set list
 set listchars=tab:>-
