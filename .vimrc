@@ -80,14 +80,10 @@ set cursorline
 " set tw=80
 " Add shortcuts to comment out lines
 au FileType go,c,cpp,java,javascript nnoremap <buffer> <C-c><C-c> <Esc>^i//<Esc><Down>
-"au FileType go,c,cpp nnoremap <buffer> <C-_> <Esc>^i//<Esc><Down>
-au FileType sh,make,python,java,javascript nnoremap <buffer> <C-c><C-c> <Esc>^i# <Esc><Down>
-"au FileType vim nnoremap <buffer> <C-c><C-c> <Esc>^i" <Esc<Down>
+au FileType sh,make,python,yaml nnoremap <buffer> <C-c><C-c> <Esc>^i# <Esc><Down>
+au FileType vim nnoremap <buffer> <C-c><C-c> <Esc>^i" <Esc><Down>
 " Add shortcuts to uncomment lines
-au FileType go,c,cpp,sh,make,python nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
-"au FileType vim nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
-"au FileType go,c,cpp,sh,make nnoremap <buffer> <C-_><C-_> <Esc>^xx<Down>
-"au FileType vim nnoremap <buffer> <C-_><C-_> <Esc>^xx<Down>
+au FileType go,c,cpp,sh,make,python,yaml,java,javascript,vim nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
 " Delete line on Ctrl-d
 :nnoremap <C-d> dd
 :inoremap <C-d> <Esc>ddi
@@ -182,6 +178,11 @@ command! TrimWhitespace call TrimWhitespace()
 :nnoremap <space> i <Esc>
 :nnoremap <backspace> i<backspace><right><Esc>
 
+" Replace all $env with ${env}
+" %s/\$\([a-z0-9A-Z]\+\)/${\1}/gc
+" Replace [0-9]+[kmg] to [0-9]+[KMG]
+" %s/\([0-9]\+\)\([kmg]\)/\1\U\2/gc
+
 " Use the 'google' package by default (see http://go/vim/packages).
 source /usr/share/vim/google/google.vim
 " Glug g4
@@ -203,7 +204,8 @@ augroup autoformat_settings
   au FileType textpb AutoFormatBuffer text-proto-format
   au FileType proto AutoFormatBuffer protofmt
   au FileType sql AutoFormatBuffer format_sql
-  au FileType html,css,json AutoFormatBuffer js-beautify
+"  au FileType html,css,json AutoFormatBuffer js-beautify
+  au FileType html,css AutoFormatBuffer js-beautify
 augroup END
 
 Glug whitespace !highlight
