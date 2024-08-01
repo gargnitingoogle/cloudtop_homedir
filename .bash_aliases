@@ -242,16 +242,18 @@ function gcedescribe() {
   describevm "$vmname" "$zone" "$projectname" "${@:3}"
 }
 
-function installGoVersion ()
-{
+function installGoVersion () {
+  echo "Will not override the managed go installation on cloudtop"
+  if false; then
     if [[ $# -lt 1 ]]; then
-        echo "No arguments passed. Pass a go-lang version number e.g. 1.20.4";
-        return 1
+      echo "No arguments passed. Pass a go-lang version number e.g. 1.20.4";
+      return 1
     fi;
 
     version=$1;
     echo "Installing go version "$version" ..."
     wget -O go_tar.tar.gz https://go.dev/dl/go${version}.linux-amd64.tar.gz && sudo rm -rf /usr/local/go && tar -xzf go_tar.tar.gz && sudo mv go /usr/local && export PATH=$PATH:/usr/local/go/bin && go version
+  fi
 }
 
 function listAllContainers() {
