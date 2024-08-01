@@ -24,18 +24,18 @@ function genericAliases() {
 
 function diffDirs() {
   if [ $# -ne 2 ] ; then
-    echo "Expected 2 arguments for comparing directories, but got "$#"
-    arguments: "$@""
+    echo "Expected 2 arguments for comparing directories, but got $# arguments: \"$@\" "
     return 1
   fi
 
   local dir1="$1"
-  if [ ! -d "$dir1" ] ; then echo "Directory "$dir1" does not exist" ; return 1 ; fi
+  [ -d "${dir1}" ] || ( echo "Directory \"${dir1}\" does not exist" ; return 1 ; )
   local dir2="$2"
-  if [ ! -d "$dir2" ] ; then echo "Directory "$dir2" does not exist" ; return 1 ; fi
-  echo "Comparing "$dir1" and "$dir2" ..." && \
+  [ -d "${dir2}" ] || ( echo "Directory \"${dir2}\" does not exist" ; return 1 ; )
 
+  echo "Comparing \"${dir1}\" and \"${dir2}\" ..." && \
   diff -qr "${dir1}" "${dir2}" | \
+
   egrep -i "Files [a-z0-9\.\/\-]+ and [a-z0-9\.\/\-]+ differ" | \
   cut -d' ' -f2,4 $diffOutput | while read files ; do \
     f1=""$(echo $files | cut -d' ' -f1) \
