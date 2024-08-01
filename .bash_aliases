@@ -1,25 +1,26 @@
 function genericAliases() {
-	alias ........='cd ../../../../../../..'
-	alias .......='cd ../../../../../..'
-	alias ......='cd ../../../../..'
-	alias .....='cd ../../../..'
-	alias ....='cd ../../..'
-	alias ...='cd ../..'
-	alias ..='cd ..'
-	alias cls='clear'
-        # alias dlv='~/go/bin/dlv --check-go-version=false --init <(config source-list-line-count 20)'
-        alias dlv='~/go/bin/dlv --check-go-version=false'
-	alias goctl='/google/bin/releases/golinks/goctl/goctl.par'
-	alias htop='htop -u $USER -t'
-	alias install='sudo apt-get -y install'
-	alias l='ls -lah'
-	alias lint='golangci-lint run'
-	alias pstree='pstree -ps'
-	alias tailf='tail -f'
-        alias runubuntucontainer='docker run --rm -it --entrypoint /bin/bash ubuntu'
-        alias rungocontainer='docker run -it --rm --entrypoint /bin/bash golang'
-        alias study='mkdir -p $HOME/work/study && cd $HOME/work/study'
-        alias tmx='tmux'
+  alias ........='cd ../../../../../../..'
+  alias .......='cd ../../../../../..'
+  alias ......='cd ../../../../..'
+  alias .....='cd ../../../..'
+  alias ....='cd ../../..'
+  alias ...='cd ../..'
+  alias ..='cd ..'
+  alias cls='clear'
+  # alias dlv='~/go/bin/dlv --check-go-version=false --init <(config source-list-line-count 20)'
+  alias dlv='~/go/bin/dlv --check-go-version=false'
+  alias goctl='/google/bin/releases/golinks/goctl/goctl.par'
+  alias htop='htop -u $USER -t'
+  alias install='sudo apt-get -y install'
+  alias l='ls -lah'
+  alias lint='golangci-lint run'
+  alias pstree='pstree -ps'
+  alias tailf='tail -f'
+  alias runubuntucontainer='docker run --rm -it --entrypoint /bin/bash ubuntu'
+  alias rungocontainer='docker run -it --rm --entrypoint /bin/bash golang'
+  alias study='mkdir -p $HOME/work/study && cd $HOME/work/study'
+  alias tmx='tmux'
+  alias home='git -C $HOME'
 }
 
 function diffDirs() {
@@ -63,29 +64,29 @@ genericAliases
 
 function shpool-ssh () {
     if [ $# -ne 2 ] ; then
-        echo "usage: shpool-ssh <remote-machine> <session-name>" >&2
-        return 1
+  echo "usage: shpool-ssh <remote-machine> <session-name>" >&2
+  return 1
     fi
     ssh -t "-oRemoteCommand=shpool attach -f $2" "$1"
 }
 
 function openConfigFile() {
-	alias aliases='vi ~/.bash_aliases && source ~/.bash_aliases'
-	alias bashrc='vi ~/.bashrc'
-	alias history='vi ~/.bash_history +:$'
-	alias vimrc='vi ~/.vimrc'
-        alias tmuxconf='vi ~/.tmux.conf && tmux source ~/.tmux.conf'
+  alias aliases='vi ~/.bash_aliases && source ~/.bash_aliases'
+  alias bashrc='vi ~/.bashrc'
+  alias history='vi ~/.bash_history +:$'
+  alias vimrc='vi ~/.vimrc'
+  alias tmuxconf='vi ~/.tmux.conf && tmux source ~/.tmux.conf'
 }
 
 openConfigFile
 
 function gitAliases() {
-	alias gi='git'
-	alias gitconfig='vi ~/.gitconfig'
-	alias gitl='git l'
-	alias gt='git'
-	alias gti='git'
-	alias gtl='git l'
+  alias gi='git'
+  alias gitconfig='vi ~/.gitconfig'
+  alias gitl='git l'
+  alias gt='git'
+  alias gti='git'
+  alias gtl='git l'
 }
 
 gitAliases
@@ -273,52 +274,52 @@ function deleteAllPods() {
 }
 
 function transferApplianceAliases() {
-	# appliance OS
-	alias buildimaedgeForVm='blaze run //cloud/transfer/appliance/offline/zimbrage:zim_build -- --b_liv=false --b_zim=false --b_cld=true --env=dev --os=imaedge --bucket=$USER-bucket'
-	alias buildimaedgeForHw='blaze run //cloud/transfer/appliance/offline/zimbrage:zim_build -- --b_liv=false --b_zim=false --env=dev --os=imaedge --bucket=$USER-bucket'
-	alias buildzimbrageForVm='blaze run //cloud/transfer/appliance/offline/zimbrage:zim_build -- --b_liv=false --b_zim=false --b_cld=true --env=dev --bucket=$USER-bucket'
-	alias buildzimbrageForHw='blaze run //cloud/transfer/appliance/offline/zimbrage:zim_build -- --b_liv=false --b_zim=false --env=dev --bucket=$USER-bucket'
-	# appliance binaries
-	alias buildOnboardBinary='blaze build //cloud/transfer/appliance/offline/external/assembly/appliance_onboard:zimbru_appliance_onboard'
-	alias uploadOnboardBinary='gsutil cp blaze-bin/cloud/transfer/appliance/offline/external/assembly/appliance_onboard/zimbru_appliance_onboard gs://$USER-bucket/appliance_binaries/latest'
-	alias downloadOnboardBinary='mkdir -p /tmp && gsutil cp gs://$USER-bucket/appliance_binaries/latest/zimbru_appliance_onboard /tmp/ && chmod +x /tmp/zimbru_appliance_onboard'
-	alias buildTaBinary='blaze build //cloud/transfer/appliance/offline/external/capture:ta'
-	alias uploadTaBinary='gsutil cp blaze-bin/cloud/transfer/appliance/offline/external/capture/ta gs://$USER-bucket/appliance_binaries/latest'
-	alias downloadTaBinary='gsutil cp gs://$USER-bucket/appliance_binaries/latest/ta /tmp && chmod +x /tmp/ta'
+  # appliance OS
+  alias buildimaedgeForVm='blaze run //cloud/transfer/appliance/offline/zimbrage:zim_build -- --b_liv=false --b_zim=false --b_cld=true --env=dev --os=imaedge --bucket=$USER-bucket'
+  alias buildimaedgeForHw='blaze run //cloud/transfer/appliance/offline/zimbrage:zim_build -- --b_liv=false --b_zim=false --env=dev --os=imaedge --bucket=$USER-bucket'
+  alias buildzimbrageForVm='blaze run //cloud/transfer/appliance/offline/zimbrage:zim_build -- --b_liv=false --b_zim=false --b_cld=true --env=dev --bucket=$USER-bucket'
+  alias buildzimbrageForHw='blaze run //cloud/transfer/appliance/offline/zimbrage:zim_build -- --b_liv=false --b_zim=false --env=dev --bucket=$USER-bucket'
+  # appliance binaries
+  alias buildOnboardBinary='blaze build //cloud/transfer/appliance/offline/external/assembly/appliance_onboard:zimbru_appliance_onboard'
+  alias uploadOnboardBinary='gsutil cp blaze-bin/cloud/transfer/appliance/offline/external/assembly/appliance_onboard/zimbru_appliance_onboard gs://$USER-bucket/appliance_binaries/latest'
+  alias downloadOnboardBinary='mkdir -p /tmp && gsutil cp gs://$USER-bucket/appliance_binaries/latest/zimbru_appliance_onboard /tmp/ && chmod +x /tmp/zimbru_appliance_onboard'
+  alias buildTaBinary='blaze build //cloud/transfer/appliance/offline/external/capture:ta'
+  alias uploadTaBinary='gsutil cp blaze-bin/cloud/transfer/appliance/offline/external/capture/ta gs://$USER-bucket/appliance_binaries/latest'
+  alias downloadTaBinary='gsutil cp gs://$USER-bucket/appliance_binaries/latest/ta /tmp && chmod +x /tmp/ta'
 
-	##helpful commands for nsjaili and strace on transfer appliances
-	#export UBUNTU_CONTAINER_FS='/mnt/ta_local/$USER/ubuntu_expt/ubuntu_container_fs'
-	#alias nsjail='LD_LIBRARY_PATH=$UBUNTU_CONTAINER_FS/usr/lib/x86_64-linux-gnu/ $UBUNTU_CONTAINER_FS/./bin/nsjail'
-	#alias strace='LD_LIBRARY_PATH=$(UBUNTU_CONTAINER_FS)/usr/lib/x86_64-linux-gnu/ $(UBUNTU_CONTAINER_FS)/./usr/bin/strace'
+  ##helpful commands for nsjaili and strace on transfer appliances
+  #export UBUNTU_CONTAINER_FS='/mnt/ta_local/$USER/ubuntu_expt/ubuntu_container_fs'
+  #alias nsjail='LD_LIBRARY_PATH=$UBUNTU_CONTAINER_FS/usr/lib/x86_64-linux-gnu/ $UBUNTU_CONTAINER_FS/./bin/nsjail'
+  #alias strace='LD_LIBRARY_PATH=$(UBUNTU_CONTAINER_FS)/usr/lib/x86_64-linux-gnu/ $(UBUNTU_CONTAINER_FS)/./usr/bin/strace'
 
-	# aliases related to appliances
-	alias svlpxeserver='sshpass -p cdj40mmss330 ssh -D 8080 zimbru@100.127.95.2'
-	alias zeapxeserver='sshpass -p cdj40mmss330 ssh -D 8080 zimbru@100.107.99.194'
-	alias superboybmc='google-chrome-stable --proxy-server=socks://localhost:8080 http://100.107.99.226'
-	alias httpserver='google-chrome-stable --proxy-server=socks://localhost:8080'
-	alias superboy='sshpass -p LWoD4K ssh ta_operator@100.107.99.227'
-	alias superboycust='sshpass -p VhTZWi ssh ta_customer@100.107.99.227'
-	alias pingsuperboy='ping 100.107.99.227'
+  # aliases related to appliances
+  alias svlpxeserver='sshpass -p cdj40mmss330 ssh -D 8080 zimbru@100.127.95.2'
+  alias zeapxeserver='sshpass -p cdj40mmss330 ssh -D 8080 zimbru@100.107.99.194'
+  alias superboybmc='google-chrome-stable --proxy-server=socks://localhost:8080 http://100.107.99.226'
+  alias httpserver='google-chrome-stable --proxy-server=socks://localhost:8080'
+  alias superboy='sshpass -p LWoD4K ssh ta_operator@100.107.99.227'
+  alias superboycust='sshpass -p VhTZWi ssh ta_customer@100.107.99.227'
+  alias pingsuperboy='ping 100.107.99.227'
 
-	export SS3_IP='100.127.95.14'
-	export SS3_PWD='u4XV2r'
-	#export SS3_PWD='cdj40mmss330'
-	alias ss3='sshpass -p $SS3_PWD ssh ta_operator@$SS3_IP'
+  export SS3_IP='100.127.95.14'
+  export SS3_PWD='u4XV2r'
+  #export SS3_PWD='cdj40mmss330'
+  alias ss3='sshpass -p $SS3_PWD ssh ta_operator@$SS3_IP'
 
-	export SS2_IP='100.127.95.12'
-	#export SS2_PWD='u4XV2r'
-	export SS2_PWD='cdj40mmss330'
-	alias ss2='sshpass -p $SS2_PWD ssh ta_operator@$SS2_IP'
+  export SS2_IP='100.127.95.12'
+  #export SS2_PWD='u4XV2r'
+  export SS2_PWD='cdj40mmss330'
+  alias ss2='sshpass -p $SS2_PWD ssh ta_operator@$SS2_IP'
 
-	export HALEY_IP='100.107.99.219'
-	export HALEY_PWD='WeD5wf'
-	#export HALEY_PWD='cdj40mmss330'
-	alias haley='sshpass -p $HALEY_PWD ssh ta_operator@$HALEY_IP'
-	export HALEYCUST_PWD='h7w2yT'
-	alias haleycust='sshpass -p $HALEYCUST_PWD ssh ta_customer@$HALEY_IP'
+  export HALEY_IP='100.107.99.219'
+  export HALEY_PWD='WeD5wf'
+  #export HALEY_PWD='cdj40mmss330'
+  alias haley='sshpass -p $HALEY_PWD ssh ta_operator@$HALEY_IP'
+  export HALEYCUST_PWD='h7w2yT'
+  alias haleycust='sshpass -p $HALEYCUST_PWD ssh ta_customer@$HALEY_IP'
 
-	#alias ss3customer='sshpass -p 3pwmyU ssh ta_customer@$SS3_IP'
-	export ACE_IP='100.107.99.209'
+  #alias ss3customer='sshpass -p 3pwmyU ssh ta_customer@$SS3_IP'
+  export ACE_IP='100.107.99.209'
 }
 
 # transferApplianceAliases
@@ -354,9 +355,9 @@ function rmbucket() {
 
     # giving choices there tasks using
     case $choice in
-        [yY]* ) echo "Going ahead with deleting \"${bucket}\" ..." ;;
-        [nN]* ) echo "Cancelling deletion of \"${bucket}\"" ; return 0 ;;
-        *) echo "No confirmation received, so cancelling deletion." ;;
+      [yY]* ) echo "Going ahead with deleting \"${bucket}\" ..." ;;
+      [nN]* ) echo "Cancelling deletion of \"${bucket}\"" ; return 0 ;;
+      *) echo "No confirmation received, so cancelling deletion." ;;
     esac
   else
     shift 1
@@ -413,114 +414,114 @@ function resizecluster() {
 }
 
 function gcsfuseSrcAliases() {
-        export gcsfuse_src_dir=~/work/cloud/storage/client/gcsfuse/src/gcsfuse
-        export csi_src_dir=~/work/cloud/storage/client/gcsfuse/src/gcs-fuse-csi-driver
-        export gcsfuse_src2_dir=~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
-        alias src='cd ${gcsfuse_src_dir}'
-        alias csi='cd ${csi_src_dir}'
-        alias src2='cd ${gcsfuse_src2_dir}'
-        alias lsfusemnts='cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2'
-#        alias lsfusemnts='echo From df command: ; df -h --output=source,fstype,target | grep '"'"'gcsfuse\|Mounted'"'"' ; echo . ; echo From /etc/mtab:  ;  cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2 '
-        alias localwork='cd ~/work/cloud/storage/client/gcsfuse/tasks'
-        alias work='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks'
-        #alias golang='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-golang1.20.5'
-        #alias encoding='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-08-gzip-support'
-        alias lsIamStorageRoles='gcloud iam roles list | egrep '"'"'^name: roles/storage\\..*'"'"''
+  export gcsfuse_src_dir=~/work/cloud/storage/client/gcsfuse/src/gcsfuse
+  export csi_src_dir=~/work/cloud/storage/client/gcsfuse/src/gcs-fuse-csi-driver
+  export gcsfuse_src2_dir=~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
+  alias src='cd ${gcsfuse_src_dir}'
+  alias csi='cd ${csi_src_dir}'
+  alias src2='cd ${gcsfuse_src2_dir}'
+  alias lsfusemnts='cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2'
+  # alias lsfusemnts='echo From df command: ; df -h --output=source,fstype,target | grep '"'"'gcsfuse\|Mounted'"'"' ; echo . ; echo From /etc/mtab:  ;  cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2 '
+  alias localwork='cd ~/work/cloud/storage/client/gcsfuse/tasks'
+  alias work='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks'
+  #alias golang='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-golang1.20.5'
+  #alias encoding='cd ~/DriveFileStream/My\ Drive/docs/work/cloud/storage/gcsfuse/tasks/202307-08-gzip-support'
+  alias lsIamStorageRoles='gcloud iam roles list | egrep '"'"'^name: roles/storage\\..*'"'"''
 
-        #gcsfuse unit test runs - TODO: move to a different function/file
-        alias runAllUnitTests='go test ./... -timeout 10m'
-        # unitTestOptions='-v -timeout 30s'
-        unitTestOptions='-timeout 30s'
-        # unitTestOptions='-v -timeout 5m'
-        alias runFsTest='go test $unitTestOptions -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs'
-        alias runBucketHandleUnitTests='go test $unitTestOptions -run ^TestBucketHandleTestSuite$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage'
-        alias runBucketUnitTests='go test $unitTestOptions -run ^TestBucket$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage/fake'
-        alias runAppendObjectCreatorUnitTests='go test $unitTestOptions -run ^TestAppendObjectCreator$ github.com/googlecloudplatform/gcsfuse/v2/internal/gcsx' 
-        alias runUtilUnitTests='go test $unitTestOptions -run ^TestUtilSuite$ github.com/googlecloudplatform/gcsfuse/v2/internal/util' 
-        alias runDirUnitTests='go test $unitTestOptions -run ^TestDir$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs/inode' 
-        alias debugBucketUnitTests='cd internal/storage/fake && dlv test . -- -test.v -test.run ^TestBucket$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage/fake ; cd -'
-        alias debugFsTest='cd internal/fs && dlv test -- -test.v -test.run ^TestFS$ ; cd -'
+  #gcsfuse unit test runs - TODO: move to a different function/file
+  alias runAllUnitTests='go test ./... -timeout 10m'
+  # unitTestOptions='-v -timeout 30s'
+  unitTestOptions='-timeout 30s'
+  # unitTestOptions='-v -timeout 5m'
+  alias runFsTest='go test $unitTestOptions -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs'
+  alias runBucketHandleUnitTests='go test $unitTestOptions -run ^TestBucketHandleTestSuite$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage'
+  alias runBucketUnitTests='go test $unitTestOptions -run ^TestBucket$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage/fake'
+  alias runAppendObjectCreatorUnitTests='go test $unitTestOptions -run ^TestAppendObjectCreator$ github.com/googlecloudplatform/gcsfuse/v2/internal/gcsx' 
+  alias runUtilUnitTests='go test $unitTestOptions -run ^TestUtilSuite$ github.com/googlecloudplatform/gcsfuse/v2/internal/util' 
+  alias runDirUnitTests='go test $unitTestOptions -run ^TestDir$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs/inode' 
+  alias debugBucketUnitTests='cd internal/storage/fake && dlv test . -- -test.v -test.run ^TestBucket$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage/fake ; cd -'
+  alias debugFsTest='cd internal/fs && dlv test -- -test.v -test.run ^TestFS$ ; cd -'
 
-        #gcsfuse integration test runs
-        alias runIntegrationTestCurDir='GODEBUG=asyncpreemptoff=1 go test . -test.parallel 1 --integrationTest -test.v -testbucket=$bucket -mountedDirectory=$mountpath'
-        alias runIntegrationTestListDirectoryRecursively='cd tools/integration_tests/operations/ && runIntegrationTestCurDir -test.run TestListDirectoryRecursively ; cd -'
-        alias runIntegrationTestListImplicitObjectsFromBucket='cd tools/integration_tests/implicit_dir && runIntegrationTestCurDir -test.run TestListImplicitObjectsFromBucket ; cd -'
-        alias debugIntegrationTestCurDir='GODEBUG=asyncpreemptoff=1 dlv test . -- -test.parallel 1 --integrationTest -test.v -testbucket=$bucket -mountedDirectory=$mountpath'
-        alias debugIntegrationTestListDirectoryRecursively='cd tools/integration_tests/operations/ && debugIntegrationTestCurDir -test.run TestListDirectoryRecursively ; cd -'
-        alias debugIntegrationTestListImplicitObjectsFromBucket='cd tools/integration_tests/implicit_dir && debugIntegrationTestCurDir -test.run TestListImplicitObjectsFromBucket -mountedDirectory=$mountpath -testbucket=$bucket ; cd -'
+  #gcsfuse integration test runs
+  alias runIntegrationTestCurDir='GODEBUG=asyncpreemptoff=1 go test . -test.parallel 1 --integrationTest -test.v -testbucket=$bucket -mountedDirectory=$mountpath'
+  alias runIntegrationTestListDirectoryRecursively='cd tools/integration_tests/operations/ && runIntegrationTestCurDir -test.run TestListDirectoryRecursively ; cd -'
+  alias runIntegrationTestListImplicitObjectsFromBucket='cd tools/integration_tests/implicit_dir && runIntegrationTestCurDir -test.run TestListImplicitObjectsFromBucket ; cd -'
+  alias debugIntegrationTestCurDir='GODEBUG=asyncpreemptoff=1 dlv test . -- -test.parallel 1 --integrationTest -test.v -testbucket=$bucket -mountedDirectory=$mountpath'
+  alias debugIntegrationTestListDirectoryRecursively='cd tools/integration_tests/operations/ && debugIntegrationTestCurDir -test.run TestListDirectoryRecursively ; cd -'
+  alias debugIntegrationTestListImplicitObjectsFromBucket='cd tools/integration_tests/implicit_dir && debugIntegrationTestCurDir -test.run TestListImplicitObjectsFromBucket -mountedDirectory=$mountpath -testbucket=$bucket ; cd -'
 }
 
 function unmountGcsfuse() {
-	if [[ $# -ne 1 ]]; then
-		echo "unmountGcsfuse: expected 1 input: <gcsfuse-mount-path-to-be-unmounted>"
-		return 1
-	fi
-	mntpath=$1
-	echo "Unmounting gcsfuse mount "${mntpath}" ..."
-	fusermount -uz $mntpath
-	echo "... Unmounted "${mntpath}
+  if [[ $# -ne 1 ]]; then
+    echo "unmountGcsfuse: expected 1 input: <gcsfuse-mount-path-to-be-unmounted>"
+    return 1
+  fi
+  mntpath=$1
+  echo "Unmounting gcsfuse mount "${mntpath}" ..."
+  fusermount -uz $mntpath
+  echo "... Unmounted "${mntpath}
 }
 
 # function mountGcsfuse() {
-# 	set -e
+#   set -e
 
-# 	if [[ $# -lt 1]]; then
-# 		echo "mountGcsfuse: at least one argument is required: <gcsfuse-mount-path> <bucket-name-to-be-mounted> <options>"
-# 		return 1
-# 	fi
+#   if [[ $# -lt 1]]; then
+#     echo "mountGcsfuse: at least one argument is required: <gcsfuse-mount-path> <bucket-name-to-be-mounted> <options>"
+#     return 1
+#   fi
 
-# 	bucket=
-# 	options=
+#   bucket=
+#   options=
 
-# 	mountpath=$1
+#   mountpath=$1
 
-# 	if [[ $# -gt 1 ]]; then
-# 		bucket=$2
+#   if [[ $# -gt 1 ]]; then
+#     bucket=$2
 
-# 		if [[ $# -gt 1 ]]; then
-# 			options="${@:3}"
-# 		fi
-# 	else
-# 		echo "mountGcsfuse: bucket not passed, so assuming dynamic-mount"
-# 	fi
+#     if [[ $# -gt 1 ]]; then
+#       options="${@:3}"
+#     fi
+#   else
+#     echo "mountGcsfuse: bucket not passed, so assuming dynamic-mount"
+#   fi
 
-# 	echo "Mounting bucket="${bucket}" at "${mountpath}" using commandline-args: ${options} ..."
-# 	cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse && CGO_ENABLED=0 go run . ${options} ${bucket} ${mountpath}
-# 	echo "... Mounted bucket="${bucket}" at "${mountpath} ."
+#   echo "Mounting bucket="${bucket}" at "${mountpath}" using commandline-args: ${options} ..."
+#   cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse && CGO_ENABLED=0 go run . ${options} ${bucket} ${mountpath}
+#   echo "... Mounted bucket="${bucket}" at "${mountpath} ."
 # }
 
 function gcsfuseTestAliases() {
-	gcsfuseSrcAliases
-	testbucketmountdir=~/work/cloud/storage/client/gcsfuse/test_buckets
+  gcsfuseSrcAliases
+  testbucketmountdir=~/work/cloud/storage/client/gcsfuse/test_buckets
 
-	testbucket1=gargnitin-fuse-test-bucket1
-	testbucket1mountpath=$testbucketmountdir/$testbucket1-mount
-	testbucket1configfile=${gcsfuse_src_dir}/config-trace-gargnitin-fuse-test-bucket1.yaml
-	alias loadfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (unmountGcsfuse $mountpath || true) && logpath=$mountdir/${bucket}-logfile.log && rm -rfv $logpath && cd ${gcsfuse_src_dir}  && CGO_ENABLED=0 go run . --config-file=${testbucket1configfile} $bucket $mountpath'
-	# --implicit-dirs
-	alias unloadfusetestbucket1='unmountGcsfuse $testbucket1mountpath'
-	alias loaddebugfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (unmountGcsfuse $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ${gcsfuse_src_dir} && CGO_ENABLED=0 go build -gcflags="all=-N -l" -o gcsfuse && ./gcsfuse --config-file=${testbucket1configfile} --implicit-dirs --log-format=text $bucket $mountpath && echo '"'"'gcsfuse pid='"'"'$!'
+  testbucket1=gargnitin-fuse-test-bucket1
+  testbucket1mountpath=$testbucketmountdir/$testbucket1-mount
+  testbucket1configfile=${gcsfuse_src_dir}/config-trace-gargnitin-fuse-test-bucket1.yaml
+  alias loadfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (unmountGcsfuse $mountpath || true) && logpath=$mountdir/${bucket}-logfile.log && rm -rfv $logpath && cd ${gcsfuse_src_dir}  && CGO_ENABLED=0 go run . --config-file=${testbucket1configfile} $bucket $mountpath'
+  # --implicit-dirs
+  alias unloadfusetestbucket1='unmountGcsfuse $testbucket1mountpath'
+  alias loaddebugfusetestbucket1='bucket=$testbucket1 && mountdir=$testbucketmountdir && mountpath=$testbucket1mountpath && mkdir -pv $mountpath && (unmountGcsfuse $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ${gcsfuse_src_dir} && CGO_ENABLED=0 go build -gcflags="all=-N -l" -o gcsfuse && ./gcsfuse --config-file=${testbucket1configfile} --implicit-dirs --log-format=text $bucket $mountpath && echo '"'"'gcsfuse pid='"'"'$!'
 
-	testbucket2=gargnitin-fuse-test-bucket2
-	testbucket2mountpath=$testbucketmountdir/$testbucket2-mount
-	alias loadfusetestbucket2='bucket=$testbucket2 && mountdir=$testbucketmountdir && mountpath=$testbucket2mountpath && mkdir -pv $mountpath && (unmountGcsfuse $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ${gcsfuse_src_dir}  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath --log-format=text $bucket $mountpath'
-	alias unloadfusetestbucket2='unmountGcsfuse $testbucket2mountpath'
+  testbucket2=gargnitin-fuse-test-bucket2
+  testbucket2mountpath=$testbucketmountdir/$testbucket2-mount
+  alias loadfusetestbucket2='bucket=$testbucket2 && mountdir=$testbucketmountdir && mountpath=$testbucket2mountpath && mkdir -pv $mountpath && (unmountGcsfuse $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ${gcsfuse_src_dir}  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath --log-format=text $bucket $mountpath'
+  alias unloadfusetestbucket2='unmountGcsfuse $testbucket2mountpath'
 
-	testbucket3=gargnitin-memory-testing-bucket-20230809
-	testbucket3mountpath=$testbucketmountdir/$testbucket3-mount
-	alias loadfusetestbucket3='bucket=$testbucket3 && mountdir=$testbucketmountdir && mountpath=$testbucket3mountpath && mkdir -pv $mountpath && (unmountGcsfuse $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ${gcsfuse_src_dir}  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath --log-format=text $bucket $mountpath'
-	alias unloadfusetestbucket3='unmountGcsfuse $testbucket2mountpath'
+  testbucket3=gargnitin-memory-testing-bucket-20230809
+  testbucket3mountpath=$testbucketmountdir/$testbucket3-mount
+  alias loadfusetestbucket3='bucket=$testbucket3 && mountdir=$testbucketmountdir && mountpath=$testbucket3mountpath && mkdir -pv $mountpath && (unmountGcsfuse $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ${gcsfuse_src_dir}  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_fuse_errors --debug_gcs --log-file=$logpath --log-format=text $bucket $mountpath'
+  alias unloadfusetestbucket3='unmountGcsfuse $testbucket2mountpath'
 
-	integrationTestsBucket=gargnitin-gcsfuse-integration-tests-playground
-	integrationTestsBucketMountpath=$testbucketmountdir/${integrationTestsBucket}-mount
-	alias loadIntegrationTestsBucket='bucket=$integrationTestsBucket && mountdir=$testbucketmountdir && mountpath=$integrationTestsBucketMountpath && mkdir -pv $mountpath && (unmountGcsfuse $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ${gcsfuse_src_dir}  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_gcs --log-file=$logpath --log-format=text $bucket $mountpath'
-	alias unloadIntegrationTestsBucket='unmountGcsfuse $integrationTestsBucketMountpath'
+  integrationTestsBucket=gargnitin-gcsfuse-integration-tests-playground
+  integrationTestsBucketMountpath=$testbucketmountdir/${integrationTestsBucket}-mount
+  alias loadIntegrationTestsBucket='bucket=$integrationTestsBucket && mountdir=$testbucketmountdir && mountpath=$integrationTestsBucketMountpath && mkdir -pv $mountpath && (unmountGcsfuse $mountpath || true) && logpath=$mountdir/$bucket-logfile.log && rm -rfv $logpath && cd ${gcsfuse_src_dir}  && CGO_ENABLED=0 go run . --implicit-dirs --debug_fuse --debug_gcs --log-file=$logpath --log-format=text $bucket $mountpath'
+  alias unloadIntegrationTestsBucket='unmountGcsfuse $integrationTestsBucketMountpath'
 
-	dynamicmountpath=$testbucketmountdir/dynamic-mount
-	alias loadfusedynamic='mountdir=$testbucketmountdir && mountpath=$dynamicmountpath && mkdir -pv $mountpath && (unmountGcsfuse $mountpath || true) && logpath=$mountdir/dynamic-mount-log.log && rm -rfv $logpath && cd ${gcsfuse_src_dir}  && CGO_ENABLED=0 go run . --config-file="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/config-debug-gargnitin-fuse-dynamic-mount.yaml" --implicit-dirs --log-format=text $mountpath'
-	alias unloadfusedynamic='unmountGcsfuse  $dynamicmountpath'
+  dynamicmountpath=$testbucketmountdir/dynamic-mount
+  alias loadfusedynamic='mountdir=$testbucketmountdir && mountpath=$dynamicmountpath && mkdir -pv $mountpath && (unmountGcsfuse $mountpath || true) && logpath=$mountdir/dynamic-mount-log.log && rm -rfv $logpath && cd ${gcsfuse_src_dir}  && CGO_ENABLED=0 go run . --config-file="/usr/local/google/home/gargnitin/work/cloud/storage/client/gcsfuse/src/gcsfuse/config-debug-gargnitin-fuse-dynamic-mount.yaml" --implicit-dirs --log-format=text $mountpath'
+  alias unloadfusedynamic='unmountGcsfuse  $dynamicmountpath'
 
-	alias gcsdescribe='gcloud storage objects describe'
+  alias gcsdescribe='gcloud storage objects describe'
 }
 
 gcsfuseSrcAliases
