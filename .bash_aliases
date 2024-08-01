@@ -412,7 +412,23 @@ function resizecluster() {
   fi
   shift 3
   gcloud -q container clusters resize ${cluster_name} --num-nodes=${num_nodes} \
-    --zone=${zone} "$@"
+    --zone=${zone} \
+    --async \
+    "$@"
+}
+
+function rmcluster() {
+  if [ $# -lt 2 ]; then
+    echo "expected at least 1 arguments. Usage: ${0} <cluster-name> <zone> [OPTIONS]"
+    return 1
+  fi
+  local cluster_name=$1
+  local zone=$2
+  shift 2
+  gcloud -q container clusters delete ${cluster_name} \
+    --zone ${zone} \
+    --async \
+    "$@"
 }
 
 function gcsfuseSrcAliases() {
