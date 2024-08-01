@@ -387,6 +387,31 @@ function lsallvm() {
   gcloud compute instances list "$@"
 }
 
+function lsclusters() {
+  gcloud container clusters list "$@" | grep ${USER}
+}
+
+function lsallclusters() {
+  gcloud container clusters list "$@"
+}
+
+function resizecluster() {
+  if [ $# -lt 3 ]; then
+    echo "expected at least 3 arguments. Usage: ${0} <cluster-name> <zone> <num-nodes> [OPTIONS]"
+    return 1
+  fi
+  local cluster_name=$1
+  local zone=$2
+  local num_nodes=$3
+  if [ ${num_nodes} -lt 0 ]; then
+    echo "num_nodes < 0 is not supported."
+    return 1
+  fi
+  shift 3
+  gcloud -q container clusters resize ${cluster_name} --num-nodes=${num_nodes} \
+    --zone=${zone} "$@"
+}
+
 function gcsfuseSrcAliases() {
         export gcsfuse_src_dir=~/work/cloud/storage/client/gcsfuse/src/gcsfuse
         export csi_src_dir=~/work/cloud/storage/client/gcsfuse/src/gcs-fuse-csi-driver
