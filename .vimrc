@@ -180,9 +180,24 @@ command! TrimWhitespace call TrimWhitespace()
 :nnoremap <backspace> i<backspace><right><Esc>
 
 " Replace all $env with ${env}
-" %s/\$\([a-z0-9A-Z]\+\)/${\1}/gc
+fun! EnvDecorate()
+  :%s/\$\([a-z0-9A-Z]\+\)/${\1}/gc
+endfunction
+
 " Replace [0-9]+[kmg] to [0-9]+[KMG]
-" %s/\([0-9]\+\)\([kmg]\)/\1\U\2/gc
+fun!  UnitsCapitalize()
+  :%s/\([0-9]\+\)\([kmg]\)/\1\U\2/gc
+endfunction
+
+fun! VimdiffHideContext()
+  :set diffopt+=context:0
+endfunction
+
+fun! VimdiffShowContext()
+  :set diffopt+=context:5
+endfunction
+
+:set wrap
 
 " Use the 'google' package by default (see http://go/vim/packages).
 source /usr/share/vim/google/google.vim
