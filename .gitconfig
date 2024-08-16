@@ -48,6 +48,7 @@ ls=branch -l
 lsremote=branch -l --remote
 new=switch -c
 prev=switch -
+pushbranch=push -u origin
 pushthis=!git push -u origin $(git branch --show-current)
 put=pushthis
 r=rebase
