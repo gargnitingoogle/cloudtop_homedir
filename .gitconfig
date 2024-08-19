@@ -101,6 +101,8 @@ vimdiff=difftool
 	prompt = false
 [rebase]
 	autosquash = true
+	autoStash = true
+	updateRefs = true
 [mergetool]
 	keepBackup = false
 [http]
