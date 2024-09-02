@@ -2,6 +2,7 @@
 addAllModified="!f() { git st | grep modified | tr -s '\t' ' ' | tr -s ' ' | rev | cut -d' ' -f1 | rev | sort | uniq | ( while read modifiedFile ; do ( echo \"Adding ${modifiedFile} ...\" ; git add $modifiedFile ) ;  done ) && git st ; }; f"
 aliases=config --get-regexp ^alias
 amend ="!f() { if [ $# -lt 1 ] ; then git commit --amend --no-edit ; else git commit --fixup=amend:$1 ; fi; }; f"
+blm=blame -w -M -C
 cb=branch --show-current
 ci=commit
 cl = "!f() { git push origin HEAD:refs/for/${1:-main}; }; f"
