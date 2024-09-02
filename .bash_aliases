@@ -104,15 +104,17 @@ function vmconnect() {
     return 1
   fi
 
-  projectname=$3
-  zone=$2
-  vmname=$1
+  local projectname=$3
+  local zone=$2
+  local vmname=$1
 
+  set -x
   gcloud compute --project "$projectname" ssh --zone "$zone" "$vmname" -- -o ProxyCommand='corp-ssh-helper %h %p' "${@:4}"
+  set +x
 }
 
 function gcsfusetestvmconnect() {
-  projectname=gcs-fuse-test
+  local projectname=gcs-fuse-test
 
   if [ $# -lt 2 ]
   then
@@ -120,8 +122,8 @@ function gcsfusetestvmconnect() {
     return 1
   fi
 
-  zone=$2
-  vmname=$1
+  local zone=$2
+  local vmname=$1
 
   vmconnect "$vmname" "$zone" "$projectname" "${@:3}"
 }
@@ -133,15 +135,17 @@ function stopvm() {
     return 1
   fi
 
-  projectname=$3
-  zone=$2
-  vmname=$1
+  local projectname=$3
+  local zone=$2
+  local vmname=$1
 
-  gcloud compute instances stop "$vmname" --project="$projectname" --zone="$zone"
+  set -x
+  gcloud compute instances stop "$vmname" --project="$projectname" --zone="$zone" "${@:4}"
+  set +x
 }
 
 function gcestop() {
-  projectname=gcs-fuse-test
+  local projectname=gcs-fuse-test
 
   if [ $# -lt 2 ]
   then
@@ -149,8 +153,8 @@ function gcestop() {
     return 1
   fi
 
-  zone=$2
-  vmname=$1
+  local zone=$2
+  local vmname=$1
 
   stopvm "$vmname" "$zone" "$projectname" "${@:3}"
 }
@@ -162,15 +166,17 @@ function startvm() {
     return 1
   fi
 
-  projectname=$3
-  zone=$2
-  vmname=$1
+  local projectname=$3
+  local zone=$2
+  local vmname=$1
 
+  set -x
   gcloud compute instances start "$vmname" --project="$projectname" --zone="$zone"
+  set +x
 }
 
 function gcestart() {
-  projectname=gcs-fuse-test
+  local projectname=gcs-fuse-test
 
   if [ $# -lt 2 ]
   then
@@ -178,8 +184,8 @@ function gcestart() {
     return 1
   fi
 
-  zone=$2
-  vmname=$1
+  local zone=$2
+  local vmname=$1
 
   startvm "$vmname" "$zone" "$projectname" "${@:3}"
 }
@@ -191,15 +197,17 @@ function rmvm() {
     return 1
   fi
 
-  projectname=$3
-  zone=$2
-  vmname=$1
+  local projectname=$3
+  local zone=$2
+  local vmname=$1
 
+  set -x
   gcloud compute instances delete "$vmname" --project="$projectname" --zone="$zone"
+  set +x
 }
 
 function gcerm() {
-  projectname=gcs-fuse-test
+  local projectname=gcs-fuse-test
 
   if [ $# -lt 2 ]
   then
@@ -207,8 +215,8 @@ function gcerm() {
     return 1
   fi
 
-  zone=$2
-  vmname=$1
+  local zone=$2
+  local vmname=$1
 
   rmvm "$vmname" "$zone" "$projectname" "${@:3}"
 }
@@ -220,15 +228,17 @@ function describevm() {
     return 1
   fi
 
-  projectname=$3
-  zone=$2
-  vmname=$1
+  local projectname=$3
+  local zone=$2
+  local vmname=$1
 
+  set -x
   gcloud compute instances describe "$vmname" --project="$projectname" --zone="$zone"
+  set +x
 }
 
 function gcedescribe() {
-  projectname=gcs-fuse-test
+  local projectname=gcs-fuse-test
 
   if [ $# -lt 2 ]
   then
@@ -236,8 +246,8 @@ function gcedescribe() {
     return 1
   fi
 
-  zone=$2
-  vmname=$1
+  local zone=$2
+  local vmname=$1
 
   describevm "$vmname" "$zone" "$projectname" "${@:3}"
 }
@@ -338,7 +348,10 @@ function mkbucket() {
   local bucket=$1
   local location=$2
   shift 2
+
+  set -x
   gcloud storage buckets create gs://$bucket --location=$location "$@"
+  set +x
 }
 
 function rmbucket() {
@@ -371,31 +384,45 @@ function rmbucket() {
     return 1
   fi
 
+  set -x
   gcloud storage buckets delete gs://${bucket}
+  set +x
 }
 
 function lsbuckets() {
+  set -x
   gcloud storage ls "$@" | grep $USER | rev | cut -f2 -d/ | rev
+  set +x
 }
 
 function lsallbuckets() {
+  set -x
   gcloud storage ls "$@" | rev | cut -f2 -d/ | rev
+  set +x
 }
 
 function lsvm() {
+  set -x
   gcloud compute instances list "$@" | grep ${USER}
+  set +x
 }
 
 function lsallvm() {
+  set -x
   gcloud compute instances list "$@"
+  set +x
 }
 
 function lsclusters() {
+  set -x
   gcloud container clusters list "$@" | grep ${USER}
+  set +x
 }
 
 function lsallclusters() {
+  set -x
   gcloud container clusters list "$@"
+  set +x
 }
 
 function resizecluster() {
@@ -411,10 +438,13 @@ function resizecluster() {
     return 1
   fi
   shift 3
+
+  set -x
   gcloud -q container clusters resize ${cluster_name} --num-nodes=${num_nodes} \
     --zone=${zone} \
     --async \
     "$@"
+  set +x
 }
 
 function rmcluster() {
@@ -425,10 +455,13 @@ function rmcluster() {
   local cluster_name=$1
   local zone=$2
   shift 2
+
+  set -x
   gcloud -q container clusters delete ${cluster_name} \
     --zone ${zone} \
     --async \
     "$@"
+  set +x
 }
 
 function gcsfuseSrcAliases() {
