@@ -8,7 +8,7 @@ function genericAliases() {
   alias ..='cd ..'
   alias cls='clear'
   # alias dlv='~/go/bin/dlv --check-go-version=false --init <(config source-list-line-count 20)'
-  alias dlv='~/go/bin/dlv --check-go-version=false'
+  alias dlv='$(which dlv) --check-go-version=false'
   alias goctl='/google/bin/releases/golinks/goctl/goctl.par'
   alias htop='htop -u $USER -t'
   alias install='sudo apt-get -y install'
