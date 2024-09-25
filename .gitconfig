@@ -113,3 +113,5 @@ vimdiff=difftool
 	insteadOf = https://codelab-review.googlesource.com/
 	insteadOf = http://codelab.googlesource.com/
 	insteadOf = http://codelab-review.googlesource.com/
+[core]
+	editor = vim
