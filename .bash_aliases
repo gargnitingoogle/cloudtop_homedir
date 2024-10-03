@@ -87,6 +87,7 @@ function gitAliases() {
   alias gt='git'
   alias gti='git'
   alias gtl='git l'
+  alias gitresolve='vi -p $(git diff --name-only --diff-filter=U --relative | tr -s '"'"'\n'"'"' '"'"' '"'"')'
 }
 
 gitAliases
@@ -351,6 +352,24 @@ function mkbucket() {
 
   set -x
   gcloud storage buckets create gs://$bucket --location=$location "$@"
+  set +x
+}
+
+function mkhnsbucket() {
+  if [ $# -lt 2 ] ; then
+    echo "Not enough arguments for mkbucket. expected arguments:\
+      \$1: bucket-name e.g. ${USER}-test-bucket
+      \$2: location e.g. us-central1 or us or asia-southeast1 \
+      "
+      return 1
+  fi
+
+  local bucket=$1
+  local location=$2
+  shift 2
+
+  set -x
+  gcloud alpha storage buckets create gs://$bucket --location=$location "$@" --enable-hierarchical-namespace --uniform-bucket-level-access
   set +x
 }
 
