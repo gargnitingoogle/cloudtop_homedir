@@ -23,12 +23,14 @@ au BufNewFile,BufRead requirements*.txt set ft=python
 " Make sure .aliases, .bash_aliases and similar files get syntax highlighting.
 au BufNewFile,BufRead .*aliases,*.tmux.conf set ft=sh
 
-" save folds across vim restarts and buffer reopens
-augroup remember_folds
-  au!
-  au BufWinLeave * mkview
-  au BufWinEnter * silent! loadview
-augroup END
+" " save folds across vim restarts and buffer reopens
+" Commented this out because this causes problem with
+" saving and opening sessions.
+" augroup remember_folds
+  " au!
+  " au BufWinLeave * mkview
+  " au BufWinEnter * silent! loadview
+" augroup END
 
 " trigger autoread when changing buffers inside while inside vim:
 au FocusGained,BufEnter * :checktime
