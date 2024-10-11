@@ -201,6 +201,11 @@ endfunction
 
 :set wrap
 
+" Remember cursor position
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
+endif
+
 " Use the 'google' package by default (see http://go/vim/packages).
 source /usr/share/vim/google/google.vim
 " Glug g4
