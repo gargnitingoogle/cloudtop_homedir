@@ -486,10 +486,12 @@ function rmcluster() {
 function gcsfuseSrcAliases() {
   export gcsfuse_src_dir=~/work/cloud/storage/client/gcsfuse/src/gcsfuse
   export csi_src_dir=~/work/cloud/storage/client/gcsfuse/src/gcs-fuse-csi-driver
-  export gcsfuse_src2_dir=~/work/cloud/storage/client/gcsfuse/src2/googlecloudplatform/gcsfuse
+  export gcsfuse_src2_dir=~/work/cloud/storage/client/gcsfuse/src2/gcsfuse
+  export gcsfuse_src3_dir=~/work/cloud/storage/client/gcsfuse/src3/gcsfuse
   alias src='cd ${gcsfuse_src_dir}'
   alias csi='cd ${csi_src_dir}'
   alias src2='cd ${gcsfuse_src2_dir}'
+  alias src3='cd ${gcsfuse_src3_dir}'
   alias lsfusemnts='cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2'
   # alias lsfusemnts='echo From df command: ; df -h --output=source,fstype,target | grep '"'"'gcsfuse\|Mounted'"'"' ; echo . ; echo From /etc/mtab:  ;  cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2 '
   alias localwork='cd ~/work/cloud/storage/client/gcsfuse/tasks'
@@ -506,10 +508,11 @@ function gcsfuseSrcAliases() {
   alias runFsTest='go test $unitTestOptions -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs'
   alias runBucketHandleUnitTests='go test $unitTestOptions -run ^TestBucketHandleTestSuite$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage'
   alias runBucketUnitTests='go test $unitTestOptions -run ^TestBucket$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage/fake'
-  alias runAppendObjectCreatorUnitTests='go test $unitTestOptions -run ^TestAppendObjectCreator$ github.com/googlecloudplatform/gcsfuse/v2/internal/gcsx' 
-  alias runUtilUnitTests='go test $unitTestOptions -run ^TestUtilSuite$ github.com/googlecloudplatform/gcsfuse/v2/internal/util' 
-  alias runDirUnitTests='go test $unitTestOptions -run ^TestDir$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs/inode' 
+  alias runAppendObjectCreatorUnitTests='go test $unitTestOptions -run ^TestAppendObjectCreator$ github.com/googlecloudplatform/gcsfuse/v2/internal/gcsx'
+  alias runUtilUnitTests='go test $unitTestOptions -run ^TestUtilSuite$ github.com/googlecloudplatform/gcsfuse/v2/internal/util'
+  alias runDirUnitTests='go test $unitTestOptions -run ^TestDir$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs/inode'
   alias debugBucketUnitTests='cd internal/storage/fake && dlv test . -- -test.v -test.run ^TestBucket$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage/fake ; cd -'
+  alias debugDirUnitTests='cd internal/fs/inode && dlv test . -- -test.v -test.run ^TestDir$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs/inode ; cd -'
   alias debugFsTest='cd internal/fs && dlv test -- -test.v -test.run ^TestFS$ ; cd -'
 
   #gcsfuse integration test runs
