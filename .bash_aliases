@@ -328,11 +328,11 @@ function transferApplianceAliases() {
   alias buildzimbrageForHw='blaze run //cloud/transfer/appliance/offline/zimbrage:zim_build -- --b_liv=false --b_zim=false --env=dev --bucket=$USER-bucket'
   # appliance binaries
   alias buildOnboardBinary='blaze build //cloud/transfer/appliance/offline/external/assembly/appliance_onboard:zimbru_appliance_onboard'
-  alias uploadOnboardBinary='gsutil cp blaze-bin/cloud/transfer/appliance/offline/external/assembly/appliance_onboard/zimbru_appliance_onboard gs://$USER-bucket/appliance_binaries/latest'
-  alias downloadOnboardBinary='mkdir -p /tmp && gsutil cp gs://$USER-bucket/appliance_binaries/latest/zimbru_appliance_onboard /tmp/ && chmod +x /tmp/zimbru_appliance_onboard'
+  alias uploadOnboardBinary='gcloud storage cp blaze-bin/cloud/transfer/appliance/offline/external/assembly/appliance_onboard/zimbru_appliance_onboard gs://$USER-bucket/appliance_binaries/latest'
+  alias downloadOnboardBinary='mkdir -p /tmp && gcloud storage cp gs://$USER-bucket/appliance_binaries/latest/zimbru_appliance_onboard /tmp/ && chmod +x /tmp/zimbru_appliance_onboard'
   alias buildTaBinary='blaze build //cloud/transfer/appliance/offline/external/capture:ta'
-  alias uploadTaBinary='gsutil cp blaze-bin/cloud/transfer/appliance/offline/external/capture/ta gs://$USER-bucket/appliance_binaries/latest'
-  alias downloadTaBinary='gsutil cp gs://$USER-bucket/appliance_binaries/latest/ta /tmp && chmod +x /tmp/ta'
+  alias uploadTaBinary='gcloud storage cp blaze-bin/cloud/transfer/appliance/offline/external/capture/ta gs://$USER-bucket/appliance_binaries/latest'
+  alias downloadTaBinary='gcloud storage cp gs://$USER-bucket/appliance_binaries/latest/ta /tmp && chmod +x /tmp/ta'
 
   ##helpful commands for nsjaili and strace on transfer appliances
   #export UBUNTU_CONTAINER_FS='/mnt/ta_local/$USER/ubuntu_expt/ubuntu_container_fs'
