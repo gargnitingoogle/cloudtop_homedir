@@ -542,14 +542,18 @@ function gcsfuseSrcAliases() {
   unitTestOptions='-timeout 30s'
   # unitTestOptions='-v -timeout 5m'
   alias runFsTest='go test $unitTestOptions -run ^TestFS$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs'
+  alias runUnsupportedObjectsTests='go test $unitTestOptions -run ^TestUnsupportedObjectsTestSuite$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs'
   alias runBucketHandleUnitTests='go test $unitTestOptions -run ^TestBucketHandleTestSuite$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage'
   alias runBucketUnitTests='go test $unitTestOptions -run ^TestBucket$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage/fake'
   alias runAppendObjectCreatorUnitTests='go test $unitTestOptions -run ^TestAppendObjectCreator$ github.com/googlecloudplatform/gcsfuse/v2/internal/gcsx'
   alias runUtilUnitTests='go test $unitTestOptions -run ^TestUtilSuite$ github.com/googlecloudplatform/gcsfuse/v2/internal/util'
   alias runDirUnitTests='go test $unitTestOptions -run ^TestDir$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs/inode'
+  alias runStorageHandleUnitTests='go test $unitTestOptions -run ^TestStorageHandleTestSuite$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage'
+  alias runPrefixBucketUnitTests='cd internal/gcsx && (go test -test.run TestPrefixBucket github.com/googlecloudplatform/gcsfuse/v2/internal/gcsx ; cd - )'
   alias debugBucketUnitTests='cd internal/storage/fake && dlv test . -- -test.v -test.run ^TestBucket$ github.com/googlecloudplatform/gcsfuse/v2/internal/storage/fake ; cd -'
   alias debugDirUnitTests='cd internal/fs/inode && dlv test . -- -test.v -test.run ^TestDir$ github.com/googlecloudplatform/gcsfuse/v2/internal/fs/inode ; cd -'
   alias debugFsTest='cd internal/fs && dlv test -- -test.v -test.run ^TestFS$ ; cd -'
+  alias debugUnsupportedObjectsTest='cd internal/fs && dlv test -- -test.v -test.run ^TestUnsupportedObjectsTestSuite$ ; cd -'
 
   #gcsfuse integration test runs
   alias runIntegrationTestCurDir='GODEBUG=asyncpreemptoff=1 go test . -test.parallel 1 --integrationTest -test.v -testbucket=$bucket -mountedDirectory=$mountpath'
