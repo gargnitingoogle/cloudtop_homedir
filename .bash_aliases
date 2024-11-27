@@ -92,11 +92,45 @@ function gitAliases() {
 
 gitAliases
 
+function uploadchain() {
+  if test -z ${branches}; then
+    echo "No branches to upload. Did you miss setting the branches variables ?"
+  else
+    for branch in ${branches}; do
+      git pushbranch -f $branch;
+    done;
+  fi
+}
+
 function cloudtopAliases() {
   alias restartCRD='sudo systemctl restart chrome-remote-desktop@${USER}'
 }
 
 cloudtopAliases
+
+function ssh2vm() {
+  if [ $# -lt 3 ]
+  then
+    echo "${FUNCNAME[0]} needs exactly 3 arguments: <vm-name> <gcp-zone> <gcp-project-id>"
+    return 1
+  fi
+
+  local projectname=$3
+  local zone=$2
+  local vmname=$1
+
+  # printf "Warning: This won't work from inside tmux ...\n\n"
+
+  # if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+  if test -z "$TMUX"; then
+    set -x
+    ssh "$vmname"."$zone"."$projectname" "${@:4}" || ssh ${USER}_google_com@nic0.${vmname}.${zone}.c.${projectname}.internal.gcpnode.com
+    set +x
+  else
+    echo "Error: ${FUNCNAME[0]} from inside tmux is not supported."
+    return 1
+  fi
+}
 
 function vmconnect() {
   if [ $# -lt 3 ]
