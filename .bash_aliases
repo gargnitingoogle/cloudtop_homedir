@@ -521,11 +521,13 @@ function gcsfuseSrcAliases() {
   export gcsfuse_src_dir=~/work/cloud/storage/client/gcsfuse/src/gcsfuse
   export csi_src_dir=~/work/cloud/storage/client/gcsfuse/src/gcs-fuse-csi-driver
   export gcsfuse_src2_dir=~/work/cloud/storage/client/gcsfuse/src2/gcsfuse
-  export gcsfuse_src3_dir=~/work/cloud/storage/client/gcsfuse/src3/gcsfuse
+  export gcsfuse_src3_dir=~/work/cloud/storage/client/gcsfuse/src3/github/googlecloudplatform/gcsfuse
+  export gcsfuse_prelaunch_dir=~/work/cloud/storage/client/gcsfuse/src3/github/googlecloudplatform/gcsfuse-prelaunch
   alias src='cd ${gcsfuse_src_dir}'
   alias csi='cd ${csi_src_dir}'
   alias src2='cd ${gcsfuse_src2_dir}'
   alias src3='cd ${gcsfuse_src3_dir}'
+  alias prelaunch='cd ${gcsfuse_prelaunch_dir}'
   alias lsfusemnts='cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2'
   # alias lsfusemnts='echo From df command: ; df -h --output=source,fstype,target | grep '"'"'gcsfuse\|Mounted'"'"' ; echo . ; echo From /etc/mtab:  ;  cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2 '
   alias localwork='cd ~/work/cloud/storage/client/gcsfuse/tasks'
