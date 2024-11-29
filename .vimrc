@@ -27,20 +27,20 @@ au BufNewFile,BufRead .*aliases,*.tmux.conf set ft=sh
 " Commented this out because this causes problem with
 " saving and opening sessions.
 " augroup remember_folds
-  " au!
-  " au BufWinLeave * mkview
-  " au BufWinEnter * silent! loadview
+" au!
+" au BufWinLeave * mkview
+" au BufWinEnter * silent! loadview
 " augroup END
 
 " trigger autoread when changing buffers inside while inside vim:
 au FocusGained,BufEnter * :checktime
 
 " show line numbers by default
-se nu
+set nu
+" show relative line numbers
+" set relativenumber
 " show/hide line numbers on ll
-:nnoremap ll :se invnumber<CR>
-" " show relative line numbers by default
-" se relativenumber
+:nnoremap ll :set invnumber<CR>
 " " Go to line number using Ctrl-g
 " :nnoremap <C-g> :
 " :inoremap <C-g> <Esc>:
@@ -97,9 +97,6 @@ au FileType go,c,cpp,sh,make,python,yaml,java,javascript,vim nnoremap <buffer> <
 " Find in file\
 :nnoremap <C-f> <Esc>:/
 
-" Fold/unfold using Ctrl-- and Ctrl-+ respectively.
-":nnoremap <buffer> <C-/> <Esc>zo
-":nnoremap <buffer> <C-_> <Esc>zc
 
 " code navigation
 " Go to definition of symbol under cursor using gd
@@ -107,13 +104,12 @@ au FileType go,c,cpp,sh,make,python,yaml,java,javascript,vim nnoremap <buffer> <
 " Navigate forward/back using Alt-Right/Left
 :nnoremap <M-Left> <C-o>
 :nnoremap <M-Right> <C-i>
-" Go to Next/previous functions using Ctrl-Down and Ctrl-Up
-" next function
+" Go to next function using Ctrl-Down.
 au FileType go nnoremap <buffer> <C-Down> <Esc>:/^\<func\><CR><Esc>:noh<CR>
 au FileType python nnoremap <buffer> <C-Down> <Esc>:/^\<def\><CR><Esc>:noh<CR>
 au FileType sh nnoremap <buffer> <C-Down> <Esc>:/^\<function\><CR><Esc>:noh<CR>
 au FileType c,cpp,java nnoremap <buffer> <C-Down> <Esc>:/^[a-zA-Z]<CR><Esc>:noh<CR>
-" prev function
+" Go to prev function using Ctrl-Up.
 au FileType go nnoremap <buffer> <C-Up> <Esc>:?^\<func\><CR><Esc>:noh<CR>
 au FileType python nnoremap <buffer> <C-Up> <Esc>:?^\<def\><CR><Esc>:noh<CR>
 au FileType sh nnoremap <buffer> <C-Up> <Esc>:?^\<function\><CR><Esc>:noh<CR>
@@ -132,7 +128,7 @@ au FileType c,cpp,java nnoremap <buffer> <C-Up> <Esc>:?^[a-zA-Z]<CR><Esc>:noh<CR
 :nnoremap <C-s> <Esc>:w<CR>
 " Clone current tab with Ctrl+N
 :nnoremap <C-n> <Esc>:tabnew %<CR>
-" Open a new tab with file to pick from same directory, on Ctrl+o
+" Open a new tab with file to pick from same directory, on Ctrl-O.
 :nnoremap <C-o> <Esc>:tabe 
 " Press Alt-Up to navigate the parent directory of the current directory.
 :nnoremap <M-up> <Esc>:tabf ..<CR><Esc>
