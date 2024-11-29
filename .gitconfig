@@ -79,17 +79,19 @@ vimdiff=difftool
 [user]
 	email = gargnitin@google.com
 	name = Nitin Garg
-[credential "https://github.com"]
-	helper =
-	helper = !/usr/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper =
-	helper = !/usr/bin/gh auth git-credential
+[core]
+	editor = vim
 [pull]
 	rebase = true
+[rebase]
+	autosquash = true
+	autoStash = true
+	updateRefs = true
 [diff]
 	guitool = bc
 	tool = vim
+[difftool]
+	prompt = false
 [difftool "bc"]
 	cmd=/usr/bin/bcompare -expandall -solo \"$LOCAL\" \"$REMOTE\"
 	trustExitCode = true
@@ -98,16 +100,14 @@ vimdiff=difftool
 	trustExitCode = true
 [merge]
 	tool = bc
+[mergetool]
+	vimdiff=difftool
+	keepBackup = false
 [mergetool "bc"]
 	trustExitCode = true
-[difftool]
-	prompt = false
-[rebase]
-	autosquash = true
-	autoStash = true
-	updateRefs = true
-[mergetool]
-	keepBackup = false
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
 [http]
 	cookiefile = /usr/local/google/home/gargnitin/.gitcookies
 [url "sso://codelab/"]
@@ -115,5 +115,6 @@ vimdiff=difftool
 	insteadOf = https://codelab-review.googlesource.com/
 	insteadOf = http://codelab.googlesource.com/
 	insteadOf = http://codelab-review.googlesource.com/
-[core]
-	editor = vim
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
