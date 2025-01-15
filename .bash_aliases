@@ -14,6 +14,7 @@ function genericAliases() {
   alias install='sudo apt-get -y install'
   alias l='ls -lah'
   alias lint='golangci-lint run'
+  alias parallel='parallel --eta'
   alias pstree='pstree -ps'
   alias tailf='tail -f'
   alias runubuntucontainer='docker run --rm -it --entrypoint /bin/bash ubuntu'
@@ -21,6 +22,8 @@ function genericAliases() {
   alias study='mkdir -p $HOME/work/study && cd $HOME/work/study'
   alias tmx='tmux'
   alias home='git -C $HOME'
+  alias runubuntucontainer='docker run --rm -it --entrypoint /bin/bash ubuntu'
+  alias rungocontainer='docker run -it --rm --entrypoint /bin/bash golang'
 }
 
 function diffDirs() {
@@ -62,6 +65,10 @@ function showUncommittedGitChanges() {
 
 genericAliases
 
+function ignore() {
+  false && ( $@ ) ;
+}
+
 function shpool-ssh () {
     if [ $# -ne 2 ] ; then
   echo "usage: shpool-ssh <remote-machine> <session-name>" >&2
@@ -76,6 +83,7 @@ function openConfigFile() {
   alias history='vi ~/.bash_history +:$'
   alias vimrc='vi ~/.vimrc'
   alias tmuxconf='vi ~/.tmux.conf && tmux source ~/.tmux.conf'
+  alias homediff='for file in `find . -type f ! -path '"'"'*.git/*'"'"' ` ; do echo $file ; done | rev | cut -d/ -f1 | rev | while read filename ; do if test -f ~/$filename ; then echo vimdiff ~/$filename ./$filename ; diff ~/$filename ./$filename ; fi ; done'
 }
 
 openConfigFile
@@ -182,8 +190,7 @@ function stopvm() {
 function gcestop() {
   local projectname=gcs-fuse-test
 
-  if [ $# -lt 2 ]
-  then
+  if [ $# -lt 2 ]; then
     echo "${FUNCNAME[0]} needs exactly 2 arguments: <vm-name> <gcp-zone>. It sets project name as $projectname" "${@:3}"
     return 1
   fi
@@ -195,8 +202,7 @@ function gcestop() {
 }
 
 function startvm() {
-  if [ $# -lt 3 ]
-  then
+  if [ $# -lt 3 ]; then
     echo "${FUNCNAME[0]} needs exactly 3 arguments: <vm-name> <gcp-zone> <gcp-project-id>"
     return 1
   fi
@@ -285,6 +291,15 @@ function gcedescribe() {
   local vmname=$1
 
   describevm "$vmname" "$zone" "$projectname" "${@:3}"
+}
+
+function isBucketHns() {
+  if [[ $# != 1 ]]; then
+    >&2 echo "Argument not passed. Pass <bucket-name>"
+    return 1
+  fi
+  local bucket=${1}
+  gcloud storage buckets describe gs://${bucket} --raw --format="default(hierarchicalNamespace)" | grep -wq 'enabled: true'
 }
 
 function installGoVersion () {
