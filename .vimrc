@@ -11,18 +11,20 @@
 " If you want to learn more about Vim at Google, see http://go/vimintro.
 
 " Enable modern Vim features not compatible with Vi spec.
+" set paste
 set nocompatible
 set history=5000
 "set wildmenu
 "set scrolloff=3
 "set laststatus=2
+set wrap
 
 " Allow launching upto 99 tabs at a time
 set tabpagemax=99
 " Always show status bar
 set laststatus=2
 " Show full file path in status bar
-set statusline+=%F
+set statusline=%F
 
 " Set custom file-type mappings
 " Make sure all types of requirements.txt files get syntax highlighting.
