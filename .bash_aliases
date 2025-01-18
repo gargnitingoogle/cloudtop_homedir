@@ -7,24 +7,27 @@ function genericAliases() {
 	alias ...='cd ../..'
 	alias ..='cd ..'
 	alias cls='clear'
-	# alias dlv='~/go/bin/dlv --check-go-version=false --init <(config source-list-line-count 20)'
 	alias dlv='$(which dlv) --check-go-version=false'
 	alias goctl='/google/bin/releases/golinks/goctl/goctl.par'
+	alias history='vi ~/.bash_history +:$'
+	alias home='git -C $HOME'
 	alias htop='htop -u $USER -t'
 	alias install='sudo apt-get -y install'
 	alias l='ls -lah'
 	alias lint='golangci-lint run'
+	alias make='make -sj'
+	alias ncdu='ncdu -q --color dark -L -e'
 	alias parallel='parallel --eta'
 	alias pstree='pstree -ps'
-	alias tailf='tail -f'
-	alias runubuntucontainer='docker run --rm -it --entrypoint /bin/bash ubuntu'
+	alias remove='sudo apt-get remove -y '
 	alias rungocontainer='docker run -it --rm --entrypoint /bin/bash golang'
+	alias runubuntucontainer='docker run --rm -it --entrypoint /bin/bash ubuntu'
 	alias study='mkdir -p $HOME/work/study && cd $HOME/work/study'
+	alias tailf='tail -f'
 	alias tmx='tmux'
-	alias home='git -C $HOME'
-	alias runubuntucontainer='docker run --rm -it --entrypoint /bin/bash ubuntu'
-	alias rungocontainer='docker run -it --rm --entrypoint /bin/bash golang'
 }
+
+genericAliases
 
 function diffDirs() {
 	if [ $# -ne 2 ] ; then
@@ -62,8 +65,6 @@ function showLastNGitCommits() {
 function showUncommittedGitChanges() {
 	git diff --name-only HEAD && sleep 2 && git vimdiff HEAD
 }
-
-genericAliases
 
 function ignore() {
 	false && ( $@ ) ;
@@ -172,8 +173,7 @@ function gcsfusetestvmconnect() {
 }
 
 function stopvm() {
-	if [ $# -lt 3 ]
-	then
+	if [ $# -lt 3 ]; then
 		echo "${FUNCNAME[0]} needs exactly 3 arguments: <vm-name> <gcp-zone> <gcp-project-id>"
 		return 1
 	fi
@@ -190,7 +190,7 @@ function stopvm() {
 function gcestop() {
 	local projectname=gcs-fuse-test
 
-	if [ $# -lt 2 ]; then
+	if [[ $# -lt 2 ]] ; then
 		echo "${FUNCNAME[0]} needs exactly 2 arguments: <vm-name> <gcp-zone>. It sets project name as $projectname" "${@:3}"
 		return 1
 	fi
@@ -202,7 +202,7 @@ function gcestop() {
 }
 
 function startvm() {
-	if [ $# -lt 3 ]; then
+	if [[ $# -lt 3 ]] ; then
 		echo "${FUNCNAME[0]} needs exactly 3 arguments: <vm-name> <gcp-zone> <gcp-project-id>"
 		return 1
 	fi
@@ -219,8 +219,7 @@ function startvm() {
 function gcestart() {
 	local projectname=gcs-fuse-test
 
-	if [ $# -lt 2 ]
-	then
+	if [ $# -lt 2 ]; then
 		echo "${FUNCNAME[0]} needs exactly 2 arguments: <vm-name> <gcp-zone>. It sets project name as $projectname" "${@:3}"
 		return 1
 	fi
@@ -263,8 +262,7 @@ function gcerm() {
 }
 
 function describevm() {
-	if [ $# -lt 3 ]
-	then
+	if [ $# -lt 3 ]; then
 		echo "${FUNCNAME[0]} needs exactly 3 arguments: <vm-name> <gcp-zone> <gcp-project-id>"
 		return 1
 	fi
@@ -281,8 +279,7 @@ function describevm() {
 function gcedescribe() {
 	local projectname=gcs-fuse-test
 
-	if [ $# -lt 2 ]
-	then
+	if [ $# -lt 2 ]; then
 		echo "${FUNCNAME[0]} needs exactly 2 arguments: <vm-name> <gcp-zone>. It sets project name as $projectname" "${@:3}"
 		return 1
 	fi
@@ -538,11 +535,13 @@ function gcsfuseSrcAliases() {
 	export gcsfuse_src2_dir=~/work/cloud/storage/client/gcsfuse/src2/gcsfuse
 	export gcsfuse_src3_dir=~/work/cloud/storage/client/gcsfuse/src3/github/googlecloudplatform/gcsfuse
 	export gcsfuse_prelaunch_dir=~/work/cloud/storage/client/gcsfuse/src3/github/googlecloudplatform/gcsfuse-prelaunch
+	export gcsfuse_prelaunch2_dir=~/work/cloud/storage/client/gcsfuse/src/github/googlecloudplatform/gcsfuse-prelaunch
 	alias src='cd ${gcsfuse_src_dir}'
 	alias csi='cd ${csi_src_dir}'
 	alias src2='cd ${gcsfuse_src2_dir}'
 	alias src3='cd ${gcsfuse_src3_dir}'
 	alias prelaunch='cd ${gcsfuse_prelaunch_dir}'
+	alias prelaunch2='cd ${gcsfuse_prelaunch2_dir}'
 	alias lsfusemnts='cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2'
 	# alias lsfusemnts='echo From df command: ; df -h --output=source,fstype,target | grep '"'"'gcsfuse\|Mounted'"'"' ; echo . ; echo From /etc/mtab:  ;  cat /etc/mtab | grep gcsfuse | cut -d '"'"' '"'"' -f1-2 '
 	alias localwork='cd ~/work/cloud/storage/client/gcsfuse/tasks'
@@ -579,44 +578,32 @@ function gcsfuseSrcAliases() {
 	alias debugIntegrationTestListImplicitObjectsFromBucket='cd tools/integration_tests/implicit_dir && debugIntegrationTestCurDir -test.run TestListImplicitObjectsFromBucket -mountedDirectory=$mountpath -testbucket=$bucket ; cd -'
 }
 
+gcsfuseSrcAliases
+
 function unmountGcsfuse() {
-	if [[ $# -ne 1 ]]; then
-		echo "unmountGcsfuse: expected 1 input: <gcsfuse-mount-path-to-be-unmounted>"
+	if [[ $# < 1 ]]; then
+		echo "unmountGcsfuse: expected at least 1 input: <gcsfuse-mount-path1-to-be-unmounted> [<gcsfuse-mount-path2-to-be-unmounted> ...]"
 		return 1
 	fi
-	mntpath=$1
-	echo "Unmounting gcsfuse mount "${mntpath}" ..."
-	fusermount -uz $mntpath
-	echo "... Unmounted "${mntpath}
+	retval=0
+	while test -n "${1}"; do
+		mntpath=$1
+		if ! test -d "$mntpath" ; then
+			>&2 echo "unmountGcsfuse: passed argument '${mntpath}' is not a directory"
+			retval=1
+			shift
+			continue
+		fi
+		echo "Unmounting gcsfuse mount "${mntpath}" ..."
+		if fusermount -uz $mntpath ; then
+			echo "... Unmounted "${mntpath}
+		else
+			echo "'${mntpath}' is not a mounted directory"
+		fi
+		shift
+	done
+	return ${retval}
 }
-
-# function mountGcsfuse() {
-#   set -e
-
-#   if [[ $# -lt 1]]; then
-#     echo "mountGcsfuse: at least one argument is required: <gcsfuse-mount-path> <bucket-name-to-be-mounted> <options>"
-#     return 1
-#   fi
-
-#   bucket=
-#   options=
-
-#   mountpath=$1
-
-#   if [[ $# -gt 1 ]]; then
-#     bucket=$2
-
-#     if [[ $# -gt 1 ]]; then
-#       options="${@:3}"
-#     fi
-#   else
-#     echo "mountGcsfuse: bucket not passed, so assuming dynamic-mount"
-#   fi
-
-#   echo "Mounting bucket="${bucket}" at "${mountpath}" using commandline-args: ${options} ..."
-#   cd ~/work/cloud/storage/client/gcsfuse/src/gcsfuse && CGO_ENABLED=0 go run . ${options} ${bucket} ${mountpath}
-#   echo "... Mounted bucket="${bucket}" at "${mountpath} ."
-# }
 
 function gcsfuseTestAliases() {
 	gcsfuseSrcAliases
@@ -652,5 +639,12 @@ function gcsfuseTestAliases() {
 	alias gcsdescribe='gcloud storage objects describe'
 }
 
-gcsfuseSrcAliases
 gcsfuseTestAliases
+
+gcloud_utc_timestamp() {
+	if [[ $# < 1 ]]; then
+		date +%Y-%m-%dT%H:%M:%SZ
+	else
+		date +%Y-%m-%dT%H:%M:%SZ -d @$(($(date +%s) - ${1}))
+	fi
+}
