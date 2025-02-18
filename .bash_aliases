@@ -404,7 +404,7 @@ function mkbucket() {
 
 function mkhnsbucket() {
 	if [ $# -lt 2 ] ; then
-		echo "Not enough arguments for mkbucket. expected arguments:\
+		echo "Not enough arguments for mkhnsbucket. expected arguments:\
 			\$1: bucket-name e.g. ${USER}-test-bucket
 			\$2: location e.g. us-central1 or us or asia-southeast1 \
 			"
@@ -416,7 +416,30 @@ function mkhnsbucket() {
 	shift 2
 
 	set -x
-	gcloud alpha storage buckets create gs://$bucket --location=$location "$@" --enable-hierarchical-namespace --uniform-bucket-level-access
+	gcloud alpha storage buckets create gs://${bucket} --location=$location "$@" --enable-hierarchical-namespace --uniform-bucket-level-access
+	set +x
+}
+
+function mkzonalbucket() {
+	if [ $# -lt 2 ] ; then
+		echo "Not enough arguments for mkzonalbucket. expected arguments: \$1: bucket-name e.g. ${USER}-test-bucket \$2: zone e.g. us-central1-a or us-west4-a"
+		return 1
+	fi
+
+	local bucket=$1
+	local zone=$2
+	shift 2
+
+	# Verify that the passed zone is valid.
+	if [[ "${zone}" != "us-central1-a" && "${zone}" != "us-west4-a" ]]; then
+		2>&1 echo "Passed zone ('${zone}') is unsupported. Only supported zones right now for zonal bucket are: us-central1-a, us-west4-a ."
+		return 1
+	fi
+
+	local region=$(echo ${zone} | rev | cut -d- -f2- | rev)
+
+	set -x
+	gcloud alpha storage buckets create gs://${bucket} --location=${region} --placement=${zone} "$@" --default-storage-class=RAPID --enable-hierarchical-namespace --uniform-bucket-level-access
 	set +x
 }
 
