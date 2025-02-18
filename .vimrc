@@ -59,6 +59,10 @@ set hlsearch
 syntax on
 
 " set color-scheme
+" colorscheme peachpuff
+" colorscheme elflord
+" colorscheme evening
+" colorscheme desert
 colorscheme habamax
 
 " do not wrap search back to head of file
@@ -96,9 +100,10 @@ au FileType sh,make,python,yaml nnoremap <buffer> <C-c><C-c> <Esc>^i# <Esc><Down
 au FileType vim nnoremap <buffer> <C-c><C-c> <Esc>^i" <Esc><Down>
 " Add shortcuts to uncomment lines
 au FileType go,c,cpp,sh,make,python,yaml,java,javascript,vim nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
-" Delete line on Ctrl-d
-:nnoremap <C-d> dd
-:inoremap <C-d> <Esc>ddi
+" Delete line on Ctrl-d and send it to /dev/null (blackhole register)
+" so that it doesn't override the copied value anymore.
+:nnoremap <C-d> "_dd
+:inoremap <C-d> <Esc>"_ddi
 " Undo on Ctrl-z
 :noremap <C-z> u
 " Redo on Ctrl-y
@@ -328,3 +333,12 @@ Glug add_usings
 Glug colorscheme-primary
 set guitablabel=%t
 Glug outline-window
+" 
+" " Always use tabs in vim editor
+" :set noexpandtab
+" :set copyindent
+" :set preserveindent
+" :set softtabstop=0
+" :set shiftwidth=4
+" :set tabstop=4
+
