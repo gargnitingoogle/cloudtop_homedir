@@ -95,11 +95,11 @@ set cursorline
 " " Wrap lines after x chars.
 " set tw=80
 " Add shortcuts to comment out lines
-au FileType go,c,cpp,java,javascript nnoremap <buffer> <C-c><C-c> <Esc>^i//<Esc><Down>
+au FileType go,c,cpp,java,javascript,gomod nnoremap <buffer> <C-c><C-c> <Esc>^i//<Esc><Down>
 au FileType sh,make,python,yaml nnoremap <buffer> <C-c><C-c> <Esc>^i# <Esc><Down>
 au FileType vim nnoremap <buffer> <C-c><C-c> <Esc>^i" <Esc><Down>
 " Add shortcuts to uncomment lines
-au FileType go,c,cpp,sh,make,python,yaml,java,javascript,vim nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
+au FileType go,c,cpp,sh,make,python,yaml,java,javascript,vim,gomod nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
 " Delete line on Ctrl-d and send it to /dev/null (blackhole register)
 " so that it doesn't override the copied value anymore.
 :nnoremap <C-d> "_dd
