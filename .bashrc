@@ -144,6 +144,6 @@ fi
 export CGO_ENABLED=0
 export GO15VENDOREXPERIMENT=1
 export GOPATH=$HOME/go
-. "$HOME/.cargo/env"
+test -f "$HOME/.cargo/env" && . "$HOME/.cargo/env"
 
 stty -ixon
