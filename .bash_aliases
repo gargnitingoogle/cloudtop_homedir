@@ -474,6 +474,7 @@ function rmbucket() {
 	fi
 
 	set -x
+	gcloud storage rm -r gs://${bucket}/*
 	gcloud storage buckets delete gs://${bucket}
 	set +x
 }
