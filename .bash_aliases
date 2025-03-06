@@ -491,6 +491,15 @@ function lsallbuckets() {
 	set +x
 }
 
+function isBucketHns() {
+	if [[ $# < 1 ]]; then
+		>&2 echo "No argument received. Expected arguments: <bucket>"
+		return 1
+	fi
+	local bucket=${1}
+	gcloud storage buckets describe gs://${bucket} --format="value(hierarchicalNamespace)" --raw | grep -wqi 'true'
+}
+
 function lsvm() {
 	set -x
 	gcloud compute instances list "$@" | grep ${USER}
@@ -673,3 +682,9 @@ gcloud_utc_timestamp() {
 		date +%Y-%m-%dT%H:%M:%SZ -d @$(($(date +%s) - ${1}))
 	fi
 }
+
+alias cloneGcsfuse='test -d gcsfuse || git clone https://github.com/googlecloudplatform/gcsfuse'
+function curpr() {
+	gh pr list | grep $(git cb) | tr -s '\t' ' ' | cut -d' ' -f1
+}
+
