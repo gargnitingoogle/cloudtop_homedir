@@ -19,6 +19,9 @@ set history=5000
 "set laststatus=2
 set wrap
 
+" Ignore whitespace differences in diff-mode
+set diffopt+=iwhite
+
 " Allow launching upto 99 tabs at a time
 set tabpagemax=99
 " Always show status bar
@@ -62,7 +65,6 @@ syntax on
 " colorscheme peachpuff
 " colorscheme elflord
 " colorscheme evening
-" colorscheme desert
 colorscheme habamax
 
 " do not wrap search back to head of file
@@ -100,10 +102,9 @@ au FileType sh,make,python,yaml nnoremap <buffer> <C-c><C-c> <Esc>^i# <Esc><Down
 au FileType vim nnoremap <buffer> <C-c><C-c> <Esc>^i" <Esc><Down>
 " Add shortcuts to uncomment lines
 au FileType go,c,cpp,sh,make,python,yaml,java,javascript,vim,gomod nnoremap <buffer> <C-c><C-u> <Esc>^xx<Down>
-" Delete line on Ctrl-d and send it to /dev/null (blackhole register)
-" so that it doesn't override the copied value anymore.
-:nnoremap <C-d> "_dd
-:inoremap <C-d> <Esc>"_ddi
+" Delete line on Ctrl-d
+:nnoremap <C-d> dd
+:inoremap <C-d> <Esc>ddi
 " Undo on Ctrl-z
 :noremap <C-z> u
 " Redo on Ctrl-y

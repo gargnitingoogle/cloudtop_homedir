@@ -147,3 +147,4 @@ export GOPATH=$HOME/go
 . "$HOME/.cargo/env"
 
 stty -ixon
+export PATH=/usr/local/google-cloud-sdk/bin:$PATH

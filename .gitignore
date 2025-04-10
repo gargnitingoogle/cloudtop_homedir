@@ -8,9 +8,10 @@
 *.orig
 *__debug*
 
-# But not these files...
+# But not these files
 !*.vimrc
 !*.vim
+!*.gitconfig
 !*.bashrc
 !*.bash_aliases
 !*.sorted_unique_bash_history

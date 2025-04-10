@@ -23,7 +23,6 @@ function genericAliases() {
 	alias rungocontainer='docker run -it --rm --entrypoint /bin/bash golang'
 	alias runubuntucontainer='docker run --rm -it --entrypoint /bin/bash ubuntu'
 	alias study='mkdir -p $HOME/work/study && cd $HOME/work/study'
-	alias study='mkdir -p $HOME/work/study && cd $HOME/work/study'
 	alias tailf='tail -f'
 	alias tmx='tmux'
 }
@@ -85,7 +84,7 @@ function openConfigFile() {
 	alias history='vi ~/.bash_history +:$'
 	alias vimrc='vi ~/.vimrc'
 	alias tmuxconf='vi ~/.tmux.conf && tmux source ~/.tmux.conf'
-	alias homediff='for file in `find . -type f ! -path '"'"'*.git/*'"'"' ` ; do echo $file ; done | rev | cut -d/ -f1 | rev | while read filename ; do if test -f ~/$filename ; then echo vimdiff ~/$filename ./$filename ; diff ~/$filename ./$filename ; fi ; done'
+	alias homediff='for file in `find . -type f ! -path '"'"'*.git/*'"'"' ` ; do echo $file ; done | rev | cut -d/ -f1 | rev | while read filename ; do if test -f ~/$filename ; then diff -q ~/$filename ./$filename || echo "  -> vimdiff ~/$filename ./$filename " ; fi ; done'
 }
 
 openConfigFile
@@ -154,7 +153,9 @@ function vmconnect() {
 	local vmname=$1
 
 	set -x
-	gcloud compute --project "$projectname" ssh --zone "$zone" "$vmname" -- -o ProxyCommand='corp-ssh-helper %h %p' "${@:4}"
+	# gcloud compute --project "$projectname" ssh --zone "$zone" "$vmname" -- -o ProxyCommand='corp-ssh-helper %h %p' "${@:4}"
+        # ssh -i ~/.ssh/google_compute_engine gargnitin_google_com@nic0.${vmname}.c.${projectname}.internal.gcpnode.com
+        gcloud compute ssh ${vmname} --project ${projectname} --zone ${zone} -- -o Hostname=nic0.${vmname}.${zone}.c.${projectname}.internal.gcpnode.com
 	set +x
 }
 
@@ -416,7 +417,8 @@ function mkhnsbucket() {
 	shift 2
 
 	set -x
-	gcloud alpha storage buckets create gs://${bucket} --location=$location "$@" --enable-hierarchical-namespace --uniform-bucket-level-access
+	# gcloud alpha storage buckets create gs://${bucket} --location=$location "$@" --enable-hierarchical-namespace --uniform-bucket-level-access
+	gcloud storage buckets create gs://${bucket} --location=$location "$@" --enable-hierarchical-namespace --uniform-bucket-level-access
 	set +x
 }
 
@@ -439,7 +441,8 @@ function mkzonalbucket() {
 	local region=$(echo ${zone} | rev | cut -d- -f2- | rev)
 
 	set -x
-	gcloud alpha storage buckets create gs://${bucket} --location=${region} --placement=${zone} "$@" --default-storage-class=RAPID --enable-hierarchical-namespace --uniform-bucket-level-access
+	# gcloud alpha storage buckets create gs://${bucket} --location=${region} --placement=${zone} "$@" --default-storage-class=RAPID --enable-hierarchical-namespace --uniform-bucket-level-access
+	gcloud storage buckets create gs://${bucket} --location=${region} --placement=${zone} "$@" --default-storage-class=RAPID --enable-hierarchical-namespace --uniform-bucket-level-access
 	set +x
 }
 
@@ -474,8 +477,8 @@ function rmbucket() {
 	fi
 
 	set -x
-	gcloud storage rm -r gs://${bucket}/*
-	gcloud storage buckets delete gs://${bucket}
+	gcloud -q --no-user-output-enabled storage rm -r gs://${bucket}/*
+	gcloud -q --no-user-output-enabled storage buckets delete gs://${bucket}
 	set +x
 }
 
@@ -675,6 +678,13 @@ function gcsfuseTestAliases() {
 
 gcsfuseTestAliases
 
+alias cloneGcsfuse='test -d gcsfuse || git clone https://github.com/googlecloudplatform/gcsfuse'
+alias cloneCsiDriver='test -d gcs-fuse-csi-driver || git clone https://github.com/googlecloudplatform/gcs-fuse-csi-driver'
+
+function curpr() {
+	gh pr list | grep $(git cb) | tr -s '\t' ' ' | cut -d' ' -f1
+}
+
 gcloud_utc_timestamp() {
 	if [[ $# < 1 ]]; then
 		date +%Y-%m-%dT%H:%M:%SZ
@@ -682,9 +692,3 @@ gcloud_utc_timestamp() {
 		date +%Y-%m-%dT%H:%M:%SZ -d @$(($(date +%s) - ${1}))
 	fi
 }
-
-alias cloneGcsfuse='test -d gcsfuse || git clone https://github.com/googlecloudplatform/gcsfuse'
-function curpr() {
-	gh pr list | grep $(git cb) | tr -s '\t' ' ' | cut -d' ' -f1
-}
-
